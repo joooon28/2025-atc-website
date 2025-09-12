@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Monoplex KR", system-ui, sans-serif;
+    --font-suit: "SUIT Variable", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-suit {
+    font-family: var(--font-suit);
+  }
+}
