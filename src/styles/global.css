@@ -11,20 +11,20 @@
 }
 
 @theme {
-  --color-bg: var(--color-mint-10);
-  --color-bg-2: var(--color-mint-20);
-  --color-bg-3: var(--color-mint-30);
-  --color-bg-4: var(--color-mint-40);
-  --color-bg-5: var(--color-mint-50);
-  --color-bg-6: var(--color-mint-60);
-  --color-oragne: var(--color-orange-10);
+  --color-mint: var(--color-mint-10);
+  --color-mint-2: var(--color-mint-20);
+  --color-mint-3: var(--color-mint-30);
+  --color-mint-4: var(--color-mint-40);
+  --color-mint-5: var(--color-mint-50);
+  --color-mint-6: var(--color-mint-60);
+  --color-orange: var(--color-orange-10);
   --color-brown: var(--color-brown-10);
 
   --color-label: var(--color-brown-10);
   --color-label-invert: var(--color-mint-40);
 
-  --color-fill: var(--color-mint-40);
-  --color-fill-invert: var(--color-brown-10);
+  --color-fill-invert: var(--color-mint-40);
+  --color-fill: var(--color-brown-10);
 
   --color-line: var(--color-brown-10);
 }
