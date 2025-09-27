@@ -11,4 +11,7 @@
   .font-suit {
     font-family: var(--font-suit);
   }
+  .font-mono {
+    font-family: var(--font-sans);
+  }
 }
