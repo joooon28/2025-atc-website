@@ -146,7 +146,7 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
       type="button"
       onClick={handleClick}
       aria-label={open ? "Close menu" : "Open menu"}
-      className="p-3 w-[45px] h-[45px] inline-flex items-center justify-center"
+      className="py-3 w-[45px] h-[45px] inline-flex items-center justify-center"
     >
       <DotLottieReact
         src={import.meta.env.BASE_URL + "lottie/MenuIcon.lottie"}

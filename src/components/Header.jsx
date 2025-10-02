@@ -6,34 +6,28 @@ export default function Header() {
 
   return (
     <div className="font-mono flex justify-center items-center gap-[12px]">
-      <MainLogo />
+      <MainLogo onClick={() => navigate("/")} />
       <header className="border border-label bg-mint-4 py-[12px] px-[24px]">
         <nav>
           <ul className="italic flex gap-[32px]">
-            <li className="cursor-pointer" onClick={() => navigate("./about")}>
+            <li className="cursor-pointer" onClick={() => navigate("/about")}>
               About
             </li>
-            <li className="cursor-pointer" onClick={() => navigate("./work")}>
+            <li className="cursor-pointer" onClick={() => navigate("/work")}>
               Work
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate("./program")}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/program")}>
               Program
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate("./archive")}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/archive")}>
               Archive
             </li>
-            <li className="cursor-pointer" onClick={() => navigate("./map")}>
+            <li className="cursor-pointer" onClick={() => navigate("/map")}>
               Map
             </li>
             <li
               className="cursor-pointer"
-              onClick={() => navigate("./playground")}
+              onClick={() => navigate("/playground")}
             >
               Playground
             </li>

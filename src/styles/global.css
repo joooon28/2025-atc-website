@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url("https://webfontbox.github.io/monoplex/monoplex.css");
+
 :root {
   --color-mint-10: hsl(150 25% 67%);
   --color-mint-20: hsl(152 17% 78%);
@@ -27,4 +29,7 @@
   --color-fill: var(--color-brown-10);
 
   --color-line: var(--color-brown-10);
+
+  --font-mono: "Monoplex KR", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
 }

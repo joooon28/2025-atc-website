@@ -1,3 +1,3 @@
 export default function Documentary() {
-  return <h1>Documentary Page</h1>;
+  return <h1>Documentary</h1>;
 }

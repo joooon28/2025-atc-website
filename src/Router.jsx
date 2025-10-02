@@ -5,13 +5,14 @@ import Work from "./pages/work/Work";
 import WorkDetail from "./pages/work/WorkDetail";
 import Program from "./pages/Program";
 import Archive from "./pages/archive/Archive";
-import Credit from "./pages/archive/Credit";
 import Documentary from "./pages/archive/Documentary";
-import Note from "./pages/archive/Note";
 import Gallery from "./pages/archive/Gallery";
 import Map from "./pages/Map";
 import Playground from "./pages/Playground";
 import NotFound from "./pages/NotFound";
+import Staff from "./pages/archive/Staff";
+import Memo from "./pages/archive/Memo";
+import Makers from "./pages/archive/Makers";
 
 const router = createBrowserRouter([
   {
@@ -38,19 +39,26 @@ const router = createBrowserRouter([
   },
   {
     path: "/archive",
-    element: <Archive />,
     children: [
       {
-        path: "credit",
-        element: <Credit />,
+        path: "",
+        element: <Archive />,
+      },
+      {
+        path: "staff",
+        element: <Staff />,
+      },
+      {
+        path: "makers",
+        element: <Makers />,
       },
       {
         path: "documentary",
         element: <Documentary />,
       },
       {
-        path: "note",
-        element: <Note />,
+        path: "memo",
+        element: <Memo />,
       },
       {
         path: "gallery",
