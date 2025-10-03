@@ -12,7 +12,6 @@ import Playground from "./pages/Playground";
 import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
-import Makers from "./pages/archive/Makers";
 
 const router = createBrowserRouter([
   {
@@ -47,10 +46,6 @@ const router = createBrowserRouter([
       {
         path: "staff",
         element: <Staff />,
-      },
-      {
-        path: "makers",
-        element: <Makers />,
       },
       {
         path: "documentary",

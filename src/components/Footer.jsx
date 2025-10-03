@@ -20,7 +20,7 @@ export default function Footer() {
           />
         </div>
         <div className="flex items-end gap-5 ">
-          <p className="font-mono font-[400] md:max-w-[570px] text-[16px] text-label">
+          <p className="font-[400] md:max-w-[570px] text-[16px] text-label">
             Dept. of Art & Technology, Sogang University
             <br />
             X417, Xavier Bldg., 35 Baekbeom-Ro, Mapo-gu, Seoul 04107,

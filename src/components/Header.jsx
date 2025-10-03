@@ -5,7 +5,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="font-mono flex justify-center items-center gap-[12px]">
+    <div className="flex justify-center items-center gap-[12px]">
       <MainLogo onClick={() => navigate("/")} />
       <header className="border border-label bg-mint-4 py-[12px] px-[24px]">
         <nav>
@@ -19,11 +19,11 @@ export default function Header() {
             <li className="cursor-pointer" onClick={() => navigate("/program")}>
               Program
             </li>
+            <li className="cursor-pointer" onClick={() => navigate("/program")}>
+              Made
+            </li>
             <li className="cursor-pointer" onClick={() => navigate("/archive")}>
               Archive
-            </li>
-            <li className="cursor-pointer" onClick={() => navigate("/map")}>
-              Map
             </li>
             <li
               className="cursor-pointer"

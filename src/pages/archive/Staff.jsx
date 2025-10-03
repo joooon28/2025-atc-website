@@ -1,3 +1,13 @@
+import CloseButton from "../../components/archive/CloseButton";
+import Footer from "../../components/Footer";
+
 export default function Staff() {
-  return <h1>Staff page</h1>;
+  return (
+    <div className="flex flex-col min-h-svh">
+      <CloseButton />
+      <div className="mt-auto">
+        <Footer />
+      </div>
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import url("https://webfontbox.github.io/monoplex/monoplex.css");
 
 @layer base {
   :root {
@@ -10,8 +10,5 @@
 @layer utilities {
   .font-suit {
     font-family: var(--font-suit);
-  }
-  .font-mono {
-    font-family: var(--font-sans);
   }
 }
