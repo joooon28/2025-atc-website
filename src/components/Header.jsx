@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <div className="flex justify-center items-center gap-[12px]">
-      <MainLogo onClick={() => navigate("/")} />
+      <MainLogo onClick={() => navigate("/main")} />
       <header className="border border-label bg-mint-4 py-[12px] px-[24px]">
         <nav>
           <ul className="italic flex gap-[32px]">
