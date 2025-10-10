@@ -10,7 +10,7 @@ export default function Staff({ onClose }) {
           <CloseButton />
         </button>
       </div>
-      <div className="flex-1 pt-10 pb-10 px-[120px] flex flex-col gap-[80px]">
+      <div className="flex-1 py-10 px-[120px] flex flex-col gap-[80px]">
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>크리에이티브 디렉터</p>

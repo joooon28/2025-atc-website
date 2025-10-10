@@ -7,28 +7,23 @@ import Footer from "../../components/Footer";
 import Staff from "./Staff";
 import Memo from "./Memo";
 import Documentary from "./documentary/Documentary";
-import Gallery from "./Gallery";
+import Gallery from "./galllery/Gallery";
 
 import { useState } from "react";
 
 export default function Archive() {
-  // 어떤 팝업을 띄울지: 'staff' | 'memo' | 'documentary' | 'gallery' | null
   const [activeSheet, setActiveSheet] = useState(null);
-  // 렌더링(마운트) 여부
   const [showSheet, setShowSheet] = useState(false);
-  // 슬라이드 상태: true면 위로 올라온 상태, false면 아래로 내려가는 중
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const openSheet = (name) => {
     setActiveSheet(name);
     setShowSheet(true);
-    // 다음 프레임에 열기(트랜지션 시작)
     requestAnimationFrame(() => setSheetOpen(true));
   };
 
   const closeSheet = () => {
-    setSheetOpen(false); // 아래로 슬라이드 아웃
-    // 트랜지션 종료 시 언마운트는 아래 onTransitionEnd에서 처리
+    setSheetOpen(false);
   };
 
   const renderSheet = () => {
@@ -105,10 +100,8 @@ export default function Archive() {
         <Footer />
       </div>
 
-      {/* ===== 공통 오버레이 / 슬라이드 시트 ===== */}
       {showSheet && (
         <div className="fixed inset-0 z-50">
-          {/* (선택) 배경 딤: 클릭으로 닫기 */}
           <button
             aria-label="close overlay"
             onClick={closeSheet}
@@ -117,7 +110,6 @@ export default function Archive() {
             }`}
           />
 
-          {/* 아래에서 위로 슬라이드 — 닫힐 때는 반대로 아래로 */}
           <div
             onTransitionEnd={() => {
               if (!sheetOpen) {

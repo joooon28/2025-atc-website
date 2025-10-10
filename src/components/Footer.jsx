@@ -1,4 +1,4 @@
-import ArtechLogo from "../assets/ArtechLogo.png";
+import ArtechLogo from "../assets/ArtechLogo.svg";
 import LogoBrown from "../assets/LogoBrown.svg";
 import { InstagramLogoIcon } from "@phosphor-icons/react";
 import { YoutubeLogoIcon } from "@phosphor-icons/react";

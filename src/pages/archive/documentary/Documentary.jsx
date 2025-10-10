@@ -41,7 +41,7 @@ export default function Documentary({ onClose }) {
             aria-labelledby="tab-final"
             aria-hidden={active !== "final"}
             className={[
-              "absolute inset-0 transition-opacity duration-300",
+              "absolute inset-0 transition-opacity duration-200",
               active === "final"
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none",
