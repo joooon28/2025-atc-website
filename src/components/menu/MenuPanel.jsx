@@ -8,24 +8,24 @@ export default function MenuPanel() {
       <img src={LogoBrown} alt="LogoBrown" className="w-[30.158px] h-[21px]" />
       <nav>
         <ul className="italic flex flex-col items-center gap-[16px]">
-          <li className="cursor-pointer" onClick={() => navigate("./about")}>
+          <li className="cursor-pointer" onClick={() => navigate("/about")}>
             About
           </li>
-          <li className="cursor-pointer" onClick={() => navigate("./work")}>
+          <li className="cursor-pointer" onClick={() => navigate("/work")}>
             Work
           </li>
-          <li className="cursor-pointer" onClick={() => navigate("./program")}>
+          <li className="cursor-pointer" onClick={() => navigate("/program")}>
             Program
           </li>
-          <li className="cursor-pointer" onClick={() => navigate("./archive")}>
-            Archive
+          <li className="cursor-pointer" onClick={() => navigate("/program")}>
+            Made
           </li>
-          <li className="cursor-pointer" onClick={() => navigate("./map")}>
-            Map
+          <li className="cursor-pointer" onClick={() => navigate("/archive")}>
+            Archive
           </li>
           <li
             className="cursor-pointer"
-            onClick={() => navigate(".playground/")}
+            onClick={() => navigate("/playground")}
           >
             Playground
           </li>

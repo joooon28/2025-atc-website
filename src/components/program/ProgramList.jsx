@@ -1,4 +1,4 @@
-export default function ProgramList({ title, eng }) {
+export default function ProgramList({ number = "1", title, eng }) {
   return (
     <div
       className=" flex hover:bg-mint-6 
@@ -10,20 +10,20 @@ export default function ProgramList({ title, eng }) {
         before:w-[var(--dot)] before:h-[var(--dot)]
         before:rounded-full before:bg-label
         before:-translate-x-1/2 before:-translate-y-3/4
-        before:pointer-events-none before:z-10
+        before:pointer-events-none 
 
         after:content-[''] after:absolute
         after:right-0 after:top-[var(--b)]
         after:w-[var(--dot)] after:h-[var(--dot)]
         after:rounded-full after:bg-label
         after:translate-x-1/2 after:-translate-y-3/4
-        after:pointer-events-none after:z-10
+        after:pointer-events-none 
 
     "
     >
       <section className="flex">
         <div className="flex justify-center w-15 text-[20px] font-[500]">
-          (1)
+          ({number})
         </div>
         <div className="flex flex-col gap-10">
           <div className="flex gap-[20.5px] text-[20px]">

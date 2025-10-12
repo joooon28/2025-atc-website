@@ -17,9 +17,10 @@ export default function Footer() {
             src={LogoBrown}
             alt="Logo Brown"
             className="h-10 w-auto shrink-0"
+            fill="blue"
           />
         </div>
-        <div className="flex items-end gap-5 ">
+        <div className="flex items-end gap-10 ">
           <p className="font-[400] md:max-w-[570px] text-[16px] text-label">
             Dept. of Art & Technology, Sogang University
             <br />

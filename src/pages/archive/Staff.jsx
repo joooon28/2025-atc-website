@@ -26,7 +26,7 @@ export default function Staff({ onClose }) {
             <p>Exhibiton Team</p>
           </div>
           <div className="flex gap-2">
-            <StaffProfile />
+            <StaffProfile lead="Team Lead" />
             <StaffProfile />
             <StaffProfile />
             <StaffProfile />

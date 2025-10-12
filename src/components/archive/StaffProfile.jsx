@@ -5,7 +5,11 @@ import {
   LinkedinLogoIcon,
 } from "@phosphor-icons/react";
 
-export default function StaffProfile({ name, nameEng }) {
+export default function StaffProfile({
+  name = "김준수",
+  nameEng = "Junsu Kim",
+  lead,
+}) {
   return (
     <section className="flex flex-col gap-2">
       <div className="h-[311.467px] w-[233.6px] bg-mint-3"></div>
@@ -14,6 +18,7 @@ export default function StaffProfile({ name, nameEng }) {
           <p className="font-[500] text-sm">{name}</p>
           <p className="italic text-sm">{nameEng}</p>
         </div>
+        <p className="text-mint font-[350] text-sm">{lead}</p>
         <div className="flex gap-1 items-center">
           <EnvelopeSimpleIcon className="w-6 h-6" weight="light" />
           <InstagramLogoIcon className="w-6 h-6" weight="light" />
