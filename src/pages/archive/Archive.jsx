@@ -1,9 +1,6 @@
-// src/pages/archive/Archive.jsx
 import Header from "../../components/Header";
 import ArchiveSection from "../../components/ArchiveSection";
 import Footer from "../../components/Footer";
-
-// ⬇️ 각 페이지 컴포넌트 그대로 사용 (onClose prop만 선택적으로 받을 수 있게)
 import Staff from "./Staff";
 import Memo from "./Memo";
 import Documentary from "./documentary/Documentary";
