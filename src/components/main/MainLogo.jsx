@@ -1,4 +1,4 @@
-import Logo from "../../assets/Logo.svg";
+import Logo from "../../assets/LogoBrown.svg";
 
 export default function MainLogo({ onClick }) {
   return (
