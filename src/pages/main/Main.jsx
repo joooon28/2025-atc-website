@@ -7,11 +7,11 @@ import MenuToggle from "../../components/menu/MenuToggle";
 export default function Main() {
   return (
     <main className="min-h-svh bg-mint-3">
-      <div className="max-[701px]:hidden py-[40px]">
+      <div className="max-tablet:hidden py-[40px]">
         <Header />
       </div>
       <div className="p-5">
-        <div className="min-[701px]:hidden relative">
+        <div className="min-tablet:hidden relative">
           <MenuToggle />
         </div>
       </div>
