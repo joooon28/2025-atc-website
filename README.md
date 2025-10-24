@@ -1,14 +1,31 @@
 # 2025-atc-website
 
-## React + Vite
+## Git Commit Message Convention
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### <타입> : <제목>
 
-Currently, two official plugins are available:
+### 변경사항이 "무엇"인지 명확히 작성 / 마침표 금지
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ex) feat: 로그인 기능 추가
 
-## Expanding the ESLint configuration
+## Type
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- feat: 새로운 기능 추가
+- fix: 버그 수정
+- design: CSS 등 사용자 UI 디자인 변경
+- docs: 문서 수정
+- test: 테스트 코드 추가
+- refact: 코드 리팩토링 (코드 가독성, 유지보수 수정 등, 결과 반영 없이 코드 구조 재조정)
+- style: 코드 의미에 영향을 주지 않는 변경사항
+- rename: 파일 혹은 폴더명 수정하거나 옮기는 작업
+
+## Subject
+
+- 최대 50글자 넘기지 않도록 하고, 마침표 금지
+- 영문으로 표기하는 경우 동사(원형)을 맨 앞에 두고 첫 글자는 대문자로 표기
+
+## Body
+
+- 긴 설명이 필요할 경우에 작성
+- "무엇"을 "왜" 했는지 작성
+- 최대한 상세히 작성

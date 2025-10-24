@@ -2,11 +2,14 @@ import ArtechLogo from "../assets/ArtechLogo.svg";
 import LogoBrown from "../assets/LogoBrown.svg";
 import { InstagramLogoIcon } from "@phosphor-icons/react";
 import { YoutubeLogoIcon } from "@phosphor-icons/react";
+import Smilegate from "../assets/SmilegateLogo.svg";
+import Jampot from "../assets/JampotLogo.svg";
+import Dotollim from "../assets/DotollimLogo.svg";
 
 export default function Footer() {
   return (
-    <footer className="pt-60 pb-10 px-10">
-      <div className="flex items-end justify-between w-full gap-10">
+    <footer className="flex flex-col gap-10 pt-60 pb-10 px-10">
+      <div className="max-tablet:flex-col flex min-tablet:items-end justify-between w-full gap-10">
         <div className="flex gap-5 items-center">
           <img
             src={ArtechLogo}
@@ -20,8 +23,8 @@ export default function Footer() {
             fill="blue"
           />
         </div>
-        <div className="flex items-end gap-10 ">
-          <p className="font-[400] md:max-w-[570px] text-[16px] text-label">
+        <div className="max-tablet:flex-col flex tems-end gap-10 ">
+          <p className="max-tablet:order-2 font-[400] md:max-w-[570px] text-[16px] text-label">
             Dept. of Art & Technology, Sogang University
             <br />
             X417, Xavier Bldg., 35 Baekbeom-Ro, Mapo-gu, Seoul 04107,
@@ -36,7 +39,7 @@ export default function Footer() {
               creative.sogang.ac.kr
             </a>
           </p>
-          <div className="flex gap-5 items-end text-label">
+          <div className="max-tablet:order-1 flex gap-5 items-end text-label">
             <a href="https://www.instagram.com/artech.sogang/">
               <InstagramLogoIcon className="w-8 h-8" weight="thin" />
             </a>
@@ -45,6 +48,71 @@ export default function Footer() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div
+          className=" flex
+        border-t border-label
+        relative [--dot:6px] [--b:1px]
+    
+        before:content-[''] before:absolute
+        before:left-0 before:top-[var(--b)]
+        before:w-[var(--dot)] before:h-[var(--dot)]
+        before:rounded-full before:bg-label
+        before:-translate-x-1/2 before:-translate-y-3/4
+        before:pointer-events-none
+
+        after:content-[''] after:absolute
+        after:right-0 after:top-[var(--b)]
+        after:w-[var(--dot)] after:h-[var(--dot)]
+        after:rounded-full after:bg-label
+        after:translate-x-1/2 after:-translate-y-3/4
+        after:pointer-events-none
+    "
+        />
+        <p className="text-center text-[16px] font-[400]">
+          Collaboration & Sponsorship
+        </p>
+        <sectionon className="flex  items-center justify-center gap-10 py-3">
+          <img
+            src={Smilegate}
+            alt="Logo Brown"
+            className="w-[151px] h-auto shrink-0"
+            fill="blue"
+          />
+          <img
+            src={Jampot}
+            alt="Logo Brown"
+            className="w-[122px] h-auto shrink-0"
+            fill="blue"
+          />
+          <img
+            src={Dotollim}
+            alt="Logo Brown"
+            className="w-[60px] h-[60px] shrink-0"
+            fill="blue"
+          />
+        </sectionon>
+        <div
+          className=" flex
+        border-t border-label
+        relative [--dot:6px] [--b:1px]
+    
+        before:content-[''] before:absolute
+        before:left-0 before:top-[var(--b)]
+        before:w-[var(--dot)] before:h-[var(--dot)]
+        before:rounded-full before:bg-label
+        before:-translate-x-1/2 before:-translate-y-3/4
+        before:pointer-events-none
+
+        after:content-[''] after:absolute
+        after:right-0 after:top-[var(--b)]
+        after:w-[var(--dot)] after:h-[var(--dot)]
+        after:rounded-full after:bg-label
+        after:translate-x-1/2 after:-translate-y-3/4
+        after:pointer-events-none
+    "
+        />
       </div>
     </footer>
   );
