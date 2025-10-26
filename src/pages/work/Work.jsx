@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Header from '../../components/Header'; 
-import Footer from '../../components/Footer'; 
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const IconPlaceholder = "";
 const LinkIconPlaceholder = "";
@@ -41,10 +41,10 @@ const sortArtworksFn = (list, ascending, sortBy) => {
 const formatTitle = (title) => {
     const parts = title.split(/([A-Za-z0-9 ,.'":;!?&()/-]+)/).filter(Boolean);
     let kor = "", eng = "";
-    
+
     parts.forEach(part => {
         if (/[A-Za-z]/.test(part)) eng += part + " ";
-        else kor += part; 
+        else kor += part;
     });
 
     const korText = kor.trim();
@@ -55,9 +55,9 @@ const formatTitle = (title) => {
             {korText && (
                 <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{korText}</span>
             )}
-            
+
             {korText && engText && <br />}
-            
+
             {engText && (
                 <span className="italic font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{engText}</span>
             )}
@@ -71,7 +71,7 @@ const formatArtistName = (artistName) => {
 
     return parts.map((part, index) => {
         if (part.trim().length === 0) return <React.Fragment key={index}>{part}</React.Fragment>;
-        
+
         if (/[가-힣]/.test(part)) {
             return <span key={index} className="Makers-Artist-Kr font-medium text-[14px] leading-none">{part}</span>;
         } else {
@@ -102,7 +102,7 @@ const formatTitleForMakers = (title) => {
         const isKoreanPart = /[가-힣]/.test(part) && !/[A-Za-z0-9]/.test(part) && !isPunctuation;
 
         if (index > 0 && isPreviousKorean && !isPunctuation && !isKoreanPart) {
-             formattedElements.push(
+            formattedElements.push(
                 <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span>
             );
         }
@@ -160,7 +160,7 @@ const MakerListItem = React.memo(({ art }) => {
                 <a href="#"><img src={MakersLinkIconPlaceholder} alt="링크1" className="w-4 h-4 align-baseline translate-y-[1px]" /></a>
                 <a href="#"><img src={MakersLinkIconPlaceholder} alt="링크2" className="w-4 h-4 align-baseline translate-y-[1px]" /></a>
             </div>
-            
+
             <div className="Makers-Work-Wrapper flex justify-start flex-1 w-1/2">
                 <div className="Makers-Work-Info font-['Monoplex KR'] italic font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal hover:opacity-30 transition-opacity">
                     <a href={`WorkDetail.html?id=${art.id}`} className="inline-flex w-max whitespace-normal break-normal">
@@ -173,7 +173,7 @@ const MakerListItem = React.memo(({ art }) => {
 });
 
 export default function Work() {
-    const [currentView, setCurrentView] = useState('gallery'); 
+    const [currentView, setCurrentView] = useState('gallery');
     const [isAscending, setIsAscending] = useState(true);
     const [sortedArtworks, setSortedArtworks] = useState(initialArtworks);
 
@@ -188,7 +188,7 @@ export default function Work() {
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
         setIsAscending(true);
-        
+
         let newList;
         if (mode === 'makers') {
             newList = sortArtworks(initialArtworks, true, 'artist');
@@ -206,31 +206,31 @@ export default function Work() {
     const handleSort = () => {
         const sortBy = currentView === 'makers' ? 'artist' : 'title';
         const newAscending = !isAscending;
-        
+
         const sorted = sortArtworks(initialArtworks, newAscending, sortBy);
         setSortedArtworks(sorted);
         setIsAscending(newAscending);
     };
 
-    const sortButtonText = isAscending 
-        ? 'A–Z' 
+    const sortButtonText = isAscending
+        ? 'A–Z'
         : 'Z–A';
 
     return (
         <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
-            
-            <div className="fixed top-0 left-0 right-0 z-50 pt-10"> 
+
+            <div className="fixed top-0 left-0 right-0 z-50 pt-10">
                 <Header />
             </div>
-            
-            <main className="pt-[198px]"> 
-                
+
+            <main className="pt-[198px]">
+
                 {/* Work 텍스트 영역 */}
-                <div className="Work-Detail w-[calc(100%-80px)] mx-auto mb-20"> 
-                    
+                <div className="Work-Detail w-[calc(100%-80px)] mx-auto mb-20">
+
                     {/* Work 제목 */}
                     <p id="Work-Title" className="font-['Monoplex KR'] font-medium text-[40px] leading-none mb-10">Work</p>
-                    
+
                     <div className="Work-Detail-Text flex flex-wrap items-start gap-10">
                         {/* 첫 번째 문단 */}
                         <p className="w-full sm:w-[38%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
@@ -253,36 +253,36 @@ export default function Work() {
                 </div>
 
                 {/* 버튼 영역 */}
-                <div className="WorkList-Button clear-both overflow-hidden w-[calc(100%-80px)] mx-auto mb-10 relative z-50"> 
-                    
+                <div className="WorkList-Button clear-both overflow-hidden w-[calc(100%-80px)] mx-auto mb-10 relative z-50">
+
                     <div className="float-left flex gap-10">
-                        <button 
-                            id="Randomize-btn" 
-                            onClick={handleRandomize} 
+                        <button
+                            id="Randomize-btn"
+                            onClick={handleRandomize}
                             className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                         >
                             Randomize <img src={IconPlaceholder} alt="랜덤 정렬 버튼" className="w-8 h-8" />
                         </button>
-                        <button 
-                            id="Sort-btn" 
-                            onClick={handleSort} 
+                        <button
+                            id="Sort-btn"
+                            onClick={handleSort}
                             className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                         >
                             {sortButtonText} <img src={IconPlaceholder} alt="정렬 버튼" className="w-8 h-8" />
                         </button>
                     </div>
-                    
+
                     <div className="float-right flex gap-10">
-                        <button 
-                            id="Gallery-btn" 
-                            onClick={() => handleSwitchView('gallery')} 
+                        <button
+                            id="Gallery-btn"
+                            onClick={() => handleSwitchView('gallery')}
                             className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                         >
                             Gallery <img src={IconPlaceholder} alt="갤러리 버튼" className="w-8 h-8" />
                         </button>
-                        <button 
-                            id="Makers-btn" 
-                            onClick={() => handleSwitchView('makers')} 
+                        <button
+                            id="Makers-btn"
+                            onClick={() => handleSwitchView('makers')}
                             className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                         >
                             Makers <img src={IconPlaceholder} alt="작가 버튼" className="w-8 h-8" />
@@ -291,8 +291,8 @@ export default function Work() {
                 </div>
 
                 {/* Gallery */}
-                <div 
-                    id="Gallery" 
+                <div
+                    id="Gallery"
                     className={`grid grid-cols-5 gap-x-6 gap-y-20 pt-6 px-10 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
                 >
                     {sortedArtworks.map(art => (
@@ -301,8 +301,8 @@ export default function Work() {
                 </div>
 
                 {/* Makers List */}
-                <div 
-                    id="Makers-List" 
+                <div
+                    id="Makers-List"
                     className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
                     ${currentView === 'makers' ? 'block active' : 'hidden'}
                     ${currentView === 'makers' ? 'before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2' : ''}`}
