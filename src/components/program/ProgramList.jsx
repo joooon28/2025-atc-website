@@ -1,9 +1,20 @@
-export default function ProgramList({ number = "1", title, eng }) {
+export default function ProgramList({
+  number = "1",
+  title,
+  eng,
+  date = "11.20. (THU) 13:00-15:00",
+  text = "이번 오프닝 행사는 울퉁불퉁하게 말아리 컨퍼런스의 시작을 알리는 중요한 자리로, 참가자들에게 환영의 인사를 전하고 행사 일정과 주요 프로그램에 대한 소개를 제공합니다. 또한, 네트워킹 세션을 통해 참석자들이 서로 교류하고 협력할 수 있는 기회를 마련합니다. 이번 행사는 컨퍼런스의 분위기를 조성하고 참가자들이 앞으로의 일정에 대한 기대감을 높이는 데 중점을 둡니다.",
+  onMoreInfo,
+  detailKo,
+  detailEng,
+  image,
+}) {
   return (
     <div
-      className=" flex hover:bg-mint-6 
-    border-t border-label py-3 
-    relative [--dot:6px] [--b:1px]
+      className=" 
+        group flex hover:bg-mint-6 
+        border-t border-label py-3 
+        relative [--dot:6px] [--b:1px] [--expand:250px]
     
         before:content-[''] before:absolute
         before:left-0 before:top-[var(--b)]
@@ -22,15 +33,44 @@ export default function ProgramList({ number = "1", title, eng }) {
     "
     >
       <section className="flex">
-        <div className="flex justify-center w-15 text-[20px] font-[500]">
-          ({number})
-        </div>
-        <div className="flex flex-col gap-10">
-          <div className="flex gap-[20.5px] text-[20px]">
-            <p>{title}</p>
-            <p className="italic">{eng}</p>
+        <div className="tex-center px-5 text-[20px] font-[500]">({number})</div>
+        <div className="flex flex-col pr-4">
+          <div className="flex flex-col gap-10">
+            <div className="flex gap-3 text-[20px]">
+              <p>{title}</p>
+              <p className="italic">{eng}</p>
+            </div>
+            <p className="text-[14px]">{date}</p>
           </div>
-          <p className="text-[14px]">11.20. (THU) 13:00-15:00</p>
+          <div
+            className="
+              overflow-hidden max-h-0 opacity-0
+              group-hover:max-h-[var(--expand)] group-hover:opacity-100
+              focus-within:max-h-[var(--expand)] focus-within:opacity-100
+              transition-[max-height,opacity] duration-500 ease-in-out
+              [will-change:max-heght,opacity]
+            "
+          >
+            <div className="flex flex-col gap-10 pt-10">
+              <div className="text-[14px]">{text}</div>
+              <button
+                type="button"
+                onClick={() =>
+                  onMoreInfo?.({
+                    title,
+                    eng,
+                    date: date,
+                    koText: detailKo ?? text,
+                    enText: detailEng ?? "",
+                    image,
+                  })
+                }
+                className="flex text-[14px] underline cursor-pointer"
+              >
+                More Info
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>

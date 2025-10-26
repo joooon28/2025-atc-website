@@ -3,30 +3,43 @@ import StaffProfile from "../../components/archive/StaffProfile";
 import Footer from "../../components/Footer";
 
 export default function Staff({ onClose }) {
+  const srcurl1 =
+    "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1761453912/%E1%84%89%E1%85%A5%E1%84%80%E1%85%AA%E1%86%BC%E1%84%92%E1%85%AC_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%B5%E1%86%AF_4052_otbyzi.png";
+
   return (
-    <div className="relative flex flex-col min-h-svh bg-mint-6">
+    <div className="flex flex-col min-h-svh bg-mint-6">
       <div className="sticky top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
         </button>
       </div>
-      <div className="flex-1 py-10 px-[120px] flex flex-col gap-[80px]">
+      <div className="py-10 px-[120px] flex flex-col gap-[80px]">
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>크리에이티브 디렉터</p>
             <p>Creative Director</p>
           </div>
           <div className="flex gap-2">
-            <StaffProfile name="김현지" nameEng="Hyunji Kim" />
+            <StaffProfile
+              name="김현지"
+              nameEng="Hyunji Kim"
+              imagesrc={srcurl1}
+            />
           </div>
         </section>
+
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>전시팀</p>
             <p>Exhibiton Team</p>
           </div>
-          <div className="flex gap-2">
-            <StaffProfile lead="Team Lead" />
+          <div className="flex justify-between gap-2">
+            <StaffProfile
+              lead="Team Lead"
+              imagesrc={
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1761453910/%E1%84%89%E1%85%A5%E1%84%80%E1%85%AA%E1%86%BC%E1%84%92%E1%85%AC_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%B5%E1%86%AF_3227_uqkm0v.png"
+              }
+            />
             <StaffProfile />
             <StaffProfile />
             <StaffProfile />
@@ -38,35 +51,45 @@ export default function Staff({ onClose }) {
             <p>프로그램팀</p>
             <p>Program Team</p>
           </div>
-          <StaffProfile />
+          <div className="flex gap-2">
+            <StaffProfile />
+          </div>
         </section>
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>대외협력팀</p>
             <p>Program Team</p>
           </div>
-          <StaffProfile />
+          <div className="flex gap-2">
+            <StaffProfile />
+          </div>{" "}
         </section>
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>비주얼 디자인팀</p>
             <p>Visual Design Team</p>
           </div>
-          <StaffProfile />
+          <div className="flex gap-2">
+            <StaffProfile />
+          </div>{" "}
         </section>
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>인터랙션팀</p>
             <p>Interaction Team</p>
           </div>
-          <StaffProfile />
+          <div className="flex gap-2">
+            <StaffProfile />
+          </div>{" "}
         </section>
         <section className="flex flex-col gap-5">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>아카이브팀</p>
             <p>Archive Team</p>
           </div>
-          <StaffProfile />
+          <div className="flex gap-2">
+            <StaffProfile />
+          </div>{" "}
         </section>
       </div>
       <div className="shrink-0">

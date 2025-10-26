@@ -73,26 +73,17 @@ export default function Footer() {
         <p className="text-center text-[16px] font-[400]">
           Collaboration & Sponsorship
         </p>
-        <sectionon className="flex  items-center justify-center gap-10 py-3">
-          <img
-            src={Smilegate}
-            alt="Logo Brown"
-            className="w-[151px] h-auto shrink-0"
-            fill="blue"
-          />
-          <img
-            src={Jampot}
-            alt="Logo Brown"
-            className="w-[122px] h-auto shrink-0"
-            fill="blue"
-          />
-          <img
-            src={Dotollim}
-            alt="Logo Brown"
-            className="w-[60px] h-[60px] shrink-0"
-            fill="blue"
-          />
-        </sectionon>
+        <section className="max-mobile:px-5 flex items-center justify-around self-stretch justify-center gap-10 py-3">
+          <div>
+            <img src={Smilegate} alt="Logo Brown" fill="blue" />
+          </div>
+          <div>
+            <img src={Jampot} alt="Logo Brown" fill="blue" />
+          </div>
+          <div>
+            <img src={Dotollim} alt="Logo Brown" fill="blue" />
+          </div>
+        </section>
         <div
           className=" flex
         border-t border-label

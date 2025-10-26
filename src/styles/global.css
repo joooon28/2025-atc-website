@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://webfontbox.github.io/monoplex/monoplex.css");
+@import "tailwindcss";
 
 :root {
   --color-mint-10: hsl(150 25% 67%);
@@ -33,8 +33,7 @@
   --font-mono: "Monoplex KR Wide Nerd", ui-monospace, SFMono-Regular, Menlo,
     Consolas, "Liberation Mono", monospace;
 
-  --breakpoint-mobile: 400px;
+  --breakpoint-mobile: 376px;
   --breakpoint-tablet: 701px;
 }
-
 /*기본 폰트는 font-mono로 적용, font-mono 안 써도 됨*/

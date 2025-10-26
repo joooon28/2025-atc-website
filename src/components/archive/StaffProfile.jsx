@@ -9,10 +9,17 @@ export default function StaffProfile({
   name = "김준수",
   nameEng = "Junsu Kim",
   lead,
+  imagesrc,
 }) {
   return (
-    <section className="flex flex-col gap-2">
-      <div className="h-[311.467px] w-[233.6px] bg-mint-3"></div>
+    <section className="flex flex-col gap-2 aspect-[1/2]">
+      <div className="aspect-[3/4] w-full max-w-[250px] mx-auto">
+        <img
+          src={imagesrc || "/images/archive/staff/default_profile.png"}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="flex flex-col items-start gap-1">
         <div className="flex gap-1">
           <p className="font-[500] text-sm">{name}</p>

@@ -10,6 +10,26 @@ export default function Gallery({ onClose }) {
           <CloseButton />
         </button>
       </div>
+      <div className="flex pt-10 justify-center text-center gap-6">
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Jun
+        </p>
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Jul
+        </p>
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Aug
+        </p>
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Sep
+        </p>
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Oct
+        </p>
+        <p className="hover:underline hover:font-semibold cursor-pointer">
+          Nov
+        </p>
+      </div>
       <GalleryList />
       <div className="mt-auto">
         <Footer />
