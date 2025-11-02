@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function ProgramList({
   number = "1",
   title,
@@ -9,6 +11,8 @@ export default function ProgramList({
   detailEng,
   image,
 }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div
       className=" 
@@ -29,27 +33,31 @@ export default function ProgramList({
         after:rounded-full after:bg-label
         after:translate-x-1/2 after:-translate-y-3/4
         after:pointer-events-none 
-
     "
     >
       <section className="flex">
         <div className="tex-center px-5 text-[20px] font-[500]">({number})</div>
+
         <div className="flex flex-col pr-4">
-          <div className="flex flex-col gap-10">
-            <div className="flex gap-3 text-[20px]">
+          <div
+            onClick={() => setOpen((v) => !v)}
+            role="button"
+            aria-expanded={open}
+            className="flex flex-col gap-10 cursor-pointer select-none"
+          >
+            <div className="flex min-[847px]:gap-3 text-[20px] max-[847px]:flex-col max-[287px]:gap-[6px]">
               <p>{title}</p>
               <p className="italic">{eng}</p>
             </div>
             <p className="text-[14px]">{date}</p>
           </div>
+
           <div
-            className="
-              overflow-hidden max-h-0 opacity-0
-              group-hover:max-h-[var(--expand)] group-hover:opacity-100
-              focus-within:max-h-[var(--expand)] focus-within:opacity-100
-              transition-[max-height,opacity] duration-500 ease-in-out
-              [will-change:max-heght,opacity]
-            "
+            className={[
+              "overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out",
+              "[will-change:max-height,opacity]",
+              open ? "max-h-[var(--expand)] opacity-100" : "max-h-0 opacity-0",
+            ].join(" ")}
           >
             <div className="flex flex-col gap-10 pt-10">
               <div className="text-[14px]">{text}</div>

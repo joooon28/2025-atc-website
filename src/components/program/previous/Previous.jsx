@@ -1,6 +1,7 @@
 import PreviousList from "./PreviousList";
 import { useState, useRef, useEffect } from "react";
 import MoreInfo from "./MoreInfo";
+import images from "../../../data/program/previous.json";
 
 export default function Previous() {
   const [selected, setSelected] = useState(null);
@@ -145,17 +146,50 @@ export default function Previous() {
           <PreviousList
             title="지도 그리기"
             eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            text="요약 한글"
+            time="9.30. (THU) 16:00-18:11"
             detailKo="상세 한글 본문"
-            detailEn="Detailed English paragraph…"
-            image="https://i.imgur.com/xxxx1.jpg"
+            detailEng="Detailed English paragraph…"
+            image={images.default}
             onMoreInfo={openSheet}
           />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
+          <PreviousList
+            title="지도 그리기1"
+            eng="Drawing Map"
+            time="9.30. (THU) 16:00-18:00"
+            detailKo="상세 한글 본문1"
+            detailEng="Detailed English paragraph…"
+            image={images.default}
+            rounded={true}
+            onMoreInfo={openSheet}
+          />
+          <PreviousList
+            title="지도 그리기2"
+            eng="Drawing Map"
+            time="9.30. (THU) 16:00-18:00"
+            detailKo="상세 한글 본문2"
+            detailEng="Detailed English paragraph…"
+            image={images.default}
+            onMoreInfo={openSheet}
+          />
+          <PreviousList
+            title="지도 그리기3"
+            eng="Drawing Map"
+            time="9.30. (THU) 16:00-18:00"
+            detailKo="상세 한글 본문3"
+            detailEng="Detailed English paragraph…"
+            image={images.default}
+            rounded={true}
+            onMoreInfo={openSheet}
+          />
+          <PreviousList
+            title="지도 그리기4"
+            eng="Drawing Map"
+            time="9.30. (THU) 16:00-18:00"
+            detailKo="상세 한글 본문4"
+            detailEn="Detailed English paragraph…"
+            image={images.default}
+            onMoreInfo={openSheet}
+          />
         </section>
         <div className="pr-10">
           <div

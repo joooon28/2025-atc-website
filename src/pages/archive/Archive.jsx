@@ -51,13 +51,14 @@ export default function Archive() {
         </div>
       </div>
 
-      <div className="p-[40px]">
+      <div className="min-desktop:px-[120px] max-desktop:px-[40px]">
         <section
           className="
         grid grid-cols-4 items-stretch divide-x divide-label border border-label 
         max-tablet:grid-cols-2 max-tablet:divide-y max-tablet:[&>*:nth-child(2n)]:border-r-0 max-tablet:[&>*:nth-child(n+3)]:border-b-0
         max-mobile:grid-cols-1 max-mobile:[&>*:nth-child(2n-1)]:border-r-0 max-mobile:[&>*:nth-child(3)]:!border-b
         relative [--dot:6px] [--b:1px]
+        [&>*]:aspect-square
         [&>*]:relative
         [&>*::before]:content-[''] [&>*::before]:absolute [&>*::before]:left-0
         [&>*]:before:w-[var(--dot)] [&>*]:before:h-[var(--dot)]
@@ -77,7 +78,16 @@ export default function Archive() {
 
         after:content-[''] after:absolute after:right-0 after:bottom-[var(--b)]
         after:w-[var(--dot)] after:h-[var(--dot)] after:rounded-full after:bg-fill
-        after:translate-x-3/5 after:translate-y-3/4 after:z-20 after:pointer-events-none"
+        after:translate-x-3/5 after:translate-y-3/4 after:z-20 after:pointer-events-none
+
+        max-tablet:[&>*:nth-child(2n)]:before:left-auto
+        max-tablet:[&>*:nth-child(2n)]:before:right-0
+        max-tablet:[&>*:nth-child(2n)]:before:translate-x-1/2
+
+        max-tablet:[&>*:nth-child(2n)]:after:left-auto
+        max-tablet:[&>*:nth-child(2n)]:after:right-0
+        max-tablet:[&>*:nth-child(2n)]:after:translate-x-3/5
+        "
         >
           <ArchiveSection
             ko="기획단"

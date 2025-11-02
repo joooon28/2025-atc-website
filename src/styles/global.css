@@ -35,5 +35,6 @@
 
   --breakpoint-mobile: 376px;
   --breakpoint-tablet: 701px;
+  --breakpoint-desktop: 1440px;
 }
 /*기본 폰트는 font-mono로 적용, font-mono 안 써도 됨*/
