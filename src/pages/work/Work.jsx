@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -150,7 +151,7 @@ const formatTitleForMakers = (title) => {
 const ArtworkCard = React.memo(({ art }) => {
     return (
         <div className="Artwork flex flex-col box-border">
-            <a href={`WorkDetail.html?id=${art.id}`} className="group flex flex-col w-full gap-4 text-label">
+            <Link to={`/work/${art.id}`} className="group flex flex-col w-full gap-4 text-label">
                 <img
                     src={art.image}
                     alt={art.title}
@@ -165,7 +166,7 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="description font-['Monoplex KR'] font-[450] text-[14px] leading-none tracking-normal">
                     {art.description}
                 </div>
-            </a>
+            </Link>
         </div>
     );
 });
@@ -191,12 +192,12 @@ const MakersArtistGroup = React.memo(({ group }) => {
                         key={art.id} 
                         className={`Makers-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
                     >
-                        <a 
-                            href={`WorkDetail.html?id=${art.id}`} 
+                        <Link 
+                            to={`/work/${art.id}`} 
                             className="inline-flex w-max whitespace-normal break-normal hover:opacity-30 cursor-pointer"
                         >
                             {formatTitleForMakers(art.title)}
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>
