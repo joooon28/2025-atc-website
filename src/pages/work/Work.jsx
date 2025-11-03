@@ -32,7 +32,7 @@ const initialArtworks = [
     { id: "art009", title: "For You", artist: "CHOIs", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
     { id: "art010", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
     { id: "art011", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art012", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] }
+    { id: "art012", title: "가가가", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] }
 ];
 
 const shuffle = (array) => {
