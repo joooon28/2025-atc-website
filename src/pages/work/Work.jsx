@@ -89,10 +89,8 @@ const formatArtistName = (artistName, isGallery = false) => {
         if (part.trim().length === 0) return <React.Fragment key={index}>{part}</React.Fragment>;
 
         if (/[가-힣]/.test(part)) {
-            // 한글 부분: 폰트 크기 명시
             return <span key={index} className={`Makers-Artist-Kr ${isGallery ? 'font-[450]' : 'font-medium'} text-[14px]`}>{part}</span>;
         } else {
-            // 영문 부분: 이탤릭 적용, 폰트 크기 명시
             return <span key={index} className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}>{part}</span>;
         }
     });
@@ -100,11 +98,9 @@ const formatArtistName = (artistName, isGallery = false) => {
 
 
 const formatTitleForMakers = (title) => {
-    // 한글과 영문 사이에 공백이 없으면 하나 추가
     let processedTitle = title.replace(/([가-힣])([A-Za-z0-9])/g, '$1 $2');
     processedTitle = processedTitle.replace(/([A-Za-z0-9])([가-힣])/g, '$1 $2');
 
-    // 덩어리별로 토큰 분리
     const tokenRegex = /([가-힣\s]+)|([A-Za-z0-9\s.,!?:;]+)|([.,!?:;])/g;
     const parts = [];
     let match;
@@ -164,7 +160,6 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="title font-['Monoplex KR']">
                     {formatTitle(art.title)}
                 </div>
-                {/* Gallery 탭: 밑줄 4.5px 오프셋, 영문 이탤릭 */}
                 <div className="artist font-['Monoplex KR'] text-[14px] leading-none tracking-normal underline underline-offset-[4.5px]"> 
                     {formatArtistName(art.artist, true)} 
                 </div>
@@ -180,12 +175,10 @@ const MakersArtistGroup = React.memo(({ group }) => {
     return (
         <div className="Makers-Artist-Group flex py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             
-            {/* 작가 정보 (1/2 너비) - 동적 링크 렌더링 영역 */}
             <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-1/2 font-[450] text-base leading-none text-left">
                 <div className="Makers-Artist-Name cursor-default">
                     {formatArtistName(group.artist, false)} 
                 </div>
-                {/* 🚨 3. group.links 배열을 map으로 순회하여 동적으로 아이콘 렌더링 */}
                 {group.links.map((link, index) => (
                     <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                         <img src={link.icon} alt={link.alt} className="w-4 h-4 align-baseline translate-y-[1px]" />
@@ -193,7 +186,6 @@ const MakersArtistGroup = React.memo(({ group }) => {
                 ))}
             </div>
 
-            {/* 작품 목록 (1/2 너비) */}
             <div className="Makers-Works-List flex flex-col justify-start flex-1 w-1/2">
                 {group.works.map((art, index) => (
                     <div 
@@ -216,14 +208,11 @@ const MakersArtistGroup = React.memo(({ group }) => {
 
 export default function Work() {
     
-    // 1. Initial View Mode 설정 (localStorage에서 불러오기)
     const initialView = (() => {
         const savedView = localStorage.getItem('workViewMode');
         return savedView || 'gallery';
     })();
     
-    // 2. Initial Sorted List 설정
-    // 새로고침 시에는 탭 종류와 상관없이 무조건 랜덤 셔플
     const initialSortedList = shuffle(initialArtworks); 
 
     const [currentView, setCurrentView] = useState(initialView);
@@ -240,7 +229,6 @@ export default function Work() {
                 acc[work.artist] = { 
                     artist: work.artist, 
                     works: [],
-                    // 🚨 2. 첫 작품에서 artistLinks 정보를 추출하여 group 객체에 저장
                     links: work.artistLinks || []
                 };
             }
@@ -248,7 +236,6 @@ export default function Work() {
             return acc;
         }, {});
 
-        // Makers 탭: 그룹화된 작품 목록을 작품명(title) 기준으로 A-Z/가나다 순으로 정렬 (개별 그룹 내 정렬 유지)
         Object.values(grouped).forEach(group => {
             group.works = sortArtworksFn(group.works, true, 'title'); 
         });
@@ -256,26 +243,22 @@ export default function Work() {
         if (maintainOrder) {
             const artistOrder = [];
             const seenArtists = new Set();
-            // 입력된 'list' (sortedArtworks, 현재는 랜덤 상태)의 순서를 따라 artistOrder를 구성
             list.forEach(work => {
                 if (!seenArtists.has(work.artist)) {
                     artistOrder.push(work.artist);
                     seenArtists.add(work.artist);
                 }
             });
-            // 구성된 순서대로 그룹을 반환하여 Randomize 효과를 낸다.
             return artistOrder.map(artist => grouped[artist]).filter(group => group);
         }
         return Object.values(grouped);
     };
 
-    // 스크롤 위치 저장 핸들러
     const saveScrollPosition = () => {
         localStorage.setItem('workScrollY', window.scrollY.toString());
     };
 
     useEffect(() => {
-        // 페이지 로드 시 스크롤 위치 복원
         const savedScrollY = localStorage.getItem('workScrollY');
         if (savedScrollY) {
             setTimeout(() => {
@@ -283,10 +266,8 @@ export default function Work() {
             }, 0); 
         }
         
-        // 스크롤 이벤트 리스너 등록
         window.addEventListener('scroll', saveScrollPosition);
 
-        // 컴포넌트 언마운트 시 리스너 해제
         return () => {
             window.removeEventListener('scroll', saveScrollPosition);
             saveScrollPosition(); 
@@ -303,17 +284,14 @@ export default function Work() {
 
         let newList;
         if (mode === 'makers') {
-            // 탭 전환 시: Makers는 A-Z 정렬로 재설정 (버튼을 누른 효과)
             newList = sortArtworks(initialArtworks, true, initialSortBy);
         } else if (mode === 'gallery') {
-            // 탭 전환 시: Gallery는 랜덤 정렬로 재설정
             newList = shuffle(initialArtworks);
         }
         setSortedArtworks(newList);
     };
 
     const handleRandomize = () => {
-        // Randomize 버튼을 누를 때: 탭 종류와 상관없이 전체 목록을 섞는다.
         setSortedArtworks(shuffle(initialArtworks));
         setIsAscending(true);
     };
@@ -420,14 +398,13 @@ export default function Work() {
                     ))}
                 </div>
 
-                {/* Makers List (그룹화 적용) */}
+                {/* Makers List */}
                 <div
                     id="Makers-List"
                     className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
                     ${currentView === 'makers' ? 'block active' : 'hidden'}
                     ${currentView === 'makers' ? 'before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:-translate-x-1/2' : ''}`}
                 >
-                    {/* 그룹화된 리스트를 렌더링 */}
                     {makersArtistGroups.map((group) => (
                         <MakersArtistGroup key={group.artist} group={group} />
                     ))}
