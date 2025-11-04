@@ -34,7 +34,7 @@ const initialArtworks = [
     { id: "art009", title: "For You", artist: "CHOIs", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
     { id: "art010", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
     { id: "art011", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art012", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] }
+    { id: "art012", title: "가가가", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] }
 ];
 
 const shuffle = (array) => {
@@ -125,7 +125,7 @@ const formatTitleForMakers = (title) => {
 
         if (isPreviousKorean && !isPunctuation && !isKoreanPart) {
             formattedElements.push(
-                <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span> // pixel-spacer
+                <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span>
             );
         }
 
@@ -152,7 +152,7 @@ const formatTitleForMakers = (title) => {
 const ArtworkCard = React.memo(({ art }) => {
     return (
         <div className="Artwork flex flex-col box-border">
-            <Link to={`/work/${art.id}`} className="group flex flex-col w-full gap-4 text-label">
+            <Link to={`/work/${art.id}?from=gallery`} className="group flex flex-col w-full gap-4 text-label">
                 <img
                     src={art.image}
                     alt={art.title}
@@ -193,12 +193,12 @@ const MakersArtistGroup = React.memo(({ group }) => {
                         key={art.id} 
                         className={`Makers-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
                     >
-                        <a 
-                            href={`WorkDetail.html?id=${art.id}`} 
+                        <Link 
+                            to={`/work/${art.id}?from=makers`} 
                             className="inline-flex w-max whitespace-normal break-normal hover:opacity-30 cursor-pointer"
                         >
                             {formatTitleForMakers(art.title)}
-                        </a>
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -209,12 +209,24 @@ const MakersArtistGroup = React.memo(({ group }) => {
 
 export default function Work() {
     
+    const location = useLocation();
+
+    const getQueryParam = useCallback((param) => {
+        const urlParams = new URLSearchParams(location.search);
+        return urlParams.get(param);
+    }, [location.search]);
+
     const initialView = (() => {
-        const savedView = localStorage.getItem('workViewMode');
-        return savedView || 'gallery';
+        const viewFromQuery = getQueryParam('view');
+        if (viewFromQuery === 'gallery' || viewFromQuery === 'makers') {
+            return viewFromQuery;
+        }
+        return 'gallery';
     })();
-    
-    const initialSortedList = shuffle(initialArtworks); 
+
+    const initialSortedList = (getQueryParam('view') === 'makers' || getQueryParam('view') === 'gallery')
+        ? sortArtworksFn(initialArtworks, true, initialView === 'makers' ? 'artist' : 'title')
+        : shuffle(initialArtworks);
 
     const [currentView, setCurrentView] = useState(initialView);
     const [isAscending, setIsAscending] = useState(true);
@@ -250,43 +262,33 @@ export default function Work() {
                     seenArtists.add(work.artist);
                 }
             });
-            return artistOrder.map(artist => grouped[artist]).filter(group => group);
+            return initialArtworks
+                .map(work => work.artist)
+                .filter((artist, index, self) => self.indexOf(artist) === index)
+                .map(artist => grouped[artist])
+                .filter(group => group);
         }
         return Object.values(grouped);
     };
 
     const saveScrollPosition = () => {
-        localStorage.setItem('workScrollY', window.scrollY.toString());
     };
 
     useEffect(() => {
-        const savedScrollY = localStorage.getItem('workScrollY');
-        if (savedScrollY) {
-            setTimeout(() => {
-                window.scrollTo(0, parseInt(savedScrollY));
-            }, 0); 
-        }
-        
-        window.addEventListener('scroll', saveScrollPosition);
+        window.scrollTo(0, 0);
 
-        return () => {
-            window.removeEventListener('scroll', saveScrollPosition);
-            saveScrollPosition(); 
-        };
-    }, []); 
+        window.removeEventListener('scroll', saveScrollPosition);
+        
+    }, [location.pathname]);
 
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
-        localStorage.setItem('workViewMode', mode);
-
         setIsAscending(true);
-
-        const initialSortBy = mode === 'makers' ? 'artist' : 'title';
-
+        
         let newList;
         if (mode === 'makers') {
-            newList = sortArtworks(initialArtworks, true, initialSortBy);
-        } else if (mode === 'gallery') {
+            newList = sortArtworks(initialArtworks, true, 'artist');
+        } else {
             newList = shuffle(initialArtworks);
         }
         setSortedArtworks(newList);
@@ -295,6 +297,7 @@ export default function Work() {
     const handleRandomize = () => {
         setSortedArtworks(shuffle(initialArtworks));
         setIsAscending(true);
+        setCurrentView('gallery');
     };
 
     const handleSort = () => {
@@ -404,7 +407,8 @@ export default function Work() {
                     id="Makers-List"
                     className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
                     ${currentView === 'makers' ? 'block active' : 'hidden'}
-                    ${currentView === 'makers' ? 'before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:-translate-x-1/2' : ''}`}
+                    before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+                    after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                 >
                     {makersArtistGroups.map((group) => (
                         <MakersArtistGroup key={group.artist} group={group} />
