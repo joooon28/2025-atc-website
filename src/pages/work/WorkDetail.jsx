@@ -151,9 +151,9 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
                         </p>
                     )}
                     <div className="flex items-center">
-                        {renderLinkIcon(artist.links.email, EmailIcon, 'email')}
-                        {renderLinkIcon(artist.links.instagram, InstagramIcon, 'instagram')}
-                        {renderLinkIcon(artist.links.website, WebsiteIcon, 'website')}
+                        {renderLinkIcon(artist.links?.email, EmailIcon, 'email')}
+                        {renderLinkIcon(artist.links?.instagram, InstagramIcon, 'instagram')}
+                        {renderLinkIcon(artist.links?.website, WebsiteIcon, 'website')}
                     </div>
                 </div>
             ))}
@@ -179,8 +179,6 @@ export default function WorkDetail() {
     const HEADER_COMPONENT_HEIGHT = 97;
     const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
     
-    const DETAIL_TEXT_STICKY_TOP = TOTAL_FIXED_HEADER_HEIGHT + 80;
-
     const TARGET_SCROLL_POINT = 177; 
 
     const getQueryParam = useCallback((param) => {
@@ -237,7 +235,7 @@ export default function WorkDetail() {
         const fromView = getQueryParam('from');
 
         if (fromView === 'makers' || fromView === 'gallery') {
-            navigate(`/work#${fromView}`);
+            navigate(`/work?view=${fromView}`);
         } else {
             navigate(-1);
         }
@@ -264,7 +262,7 @@ export default function WorkDetail() {
     const displayTitleEn = artwork.titleEn.trim() || null;
     const displayLocation = artwork.location.trim() || null;
     
-    const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links);
+    const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links || []);
     
     const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
     const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`; 
@@ -335,7 +333,8 @@ export default function WorkDetail() {
                 <div className="Work-Detail-Info w-full flex justify-between">
                     <div className="Work-Detail-Visual w-[calc(50%-20px)]">
                         
-                        {vimeoEmbedUrl ? (
+                        {/* 영상 영역 */}
+                        {vimeoEmbedUrl && (
                             <div className="Work-Detail-Video w-full h-[400px] border border-label box-border mb-5 relative">
                                 <iframe
                                     src={vimeoEmbedUrl}
@@ -345,10 +344,6 @@ export default function WorkDetail() {
                                     allowFullScreen
                                     title={displayTitleKr || displayTitleEn}
                                 ></iframe>
-                            </div>
-                        ) : (
-                            <div className="Work-Detail-Video w-full h-[400px] border border-label box-border mb-5 flex justify-center items-center text-gray-400 text-lg">
-                                Media Placeholder (No Video)
                             </div>
                         )}
                         

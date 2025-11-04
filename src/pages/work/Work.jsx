@@ -22,7 +22,8 @@ const initialArtworks = [
     { id: "art003", title: "내 말을 들어줘", artist: "오리너구리", description: "작품 설명", image: "https://placehold.co/250x340",
       artistLinks: [
         { url: "#link3_a", icon: MakersLinkIconPlaceholder, alt: "Link A" },
-        { url: "#link3_b", icon: MakersLinkIconPlaceholder, alt: "Link B" }
+        { url: "#link3_b", icon: MakersLinkIconPlaceholder, alt: "Link B" },
+        { url: "#link3_c", icon: MakersLinkIconPlaceholder, alt: "Link C" }
       ]
     },
     { id: "art004", title: "심층화", artist: "Compdsst", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
@@ -151,7 +152,7 @@ const formatTitleForMakers = (title) => {
 const ArtworkCard = React.memo(({ art }) => {
     return (
         <div className="Artwork flex flex-col box-border">
-            <Link to={`/work/${art.id}`} className="group flex flex-col w-full gap-4 text-label">
+            <Link to={`/work/${art.id}?from=gallery`} className="group flex flex-col w-full gap-4 text-label">
                 <img
                     src={art.image}
                     alt={art.title}
@@ -193,7 +194,7 @@ const MakersArtistGroup = React.memo(({ group }) => {
                         className={`Makers-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
                     >
                         <Link 
-                            to={`/work/${art.id}`} 
+                            to={`/work/${art.id}?from=makers`} 
                             className="inline-flex w-max whitespace-normal break-normal hover:opacity-30 cursor-pointer"
                         >
                             {formatTitleForMakers(art.title)}
@@ -210,12 +211,23 @@ export default function Work() {
     
     const location = useLocation();
 
+    const getQueryParam = useCallback((param) => {
+        const urlParams = new URLSearchParams(location.search);
+        return urlParams.get(param);
+    }, [location.search]);
+
     const initialView = (() => {
-        const savedView = localStorage.getItem('workViewMode');
-        return savedView || 'gallery';
+        const viewFromQuery = getQueryParam('view');
+        if (viewFromQuery === 'gallery' || viewFromQuery === 'makers') {
+            return viewFromQuery;
+        }
+        return 'gallery';
     })();
-    
-    const initialSortedList = shuffle(initialArtworks); 
+
+    // 쿼리 파라미터로 돌아왔을 때만 ViewMode를 초기화 (랜덤 정렬 방지)
+    const initialSortedList = (getQueryParam('view') === 'makers' || getQueryParam('view') === 'gallery')
+        ? sortArtworksFn(initialArtworks, true, initialView === 'makers' ? 'artist' : 'title') // 돌아온 경우, 기본 정렬 상태 유지
+        : shuffle(initialArtworks); // 처음 접근하거나 다른 경로로 접근한 경우, 랜덤 정렬
 
     const [currentView, setCurrentView] = useState(initialView);
     const [isAscending, setIsAscending] = useState(true);
@@ -251,48 +263,39 @@ export default function Work() {
                     seenArtists.add(work.artist);
                 }
             });
-            return artistOrder.map(artist => grouped[artist]).filter(group => group);
+            // artistsDetail 정렬 순서에 맞게 그룹을 반환. (현재는 initialArtworks 순서)
+            return initialArtworks
+                .map(work => work.artist)
+                .filter((artist, index, self) => self.indexOf(artist) === index) // 중복 제거하며 initialArtworks의 아티스트 순서 유지
+                .map(artist => grouped[artist])
+                .filter(group => group);
         }
         return Object.values(grouped);
     };
 
     const saveScrollPosition = () => {
-        localStorage.setItem('workScrollY', window.scrollY.toString());
+        // Scroll Position 저장 로직 삭제
     };
 
     useEffect(() => {
-        const isFirstEntry = window.history.state.idx === 0 || location.key === 'default';
-        const savedScrollY = localStorage.getItem('workScrollY');
+        // 새로고침/첫 진입 시 스크롤 위치 초기화
+        window.scrollTo(0, 0);
 
-        if (isFirstEntry && !savedScrollY) {
-            window.scrollTo(0, 0);
-        } else if (savedScrollY) {
-            setTimeout(() => {
-                window.scrollTo(0, parseInt(savedScrollY));
-            }, 0); 
-        }
+        // 이전 스크롤 저장 리스너 제거
+        window.removeEventListener('scroll', saveScrollPosition);
         
-        window.addEventListener('scroll', saveScrollPosition);
-
-        return () => {
-            window.removeEventListener('scroll', saveScrollPosition);
-            saveScrollPosition(); 
-        };
-    }, [location.key]); 
-
+    }, [location.pathname]); // 경로가 바뀔 때만 실행
 
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
-        localStorage.setItem('workViewMode', mode);
-
         setIsAscending(true);
-
-        const initialSortBy = mode === 'makers' ? 'artist' : 'title';
-
+        
         let newList;
         if (mode === 'makers') {
-            newList = sortArtworks(initialArtworks, true, initialSortBy);
-        } else if (mode === 'gallery') {
+            // Makers 뷰는 아티스트 이름 기준 A-Z 정렬된 상태로 시작
+            newList = sortArtworks(initialArtworks, true, 'artist');
+        } else {
+            // Gallery 뷰는 랜덤 셔플된 상태로 시작
             newList = shuffle(initialArtworks);
         }
         setSortedArtworks(newList);
@@ -300,7 +303,8 @@ export default function Work() {
 
     const handleRandomize = () => {
         setSortedArtworks(shuffle(initialArtworks));
-        setIsAscending(true);
+        setIsAscending(true); // 랜덤화하면 정렬 상태는 초기화됨
+        setCurrentView('gallery'); // 랜덤은 Gallery 뷰에서만 의미 있음
     };
 
     const handleSort = () => {
@@ -410,7 +414,8 @@ export default function Work() {
                     id="Makers-List"
                     className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
                     ${currentView === 'makers' ? 'block active' : 'hidden'}
-                    ${currentView === 'makers' ? 'before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:-translate-x-1/2' : ''}`}
+                    before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+                    after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                 >
                     {makersArtistGroups.map((group) => (
                         <MakersArtistGroup key={group.artist} group={group} />
