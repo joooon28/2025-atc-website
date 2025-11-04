@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -124,7 +124,7 @@ const formatTitleForMakers = (title) => {
 
         if (isPreviousKorean && !isPunctuation && !isKoreanPart) {
             formattedElements.push(
-                <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span> // pixel-spacer
+                <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span>
             );
         }
 
@@ -208,6 +208,8 @@ const MakersArtistGroup = React.memo(({ group }) => {
 
 export default function Work() {
     
+    const location = useLocation();
+
     const initialView = (() => {
         const savedView = localStorage.getItem('workViewMode');
         return savedView || 'gallery';
@@ -259,8 +261,12 @@ export default function Work() {
     };
 
     useEffect(() => {
+        const isFirstEntry = window.history.state.idx === 0 || location.key === 'default';
         const savedScrollY = localStorage.getItem('workScrollY');
-        if (savedScrollY) {
+
+        if (isFirstEntry && !savedScrollY) {
+            window.scrollTo(0, 0);
+        } else if (savedScrollY) {
             setTimeout(() => {
                 window.scrollTo(0, parseInt(savedScrollY));
             }, 0); 
@@ -272,7 +278,8 @@ export default function Work() {
             window.removeEventListener('scroll', saveScrollPosition);
             saveScrollPosition(); 
         };
-    }, []); 
+    }, [location.key]); 
+
 
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
