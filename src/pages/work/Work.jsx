@@ -153,11 +153,13 @@ const ArtworkCard = React.memo(({ art }) => {
     return (
         <div className="Artwork flex flex-col box-border">
             <Link to={`/work/${art.id}?from=gallery`} className="group flex flex-col w-full gap-4 text-label">
-                <img
-                    src={art.image}
-                    alt={art.title}
-                    className="w-full h-[340px] object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
-                />
+                <div className="relative w-full pt-[136%]">
+                    <img
+                        src={art.image}
+                        alt={art.title}
+                        className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
+                    />
+                </div>
                 <div className="title font-['Monoplex KR']">
                     {formatTitle(art.title)}
                 </div>
@@ -174,9 +176,9 @@ const ArtworkCard = React.memo(({ art }) => {
 
 const MakersArtistGroup = React.memo(({ group }) => {
     return (
-        <div className="Makers-Artist-Group flex py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
+        <div className="Makers-Artist-Group flex max-[375px]:flex-col py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             
-            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-1/2 font-[450] text-base leading-none text-left">
+            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-1/2 max-[375px]:w-full font-[450] text-base leading-none text-left">
                 <div className="Makers-Artist-Name cursor-default">
                     {formatArtistName(group.artist, false)} 
                 </div>
@@ -187,7 +189,7 @@ const MakersArtistGroup = React.memo(({ group }) => {
                 ))}
             </div>
 
-            <div className="Makers-Works-List flex flex-col justify-start flex-1 w-1/2">
+            <div className="Makers-Works-List flex flex-col justify-start flex-1 w-1/2 max-[375px]:w-full max-[375px]:mt-10">
                 {group.works.map((art, index) => (
                     <div 
                         key={art.id} 
@@ -328,103 +330,105 @@ export default function Work() {
     return (
         <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
 
-            <div className="fixed top-0 left-0 right-0 z-50 pt-10">
+            <div className="fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
             </div>
 
             <main className="pt-[198px]">
+                <div className="mx-5 lg:mx-10"> 
 
-                {/* Work 텍스트 영역 */}
-                <div className="Work-Detail w-[calc(100%-80px)] mx-auto mb-20">
+                    {/* Work 텍스트 영역 */}
+                    <div className="Work-Detail mb-20">
 
-                    {/* Work 제목 */}
-                    <p id="Work-Title" className="font-['Monoplex KR'] font-medium text-[40px] leading-none mb-10">Work</p>
+                        {/* Work 제목 */}
+                        <p id="Work-Title" className="font-['Monoplex KR'] font-medium text-[40px] leading-none mb-10">Work</p>
 
-                    <div className="Work-Detail-Text flex flex-wrap items-start justify-between">
-                        <p className="w-full sm:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
-                            기술은 과감해졌고, 기술은 정교해졌습니다.
-                            아트&테크놀로지라는 사회 속에서 우리는 항상 그 사이의 미묘한 균형을 찾고 있습니다. 자유로운 표현의 바다와 정밀한 구조의 정글 사이에서, 각자의 길을 개척하며, 걷습니다. &lt;ATC 2024&gt;에서 수많은 작품들은 다양한 색채와 형태로 질문에 대답하며, 저마다 다른 방식으로 이 도전과 마주합니다.
-                        </p>
-                        <p className="w-full sm:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
-                            We draw maps both alone and together, then share stories about them. The maps
-                            we create are not merely
-                            about marking roads and places; they become tools that reveal—and even generate—our perspectives on the
-                            world.
-                        </p>
-                        <a href="#" className="inline-flex items-center w-auto font-['Monoplex KR'] font-[450] text-base leading-[180%] tracking-tighter underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
-                            전시 배치도 Exhibiton Map
-                            <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle mb-[3px]" />
-                        </a>
-                    </div>
-                </div>
-
-                {/* 버튼 영역 */}
-                <div className="WorkList-Button clear-both overflow-hidden w-[calc(100%-80px)] mx-auto mb-10 relative z-50">
-
-                    <div className="float-left flex gap-10">
-                        <button
-                            id="Randomize-btn"
-                            onClick={handleRandomize}
-                            className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
-                        >
-                            Randomize 
-                            <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
-                        </button>
-                        <button
-                            id="Sort-btn"
-                            onClick={handleSort}
-                            className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
-                                ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' : 
-                                  currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
-                            }
-                            disabled={currentView === 'makers' && makersArtistGroups.length === 0} 
-                        >
-                            {sortButtonText} 
-                            <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
-                        </button>
+                        <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
+                            <p className="w-full xl:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
+                                기술은 과감해졌고, 기술은 정교해졌습니다.
+                                아트&테크놀로지라는 사회 속에서 우리는 항상 그 사이의 미묘한 균형을 찾고 있습니다. 자유로운 표현의 바다와 정밀한 구조의 정글 사이에서, 각자의 길을 개척하며, 걷습니다. &lt;ATC 2024&gt;에서 수많은 작품들은 다양한 색채와 형태로 질문에 대답하며, 저마다 다른 방식으로 이 도전과 마주합니다.
+                            </p>
+                            <p className="w-full xl:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
+                                We draw maps both alone and together, then share stories about them. The maps
+                                we create are not merely
+                                about marking roads and places; they become tools that reveal—and even generate—our perspectives on the
+                                world.
+                            </p>
+                            <a href="#" className="inline-flex items-center w-auto font-['Monoplex KR'] font-[450] text-base leading-[180%] tracking-tighter underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
+                                전시 배치도 Exhibiton Map
+                                <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle mb-[3px]" />
+                            </a>
+                        </div>
                     </div>
 
-                    <div className="float-right flex gap-10">
-                        <button
-                            id="Gallery-btn"
-                            onClick={() => handleSwitchView('gallery')}
-                            className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
-                        >
-                            Gallery 
-                            <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
-                        </button>
-                        <button
-                            id="Makers-btn"
-                            onClick={() => handleSwitchView('makers')}
-                            className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
-                        >
-                            Makers 
-                            <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
-                        </button>
+                    {/* 버튼 영역 */}
+                    <div className="WorkList-Button clear-both overflow-hidden mb-10 relative z-50">
+
+                        <div className="float-left flex gap-10">
+                            <button
+                                id="Randomize-btn"
+                                onClick={handleRandomize}
+                                className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                            >
+                                <span className="hidden md:inline">Randomize</span> 
+                                <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
+                            </button>
+                            <button
+                                id="Sort-btn"
+                                onClick={handleSort}
+                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                                    ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' : 
+                                    currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
+                                }
+                                disabled={currentView === 'makers' && makersArtistGroups.length === 0} 
+                            >
+                                <span className="hidden md:inline">{sortButtonText}</span>
+                                <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
+                            </button>
+                        </div>
+
+                        <div className="float-right flex gap-10">
+                            <button
+                                id="Gallery-btn"
+                                onClick={() => handleSwitchView('gallery')}
+                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
+                            >
+                                <span className="hidden md:inline">Gallery</span>
+                                <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
+                            </button>
+                            <button
+                                id="Makers-btn"
+                                onClick={() => handleSwitchView('makers')}
+                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
+                            >
+                                <span className="hidden md:inline">Makers</span>
+                                <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                {/* Gallery */}
-                <div
-                    id="Gallery"
-                    className={`grid grid-cols-5 gap-x-6 gap-y-20 pt-6 px-10 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
-                >
-                    {sortedArtworks.map(art => (
-                        <ArtworkCard key={art.id} art={art} />
-                    ))}
-                </div>
+                    {/* Gallery */}
+                    <div
+                        id="Gallery"
+                        className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-20 pt-6 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
+                    >
+                        {sortedArtworks.map(art => (
+                            <ArtworkCard key={art.id} art={art} />
+                        ))}
+                    </div>
 
-                {/* Makers List */}
-                <div
-                    id="Makers-List"
-                    className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
-                    ${currentView === 'makers' ? 'block active' : 'hidden'}
-                    before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                    after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
-                >
-                    {makersArtistGroups.map((group) => (
-                        <MakersArtistGroup key={group.artist} group={group} />
-                    ))}
+                    {/* Makers List */}
+                    <div
+                        id="Makers-List"
+                        className={`pt-0 box-border border-t clear-both relative 
+                        ${currentView === 'makers' ? 'block active' : 'hidden'}
+                        before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`} 
+                    >
+                        {makersArtistGroups.map((group) => (
+                            <MakersArtistGroup key={group.artist} group={group} />
+                        ))}
+                    </div>
                 </div>
             </main>
 
