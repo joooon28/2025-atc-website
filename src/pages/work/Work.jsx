@@ -221,22 +221,18 @@ export default function Work() {
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
     const initialSortParam = getQueryParam('sort');
 
-    // 정렬 파라미터가 'desc'일 때만 Z-A(false), 나머지는 A-Z(true)
     const initialAscending = initialSortParam === 'desc' ? false : true; 
 
     const [currentView, setCurrentView] = useState(initialView);
-    // Sort 파라미터가 있을 때만 해당 정렬 상태를 유지합니다. 없으면 A-Z (true)
     const [isAscending, setIsAscending] = useState(initialSortParam ? initialAscending : true); 
 
     const [sortedArtworks, setSortedArtworks] = useState(() => {
         
-        // 1. URL에 'sort' 파라미터가 명시적으로 있을 때만 정렬을 적용합니다. (A-Z/Z-A 유지)
         if (initialSortParam) {
             const sortBy = initialView === 'makers' ? 'artist' : 'title';
             return sortArtworksFn(initialArtworks, initialAscending, sortBy);
         }
         
-        // 2. URL에 'sort' 파라미터가 없거나 아예 쿼리가 없는 경우: 무조건 무작위 정렬을 적용합니다. (사용자 요청 반영)
         return shuffle(initialArtworks);
     });
 
@@ -258,7 +254,6 @@ export default function Work() {
         }, {});
 
         Object.values(grouped).forEach(group => {
-            // Makers 뷰 내에서 작품 정렬은 항상 제목 오름차순
             group.works = sortArtworksFn(group.works, true, 'title'); 
         });
 
@@ -285,22 +280,19 @@ export default function Work() {
         window.removeEventListener('scroll', saveScrollPosition);
     }, [location.pathname]);
 
-    // **[핵심 수정]** 뷰 전환 시 URL에 view만 명시하고, sort 파라미터를 추가하지 않습니다.
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
-        setIsAscending(true); // 뷰 전환 시는 A-Z 상태로 초기화
+        setIsAscending(true);
 
         let newList;
         let newSearchParams = `?view=${mode}`;
         
-        // Makers로 전환 시: 랜덤 정렬 상태로 시작 (URL에 sort를 명시하지 않아 새로고침 시에도 랜덤을 보장)
         newList = shuffle(initialArtworks); 
         
         setSortedArtworks(newList);
         navigate(newSearchParams, { replace: true });
     };
 
-    // Randomize 버튼 클릭 시 URL에서 sort 파라미터를 제거하고 무작위 정렬을 적용합니다.
     const handleRandomize = () => {
         setIsAscending(true); 
 
@@ -310,11 +302,9 @@ export default function Work() {
             setSortedArtworks(shuffle(initialArtworks));
         }
         
-        // URL 업데이트: sort 상태를 제거하여 새로고침 시에도 랜덤 정렬이 먹히도록 합니다.
         navigate(`?view=${currentView}`, { replace: true });
     };
 
-    // Sort 버튼 클릭 시 URL에 현재 정렬 방향을 반영합니다.
     const handleSort = () => {
         const sortBy = currentView === 'makers' ? 'artist' : 'title';
         const newAscending = !isAscending;
@@ -323,7 +313,6 @@ export default function Work() {
         setSortedArtworks(sorted);
         setIsAscending(newAscending);
 
-        // URL 업데이트: 정렬 상태를 URL에 반영
         const sortParam = newAscending ? 'asc' : 'desc';
         navigate(`?view=${currentView}&sort=${sortParam}`, { replace: true });
     };
@@ -332,7 +321,6 @@ export default function Work() {
         ? 'A–Z'
         : 'Z–A';
 
-    // sortedArtworks의 순서를 기반으로 아티스트 그룹을 생성
     const makersArtistGroups = currentView === 'makers'
         ? groupArtworksByArtist(sortedArtworks, true)
         : [];
