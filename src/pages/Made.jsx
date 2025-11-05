@@ -7,27 +7,27 @@ import "swiper/css/navigation";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const HEADER_HEIGHT = 45;
+const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
 
 const MadeBox = ({ images, title, kr, en, location }) => {
   return (
-    <div className="Made-Detail-Box w-full md:w-[calc(50%-20px)] flex flex-col gap-5 h-[calc(100vh-165px)] box-border">
-      <div className="relative w-full flex-1 overflow-hidden rounded-sm">
+    <div className="Made-Detail-Box w-full md:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border">
+      <div className="relative w-full overflow-hidden rounded-sm">
         <Swiper modules={[Navigation]} navigation className="absolute inset-0 w-full h-full">
           {images.map((src, i) => (
             <SwiperSlide key={i}>
               <img
                 src={src}
                 alt={`${title} 이미지 ${i + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-[372px] object-cover"
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      <div className="Made-Detail-Text flex flex-col gap-3">
+      <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
           id="Made-Detail-Title"
           className="font-[var(--font-mono)] text-[15px] leading-[1.45] tracking-[-0.005em] font-semibold"
