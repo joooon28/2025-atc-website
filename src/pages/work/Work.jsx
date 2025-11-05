@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -210,27 +210,35 @@ const MakersArtistGroup = React.memo(({ group }) => {
 export default function Work() {
     
     const location = useLocation();
+    const navigate = useNavigate();
 
     const getQueryParam = useCallback((param) => {
         const urlParams = new URLSearchParams(location.search);
         return urlParams.get(param);
     }, [location.search]);
 
-    const initialView = (() => {
-        const viewFromQuery = getQueryParam('view');
-        if (viewFromQuery === 'gallery' || viewFromQuery === 'makers') {
-            return viewFromQuery;
-        }
-        return 'gallery';
-    })();
+    
+    const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
+    const initialSortParam = getQueryParam('sort');
 
-    const initialSortedList = (getQueryParam('view') === 'makers' || getQueryParam('view') === 'gallery')
-        ? sortArtworksFn(initialArtworks, true, initialView === 'makers' ? 'artist' : 'title')
-        : shuffle(initialArtworks);
+    // 정렬 파라미터가 'desc'일 때만 Z-A(false), 나머지는 A-Z(true)
+    const initialAscending = initialSortParam === 'desc' ? false : true; 
 
     const [currentView, setCurrentView] = useState(initialView);
-    const [isAscending, setIsAscending] = useState(true);
-    const [sortedArtworks, setSortedArtworks] = useState(initialSortedList);
+    // Sort 파라미터가 있을 때만 해당 정렬 상태를 유지합니다. 없으면 A-Z (true)
+    const [isAscending, setIsAscending] = useState(initialSortParam ? initialAscending : true); 
+
+    const [sortedArtworks, setSortedArtworks] = useState(() => {
+        
+        // 1. URL에 'sort' 파라미터가 명시적으로 있을 때만 정렬을 적용합니다. (A-Z/Z-A 유지)
+        if (initialSortParam) {
+            const sortBy = initialView === 'makers' ? 'artist' : 'title';
+            return sortArtworksFn(initialArtworks, initialAscending, sortBy);
+        }
+        
+        // 2. URL에 'sort' 파라미터가 없거나 아예 쿼리가 없는 경우: 무조건 무작위 정렬을 적용합니다. (사용자 요청 반영)
+        return shuffle(initialArtworks);
+    });
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
@@ -250,6 +258,7 @@ export default function Work() {
         }, {});
 
         Object.values(grouped).forEach(group => {
+            // Makers 뷰 내에서 작품 정렬은 항상 제목 오름차순
             group.works = sortArtworksFn(group.works, true, 'title'); 
         });
 
@@ -262,9 +271,7 @@ export default function Work() {
                     seenArtists.add(work.artist);
                 }
             });
-            return initialArtworks
-                .map(work => work.artist)
-                .filter((artist, index, self) => self.indexOf(artist) === index)
+            return artistOrder
                 .map(artist => grouped[artist])
                 .filter(group => group);
         }
@@ -275,31 +282,39 @@ export default function Work() {
     };
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-
         window.removeEventListener('scroll', saveScrollPosition);
-        
     }, [location.pathname]);
 
+    // **[핵심 수정]** 뷰 전환 시 URL에 view만 명시하고, sort 파라미터를 추가하지 않습니다.
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
-        setIsAscending(true);
-        
+        setIsAscending(true); // 뷰 전환 시는 A-Z 상태로 초기화
+
         let newList;
-        if (mode === 'makers') {
-            newList = sortArtworks(initialArtworks, true, 'artist');
-        } else {
-            newList = shuffle(initialArtworks);
-        }
+        let newSearchParams = `?view=${mode}`;
+        
+        // Makers로 전환 시: 랜덤 정렬 상태로 시작 (URL에 sort를 명시하지 않아 새로고침 시에도 랜덤을 보장)
+        newList = shuffle(initialArtworks); 
+        
         setSortedArtworks(newList);
+        navigate(newSearchParams, { replace: true });
     };
 
+    // Randomize 버튼 클릭 시 URL에서 sort 파라미터를 제거하고 무작위 정렬을 적용합니다.
     const handleRandomize = () => {
-        setSortedArtworks(shuffle(initialArtworks));
-        setIsAscending(true);
-        setCurrentView('gallery');
+        setIsAscending(true); 
+
+        if (currentView === 'makers') {
+            setSortedArtworks(shuffle(sortedArtworks));
+        } else {
+            setSortedArtworks(shuffle(initialArtworks));
+        }
+        
+        // URL 업데이트: sort 상태를 제거하여 새로고침 시에도 랜덤 정렬이 먹히도록 합니다.
+        navigate(`?view=${currentView}`, { replace: true });
     };
 
+    // Sort 버튼 클릭 시 URL에 현재 정렬 방향을 반영합니다.
     const handleSort = () => {
         const sortBy = currentView === 'makers' ? 'artist' : 'title';
         const newAscending = !isAscending;
@@ -307,12 +322,17 @@ export default function Work() {
         const sorted = sortArtworks(initialArtworks, newAscending, sortBy);
         setSortedArtworks(sorted);
         setIsAscending(newAscending);
+
+        // URL 업데이트: 정렬 상태를 URL에 반영
+        const sortParam = newAscending ? 'asc' : 'desc';
+        navigate(`?view=${currentView}&sort=${sortParam}`, { replace: true });
     };
 
     const sortButtonText = isAscending
         ? 'A–Z'
         : 'Z–A';
 
+    // sortedArtworks의 순서를 기반으로 아티스트 그룹을 생성
     const makersArtistGroups = currentView === 'makers'
         ? groupArtworksByArtist(sortedArtworks, true)
         : [];
@@ -365,7 +385,11 @@ export default function Work() {
                         <button
                             id="Sort-btn"
                             onClick={handleSort}
-                            className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                            className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                                ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' : 
+                                  currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
+                            }
+                            disabled={currentView === 'makers' && makersArtistGroups.length === 0} 
                         >
                             {sortButtonText} 
                             <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
@@ -408,7 +432,7 @@ export default function Work() {
                     className={`w-[calc(100%-80px)] mx-auto pt-0 box-border border-t border-label clear-both relative 
                     ${currentView === 'makers' ? 'block active' : 'hidden'}
                     before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                    after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
+                    after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
                 >
                     {makersArtistGroups.map((group) => (
                         <MakersArtistGroup key={group.artist} group={group} />
