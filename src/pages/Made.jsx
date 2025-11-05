@@ -12,15 +12,15 @@ const HEADER_TOP_OFFSET = 40;
 
 const MadeBox = ({ images, title, kr, en, location }) => {
   return (
-    <div className="Made-Detail-Box w-full md:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border">
-      <div className="relative w-full overflow-hidden rounded-sm">
+    <div className="Made-Detail-Box w-full min-[376px]:w-[calc(50%-10px)] min-[701px]:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border">
+      <div className="relative w-full overflow-hidden rounded-sm aspect-video">
         <Swiper modules={[Navigation]} navigation className="absolute inset-0 w-full h-full">
           {images.map((src, i) => (
             <SwiperSlide key={i}>
               <img
                 src={src}
                 alt={`${title} 이미지 ${i + 1}`}
-                className="w-full h-[372px] object-cover"
+                className="w-full h-full object-cover"
               />
             </SwiperSlide>
           ))}
@@ -77,8 +77,8 @@ const Made = () => {
           paddingTop: `${HEADER_HEIGHT + HEADER_TOP_OFFSET}px`,
         }}
       >
-        <section className="w-full p-10 flex flex-col gap-[60px] box-border">
-          <div className="w-full flex justify-between items-start gap-5 flex-wrap">
+        <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[60px] box-border">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
               images={[
                 "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
@@ -104,7 +104,7 @@ const Made = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between items-start gap-5 flex-wrap">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
               images={[
                 "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
