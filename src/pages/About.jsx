@@ -339,7 +339,7 @@ const FourthSection = () => {
             className="border border-[#362C11] px-6 py-3 bg-[#F3F3EC] font-['Monoplex KR'] font-normal text-base leading-none hover:cursor-pointer text-[#362C11]"
             onClick={handleCreditMoreClick}
           >
-            크레딧 자세히 보기
+            See More
           </button>
         </a>
       </div>
