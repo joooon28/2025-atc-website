@@ -1,12 +1,17 @@
 export default function PreviousList({
-  title = "지도 그리기",
-  eng = "Drawing Map",
-  time = "9.30. (THU) 16:00-18:00",
-  image,
-  detailKo,
-  detailEng,
+  title,
+  titleeng,
+  date,
+  main,
+  sub1,
+  text,
+  texteng,
+  detailKo1,
+  detailEng1,
+  detailKo2,
+  detailEng2,
   onMoreInfo,
-  rounded = false,
+  rounded,
 }) {
   return (
     <div className="flex flex-col gap-5 w-[min(100%,500px)] shrink-0">
@@ -15,10 +20,10 @@ export default function PreviousList({
           rounded ? "rounded-[300px]" : ""
         }`}
       >
-        {image ? (
+        {main ? (
           <img
             draggable={false}
-            src={image}
+            src={main}
             alt={title}
             className="w-full object-cover"
           />
@@ -29,22 +34,27 @@ export default function PreviousList({
       <div className="flex flex-col gap-3">
         <div className="flex gap-[10px] font-[450]">
           <p>{title}</p>
-          <p className="italic">{eng}</p>
+          <p className="italic">{titleeng}</p>
         </div>
-        <p className="flex text-[14px]">{time}</p>
+        <p className="flex text-[14px]">{date}</p>
         <p className="flex text-[14px] whitespace-normal max-tablet:hidden">
-          {detailKo}
+          {text}
         </p>
         <button
           type="button"
           onClick={() =>
             onMoreInfo?.({
               title,
-              eng,
-              time,
-              detailKo,
-              detailEng,
-              image,
+              titleeng,
+              date,
+              text,
+              texteng,
+              detailKo1,
+              detailEng1,
+              detailKo2,
+              detailEng2,
+              main,
+              sub1,
             })
           }
           className="flex text-[14px] underline cursor-pointer"

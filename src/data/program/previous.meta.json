@@ -4,6 +4,7 @@
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
@@ -14,16 +15,19 @@
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
-    "detailEng2": "상세 영어 본문2"
+    "detailEng2": "상세 영어 본문2",
+    "rounded": "false"
   },
   "program3": {
     "title": "지도 그리기3",
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
@@ -34,16 +38,19 @@
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
-    "detailEng2": "상세 영어 본문2"
+    "detailEng2": "상세 영어 본문2",
+    "rounded": "false"
   },
   "program5": {
     "title": "지도 그리기5",
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
@@ -54,16 +61,19 @@
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
-    "detailEng2": "상세 영어 본문2"
+    "detailEng2": "상세 영어 본문2",
+    "rounded": "false"
   },
   "program7": {
     "title": "지도 그리기7",
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
@@ -74,9 +84,11 @@
     "titleeng": "Drawing Map",
     "date": "09.30. (THU) 16:00-18:00",
     "text": "프로그램 설명",
+    "texteng": "프로그램 설명 영어",
     "detailKo1": "상세 한글 본문1",
     "detailEng1": "상세 영어 본문1",
     "detailKo2": "상세 한글 본문2",
-    "detailEng2": "상세 영어 본문2"
+    "detailEng2": "상세 영어 본문2",
+    "rounded": "false"
   }
 }

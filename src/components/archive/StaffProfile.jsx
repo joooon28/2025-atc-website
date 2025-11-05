@@ -39,7 +39,7 @@ export default function StaffProfile({
         {isVideo ? (
           <video
             src={imagesrc}
-            className="w-full h-full object-cover scale-250"
+            className="w-full h-full object-cover object-[50%_0px] scale-110"
             autoPlay
             muted
             loop

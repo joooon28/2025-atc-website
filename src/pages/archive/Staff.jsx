@@ -153,7 +153,7 @@ export default function Staff({ onClose }) {
             />
             <StaffProfile
               name="김성은"
-              nameEng=" "
+              nameEng="Seongeun Kim "
               mail="vmiodneoo@gmail.com"
               imagesrc={images.Junsu}
             />

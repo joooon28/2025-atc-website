@@ -7,10 +7,39 @@ import MoreInfo from "../../components/program/previous/MoreInfo";
 import { useState, useRef, useEffect } from "react";
 import MenuToggle from "../../components/menu/MenuToggle";
 
+import images from "../../data/program/program.json";
+import programs from "../../data/program/program.meta.json";
+
+const items = Object.keys(programs).map((key) => {
+  const meta = programs[key];
+  const img = images[key];
+
+  return {
+    id: key,
+    title: meta.title,
+    number: meta.number,
+    titleeng: meta.titleeng,
+    date1: meta.date1,
+    date2: meta.date2,
+    date3: meta.date3,
+    text: meta.text,
+    texteng: meta.texteng,
+    detailKo1: meta.detailKo1,
+    detailEng1: meta.detailEng1,
+    detailKo2: meta.detailKo2,
+    detailEng2: meta.detailEng2,
+    rounded: meta.rounded,
+    main: img.main,
+    sub1: img.sub1,
+  };
+});
+
 export default function Program() {
   const [selected, setSelected] = useState(null);
   const [showSheet, setShowSheet] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+
+  const [activeId, setActiveId] = useState(null);
 
   const openSheet = (item) => {
     setSelected(item);
@@ -21,6 +50,11 @@ export default function Program() {
 
   const scrollerRef = useRef(null);
   const justDraggedRef = useRef(false);
+
+  const handleActivate = (next) => {
+    if (justDraggedRef.current) return;
+    setActiveId(next);
+  };
 
   useEffect(() => {
     const el = scrollerRef.current;
@@ -118,67 +152,62 @@ export default function Program() {
           <MenuToggle />
         </div>
       </div>
-      <section className="grid grid-cols-1 md:grid-cols-2  gap-10 p-10">
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
         <div className="max-[768px]:order-2 flex flex-col gap-[8.5px]">
           <div className="font-[600] text-[24px] flex gap-3">
             <p>프로그램</p>
             <p className="italic">Program</p>
           </div>
+
           <section>
-            <ProgramList
-              title="오프닝 행사"
-              eng="Opening Party"
-              onMoreInfo={openSheet}
-            />
-            <ProgramList
-              number="2"
-              title="안녕"
-              eng="Opening Party"
-              onMoreInfo={openSheet}
-            />
-            <ProgramList
-              number="3"
-              title="오프닝 행사2"
-              eng="Opening Party"
-              onMoreInfo={openSheet}
-            />
-            <ProgramList
-              number="4"
-              title="오프닝 행3"
-              eng="Opening Party"
-              onMoreInfo={openSheet}
-            />
+            {items.map((it) => (
+              <ProgramList
+                id={it.id}
+                title={it.title}
+                number={it.number}
+                titleeng={it.titleeng}
+                date1={it.date1}
+                date2={it.date2}
+                date3={it.date3}
+                text={it.text}
+                texteng={it.texteng}
+                detailKo1={it.detailKo1}
+                detailEng1={it.detailEng1}
+                detailKo2={it.detailKo2}
+                detailEng2={it.detailEng2}
+                rounded={it.rounded}
+                main={it.main}
+                sub1={it.sub1}
+                onMoreInfo={openSheet}
+                activeId={activeId}
+                onActivate={handleActivate}
+              />
+            ))}
+
             <div
-              className=" flex hover:bg-mint-6 
-    border-t border-label
-    relative [--dot:6px] [--b:1px]
-    
-        before:content-[''] before:absolute
-        before:left-0 before:top-[var(--b)]
-        before:w-[var(--dot)] before:h-[var(--dot)]
-        before:rounded-full before:bg-label
-        before:-translate-x-1/2 before:-translate-y-3/4
-        before:pointer-events-none 
-
-        after:content-[''] after:absolute
-        after:right-0 after:top-[var(--b)]
-        after:w-[var(--dot)] after:h-[var(--dot)]
-        after:rounded-full after:bg-label
-        after:translate-x-1/2 after:-translate-y-3/4
-        after:pointer-events-none 
-
-    "
+              className='flex hover:bg-mint-6 border-t border-label relative [--dot:6px] [--b:1px]
+                before:content-[""] before:absolute before:left-0 before:top-[var(--b)]
+                before:w-[var(--dot)] before:h-[var(--dot)] before:rounded-full before:bg-label
+                before:-translate-x-1/2 before:-translate-y-3/4 before:pointer-events-none
+                after:content-[""] after:absolute after:right-0 after:top-[var(--b)]
+                after:w-[var(--dot)] after:h-[var(--dot)] after:rounded-full after:bg-label
+                after:translate-x-1/2 after:-translate-y-3/4 after:pointer-events-none'
             />
           </section>
         </div>
+
         <ProgramCalendar />
       </section>
+
       <section className="pl-10 py-20">
         <Previous />
       </section>
+
       <div className="mt-auto">
         <Footer />
       </div>
+
       {showSheet && (
         <div className="fixed inset-0 z-50">
           <button

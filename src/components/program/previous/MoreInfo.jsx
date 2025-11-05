@@ -8,11 +8,15 @@ export default function MoreInfo({
   title,
   titleeng,
   date,
-  detailKo,
-  detailEng,
-  image,
+  text,
+  texteng,
+  detailKo1,
+  detailEng1,
+  detailKo2,
+  detailEng2,
+  main,
+  sub1,
 }) {
-  // 실제로 스크롤되는 가장 가까운 조상 컨테이너를 찾는다.
   const getScrollContainer = (startEl) => {
     let el = startEl;
     while (el) {
@@ -24,7 +28,6 @@ export default function MoreInfo({
       if (canScroll) return el;
       el = el.parentElement;
     }
-    // 없으면 문서 스크롤로 폴백
     return document.scrollingElement || document.documentElement;
   };
 
@@ -39,7 +42,6 @@ export default function MoreInfo({
     };
   }, []);
 
-  // 팝업 내부/윈도우 스크롤 감지 (어떤 경우든 스크롤 시작하면 표시)
   useEffect(() => {
     const el = scrollRef.current;
     const computeShow = () => {
@@ -67,28 +69,28 @@ export default function MoreInfo({
       </div>
       <div
         ref={scrollRef}
-        className="flex-1 flex px-[220px] max-desktop:px-[40px] max-tablet:px-[0px] justify-center overflow-y-auto"
+        className="flex-1 flex px-[220px] max-[1001px]:px-[0px] justify-center overflow-y-auto"
       >
-        {" "}
-        <section className="flex flex-col w-full max-tablet:p-[20px] gap-10">
-          <div className="flex flex-col gap-5">
-            <div className="flex gap-[10px] font-[450] text-[24px]">
-              <p>{title}</p>
-              <p className="italic">{titleeng}</p>
+        <div className="p-10 max-tablet: px-5">
+          <section className="flex flex-col w-full gap-10">
+            <div className="flex flex-col gap-5">
+              <div className="flex gap-[10px] font-[450] text-[24px]">
+                <p>{title}</p>
+                <p className="italic">{titleeng}</p>
+              </div>
+              <p className="flex text-[14px] font-[450]">{date}</p>
+              <p className="flex text-[14px] whitespace-normal ">{text}</p>
+              <p className="flex text-[14px] whitespace-normal ">{texteng}</p>
             </div>
-            <p className="flex text-[14px] font-[450]">{date}</p>
-            <p className="flex text-[14px] whitespace-normal ">{detailKo}</p>
-            <p className="flex text-[14px] whitespace-normal ">{detailEng}</p>
-          </div>
-          <div className="flex w-full aspect-[1.85] overflow-hidden">
-            {image ? (
-              <img src={image} alt={title} className="w-full object-cover" />
-            ) : (
-              "img"
-            )}
-          </div>
-          <div
-            className=" 
+            <div className="flex w-full aspect-[1.85] overflow-hidden">
+              {main ? (
+                <img src={main} alt={title} className="w-full object-cover" />
+              ) : (
+                "img"
+              )}
+            </div>
+            <div
+              className=" 
                     group flex hover:bg-mint-6 
                     border-t border-label py-3 
                     relative [--dot:6px] [--b:1px] [--expand:250px]
@@ -107,8 +109,24 @@ export default function MoreInfo({
                     after:translate-x-1/2 after:-translate-y-3/4
                     after:pointer-events-none 
                 "
-          />
-        </section>
+            />
+            <p className="flex text-[14px] whitespace-normal ">{detailKo1}</p>
+            <p className="flex text-[14px] whitespace-normal ">{detailEng1}</p>
+            <div className="flex w-full aspect-[1.85] overflow-hidden">
+              {sub1 ? (
+                <img
+                  src={sub1}
+                  alt={title}
+                  className="flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]"
+                />
+              ) : (
+                "img"
+              )}
+            </div>
+            <p className="flex text-[14px] whitespace-normal ">{detailKo2}</p>
+            <p className="flex text-[14px] whitespace-normal ">{detailEng2}</p>
+          </section>
+        </div>
       </div>
       <div className="mt-auto">
         <Footer />
@@ -124,12 +142,10 @@ export default function MoreInfo({
           )?.matches;
           const behavior = reduce ? "auto" : "smooth";
 
-          // scrollRef가 가리키든 아니든, 실제 스크롤 컨테이너를 찾아서 올린다.
           const target = getScrollContainer(
             scrollRef.current || document.activeElement
           );
 
-          // 문서 스크롤 폴백이면 window로
           if (
             target === document.scrollingElement ||
             target === document.documentElement ||
@@ -137,7 +153,6 @@ export default function MoreInfo({
           ) {
             window.scrollTo({ top: 0, behavior });
           } else {
-            // 일부 구형 iOS 대비: scrollTo 없으면 scrollTop 직접 세팅
             if (typeof target.scrollTo === "function") {
               target.scrollTo({ top: 0, behavior });
             } else {
@@ -148,20 +163,16 @@ export default function MoreInfo({
         aria-label="팝업 맨 위로 이동"
         className={[
           "max-desktop:hidden",
-          // 위치 (우측 정중앙 고정)
           "fixed right-[calc(theme(spacing.4)+env(safe-area-inset-right))] md:right-[calc(theme(spacing.6)+env(safe-area-inset-right))]",
           "top-1/2 -translate-y-1/2 -translate-x-1/2 z-[60]",
 
-          // 스타일
           "flex justify-center items-center w-12 h-12 p-3 rounded-full",
           "border border-label bg-fill-primary",
 
-          // 보임/숨김 (기존 showTop 그대로 사용)
           showTop
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none",
 
-          // 접근성
           "focus:outline-none focus:ring-2 focus:ring-mint-6",
         ].join(" ")}
       >

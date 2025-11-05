@@ -1,7 +1,30 @@
 import PreviousList from "./PreviousList";
 import { useState, useRef, useEffect } from "react";
 import MoreInfo from "./MoreInfo";
+
 import images from "../../../data/program/previous.json";
+import programs from "../../../data/program/previous.meta.json";
+
+const items = Object.keys(programs).map((key) => {
+  const meta = programs[key];
+  const img = images[key];
+
+  return {
+    id: key,
+    title: meta.title,
+    titleeng: meta.titleeng,
+    date: meta.date,
+    text: meta.text,
+    texteng: meta.texteng,
+    detailKo1: meta.detailKo1,
+    detailEng1: meta.detailEng1,
+    detailKo2: meta.detailKo2,
+    detailEng2: meta.detailEng2,
+    rounded: meta.rounded,
+    main: img.main,
+    sub1: img.sub1,
+  };
+});
 
 export default function Previous() {
   const [selected, setSelected] = useState(null);
@@ -143,54 +166,26 @@ export default function Previous() {
           }}
           className="flex gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pr-10"
         >
-          <PreviousList
-            title="지도 그리기"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            detailKo="상세 한글 본문"
-            detailEng="Detailed English paragraph…"
-            image={images.DrawingMap}
-            onMoreInfo={openSheet}
-          />
-          <PreviousList
-            title="지도 그리기1"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            detailKo="상세 한글 본문1"
-            detailEng="Detailed English paragraph…"
-            image={images.default}
-            rounded={true}
-            onMoreInfo={openSheet}
-          />
-          <PreviousList
-            title="지도 그리기2"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            detailKo="상세 한글 본문2"
-            detailEng="Detailed English paragraph…"
-            image={images.default}
-            onMoreInfo={openSheet}
-          />
-          <PreviousList
-            title="지도 그리기3"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            detailKo="상세 한글 본문3"
-            detailEng="Detailed English paragraph…"
-            image={images.default}
-            rounded={true}
-            onMoreInfo={openSheet}
-          />
-          <PreviousList
-            title="지도 그리기4"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            detailKo="상세 한글 본문4"
-            detailEn="Detailed English paragraph…"
-            image={images.default}
-            onMoreInfo={openSheet}
-          />
+          {items.map((it) => (
+            <PreviousList
+              key={it.id}
+              title={it.title}
+              titleeng={it.titleeng}
+              date={it.date}
+              text={it.text}
+              texteng={it.texteng}
+              detailKo1={it.detailKo1}
+              detailEng1={it.detailEng1}
+              detailKo2={it.detailKo2}
+              detailEng2={it.detailEng2}
+              rounded={it.rounded}
+              main={it.main}
+              sub1={it.sub1}
+              onMoreInfo={openSheet}
+            />
+          ))}
         </section>
+
         <div className="pr-10">
           <div
             className=" flex
