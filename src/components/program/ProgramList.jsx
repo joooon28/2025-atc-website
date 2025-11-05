@@ -36,7 +36,11 @@ export default function ProgramList({
     "
     >
       <section className="flex">
-        <div className="tex-center px-5 text-[20px] font-[500]">({number})</div>
+        <div className="text-center px-5 text-[20px] text-label font-[500]">
+          <div className="flex justfiy-center items-center">
+            (<p className="text-[15px]">{number}</p>)
+          </div>
+        </div>
 
         <div className="flex flex-col pr-4">
           <div
@@ -46,10 +50,10 @@ export default function ProgramList({
             className="flex flex-col gap-10 cursor-pointer select-none"
           >
             <div className="flex min-[847px]:gap-3 text-[20px] max-[847px]:flex-col max-[287px]:gap-[6px]">
-              <p>{title}</p>
-              <p className="italic">{eng}</p>
+              <p className="text-label">{title}</p>
+              <p className="italic text-label">{eng}</p>
             </div>
-            <p className="text-[14px]">{date}</p>
+            <p className="text-[14px] text-label">{date}</p>
           </div>
 
           <div
@@ -60,7 +64,7 @@ export default function ProgramList({
             ].join(" ")}
           >
             <div className="flex flex-col gap-10 pt-10">
-              <div className="text-[14px]">{text}</div>
+              <div className="text-[14px] text-label">{text}</div>
               <button
                 type="button"
                 onClick={() =>

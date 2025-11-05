@@ -101,7 +101,7 @@ export default function Staff({ onClose }) {
         <section className="flex flex-col gap-5 w-full">
           <div className="text-[24px] font-semibold italic flex gap-3">
             <p>대외협력팀</p>
-            <p>Program Team</p>
+            <p>Business Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -134,7 +134,7 @@ export default function Staff({ onClose }) {
           </div>
         </section>
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-semibold italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>비주얼 디자인팀</p>
             <p>Visual Design Team</p>
           </div>

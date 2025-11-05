@@ -3,7 +3,7 @@ import LogoBrown from "../assets/LogoBrown.svg";
 import { InstagramLogoIcon, YoutubeLogoIcon } from "@phosphor-icons/react";
 import Smilegate from "../assets/SmilegateLogo.svg";
 import Jampot from "../assets/JampotLogo.svg";
-import Dotollim from "../assets/DotollimLogo.svg";
+import Dotollim from "../assets/DotollimLogo.png";
 
 // <Footer showSponsorship="true"/> -> sponsorship 섹션 보임
 export default function Footer({ showSponsorship = false }) {
@@ -73,7 +73,7 @@ export default function Footer({ showSponsorship = false }) {
             <div>
               <img src={Jampot} alt="Jampot" />
             </div>
-            <div>
+            <div className="w-[61px] h-auto">
               <img src={Dotollim} alt="Dotollim" />
             </div>
           </section>

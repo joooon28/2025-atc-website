@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 export default function MoreInfo({
   onClose,
   title,
-  eng,
-  time,
+  titleeng,
+  date,
   detailKo,
   detailEng,
   image,
@@ -74,9 +74,9 @@ export default function MoreInfo({
           <div className="flex flex-col gap-5">
             <div className="flex gap-[10px] font-[450] text-[24px]">
               <p>{title}</p>
-              <p className="italic">{eng}</p>
+              <p className="italic">{titleeng}</p>
             </div>
-            <p className="flex text-[14px] font-[450]">{time}</p>
+            <p className="flex text-[14px] font-[450]">{date}</p>
             <p className="flex text-[14px] whitespace-normal ">{detailKo}</p>
             <p className="flex text-[14px] whitespace-normal ">{detailEng}</p>
           </div>

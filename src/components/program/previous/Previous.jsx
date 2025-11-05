@@ -146,10 +146,10 @@ export default function Previous() {
           <PreviousList
             title="지도 그리기"
             eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:11"
+            time="9.30. (THU) 16:00-18:00"
             detailKo="상세 한글 본문"
             detailEng="Detailed English paragraph…"
-            image={images.default}
+            image={images.DrawingMap}
             onMoreInfo={openSheet}
           />
           <PreviousList

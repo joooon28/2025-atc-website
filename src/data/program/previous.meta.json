@@ -1,0 +1,82 @@
+{
+  "program1": {
+    "title": "지도 그리기",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program2": {
+    "title": "지도 그리기2",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program3": {
+    "title": "지도 그리기3",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program4": {
+    "title": "지도 그리기4",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program5": {
+    "title": "지도 그리기5",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program6": {
+    "title": "지도 그리기6",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program7": {
+    "title": "지도 그리기7",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  },
+  "program8": {
+    "title": "지도 그리기8",
+    "titleeng": "Drawing Map",
+    "date": "09.30. (THU) 16:00-18:00",
+    "text": "프로그램 설명",
+    "detailKo1": "상세 한글 본문1",
+    "detailEng1": "상세 영어 본문1",
+    "detailKo2": "상세 한글 본문2",
+    "detailEng2": "상세 영어 본문2"
+  }
+}

@@ -32,10 +32,26 @@ export default function StaffProfile({
       : `https://${website}`
     : null;
 
+  const isVideo = /\.(mp4|mov)$/i.test(imagesrc ?? "");
   return (
     <section className="flex flex-col gap-2">
-      <div className="aspect-[3/4] w-full over-hidden">
-        <img src={imagesrc} alt={name} className="w-full h-full object-cover" />
+      <div className="aspect-[3/4] w-full overflow-hidden">
+        {isVideo ? (
+          <video
+            src={imagesrc}
+            className="w-full h-full object-cover scale-250"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <img
+            src={imagesrc}
+            alt={name}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
 
       <div className="flex flex-col items-start gap-1">
