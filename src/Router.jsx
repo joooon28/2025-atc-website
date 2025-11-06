@@ -8,6 +8,7 @@ import Archive from "./pages/archive/Archive";
 import Documentary from "./pages/archive/documentary/Documentary";
 import Gallery from "./pages/archive/galllery/Gallery";
 import Map from "./pages/Map";
+import Made from "./pages/Made"
 import Playground from "./pages/Playground";
 import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
@@ -30,16 +31,18 @@ const router = createBrowserRouter([
   {
     path: "/work",
     element: <Work />,
-    children: [
-      {
-        path: ":id",
-        element: <WorkDetail />,
-      },
-    ],
+  },
+  {
+    path: "/work/:id", 
+    element: <WorkDetail />,
   },
   {
     path: "/program",
     element: <Program />,
+  },
+  {
+    path: "/made",
+    element: <Made />,
   },
   {
     path: "/archive",
