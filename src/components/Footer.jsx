@@ -4,6 +4,7 @@ import { InstagramLogoIcon, YoutubeLogoIcon } from "@phosphor-icons/react";
 import Smilegate from "../assets/SmilegateLogo.svg";
 import Jampot from "../assets/JampotLogo.svg";
 import Dotollim from "../assets/DotollimLogo.png";
+import FutureLab from "../assets/SogangFuturelabLogo.svg";
 
 // <Footer showSponsorship="true"/> -> sponsorship 섹션 보임
 export default function Footer({ showSponsorship = false }) {
@@ -75,6 +76,9 @@ export default function Footer({ showSponsorship = false }) {
             </div>
             <div className="w-[61px] h-auto">
               <img src={Dotollim} alt="Dotollim" />
+            </div>
+            <div className="w-[105px]">
+              <img src={FutureLab} alt="SogangFutureLab" />
             </div>
           </section>
 

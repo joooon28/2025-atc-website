@@ -14,7 +14,14 @@ export default function PreviousList({
   rounded,
 }) {
   return (
-    <div className="flex flex-col gap-5 w-[min(100%,500px)] shrink-0">
+    <div
+      className="
+        flex flex-col gap-5 shrink-0
+        w-[min(100%,500px)]
+        max-[1000px]:w-[400px]
+        max-mobile:w-[250px]
+      "
+    >
       <div
         className={`flex w-full aspect-[1.85] overflow-hidden ${
           rounded ? "rounded-[300px]" : ""
@@ -25,12 +32,13 @@ export default function PreviousList({
             draggable={false}
             src={main}
             alt={title}
-            className="w-full object-cover"
+            className="w-full h-full object-cover"
           />
         ) : (
           "img"
         )}
       </div>
+
       <div className="flex flex-col gap-3">
         <div className="flex gap-[10px] font-[450]">
           <p>{title}</p>

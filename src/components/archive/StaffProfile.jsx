@@ -14,6 +14,8 @@ export default function StaffProfile({
   insta, // "@handle" 또는 "https://instagram.com/handle"
   linkedin, // "https://www.linkedin.com/in/handle"
   website, // "example.com" 또는 "https://example.com"
+  objectPosClass = "object-[50%_0px]",
+  scaleClass = "scale-110",
 }) {
   const emailHref = mail ? `mailto:${mail}` : null;
   const instaHref = insta
@@ -33,24 +35,22 @@ export default function StaffProfile({
     : null;
 
   const isVideo = /\.(mp4|mov)$/i.test(imagesrc ?? "");
+  const mediaClass = `w-full h-full object-cover ${objectPosClass} ${scaleClass}`;
+
   return (
     <section className="flex flex-col gap-2">
       <div className="aspect-[3/4] w-full overflow-hidden">
         {isVideo ? (
           <video
             src={imagesrc}
-            className="w-full h-full object-cover object-[50%_0px] scale-110"
+            className={mediaClass}
             autoPlay
             muted
             loop
             playsInline
           />
         ) : (
-          <img
-            src={imagesrc}
-            alt={name}
-            className="w-full h-full object-cover"
-          />
+          <img src={imagesrc} alt={name} className={mediaClass} />
         )}
       </div>
 

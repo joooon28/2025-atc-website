@@ -5,7 +5,12 @@ export default function MenuPanel() {
   const navigate = useNavigate();
   return (
     <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-4/80 p-[12px]">
-      <img src={LogoBrown} alt="LogoBrown" className="w-[30.158px] h-[21px]" />
+      <img
+        src={LogoBrown}
+        alt="LogoBrown"
+        className="w-[30.158px] h-[21px]"
+        onClick={() => navigate("/main")}
+      />
       <nav>
         <ul className="italic flex flex-col items-center gap-[16px]">
           <li className="cursor-pointer" onClick={() => navigate("/about")}>

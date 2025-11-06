@@ -1,6 +1,12 @@
 import galleryimages from "../../data/archive/gallery.json";
 
-export default function ListSection({ images = "Test1", onClick, date, text }) {
+export default function ListSection({
+  images,
+  onClick,
+  date,
+  text,
+  isActive = false,
+}) {
   const tooltip = [date, text].filter(Boolean).join(" · ");
   const altText = text || images || "Gallery Image";
 
@@ -8,11 +14,16 @@ export default function ListSection({ images = "Test1", onClick, date, text }) {
     <div
       onClick={onClick}
       data-id={images}
-      className="
-        flex flex-col gap-3 justify-end cursor-pointer
-        min-w-[148.5px] shrink-0
+      className={`
+        flex flex-col gap-3 justify-end cursor-pointer shrink-0
         snap-start
-        "
+        max-desktop:flex-[0_0_calc(100%/8)]     
+        max-[1100px]:flex-[0_0_calc(100%/7)]    
+        max-[1000px]:flex-[0_0_calc(100%/6)]    
+        max-[800px]:flex-[0_0_calc(100%/5)]     
+        max-tablet:flex-[0_0_calc(100%/4)]   
+        max-w-[148.5px]   
+      `}
       title={tooltip || undefined}
       role="button"
       tabIndex={0}
@@ -23,13 +34,15 @@ export default function ListSection({ images = "Test1", onClick, date, text }) {
         }
       }}
     >
-      <div className="flex flex-col overflow-hidden gap-3 w-[148.5px]">
-        <div className="relative group flex items-end overflow-hidden h-[198px]">
+      <div className="flex flex-col overflow-hidden gap-3 w-full">
+        <div className="relative group flex items-end overflow-hidden aspect-[2/4]">
           <input
             type="radio"
             name="gallery-click"
             className="peer absolute inset-0 z-10 cursor-pointer opacity-0"
             aria-label="select thumbnail"
+            checked={isActive}
+            readOnly
           />
 
           <img
@@ -60,7 +73,7 @@ export default function ListSection({ images = "Test1", onClick, date, text }) {
           />
         </div>
 
-        <div className="max-w-[148.5px] break-words flex flex-col gap-1">
+        <div className="w-full break-words flex flex-col gap-1">
           <p className="font-[450] text-[14px] text-label">{date}</p>
           <p className="font-[400] text-[14px] text-label">{text}</p>
         </div>

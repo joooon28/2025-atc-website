@@ -16,6 +16,7 @@ const List = forwardRef(function List({ selected, onSelect }, ref) {
         overflow-x-auto
         [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
         [-ms-overflow-style:none]
+        w-full mx-auto
       "
     >
       {ids.map((id) => {

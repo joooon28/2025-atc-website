@@ -2,13 +2,27 @@ import CloseButton from "../../../components/archive/CloseButton";
 import Footer from "../../../components/Footer";
 import GalleryList from "./GalleryList";
 import GalleryMain from "../../../components/gallery/Main";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo, useCallback, useEffect } from "react";
 import gallery from "../../../data/archive/gallery.json";
 import meta from "../../../data/archive/gallery.meta.json";
 
 export default function Gallery({ onClose }) {
-  const [selected, setSelected] = useState("Test1");
+  const [selected, setSelected] = useState(
+    "0710_대외협력팀_킥오프_후_친해진_대협팀"
+  );
   const listRef = useRef(null);
+  const [isShort, setIsShort] = useState(window.innerHeight < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsShort(window.innerHeight < 800);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const idsInOrder = useMemo(() => Object.keys(gallery), []);
+  const idxOf = useCallback((id) => idsInOrder.indexOf(id), [idsInOrder]);
 
   const MONTHS = {
     Jun: "06",
@@ -23,7 +37,6 @@ export default function Gallery({ onClose }) {
     const mm = MONTHS[label];
     if (!mm) return;
 
-    const idsInOrder = Object.keys(gallery);
     const firstId = idsInOrder.find((id) =>
       (meta[id]?.date || "").startsWith(`${mm}.`)
     );
@@ -33,15 +46,53 @@ export default function Gallery({ onClose }) {
     listRef.current?.scrollToId(firstId);
   };
 
+  const selectByStep = useCallback(
+    (step) => {
+      if (!idsInOrder.length) return;
+      const cur = idxOf(selected);
+      const next = Math.min(idsInOrder.length - 1, Math.max(0, cur + step));
+      const nextId = idsInOrder[next];
+      if (nextId && nextId !== selected) {
+        setSelected(nextId);
+        listRef.current?.scrollToId(nextId);
+      }
+    },
+    [idsInOrder, selected, idxOf]
+  );
+
+  const onKeyDown = (e) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      selectByStep(1);
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      selectByStep(-1);
+    }
+  };
+
+  const onWheel = (e) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (delta === 0) return;
+    e.preventDefault();
+    selectByStep(delta > 0 ? 1 : -1);
+  };
+
   return (
-    <div className="flex flex-col min-h-svh">
-      <div className="sticky top-0 inset-x-0 z-10 flex justify-center px-4">
+    <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-svh"}`}>
+      {" "}
+      <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
         </button>
       </div>
-
-      <div className="flex-1 min-h-0 flex flex-col pt-10">
+      <div
+        tabIndex={0}
+        onKeyDown={onKeyDown}
+        onWheel={onWheel}
+        className="flex-1 min-h-0 flex flex-col pt-10 outline-none"
+        aria-label="Gallery navigation region"
+        role="application"
+      >
         <div className="shrink-0 flex justify-center text-center gap-6">
           {["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"].map((m) => (
             <p
@@ -57,13 +108,17 @@ export default function Gallery({ onClose }) {
         <div className="flex-1 p-10 flex justify-center items-center">
           <GalleryMain images={selected} />
         </div>
+
         <div className="mt-auto">
           <GalleryList
             ref={listRef}
             selected={selected}
-            onSelect={setSelected}
+            onSelect={(id) => {
+              setSelected(id);
+            }}
           />
         </div>
+
         <div className="mt-auto min-[501px]:hidden">
           <Footer />
         </div>

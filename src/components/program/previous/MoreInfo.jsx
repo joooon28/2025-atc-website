@@ -62,7 +62,7 @@ export default function MoreInfo({
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col min-h-svh relative">
-      <div className="sticky top-0 inset-x-0 z-10 flex justify-center px-4">
+      <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
         </button>

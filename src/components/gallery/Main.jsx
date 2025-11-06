@@ -1,8 +1,8 @@
 import main from "../../data/archive/gallery.json";
 
-export default function Main({ images = "Test1" }) {
+export default function Main({ images }) {
   return (
-    <div className="flex h-full max-h-[300px] overflow-hidden">
+    <div className="flex h-full max-h-[230px] overflow-hidden">
       <img
         draggable={false}
         src={main[images]}
