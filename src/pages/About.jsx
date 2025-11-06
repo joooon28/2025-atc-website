@@ -78,6 +78,8 @@ const FirstSection = () => {
   );
 };
 
+// SecondSection
+
 const SecondSection = () => {
   return (
     <div className="w-full box-border flex justify-between gap-[40px] 
@@ -149,6 +151,8 @@ const SecondSection = () => {
   );
 };
 
+// ThirdSection
+
 const ThirdSection = () => {
   return (
     <div className="w-full box-border flex justify-between gap-[40px] min-h-[1200px] 
@@ -173,62 +177,6 @@ const ThirdSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none mb-10 text-[#362C11]">
           축사 <span className="font-['Monoplex KR'] font-semibold italic text-[#362C11]">Congratulatory Speech</span>
         </h2>
-
-        <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
-            <p className="mb-3">2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의 방식에 주목한다.</p>
-            <p className="mb-3">
-              우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 위해선 그에 걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다. 피드백 역시 어느새 권위자의 언어를
-              재생산하는
-              일이 되었고, 우리는 ‘내가 뭐라고’, ‘난 저 분야를 잘 모르니까’ 라며 스스로 말을 삼킨다. 우리의 말은 어느새 우리의 것이 아닌 다른 누군가의 언어를 빌려 기능하게
-              된다.
-              우리는 얼만큼 우리 자신의 감각으로 말하고 있는가? 창작에 있어서 스스로의 언어와 체계보다, 다른 누군가의 기준과 평가에 먼저 기대고 있지는 않은가? 누구나 자유롭게 말하고
-              피드백할 수 있는 공동의 장은 여전히 이곳에서 가능한가?</p>
-            <p className="font-medium">서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순</p>
-          </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] border-b border-[#362C11] congratulatory-text-divider">
-            <p className="mb-3">2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique ways in which each of us speaks.</p>
-            <p className="mb-3">
-              We often think of qualifications before words. We assume that to say something meaningful, one
-              must possess the right experiences, knowledge, expertise, or status. Feedback, too, has become
-              the reproduction of an authority’s language, and we swallow our own words with thoughts
-              like, “Who am I to say this?” or “I don’t really know that field.” Our words, then, no longer
-              belong to us but function by borrowing someone else’s language. How much are we truly speaking
-              from our own senses? In creation, do we lean first on the standards and evaluations of others,
-              rather than our own language and system? Is a common space where anyone can speak and give
-              feedback freely still possible here?
-            </p>
-            <p className="font-medium">Sogang Univ. Art&Technology Head of Department <br /> Yongsoon Choi</p>
-          </div>
-        </div>
-
-        <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
-            <p className="mb-3">2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의 방식에 주목한다.</p>
-            <p className="mb-3">
-              우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 위해선 그에 걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다. 피드백 역시 어느새 권위자의 언어를
-              재생산하는
-              일이 되었고, 우리는 ‘내가 뭐라고’, ‘난 저 분야를 잘 모르니까’ 라며 스스로 말을 삼킨다. 우리의 말은 어느새 우리의 것이 아닌 다른 누군가의 언어를 빌려 기능하게
-              된다.
-              우리는 얼만큼 우리 자신의 감각으로 말하고 있는가? 창작에 있어서 스스로의 언어와 체계보다, 다른 누군가의 기준과 평가에 먼저 기대고 있지는 않은가? 누구나 자유롭게 말하고
-              피드백할 수 있는 공동의 장은 여전히 이곳에서 가능한가?</p>
-            <p className="font-medium">서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순</p>
-          </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] border-b border-[#362C11] congratulatory-text-divider">
-            <p className="mb-3">2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique ways in which each of us speaks.</p>
-            <p className="mb-3">
-              We often think of qualifications before words. We assume that to say something meaningful, one
-              must possess the right experiences, knowledge, expertise, or status. Feedback, too, has become
-              the reproduction of an authority’s language, and we swallow our own words with thoughts
-              like, “Who am I to say this?” or “I don’t really know that field.” Our words, then, no longer
-              belong to us but function by borrowing someone else’s language. How much are we truly speaking
-              from our own senses? In creation, do we lean first on the standards and evaluations of others,
-              rather than our own language and system? Is a common space where anyone can speak and give
-              feedback freely still possible here?
-            </p>
-            <p className="font-medium">Sogang Univ. Art&Technology Head of Department <br /> Yongsoon Choi</p>
-          </div>
-        </div>
 
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
@@ -307,7 +255,6 @@ const ThirdSection = () => {
             right: 0;
         }
 
-        /* 겹치는 영역 색상 반전 효과를 위해 임의 값 클래스 추가 */
         .mix-blend-difference {
             mix-blend-mode: difference;
         }
@@ -315,6 +262,8 @@ const ThirdSection = () => {
     </div>
   );
 };
+
+// FourthSection
 
 const FourthSection = () => {
   const navigate = useNavigate();
@@ -324,7 +273,7 @@ const FourthSection = () => {
       <div className="font-['Monoplex KR'] font-semibold text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
         {titleKr} <span className="font-['Monoplex KR'] font-semibold italic">{titleEn}</span>
       </div>
-      <div className={`${titleKr === '웹 개발팀' ? 'mb-[85px] max-[999px]:mb-[40px]' : ''}`}>
+      <div className={`${titleKr === '웹 개발팀' ? 'mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]' : ''}`}>
         {members.map((member, index) => (
           <p key={index} className="font-['Monoplex KR'] font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right">
             {member}
@@ -345,17 +294,17 @@ const FourthSection = () => {
       px-[20px] 
       min-[701px]:px-[40px]" 
     >
+      
       <div className="pt-40 relative flex-shrink-0
         w-[calc(50%-20px)]
         max-[700px]:w-full
         max-[700px]:pt-10 max-[700px]:pb-20
-        max-[375px]:order-2
+        max-[700px]:order-2
         " 
       >
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none mb-10 text-[#362C11] text-right">
           크레딧 <span className="font-['Monoplex KR'] font-semibold italic text-[#362C11]">Credits</span>
         </h2>
-
         <CreditList titleKr="크리에이티브 디렉터" titleEn="Creative Director" members={["김현지 Hyunji Kim"]} />
         <CreditList titleKr="전시팀" titleEn="Exhibition Team" members={["김현진 Hyeonjin Kim \u00A0\u00A0 신서윤 Seoyun Shin", "윤세은 Seeun Yoon \u00A0\u00A0 이윤선 Yoonseon Lee", "황나금 Naguem Hwang", ]} />
         <CreditList titleKr="프로그램팀" titleEn="Program Team" members={["오제우 Jewoo Oh \u00A0\u00A0 김예찬 Yechan Kim", "우서진 Seojin Woo", ]} />
@@ -377,12 +326,13 @@ const FourthSection = () => {
       </div>
       
       <div className="pt-40 box-border flex-shrink-0
-        w-[calc(50%-20px)] sticky top-[80px]
-        min-[701px]:top-0
+        w-[calc(50%-20px)] 
+        
+        min-[701px]:sticky min-[701px]:top-0 
+
         max-[700px]:w-full
         max-[700px]:pt-10 max-[700px]:pb-10
-        max-[375px]:order-1
-        max-[375px]:static 
+        max-[700px]:order-1
         " 
       >
         <div className="w-full mb-3 relative h-0 pb-[56.25%] overflow-hidden">
@@ -394,6 +344,7 @@ const FourthSection = () => {
     </div>
   );
 };
+
 
 export default function About() {
   return (
