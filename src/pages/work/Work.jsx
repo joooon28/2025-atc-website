@@ -181,7 +181,6 @@ const ArtworkCard = React.memo(({ art }) => {
 const MakersArtistGroup = React.memo(({ group }) => {
     return (
         <div className="Makers-Artist-Group flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
-            {/* 작가 정보: 모바일(375px 이하 포함)에서 전체 너비, sm 이상에서 1/2 너비 */}
             <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
                 <div className="Makers-Artist-Name cursor-default">
                     {formatArtistName(group.artist, false)}
@@ -193,7 +192,6 @@ const MakersArtistGroup = React.memo(({ group }) => {
                 ))}
             </div>
 
-            {/* 작품 목록: 모바일(375px 이하 포함)에서 상단 마진 mt-10 (40px), sm 이상에서 mt-0 */}
             <div className="Makers-Works-List flex flex-col justify-start flex-1 w-full sm:w-1/2 mt-10 sm:mt-0 pl-5">
                 {group.works.map((art, index) => (
                     <div
@@ -338,13 +336,13 @@ export default function Work() {
             <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
             </div>
-            <div className="p-5">
-                <div className="min-[701px]:hidden relative">
+            <div className="p-5 fixed top-0 left-0 right-0 z-50 min-[701px]:hidden">
+                <div className="relative">
                     <MenuToggle />
                 </div>
             </div>
 
-            <main className="pt-[198px]">
+            <main className="pt-[120px] min-[701px]:pt-[160px]">
                 <div className="mx-5 lg:mx-10">
 
                     {/* Work 텍스트 영역 */}
@@ -433,7 +431,7 @@ export default function Work() {
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`} 
                     >
                         {makersArtistGroups.map((group) => (
                             <MakersArtistGroup key={group.artist} group={group} />
