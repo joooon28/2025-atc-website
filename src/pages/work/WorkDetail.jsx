@@ -4,7 +4,6 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MenuToggle from "../../components/menu/MenuToggle";
 
-// 경로 및 플레이스홀더 아이콘
 const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
 const LinkPlaceholderIcon = "/lottie/WorkDetailIcon/WorkDetail_link.svg";
@@ -13,7 +12,6 @@ const EmailIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=E";
 const InstagramIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=I";
 const WebsiteIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=W";
 
-// 작품 데이터 (생략 없이 전체 포함)
 const allArtworkData = {
     "art001": {
         titleKr: "녹색 비둘기", titleEn: "Green Pigeon", location: "4F Fabrication Lab", artistKr: "이선명", artistEn: "Sunmyeong Lee",
@@ -65,7 +63,6 @@ const allArtworkData = {
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
-// 폰트 매핑
 const fontMap = {
     medium: 'font-medium',
     italic: 'italic font-normal',
@@ -75,7 +72,6 @@ const fontMap = {
     semiboldItalic: 'italic font-semibold',
 };
 
-// Vimeo URL 파싱 함수
 const getVimeoEmbedUrl = (links) => {
     const vimeoLink = links.find(link => link.text.toLowerCase() === 'vimeo');
     if (!vimeoLink || !vimeoLink.url) return null;
@@ -87,13 +83,11 @@ const getVimeoEmbedUrl = (links) => {
             return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
         }
     } catch (e) {
-        // URL 파싱 에러 무시
     }
 
     return null;
 };
 
-// 고정 제목 컴포넌트
 const StickyTitle = React.memo(({ data }) => {
     const titleKr = data.titleKr.trim();
     const titleEn = data.titleEn.trim();
@@ -113,7 +107,6 @@ const StickyTitle = React.memo(({ data }) => {
     );
 });
 
-// 고정 작가명 컴포넌트
 const StickyArtist = React.memo(({ data }) => {
     const artistKr = data.artistKr.trim();
     const artistEn = data.artistEn.trim();
@@ -133,7 +126,6 @@ const StickyArtist = React.memo(({ data }) => {
     );
 });
 
-// 작가 상세 정보 컴포넌트
 const ArtistDetailInfo = ({ artistsDetail }) => {
     if (!artistsDetail || artistsDetail.length === 0) return null;
 
@@ -170,7 +162,6 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
     );
 };
 
-// 메인 WorkDetail 컴포넌트
 export default function WorkDetail() {
     const { id } = useParams();
     const location = useLocation();
@@ -182,25 +173,21 @@ export default function WorkDetail() {
     const [isButtonListActive, setIsButtonListActive] = useState(false);
     const [isStickyHeaderActive, setIsStickyHeaderActive] = useState(false);
 
-    // Ref 설정
     const stickyInfoRef = useRef(null);
     const topBackButtonRef = useRef(null);
     const firstSectionRef = useRef(null);
     const mainImgContainerRef = useRef(null);
 
-    // 고정 요소 높이 및 스크롤 포인트
-    const HEADER_OFFSET = 40; // 상단 고정 40px
-    const HEADER_COMPONENT_HEIGHT = 97; // Header 컴포넌트 높이 97px
-    const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT; // 137px
-    const TARGET_SCROLL_POINT = 177; // Desktop: goBackTop 버튼이 사라지고 button_list가 나타나는 지점
+    const HEADER_OFFSET = 40;
+    const HEADER_COMPONENT_HEIGHT = 97;
+    const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
+    const TARGET_SCROLL_POINT = 177;
 
-    // 쿼리 파라미터 가져오기
     const getQueryParam = useCallback((param) => {
         const urlParams = new URLSearchParams(location.search);
         return urlParams.get(param);
     }, [location.search]);
 
-    // ID 변경 시 데이터 및 상태 초기화
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'instant' });
 
@@ -215,39 +202,33 @@ export default function WorkDetail() {
         }
     }, [id]);
 
-    // 스크롤 이벤트 핸들러
     useEffect(() => {
         const checkScrollPosition = () => {
-            // stickyInfoRef.current가 null인 경우를 대비하여 방어 코드 추가
             if (!stickyInfoRef.current) return;
 
-            // Sticky Info가 고정되기 시작하는 지점 계산
             const stickyElementStartPos = stickyInfoRef.current.offsetTop;
             const headerActivationScrollPoint = stickyElementStartPos - TOTAL_FIXED_HEADER_HEIGHT;
 
             const scrollY = window.scrollY;
 
-            // 1. button_list (데스크톱 전용) 활성화/비활성화
             if (window.innerWidth >= 640) {
                 if (scrollY >= TARGET_SCROLL_POINT) {
-                    setIsButtonListActive(true); // 스크롤 177px 이상
+                    setIsButtonListActive(true);
                 } else {
-                    setIsButtonListActive(false); // 스크롤 177px 미만
+                    setIsButtonListActive(false);
                 }
             } else {
-                setIsButtonListActive(false); // 모바일에서는 사용 안 함
+                setIsButtonListActive(false);
             }
 
-            // 2. Sticky Header 배경 활성화/비활성화
             if (scrollY >= headerActivationScrollPoint) {
-                setIsStickyHeaderActive(true); // Sticky Info가 화면 상단에 닿기 시작
+                setIsStickyHeaderActive(true);
             } else {
                 setIsStickyHeaderActive(false);
             }
         };
 
         window.addEventListener('scroll', checkScrollPosition);
-        // 초기 로딩 시 위치 확인을 위해 setTimeout 사용
         const timeoutId = setTimeout(checkScrollPosition, 0);
 
         return () => {
@@ -256,7 +237,6 @@ export default function WorkDetail() {
         };
     }, [artwork, TOTAL_FIXED_HEADER_HEIGHT]);
 
-    // 뒤로 가기 핸들러
     const handleGoBack = useCallback(() => {
         const fromView = getQueryParam('from');
 
@@ -269,12 +249,10 @@ export default function WorkDetail() {
         }
     }, [getQueryParam, navigate]);
 
-    // 맨 위로 가기 핸들러
     const handleGoToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // 작품 데이터가 없을 경우
     if (!artwork) {
         return (
             <div className="text-label min-h-screen bg-white">
@@ -294,7 +272,6 @@ export default function WorkDetail() {
 
     const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links);
 
-    // Commentary 폰트 클래스
     const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
     const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
     const p2KrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
@@ -302,28 +279,22 @@ export default function WorkDetail() {
 
     return (
         <div className="text-label min-h-screen">
-            {/* 상단 40px 고정 영역 (모바일 메뉴 토글 배경) */}
             <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-white"></div>
 
-            {/* 데스크톱 Header 영역 (701px 이상에서 스티키 활성화 시 배경 on) */}
             <div className={`max-[701px]:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${isStickyHeaderActive ? 'bg-white' : 'bg-transparent'}`}>
                 <Header />
             </div>
-            {/* 모바일 메뉴 토글 영역 */}
             <div className="p-5 fixed top-0 left-0 right-0 z-[10000] min-[701px]:hidden">
                 <div className="relative ">
                     <MenuToggle />
                 </div>
             </div>
 
-
-            {/* First-Section: z-10 (헤더보다 아래) */}
             <div
                 ref={firstSectionRef}
                 className="First-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[137px] z-10"
             >
 
-                {/* Back 버튼 (데스크톱 상단) */}
                 <button
                     onClick={handleGoBack}
                     id="goBackTop"
@@ -373,13 +344,10 @@ export default function WorkDetail() {
 
             <div className="Second-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto">
 
-                {/* --- 모바일 Sticky Info 위에 배경색 덮는 요소 (상시 흰색 유지) --- */}
                 <div 
                     className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-white min-[701px]:h-0 z-[9980] min-[701px]:hidden"
                 ></div>
-                {/* ------------------------------------------------------------------ */}
 
-                {/* Sticky Info: 모바일: top-[85px] / 데스크톱: top-[137px] -> z-index를 10010으로 올림 */}
                 <div
                     ref={stickyInfoRef}
                     className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10010] 
@@ -387,14 +355,9 @@ export default function WorkDetail() {
                         min-[701px]:bg-white 
                         flex justify-between items-center border-t border-b border-label mb-10 relative`}
                 > 
-                    {/* Explicit corner dots (Size set to 5px x 5px) */}
-                    {/* Top Left */}
                     <div className="absolute top-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                    {/* Top Right */}
                     <div className="absolute top-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-                    {/* Bottom Left */}
                     <div className="absolute bottom-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
-                    {/* Bottom Right */}
                     <div className="absolute bottom-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
                     
                     <StickyTitle data={artwork} />
@@ -430,7 +393,6 @@ export default function WorkDetail() {
                         </div>
                     </div>
 
-                    {/* Work-Detail-Text: 700px 이하에서는 sticky 해제. 701px 이상에서만 top-[217px]에 고정 */}
                     <div className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]">
                         <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
                             <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
@@ -465,7 +427,6 @@ export default function WorkDetail() {
                 </div>
             </div>
 
-            {/* button_list: z-9999 유지 (최상단, 데스크톱) */}
             <div
                 className={`button_list w-[calc(100%-80px)] fixed left-10 transition-all duration-300 overflow-hidden z-[9999] hidden sm:block ${isButtonListActive ? 'bottom-10' : 'bottom-[-50px]'}`}
             >
