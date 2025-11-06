@@ -82,8 +82,12 @@ const Made = () => {
         style={{
           paddingTop: `${HEADER_HEIGHT + HEADER_TOP_OFFSET}px`,
         }}
+        className="max-[700px]:pt-0"
       >
-        <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[60px] box-border">
+        <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[40px] box-border
+            max-[700px]:pt-[10px]
+        ">
+          
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
               images={[
@@ -110,7 +114,7 @@ const Made = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10 pt-[20px]">
             <MadeBox
               images={[
                 "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
