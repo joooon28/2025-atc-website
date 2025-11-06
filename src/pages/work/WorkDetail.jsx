@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import MenuToggle from "../../components/menu/MenuToggle";
 
+// 경로 및 플레이스홀더 아이콘
 const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
 const LinkPlaceholderIcon = "/lottie/WorkDetailIcon/WorkDetail_link.svg";
@@ -11,10 +13,11 @@ const EmailIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=E";
 const InstagramIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=I";
 const WebsiteIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=W";
 
+// 작품 데이터 (생략 없이 전체 포함)
 const allArtworkData = {
     "art001": {
         titleKr: "녹색 비둘기", titleEn: "Green Pigeon", location: "4F Fabrication Lab", artistKr: "이선명", artistEn: "Sunmyeong Lee",
-        imageMainSrc: "https://placehold.co/200x267", imageDetailSrc: "qVzXxoZ 1.png", commentary: { kr: { p1: '양자역학을 통해 내면의 다중자아를 탐구하는 퍼포먼스 작업', p2: '팀 무아레는 다양한 정체성이 거듭 포개진 상태를 ‘겹’, 겹이 만들어낸 무늬와 흔적을 ‘결’이라고 생각하였다. <겹과 결>은 한 사람 내면에 존재하는 다양한 자아의 모습을 발견하고 포용해가는 과정을 양자역학의 개념(양자 얽힘, 중첩, 입자성과 파동성, 연속과 불연속 등)과 연결하는 작업이다. 우리 모두는 내면에 중첩된 다중자아를 가지고 있으며 각자가 살아가는 공간과 관계 속에서 자아의 흔적을 남기는 존재이다. 또한 이 둘은 관찰 불가능한 미시세계를 다루는 양자역학과 보이지 않는 내면의 자아라는 점에서 공통점을 가진다.' }, en: { p1: 'A performance performance exploring the multiple selves within through quantum mechanics in performance art.', p2: 'Team Moiré conceived the state of overlapping identities as “layers” and the patterns and traces created by these layers as “textures.” <Singlet & Multiplet> is a work that connects the process of discovering and embracing the multiple selves that exist within an individual to key concepts in quantum mechanics—such. We all possess multiple selves superposed within our inner world, leaving traces of our identities across the spaces and relationships we inhabit. In this sense, both quantum mechanics.' } },
+        imageMainSrc: "https://placehold.co/200x267", imageDetailSrc: "qVzXxoZ 1.png", commentary: { kr: { p1: '양자역학을 통해 내면의 다중자아를 탐구하는 퍼포먼스 작업', p2: '팀 무아레는 다양한 정체성이 거듭 포개진 상태를 ‘겹’, 겹이 만들어낸 무늬와 흔적을 ‘결’이라고 생각하였다. <겹과 결>은 한 사람 내면에 존재하는 다양한 자아의 모습을 발견하고 포용해가는 과정을 양자역학의 개념(양자 얽힘, 중첩, 입자성과 파동성, 연속과 불연속 등)과 연결하는 작업이다. 우리 모두는 내면에 중첩된 다중자아를 가지고 있으며 각자가 살아가는 공간과 관계 속에서 자아의 흔적을 남기는 존재이다. 또한 이 둘은 관찰 불가능한 미시세계를 다루는 양자역학과 보이지 않는 내면의 자아라는 점에서 공통점을 가진다.' }, en: { p1: 'A performance performance exploring the multiple selves within through quantum mechanics in performance art.', p2: 'Team Moiré conceived the state of overlapping identities as “layers” and “textures.” <Singlet & Multiplet> is a work that connects the process of discovering and embracing the multiple selves that exist within an individual to key concepts in quantum mechanics—such. We all possess multiple selves superposed within our inner world, leaving traces of our identities across the spaces and relationships we inhabit. In this sense, both quantum mechanics.' } },
         links: [{ text: "Vimeo", url: "https://vimeo.com/360549015" }, { text: "Instagram", url: "https://instagram.com/moire_team" }, { text: "Process Archive", url: "https://process.archive/art001" }],
         artistsDetail: [
             { kr: "김지영", en: "Jiyoung Kim", links: { email: "mailto:jiyoung@mail.com", instagram: "https://instagram.com/jiyoung", website: "https://jiyoung.com" } },
@@ -62,6 +65,7 @@ const allArtworkData = {
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
+// 폰트 매핑
 const fontMap = {
     medium: 'font-medium',
     italic: 'italic font-normal',
@@ -71,6 +75,7 @@ const fontMap = {
     semiboldItalic: 'italic font-semibold',
 };
 
+// Vimeo URL 파싱 함수
 const getVimeoEmbedUrl = (links) => {
     const vimeoLink = links.find(link => link.text.toLowerCase() === 'vimeo');
     if (!vimeoLink || !vimeoLink.url) return null;
@@ -82,11 +87,13 @@ const getVimeoEmbedUrl = (links) => {
             return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
         }
     } catch (e) {
+        // URL 파싱 에러 무시
     }
 
     return null;
 };
 
+// 고정 제목 컴포넌트
 const StickyTitle = React.memo(({ data }) => {
     const titleKr = data.titleKr.trim();
     const titleEn = data.titleEn.trim();
@@ -106,6 +113,7 @@ const StickyTitle = React.memo(({ data }) => {
     );
 });
 
+// 고정 작가명 컴포넌트
 const StickyArtist = React.memo(({ data }) => {
     const artistKr = data.artistKr.trim();
     const artistEn = data.artistEn.trim();
@@ -113,7 +121,7 @@ const StickyArtist = React.memo(({ data }) => {
     if (!artistKr && !artistEn) return null;
 
     return (
-        <p id="Sticky-Artist-Combined"> 
+        <p id="Sticky-Artist-Combined">
             {artistKr && (
                 <span className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}>{artistKr}</span>
             )}
@@ -125,6 +133,7 @@ const StickyArtist = React.memo(({ data }) => {
     );
 });
 
+// 작가 상세 정보 컴포넌트
 const ArtistDetailInfo = ({ artistsDetail }) => {
     if (!artistsDetail || artistsDetail.length === 0) return null;
 
@@ -161,6 +170,7 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
     );
 };
 
+// 메인 WorkDetail 컴포넌트
 export default function WorkDetail() {
     const { id } = useParams();
     const location = useLocation();
@@ -172,21 +182,25 @@ export default function WorkDetail() {
     const [isButtonListActive, setIsButtonListActive] = useState(false);
     const [isStickyHeaderActive, setIsStickyHeaderActive] = useState(false);
 
+    // Ref 설정
     const stickyInfoRef = useRef(null);
     const topBackButtonRef = useRef(null);
-    const firstSectionRef = useRef(null); 
-    const mainImgContainerRef = useRef(null); 
+    const firstSectionRef = useRef(null);
+    const mainImgContainerRef = useRef(null);
 
-    const HEADER_OFFSET = 40;
-    const HEADER_COMPONENT_HEIGHT = 97;
-    const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
-    const TARGET_SCROLL_POINT = 177; 
+    // 고정 요소 높이 및 스크롤 포인트
+    const HEADER_OFFSET = 40; // 상단 고정 40px
+    const HEADER_COMPONENT_HEIGHT = 97; // Header 컴포넌트 높이 97px
+    const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT; // 137px
+    const TARGET_SCROLL_POINT = 177; // Desktop: goBackTop 버튼이 사라지고 button_list가 나타나는 지점
 
+    // 쿼리 파라미터 가져오기
     const getQueryParam = useCallback((param) => {
         const urlParams = new URLSearchParams(location.search);
         return urlParams.get(param);
     }, [location.search]);
 
+    // ID 변경 시 데이터 및 상태 초기화
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'instant' });
 
@@ -201,42 +215,48 @@ export default function WorkDetail() {
         }
     }, [id]);
 
+    // 스크롤 이벤트 핸들러
     useEffect(() => {
         const checkScrollPosition = () => {
-            if (!stickyInfoRef.current || !topBackButtonRef.current) return;
+            // stickyInfoRef.current가 null인 경우를 대비하여 방어 코드 추가
+            if (!stickyInfoRef.current) return;
 
+            // Sticky Info가 고정되기 시작하는 지점 계산
             const stickyElementStartPos = stickyInfoRef.current.offsetTop;
             const headerActivationScrollPoint = stickyElementStartPos - TOTAL_FIXED_HEADER_HEIGHT;
 
             const scrollY = window.scrollY;
 
+            // 1. button_list (데스크톱 전용) 활성화/비활성화
             if (window.innerWidth >= 640) {
                 if (scrollY >= TARGET_SCROLL_POINT) {
-                    setIsButtonListActive(true);
+                    setIsButtonListActive(true); // 스크롤 177px 이상
                 } else {
-                    setIsButtonListActive(false);
+                    setIsButtonListActive(false); // 스크롤 177px 미만
                 }
             } else {
-                 setIsButtonListActive(false);
+                setIsButtonListActive(false); // 모바일에서는 사용 안 함
             }
 
-
+            // 2. Sticky Header 배경 활성화/비활성화
             if (scrollY >= headerActivationScrollPoint) {
-                setIsStickyHeaderActive(true);
+                setIsStickyHeaderActive(true); // Sticky Info가 화면 상단에 닿기 시작
             } else {
                 setIsStickyHeaderActive(false);
             }
         };
 
         window.addEventListener('scroll', checkScrollPosition);
+        // 초기 로딩 시 위치 확인을 위해 setTimeout 사용
         const timeoutId = setTimeout(checkScrollPosition, 0);
 
         return () => {
             clearTimeout(timeoutId);
             window.removeEventListener('scroll', checkScrollPosition);
         };
-    }, [artwork]);
+    }, [artwork, TOTAL_FIXED_HEADER_HEIGHT]);
 
+    // 뒤로 가기 핸들러
     const handleGoBack = useCallback(() => {
         const fromView = getQueryParam('from');
 
@@ -249,15 +269,17 @@ export default function WorkDetail() {
         }
     }, [getQueryParam, navigate]);
 
+    // 맨 위로 가기 핸들러
     const handleGoToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    // 작품 데이터가 없을 경우
     if (!artwork) {
         return (
             <div className="text-label min-h-screen bg-white">
                 <Header />
-                <main className="w-[calc(100%-40px)] sm:w-[calc(100%-80px)] mx-auto pt-[97px] text-center">
+                <main className="w-[calc(100%-40px)] sm:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
                     <p className="mt-20">작품을 찾을 수 없습니다.</p>
                 </main>
                 <Footer />
@@ -272,33 +294,41 @@ export default function WorkDetail() {
 
     const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links);
 
+    // Commentary 폰트 클래스
     const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
     const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-
     const p2KrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
     const p2EnClass = `${fontMap.text} font-[450] text-[15px] leading-[145%] tracking-[-0.5%]`;
 
     return (
         <div className="text-label min-h-screen">
-            <div className="fixed top-0 left-0 right-0 h-[40px] z-50 bg-white"></div>
+            {/* 상단 40px 고정 영역 (모바일 메뉴 토글 배경) */}
+            <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-white"></div>
 
-            <div
-                className={`fixed top-[40px] left-0 right-0 h-[97px] z-50 
-                ${isStickyHeaderActive ? 'bg-white' : 'bg-transparent'}`}
-            >
+            {/* 데스크톱 Header 영역 (701px 이상에서 스티키 활성화 시 배경 on) */}
+            <div className={`max-[701px]:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${isStickyHeaderActive ? 'bg-white' : 'bg-transparent'}`}>
                 <Header />
             </div>
+            {/* 모바일 메뉴 토글 영역 */}
+            <div className="p-5 fixed top-0 left-0 right-0 z-[10000] min-[701px]:hidden">
+                <div className="relative ">
+                    <MenuToggle />
+                </div>
+            </div>
 
-            <div 
+
+            {/* First-Section: z-10 (헤더보다 아래) */}
+            <div
                 ref={firstSectionRef}
-                className="First-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[177px]"
+                className="First-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[137px] z-10"
             >
-                
+
+                {/* Back 버튼 (데스크톱 상단) */}
                 <button
                     onClick={handleGoBack}
                     id="goBackTop"
                     ref={topBackButtonRef}
-                    className={`go_back bg-white border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[177px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
+                    className={`go_back bg-white border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
                 >
                     <img src={GoBackIcon} alt="뒤로 가기" className="mr-3 transform translate-y-px" />
                     Back
@@ -317,7 +347,7 @@ export default function WorkDetail() {
                             </p>
                         )}
                     </div>
-                    
+
                     {displayLocation && (
                         <p id="Work-Location" className={`${fontMap.text} font-[450] text-sm leading-none tracking-normal`}>
                             {displayLocation}
@@ -325,11 +355,11 @@ export default function WorkDetail() {
                     )}
                 </div>
 
-                <div 
-                    id="Work-Main-Img-Container" 
+                <div
+                    id="Work-Main-Img-Container"
                     ref={mainImgContainerRef}
                     className={`order-2 sm:order-1 max-w-[200px] w-full 
-                        max-[375px]:w-screen max-[375px]:!max-w-none max-[375px]:mx-0 max-[375px]:-ml-5`} 
+                        max-[375px]:w-screen max-[375px]:!max-w-none max-[375px]:mx-0 max-[375px]:-ml-5`}
                 >
                     <img
                         src={artwork.imageMainSrc}
@@ -343,23 +373,37 @@ export default function WorkDetail() {
 
             <div className="Second-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto">
 
+                {/* --- 모바일 Sticky Info 위에 배경색 덮는 요소 (상시 흰색 유지) --- */}
+                <div 
+                    className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-white min-[701px]:h-0 z-[9980] min-[701px]:hidden"
+                ></div>
+                {/* ------------------------------------------------------------------ */}
+
+                {/* Sticky Info: 모바일: top-[85px] / 데스크톱: top-[137px] -> z-index를 10010으로 올림 */}
                 <div
                     ref={stickyInfoRef}
-                    className="Work-Detail-Sticky-Info w-full sticky top-[137px] py-2 z-[51] bg-white flex justify-between items-center border-t border-b border-label mb-10 relative
-                        before:content-[''] before:absolute before:top-[-0.5px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:transform before:-translate-x-1/2 before:-translate-y-1/2
-                        after:content-[''] after:absolute after:top-[-0.5px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:transform after:translate-x-1/2 after:-translate-y-1/2"
-                >
-                    <div className="absolute bottom-0 left-0 w-full h-0">
-                        <div className="absolute top-[0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                        <div className="absolute top-[0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-                    </div>
+                    className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10010] 
+                        max-[701px]:bg-white 
+                        min-[701px]:bg-white 
+                        flex justify-between items-center border-t border-b border-label mb-10 relative`}
+                > 
+                    {/* Explicit corner dots (Size set to 5px x 5px) */}
+                    {/* Top Left */}
+                    <div className="absolute top-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                    {/* Top Right */}
+                    <div className="absolute top-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+                    {/* Bottom Left */}
+                    <div className="absolute bottom-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+                    {/* Bottom Right */}
+                    <div className="absolute bottom-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+                    
                     <StickyTitle data={artwork} />
-                    <StickyArtist data={artwork} /> 
+                    <StickyArtist data={artwork} />
                 </div>
 
-                <div className="Work-Detail-Info w-full flex flex-col md:flex-row justify-between gap-10">
-                    
-                    <div className="Work-Detail-Visual w-full md:w-[calc(50%-20px)] md:flex-shrink-0 order-2 md:order-none">
+                <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
+
+                    <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
                         {vimeoEmbedUrl ? (
                             <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
                                 <iframe
@@ -386,7 +430,8 @@ export default function WorkDetail() {
                         </div>
                     </div>
 
-                    <div className="Work-Detail-Text w-full md:w-[calc(50%-20px)] md:flex-shrink-0 order-1 md:order-none md:sticky md:top-[217px] self-start mb-10 md:mb-0">
+                    {/* Work-Detail-Text: 700px 이하에서는 sticky 해제. 701px 이상에서만 top-[217px]에 고정 */}
+                    <div className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]">
                         <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
                             <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
                                 <p id="commentary-p1" className={currentLanguage === 'kr' ? p1KrClass : p1EnClass}>
@@ -419,7 +464,8 @@ export default function WorkDetail() {
 
                 </div>
             </div>
-            
+
+            {/* button_list: z-9999 유지 (최상단, 데스크톱) */}
             <div
                 className={`button_list w-[calc(100%-80px)] fixed left-10 transition-all duration-300 overflow-hidden z-[9999] hidden sm:block ${isButtonListActive ? 'bottom-10' : 'bottom-[-50px]'}`}
             >
@@ -442,14 +488,14 @@ export default function WorkDetail() {
                     <button
                         onClick={() => setCurrentLanguage('kr')}
                         id="Lang-Switch-Kr-Btn"
-                        className={`${fontMap.medium} Lang-Switch-Kr flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${currentLanguage === 'kr' ? 'underline decoration-1 underline-offset-[5px]' : ''}`}
+                        className={`${fontMap.italic} Lang-Switch-Kr flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${currentLanguage === 'kr' ? 'underline decoration-1 underline-offset-[5px]' : ''}`}
                     >
                         KR
                     </button>
                     <button
                         onClick={() => setCurrentLanguage('en')}
                         id="Lang-Switch-En-Btn"
-                        className={`${fontMap.medium} Lang-Switch-En flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${currentLanguage === 'en' ? 'underline decoration-1 underline-offset-[5px]' : ''}`}
+                        className={`${fontMap.italic} Lang-Switch-En flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${currentLanguage === 'en' ? 'underline decoration-1 underline-offset-[5px]' : ''}`}
                     >
                         EN
                     </button>
