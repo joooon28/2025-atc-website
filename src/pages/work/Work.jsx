@@ -176,9 +176,9 @@ const ArtworkCard = React.memo(({ art }) => {
 
 const MakersArtistGroup = React.memo(({ group }) => {
     return (
-        <div className="Makers-Artist-Group flex max-[375px]:flex-col py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
+        <div className="Makers-Artist-Group flex **flex-col sm:flex-row** py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             
-            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-1/2 max-[375px]:w-full font-[450] text-base leading-none text-left">
+            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 **w-full sm:w-1/2** font-[450] text-base leading-none text-left">
                 <div className="Makers-Artist-Name cursor-default">
                     {formatArtistName(group.artist, false)} 
                 </div>
@@ -189,7 +189,7 @@ const MakersArtistGroup = React.memo(({ group }) => {
                 ))}
             </div>
 
-            <div className="Makers-Works-List flex flex-col justify-start flex-1 w-1/2 max-[375px]:w-full max-[375px]:mt-10">
+            <div className="Makers-Works-List flex flex-col justify-start flex-1 **w-full sm:w-1/2** **mt-10 sm:mt-0** pl-5">
                 {group.works.map((art, index) => (
                     <div 
                         key={art.id} 
@@ -423,7 +423,7 @@ export default function Work() {
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`} 
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`} 
                     >
                         {makersArtistGroups.map((group) => (
                             <MakersArtistGroup key={group.artist} group={group} />
