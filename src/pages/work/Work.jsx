@@ -2,29 +2,33 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import MenuToggle from "../../components/menu/MenuToggle";
 
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
 const MakersLinkIconPlaceholder = "https://placehold.co/16x16";
 
 const initialArtworks = [
-    { id: "art001", title: "녹색 비둘기 Green Pigeon", artist: "이선명 Sunmyeong Lee", description: "작품 설명", image: "https://placehold.co/250x340",
-      artistLinks: [
-        { url: "#link1_ig", icon: MakersLinkIconPlaceholder, alt: "Instagram" },
-        { url: "#link1_web", icon: MakersLinkIconPlaceholder, alt: "Website" }
-      ]
+    {
+        id: "art001", title: "녹색 비둘기 Green Pigeon", artist: "이선명 Sunmyeong Lee", description: "작품 설명", image: "https://placehold.co/250x340",
+        artistLinks: [
+            { url: "#link1_ig", icon: MakersLinkIconPlaceholder, alt: "Instagram" },
+            { url: "#link1_web", icon: MakersLinkIconPlaceholder, alt: "Website" }
+        ]
     },
-    { id: "art002", title: "Sunny Day", artist: "이사이오 2420", description: "작품 설명", image: "https://placehold.co/250x340",
-      artistLinks: [
-        { url: "#link2_only", icon: MakersLinkIconPlaceholder, alt: "Single Link" }
-      ]
+    {
+        id: "art002", title: "Sunny Day", artist: "이사이오 2420", description: "작품 설명", image: "https://placehold.co/250x340",
+        artistLinks: [
+            { url: "#link2_only", icon: MakersLinkIconPlaceholder, alt: "Single Link" }
+        ]
     },
-    { id: "art003", title: "내 말을 들어줘", artist: "오리너구리", description: "작품 설명", image: "https://placehold.co/250x340",
-      artistLinks: [
-        { url: "#link3_a", icon: MakersLinkIconPlaceholder, alt: "Link A" },
-        { url: "#link3_b", icon: MakersLinkIconPlaceholder, alt: "Link B" },
-        { url: "#link3_c", icon: MakersLinkIconPlaceholder, alt: "Link C" }
-      ]
+    {
+        id: "art003", title: "내 말을 들어줘", artist: "오리너구리", description: "작품 설명", image: "https://placehold.co/250x340",
+        artistLinks: [
+            { url: "#link3_a", icon: MakersLinkIconPlaceholder, alt: "Link A" },
+            { url: "#link3_b", icon: MakersLinkIconPlaceholder, alt: "Link B" },
+            { url: "#link3_c", icon: MakersLinkIconPlaceholder, alt: "Link C" }
+        ]
     },
     { id: "art004", title: "심층화", artist: "Compdsst", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
     { id: "art005", title: "천국을 지켜라!", artist: "장효선", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
@@ -163,8 +167,8 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="title font-['Monoplex KR']">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-none tracking-normal underline underline-offset-[4.5px]"> 
-                    {formatArtistName(art.artist, true)} 
+                <div className="artist font-['Monoplex KR'] text-[14px] leading-none tracking-normal underline underline-offset-[4.5px]">
+                    {formatArtistName(art.artist, true)}
                 </div>
                 <div className="description font-['Monoplex KR'] font-[450] text-[14px] leading-none tracking-normal">
                     {art.description}
@@ -176,11 +180,11 @@ const ArtworkCard = React.memo(({ art }) => {
 
 const MakersArtistGroup = React.memo(({ group }) => {
     return (
-        <div className="Makers-Artist-Group flex **flex-col sm:flex-row** py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
-            
-            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 **w-full sm:w-1/2** font-[450] text-base leading-none text-left">
+        <div className="Makers-Artist-Group flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
+            {/* 작가 정보: 모바일(375px 이하 포함)에서 전체 너비, sm 이상에서 1/2 너비 */}
+            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
                 <div className="Makers-Artist-Name cursor-default">
-                    {formatArtistName(group.artist, false)} 
+                    {formatArtistName(group.artist, false)}
                 </div>
                 {group.links.map((link, index) => (
                     <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
@@ -189,14 +193,15 @@ const MakersArtistGroup = React.memo(({ group }) => {
                 ))}
             </div>
 
-            <div className="Makers-Works-List flex flex-col justify-start flex-1 **w-full sm:w-1/2** **mt-10 sm:mt-0** pl-5">
+            {/* 작품 목록: 모바일(375px 이하 포함)에서 상단 마진 mt-10 (40px), sm 이상에서 mt-0 */}
+            <div className="Makers-Works-List flex flex-col justify-start flex-1 w-full sm:w-1/2 mt-10 sm:mt-0 pl-5">
                 {group.works.map((art, index) => (
-                    <div 
-                        key={art.id} 
+                    <div
+                        key={art.id}
                         className={`Makers-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
                     >
-                        <Link 
-                            to={`/work/${art.id}?from=makers`} 
+                        <Link
+                            to={`/work/${art.id}?from=makers`}
                             className="inline-flex w-max whitespace-normal break-normal hover:opacity-30 cursor-pointer"
                         >
                             {formatTitleForMakers(art.title)}
@@ -210,7 +215,7 @@ const MakersArtistGroup = React.memo(({ group }) => {
 
 
 export default function Work() {
-    
+
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -219,22 +224,22 @@ export default function Work() {
         return urlParams.get(param);
     }, [location.search]);
 
-    
+
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
     const initialSortParam = getQueryParam('sort');
 
-    const initialAscending = initialSortParam === 'desc' ? false : true; 
+    const initialAscending = initialSortParam === 'desc' ? false : true;
 
     const [currentView, setCurrentView] = useState(initialView);
-    const [isAscending, setIsAscending] = useState(initialSortParam ? initialAscending : true); 
+    const [isAscending, setIsAscending] = useState(initialSortParam ? initialAscending : true);
 
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-        
+
         if (initialSortParam) {
             const sortBy = initialView === 'makers' ? 'artist' : 'title';
             return sortArtworksFn(initialArtworks, initialAscending, sortBy);
         }
-        
+
         return shuffle(initialArtworks);
     });
 
@@ -245,8 +250,8 @@ export default function Work() {
     const groupArtworksByArtist = (list, maintainOrder = true) => {
         const grouped = list.reduce((acc, work) => {
             if (!acc[work.artist]) {
-                acc[work.artist] = { 
-                    artist: work.artist, 
+                acc[work.artist] = {
+                    artist: work.artist,
                     works: [],
                     links: work.artistLinks || []
                 };
@@ -256,7 +261,7 @@ export default function Work() {
         }, {});
 
         Object.values(grouped).forEach(group => {
-            group.works = sortArtworksFn(group.works, true, 'title'); 
+            group.works = sortArtworksFn(group.works, true, 'title');
         });
 
         if (maintainOrder) {
@@ -288,22 +293,22 @@ export default function Work() {
 
         let newList;
         let newSearchParams = `?view=${mode}`;
-        
-        newList = shuffle(initialArtworks); 
-        
+
+        newList = shuffle(initialArtworks);
+
         setSortedArtworks(newList);
         navigate(newSearchParams, { replace: true });
     };
 
     const handleRandomize = () => {
-        setIsAscending(true); 
+        setIsAscending(true);
 
         if (currentView === 'makers') {
             setSortedArtworks(shuffle(sortedArtworks));
         } else {
             setSortedArtworks(shuffle(initialArtworks));
         }
-        
+
         navigate(`?view=${currentView}`, { replace: true });
     };
 
@@ -330,12 +335,17 @@ export default function Work() {
     return (
         <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
 
-            <div className="fixed top-0 left-0 right-0 z-[999] pt-10">
+            <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
+            </div>
+            <div className="p-5">
+                <div className="min-[701px]:hidden relative">
+                    <MenuToggle />
+                </div>
             </div>
 
             <main className="pt-[198px]">
-                <div className="mx-5 lg:mx-10"> 
+                <div className="mx-5 lg:mx-10">
 
                     {/* Work 텍스트 영역 */}
                     <div className="Work-Detail mb-20">
@@ -370,17 +380,17 @@ export default function Work() {
                                 onClick={handleRandomize}
                                 className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                             >
-                                <span className="hidden md:inline">Randomize</span> 
+                                <span className="hidden md:inline">Randomize</span>
                                 <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
                             </button>
                             <button
                                 id="Sort-btn"
                                 onClick={handleSort}
                                 className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
-                                    ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' : 
-                                    currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
+                                    ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' :
+                                        currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
                                 }
-                                disabled={currentView === 'makers' && makersArtistGroups.length === 0} 
+                                disabled={currentView === 'makers' && makersArtistGroups.length === 0}
                             >
                                 <span className="hidden md:inline">{sortButtonText}</span>
                                 <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
@@ -423,7 +433,7 @@ export default function Work() {
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`} 
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
                     >
                         {makersArtistGroups.map((group) => (
                             <MakersArtistGroup key={group.artist} group={group} />
