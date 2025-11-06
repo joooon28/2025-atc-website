@@ -113,7 +113,7 @@ const StickyArtist = React.memo(({ data }) => {
     if (!artistKr && !artistEn) return null;
 
     return (
-        <p id="Sticky-Artist-Combined">
+        <p id="Sticky-Artist-Combined"> 
             {artistKr && (
                 <span className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}>{artistKr}</span>
             )}
@@ -174,14 +174,13 @@ export default function WorkDetail() {
 
     const stickyInfoRef = useRef(null);
     const topBackButtonRef = useRef(null);
+    const firstSectionRef = useRef(null); 
+    const mainImgContainerRef = useRef(null); 
 
     const HEADER_OFFSET = 40;
     const HEADER_COMPONENT_HEIGHT = 97;
     const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
-
-    const DETAIL_TEXT_STICKY_TOP = TOTAL_FIXED_HEADER_HEIGHT + 80;
-
-    const TARGET_SCROLL_POINT = 177;
+    const TARGET_SCROLL_POINT = 177; 
 
     const getQueryParam = useCallback((param) => {
         const urlParams = new URLSearchParams(location.search);
@@ -211,11 +210,16 @@ export default function WorkDetail() {
 
             const scrollY = window.scrollY;
 
-            if (scrollY >= TARGET_SCROLL_POINT) {
-                setIsButtonListActive(true);
+            if (window.innerWidth >= 640) {
+                if (scrollY >= TARGET_SCROLL_POINT) {
+                    setIsButtonListActive(true);
+                } else {
+                    setIsButtonListActive(false);
+                }
             } else {
-                setIsButtonListActive(false);
+                 setIsButtonListActive(false);
             }
+
 
             if (scrollY >= headerActivationScrollPoint) {
                 setIsStickyHeaderActive(true);
@@ -253,7 +257,7 @@ export default function WorkDetail() {
         return (
             <div className="text-label min-h-screen bg-white">
                 <Header />
-                <main className="w-[calc(100%-80px)] mx-auto pt-[97px] text-center">
+                <main className="w-[calc(100%-40px)] sm:w-[calc(100%-80px)] mx-auto pt-[97px] text-center">
                     <p className="mt-20">작품을 찾을 수 없습니다.</p>
                 </main>
                 <Footer />
@@ -276,7 +280,6 @@ export default function WorkDetail() {
 
     return (
         <div className="text-label min-h-screen">
-
             <div className="fixed top-0 left-0 right-0 h-[40px] z-50 bg-white"></div>
 
             <div
@@ -286,63 +289,77 @@ export default function WorkDetail() {
                 <Header />
             </div>
 
-            <div className="First-Section w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[177px]">
+            <div 
+                ref={firstSectionRef}
+                className="First-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[177px]"
+            >
+                
                 <button
                     onClick={handleGoBack}
                     id="goBackTop"
                     ref={topBackButtonRef}
-                    className={`go_back bg-white border border-label py-3 px-6 text-center rounded-[60px] absolute top-[177px] left-0 cursor-pointer text-base leading-none tracking-normal inline-flex items-center`}
+                    className={`go_back bg-white border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[177px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
                 >
                     <img src={GoBackIcon} alt="뒤로 가기" className="mr-3 transform translate-y-px" />
                     Back
                 </button>
 
-                <img
-                    src={artwork.imageMainSrc}
-                    alt={displayTitleKr || displayTitleEn}
-                    id="Work-Main-Img"
-                    className={`mt-0 object-cover max-w-[200px] max-h-[267px] w-full h-auto`}
-                />
-
-                <div className="Work-Title flex flex-col items-center gap-1.5">
-                    {displayTitleKr && (
-                        <p id="Work-Title-Kr" className={`${fontMap.medium} text-[24px] leading-none tracking-normal`}>
-                            {displayTitleKr}
-                        </p>
-                    )}
-                    {displayTitleEn && (
-                        <p id="Work-Title-En" className={`${fontMap.medium} italic text-[24px] leading-none tracking-normal`}>
-                            {displayTitleEn}
+                <div className="Work-Title-Info flex flex-col items-center order-1 sm:order-3">
+                    <div className="Work-Title flex flex-col items-center gap-1.5 mb-5">
+                        {displayTitleKr && (
+                            <p id="Work-Title-Kr" className={`${fontMap.medium} text-[24px] leading-none tracking-normal`}>
+                                {displayTitleKr}
+                            </p>
+                        )}
+                        {displayTitleEn && (
+                            <p id="Work-Title-En" className={`${fontMap.medium} italic text-[24px] leading-none tracking-normal`}>
+                                {displayTitleEn}
+                            </p>
+                        )}
+                    </div>
+                    
+                    {displayLocation && (
+                        <p id="Work-Location" className={`${fontMap.text} font-[450] text-sm leading-none tracking-normal`}>
+                            {displayLocation}
                         </p>
                     )}
                 </div>
-                {displayLocation && (
-                    <p id="Work-Location" className={`${fontMap.text} font-[450] text-sm leading-none tracking-normal`}>
-                        {displayLocation}
-                    </p>
-                )}
+
+                <div 
+                    id="Work-Main-Img-Container" 
+                    ref={mainImgContainerRef}
+                    className={`order-2 sm:order-1 max-w-[200px] w-full 
+                        max-[375px]:w-screen max-[375px]:!max-w-none max-[375px]:mx-0 max-[375px]:-ml-5`} 
+                >
+                    <img
+                        src={artwork.imageMainSrc}
+                        alt={displayTitleKr || displayTitleEn}
+                        id="Work-Main-Img"
+                        className={`mt-0 object-cover 
+                            **max-[375px]:!max-w-none max-[375px]:!max-h-none max-[375px]:w-full max-[375px]:h-auto** w-[200px] h-[267px]`}
+                    />
+                </div>
             </div>
 
-            <div className="Second-Section w-[calc(100%-80px)] mx-auto">
+            <div className="Second-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto">
 
                 <div
                     ref={stickyInfoRef}
                     className="Work-Detail-Sticky-Info w-full sticky top-[137px] py-2 z-[51] bg-white flex justify-between items-center border-t border-b border-label mb-10 relative
                         before:content-[''] before:absolute before:top-[-0.5px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:transform before:-translate-x-1/2 before:-translate-y-1/2
-                        after:content-[''] after:absolute after:top-[-0.5px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:transform after:translate-x-1/2 after:-translate-y-1/2"
+                        after:content-[''] after:absolute after:top-[-0.5px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:transform after:translate-x-1/2 after:-translate-y-1/2"
                 >
                     <div className="absolute bottom-0 left-0 w-full h-0">
                         <div className="absolute top-[0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
                         <div className="absolute top-[0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
                     </div>
                     <StickyTitle data={artwork} />
-                    <StickyArtist data={artwork} />
+                    <StickyArtist data={artwork} /> 
                 </div>
 
                 <div className="Work-Detail-Info w-full flex flex-col md:flex-row justify-between gap-10">
                     
                     <div className="Work-Detail-Visual w-full md:w-[calc(50%-20px)] md:flex-shrink-0 order-2 md:order-none">
-
                         {vimeoEmbedUrl ? (
                             <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
                                 <iframe
@@ -402,9 +419,9 @@ export default function WorkDetail() {
 
                 </div>
             </div>
-
+            
             <div
-                className={`button_list w-[calc(100%-80px)] fixed left-10 transition-all duration-300 overflow-hidden z-[9999] ${isButtonListActive ? 'bottom-10' : 'bottom-[-50px]'}`}
+                className={`button_list w-[calc(100%-80px)] fixed left-10 transition-all duration-300 overflow-hidden z-[9999] hidden sm:block ${isButtonListActive ? 'bottom-10' : 'bottom-[-50px]'}`}
             >
                 <button
                     onClick={handleGoBack}
