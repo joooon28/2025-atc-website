@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import MenuToggle from "../components/menu/MenuToggle";
 
 const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
@@ -63,13 +64,18 @@ const Made = () => {
       className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#E9F1E9]"
     >
       <div
-        className="fixed left-0 w-full z-[50]"
+        className="max-[701px]:hidden fixed left-0 w-full z-[50]"
         style={{
           top: `${HEADER_TOP_OFFSET}px`,
           backgroundColor: "transparent",
         }}
       >
         <Header />
+      </div>
+      <div className="p-5 fixed top-0 left-0 right-0 z-50">
+        <div className="min-[701px]:hidden relative">
+          <MenuToggle />
+        </div>
       </div>
 
       <div
@@ -136,10 +142,9 @@ const Made = () => {
       <style>{`
         .Made-Detail-Box .swiper-button-prev,
         .Made-Detail-Box .swiper-button-next {
-          width: 30px;
-          height: 30px;
-          background-color: #F8F8F7;
-          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          background-color: transparent;
           color: #362C11;
           opacity: 0;
           transition-duration: 0.2s;
