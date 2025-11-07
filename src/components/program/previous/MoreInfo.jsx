@@ -71,16 +71,22 @@ export default function MoreInfo({
         ref={scrollRef}
         className="flex-1 flex px-[220px] max-[1001px]:px-[0px] justify-center overflow-y-auto"
       >
-        <div className="p-10 max-tablet: px-5">
+        <div className="text-label p-10 max-tablet: px-5">
           <section className="flex flex-col w-full gap-10">
             <div className="flex flex-col gap-5">
-              <div className="flex gap-[10px] font-[450] text-[24px]">
+              <div className="flex gap-[10px] font-heavy text-[24px]">
                 <p>{title}</p>
                 <p className="italic">{titleeng}</p>
               </div>
-              <p className="flex text-[14px] font-[450]">{date}</p>
-              <p className="flex text-[14px] whitespace-normal ">{text}</p>
-              <p className="flex text-[14px] whitespace-normal ">{texteng}</p>
+              <p className="flex text-[15px] font-heavy leading-regular tracking-regular">
+                {date}
+              </p>
+              <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+                {text}
+              </p>
+              <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+                {texteng}
+              </p>
             </div>
             <div className="flex w-full aspect-[1.85] overflow-hidden">
               {main ? (
@@ -92,7 +98,7 @@ export default function MoreInfo({
             <div
               className=" 
                     group flex hover:bg-mint-6 
-                    border-t border-label py-3 
+                    border-t border-label 
                     relative [--dot:6px] [--b:1px] [--expand:250px]
                 
                     before:content-[''] before:absolute
@@ -110,8 +116,12 @@ export default function MoreInfo({
                     after:pointer-events-none 
                 "
             />
-            <p className="flex text-[14px] whitespace-normal ">{detailKo1}</p>
-            <p className="flex text-[14px] whitespace-normal ">{detailEng1}</p>
+            <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {detailKo1}
+            </p>
+            <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+              {detailEng1}
+            </p>
             <div className="flex w-full aspect-[1.85] overflow-hidden">
               {sub1 ? (
                 <img
@@ -123,8 +133,12 @@ export default function MoreInfo({
                 "img"
               )}
             </div>
-            <p className="flex text-[14px] whitespace-normal ">{detailKo2}</p>
-            <p className="flex text-[14px] whitespace-normal ">{detailEng2}</p>
+            <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {detailKo2}
+            </p>
+            <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+              {detailEng2}
+            </p>
           </section>
         </div>
       </div>

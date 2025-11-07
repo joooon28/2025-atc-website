@@ -155,7 +155,7 @@ export default function Program() {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
         <div className="max-[768px]:order-2 flex flex-col gap-[8.5px]">
-          <div className="font-[600] text-[24px] flex gap-3">
+          <div className="font-heavy text-[24px] flex gap-3">
             <p>프로그램</p>
             <p className="italic">Program</p>
           </div>

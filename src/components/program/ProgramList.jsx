@@ -55,21 +55,21 @@ export default function ProgramList({
     >
       <section className="flex">
         <div className="text-center px-5 text-[20px] text-label font-[500]">
-          <div className="flex justfiy-center items-center">
-            (<p className="text-[15px]">{number}</p>)
+          <div className="text-[20px] font-heavy flex justfiy-center items-center gap-0">
+            (<p className="text-[13px]">{number}</p>)
           </div>
         </div>
 
         <div className="flex flex-col pr-4">
-          <div className="flex flex-col gap-10 cursor-pointer select-none">
-            <div className="flex min-[847px]:gap-3 text-[20px] max-[847px]:flex-col max-[287px]:gap-[6px]">
-              <p className="text-label">{title}</p>
-              <p className="italic text-label">{titleeng}</p>
+          <div className="font-regular text-label flex flex-col gap-10 cursor-pointer select-none">
+            <div className="flex min-[1073px]:gap-3 text-[20px] max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0">
+              <p>{title}</p>
+              <p className="italic ">{titleeng}</p>
             </div>
-            <div className="flex flex-col gap-[6px]">
-              <p className="text-[14px] text-label">{date1}</p>
-              <p className="text-[14px] text-label">{date2}</p>
-              <p className="text-[14px] text-label">{date3}</p>
+            <div className="text-[14px] flex flex-col gap-[6px]">
+              <p>{date1}</p>
+              <p>{date2}</p>
+              <p>{date3}</p>
             </div>
           </div>
 
@@ -81,7 +81,9 @@ export default function ProgramList({
             ].join(" ")}
           >
             <div className="flex flex-col gap-10 pt-10">
-              <div className="text-[14px] text-label">{text}</div>
+              <div className="font-regular text-[15px] leading-regular tracking-regular text-label">
+                {text}
+              </div>
               <button
                 type="button"
                 onClick={() =>

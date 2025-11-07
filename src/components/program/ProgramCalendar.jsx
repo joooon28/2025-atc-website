@@ -2,7 +2,7 @@ export default function ProgramCalendar() {
   return (
     <div>
       <div className="flex flex-col">
-        <section className="flex pt-1 pl-15 justify-around text-center gap-6 font-[500] text-[14px] leading-[1.1]">
+        <section className="flex pt-1 pl-15 justify-around text-center gap-6 font-[600] text-[14px] leading-[1.1]">
           <p>
             20
             <br />
@@ -25,9 +25,9 @@ export default function ProgramCalendar() {
           </p>
         </section>
       </div>
-      <section className="flex flex-col gap-6">
+      <section className="text-[13px] font-[600] flex flex-col gap-6">
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">13:00</p>
+          <p>13:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -58,7 +58,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">14:00</p>
+          <p>14:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -75,7 +75,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">15:00</p>
+          <p>15:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -92,7 +92,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">16:00</p>
+          <p>16:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -109,7 +109,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">17:00</p>
+          <p>17:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -126,7 +126,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">18:00</p>
+          <p>18:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -143,7 +143,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">19:00</p>
+          <p>19:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -160,7 +160,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">20:00</p>
+          <p>20:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label
@@ -177,7 +177,7 @@ export default function ProgramCalendar() {
           />
         </div>
         <div className="flex items-center">
-          <p className="text-[13px] font-[500]">21:00</p>
+          <p>21:00</p>
           <div
             className="ml-3 flex-1
         border-t border-label

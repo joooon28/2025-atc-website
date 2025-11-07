@@ -39,13 +39,13 @@ export default function PreviousList({
         )}
       </div>
 
-      <div className="flex flex-col gap-3">
-        <div className="flex gap-[10px] font-[450]">
+      <div className="text-label flex flex-col gap-3">
+        <div className="flex gap-[10px] font-medium text-[16px]">
           <p>{title}</p>
           <p className="italic">{titleeng}</p>
         </div>
-        <p className="flex text-[14px]">{date}</p>
-        <p className="flex text-[14px] whitespace-normal max-tablet:hidden">
+        <p className="font-regular flex text-[14px]">{date}</p>
+        <p className="leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">
           {text}
         </p>
         <button
@@ -65,7 +65,7 @@ export default function PreviousList({
               sub1,
             })
           }
-          className="flex text-[14px] underline cursor-pointer"
+          className="font-regular flex text-[14px] underline cursor-pointer"
         >
           More Info
         </button>

@@ -25,7 +25,7 @@ export default function Footer({ showSponsorship = false }) {
         </div>
 
         <div className="max-tablet:flex-col flex tems-end gap-10">
-          <p className="max-tablet:order-2 font-[400] md:max-w-[570px] text-[16px] text-label">
+          <p className="max-tablet:order-2 font-regular md:max-w-[570px] text-[16px] text-label">
             Dept. of Art & Technology, Sogang University
             <br />
             X417, Xavier Bldg., 35 Baekbeom-Ro, Mapo-gu, Seoul 04107,
@@ -63,7 +63,7 @@ export default function Footer({ showSponsorship = false }) {
             after:w-[var(--dot)] after:h-[var(--dot)] after:rounded-full after:bg-label
             after:translate-x-1/2 after:-translate-y-3/4 after:pointer-events-none"
           />
-          <p className="text-center text-[16px] font-[400]">
+          <p className="text-center text-[16px] font-regular">
             Collaboration & Sponsorship
           </p>
 
