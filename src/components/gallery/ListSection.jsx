@@ -74,8 +74,8 @@ export default function ListSection({
         </div>
 
         <div className="w-full break-words flex flex-col gap-1">
-          <p className="font-[450] text-[14px] text-label">{date}</p>
-          <p className="font-[400] text-[14px] text-label">{text}</p>
+          <p className="font-regular text-[14px] text-label">{date}</p>
+          <p className="font-small text-[14px] text-label">{text}</p>
         </div>
       </div>
     </div>

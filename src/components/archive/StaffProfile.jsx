@@ -56,10 +56,10 @@ export default function StaffProfile({
 
       <div className="flex flex-col items-start gap-1">
         <div className="flex gap-1">
-          <p className="font-[500] text-sm">{name}</p>
-          <p className="italic text-sm">{nameEng}</p>
+          <p className="font-medium text-[14px]">{name}</p>
+          <p className="font-small italic text-[14px]">{nameEng}</p>
         </div>
-        {lead && <p className="text-mint font-[350] text-sm">{lead}</p>}
+        {lead && <p className="text-mint font-regular text-[14px]">{lead}</p>}
 
         <div className="flex gap-1 items-center">
           {emailHref && (

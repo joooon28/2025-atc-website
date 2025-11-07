@@ -93,11 +93,11 @@ export default function Gallery({ onClose }) {
         aria-label="Gallery navigation region"
         role="application"
       >
-        <div className="shrink-0 flex justify-center text-center gap-6">
+        <div className="font-regular shrink-0 flex justify-center text-center gap-6">
           {["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"].map((m) => (
             <p
               key={m}
-              className="hover:underline hover:font-semibold cursor-pointer"
+              className="hover:underline hover:font-heavy cursor-pointer"
               onClick={() => jumpToMonth(m)}
             >
               {m}

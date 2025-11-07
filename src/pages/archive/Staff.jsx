@@ -17,7 +17,7 @@ export default function Staff({ onClose }) {
       <div className="py-10 min-desktop:px-[120px] min-tablet:px-10 max-tablet:px-5 flex flex-col gap-[80px]">
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>크리에이티브 디렉터</p>
             <p>Creative Director</p>
           </div>
@@ -35,7 +35,7 @@ export default function Staff({ onClose }) {
 
         {/* 전시팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex gap-3">
+          <div className="text-[24px] font-heavy italic flex gap-3">
             <p>전시팀</p>
             <p>Exhibiton Team</p>
           </div>
@@ -87,7 +87,7 @@ export default function Staff({ onClose }) {
 
         {/* 프로그램팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex gap-3">
+          <div className="text-[24px] font-heavy italic flex gap-3">
             <p>프로그램팀</p>
             <p>Program Team</p>
           </div>
@@ -122,7 +122,7 @@ export default function Staff({ onClose }) {
 
         {/* 대외협력팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex gap-3">
+          <div className="text-[24px] font-heavy italic flex gap-3">
             <p>대외협력팀</p>
             <p>Business Team</p>
           </div>
@@ -167,7 +167,7 @@ export default function Staff({ onClose }) {
 
         {/* 비주얼 디자인팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>비주얼 디자인팀</p>
             <p>Visual Design Team</p>
           </div>
@@ -219,7 +219,7 @@ export default function Staff({ onClose }) {
 
         {/* 인터렉션팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex gap-3">
+          <div className="text-[24px] font-heavy italic flex gap-3">
             <p>인터랙션팀</p>
             <p>Interaction Team</p>
           </div>
@@ -270,7 +270,7 @@ export default function Staff({ onClose }) {
 
         {/* 아카이브팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex gap-3">
+          <div className="text-[24px] font-heavy italic flex gap-3">
             <p>아카이브팀</p>
             <p>Archive Team</p>
           </div>
@@ -313,7 +313,7 @@ export default function Staff({ onClose }) {
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>사운드 디자이너</p>
             <p>Sound Designer</p>
           </div>
@@ -331,7 +331,7 @@ export default function Staff({ onClose }) {
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-semibold italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>웹개발</p>
             <p>Web Developer</p>
           </div>
