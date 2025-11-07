@@ -5,7 +5,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center gap-[12px]">
+    <div className="text-label font-[450] flex justify-center items-center gap-[12px]">
       <MainLogo onClick={() => navigate("/main")} />
       <header className="border border-label bg-mint-4 py-[12px] px-[24px]">
         <nav>

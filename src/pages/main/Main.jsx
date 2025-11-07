@@ -24,18 +24,23 @@ export default function Main() {
           <VolumeButton />
         </div>
       </div>
-      <div className="max-[800px]:hidden fixed inset-x-0 bottom-0 flex justify-between items-end px-10 pb-[40px] pointer-events-none">
-        <p className="text-[15px] text-label opacity-30">
+      <div className="text-label opacity-30 text-[15px] font-[450] leading-[1.45] max-[800px]:hidden fixed inset-x-0 bottom-0 flex justify-between items-end px-10 pb-[40px] pointer-events-none">
+        <p>
           울퉁불퉁하게 말아리 <br />
           2025 Art & Technology Conference
         </p>
-        <p className="text-end text-[15px] text-label opacity-30">
+        <p>
           11.24 - 11.30 <br />
           서강대학교 하비에르관(X관)
         </p>
       </div>
 
-      <p className="fixed min-[800px]:hidden left-0 right-0 top-[165px] opacity-70 text-center line-height-[1.4] text-label/30 ">
+      <p className="text-[14px] font-[600] fixed min-[800px]:hidden max-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+        2025 <br />
+        Art & Technology Conference <br />
+        울퉁불퉁하게 말아리
+      </p>
+      <p className="text-[12px] font-[600] fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
