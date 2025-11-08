@@ -24,7 +24,7 @@ export default function Main() {
           <VolumeButton />
         </div>
       </div>
-      <div className="text-label opacity-30 text-[15px] font-[450] leading-[1.45] max-[800px]:hidden fixed inset-x-0 bottom-0 flex justify-between items-end px-10 pb-[40px] pointer-events-none">
+      <div className="text-label opacity-30 text-[15px] font-regular leading-[1.45] max-[800px]:hidden fixed inset-x-0 bottom-0 flex justify-between items-end px-10 pb-[40px] pointer-events-none">
         <p>
           울퉁불퉁하게 말아리 <br />
           2025 Art & Technology Conference
@@ -35,19 +35,24 @@ export default function Main() {
         </p>
       </div>
 
-      <p className="text-[14px] font-[600] fixed min-[800px]:hidden max-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="text-[14px] font-heavy fixed min-[800px]:hidden max-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
-      <p className="text-[12px] font-[600] fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
 
-      <div className="z-40 fixed bottom-10 right-10">
-        <Popup />
+      <div className="flex z-40 fixed bottom-10 right-10">
+        <Popup
+          animationSrc="/lottie/MainInteraction/Arrow.lottie"
+          title="바로 말하기"
+          description="ATC를 소개하는 페이지로 이동해요. 이곳에서는 틀려도 괜찮아요. 당신의 솔직한 말로 시작하면 된답니다."
+        />
+        <Popup animationSrc="/lottie/MainInteraction/Zigzag.lottie" />
       </div>
     </main>
   );
