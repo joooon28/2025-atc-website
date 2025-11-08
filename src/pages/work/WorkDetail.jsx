@@ -274,8 +274,8 @@ export default function WorkDetail() {
 
     const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
     const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-    const p2KrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
-    const p2EnClass = `${fontMap.text} font-[450] text-[15px] leading-[145%] tracking-[-0.5%]`;
+    const p2KrClass = `${fontMap.text} text-[15px] leading-[180%] tracking-[-10%]`;
+    const p2EnClass = `${fontMap.text} text-[15px] leading-[145%] tracking-[-0.5%]`;
 
     return (
         <div className="text-label min-h-screen">
