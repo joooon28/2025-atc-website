@@ -181,12 +181,7 @@ export default function WorkDetail() {
     const HEADER_OFFSET = 40;
     const HEADER_COMPONENT_HEIGHT = 97;
     const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
-<<<<<<< HEAD
-    
-    const TARGET_SCROLL_POINT = 177; 
-=======
     const TARGET_SCROLL_POINT = 177;
->>>>>>> origin/main
 
     const getQueryParam = useCallback((param) => {
         const urlParams = new URLSearchParams(location.search);
@@ -245,15 +240,10 @@ export default function WorkDetail() {
     const handleGoBack = useCallback(() => {
         const fromView = getQueryParam('from');
 
-<<<<<<< HEAD
-        if (fromView === 'makers' || fromView === 'gallery') {
-            navigate(`/work?view=${fromView}`);
-=======
         if (fromView === 'makers') {
             navigate(`/work?view=makers`);
         } else if (fromView === 'gallery') {
             navigate(`/work?view=gallery`);
->>>>>>> origin/main
         } else {
             navigate(-1);
         }
@@ -279,14 +269,6 @@ export default function WorkDetail() {
     const displayTitleKr = artwork.titleKr.trim() || null;
     const displayTitleEn = artwork.titleEn.trim() || null;
     const displayLocation = artwork.location.trim() || null;
-<<<<<<< HEAD
-    
-    const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links || []);
-    
-    const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-    const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`; 
-=======
->>>>>>> origin/main
 
     const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.links);
 
@@ -382,20 +364,11 @@ export default function WorkDetail() {
                     <StickyArtist data={artwork} />
                 </div>
 
-<<<<<<< HEAD
-                <div className="Work-Detail-Info w-full flex justify-between">
-                    <div className="Work-Detail-Visual w-[calc(50%-20px)]">
-                        
-                        {/* 영상 영역 */}
-                        {vimeoEmbedUrl && (
-                            <div className="Work-Detail-Video w-full h-[400px] border border-label box-border mb-5 relative">
-=======
                 <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
 
                     <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
                         {vimeoEmbedUrl ? (
                             <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
->>>>>>> origin/main
                                 <iframe
                                     src={vimeoEmbedUrl}
                                     className="w-full h-full absolute top-0 left-0"
@@ -405,11 +378,8 @@ export default function WorkDetail() {
                                     title={displayTitleKr || displayTitleEn}
                                 ></iframe>
                             </div>
-<<<<<<< HEAD
-=======
                         ) : (
                             null
->>>>>>> origin/main
                         )}
 
                         <div className="Work-Detail-Img">
