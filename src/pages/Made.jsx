@@ -6,14 +6,15 @@ import "swiper/css/navigation";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import MenuToggle from "../components/menu/MenuToggle";
 
-const HEADER_HEIGHT = 45;
+const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
 
 const MadeBox = ({ images, title, kr, en, location }) => {
   return (
-    <div className="Made-Detail-Box w-full md:w-[calc(50%-20px)] flex flex-col gap-5 h-[calc(100vh-165px)] box-border">
-      <div className="relative w-full flex-1 overflow-hidden rounded-sm">
+    <div className="Made-Detail-Box w-full min-[376px]:w-[calc(50%-10px)] min-[701px]:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border">
+      <div className="relative w-full overflow-hidden rounded-sm aspect-video">
         <Swiper modules={[Navigation]} navigation className="absolute inset-0 w-full h-full">
           {images.map((src, i) => (
             <SwiperSlide key={i}>
@@ -27,7 +28,7 @@ const MadeBox = ({ images, title, kr, en, location }) => {
         </Swiper>
       </div>
 
-      <div className="Made-Detail-Text flex flex-col gap-3">
+      <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
           id="Made-Detail-Title"
           className="font-[var(--font-mono)] text-[15px] leading-[1.45] tracking-[-0.005em] font-semibold"
@@ -63,7 +64,7 @@ const Made = () => {
       className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#E9F1E9]"
     >
       <div
-        className="fixed left-0 w-full z-[50]"
+        className="max-[701px]:hidden fixed left-0 w-full z-[50]"
         style={{
           top: `${HEADER_TOP_OFFSET}px`,
           backgroundColor: "transparent",
@@ -71,14 +72,23 @@ const Made = () => {
       >
         <Header />
       </div>
+      <div className="p-5 fixed top-0 left-0 right-0 z-50">
+        <div className="min-[701px]:hidden relative">
+          <MenuToggle />
+        </div>
+      </div>
 
       <div
         style={{
           paddingTop: `${HEADER_HEIGHT + HEADER_TOP_OFFSET}px`,
         }}
+        className="max-[700px]:pt-0"
       >
-        <section className="w-full p-10 flex flex-col gap-[60px] box-border">
-          <div className="w-full flex justify-between items-start gap-5 flex-wrap">
+        <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[40px] box-border
+            max-[700px]:pt-[10px]
+        ">
+          
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
               images={[
                 "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
@@ -104,7 +114,7 @@ const Made = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between items-start gap-5 flex-wrap">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10 pt-[20px]">
             <MadeBox
               images={[
                 "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
@@ -136,10 +146,9 @@ const Made = () => {
       <style>{`
         .Made-Detail-Box .swiper-button-prev,
         .Made-Detail-Box .swiper-button-next {
-          width: 30px;
-          height: 30px;
-          background-color: #F8F8F7;
-          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          background-color: transparent;
           color: #362C11;
           opacity: 0;
           transition-duration: 0.2s;

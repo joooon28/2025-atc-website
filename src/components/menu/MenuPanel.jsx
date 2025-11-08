@@ -17,7 +17,7 @@ export default function MenuPanel() {
           <li className="cursor-pointer" onClick={() => navigate("/program")}>
             Program
           </li>
-          <li className="cursor-pointer" onClick={() => navigate("/program")}>
+          <li className="cursor-pointer" onClick={() => navigate("/made")}>
             Made
           </li>
           <li className="cursor-pointer" onClick={() => navigate("/archive")}>
