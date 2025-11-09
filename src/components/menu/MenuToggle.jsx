@@ -34,6 +34,7 @@ export default function MenuToggle() {
       >
         <MenuButton />
       </div>
+      
       <div
         className={[
           "absolute inset-x-0 top-0 z-[50]",
@@ -42,8 +43,9 @@ export default function MenuToggle() {
         ].join(" ")}
         aria-hidden={!open}
       >
-        <MenuPanel />
+        <MenuPanel onClose={handleToggle} />
       </div>
+      
       <div className="absolute top-0 right-0 z-[60]">
         <ButtonLottie
           open={open}
