@@ -236,8 +236,8 @@ export default function Program() {
         <ProgramCalendar />
       </section>
 
-      <section className="pl-10 py-20">
-        <Previous />
+      <section className="pl-10 py-20" id="previous-section">
+        <Previous initialOpenId={location.state?.openPreviousId} />
       </section>
 
       <div className="mt-auto">

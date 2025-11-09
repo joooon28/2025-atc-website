@@ -11,7 +11,7 @@ export default function MainVisual({ onOpen }) {
       left: 15,
       width: 100,
       rotate: 0,
-      ariaLabel: "Made 이동",
+      ariaLabel: "Made 페이지 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -28,7 +28,7 @@ export default function MainVisual({ onOpen }) {
       left: 26,
       width: 100,
       rotate: 0,
-      ariaLabel: "??? 이동",
+      ariaLabel: "무작위로 선택된 Work 디테일 페이지 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -45,7 +45,8 @@ export default function MainVisual({ onOpen }) {
       left: 36,
       width: 274,
       rotate: 0,
-      ariaLabel: "??? 이동",
+      ariaLabel:
+        "Previous Program의 '도대체 무슨 소리를 하는 거야?' More Info로 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -62,7 +63,7 @@ export default function MainVisual({ onOpen }) {
       left: 38,
       width: 100,
       rotate: 0,
-      ariaLabel: "??? 이동",
+      ariaLabel: "Work 페이지의 5초마다 새로운 프로젝트 페이지 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -79,7 +80,7 @@ export default function MainVisual({ onOpen }) {
       left: 45,
       width: 100,
       rotate: 0,
-      ariaLabel: "??? 이동",
+      ariaLabel: "Program 페이지로 이동 후 하단 스크롤 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -96,7 +97,7 @@ export default function MainVisual({ onOpen }) {
       left: 60.3,
       width: 75,
       rotate: 0,
-      ariaLabel: "About 이동",
+      ariaLabel: "About 페이지 이동(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -113,7 +114,7 @@ export default function MainVisual({ onOpen }) {
       left: 83.3,
       width: 475,
       rotate: 0,
-      ariaLabel: "Gallery 이동",
+      ariaLabel: "Archive 페이지 이동 후 Gallery Sheet 오픈(완료)",
       autoplay: true,
       loop: true,
       hitbox: {
@@ -130,7 +131,7 @@ export default function MainVisual({ onOpen }) {
       left: 80.9,
       width: 200,
       rotate: 0,
-      ariaLabel: "Documentary 이동",
+      ariaLabel: "Archive 페이지 이동 후 Documentary Sheet 오픈(완료)",
       autoplay: true,
       loop: true,
       z: 60,
@@ -148,7 +149,7 @@ export default function MainVisual({ onOpen }) {
       left: 85,
       width: 100,
       rotate: 0,
-      ariaLabel: "Memo 이동",
+      ariaLabel: "Archive 페이지 이동 후 Memo Sheet 오픈(완료)",
       autoplay: true,
       loop: true,
       z: 60,
