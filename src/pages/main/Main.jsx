@@ -111,7 +111,7 @@ export default function Main() {
             state: {
               scrollTo: {
                 mode: "px",
-                y: 1100,
+                y: 900,
               },
             },
           });

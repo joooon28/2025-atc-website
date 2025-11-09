@@ -31,6 +31,8 @@ const items = Object.keys(programs).map((key) => {
     detailKo2: meta.detailKo2,
     detailEng2: meta.detailEng2,
     rounded: meta.rounded,
+    location: meta.location,
+    audience: meta.audience,
     main: img.main,
     sub1: img.sub1,
   };
@@ -215,6 +217,8 @@ export default function Program() {
                 rounded={it.rounded}
                 main={it.main}
                 sub1={it.sub1}
+                location={it.location}
+                audience={it.audience}
                 onMoreInfo={openSheet}
                 activeId={activeId}
                 onActivate={handleActivate}
