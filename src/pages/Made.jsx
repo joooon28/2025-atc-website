@@ -31,25 +31,25 @@ const MadeBox = ({ images, title, kr, en, location }) => {
       <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
           id="Made-Detail-Title"
-          className="font-[var(--font-mono)] text-[15px] leading-[1.45] tracking-[-0.005em] font-semibold"
+          className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]"
         >
           {title}
         </p>
         <p
           id="Made-Detail-Kr"
-          className="font-[var(--font-mono)] text-[15px] leading-[1.8] tracking-[-0.1em]"
+          className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
         >
           {kr}
         </p>
         <p
           id="Made-Detail-En"
-          className="font-[var(--font-mono)] text-[15px] leading-[1.8] tracking-[-0.1em]"
+          className="font-normal text-[15px] leading-[145%] tracking-[-0.5%]"
         >
           {en}
         </p>
         <p
           id="Made-Location"
-          className="font-[var(--font-mono)] text-[15px] leading-[1.8] tracking-[-0.1em]"
+          className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
         >
           {location}
         </p>
