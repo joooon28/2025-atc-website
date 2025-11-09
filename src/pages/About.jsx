@@ -23,7 +23,7 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-['Monoplex KR'] font-semibold text-2xl leading-[120%] tracking-normal text-white z-10 
+          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
           
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 
@@ -36,7 +36,7 @@ const FirstSection = () => {
         </h2>
 
         <h2
-          className="font-['Monoplex KR'] font-semibold text-2xl leading-[120%] tracking-normal text-white z-10 
+          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
 
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 min-[701px]:text-right
@@ -71,16 +71,16 @@ const FirstSection = () => {
         max-[700px]:static max-[700px]:w-full max-[700px]:px-4 max-[700px]:pb-0
       "
       >
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-5 tracking-normal text-[#362C11] mb-[-4px] min-[701px]:mb-[-4px]">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px] min-[701px]:mb-[6px]">
           11.20 - 11.23
         </p>
 
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-5 tracking-normal text-[#362C11] mb-1">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
           <span className="underline">@atc.sogang</span>
         </p>
 
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-5 tracking-normal text-[#362C11]">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
           서울특별시 마포구 백범로 35 서강대학교 하비에르관(X관) 4-5층
         </p>
 
@@ -113,7 +113,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none text-center mb-10 text-[#362C11]">
           전시 개요
         </h2>
-        <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
           <p className="mb-3">
             2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
             방식에 주목한다.
@@ -152,10 +152,10 @@ const SecondSection = () => {
           max-[700px]:w-full max-[700px]:pt-0 max-[700px]:pb-10
       "
       >
-        <h2 className="font-['Monoplex KR Wide Nerd'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
+        <h2 className="font-['Monoplex KR'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
           Overview
         </h2>
-        <div className="font-['Monoplex KR Wide Nerd'] font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] text-[#362C11]">
           <p className="mb-3">
             2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
             ways in which each of us speaks.
@@ -255,7 +255,7 @@ const ThirdSection = () => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -302,7 +302,7 @@ const ThirdSection = () => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -349,7 +349,7 @@ const ThirdSection = () => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -375,7 +375,7 @@ const ThirdSection = () => {
         </div>
 
         {/* 4. 네 번째 축사 블록 */}
-        <div className="mb-[40px] text-[#362C11]">
+        <div className="text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
@@ -396,7 +396,7 @@ const ThirdSection = () => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%]">
+          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -502,9 +502,9 @@ const FourthSection = () => {
         max-[700px]:order-2
         "
       >
-        <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none mb-10 text-[#362C11] text-right">
+        <h2 className="font-['Monoplex KR'] font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
           크레딧{" "}
-          <span className="font-['Monoplex KR'] font-semibold italic text-[#362C11]">
+          <span className="font-['Monoplex KR'] font-semibold italic leading-[100%] text-[#362C11]">
             Credits
           </span>
         </h2>
@@ -519,7 +519,7 @@ const FourthSection = () => {
           members={[
             "김현진 Hyeonjin Kim \u00A0\u00A0 신서윤 Seoyun Shin",
             "윤세은 Seeun Yoon \u00A0\u00A0 이윤선 Yoonseon Lee",
-            "황나금 Naguem Hwang",
+            "황나금 Naguem Hwang"
           ]}
         />
         <CreditList
@@ -527,7 +527,7 @@ const FourthSection = () => {
           titleEn="Program Team"
           members={[
             "오제우 Jewoo Oh \u00A0\u00A0 김예찬 Yechan Kim",
-            "우서진 Seojin Woo",
+            "우서진 Seojin Woo"
           ]}
         />
         <CreditList
@@ -535,7 +535,7 @@ const FourthSection = () => {
           titleEn="Public Relations Team"
           members={[
             "김서영 Seoyoung Kim \u00A0\u00A0 문금미 Geummi Moon",
-            "유가형 Kahyung Yoo \u00A0\u00A0 장채원 Chaewon Jang",
+            "유가형 Kahyung Yoo \u00A0\u00A0 장채원 Chaewon Jang"
           ]}
         />
         <CreditList
@@ -544,7 +544,7 @@ const FourthSection = () => {
           members={[
             "심유린 Yurim Sim \u00A0\u00A0 김민서 Minseo Kim",
             "김성은 Seongeun Kim \u00A0\u00A0 김혜림 Hyerim Kim",
-            "이선명 Sunmyeong Lee",
+            "이선명 Sunmyeong Lee"
           ]}
         />
         <CreditList
@@ -552,7 +552,8 @@ const FourthSection = () => {
           titleEn="Interaction Team"
           members={[
             "김인규 Ingyu Kim \u00A0\u00A0 설희윤 Heeyun Sul",
-            "신채원 Chaewon Shin \u00A0\u00A0 이다은 Daeun Lee",
+            "신채원 Chaewon Shin \u00A0\u00A0 윤기완 Giwan Yoon",
+            "이다은 Daeun Lee"
           ]}
         />
         <CreditList
@@ -560,13 +561,13 @@ const FourthSection = () => {
           titleEn="Archieve Team"
           members={[
             "강정모 Jeongmo Kang \u00A0\u00A0 김태희 Taehee Kim",
-            "문예담 Yedam Moon \u00A0\u00A0 박민준 Minjoon Park",
+            "문예담 Yedam Moon \u00A0\u00A0 박민준 Minjoon Park"
           ]}
         />
         <CreditList
           titleKr="사운드 디자이너"
           titleEn="Sound Designer"
-          members={["송창환 Changwhan Song \u00A0\u00A0 윤기완 Giwan Yoon"]}
+          members={["송창환 Changwhan Song"]}
         />
         <CreditList
           titleKr="웹 개발팀"

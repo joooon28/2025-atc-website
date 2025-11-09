@@ -349,20 +349,20 @@ export default function Work() {
                     <div className="Work-Detail mb-20">
 
                         {/* Work 제목 */}
-                        <p id="Work-Title" className="font-['Monoplex KR'] font-medium text-[40px] leading-none mb-10">Work</p>
+                        <p id="Work-Title" className="font-medium text-[40px] leading-[100%] mb-10">Work</p>
 
                         <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
-                            <p className="w-full xl:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
+                            <p className="w-full xl:w-[39.5%] font-noraml text-[15px] leading-[180%] tracking-[-10%]">
                                 기술은 과감해졌고, 기술은 정교해졌습니다.
                                 아트&테크놀로지라는 사회 속에서 우리는 항상 그 사이의 미묘한 균형을 찾고 있습니다. 자유로운 표현의 바다와 정밀한 구조의 정글 사이에서, 각자의 길을 개척하며, 걷습니다. &lt;ATC 2024&gt;에서 수많은 작품들은 다양한 색채와 형태로 질문에 대답하며, 저마다 다른 방식으로 이 도전과 마주합니다.
                             </p>
-                            <p className="w-full xl:w-[39.5%] font-['Monoplex KR'] font-[450] text-[15px] leading-[180%] tracking-tightest">
+                            <p className="w-full xl:w-[39.5%] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
                                 We draw maps both alone and together, then share stories about them. The maps
                                 we create are not merely
                                 about marking roads and places; they become tools that reveal—and even generate—our perspectives on the
                                 world.
                             </p>
-                            <a href="#" className="inline-flex items-center w-auto font-['Monoplex KR'] font-[450] text-base leading-[180%] tracking-tighter underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
+                            <a href="#" className="inline-flex items-center w-auto font-normal text-base leading-[145%] tracking-[-0.5%] underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
                                 전시 배치도 Exhibiton Map
                                 <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle mb-[3px]" />
                             </a>
