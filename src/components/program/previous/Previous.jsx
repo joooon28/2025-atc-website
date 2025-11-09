@@ -26,7 +26,7 @@ const items = Object.keys(programs).map((key) => {
   };
 });
 
-export default function Previous() {
+export default function Previous({ initialOpenId }) {
   const [selected, setSelected] = useState(null);
   const [showSheet, setShowSheet] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -126,6 +126,15 @@ export default function Previous() {
       el.removeEventListener("dragstart", preventNativeDrag);
     };
   }, []);
+
+  useEffect(() => {
+    if (!initialOpenId) return;
+    const item = items.find((it) => it.id === initialOpenId);
+    if (!item) return;
+    setSelected(item);
+    setShowSheet(true);
+    requestAnimationFrame(() => setSheetOpen(true));
+  }, [initialOpenId]);
 
   return (
     <div className="flex flex-col gap-5">

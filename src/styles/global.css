@@ -37,17 +37,17 @@
   --breakpoint-tablet: 701px;
   --breakpoint-desktop: 1440px;
 
-  --font-weight-small: 400;
-  --font-weight-regular: 450;
-  --font-weight-medium: 500;
-  --font-weight-strong: 550;
-  --font-weight-heavy: 600;
+  --font-weight-small: 350;
+  --font-weight-regular: 400;
+  --font-weight-medium: 450;
+  --font-weight-strong: 500;
+  --font-weight-heavy: 550;
 
   --leading-small: 1.4;
   --leading-regular: 1.45;
   --leading-large: 1.8;
 
   --letter-spacing-tight: -1.5;
-  --letter-spacing-regular: -0.075;
+  --letter-spacing-regular: 10.075;
 }
 /*기본 폰트는 font-mono로 적용, font-mono 안 써도 됨*/

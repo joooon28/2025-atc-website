@@ -11,6 +11,7 @@ export default function Gallery({ onClose }) {
     "0710_대외협력팀_킥오프_후_친해진_대협팀"
   );
   const listRef = useRef(null);
+  const regionRef = useRef(null);
   const [isShort, setIsShort] = useState(window.innerHeight < 800);
 
   useEffect(() => {
@@ -70,12 +71,22 @@ export default function Gallery({ onClose }) {
     }
   };
 
-  const onWheel = (e) => {
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-    if (delta === 0) return;
-    e.preventDefault();
-    selectByStep(delta > 0 ? 1 : -1);
-  };
+  useEffect(() => {
+    const el = regionRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      const delta =
+        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (delta === 0) return;
+      e.preventDefault(); // 이제 정상 작동
+      selectByStep(delta > 0 ? 1 : -1);
+    };
+
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () =>
+      el.removeEventListener("wheel", handleWheel, { passive: false });
+  }, [selectByStep]);
 
   return (
     <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-svh"}`}>
@@ -86,9 +97,9 @@ export default function Gallery({ onClose }) {
         </button>
       </div>
       <div
+        ref={regionRef}
         tabIndex={0}
         onKeyDown={onKeyDown}
-        onWheel={onWheel}
         className="flex-1 min-h-0 flex flex-col pt-10 outline-none"
         aria-label="Gallery navigation region"
         role="application"

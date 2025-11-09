@@ -7,12 +7,15 @@ import Documentary from "./documentary/Documentary";
 import Gallery from "./galllery/Gallery";
 import MenuToggle from "../../components/menu/MenuToggle";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Archive() {
   const [activeSheet, setActiveSheet] = useState(null);
   const [showSheet, setShowSheet] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const openSheet = (name) => {
     setActiveSheet(name);
@@ -24,8 +27,24 @@ export default function Archive() {
     setSheetOpen(false);
   };
 
+  useEffect(() => {
+    const target = location.state?.sheet;
+    if (target === "gallery") {
+      openSheet("gallery");
+      navigate(".", { replace: true, state: {} });
+    }
+    if (target === "documentary") {
+      openSheet("documentary");
+      navigate(".", { replace: true, state: {} });
+    }
+    if (target === "memo") {
+      openSheet("memo");
+      navigate(".", { replace: true, state: {} });
+    }
+  }, [location.state, navigate]);
+
   const renderSheet = () => {
-    const commonProps = { onClose: closeSheet }; // XIcon 클릭 시 닫히도록 전달
+    const commonProps = { onClose: closeSheet };
     switch (activeSheet) {
       case "staff":
         return <Staff {...commonProps} />;

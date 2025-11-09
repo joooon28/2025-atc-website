@@ -5,6 +5,8 @@ import ProgramCalendar from "../../components/program/ProgramCalendar";
 import Previous from "../../components/program/previous/Previous";
 import MoreInfo from "../../components/program/previous/MoreInfo";
 import { useState, useRef, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import MenuToggle from "../../components/menu/MenuToggle";
 
 import images from "../../data/program/program.json";
@@ -142,6 +144,40 @@ export default function Program() {
     };
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const st = location.state?.scrollTo;
+    if (!st) return;
+
+    const scrollNow = () => {
+      if (st.selector) {
+        const el = document.querySelector(st.selector);
+        if (el)
+          el.scrollIntoView({ behavior: "smooth", block: st.block || "start" });
+        return;
+      }
+
+      if (st.mode === "px") {
+        window.scrollTo({ top: Number(st.y) || 0, behavior: "smooth" });
+        return;
+      }
+
+      if (st.mode === "percent") {
+        const doc = document.documentElement;
+        const maxScroll = (doc.scrollHeight || 0) - window.innerHeight;
+        const y = Math.max(0, maxScroll * Number(st.p ?? 0));
+        window.scrollTo({ top: y, behavior: "smooth" });
+        return;
+      }
+    };
+
+    requestAnimationFrame(() => setTimeout(scrollNow, 0));
+
+    navigate(".", { replace: true, state: null });
+  }, [location.state, navigate]);
+
   return (
     <div className="flex flex-col min-h-svh bg-mint-2">
       <div className="max-tablet:hidden pt-[40px]">
@@ -200,8 +236,8 @@ export default function Program() {
         <ProgramCalendar />
       </section>
 
-      <section className="pl-10 py-20">
-        <Previous />
+      <section className="pl-10 py-20" id="previous-section">
+        <Previous initialOpenId={location.state?.openPreviousId} />
       </section>
 
       <div className="mt-auto">

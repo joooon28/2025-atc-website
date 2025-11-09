@@ -10,7 +10,12 @@ export default function Popup({
   onClose,
   onGo,
   lottieProps = {},
+  rotate = 0,
+  size = 140,
 }) {
+  const lottieClassName = `w-full h-auto ${lottieProps.className ?? ""}`.trim();
+  const widthValue = typeof size === "number" ? `${size}px` : size;
+
   return (
     <div className="text-label flex flex-col text-center gap-6 w-[300px] h-[362px] bg-mint-6 border border-label p-3">
       <div className="flex justify-end">
@@ -18,20 +23,24 @@ export default function Popup({
           <XIcon className="w-[24px] h-[24px]" weight="thin" />
         </button>
       </div>
-      <div className="flex justify-center">
-        {animationSrc ? (
-          <DotLottieReact
-            src={animationSrc}
-            autoplay={autoplay}
-            loop={loop}
-            {...lottieProps}
-          />
-        ) : (
-          <div className="grid place-items-center">Lottie</div>
+      <div className="flex-1 min-h-0 flex items-center justify-center">
+        {animationSrc && (
+          <div
+            className="origin-center overflow-visible"
+            style={{ transform: `rotate(${rotate}deg)`, width: widthValue }}
+          >
+            <DotLottieReact
+              src={animationSrc}
+              autoplay={autoplay}
+              loop={loop}
+              className={lottieClassName}
+              {...{ ...lottieProps, className: lottieClassName }}
+            />
+          </div>
         )}
       </div>
-      <p className="text-[20px] font-semibold">{title}</p>
-      <p className="text-[14px] px-3">{description}</p>
+      <p className="text-[20px] font-heavy">{title}</p>
+      <p className="text-[14px] font-regular px-1">{description}</p>
       <button
         type="button"
         onClick={onGo}
