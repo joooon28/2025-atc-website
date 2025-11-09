@@ -9,9 +9,15 @@ import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 const routesByKey = {
-  Arrow: "/about",
-  ArrowCurved: "/documentary",
-  Zigzag: "/archive",
+  Word_Ul: "/made",
+  Word_Toong: "/about",
+  Word_Bul: "/about",
+  Word_Toong2: "/work",
+  Word_Ha: "/program",
+  Word_Ge: "/about",
+  Word_Mal: "/archive/gallery",
+  Word_A: "/archive/documentary",
+  Word_Ri: "/archive/memo",
 };
 
 export default function Main() {
@@ -22,31 +28,88 @@ export default function Main() {
   const navigate = useNavigate();
 
   const popupContent = useMemo(() => {
-    if (popup === "Arrow") {
+    if (popup === "Word_Ul") {
       return {
-        animationSrc: "/lottie/MainInteraction/Arrow.lottie",
+        animationSrc: "/lottie/MainInteraction/Word_Ul.lottie",
+        title: "흩어진 언어의 입자",
+        size: 150,
+        description:
+          "말아리 조각, 몽당 연필, 명함, 노트... 언어의 입자들이 손에 잡히는 물건으로 바뀌었어요.",
+        onGo: () => {
+          navigate(routesByKey.Word_Ul);
+        },
+      };
+    }
+    if (popup === "Word_Toong") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Toong.lottie",
+        title: "생각이 번뜩",
+        size: 150,
+        description:
+          "무작위로 선택된 프로젝트 페이지로 이동해요. ‘생각이 번뜩!’ 떠오를 계기가 될 수도?",
+        onGo: () => {
+          navigate(routesByKey.Word_Toong);
+        },
+      };
+    }
+    if (popup === "Word_Bul") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Bul.lottie",
+        title: "아 이건가? 아니 이건가?",
+        size: 150,
+        description:
+          "ATC의 사운드가 어떻게 만들어졌는지 알아보세요. 예측할 수 없는 망설임이 음악이 되는 순간을 목격해볼까요?",
+        onGo: () => {
+          navigate(routesByKey.Word_Bul);
+        },
+      };
+    }
+    if (popup === "Word_Toong2") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Toong2.lottie",
+        title: "횡설수설",
+        size: 150,
+        description:
+          "5초마다 새로운 프로젝트를 탐험해볼까요? 이곳저곳 돌아다니다 보면 운명의 무언가를 만날지도?",
+        onGo: () => {
+          navigate(routesByKey.Word_Toong2);
+        },
+      };
+    }
+    if (popup === "Word_Ha") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Ha.lottie",
+        title: "날카로운 지적",
+        size: 150,
+        description:
+          "프로그램 하나하나에 담긴 예리한 질문들. 작업자들과 기획단이 나눈 날카로운 고민을 만나보세요.",
+        onGo: () => {
+          navigate(routesByKey.Word_Ha, {
+            state: {
+              scrollTo: {
+                mode: "px",
+                y: 1100,
+              },
+            },
+          });
+        },
+      };
+    }
+    if (popup === "Word_Ge") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Ge.lottie",
         title: "바로 말하기",
         size: 140,
         description:
           "ATC를 소개하는 페이지로 이동해요. 이곳에서는 틀려도 괜찮아요. 당신의 솔직한 말로 시작하면 된답니다.",
         onGo: () => {
-          navigate(routesByKey.Arrow);
+          navigate(routesByKey.Word_Ge);
         },
       };
     }
-    if (popup === "ArrowCurved") {
+    if (popup === "Word_Mal") {
       return {
-        animationSrc: "/lottie/MainInteraction/ArrowCurved.lottie",
-        title: "망설임 끝의 확신",
-        size: 140,
-        description:
-          "다큐멘터리 페이지로 이동해요. 망설임은 확신의 시작일지도 몰라요. 그 흔들림의 시간들을 따라가 볼까요?",
-        onGo: () => navigate("/archive", { state: { sheet: "documentary" } }),
-      };
-    }
-    if (popup === "Zigzag") {
-      return {
-        animationSrc: "/lottie/MainInteraction/Zigzag.lottie",
+        animationSrc: "/lottie/MainInteraction/Word_Mal.lottie",
         title: "모르겠어!!",
         rotate: -44,
         description:
@@ -54,16 +117,24 @@ export default function Main() {
         onGo: () => navigate("/archive", { state: { sheet: "gallery" } }),
       };
     }
-    if (popup === "Zigzag2") {
+    if (popup === "Word_A") {
       return {
-        animationSrc: "/lottie/MainInteraction/Zigzag2.lottie",
-        title: "아 이건가? 아니 이건가?",
-        size: 150,
+        animationSrc: "/lottie/MainInteraction/Word_A.lottie",
+        title: "망설임 끝의 확신",
+        size: 140,
         description:
-          "ATC의 사운드가 어떻게 만들어졌는지 알아보세요. 예측할 수 없는 망설임이 음악이 되는 순간을 목격해볼까요?",
-        onGo: () => {
-          navigate(routesByKey.ArrowCurved);
-        },
+          "다큐멘터리 페이지로 이동해요. 망설임은 확신의 시작일지도 몰라요. 그 흔들림의 시간들을 따라가 볼까요?",
+        onGo: () => navigate("/archive", { state: { sheet: "documentary" } }),
+      };
+    }
+    if (popup === "Word_Ri") {
+      return {
+        animationSrc: "/lottie/MainInteraction/Word_Ri.lottie",
+        title: "헛소리 하기",
+        size: 140,
+        description:
+          "기획 과정에서 나온 울퉁불퉁한 말들과 대화들을 탐색해요. 과연 무슨 맥락에서 나온 말들일까요?",
+        onGo: () => navigate("/archive", { state: { sheet: "memo" } }),
       };
     }
     return null;

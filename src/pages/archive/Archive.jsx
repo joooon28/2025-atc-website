@@ -37,6 +37,10 @@ export default function Archive() {
       openSheet("documentary");
       navigate(".", { replace: true, state: {} });
     }
+    if (target === "memo") {
+      openSheet("memo");
+      navigate(".", { replace: true, state: {} });
+    }
   }, [location.state, navigate]);
 
   const renderSheet = () => {
