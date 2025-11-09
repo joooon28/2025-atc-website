@@ -5,13 +5,17 @@ import Staff from "./Staff";
 import Memo from "./Memo";
 import Documentary from "./documentary/Documentary";
 import Gallery from "./galllery/Gallery";
+import MenuToggle from "../../components/menu/MenuToggle";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Archive() {
   const [activeSheet, setActiveSheet] = useState(null);
   const [showSheet, setShowSheet] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const openSheet = (name) => {
     setActiveSheet(name);
@@ -23,8 +27,24 @@ export default function Archive() {
     setSheetOpen(false);
   };
 
+  useEffect(() => {
+    const target = location.state?.sheet;
+    if (target === "gallery") {
+      openSheet("gallery");
+      navigate(".", { replace: true, state: {} });
+    }
+    if (target === "documentary") {
+      openSheet("documentary");
+      navigate(".", { replace: true, state: {} });
+    }
+    if (target === "memo") {
+      openSheet("memo");
+      navigate(".", { replace: true, state: {} });
+    }
+  }, [location.state, navigate]);
+
   const renderSheet = () => {
-    const commonProps = { onClose: closeSheet }; // XIcon 클릭 시 닫히도록 전달
+    const commonProps = { onClose: closeSheet };
     switch (activeSheet) {
       case "staff":
         return <Staff {...commonProps} />;
@@ -41,34 +61,82 @@ export default function Archive() {
 
   return (
     <div className="flex flex-col min-h-svh bg-mint-6">
-      <div className="pt-[40px]">
+      <div className="max-tablet:hidden pt-[40px]">
         <Header />
       </div>
+      <div className="p-5 z-10">
+        <div className="min-tablet:hidden relative">
+          <MenuToggle />
+        </div>
+      </div>
 
-      <div className="p-[40px]">
+      <div className="min-desktop:px-[120px] max-desktop:px-[40px]">
         <section
-          className="max-[701px]:hidden grid grid-cols-4 items-stretch divide-x divide-label border border-label
-          relative [--dot:6px] [--b:1px]
-          [&>*]:relative
-          [&>*::before]:content-[''] [&>*::before]:absolute [&>*::before]:left-0
-          [&>*]:before:w-[var(--dot)] [&>*]:before:h-[var(--dot)]
-          [&>*]:before:rounded-full [&>*]:before:bg-fill
-          [&>*]:before:-translate-x-1/2 [&>*]:before:-translate-y-1/2 [&>*]:before:transform
-          [&>*]:before:z-10 [&>*]:before:pointer-events-none
+          className="
+    grid grid-cols-4 items-stretch
+    max-tablet:grid-cols-2
+    max-mobile:grid-cols-1
+    min-h-0 relative
 
-          [&>*]:after:content-[''] [&>*]:after:absolute [&>*]:after:left-0
-          [&>*]:after:bottom-[var(--b)] [&>*]:after:w-[var(--dot)] [&>*]:after:h-[var(--dot)]
-          [&>*]:after:rounded-full [&>*]:after:bg-fill
-          [&>*]:after:-translate-x-3/5 [&>*]:after:translate-y-3/4 [&>*]:after:transform
-          [&>*]:after:z-10 [&>*]:after:pointer-events-none
+    border border-label
 
-          before:content-[''] before:absolute before:right-0 before:top-[var(--b)]
-          before:w-[var(--dot)] before:h-[var(--dot)] before:rounded-full before:bg-fill
-          before:translate-x-3/5 before:-translate-y-3/4 before:z-20 before:pointer-events-none
+    [--dot:6px] [--b:1px]
 
-          after:content-[''] after:absolute after:right-0 after:bottom-[var(--b)]
-          after:w-[var(--dot)] after:h-[var(--dot)] after:rounded-full after:bg-fill
-          after:translate-x-3/5 after:translate-y-3/4 after:z-20 after:pointer-events-none"
+    [&>*]:aspect-square
+    [&>*]:relative
+
+    [&>*]:border-r [&>*]:border-b [&>*]:border-label
+    [&>*:nth-child(4n)]:border-r-0              
+    [&>*:nth-last-child(-n+4)]:border-b-0       
+
+      max-tablet:[&>*]:border-0
+      max-tablet:text-label
+      max-tablet:[background-image:linear-gradient(90deg,currentColor,currentColor),linear-gradient(0deg,currentColor,currentColor)]
+      max-tablet:[background-size:1px_100%,100%_1px]
+      max-tablet:[background-position:50%_0,0_50%]
+      max-tablet:bg-no-repeat
+      max-tablet:[&>*:nth-child(4)::before]:w-0
+      max-tablet:[&>*:nth-child(4)::before]:h-0
+
+    max-mobile:[&>*]:border-r-0
+    max-mobile:[&>*]:border-b max-mobile:[&>*]:border-label
+    max-mobile:[&>*:last-child]:border-b-0
+    max-mobile:[background-image:none]
+
+    max-mobile:[&>*:nth-last-child(-n+4)]:border-b
+
+    max-mobile:[&>*:nth-child(4)::before]:w-[var(--dot)]
+    max-mobile:[&>*:nth-child(4)::before]:h-[var(--dot)]
+    max-mobile:[&>*:last-child]:!border-b-0
+
+    [&>*::before]:content-[''] [&>*::before]:absolute
+    [&>*::before]:w-[var(--dot)] [&>*::before]:h-[var(--dot)]
+    [&>*::before]:rounded-full [&>*::before]:bg-fill
+    [&>*::before]:left-0 [&>*::before]:top-0
+    [&>*::before]:-translate-x-3/8 [&>*::before]:-translate-y-1/2
+    [&>*::before]:z-10 [&>*::before]:pointer-events-none
+
+    [&>*::after]:content-[''] [&>*::after]:absolute
+    [&>*::after]:w-[var(--dot)] [&>*::after]:h-[var(--dot)]
+    [&>*::after]:rounded-full [&>*::after]:bg-fill
+    [&>*::after]:right-0 [&>*::after]:bottom-0
+    [&>*::after]:translate-x-1/2 [&>*::after]:translate-y-1/2
+    [&>*::after]:z-10 [&>*::after]:pointer-events-none
+
+    before:content-[''] before:absolute
+    before:w-[var(--dot)] before:h-[var(--dot)]
+    before:rounded-full before:bg-fill
+    before:right-0 before:top-0
+    before:translate-x-1/2 before:-translate-y-1/2
+    before:z-20 before:pointer-events-none
+
+    after:content-[''] after:absolute
+    after:w-[var(--dot)] after:h-[var(--dot)]
+    after:rounded-full after:bg-fill
+    after:left-0 after:bottom-0
+    after:-translate-x-1/2 after:translate-y-1/2
+    after:z-20 after:pointer-events-none
+  "
         >
           <ArchiveSection
             ko="기획단"

@@ -2,7 +2,31 @@ import PreviousList from "./PreviousList";
 import { useState, useRef, useEffect } from "react";
 import MoreInfo from "./MoreInfo";
 
-export default function Previous() {
+import images from "../../../data/program/previous.json";
+import programs from "../../../data/program/previous.meta.json";
+
+const items = Object.keys(programs).map((key) => {
+  const meta = programs[key];
+  const img = images[key];
+
+  return {
+    id: key,
+    title: meta.title,
+    titleeng: meta.titleeng,
+    date: meta.date,
+    text: meta.text,
+    texteng: meta.texteng,
+    detailKo1: meta.detailKo1,
+    detailEng1: meta.detailEng1,
+    detailKo2: meta.detailKo2,
+    detailEng2: meta.detailEng2,
+    rounded: meta.rounded,
+    main: img.main,
+    sub1: img.sub1,
+  };
+});
+
+export default function Previous({ initialOpenId }) {
   const [selected, setSelected] = useState(null);
   const [showSheet, setShowSheet] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -103,9 +127,18 @@ export default function Previous() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!initialOpenId) return;
+    const item = items.find((it) => it.id === initialOpenId);
+    if (!item) return;
+    setSelected(item);
+    setShowSheet(true);
+    requestAnimationFrame(() => setSheetOpen(true));
+  }, [initialOpenId]);
+
   return (
     <div className="flex flex-col gap-5">
-      <div className="font-[600] text-[24px] flex gap-3">
+      <div className="max-[419px]:flex-col max-[419px]:gap-0 font-heavy text-[24px] flex gap-3">
         <p>이전 프로그램</p>
         <p className="italic">Previous Program</p>
       </div>
@@ -142,21 +175,26 @@ export default function Previous() {
           }}
           className="flex gap-5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pr-10"
         >
-          <PreviousList
-            title="지도 그리기"
-            eng="Drawing Map"
-            time="9.30. (THU) 16:00-18:00"
-            text="요약 한글"
-            detailKo="상세 한글 본문"
-            detailEn="Detailed English paragraph…"
-            image="https://i.imgur.com/xxxx1.jpg"
-            onMoreInfo={openSheet}
-          />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
-          <PreviousList onMoreInfo={openSheet} />
+          {items.map((it) => (
+            <PreviousList
+              key={it.id}
+              title={it.title}
+              titleeng={it.titleeng}
+              date={it.date}
+              text={it.text}
+              texteng={it.texteng}
+              detailKo1={it.detailKo1}
+              detailEng1={it.detailEng1}
+              detailKo2={it.detailKo2}
+              detailEng2={it.detailEng2}
+              rounded={it.rounded}
+              main={it.main}
+              sub1={it.sub1}
+              onMoreInfo={openSheet}
+            />
+          ))}
         </section>
+
         <div className="pr-10">
           <div
             className=" flex
