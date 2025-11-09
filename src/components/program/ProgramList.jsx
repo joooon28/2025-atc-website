@@ -20,8 +20,16 @@ export default function ProgramList({
   activeId,
   onActivate,
   onMoreInfo,
+  hoveredNumber,
 }) {
   const open = activeId === id;
+
+  const forceHover = String(hoveredNumber) === String(number);
+  const rowBg = open
+    ? "bg-mint-6"
+    : forceHover
+    ? "bg-mint-6"
+    : "hover:bg-mint-6";
 
   return (
     <div
@@ -38,7 +46,7 @@ export default function ProgramList({
       className={`
     group flex border-t border-label py-3
     relative [--dot:6px] [--b:1px] [--expand:800px]
-    ${open ? "bg-mint-6" : "hover:bg-mint-6"}
+    ${rowBg}
 
     before:content-[''] before:absolute
     before:left-0 before:top-[var(--b)]

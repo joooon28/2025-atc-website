@@ -4,7 +4,7 @@ import ProgramList from "../../components/program/ProgramList";
 import ProgramCalendar from "../../components/program/ProgramCalendar";
 import Previous from "../../components/program/previous/Previous";
 import MoreInfo from "../../components/program/previous/MoreInfo";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import MenuToggle from "../../components/menu/MenuToggle";
@@ -44,6 +44,22 @@ export default function Program() {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const [activeId, setActiveId] = useState(null);
+
+  // 🔗 Calendar ↔ ProgramList 연동 상태
+  const [hoveredNumber, setHoveredNumber] = useState(null);
+
+  // number → id 매핑 (Calendar 클릭 시 ProgramList 토글용)
+  const numToId = useMemo(
+    () => Object.fromEntries(items.map((it) => [String(it.number), it.id])),
+    []
+  );
+
+  // Calendar에서 (n) 클릭 → 해당 ProgramList 토글
+  const toggleListByNumber = (n) => {
+    const id = numToId[String(n)];
+    if (!id) return;
+    setActiveId((prev) => (prev === id ? null : id));
+  };
 
   const openSheet = (item) => {
     setSelected(item);
@@ -201,6 +217,7 @@ export default function Program() {
           <section>
             {items.map((it) => (
               <ProgramList
+                key={it.id}
                 id={it.id}
                 title={it.title}
                 number={it.number}
@@ -222,6 +239,7 @@ export default function Program() {
                 onMoreInfo={openSheet}
                 activeId={activeId}
                 onActivate={handleActivate}
+                hoveredNumber={hoveredNumber}
               />
             ))}
 
@@ -237,7 +255,12 @@ export default function Program() {
           </section>
         </div>
 
-        <ProgramCalendar />
+        <ProgramCalendar
+          hoveredNumber={hoveredNumber}
+          onHoverNumber={setHoveredNumber}
+          onLeaveNumber={() => setHoveredNumber(null)}
+          onClickNumber={toggleListByNumber}
+        />
       </section>
 
       <section className="pl-10 py-20" id="previous-section">
