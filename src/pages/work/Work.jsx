@@ -40,15 +40,12 @@ const sortMakersFn = (list, ascending) => {
     });
 };
 
-const groupArtworksByPreservedOrder = (orderedArtworkList) => {
+const getUniqueMakersMap = (list) => {
     const grouped = {};
-    const makerOrder = []; 
-
-    orderedArtworkList.forEach(work => {
+    list.forEach(work => {
         if (!Array.isArray(work.makers)) return;
-
         const workInfo = { id: work.id, title: work.title, team: work.artist };
-
+        
         work.makers.forEach(maker => {
             if (!maker.name) return;
             const makerName = maker.name;
@@ -57,57 +54,29 @@ const groupArtworksByPreservedOrder = (orderedArtworkList) => {
                 grouped[makerName] = {
                     name: makerName,
                     links: Array.isArray(maker.links) ? maker.links : [],
-                    works: []
+                    works: [],
                 };
-                makerOrder.push(makerName); 
             }
-
             if (!grouped[makerName].works.some(w => w.id === work.id)) {
                 grouped[makerName].works.push(workInfo);
             }
         });
     });
-
+    
     Object.values(grouped).forEach(maker => {
-        maker.works = sortArtworksFn(maker.works, true, 'title');
+        maker.works = sortArtworksFn(maker.works, true, 'title'); 
     });
 
-    return makerOrder.map(name => grouped[name]);
+    return grouped;
 };
 
-
 const groupArtworksByMaker = (list, ascending) => {
-    const grouped = {};
+    const makersMap = getUniqueMakersMap(list);
+    return sortMakersFn(Object.values(makersMap), ascending);
+};
 
-    list.forEach(work => {
-        if (!Array.isArray(work.makers)) {
-            return;
-        }
-
-        const workInfo = { id: work.id, title: work.title, team: work.artist };
-
-        work.makers.forEach(maker => {
-            if (!maker.name) return;
-
-            if (!grouped[maker.name]) {
-                grouped[maker.name] = {
-                    name: maker.name,
-                    links: Array.isArray(maker.links) ? maker.links : [],
-                    works: []
-                };
-            }
-
-            if (!grouped[maker.name].works.some(w => w.id === work.id)) {
-                grouped[maker.name].works.push(workInfo);
-            }
-        });
-    });
-
-    Object.values(grouped).forEach(maker => {
-        maker.works = sortArtworksFn(maker.works, true, 'title');
-    });
-
-    return sortMakersFn(Object.values(grouped), ascending);
+const shuffleMakers = (makerList) => {
+    return shuffle(makerList);
 };
 
 const formatTitle = (title) => {
@@ -120,15 +89,12 @@ const formatTitle = (title) => {
     let finalEngText = '';
 
     if (/[A-Za-z]/.test(trimmedTitle)) {
-
         const matches = trimmedTitle.match(/^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/);
 
         if (matches && matches.length === 3) {
-
             finalKorText = matches[1].trim();
             finalEngText = matches[2].trim();
         } else {
-
             const firstLatinIndex = trimmedTitle.search(/[A-Za-z]/);
             if (firstLatinIndex !== -1) {
                 finalKorText = trimmedTitle.substring(0, firstLatinIndex).trim();
@@ -182,7 +148,6 @@ const formatArtistName = (artistName, isGallery = false) => {
         }
     });
 };
-
 
 const formatTitleForMakers = (title) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
@@ -272,6 +237,10 @@ const ArtworkCard = React.memo(({ art }) => {
 });
 
 const MakerRow = React.memo(({ maker }) => {
+    if (!maker || typeof maker.name !== 'string' || !Array.isArray(maker.works)) {
+        return null;
+    }
+    
     return (
         <div className="Maker-Row flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             <div className="Maker-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
@@ -308,6 +277,7 @@ const MakerRow = React.memo(({ maker }) => {
     );
 });
 
+
 export default function Work() {
 
     const location = useLocation();
@@ -322,18 +292,25 @@ export default function Work() {
 
     const [currentView, setCurrentView] = useState(initialView);
 
-    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false);
-
+    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false); 
     const [isAscending, setIsAscending] = useState(true);
 
-    const [randomArtworkList, setRandomArtworkList] = useState(() => shuffle(initialArtworks));
+    const initialRandomArtworks = shuffle(initialArtworks);
+    const [randomArtworkList, setRandomArtworkList] = useState(initialRandomArtworks);
+    
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks); 
+    
+    const [makerListKey, setMakerListKey] = useState(Math.random().toString());
+
+    const initialRandomMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
+
 
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-        const initialRandomOrder = randomArtworkList;
         if (initialView === 'makers') {
-            return groupArtworksByPreservedOrder(initialRandomOrder); 
+            return initialRandomMakers; 
         }
-        return initialRandomOrder;
+        return initialRandomArtworks;
     });
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
@@ -346,19 +323,18 @@ export default function Work() {
         let newList;
         let newSearchParams = `?view=${mode}`; 
 
-        if (isCurrentlySorted) {
-            const ascending = isAscending;
-            if (mode === 'gallery') {
-                 newList = sortArtworksFn(initialArtworks, ascending, 'title');
-            } else { 
-                 newList = groupArtworksByMaker(initialArtworks, ascending);
+        if (mode === 'gallery') {
+            if (isCurrentlySorted) {
+                newList = sortArtworks(initialArtworks, isAscending, 'title');
+            } else {
+                newList = randomArtworkList; 
             }
         } else {
-            const sourceList = randomArtworkList; 
-            if (mode === 'gallery') {
-                newList = sourceList; 
-            } else { 
-                newList = groupArtworksByPreservedOrder(sourceList);
+            
+            if (isCurrentlySorted) {
+                newList = groupArtworksByMaker(initialArtworks, isAscending);
+            } else {
+                newList = randomMakerList;
             }
         }
         
@@ -367,14 +343,20 @@ export default function Work() {
     };
 
     const handleRandomize = () => {
+        
         const newRandomList = shuffle(initialArtworks);
         setRandomArtworkList(newRandomList); 
 
-        setIsAscending(true);
+        const allMakers = Object.values(uniqueMakersMap);
+        const newRandomMakers = shuffleMakers(allMakers);
+        setRandomMakerList(newRandomMakers); 
+
+        setIsAscending(true); 
         setIsCurrentlySorted(false);
 
         if (currentView === 'makers') {
-            setSortedArtworks(groupArtworksByPreservedOrder(newRandomList));
+            setMakerListKey(Math.random().toString());
+            setSortedArtworks(newRandomMakers);
         } else {
             setSortedArtworks(newRandomList);
         }
@@ -402,6 +384,7 @@ export default function Work() {
         }
 
         setIsAscending(newAscending);
+        setMakerListKey(Math.random().toString()); // 강제 렌더링
 
         navigate(`?view=${currentView}`, { replace: true });
     };
@@ -512,13 +495,17 @@ export default function Work() {
                     {/* Makers List */}
                     <div
                         id="Makers-List"
+                        key={currentView === 'makers' ? makerListKey : 'gallery'}
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
                         after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                     >
                         {makersList.map((maker) => (
-                            <MakerRow key={maker.name} maker={maker} />
+                            <MakerRow 
+                                key={maker.name} 
+                                maker={maker} 
+                            />
                         ))}
                     </div>
                 </div>

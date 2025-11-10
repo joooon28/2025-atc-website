@@ -15,11 +15,21 @@ export default function ProgramList({
   rounded,
   main,
   sub1,
+  location,
+  audience,
   activeId,
   onActivate,
   onMoreInfo,
+  hoveredNumber,
 }) {
   const open = activeId === id;
+
+  const forceHover = String(hoveredNumber) === String(number);
+  const rowBg = open
+    ? "bg-mint-6"
+    : forceHover
+    ? "bg-mint-6"
+    : "hover:bg-mint-6";
 
   return (
     <div
@@ -36,7 +46,7 @@ export default function ProgramList({
       className={`
     group flex border-t border-label py-3
     relative [--dot:6px] [--b:1px] [--expand:800px]
-    ${open ? "bg-mint-6" : "hover:bg-mint-6"}
+    ${rowBg}
 
     before:content-[''] before:absolute
     before:left-0 before:top-[var(--b)]
@@ -80,9 +90,17 @@ export default function ProgramList({
               open ? "max-h-[var(--expand)] opacity-100" : "max-h-0 opacity-0",
             ].join(" ")}
           >
-            <div className="flex flex-col gap-10 pt-10">
+            <div className="flex flex-col gap-4 pt-10">
               <div className="font-regular text-[15px] leading-regular tracking-regular text-label">
                 {text}
+              </div>
+              <div className="flex font-regular text-[15px] gap-2">
+                <p className="shrink-0 font-heavy">장소</p>
+                <p>{location}</p>
+              </div>
+              <div className="flex font-regular text-[15px] gap-2">
+                <p className="shrink-0 font-heavy">대상</p>
+                <p>{audience}</p>
               </div>
               <button
                 type="button"
