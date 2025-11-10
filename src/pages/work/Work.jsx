@@ -16,7 +16,8 @@ const LinkIconPlaceholder = "img/go-to.svg";
 const shuffle = (array) => {
     let newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        // [오류 수정 완료] Math.random()
+        const j = Math.floor(Math.random() * (i + 1)); 
         [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
     return newArray;
@@ -187,13 +188,13 @@ const ArtworkCard = React.memo(({ art }) => {
                         className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
                     />
                 </div>
-                <div className="title font-['Monoplex KR'] whitespace-normal">
+                <div className="title font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-[1.2] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-normal text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-['Monoplex KR'] font-[450] text-[14px] leading-[1.4] tracking-normal">
+                <div className="description font-normal text-[14px] leading-[145%] tracking-normal">
                     {art.description}
                 </div>
             </Link>
@@ -267,9 +268,11 @@ const groupArtworksByMaker = (list, ascending) => {
     });
 
     Object.values(grouped).forEach(maker => {
+        // 내부 작품 리스트는 항상 A-Z로 정렬
         maker.works = sortArtworksFn(maker.works, true, 'title');
     });
 
+    // 메이커 목록을 정렬
     return sortMakersFn(Object.values(grouped), ascending);
 };
 
@@ -284,82 +287,111 @@ export default function Work() {
         return urlParams.get(param);
     }, [location.search]);
 
-
+    // URL에서 현재 상태 추출
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
     const initialSortParam = getQueryParam('sort');
-    const initialAscending = initialSortParam === 'desc' ? false : true;
+    const isSortedOnLoad = !!initialSortParam;
 
     const [currentView, setCurrentView] = useState(initialView);
 
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-        const view = getQueryParam('view') || 'gallery';
-        const sort = getQueryParam('sort');
-        const ascending = sort === 'desc' ? false : true;
+        let list;
 
-        if (view === 'makers') {
-            const makersList = groupArtworksByMaker(initialArtworks, ascending);
-            if (sort) {
-                return makersList;
+        // 1. URL에 정렬 파라미터가 있으면 해당 정렬 상태를 적용 (새로고침/딥링크 시)
+        if (isSortedOnLoad) {
+            const ascending = initialSortParam !== 'desc';
+            if (initialView === 'makers') {
+                list = groupArtworksByMaker(initialArtworks, ascending);
             } else {
-                return shuffle(makersList);
+                list = sortArtworksFn(initialArtworks, ascending, 'title');
             }
+            return list;
         }
 
-        if (sort) {
-            return sortArtworksFn(initialArtworks, ascending, 'title');
+        // 2. URL에 정렬 파라미터가 없으면 무조건 랜덤 정렬 (새로고침/첫 진입 기본 동작)
+        if (initialView === 'makers') {
+            // Makers는 shuffle 전에 grouping이 필요합니다.
+            return shuffle(groupArtworksByMaker(initialArtworks, true)); 
         }
-
         return shuffle(initialArtworks);
     });
 
+    // isAscending 상태는 정렬 버튼의 다음 방향을 결정합니다.
     const [isAscending, setIsAscending] = useState(() => {
-        if (initialSortParam) {
-            return initialAscending;
-        }
-        return true;
+        // sort 파라미터가 명시된 경우 그 값을 따르고, 없으면 다음 정렬 시작을 A-Z(true)로 준비
+        return isSortedOnLoad ? initialSortParam !== 'desc' : true; 
     });
+
+    // 현재 URL의 정렬 상태를 실시간으로 확인 (handleSort에서 사용)
+    const isSorted = !!getQueryParam('sort');
 
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
     }, []);
 
+    // [최종 수정] 뷰 전환 시 데이터 타입을 전환하되, 랜덤 정렬을 발생시키지 않습니다.
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
 
         let newList;
         let newSearchParams = `?view=${mode}`;
 
-        const sortParam = isAscending ? 'asc' : 'desc';
+        const currentSortParam = getQueryParam('sort');
+        const isSorted = !!currentSortParam;
+        const ascending = isSorted ? currentSortParam !== 'desc' : true; 
 
-        if (mode === 'gallery') {
-            newList = sortArtworksFn(initialArtworks, isAscending, 'title');
-            newSearchParams += `&sort=${sortParam}`;
+        if (isSorted) {
+            // 1. 정렬 상태 (A-Z/Z-A): 기존 정렬 방향을 유지하며 새 뷰의 리스트를 로드
+            if (mode === 'gallery') {
+                 newList = sortArtworksFn(initialArtworks, ascending, 'title');
+            } else { // 'makers'
+                 newList = groupArtworksByMaker(initialArtworks, ascending);
+            }
+            newSearchParams += `&sort=${currentSortParam}`;
+
         } else {
-            newList = groupArtworksByMaker(initialArtworks, isAscending);
-            newSearchParams += `&sort=${sortParam}`;
+            // 2. 랜덤 상태: 뷰 전환 시 랜덤 정렬을 방지하기 위해, 해당 뷰의 A-Z 순서로 로드합니다.
+            if (mode === 'gallery') {
+                newList = sortArtworksFn(initialArtworks, true, 'title'); // 셔플 대신 A-Z 정렬
+            } else { // 'makers'
+                newList = groupArtworksByMaker(initialArtworks, true); // 셔플 대신 A-Z 정렬
+            }
+            // sort 파라미터를 추가하지 않아 랜덤 상태로 유지
         }
-
+        
+        // 데이터 타입을 전환
         setSortedArtworks(newList);
         navigate(newSearchParams, { replace: true });
     };
 
     const handleRandomize = () => {
+        // Randomize 버튼을 누르면 다음 정렬 시작을 A-Z로 준비
         setIsAscending(true);
 
         if (currentView === 'makers') {
-            const makersList = groupArtworksByMaker(initialArtworks, true);
-            setSortedArtworks(shuffle(makersList));
+            // Makers 리스트를 그룹화한 후 랜덤 정렬
+            setSortedArtworks(shuffle(groupArtworksByMaker(initialArtworks, true)));
         } else {
             setSortedArtworks(shuffle(initialArtworks));
         }
 
+        // URL에서 sort 파라미터를 제거하여 랜덤 상태를 명시
         navigate(`?view=${currentView}`, { replace: true });
     };
 
     const handleSort = () => {
-        const newAscending = !isAscending;
-
+        let newAscending;
+        
+        // 현재 랜덤 상태라면 (isSorted=false), 정렬 시작은 무조건 A-Z (true)
+        if (!isSorted) {
+            newAscending = true;
+        } else {
+            // 현재 정렬 상태라면, 방향을 토글
+            newAscending = !isAscending;
+        }
+        
+        // 정렬 수행
         if (currentView === 'gallery') {
             const sorted = sortArtworks(initialArtworks, newAscending, 'title');
             setSortedArtworks(sorted);
@@ -378,7 +410,10 @@ export default function Work() {
         ? 'A–Z'
         : 'Z–A';
 
+    // 현재 뷰에 맞는 리스트를 사용하도록 설정
     const makersList = currentView === 'makers' ? sortedArtworks : [];
+    const galleryList = currentView === 'gallery' ? sortedArtworks : [];
+
 
     return (
         <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
@@ -470,7 +505,7 @@ export default function Work() {
                         id="Gallery"
                         className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-20 pt-6 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
                     >
-                        {sortedArtworks.map(art => (
+                        {galleryList.map(art => (
                             <ArtworkCard key={art.id} art={art} />
                         ))}
                     </div>
@@ -490,9 +525,7 @@ export default function Work() {
                 </div>
             </main>
 
-            <footer className="h-[554px]">
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     );
 }
