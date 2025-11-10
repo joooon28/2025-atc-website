@@ -11,7 +11,7 @@ const LinkPlaceholderIcon = "/lottie/WorkDetailIcon/WorkDetail_link.svg";
 
 const EmailIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=E";
 const InstagramIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=I";
-const WebsiteIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=W";
+const LinkedInIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=L";
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
@@ -97,11 +97,19 @@ const StickyArtist = React.memo(({ data }) => {
 const ArtistDetailInfo = ({ artistsDetail }) => {
   if (!artistsDetail || artistsDetail.length === 0) return null;
 
-  const renderLinkIcon = (url, icon, type) =>
-    url ? (
+  const renderLinkIcon = (url, icon, type) => {
+    let finalUrl = url;
+
+    if (type === "email" || type === "gmail") {
+      if (finalUrl && !finalUrl.startsWith('mailto:')) {
+        finalUrl = `mailto:${finalUrl}`;
+      }
+    }
+
+    return finalUrl ? (
       <a
         key={type}
-        href={url}
+        href={finalUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block mr-2"
@@ -109,6 +117,7 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
         <img src={icon} alt={`${type} icon`} className="w-[18px] h-[18px]" />
       </a>
     ) : null;
+  };
 
   return (
     <div className="Artist-Detail-Info w-full flex flex-wrap gap-x-10 gap-y-5">
@@ -129,9 +138,9 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
             </p>
           )}
           <div className="flex items-center">
-            {renderLinkIcon(artist.links.email, EmailIcon, "email")}
+            {renderLinkIcon(artist.links.email || artist.links.gmail, EmailIcon, "email")}
             {renderLinkIcon(artist.links.instagram, InstagramIcon, "instagram")}
-            {renderLinkIcon(artist.links.website, WebsiteIcon, "website")}
+            {renderLinkIcon(artist.links.linkedin, LinkedInIcon, "linkedin")}
           </div>
         </div>
       ))}
@@ -147,10 +156,6 @@ const pickNextRandomId = (excludeId) => {
 };
 
 export default function WorkDetail() {
-  {
-    /* 5초마다 새로운 Workdetail로 이동 */
-  }
-
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -277,13 +282,44 @@ export default function WorkDetail() {
   const displayLocation = artwork.location.trim() || null;
 
   const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.videoSrc);
-  
+
   const displayLinks = artwork.links;
 
-  const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-  const p1EnClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-  const p2KrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
-  const p2EnClass = `${fontMap.text} font-[450] text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const p1Class = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const pBodyKrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
+  const pBodyEnClass = `${fontMap.text} font-[450] text-[15px] leading-[145%] tracking-[-0.5%]`;
+
+  const renderCommentaryBody = () => {
+    if (!currentCommentary) return null;
+
+    const { p1, ...bodyParagraphs } = currentCommentary;
+
+    const paragraphKeys = Object.keys(bodyParagraphs)
+      .filter(key => key.startsWith('p') && key !== 'p1')
+      .sort((a, b) => parseInt(a.substring(1)) - parseInt(b.substring(1)));
+
+    const bodyClass = currentLanguage === 'kr' ? pBodyKrClass : pBodyEnClass;
+
+    return (
+      <div className="Commentary-Body flex flex-col gap-[20px]">
+        {paragraphKeys.map((key) => {
+          const text = bodyParagraphs[key];
+          if (text) {
+            const htmlContent = text.replace(/\n/g, '<br/>');
+
+            return (
+              <p
+                key={key}
+                className={`commentary-paragraph ${bodyClass}`}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+            );
+          }
+          return null;
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="text-label min-h-screen">
@@ -414,18 +450,17 @@ export default function WorkDetail() {
           <div className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]">
             <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
               <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
-                <p
-                  id="commentary-p1"
-                  className={currentLanguage === "kr" ? p1KrClass : p1EnClass}
-                >
-                  {currentCommentary.p1}
-                </p>
-                <p
-                  id="commentary-p2"
-                  className={currentLanguage === "kr" ? p2KrClass : p2EnClass}
-                >
-                  {currentCommentary.p2}
-                </p>
+                {currentCommentary.p1 && (
+                  <p
+                    id="commentary-p1"
+                    className={p1Class}
+                  >
+                    {currentCommentary.p1}
+                  </p>
+                )}
+                
+                {renderCommentaryBody()}
+
               </div>
 
               <div className="Go-To-Link flex gap-5" id="Go-To-Link-Container">
@@ -507,9 +542,7 @@ export default function WorkDetail() {
         </div>
       </div>
 
-      <footer className="w-full h-[533px] box-border">
         <Footer />
-      </footer>
     </div>
   );
 }
