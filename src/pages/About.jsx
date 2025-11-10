@@ -77,7 +77,7 @@ const FirstSection = () => {
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
-          <span className="underline">@atc.sogang</span>
+          <span className="underline"><a href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@atc.sogang</a></span>
         </p>
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
@@ -464,11 +464,10 @@ const FourthSection = () => {
         </span>
       </div>
       <div
-        className={`${
-          titleKr === "웹 개발팀"
-            ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
-            : ""
-        }`}
+        className={`${titleKr === "웹 개발팀"
+          ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
+          : ""
+          }`}
       >
         {members.map((member, index) => (
           <p
