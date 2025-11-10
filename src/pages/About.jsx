@@ -23,7 +23,7 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-['Monoplex KR'] font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
           
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 
@@ -36,7 +36,7 @@ const FirstSection = () => {
         </h2>
 
         <h2
-          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-['Monoplex KR'] font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
 
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 min-[701px]:text-right
@@ -71,11 +71,11 @@ const FirstSection = () => {
         max-[700px]:static max-[700px]:w-full max-[700px]:px-4 max-[700px]:pb-0
       "
       >
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px] min-[701px]:mb-[6px]">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[8px] min-[701px]:mb-[6px]">
           11.20 - 11.23
         </p>
 
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[8px]">
           2025 Art & Technology Conference{" "}
           <span className="underline"><a href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@atc.sogang</a></span>
         </p>
