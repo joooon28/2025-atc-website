@@ -190,7 +190,7 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="title font-['Monoplex KR'] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-[1.4] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-['Monoplex KR'] text-[14px] leading-[1.2] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
                 <div className="description font-['Monoplex KR'] font-[450] text-[14px] leading-[1.4] tracking-normal">
@@ -200,7 +200,6 @@ const ArtworkCard = React.memo(({ art }) => {
         </div>
     );
 });
-// (Work.jsx 나머지 코드는 동일)
 
 const MakerRow = React.memo(({ maker }) => {
     return (
@@ -482,7 +481,7 @@ export default function Work() {
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                     >
                         {makersList.map((maker) => (
                             <MakerRow key={maker.name} maker={maker} />
@@ -491,7 +490,9 @@ export default function Work() {
                 </div>
             </main>
 
-            <Footer />
+            <footer className="h-[554px]">
+                <Footer />
+            </footer>
         </div>
     );
 }
