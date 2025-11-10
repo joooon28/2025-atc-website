@@ -5,7 +5,7 @@ import VolumeButton from "../../components/main/VolumeButton";
 import MenuToggle from "../../components/menu/MenuToggle";
 import Popup from "../../components/main/Popup";
 import MainVisual from "../../components/main/MainVisual";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const routesByKey = {
@@ -37,19 +37,42 @@ const workIds = [
 const pickRandomWorkId = () =>
   workIds[Math.floor(Math.random() * workIds.length)];
 
+const ZOOM_MIN = 0.1;
+const ZOOM_MAX = 5;
+const ZOOM_STEP = 0.2;
+
 export default function Main() {
   const [popup, setPopup] = useState(null);
-  const onOpen = (key) => setPopup(key);
-  const onClose = () => setPopup(null);
+  const [zoom, setZoom] = useState(1);
 
   const navigate = useNavigate();
+
+  const onOpen = useCallback((key) => setPopup(key), []);
+  const onClose = useCallback(() => setPopup(null), []);
+
+  const handleZoomIn = useCallback(
+    () => setZoom((z) => Math.min(ZOOM_MAX, +(z + ZOOM_STEP).toFixed(2))),
+    []
+  );
+  const handleZoomOut = useCallback(
+    () => setZoom((z) => Math.max(ZOOM_MIN, +(z - ZOOM_STEP).toFixed(2))),
+    []
+  );
+  const handleWheelZoom = useCallback((e) => {
+    e.preventDefault();
+    const dir = e.deltaY < 0 ? 1 : -1;
+    setZoom((z) => {
+      const next = z + dir * ZOOM_STEP;
+      return Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, +next.toFixed(2)));
+    });
+  }, []);
 
   const popupContent = useMemo(() => {
     if (popup === "Word_Ul") {
       return {
         animationSrc: "/lottie/MainInteraction/Word_Ul.lottie",
         title: "흩어진 언어의 입자",
-        size: 150,
+        size: 200,
         description:
           "말아리 조각, 몽당 연필, 명함, 노트... 언어의 입자들이 손에 잡히는 물건으로 바뀌었어요.",
         onGo: () => {
@@ -61,7 +84,7 @@ export default function Main() {
       return {
         animationSrc: "/lottie/MainInteraction/Word_Toong.lottie",
         title: "생각이 번뜩",
-        size: 150,
+        size: 200,
         description:
           "무작위로 선택된 프로젝트 페이지로 이동해요. ‘생각이 번뜩!’ 떠오를 계기가 될 수도?",
         onGo: () => {
@@ -90,7 +113,7 @@ export default function Main() {
       return {
         animationSrc: "/lottie/MainInteraction/Word_Toong2.lottie",
         title: "횡설수설",
-        size: 150,
+        size: 210,
         description:
           "5초마다 새로운 프로젝트를 탐험해볼까요? 이곳저곳 돌아다니다 보면 운명의 무언가를 만날지도?",
         onGo: () => {
@@ -103,7 +126,7 @@ export default function Main() {
       return {
         animationSrc: "/lottie/MainInteraction/Word_Ha.lottie",
         title: "날카로운 지적",
-        size: 150,
+        size: 190,
         description:
           "프로그램 하나하나에 담긴 예리한 질문들. 작업자들과 기획단이 나눈 날카로운 고민을 만나보세요.",
         onGo: () => {
@@ -154,7 +177,7 @@ export default function Main() {
       return {
         animationSrc: "/lottie/MainInteraction/Word_Ri.lottie",
         title: "헛소리 하기",
-        size: 140,
+        size: 210,
         description:
           "기획 과정에서 나온 울퉁불퉁한 말들과 대화들을 탐색해요. 과연 무슨 맥락에서 나온 말들일까요?",
         onGo: () => navigate("/archive", { state: { sheet: "memo" } }),
@@ -173,11 +196,16 @@ export default function Main() {
           <MenuToggle />
         </div>
       </div>
-      <MainVisual onOpen={onOpen} />
+      <MainVisual onOpen={onOpen} scale={zoom} onWheelZoom={handleWheelZoom} />
       <div className="fixed inset-x-0 bottom-0 flex justify-center gap-3 pb-[40px]">
         <div className="flex justify-center items-center gap-3 ">
-          <PlusButton />
-          <MinusButton />
+          <button onClick={handleZoomIn}>
+            <PlusButton />
+          </button>
+          <button onClick={handleZoomOut}>
+            <MinusButton />
+          </button>
+
           <VolumeButton />
         </div>
       </div>

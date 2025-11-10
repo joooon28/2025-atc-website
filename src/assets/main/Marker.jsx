@@ -1,22 +1,35 @@
 export default function Marker({
-  bgClass = "text-[#F8F8F7]",
+  // ✅ 기본 배경색 = label-invert, hover 시 label 로 반전
+  bgClass = "text-label-invert",
+  hoverBgClass = "hover:text-label",
+
   width = 45,
   height = 35,
   className = "",
   label,
+
+  // ✅ 기본 텍스트색 = label, hover 시 label-invert 로 반전
   textClass = "text-label text-[14px] font-regular",
+  hoverTextClass = "group-hover:text-label-invert",
+
   style,
   ariaLabel,
   onClick,
   onKeyDown,
   ...rest
 }) {
+  // 컨테이너에 색 클래스 부여 → currentColor를 통해 <path>로 전파
+  const containerCls = [
+    "relative inline-block group", // group은 Marker 내부 전용(텍스트 반전용)
+    bgClass,
+    hoverBgClass,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div
-      className={`relative group ${className}`}
-      style={{ width, height, ...style }}
-      {...rest}
-    >
+    <div className={containerCls} style={{ width, height, ...style }} {...rest}>
       <svg
         width={width}
         height={height}
@@ -26,11 +39,13 @@ export default function Marker({
         className="block"
         aria-hidden="true"
       >
+        {/* 배경 캡슐: fill=currentColor, 색은 부모 div의 text-* 로 제어 */}
         <path
-          className={bgClass}
+          className="transition-colors duration-150"
           fill="currentColor"
           d="M1.45405 17.5084C1.45405 8.67186 8.61749 1.50842 17.454 1.50842H27.454C36.2906 1.50842 43.454 8.67186 43.454 17.5084C43.454 26.345 36.2906 33.5084 27.454 33.5084H17.454C8.61749 33.5084 1.45405 26.345 1.45405 17.5084Z"
         />
+        {/* 내부 장식: 고정 색 유지 */}
         <path
           className="text-[#362C11]"
           fill="currentColor"
@@ -38,6 +53,7 @@ export default function Marker({
         />
       </svg>
 
+      {/* 클릭 오버레이 (테두리/포커스 제거) */}
       <button
         type="button"
         aria-label={ariaLabel ?? label}
@@ -49,12 +65,18 @@ export default function Marker({
             onClick?.(e);
           }
         }}
-        className="cursor-pointer absolute inset-0 z-[2] bg-transparent"
+        className="absolute inset-0 z-[100] bg-transparent cursor-pointer
+                   outline-none focus:outline-none focus:ring-0 border-none"
       />
 
       {label && (
         <span
-          className={`pointer-events-none absolute inset-0 z-[1] flex items-center justify-center ${textClass}`}
+          className={[
+            "pointer-events-none absolute inset-0 z-[90] flex items-center justify-center",
+            "transition-colors duration-150",
+            textClass,
+            hoverTextClass, // group-hover: Marker 내부에서만 작동
+          ].join(" ")}
         >
           {label}
         </span>
