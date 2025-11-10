@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MenuToggle from "../../components/menu/MenuToggle";
 
+// initialArtworks, getLinkIcon, MakersLinkIconPlaceholder는 적절한 경로에서 import되었다고 가정
 import {
     initialArtworks,
     getLinkIcon,
@@ -13,6 +14,7 @@ import {
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
 
+// 헬퍼 함수: 배열을 무작위로 섞는 셔플 함수
 const shuffle = (array) => {
     let newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -22,6 +24,7 @@ const shuffle = (array) => {
     return newArray;
 };
 
+// 헬퍼 함수: 작품 목록을 정렬하는 함수 (작품명 기준)
 const sortArtworksFn = (list, ascending, sortBy) => {
     return [...list].sort((a, b) => {
         const valA = a[sortBy];
@@ -31,6 +34,7 @@ const sortArtworksFn = (list, ascending, sortBy) => {
     });
 };
 
+// 헬퍼 함수: Maker 목록을 정렬하는 함수 (Maker 이름 기준)
 const sortMakersFn = (list, ascending) => {
     return [...list].sort((a, b) => {
         const valA = a.name;
@@ -40,15 +44,13 @@ const sortMakersFn = (list, ascending) => {
     });
 };
 
-const groupArtworksByPreservedOrder = (orderedArtworkList) => {
+// 헬퍼 함수: 모든 작품에서 Maker 정보를 추출하여 Map 형태로 저장하고, 작품 목록을 작품명 순으로 정렬합니다.
+const getUniqueMakersMap = (list) => {
     const grouped = {};
-    const makerOrder = []; 
-
-    orderedArtworkList.forEach(work => {
+    list.forEach(work => {
         if (!Array.isArray(work.makers)) return;
-
         const workInfo = { id: work.id, title: work.title, team: work.artist };
-
+        
         work.makers.forEach(maker => {
             if (!maker.name) return;
             const makerName = maker.name;
@@ -57,59 +59,36 @@ const groupArtworksByPreservedOrder = (orderedArtworkList) => {
                 grouped[makerName] = {
                     name: makerName,
                     links: Array.isArray(maker.links) ? maker.links : [],
-                    works: []
+                    works: [],
                 };
-                makerOrder.push(makerName); 
             }
-
             if (!grouped[makerName].works.some(w => w.id === work.id)) {
                 grouped[makerName].works.push(workInfo);
             }
         });
     });
-
+    
+    // Maker 내부 작품 목록은 작품명 오름차순 유지
     Object.values(grouped).forEach(maker => {
-        maker.works = sortArtworksFn(maker.works, true, 'title');
+        maker.works = sortArtworksFn(maker.works, true, 'title'); 
     });
 
-    return makerOrder.map(name => grouped[name]);
+    return grouped; // Map 형태로 반환
 };
 
-
+// 헬퍼 함수: Maker 이름순 정렬을 위해 Maker 그룹을 만들고 정렬합니다. (Sort 버튼 시 사용)
 const groupArtworksByMaker = (list, ascending) => {
-    const grouped = {};
-
-    list.forEach(work => {
-        if (!Array.isArray(work.makers)) {
-            return;
-        }
-
-        const workInfo = { id: work.id, title: work.title, team: work.artist };
-
-        work.makers.forEach(maker => {
-            if (!maker.name) return;
-
-            if (!grouped[maker.name]) {
-                grouped[maker.name] = {
-                    name: maker.name,
-                    links: Array.isArray(maker.links) ? maker.links : [],
-                    works: []
-                };
-            }
-
-            if (!grouped[maker.name].works.some(w => w.id === work.id)) {
-                grouped[maker.name].works.push(workInfo);
-            }
-        });
-    });
-
-    Object.values(grouped).forEach(maker => {
-        maker.works = sortArtworksFn(maker.works, true, 'title');
-    });
-
-    return sortMakersFn(Object.values(grouped), ascending);
+    const makersMap = getUniqueMakersMap(list);
+    // Maker 목록을 Maker 이름순으로 정렬
+    return sortMakersFn(Object.values(makersMap), ascending);
 };
 
+// 헬퍼 함수: Maker 목록 자체를 셔플합니다.
+const shuffleMakers = (makerList) => {
+    return shuffle(makerList);
+};
+
+// 헬퍼 함수: 제목 포맷팅 (Gallery 뷰)
 const formatTitle = (title) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
         return <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">제목 없음</span>;
@@ -120,15 +99,12 @@ const formatTitle = (title) => {
     let finalEngText = '';
 
     if (/[A-Za-z]/.test(trimmedTitle)) {
-
         const matches = trimmedTitle.match(/^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/);
 
         if (matches && matches.length === 3) {
-
             finalKorText = matches[1].trim();
             finalEngText = matches[2].trim();
         } else {
-
             const firstLatinIndex = trimmedTitle.search(/[A-Za-z]/);
             if (firstLatinIndex !== -1) {
                 finalKorText = trimmedTitle.substring(0, firstLatinIndex).trim();
@@ -164,6 +140,7 @@ const formatTitle = (title) => {
     );
 };
 
+// 헬퍼 함수: 아티스트/메이커 이름 포맷팅 함수
 const formatArtistName = (artistName, isGallery = false) => {
     if (typeof artistName !== 'string' || artistName.trim().length === 0) {
         return <span className="Makers-Artist-Kr font-medium text-[14px]">N/A</span>;
@@ -184,6 +161,7 @@ const formatArtistName = (artistName, isGallery = false) => {
 };
 
 
+// 헬퍼 함수: 작품 제목 포맷팅 함수 (Makers 뷰)
 const formatTitleForMakers = (title) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
         return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">제목 없음</span>;
@@ -246,6 +224,7 @@ const formatTitleForMakers = (title) => {
     }
 };
 
+// Gallery 뷰의 작품 카드 컴포넌트
 const ArtworkCard = React.memo(({ art }) => {
     return (
         <div className="Artwork flex flex-col box-border">
@@ -271,8 +250,15 @@ const ArtworkCard = React.memo(({ art }) => {
     );
 });
 
+// Makers 뷰의 Maker 목록 행 컴포넌트
 const MakerRow = React.memo(({ maker }) => {
+    // maker 객체에 name과 works 속성이 있는지 확인하는 방어 로직 추가 (오류 방지)
+    if (!maker || typeof maker.name !== 'string' || !Array.isArray(maker.works)) {
+        return null;
+    }
+    
     return (
+        // 하단 구분점 before/after
         <div className="Maker-Row flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             <div className="Maker-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
                 <div className="Maker-Name cursor-default">
@@ -308,6 +294,7 @@ const MakerRow = React.memo(({ maker }) => {
     );
 });
 
+
 export default function Work() {
 
     const location = useLocation();
@@ -322,43 +309,66 @@ export default function Work() {
 
     const [currentView, setCurrentView] = useState(initialView);
 
-    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false);
-
+    // 3. 새로 고침 시 Randomize 상태로 시작해야 하므로 isCurrentlySorted = false
+    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false); 
     const [isAscending, setIsAscending] = useState(true);
 
-    const [randomArtworkList, setRandomArtworkList] = useState(() => shuffle(initialArtworks));
+    // 새로 고침 시 Gallery 뷰를 위한 랜덤 작품 목록 초기화
+    const initialRandomArtworks = shuffle(initialArtworks);
+    const [randomArtworkList, setRandomArtworkList] = useState(initialRandomArtworks);
+    
+    // Maker 맵을 최초 한 번만 계산하여 저장
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks); 
+    
+    // 렌더링 강제를 위한 키 상태
+    const [makerListKey, setMakerListKey] = useState(Math.random().toString());
 
+    // ⭐️ Maker 뷰에서 사용할, 최초 로딩 시 생성된 랜덤 Maker 목록을 별도로 저장 ⭐️
+    const initialRandomMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
+
+
+    // 3. 새로 고침 시 초기 상태 설정
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-        const initialRandomOrder = randomArtworkList;
         if (initialView === 'makers') {
-            return groupArtworksByPreservedOrder(initialRandomOrder); 
+            // Makers 뷰로 시작 -> 랜덤 정렬로 시작 (초기 랜덤 Maker 목록 사용)
+            return initialRandomMakers; 
         }
-        return initialRandomOrder;
+        // Gallery 뷰로 시작 -> 랜덤 정렬로 시작 (초기 랜덤 작품 목록 사용)
+        return initialRandomArtworks;
     });
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
     }, []);
 
+    // ⭐️ 1. 탭 전환 시: Gallery 버튼과 동일하게 현재 적용된 정렬 상태를 유지 ⭐️
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
 
         let newList;
         let newSearchParams = `?view=${mode}`; 
 
-        if (isCurrentlySorted) {
-            const ascending = isAscending;
-            if (mode === 'gallery') {
-                 newList = sortArtworksFn(initialArtworks, ascending, 'title');
-            } else { 
-                 newList = groupArtworksByMaker(initialArtworks, ascending);
+        if (mode === 'gallery') {
+            // Gallery 뷰로 전환: 현재 정렬 상태 유지
+            if (isCurrentlySorted) {
+                // Sort 상태: 작품명 순 정렬 적용
+                newList = sortArtworks(initialArtworks, isAscending, 'title');
+            } else {
+                // Randomize 상태: 기존의 무작위 작품 목록 사용 (새로운 셔플 방지)
+                newList = randomArtworkList; 
             }
-        } else {
-            const sourceList = randomArtworkList; 
-            if (mode === 'gallery') {
-                newList = sourceList; 
-            } else { 
-                newList = groupArtworksByPreservedOrder(sourceList);
+        } else { // mode === 'makers' (메이커 뷰로 전환)
+            
+            // ⭐️ Makers 탭 전환: Gallery 버튼과 동일하게 Randomize 효과 발생 방지 ⭐️
+            
+            if (isCurrentlySorted) {
+                // Sort 상태: Maker 이름 순 정렬 적용 (Gallery의 A-Z/Z-A 상태 유지)
+                newList = groupArtworksByMaker(initialArtworks, isAscending);
+            } else {
+                // Randomize 상태: 최초 로딩 시 생성된 랜덤 Maker 목록을 재사용 (새로운 셔플 방지)
+                newList = randomMakerList;
+                // Makers 뷰의 랜덤 리스트가 업데이트되지 않았으므로 굳이 makerListKey를 변경할 필요 없음
             }
         }
         
@@ -366,15 +376,26 @@ export default function Work() {
         navigate(newSearchParams, { replace: true });
     };
 
+    // 2. Randomize 버튼: 새로운 랜덤 정렬 적용 (isCurrentlySorted = false)
     const handleRandomize = () => {
+        
+        // Gallery를 위한 새로운 랜덤 작품 목록 생성
         const newRandomList = shuffle(initialArtworks);
         setRandomArtworkList(newRandomList); 
 
-        setIsAscending(true);
+        // Makers를 위한 새로운 랜덤 Maker 목록 생성
+        const allMakers = Object.values(uniqueMakersMap);
+        const newRandomMakers = shuffleMakers(allMakers);
+        setRandomMakerList(newRandomMakers); 
+
+        // 상태 업데이트: 랜덤 상태로 진입
+        setIsAscending(true); 
         setIsCurrentlySorted(false);
 
+        // 현재 뷰에 맞는 새로운 랜덤 리스트를 적용
         if (currentView === 'makers') {
-            setSortedArtworks(groupArtworksByPreservedOrder(newRandomList));
+            setMakerListKey(Math.random().toString()); // 강제 렌더링
+            setSortedArtworks(newRandomMakers);
         } else {
             setSortedArtworks(newRandomList);
         }
@@ -382,15 +403,17 @@ export default function Work() {
         navigate(`?view=${currentView}`, { replace: true });
     };
 
+    // 4. Sort 버튼 (A-Z/Z-A): 이름 순 정렬 적용 (isCurrentlySorted = true)
     const handleSort = () => {
         let newAscending;
         
         if (!isCurrentlySorted) {
-            newAscending = true;
+            newAscending = true; // 최초 Sort 버튼 클릭 시 A-Z
         } else {
-            newAscending = !isAscending;
+            newAscending = !isAscending; // 이미 Sort 상태일 경우 순서 반전
         }
         
+        // 상태 업데이트: 정렬 상태로 진입
         setIsCurrentlySorted(true);
         
         if (currentView === 'gallery') {
@@ -402,6 +425,7 @@ export default function Work() {
         }
 
         setIsAscending(newAscending);
+        setMakerListKey(Math.random().toString()); // 강제 렌더링
 
         navigate(`?view=${currentView}`, { replace: true });
     };
@@ -512,13 +536,18 @@ export default function Work() {
                     {/* Makers List */}
                     <div
                         id="Makers-List"
+                        key={currentView === 'makers' ? makerListKey : 'gallery'} 
+                        // 상단 구분점 CSS 복구
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
                         after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                     >
                         {makersList.map((maker) => (
-                            <MakerRow key={maker.name} maker={maker} />
+                            <MakerRow 
+                                key={maker.name} 
+                                maker={maker} 
+                            />
                         ))}
                     </div>
                 </div>
