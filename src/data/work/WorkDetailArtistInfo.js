@@ -1,5 +1,3 @@
-// src/data/work/WorkDetailArtistInfo.js
-
 export const allArtworkData = {
   art001: {
     titleKr: "녹색 비둘기",
@@ -9,7 +7,6 @@ export const allArtworkData = {
     artistEn: "Sunmyeong Lee",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "qVzXxoZ 1.png",
-    // ⭐️ 변경: Vimeo URL을 videoSrc 속성으로 분리
     videoSrc: "https://vimeo.com/360549015", 
     commentary: {
       kr: {
@@ -22,7 +19,6 @@ export const allArtworkData = {
       },
     },
     links: [
-      // ⭐️ 변경: links에서 Vimeo 항목 제거
       { text: "Instagram", url: "https://instagram.com/moire_team" },
       { text: "Process Archive", url: "https://process.archive/art001" },
     ],
@@ -59,7 +55,6 @@ export const allArtworkData = {
     artistEn: "2420",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "sunny_detail.png",
-    // ⭐️ 변경: Vimeo URL을 videoSrc 속성으로 분리
     videoSrc: "https://vimeo.com/360549015",
     commentary: {
       kr: {
@@ -72,7 +67,6 @@ export const allArtworkData = {
       },
     },
     links: [
-      // ⭐️ 변경: links에서 Vimeo 항목 제거
       { text: "Facebook", url: "https://facebook.com/2420" },
       { text: "Personal Website", url: "https://2420.com" },
       { text: "LinkedIn", url: "https://linkedin.com/2420" },
@@ -86,7 +80,6 @@ export const allArtworkData = {
     artistEn: "",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "listen_detail.png",
-    // ⭐️ 변경: Vimeo URL을 videoSrc 속성으로 분리
     videoSrc: "https://vimeo.com/360549015",
     commentary: {
       kr: {
@@ -99,7 +92,6 @@ export const allArtworkData = {
       },
     },
     links: [
-      // ⭐️ 변경: links에서 Vimeo 항목 제거
       { text: "Process Archive", url: "https://archive.com/platypus" },
     ],
   },
@@ -111,7 +103,7 @@ export const allArtworkData = {
     artistEn: "Compdsst",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "deepening_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "디지털 레이어를 통해 복잡한 인간 심리를 탐구합니다.",
@@ -142,7 +134,7 @@ export const allArtworkData = {
     artistEn: "",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "heaven_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "빛과 그림자를 활용한 대형 설치 작품입니다.",
@@ -163,8 +155,7 @@ export const allArtworkData = {
     artistEn: "",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "running_detail.png",
-    // ⭐️ 변경: Vimeo URL을 videoSrc 속성으로 분리
-    videoSrc: "https://vimeo.com/123456789", // 예시 ID로 변경
+    videoSrc: "https://vimeo.com/123456789",
     commentary: {
       kr: {
         p1: "멈추지 않는 청춘의 에너지를 담은 키네틱 아트입니다.",
@@ -176,7 +167,6 @@ export const allArtworkData = {
       },
     },
     links: [
-      // ⭐️ 변경: links에서 Vimeo 항목 제거
       { text: "Instagram", url: "https://instagram.com/runningpeople" },
     ],
   },
@@ -188,7 +178,7 @@ export const allArtworkData = {
     artistEn: "OWIN",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "qVzXxoZ 1.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "어둠 속에서 진실을 찾는 과정을 빛으로 표현한 미디어 아트입니다.",
@@ -209,7 +199,7 @@ export const allArtworkData = {
     artistEn: "Newzing",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "sign_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "버려진 간판을 재해석한 설치 작품입니다.",
@@ -230,7 +220,7 @@ export const allArtworkData = {
     artistEn: "CHOIs",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "foryou_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "관람객을 위한 맞춤형 인터랙티브 미디어 작품입니다.",
@@ -251,7 +241,7 @@ export const allArtworkData = {
     artistEn: "DPM GIRLZ",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "unrotten_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "자연 소재의 부패와 영속성을 다루는 실험적인 영상 작품입니다.",
@@ -272,7 +262,7 @@ export const allArtworkData = {
     artistEn: "DPM GIRLZ",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "final_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "전시의 대미를 장식하는 설치 및 퍼포먼스 결합 작품입니다.",
@@ -293,7 +283,7 @@ export const allArtworkData = {
     artistEn: "DPM GIRLZ",
     imageMainSrc: "https://placehold.co/200x267",
     imageDetailSrc: "foryou_detail.png",
-    videoSrc: "", // 영상 없음
+    videoSrc: "",
     commentary: {
       kr: {
         p1: "테스트용 작품입니다.",

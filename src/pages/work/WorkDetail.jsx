@@ -1,8 +1,5 @@
-// WorkDetail.jsx
-
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-// ⭐️ allArtworkData를 별도 파일에서 import
 import { allArtworkData } from "../../data/work/WorkDetailArtistInfo";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -27,7 +24,6 @@ const fontMap = {
   semiboldItalic: "italic font-semibold",
 };
 
-// ⭐️ 변경된 getVimeoEmbedUrl 함수: videoSrc를 직접 받습니다. ⭐️
 const getVimeoEmbedUrl = (videoSrc) => {
   if (!videoSrc || !videoSrc.includes("vimeo.com")) return null;
 
@@ -35,7 +31,6 @@ const getVimeoEmbedUrl = (videoSrc) => {
     const urlObj = new URL(videoSrc);
     let videoId = urlObj.pathname.split("/").pop();
     if (videoId && !isNaN(videoId)) {
-      // 쿼리 스트링을 제거한 비디오 ID를 사용하여 임베드 URL을 반환합니다.
       return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
     }
   } catch (e) {
@@ -281,10 +276,8 @@ export default function WorkDetail() {
   const displayTitleEn = artwork.titleEn.trim() || null;
   const displayLocation = artwork.location.trim() || null;
 
-  // ⭐️ videoSrc를 getVimeoEmbedUrl에 전달합니다. ⭐️
   const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.videoSrc);
   
-  // ⭐️ links 배열은 이미 데이터 파일에서 정리되었으므로 필터링 없이 바로 사용합니다. ⭐️
   const displayLinks = artwork.links;
 
   const p1KrClass = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
