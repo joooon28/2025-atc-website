@@ -40,6 +40,76 @@ const sortMakersFn = (list, ascending) => {
     });
 };
 
+const groupArtworksByPreservedOrder = (orderedArtworkList) => {
+    const grouped = {};
+    const makerOrder = []; 
+
+    orderedArtworkList.forEach(work => {
+        if (!Array.isArray(work.makers)) return;
+
+        const workInfo = { id: work.id, title: work.title, team: work.artist };
+
+        work.makers.forEach(maker => {
+            if (!maker.name) return;
+            const makerName = maker.name;
+
+            if (!grouped[makerName]) {
+                grouped[makerName] = {
+                    name: makerName,
+                    links: Array.isArray(maker.links) ? maker.links : [],
+                    works: []
+                };
+                makerOrder.push(makerName); 
+            }
+
+            if (!grouped[makerName].works.some(w => w.id === work.id)) {
+                grouped[makerName].works.push(workInfo);
+            }
+        });
+    });
+
+    Object.values(grouped).forEach(maker => {
+        maker.works = sortArtworksFn(maker.works, true, 'title');
+    });
+
+    return makerOrder.map(name => grouped[name]);
+};
+
+
+const groupArtworksByMaker = (list, ascending) => {
+    const grouped = {};
+
+    list.forEach(work => {
+        if (!Array.isArray(work.makers)) {
+            return;
+        }
+
+        const workInfo = { id: work.id, title: work.title, team: work.artist };
+
+        work.makers.forEach(maker => {
+            if (!maker.name) return;
+
+            if (!grouped[maker.name]) {
+                grouped[maker.name] = {
+                    name: maker.name,
+                    links: Array.isArray(maker.links) ? maker.links : [],
+                    works: []
+                };
+            }
+
+            if (!grouped[maker.name].works.some(w => w.id === work.id)) {
+                grouped[maker.name].works.push(workInfo);
+            }
+        });
+    });
+
+    Object.values(grouped).forEach(maker => {
+        maker.works = sortArtworksFn(maker.works, true, 'title');
+    });
+
+    return sortMakersFn(Object.values(grouped), ascending);
+};
+
 const formatTitle = (title) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
         return <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">제목 없음</span>;
@@ -190,10 +260,10 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="title font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-normal text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-['Monoplex KR'] text-[14px] leading-[1.2] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-normal text-[14px] leading-[145%] tracking-normal">
+                <div className="description font-normal text-[14px] leading-[1.4] tracking-normal">
                     {art.description}
                 </div>
             </Link>
@@ -238,42 +308,6 @@ const MakerRow = React.memo(({ maker }) => {
     );
 });
 
-
-const groupArtworksByMaker = (list, ascending) => {
-    const grouped = {};
-
-    list.forEach(work => {
-        if (!Array.isArray(work.makers)) {
-            return;
-        }
-
-        const workInfo = { id: work.id, title: work.title, team: work.artist };
-
-        work.makers.forEach(maker => {
-            if (!maker.name) return;
-
-            if (!grouped[maker.name]) {
-                grouped[maker.name] = {
-                    name: maker.name,
-                    links: Array.isArray(maker.links) ? maker.links : [],
-                    works: []
-                };
-            }
-
-            if (!grouped[maker.name].works.some(w => w.id === work.id)) {
-                grouped[maker.name].works.push(workInfo);
-            }
-        });
-    });
-
-    Object.values(grouped).forEach(maker => {
-        maker.works = sortArtworksFn(maker.works, true, 'title');
-    });
-
-    return sortMakersFn(Object.values(grouped), ascending);
-};
-
-
 export default function Work() {
 
     const location = useLocation();
@@ -285,36 +319,22 @@ export default function Work() {
     }, [location.search]);
 
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
-    const initialSortParam = getQueryParam('sort');
-    const isSortedOnLoad = !!initialSortParam;
 
     const [currentView, setCurrentView] = useState(initialView);
 
+    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false);
+
+    const [isAscending, setIsAscending] = useState(true);
+
+    const [randomArtworkList, setRandomArtworkList] = useState(() => shuffle(initialArtworks));
+
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-        let list;
-
-        if (isSortedOnLoad) {
-            const ascending = initialSortParam !== 'desc';
-            if (initialView === 'makers') {
-                list = groupArtworksByMaker(initialArtworks, ascending);
-            } else {
-                list = sortArtworksFn(initialArtworks, ascending, 'title');
-            }
-            return list;
-        }
-
+        const initialRandomOrder = randomArtworkList;
         if (initialView === 'makers') {
-            return shuffle(groupArtworksByMaker(initialArtworks, true)); 
+            return groupArtworksByPreservedOrder(initialRandomOrder); 
         }
-        return shuffle(initialArtworks);
+        return initialRandomOrder;
     });
-
-    const [isAscending, setIsAscending] = useState(() => {
-        return isSortedOnLoad ? initialSortParam !== 'desc' : true; 
-    });
-
-    const isSorted = !!getQueryParam('sort');
-
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
@@ -324,39 +344,39 @@ export default function Work() {
         setCurrentView(mode);
 
         let newList;
-        let newSearchParams = `?view=${mode}`;
+        let newSearchParams = `?view=${mode}`; 
 
-        const currentSortParam = getQueryParam('sort');
-        const isSorted = !!currentSortParam;
-        const ascending = isSorted ? currentSortParam !== 'desc' : true; 
-
-        if (isSorted) {
+        if (isCurrentlySorted) {
+            const ascending = isAscending;
             if (mode === 'gallery') {
                  newList = sortArtworksFn(initialArtworks, ascending, 'title');
-            } else {
+            } else { 
                  newList = groupArtworksByMaker(initialArtworks, ascending);
             }
-            newSearchParams += `&sort=${currentSortParam}`;
-
         } else {
+            const sourceList = randomArtworkList; 
             if (mode === 'gallery') {
-                newList = sortArtworksFn(initialArtworks, true, 'title');
-            } else {
-                newList = groupArtworksByMaker(initialArtworks, true);
+                newList = sourceList; 
+            } else { 
+                newList = groupArtworksByPreservedOrder(sourceList);
             }
         }
-
+        
         setSortedArtworks(newList);
         navigate(newSearchParams, { replace: true });
     };
 
     const handleRandomize = () => {
+        const newRandomList = shuffle(initialArtworks);
+        setRandomArtworkList(newRandomList); 
+
         setIsAscending(true);
+        setIsCurrentlySorted(false);
 
         if (currentView === 'makers') {
-            setSortedArtworks(shuffle(groupArtworksByMaker(initialArtworks, true)));
+            setSortedArtworks(groupArtworksByPreservedOrder(newRandomList));
         } else {
-            setSortedArtworks(shuffle(initialArtworks));
+            setSortedArtworks(newRandomList);
         }
 
         navigate(`?view=${currentView}`, { replace: true });
@@ -365,11 +385,13 @@ export default function Work() {
     const handleSort = () => {
         let newAscending;
         
-        if (!isSorted) {
+        if (!isCurrentlySorted) {
             newAscending = true;
         } else {
             newAscending = !isAscending;
         }
+        
+        setIsCurrentlySorted(true);
         
         if (currentView === 'gallery') {
             const sorted = sortArtworks(initialArtworks, newAscending, 'title');
@@ -381,13 +403,12 @@ export default function Work() {
 
         setIsAscending(newAscending);
 
-        const sortParam = newAscending ? 'asc' : 'desc';
-        navigate(`?view=${currentView}&sort=${sortParam}`, { replace: true });
+        navigate(`?view=${currentView}`, { replace: true });
     };
 
-    const sortButtonText = isAscending
-        ? 'A–Z'
-        : 'Z–A';
+    const sortButtonText = isCurrentlySorted && isAscending
+        ? 'Z–A' 
+        : 'A–Z';
 
     const makersList = currentView === 'makers' ? sortedArtworks : [];
     const galleryList = currentView === 'gallery' ? sortedArtworks : [];
