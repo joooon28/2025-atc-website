@@ -260,10 +260,10 @@ const ArtworkCard = React.memo(({ art }) => {
                 <div className="title font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-[1.2] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-['Monoplex KR'] text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-normal text-[14px] leading-[1.4] tracking-normal">
+                <div className="description font-normal text-[14px] leading-[145%] tracking-normal">
                     {art.description}
                 </div>
             </Link>
