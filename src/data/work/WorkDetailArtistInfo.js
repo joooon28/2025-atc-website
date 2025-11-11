@@ -6,8 +6,8 @@ export const allArtworkData = {
         artistKr: "손정우",
         artistEn: "Jeongwoo Son",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
-        videoSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
+        videoSrc: "https://vimeo.com/9011932?fl=pl&fe=sh",
         commentary: {
             kr: {
                 p1: "시 '꽃'을 재해석한 미디어 아트.",
@@ -36,7 +36,7 @@ export const allArtworkData = {
         artistKr: "도티즈",
         artistEn: "dotties",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -95,7 +95,7 @@ export const allArtworkData = {
         artistKr: "키스 갈기기",
         artistEn: "Throwing Kith",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -139,31 +139,17 @@ export const allArtworkData = {
         artistKr: "자발적 과로단",
         artistEn: "self over workers",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
                 p1: "번아웃에 빠진 청년이 쓰레기로 가득한 집에서 벗어나 일상을 되찾기까지",
-                p2: "오 이 동아리도 재밌겠다. 다 들어가지 뭐!",
-                p3: "나랑 공모전 나가볼사람??",
-                p4: "학점은 미리 채워야한댔어. 21학점 꽉꽉 채워서 들어야지!",
-                p5: "나랑 프로젝트 하나 해볼 사람?",
-                p6: "교환학생 가기 전에 언어 공부도 미리미리 해야겠다",
-                p7: "요즘 좀 피곤한 것 같은데.",
-                p8: "일이 끊이지 않네..쉬는 건 좀 나중에라도 할 수 있으니까…",
-                p9: "좋아서 시작했잖아. 근데 왜, 이젠 버거워?",
-                p10: "자소서 준비 안해? 다른 동기들은 벌써 어디 회사 들어갔다던데 준비 안해? 이럴 시간에 인턴 지원이라도 한 번 해봤겠다. 남들도 이정도는 다 해. 아니 바쁘다며. 지금 기타 칠 시간이 있어? 학회도 아니고 동아리? 고학이면 이제 그런것보다도 현실에 집중해야 하지 않나? 집에 틀어 박힌다고 해결되는게 아니잖아. 나와서 햇빛도 좀 쬐고 그래야지. 잠깐 멈춰서도 되지 않을까?"
+                p2: "오 이 동아리도 재밌겠다. 다 들어가지 뭐! <br> 나랑 공모전 나가볼사람?? <br> 학점은 미리 채워야한댔어. 21학점 꽉꽉 채워서 들어야지! <br> 나랑 프로젝트 하나 해볼 사람? <br> 교환학생 가기 전에 언어 공부도 미리미리 해야겠다 <br> 요즘 좀 피곤한 것 같은데. <br> 일이 끊이지 않네.. 쉬는 건 좀 나중에라도 할 수 있으니까… <br> 좋아서 시작했잖아. 근데 왜, 이젠 버거워?",
+                p6: "자소서 준비 안해? 다른 동기들은 벌써 어디 회사 들어갔다던데 준비 안해? 이럴 시간에 인턴 지원이라도 한 번 해봤겠다. 남들도 이정도는 다 해. 아니 바쁘다며. 지금 기타 칠 시간이 있어? 학회도 아니고 동아리? 고학이면 이제 그런것보다도 현실에 집중해야 하지 않나? 집에 틀어 박힌다고 해결되는게 아니잖아. 나와서 햇빛도 좀 쬐고 그래야지. 잠깐 멈춰서도 되지 않을까?"
             },
             en: {
                 p1: "",
-                p2: "That club looks fun. This one too. Maybe I’ll just join everything.",
-                p3: "A contest? Sure.",
-                p4: " I need to finish my credits—21 this semester.",
-                p5: "Maybe a project too.",
-                p6: "I should study languages before exchange projects.",
-                p7: "But I feel tired lately.",
-                p8: "Work keeps piling.",
-                p9: "I started all this because I loved it… why does it feel so heavy now?",
+                p2: "That club looks fun. This one too. Maybe I’ll just join everything. <br> A contest? Sure. <br> I need to finish my credits—21 this semester. <br> Maybe a project too. <br> I should study languages before exchange projects. <br> But I feel tired lately. <br> Work keeps piling. <br> I started all this because I loved it… why does it feel so heavy now?",
                 p10: "Others are already getting jobs. Should I be doing more? Internships, resumes… Am I falling behind? If I pause—will it fall apart? Can I just pause—just for a moment?"
             },
         },
@@ -217,7 +203,7 @@ export const allArtworkData = {
         artistKr: "로피",
         artistEn: "Roffi",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -280,7 +266,7 @@ export const allArtworkData = {
         artistKr: "맷돌 스튜디오",
         artistEn: "Maetdol Studio",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -291,7 +277,9 @@ export const allArtworkData = {
             },
             en: {
                 p1: "",
-                p2: "",
+                p2: "How to Make SOUL-hwa",
+                p3: "<Ingredients> <br> Samshin Grandmother's Blessing, Mountain Spirit’s scolding, Grim Reaper’s butterfly, pixels, Indian sauce, and creators' overtime work",
+                p4: "<Recipe> <br> 1. Remove the dragon from the bowl <br> 2. Squeeze the ideas and knead with references <br> 3. Slice each ingredient <br> 4. Stir-fry with Indian sauce over the flame of code <br> 5. Grind pixels with a millstone <br> 6. Put everything on the dough and shape it <br> 7. Add soul to 'seolhwa' overnight <br> 8. Plate it over tears <br> 9. SOUL-hwa is ready!"
             },
         },
         links: [],
@@ -337,7 +325,7 @@ export const allArtworkData = {
         artistKr: "뚜앙즈",
         artistEn: "Tuangz",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -388,7 +376,7 @@ export const allArtworkData = {
         artistKr: "야너이상해",
         artistEn: "Hey, What's wrong with you?",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -436,7 +424,7 @@ export const allArtworkData = {
         artistKr: "와이칼리버",
         artistEn: "Ycalibur",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -475,7 +463,7 @@ export const allArtworkData = {
         artistKr: "아마따",
         artistEn: "Amatuer",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -515,7 +503,7 @@ export const allArtworkData = {
         artistKr: "투진스",
         artistEn: "2genes",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -553,7 +541,7 @@ export const allArtworkData = {
         artistKr: "더 스님스",
         artistEn: "The Seunims",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -600,7 +588,7 @@ export const allArtworkData = {
         artistKr: "기록도록",
         artistEn: "GRDR",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -646,7 +634,7 @@ export const allArtworkData = {
         artistKr: "비상명(非常名)",
         artistEn: "Project Kṣaṇa",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -698,7 +686,7 @@ export const allArtworkData = {
         artistKr: "노릇노릇",
         artistEn: "NRNR",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -747,7 +735,7 @@ export const allArtworkData = {
         artistKr: "서탭입니다",
         artistEn: "We're steff",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -810,7 +798,7 @@ export const allArtworkData = {
         artistKr: "파브리카",
         artistEn: "Fabrika",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -847,7 +835,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -910,7 +898,7 @@ export const allArtworkData = {
         artistKr: "라스트 댄스",
         artistEn: "Last Dance",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -949,7 +937,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "ACTA",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1013,7 +1001,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "CONTINUE?",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1059,7 +1047,7 @@ export const allArtworkData = {
         artistKr: "이건 네 번째 레슨",
         artistEn: "The fourth lesson",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1111,7 +1099,7 @@ export const allArtworkData = {
         artistKr: "김민수",
         artistEn: "Min Soo Kim",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1141,7 +1129,7 @@ export const allArtworkData = {
         artistKr: "이윤선",
         artistEn: "Yoonseon Lee",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1171,7 +1159,7 @@ export const allArtworkData = {
         artistKr: "디지털 기억 재단",
         artistEn: "Digital Memory Foundation",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
