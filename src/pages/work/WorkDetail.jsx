@@ -9,9 +9,9 @@ const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
 const LinkPlaceholderIcon = "/lottie/WorkDetailIcon/WorkDetail_link.svg";
 
-const EmailIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=E";
-const InstagramIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=I";
-const LinkedInIcon = "https://placehold.co/18x18/1e1e1e/ffffff?text=L";
+const EmailIcon = "/lottie/WorkDetailIcon/email.svg";
+const InstagramIcon = "/lottie/WorkDetailIcon/instagram.svg";
+const LinkedInIcon = "/lottie/WorkDetailIcon/website.svg";
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
