@@ -188,7 +188,8 @@ export default function WorkDetail() {
   const HEADER_OFFSET = 40;
   const HEADER_COMPONENT_HEIGHT = 97;
   const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
-  const TARGET_SCROLL_POINT = 177;
+  const TARGET_SCROLL_POINT = 400;
+  const BUTTON_LIST_ACTIVATION_POINT = 137;
 
   const getQueryParam = useCallback(
     (param) => {
@@ -223,19 +224,27 @@ export default function WorkDetail() {
       const scrollY = window.scrollY;
 
       if (window.innerWidth >= 640) {
-        if (scrollY >= TARGET_SCROLL_POINT) {
+        
+        if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
           setIsButtonListActive(true);
         } else {
           setIsButtonListActive(false);
         }
+
+        if (scrollY >= TARGET_SCROLL_POINT) {
+          setIsStickyHeaderActive(true); 
+        } else {
+          setIsStickyHeaderActive(false);
+        }
+
       } else {
         setIsButtonListActive(false);
-      }
 
-      if (scrollY >= headerActivationScrollPoint) {
-        setIsStickyHeaderActive(true);
-      } else {
-        setIsStickyHeaderActive(false);
+        if (scrollY >= headerActivationScrollPoint) {
+          setIsStickyHeaderActive(true);
+        } else {
+          setIsStickyHeaderActive(false);
+        }
       }
     };
 
@@ -246,7 +255,7 @@ export default function WorkDetail() {
       clearTimeout(timeoutId);
       window.removeEventListener("scroll", checkScrollPosition);
     };
-  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT]);
+  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT, TARGET_SCROLL_POINT, BUTTON_LIST_ACTIVATION_POINT]); // 🌟 의존성 배열에 새 상수 추가
 
   const handleGoBack = useCallback(() => {
     const fromView = getQueryParam("from");
@@ -332,6 +341,7 @@ export default function WorkDetail() {
       >
         <Header />
       </div>
+      
       <div className="p-5 fixed top-0 left-0 right-0 z-[10000] min-[701px]:hidden">
         <div className="relative ">
           <MenuToggle />
@@ -424,7 +434,7 @@ export default function WorkDetail() {
         <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
           <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
             {vimeoEmbedUrl ? (
-              <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
+              <div className="Work-Detail-Video w-full h-auto box-border mb-5 relative aspect-video">
                 <iframe
                   src={vimeoEmbedUrl}
                   className="w-full h-full absolute top-0 left-0"

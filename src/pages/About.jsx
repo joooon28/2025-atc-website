@@ -77,7 +77,7 @@ const FirstSection = () => {
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
-          <span className="underline"><a href="https://www.instagram.com/atc.sogang/" target="_blank">@atc.sogang</a></span>
+          <span className="underline"><a href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@atc.sogang</a></span>
         </p>
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
