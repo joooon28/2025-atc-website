@@ -434,7 +434,7 @@ export default function WorkDetail() {
         <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
           <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
             {vimeoEmbedUrl ? (
-              <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
+              <div className="Work-Detail-Video w-full h-auto box-border mb-5 relative aspect-video">
                 <iframe
                   src={vimeoEmbedUrl}
                   className="w-full h-full absolute top-0 left-0"
