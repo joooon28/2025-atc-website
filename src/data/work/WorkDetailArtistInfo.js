@@ -1210,7 +1210,7 @@ export const allArtworkData = {
         artistKr: "두바구",
         artistEn: "DBG",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1269,7 +1269,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "Neuverse Lab",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1335,7 +1335,7 @@ export const allArtworkData = {
         artistKr: "티씨케이",
         artistEn: "TCK",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1384,7 +1384,7 @@ export const allArtworkData = {
         artistKr: "신채원",
         artistEn: "Chaewon Shin",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1417,7 +1417,7 @@ export const allArtworkData = {
         artistKr: "커비",
         artistEn: "KIRBY",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1469,7 +1469,7 @@ export const allArtworkData = {
         artistKr: "노진서",
         artistEn: "Noh jinseo",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1500,7 +1500,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "Sunmyeong Lee",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1535,7 +1535,7 @@ export const allArtworkData = {
         artistKr: "토마토마토",
         artistEn: "tomat()mato",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1584,7 +1584,7 @@ export const allArtworkData = {
         artistKr: "김태현",
         artistEn: "Taehyun Kim",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "",
+        imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
             kr: {
