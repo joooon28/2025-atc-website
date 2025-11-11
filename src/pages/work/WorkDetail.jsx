@@ -412,10 +412,10 @@ export default function WorkDetail() {
                         min-[701px]:bg-white 
                         flex justify-between items-center border-t border-b border-label mb-10 relative`}
         >
-          <div className="absolute top-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute top-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute top-[-0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute bottom-[-0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
 
           <StickyTitle data={artwork} />
           <StickyArtist data={artwork} />
