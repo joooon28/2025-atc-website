@@ -285,7 +285,9 @@ export const allArtworkData = {
         commentary: {
             kr: {
                 p1: "삶 속에서 한국 설화가 우리를 사랑하는 방식을 담은 애니메이션 & 웹게임",
-                p2: "",
+                p2: "삶은 설화 만드는 법!",
+                p3: "<재료> <br> 삼신할매의 축복, 산신령의 호통, 저승사자의 나비 한 마리, 픽셀, 인도의 특제소스 그리고… 제작자의 밤샘",
+                p4: "<조리법> <br> 1. 그릇 속 용을 조심스레 치워준다. <br> 2. 불린 아이디어를 면보에 넣고 쥐어짠 뒤, 레퍼런스를 넣어 반죽한다. <br> 3. 재료를 한입 크기로 예쁘게 썬다. <br> 4. 수상한 인도의 특제소스와 함께 코드를 센 불로 볶는다. <br> 5. 맷돌로 픽셀을 잘게 갈아준다. <br> 6. 반죽 안에 손질한 모든 재료를 넣고 예쁘게 빚는다. <br> 7. 505°C로 예열한 컴퓨터에서 빚은 설화를 밤새도록 삶아준다. <br> 8. 제작자의 눈물 위에 삶아진 설화를 예쁘게 플레이팅한다. <br> 9. 삶은 설화 완성!"
             },
             en: {
                 p1: "",
@@ -850,20 +852,53 @@ export const allArtworkData = {
         commentary: {
             kr: {
                 p1: "피자 만들기를 테마로 한 아동/청소년 대상 교육용 보드게임",
-                p2: "",
+                p2: "<Hurry Pizza 레시피>",
+                p3: "- 재료 <br> 냉동 피자 도우 반죽, 모짜렐라 치즈, 체다 치즈, 페퍼로니, 팀원들의 눈물 조금, 토마토 소스, 올리브, 열정, 피망, 새우",
+                p4: "1. 무슨 피자를 만들어 볼까? 고민해 본다. 우선 냉동 도우를 꺼내자. <br> 2. 해동시키는 동안, 학교 앞 카페에서 커피를 한 잔 홀짝인다. <br> 3. 좋아. 그 피자를 만들어 보자. 반죽을 고루 피고, 소스를 정성껏 발라봐. <br> 4. 넣고 싶은 토핑을 맘대로 올려보자. 실수로 팀원들의 눈물이 들어갔어도 괜찮아. <br> 5. 마지막으로 치즈를 듬뿍 뿌리고 오븐에 넣어. 열정의 온도로 20분간 익혀줘.",
+                p5: "그러면 세상에서 가장 빠르고 맛있는 피자 완성!"
             },
             en: {
                 p1: "",
-                p2: "",
+                p2: "<Hurry Pizza Recipe>",
+                p3: "- Ingredients <br> Frozen pizza dough, mozzarella cheese, cheddar cheese, pepperoni, a few tears of teamwork, tomato sauce, olives, passion, bell pepper, shrimp",
+                p4: "1. Think about what kind of pizza to make. First, take out the dough. <br> 2. While it thaws, sip a cup of coffee and dream of success. <br> 3. Spread the dough evenly and coat it with sauce. <br> 4. Add any toppings you like—even accidental tears are welcome. <br> 5. Sprinkle plenty of cheese and bake it with passion for 20 minutes.",
+                p5: "And there it is—the fastest, tastiest pizza ever!"
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: "https://www.instagram.com/hurrypizza_official/" }
+        ],
         artistsDetail: [
             {
-                kr: "",
-                en: "",
+                kr: "박종호",
+                en: "Jongho Park",
                 links: {
-                    instagram: "https://instagram.com/"
+                    instagram: "https://instagram.com/jongho0211/",
+                    email: "park020211@sogang.ac.kr"
+                },
+            },
+            {
+                kr: "김지윤",
+                en: "Jiyun Kim",
+                links: {
+                    instagram: "https://instagram.com/cgxyooon/",
+                    email: "olgayooon@gmail.com"
+                },
+            },
+            {
+                kr: "임동준",
+                en: "Dongjun Lim",
+                links: {
+                    instagram: "https://instagram.com/n0va_0/",
+                    email: "nova903@sogang.ac.kr"
+                },
+            },
+            {
+                kr: "최윤서",
+                en: "Yunseo Choi",
+                links: {
+                    instagram: "https://instagram.com/yschoi0919/",
+                    email: "yschoi0919@gmail.com"
                 },
             }
         ]
