@@ -152,7 +152,7 @@ export const allArtworkData = {
                 p7: "요즘 좀 피곤한 것 같은데.",
                 p8: "일이 끊이지 않네..쉬는 건 좀 나중에라도 할 수 있으니까…",
                 p9: "좋아서 시작했잖아. 근데 왜, 이젠 버거워?",
-                p10: "자소서 준비 안해? 다른 동기들은 벌써 어디 회사들어갔다던데준비안해?이럴시간에인턴지원이라도한번해봤겠다.남들도이정도는다해.아니바쁘다며.지금기타칠시간이있어?학회도아니고동아리?고학이면이제그런것보다도현실에집중해야하지않나?집에틀어박힌다고해결되는게아니잖아. 나와서 햇빛도 좀 쬐고 그래야지. 잠깐 멈춰서도 되지 않을까?"
+                p10: "자소서 준비 안해? 다른 동기들은 벌써 어디 회사 들어갔다던데 준비 안해? 이럴 시간에 인턴 지원이라도 한 번 해봤겠다. 남들도 이정도는 다 해. 아니 바쁘다며. 지금 기타 칠 시간이 있어? 학회도 아니고 동아리? 고학이면 이제 그런것보다도 현실에 집중해야 하지 않나? 집에 틀어 박힌다고 해결되는게 아니잖아. 나와서 햇빛도 좀 쬐고 그래야지. 잠깐 멈춰서도 되지 않을까?"
             },
             en: {
                 p1: "",
@@ -609,7 +609,7 @@ export const allArtworkData = {
             },
             en: {
                 p1: "",
-                p2: "What is the thing we must remember? And are we making an effort to hold on to it? Are we finding ways to show it to the world?	",
+                p2: "What is the thing we must remember? And are we making an effort to hold on to it? Are we finding ways to show it to the world?",
             },
         },
         links: [],
@@ -667,7 +667,7 @@ export const allArtworkData = {
                 p5: "",
                 p6: "Each day, 402.74 million terabytes are uploaded, yet little truly remains. The internet is but a new clay tablet, carved in silicon.",
                 p7: "Rain of Kṣaṇa reveals the impermanence before you.",
-                p8: "모All things are empty—face the formless."
+                p8: "All things are empty—face the formless."
             },
         },
         links: [],
