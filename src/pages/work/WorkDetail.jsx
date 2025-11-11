@@ -185,10 +185,14 @@ export default function WorkDetail() {
   const firstSectionRef = useRef(null);
   const mainImgContainerRef = useRef(null);
 
+  const visualColumnRef = useRef(null);
+  const textColumnRef = useRef(null);
+
   const HEADER_OFFSET = 40;
   const HEADER_COMPONENT_HEIGHT = 97;
   const TOTAL_FIXED_HEADER_HEIGHT = HEADER_OFFSET + HEADER_COMPONENT_HEIGHT;
-  const TARGET_SCROLL_POINT = 177;
+  const TARGET_SCROLL_POINT = 400; 
+  const BUTTON_LIST_ACTIVATION_POINT = 137;
 
   const getQueryParam = useCallback(
     (param) => {
@@ -223,19 +227,27 @@ export default function WorkDetail() {
       const scrollY = window.scrollY;
 
       if (window.innerWidth >= 640) {
-        if (scrollY >= TARGET_SCROLL_POINT) {
+        
+        if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
           setIsButtonListActive(true);
         } else {
           setIsButtonListActive(false);
         }
+
+        if (scrollY >= TARGET_SCROLL_POINT) { 
+          setIsStickyHeaderActive(true); 
+        } else {
+          setIsStickyHeaderActive(false);
+        }
+
       } else {
         setIsButtonListActive(false);
-      }
 
-      if (scrollY >= headerActivationScrollPoint) {
-        setIsStickyHeaderActive(true);
-      } else {
-        setIsStickyHeaderActive(false);
+        if (scrollY >= headerActivationScrollPoint) { 
+          setIsStickyHeaderActive(true);
+        } else {
+          setIsStickyHeaderActive(false);
+        }
       }
     };
 
@@ -246,7 +258,40 @@ export default function WorkDetail() {
       clearTimeout(timeoutId);
       window.removeEventListener("scroll", checkScrollPosition);
     };
-  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT]);
+  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT, TARGET_SCROLL_POINT, BUTTON_LIST_ACTIVATION_POINT]);
+
+  useEffect(() => {
+    const syncColumnHeights = () => {
+      if (window.innerWidth < 701) {
+        if (visualColumnRef.current) {
+          visualColumnRef.current.style.minHeight = 'auto';
+        }
+        return;
+      }
+
+      if (visualColumnRef.current) {
+        visualColumnRef.current.style.minHeight = 'auto';
+      }
+
+      setTimeout(() => {
+        if (visualColumnRef.current && textColumnRef.current) {
+          const textColumnHeight = textColumnRef.current.scrollHeight;
+          visualColumnRef.current.style.minHeight = `${textColumnHeight}px`;
+        }
+      }, 0); 
+    };
+
+    const timeoutId = setTimeout(syncColumnHeights, 100);
+    window.addEventListener('resize', syncColumnHeights);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', syncColumnHeights);
+      if (visualColumnRef.current) {
+        visualColumnRef.current.style.minHeight = 'auto';
+      }
+    };
+  }, [artwork, currentLanguage]); 
 
   const handleGoBack = useCallback(() => {
     const fromView = getQueryParam("from");
@@ -323,7 +368,7 @@ export default function WorkDetail() {
 
   return (
     <div className="text-label min-h-screen">
-      <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-white"></div>
+      <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-white"></div> 
 
       <div
         className={`max-[701px]:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${
@@ -332,6 +377,7 @@ export default function WorkDetail() {
       >
         <Header />
       </div>
+      
       <div className="p-5 fixed top-0 left-0 right-0 z-[10000] min-[701px]:hidden">
         <div className="relative ">
           <MenuToggle />
@@ -407,22 +453,47 @@ export default function WorkDetail() {
 
         <div
           ref={stickyInfoRef}
-          className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10010] 
-                        max-[701px]:bg-white 
-                        min-[701px]:bg-white 
-                        flex justify-between items-center border-t border-b border-label mb-10 relative`}
+          className={`Work-Detail-Sticky-Info py-2 z-[10010] 
+                        max-[701px]:bg-white min-[701px]:bg-white border-t border-b border-label mb-10
+                        
+                        ${isStickyHeaderActive 
+                            ? 'fixed top-[137px] max-[701px]:top-[85px] left-1/2 -translate-x-1/2 w-[calc(100%-40px)] md:w-[calc(100%-80px)]' 
+                            : 'w-full'
+                        }
+                    `} 
         >
-          <div className="absolute top-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute top-[-0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
-          <div className="absolute bottom-[-0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+          <div className="relative flex justify-between items-center"> 
+          
+            <div 
+              className="absolute left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2"
+              style={{ top: '-11px' }} 
+            ></div>
+            <div 
+              className="absolute right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2"
+              style={{ top: '-11px' }} 
+            ></div>
+            <div 
+              className="absolute left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2"
+              style={{ bottom: '-11px' }} 
+            ></div>
+            <div 
+              className="absolute right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2"
+              style={{ bottom: '-11px' }} 
+            ></div>
 
-          <StickyTitle data={artwork} />
-          <StickyArtist data={artwork} />
+            <StickyTitle data={artwork} />
+            <StickyArtist data={artwork} />
+            
+          </div>
         </div>
 
+
         <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
-          <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
+          
+          <div 
+            ref={visualColumnRef} 
+            className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none"
+          >
             {vimeoEmbedUrl ? (
               <div className="Work-Detail-Video w-full h-auto border border-label box-border mb-5 relative aspect-video">
                 <iframe
@@ -447,7 +518,10 @@ export default function WorkDetail() {
             </div>
           </div>
 
-          <div className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]">
+          <div 
+            ref={textColumnRef} 
+            className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]" 
+          >
             <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
               <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
                 {currentCommentary.p1 && (
