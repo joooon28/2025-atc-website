@@ -1,8 +1,4 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import React, { useState, useEffect, useRef } from "react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,46 +6,112 @@ import MenuToggle from "../components/menu/MenuToggle";
 
 const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
+const SLIDE_INTERVAL = 2500;
 
-const MadeBox = ({ images, title, kr, en, location }) => {
+const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn }) => { 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const timeoutRef = useRef(null);
+  const startTimeRef = useRef(Date.now());
+  const remainingTimeRef = useRef(SLIDE_INTERVAL);
+
+  const clearTimer = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const goToNextSlide = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    startTimer(SLIDE_INTERVAL);
+  };
+
+  const startTimer = (duration) => {
+    clearTimer();
+    startTimeRef.current = Date.now();
+    remainingTimeRef.current = duration;
+    timeoutRef.current = setTimeout(goToNextSlide, duration);
+  };
+
+  useEffect(() => {
+    if (images.length > 1) {
+      startTimer(SLIDE_INTERVAL);
+    }
+    return clearTimer;
+  }, [images.length]);
+
+  const handleMouseEnter = () => {
+    if (images.length > 1) {
+      const elapsedTime = Date.now() - startTimeRef.current;
+      const timeRemaining = remainingTimeRef.current - elapsedTime;
+      remainingTimeRef.current = Math.max(0, timeRemaining);
+      clearTimer();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (images.length > 1) {
+      startTimer(remainingTimeRef.current);
+    }
+  };
+
   return (
-    <div className="Made-Detail-Box w-full min-[376px]:w-[calc(50%-10px)] min-[701px]:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border">
-      <div className="relative w-full overflow-hidden rounded-sm aspect-video">
-        <Swiper modules={[Navigation]} navigation className="absolute inset-0 w-full h-full">
-          {images.map((src, i) => (
-            <SwiperSlide key={i}>
-              <img
-                src={src}
-                alt={`${title} 이미지 ${i + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div
+      className="Made-Detail-Box w-full min-[376px]:w-[calc(50%-10px)] min-[701px]:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border"
+    >
+      <div 
+        className="relative w-full overflow-hidden rounded-sm aspect-video flex justify-center items-center"
+        onMouseEnter={handleMouseEnter} 
+        onMouseLeave={handleMouseLeave}
+      >
+        <img
+          src={images[currentImageIndex]}
+          alt={`${title} 이미지 ${currentImageIndex + 1}`}
+          className="w-full h-full object-contain transition-opacity duration-1000" 
+        />
       </div>
 
       <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
-          id="Made-Detail-Title"
-          className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]"
+          id="Made-Detail-Title-En"
+          className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-nowrap"
         >
-          {title}
+          <span className="font-[500] not-italic">{title}</span>
+          
+          <span className="ml-2 italic">{titleEn}</span> 
         </p>
+        
         <p
           id="Made-Detail-Kr"
           className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
         >
           {kr}
         </p>
+        
+        <p
+          id="Made-Price-Kr"
+          className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
+        >
+          <span className="font-normal">{priceKr}</span>
+        </p>
+        
         <p
           id="Made-Detail-En"
-          className="font-normal text-[15px] leading-[145%] tracking-[-0.5%]"
+          className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
         >
           {en}
         </p>
+        
+        <p
+          id="Made-Price-En"
+          className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
+        >
+          {priceEn}
+        </p>
+        
         <p
           id="Made-Location"
-          className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
+          className="font-normal text-[15px] leading-[180%] tracking-[-10%] mt-[5px]"
         >
           {location}
         </p>
@@ -59,6 +121,7 @@ const MadeBox = ({ images, title, kr, en, location }) => {
 };
 
 const Made = () => {
+
   return (
     <div
       className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#E9F1E9]"
@@ -91,87 +154,84 @@ const Made = () => {
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
               images={[
-                "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
-                "https://via.placeholder.com/600x400/00FF00/FFFFFF?text=Product+1-2",
-                "https://via.placeholder.com/600x400/0000FF/FFFFFF?text=Product+1-3",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961666/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7.png"
               ]}
-              title="말-(메)아리 조각"
-              kr="굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다."
-              en="We draw maps both alone and together, then share stories about them. The maps we create are not merely about marking roads and places; they become tools that reveal—and even generate—our perspectives on the world."
-              location="굿즈 위치가 들어가야 합니다."
+              title="쫑알쫑알스티커"
+              titleEn="BabbleBabble Sticker"
+              kr="당신의 숨겨왔던 쫑알쫑알을 세상에 부착하세요. 왱알왱알손바닥수첩을 구입하면 쫑알쫑알스티커를 함께 선물합니다."
+              en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
+              location="MD존"
+              priceKr="(비매품)"
+              priceEn="(Not for sale)"
             />
 
             <MadeBox
               images={[
-                "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
-                "https://via.placeholder.com/600x400/00FF00/FFFFFF?text=Product+1-2",
-                "https://via.placeholder.com/600x400/0000FF/FFFFFF?text=Product+1-3",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961681/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20312341234_achxh5.png"
               ]}
-              title="말-(메)아리 조각"
-              kr="굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다."
-              en="We draw maps both alone and together, then share stories about them. The maps we create are not merely about marking roads and places; they become tools that reveal—and even generate—our perspectives on the world."
-              location="굿즈 위치가 들어가야 합니다."
+              title="왱알왱알손바닥수첩"
+              titleEn="MumbleMumble Note"
+              kr="우리의 말아리가 가득 담길 A6 크기의 수첩. 머릿속의 작은 생각들로 채워나가 보세요. 왱알왱알손바닥노트를 구입하면 쫑알쫑알스티커를 함께 선물합니다."
+              en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
+              location="MD존"
+              priceKr="(3000)"
+              priceEn="(3000)"
             />
           </div>
 
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10 pt-[20px]">
             <MadeBox
               images={[
-                "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
-                "https://via.placeholder.com/600x400/00FF00/FFFFFF?text=Product+1-2",
-                "https://via.placeholder.com/600x400/0000FF/FFFFFF?text=Product+1-3",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961700/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20412341234_eq6nlb.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961702/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_204_E3_84_B4_E3_84_B9234_nnkdot.png"
               ]}
-              title="말-(메)아리 조각"
-              kr="굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다."
-              en="We draw maps both alone and together, then share stories about them. The maps we create are not merely about marking roads and places; they become tools that reveal—and even generate—our perspectives on the world."
-              location="굿즈 위치가 들어가야 합니다."
+              title="「ATC와춤을」연필"
+              titleEn="Dancing with ATC Pencil"
+              kr="2025 ATC에 방문한 모든 이에게 「ATC와춤을」연필을 선물합니다. 우리의 말아리를 기록하고 물음표를 휘날리며 ATC와 춤을!"
+              en="Every visitor to 2025 ATC will receive an ATC Dance Pencil. Record your words, let those questions marks flutter, and dance with ATC! Let’s dance!"
+              location="MD존"
+              priceKr="(비매품)"
+              priceEn="(Not for sale)"
             />
 
             <MadeBox
               images={[
-                "https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Product+1-1",
-                "https://via.placeholder.com/600x400/00FF00/FFFFFF?text=Product+1-2",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961738/E1_84_86_E1_85_A1_E1_86_AF1_mpxv1z.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961740/E1_84_86_E1_85_A1_E1_86_AF2_e3tx5z.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961743/E1_84_86_E1_85_A1_E1_86_AF3_exeqir.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961746/E1_84_86_E1_85_A1_E1_86_AF4_ardjfa.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961749/E1_84_86_E1_85_A1_E1_86_AF5_fbnhiq.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961752/E1_84_86_E1_85_A1_E1_86_AF6_xyepyl.png"
               ]}
-              title="말-(메)아리 조각"
-              kr="굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다. 굿즈 설명이 들어가야 합니다."
-              en="We draw maps both alone and together, then share stories about them. The maps we create are not merely about marking roads and places; they become tools that reveal—and even generate—our perspectives on the world."
-              location="굿즈 위치가 들어가야 합니다."
+              title="말아리조각"
+              titleEn="Piece of UtterEcho"
+              kr="2025 ATC를 준비하며 기획단이 나누었던 말아리가 담긴 말아리조각입니다. 조각내서 박제한 우리의 울퉁불퉁하게말아리를 간직하세요."
+              en="These are Pieces of UtterEcho shared by 2025 ATC staffs while preparing. Do keep our UtterEcho, broken into pieces and immortalized."
+              location="아카이빙 섹션"
+              priceKr="(비매품)"
+              priceEn="(Not for sale)"
+            />
+          </div>
+
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
+            <MadeBox
+              images={[
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961770/E1_84_86_E1_85_A7_E1_86_BC_E1_84_92_E1_85_A1_E1_86_B7_E1_84_86_E1_85_A9_E1_86_A8_E1_84_8B_E1_85_A5_E1_86_B8_gw5qyb.png"
+              ]}
+              title="아마추어의명함"
+              titleEn="Amateur’s Namecard"
+              kr="오늘이 남은 날 중 가장 아마추어일 때, 지금의 나를 소개하는 명함을 만들어봅시다."
+              en="Today may be the last day we remain amateurs. Let’s create a name card that introduces who we are now."
+              location="MD존에서 무료로 체험 가능"
+              priceKr="(비매품)"
+              priceEn="(Not for sale)"
             />
           </div>
         </section>
       </div>
+      
 
       <Footer />
-
-      <style>{`
-        .Made-Detail-Box .swiper-button-prev,
-        .Made-Detail-Box .swiper-button-next {
-          width: 25px;
-          height: 25px;
-          background-color: transparent;
-          color: #362C11;
-          opacity: 0;
-          transition-duration: 0.2s;
-          cursor: pointer;;
-        }
-
-        .Made-Detail-Box .swiper-button-prev::after,
-        .Made-Detail-Box .swiper-button-next::after {
-          font-size: 14px;
-        }
-
-        .Made-Detail-Box > div:first-child:hover .swiper-button-prev.swiper-button-disabled,
-        .Made-Detail-Box > div:first-child:hover .swiper-button-next.swiper-button-disabled {
-          opacity: 0.3;
-          pointer-events: none;
-          cursor: default;
-        }
-
-        .Made-Detail-Box > div:first-child:hover .swiper-button-prev,
-        .Made-Detail-Box > div:first-child:hover .swiper-button-next {
-          opacity: 1;
-        }
-      `}</style>
     </div>
   );
 };
