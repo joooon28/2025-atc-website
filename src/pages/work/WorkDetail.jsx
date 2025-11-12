@@ -275,7 +275,7 @@ export default function WorkDetail() {
 
   if (!artwork) {
     return (
-      <div className="text-label min-h-screen bg-white">
+      <div className="text-label min-h-screen bg-[#F8F8F7]">
         <Header />
         <main className="w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
           <p className="mt-20">작품을 찾을 수 없습니다.</p>
@@ -331,12 +331,12 @@ export default function WorkDetail() {
   };
 
   return (
-    <div className="text-label min-h-screen">
-      <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-white"></div>
+    <div className="text-label min-h-screen bg-[#F8F8F7]">
+      <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-[#F8F8F7]"></div>
 
       <div
         className={`max-[701px]:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${
-          isStickyHeaderActive ? "bg-white" : "bg-transparent"
+          isStickyHeaderActive ? "bg-[#F8F8F7]" : "bg-transparent"
         }`}
       >
         <Header />
@@ -417,13 +417,13 @@ export default function WorkDetail() {
       <div 
         className="Second-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto"
       >
-        <div className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-white min-[701px]:h-0 z-[9980] min-[701px]:hidden"></div>
+        <div className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-[#F8F8F7] min-[701px]:h-0 z-[9980] min-[701px]:hidden"></div>
 
         <div
           ref={stickyInfoRef}
           className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10030] 
-                        max-[701px]:bg-white 
-                        min-[701px]:bg-white 
+                        max-[701px]:bg-[#F8F8F7] 
+                        min-[701px]:bg-[#F8F8F7]
                         flex justify-between items-center border-t border-b border-label mb-10 relative`}
         >
           <div className="absolute top-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
