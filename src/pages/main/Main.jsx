@@ -74,7 +74,7 @@ export default function Main() {
         title: "흩어진 언어의 입자",
         size: 200,
         description:
-          "말아리 조각, 몽당 연필, 명함, 노트... 언어의 입자들이 손에 잡히는 물건으로 바뀌었어요.",
+          "말아리 조각, 몽당 연필, 명함, \n노트... 언어의  입자들이 손에 잡히는 물건으로 바뀌었어요.",
         onGo: () => {
           navigate(routesByKey.Word_Ul);
         },
@@ -86,7 +86,7 @@ export default function Main() {
         title: "생각이 번뜩",
         size: 200,
         description:
-          "무작위로 선택된 프로젝트 페이지로 이동해요. ‘생각이 번뜩!’ 떠오를 계기가 될 수도?",
+          "무작위로 선택된 프로젝트 페이지로 이동해요. ‘생각이 번뜩!’ 떠오를 \n계기가 될 수도?",
         onGo: () => {
           const id = pickRandomWorkId();
           navigate(`/work/${id}?from=gallery`);
@@ -115,7 +115,7 @@ export default function Main() {
         title: "횡설수설",
         size: 210,
         description:
-          "5초마다 새로운 프로젝트를 탐험해볼까요? 이곳저곳 돌아다니다 보면 운명의 무언가를 만날지도?",
+          "5초마다 새로운 프로젝트를 탐험해볼까요? 이곳저곳 돌아다니다 보면 \n운명의 무언가를 만날지도?",
         onGo: () => {
           const id = pickRandomWorkId();
           navigate(`/work/${id}?from=gallery&autoplay=1`);
@@ -128,7 +128,7 @@ export default function Main() {
         title: "날카로운 지적",
         size: 190,
         description:
-          "프로그램 하나하나에 담긴 예리한 질문들. 작업자들과 기획단이 나눈 날카로운 고민을 만나보세요.",
+          "프로그램 하나하나에 담긴 예리한 질문들. 작업자들과 기획단이 나눈 \n날카로운 고민을 만나보세요.",
         onGo: () => {
           navigate(routesByKey.Word_Ha, {
             state: {
@@ -159,7 +159,7 @@ export default function Main() {
         title: "모르겠어!!",
         rotate: -44,
         description:
-          "‘모르겠어!!’라고 외치는 와중에도 회의하고 만들고 답사하며 남긴 기획단의 순간들을 따라가 보세요.",
+          "‘모르겠어!!’라고 외치는 와중에도 \n회의하고 만들고 답사하며 남긴 \n기획단의 순간들을 따라가 보세요.",
         onGo: () => navigate("/archive", { state: { sheet: "gallery" } }),
       };
     }
@@ -169,7 +169,7 @@ export default function Main() {
         title: "망설임 끝의 확신",
         size: 140,
         description:
-          "다큐멘터리 페이지로 이동해요. 망설임은 확신의 시작일지도 몰라요. 그 흔들림의 시간들을 따라가 볼까요?",
+          "다큐멘터리 페이지로 이동해요. \n망설임은 확신의 시작일지도 몰라요. \n그 흔들림의 시간들을 따라가 볼까요?",
         onGo: () => navigate("/archive", { state: { sheet: "documentary" } }),
       };
     }
@@ -179,7 +179,7 @@ export default function Main() {
         title: "헛소리 하기",
         size: 210,
         description:
-          "기획 과정에서 나온 울퉁불퉁한 말들과 대화들을 탐색해요. 과연 무슨 맥락에서 나온 말들일까요?",
+          "기획 과정에서 나온 울퉁불퉁한 \n말들과 대화들을 탐색해요. \n과연 무슨 맥락에서 나온 말들일까요?",
         onGo: () => navigate("/archive", { state: { sheet: "memo" } }),
       };
     }

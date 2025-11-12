@@ -182,7 +182,7 @@ export default function Archive() {
                 setActiveSheet(null);
               }
             }}
-            className={`absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
+            className={` absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
               ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
           >
             <div className="bg-mint-6 h-svh overflow-y-auto ">

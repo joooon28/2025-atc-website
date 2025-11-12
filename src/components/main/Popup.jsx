@@ -40,7 +40,9 @@ export default function Popup({
         )}
       </div>
       <p className="text-[20px] font-heavy">{title}</p>
-      <p className="text-[14px] font-regular px-1">{description}</p>
+      <p className="text-[14px] font-regular px-1 whitespace-pre-line">
+        {description}
+      </p>
       <button
         type="button"
         onClick={onGo}
