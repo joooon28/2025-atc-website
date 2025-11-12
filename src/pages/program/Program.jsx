@@ -46,7 +46,21 @@ export default function Program() {
   const [activeId, setActiveId] = useState(null);
 
   // Calendar ↔ ProgramList 연동 상태
-  const [hoveredNumber, setHoveredNumber] = useState(null);
+  const [hovered, setHovered] = useState({ number: null, color: "" });
+  const [active, setActive] = useState({ number: null, color: "" });
+
+  const onHoverNumber = (n, c) => setHovered({ number: n, color: c });
+  const onLeaveNumber = () => setHovered({ number: null, color: "" });
+  const onClickNumber = (n, c) => {
+    const id = numToId[String(n)];
+    const closing = activeId === id; // 이미 열린 걸 다시 클릭 → 닫힘
+    if (closing) {
+      setActive({ number: null, color: "" });
+    } else {
+      setActive({ number: n, color: c }); // 클릭한 직사각형 색으로 고정
+    }
+    toggleListByNumber(n);
+  };
 
   // number → id 매핑 (Calendar 클릭 시 ProgramList 토글용)
   const numToId = useMemo(
@@ -74,6 +88,14 @@ export default function Program() {
   const handleActivate = (next) => {
     if (justDraggedRef.current) return;
     setActiveId(next);
+
+    if (!next) {
+      setActive({ number: null, color: "" });
+      return;
+    }
+    const num = idToNumber[next];
+    const color = colorByNumber[num] || "";
+    setActive({ number: num, color });
   };
 
   useEffect(() => {
@@ -196,6 +218,27 @@ export default function Program() {
     navigate(".", { replace: true, state: null });
   }, [location.state, navigate]);
 
+  const hoverClassByNumber = {
+    1: "hover:bg-mint-5",
+    2: "hover:bg-mint-3",
+    3: "hover:bg-[#E9F1E9]",
+    4: "hover:bg-mint-5",
+    5: "hover:bg-mint-5",
+  };
+
+  const colorByNumber = {
+    1: "bg-mint-5",
+    2: "bg-mint-3",
+    3: "bg-[#E9F1E9]",
+    4: "bg-mint-5",
+    5: "bg-mint-5",
+  };
+
+  const idToNumber = useMemo(
+    () => Object.fromEntries(items.map((it) => [it.id, it.number])),
+    []
+  );
+
   return (
     <div className="flex flex-col min-h-svh bg-mint-2">
       <div className="max-tablet:hidden pt-[40px]">
@@ -239,7 +282,10 @@ export default function Program() {
                 onMoreInfo={openSheet}
                 activeId={activeId}
                 onActivate={handleActivate}
-                hoveredNumber={hoveredNumber}
+                hoveredNumber={hovered.number}
+                hoveredColor={hovered.color}
+                activeColor={active.color}
+                selfHoverClass={hoverClassByNumber[it.number]}
               />
             ))}
 
@@ -256,10 +302,9 @@ export default function Program() {
         </div>
 
         <ProgramCalendar
-          hoveredNumber={hoveredNumber}
-          onHoverNumber={setHoveredNumber}
-          onLeaveNumber={() => setHoveredNumber(null)}
-          onClickNumber={toggleListByNumber}
+          onHoverNumber={onHoverNumber}
+          onLeaveNumber={onLeaveNumber}
+          onClickNumber={onClickNumber}
         />
       </section>
 

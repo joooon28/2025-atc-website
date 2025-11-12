@@ -8,23 +8,38 @@ export default function Header() {
 
   return (
     <div className="text-label font-regular flex justify-center items-center gap-[12px]">
-      <MainLogo onClick={() => navigate(createSplashPath("/main"))} /> 
-      <header className="border border-label bg-mint-4 py-[12px] px-[24px]">
+      <MainLogo onClick={() => navigate(createSplashPath("/main"))} />
+      <header className="border border-label bg-mint-5 py-[12px] px-[24px]">
         <nav>
           <ul className="italic flex gap-[32px]">
-            <li className="cursor-pointer" onClick={() => navigate(createSplashPath("/about"))}>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate(createSplashPath("/about"))}
+            >
               About
             </li>
-            <li className="cursor-pointer" onClick={() => navigate(createSplashPath("/work"))}>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate(createSplashPath("/work"))}
+            >
               Work
             </li>
-            <li className="cursor-pointer" onClick={() => navigate(createSplashPath("/program"))}>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate(createSplashPath("/program"))}
+            >
               Program
             </li>
-            <li className="cursor-pointer" onClick={() => navigate(createSplashPath("/made"))}>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate(createSplashPath("/made"))}
+            >
               Made
             </li>
-            <li className="cursor-pointer" onClick={() => navigate(createSplashPath("/archive"))}>
+            <li
+              className="cursor-pointer"
+              onClick={() => navigate(createSplashPath("/archive"))}
+            >
               Archive
             </li>
             <li

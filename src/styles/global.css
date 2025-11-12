@@ -1,6 +1,19 @@
 @import url("https://webfontbox.github.io/monoplex/monoplex.css");
 @import "tailwindcss";
 
+/* 이 색상이 맞나...
+:root {
+  --color-mint-10: hsl(150 25% 67%);
+  --color-mint-20: hsl(152 17% 78%);
+  --color-mint-30: hsl(117 30% 88%);
+  --color-mint-40: hsl(60 23% 94%);
+  --color-mint-50: hsl(60 7% 97%);
+  --color-mint-60: hsl(84 100% 99%);
+  --color-brown-10: hsl(44 52% 14%);
+  --color-orange-10: hsl(14 65% 60%);
+}
+*/
+
 :root {
   --color-mint-10: hsl(130 15% 67%);
   --color-mint-20: hsl(152 17% 78%);
@@ -23,9 +36,9 @@
   --color-brown: var(--color-brown-10);
 
   --color-label: var(--color-brown-10);
-  --color-label-invert: var(--color-mint-40);
+  --color-label-invert: var(--color-mint-50);
 
-  --color-fill-invert: var(--color-mint-40);
+  --color-fill-invert: var(--color-mint-50);
   --color-fill: var(--color-brown-10);
 
   --color-line: var(--color-brown-10);

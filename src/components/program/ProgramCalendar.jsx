@@ -18,7 +18,7 @@ export default function ProgramCalendar({
             FRI
           </p>
           <p className="absolute left-[65.8%] -translate-x-1/2 top-0 text-center">
-            22
+            20
             <br />
             SAT
           </p>
@@ -55,17 +55,17 @@ export default function ProgramCalendar({
             <div className="absolute left-0 top-0 right-0 bottom-0 pointer-events-none">
               <div className="absolute left-0 top-0 bottom-0 w-1/2" />
               <div
-                className="absolute left-1/2 w-1/4 top-0 bottom-[-170px]
-                 bg-mint-3 flex justify-center items-center
-                 text-[16px] font-regular
+                className="absolute left-1/2 w-1/4 top-0 bottom-[-84.3px]
+                 bg-[#E9F1E9] flex justify-center items-center
+                 text-[20px] font-regular
                  cursor-pointer pointer-events-auto z-[60]"
-                onMouseEnter={() => onHoverNumber?.(2)}
+                onMouseEnter={() => onHoverNumber?.(3, "bg-[#E9F1E9]")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(2)}
+                onClick={() => onClickNumber?.(3, "bg-[#E9F1E9]")}
                 role="button"
-                aria-label="program 2"
+                aria-label="program 3"
               >
-                ( <span className="text-[12px] font-strong">2</span> )
+                ( <span className="text-[14px] font-strong">3</span> )
               </div>
             </div>
           </div>
@@ -91,29 +91,29 @@ export default function ProgramCalendar({
               <div
                 className="absolute left-0 w-[25%] top-0 bottom-[-170px]
                bg-mint-3 flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
+               text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[60]"
-                onMouseEnter={() => onHoverNumber?.(2)}
+                onMouseEnter={() => onHoverNumber?.(2, "bg-mint-3")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(2)}
+                onClick={() => onClickNumber?.(2, "bg-mint-3")}
                 role="button"
                 aria-label="program 2"
               >
-                ( <span className="text-[12px] font-strong">2</span> )
+                ( <span className="text-[14px] font-strong">2</span> )
               </div>
 
               <div
                 className="absolute left-[25%] w-[25%] top-0 bottom-[-170px]
                bg-mint-3 flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
+               text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[60]"
-                onMouseEnter={() => onHoverNumber?.(2)}
+                onMouseEnter={() => onHoverNumber?.(2, "bg-mint-3")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(2)}
+                onClick={() => onClickNumber?.(2, "bg-mint-3")}
                 role="button"
                 aria-label="program 2"
               >
-                ( <span className="text-[12px] font-strong">2</span> )
+                ( <span className="text-[14px] font-strong">2</span> )
               </div>
             </div>
           </div>
@@ -163,17 +163,17 @@ export default function ProgramCalendar({
           >
             <div className="absolute left-0 top-0 right-0 h-[298px] pointer-events-none z-[100]">
               <div
-                className="absolute left-1/2 w-[8.2%] top-0 h-full
-                   bg-[#F3F3EC] flex justify-center items-center
-                   text-[16px] font-regular cursor-pointer
+                className="absolute left-1/2 w-[12.5%] top-0 h-full
+                   bg-mint-5 flex justify-center items-center
+                   text-[20px] font-regular cursor-pointer
                    pointer-events-auto"
-                onMouseEnter={() => onHoverNumber?.(1)}
+                onMouseEnter={() => onHoverNumber?.(1, "bg-mint-5")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(1)}
+                onClick={() => onClickNumber?.(1, "bg-mint-5")}
                 role="button"
                 aria-label="program 1"
               >
-                ( <span className="text-[12px] font-strong">1</span> )
+                ( <span className="text-[14px] font-strong">1</span> )
               </div>
             </div>
           </div>
@@ -189,17 +189,30 @@ export default function ProgramCalendar({
           >
             <div className="absolute left-0 top-0 right-0 h-[255px] pointer-events-none z-[50]">
               <div
-                className="absolute right-0 top-0 h-full w-[25%]
-               bg-[#F3F3EC] flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
-               pointer-events-auto z-[2000]"
-                onMouseEnter={() => onHoverNumber?.(5)}
+                className="absolute left-[12.4%] top-0 bottom-[171px] w-[12.6%]
+               bg-[#E9F1E9] flex justify-center items-center
+               text-[20px] font-regular cursor-pointer
+               pointer-events-auto"
+                onMouseEnter={() => onHoverNumber?.(3, "bg-[#E9F1E9]")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(5)}
+                onClick={() => onClickNumber?.(3, "bg-[#E9F1E9]")}
+                role="button"
+                aria-label="program 3"
+              >
+                ( <span className="text-[14px] font-strong">3</span> )
+              </div>
+              <div
+                className="absolute right-0 top-0 h-full w-[25%]
+               bg-mint-5 flex justify-center items-center
+               text-[20px] font-regular cursor-pointer
+               pointer-events-auto z-[2000]"
+                onMouseEnter={() => onHoverNumber?.(5, "bg-mint-5")}
+                onMouseLeave={() => onLeaveNumber?.()}
+                onClick={() => onClickNumber?.(5, "bg-mint-5")}
                 role="button"
                 aria-label="program 5"
               >
-                ( <span className="text-[12px] font-strong">5</span> )
+                ( <span className="text-[14px] font-strong">5</span> )
               </div>
             </div>
           </div>
@@ -214,31 +227,31 @@ export default function ProgramCalendar({
           >
             <div className="absolute left-0 top-0 right-0 h-[170px] pointer-events-none z-[50]">
               <div
-                className="absolute left-0 top-0 h-full w-[12.5%]
+                className="absolute left-0 top-0 h-full w-[12.4%]
                bg-mint-3 flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
+               text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[2000]"
-                onMouseEnter={() => onHoverNumber?.(2)}
+                onMouseEnter={() => onHoverNumber?.(2, "bg-mint-3")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(2)}
+                onClick={() => onClickNumber?.(2, "bg-mint-3")}
                 role="button"
                 aria-label="program 2"
               >
-                ( <span className="text-[12px] font-strong">2</span> )
+                ( <span className="text-[14px] font-strong">2</span> )
               </div>
 
               <div
                 className="absolute left-[25%] top-0 h-full w-[25%]
-               bg-[#F3F3EC] flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
+               bg-mint-5 flex justify-center items-center
+               text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[2000]"
-                onMouseEnter={() => onHoverNumber?.(4)}
+                onMouseEnter={() => onHoverNumber?.(4, "bg-mint-5")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(4)}
+                onClick={() => onClickNumber?.(4, "bg-mint-5")}
                 role="button"
                 aria-label="program 4"
               >
-                ( <span className="text-[12px] font-strong">4</span> )
+                ( <span className="text-[14px] font-strong">4</span> )
               </div>
             </div>
           </div>
@@ -252,49 +265,19 @@ export default function ProgramCalendar({
         relative [--dot:6px] [--b:1px]
         "
           >
-            <div className="absolute left-0 top-0 right-0 h-[calc(100%+84px)] pointer-events-none z-[60]">
-              <div
-                className="absolute left-[12.5%] top-0 h-full w-[12.6%]
-               bg-[#E9F1E9] flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
-               pointer-events-auto"
-                onMouseEnter={() => onHoverNumber?.(3)}
-                onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(3)}
-                role="button"
-                aria-label="program 3"
-              >
-                ( <span className="text-[12px] font-strong">3</span> )
-              </div>
-
-              <div
-                className="absolute left-[66.7%] top-0 h-full w-[8.4%]
-               bg-[#E9F1E9] flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
-               pointer-events-auto"
-                onMouseEnter={() => onHoverNumber?.(3)}
-                onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(3)}
-                role="button"
-                aria-label="program 3"
-              >
-                ( <span className="text-[12px] font-strong">3</span> )
-              </div>
-            </div>
-
             <div className="absolute left-0 top-0 right-0 h-[calc(100%+170px)] pointer-events-none z-[55]">
               <div
-                className="absolute left-[58.2%] top-0 h-full w-[8.5%]
+                className="absolute left-[62.5%] top-0 h-full w-[12.5%]
                bg-mint-3 flex justify-center items-center
-               text-[16px] font-regular cursor-pointer
+               text-[20px] font-regular cursor-pointer
                pointer-events-auto"
-                onMouseEnter={() => onHoverNumber?.(2)}
+                onMouseEnter={() => onHoverNumber?.(2, "bg-mint-3")}
                 onMouseLeave={() => onLeaveNumber?.()}
-                onClick={() => onClickNumber?.(2)}
+                onClick={() => onClickNumber?.(2, "bg-mint-3")}
                 role="button"
                 aria-label="program 2"
               >
-                ( <span className="text-[12px] font-strong">2</span> )
+                ( <span className="text-[14px] font-strong">2</span> )
               </div>
             </div>
           </div>

@@ -21,15 +21,22 @@ export default function ProgramList({
   onActivate,
   onMoreInfo,
   hoveredNumber,
+  selfHoverClass,
+  hoveredColor,
+  activeColor,
 }) {
+  const isNumberOne = String(number) === "1";
+
   const open = activeId === id;
 
   const forceHover = String(hoveredNumber) === String(number);
+  const baseHover = selfHoverClass || "hover:bg-mint-6";
+
   const rowBg = open
-    ? "bg-mint-6"
-    : forceHover
-    ? "bg-mint-6"
-    : "hover:bg-mint-6";
+    ? activeColor || "bg-mint-6"
+    : forceHover && hoveredColor
+    ? hoveredColor
+    : baseHover;
 
   return (
     <div
@@ -72,7 +79,15 @@ export default function ProgramList({
 
         <div className="flex flex-col pr-4">
           <div className="font-regular text-label flex flex-col gap-10 cursor-pointer select-none">
-            <div className="flex min-[1073px]:gap-3 text-[20px] max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0">
+            <div
+              className={[
+                "flex text-[20px]",
+                isNumberOne
+                  ? "flex-col" // ← 1번만 세로 정렬
+                  : "min-[1073px]:gap-3 max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0",
+              ].join(" ")}
+            >
+              {" "}
               <p>{title}</p>
               <p className="italic ">{titleeng}</p>
             </div>
