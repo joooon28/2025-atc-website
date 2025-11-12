@@ -32,7 +32,7 @@ const GalleryList = forwardRef(function GalleryList(
   }));
 
   return (
-    <div className="max-[501px]:px-0 max-[501px]:gap-0 flex-1 flex justify-between items-center p-[40px] gap-5">
+    <div className="max-[501px]:px-0 max-[501px]:gap-0 flex-1 flex justify-between items-center px-[40px] gap-5">
       <button type="button" onClick={() => scrollByPage(-1)}>
         <ArrowLeftIcon
           className="max-[501px]:hidden w-[24px] h-[24px]"

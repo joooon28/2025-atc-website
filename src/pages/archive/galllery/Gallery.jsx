@@ -100,12 +100,25 @@ export default function Gallery({ onClose }) {
         ref={regionRef}
         tabIndex={0}
         onKeyDown={onKeyDown}
-        className="flex-1 min-h-0 flex flex-col pt-10 outline-none"
+        className="flex-1 min-h-0 flex flex-col outline-none"
         aria-label="Gallery navigation region"
         role="application"
       >
-        <div className="font-regular shrink-0 flex justify-center text-center gap-6">
-          {["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"].map((m) => (
+        <div className="basis-0 flex-1 min-h-0 p-10 flex justify-center items-center overflow-hidden">
+          <GalleryMain images={selected} />
+        </div>
+
+        <div>
+          <GalleryList
+            ref={listRef}
+            selected={selected}
+            onSelect={(id) => {
+              setSelected(id);
+            }}
+          />
+        </div>
+        <div className="py-10 font-regular shrink-0 flex justify-center text-center gap-6">
+          {["Jul", "Aug", "Sep", "Oct", "Nov"].map((m) => (
             <p
               key={m}
               className="hover:underline hover:font-heavy cursor-pointer"
@@ -114,20 +127,6 @@ export default function Gallery({ onClose }) {
               {m}
             </p>
           ))}
-        </div>
-
-        <div className="flex-1 p-10 flex justify-center items-center">
-          <GalleryMain images={selected} />
-        </div>
-
-        <div className="mt-auto">
-          <GalleryList
-            ref={listRef}
-            selected={selected}
-            onSelect={(id) => {
-              setSelected(id);
-            }}
-          />
         </div>
 
         <div className="mt-auto min-[501px]:hidden">
