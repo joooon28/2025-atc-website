@@ -42,12 +42,6 @@ export default function Header() {
             >
               Archive
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/playground"))}
-            >
-              Playground
-            </li>
           </ul>
         </nav>
       </header>

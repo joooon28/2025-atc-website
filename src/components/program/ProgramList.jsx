@@ -26,6 +26,9 @@ export default function ProgramList({
   activeColor,
 }) {
   const isNumberOne = String(number) === "1";
+  const isNumberTwo = String(number) === "2";
+  const isNumberThree = String(number) === "3";
+  const isNumberFour = String(number) === "4";
 
   const open = activeId === id;
 
@@ -83,8 +86,15 @@ export default function ProgramList({
               className={[
                 "flex text-[20px]",
                 isNumberOne
-                  ? "flex-col" // ← 1번만 세로 정렬
-                  : "min-[1073px]:gap-3 max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0",
+                  ? "flex-col"
+                  : isNumberTwo
+                  ? "max-[1115px]:flex-col max-[1115px]:gap-0 gap-3"
+                  : isNumberThree
+                  ? "max-[1284px]:flex-col max-[1284px]:gap-0 gap-3"
+                  : isNumberFour
+                  ? "max-[1284px]:flex-col max-[1284px]:gap-0 gap-3"
+                  : // ← 1번만 세로 정렬
+                    "min-[1073px]:gap-3 max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0",
               ].join(" ")}
             >
               {" "}

@@ -26,10 +26,9 @@ export default function Footer({ showSponsorship = false }) {
 
         <div className="max-tablet:flex-col flex tems-end gap-10">
           <p className="max-tablet:order-2 font-regular md:max-w-[570px] text-[16px] text-label">
-            Dept. of Art & Technology, Sogang University
+            Xavier Hall, Sogang University, 35 Baekbeom-Ro, Mapo-gu,
+            <br /> Seoul
             <br />
-            X417, Xavier Bldg., 35 Baekbeom-Ro, Mapo-gu, Seoul 04107,
-            <br /> South Korea <br />
             Tel +82-2-705-8031 | Fax +82-2-3274-4826 <br />
             <a
               href="https://creative.sogang.ac.kr"
@@ -41,12 +40,12 @@ export default function Footer({ showSponsorship = false }) {
             </a>
           </p>
 
-          <div className="max-tablet:order-1 flex gap-5 items-end text-label">
+          <div className="max-tablet:order-1 flex gap-[6px] items-end text-label">
             <a href="https://www.instagram.com/artech.sogang/">
-              <InstagramLogoIcon className="w-8 h-8" weight="thin" />
+              <InstagramLogoIcon className="w-8 h-8" weight="light" />
             </a>
             <a href="https://www.youtube.com/@ArtTechnologySogang">
-              <YoutubeLogoIcon className="w-8 h-8" weight="thin" />
+              <YoutubeLogoIcon className="w-8 h-8" weight="light" />
             </a>
           </div>
         </div>
@@ -71,7 +70,7 @@ export default function Footer({ showSponsorship = false }) {
             <div>
               <img src={Smilegate} alt="Smilegate" />
             </div>
-            <div>
+            <div className="w-[60px] h-auto">
               <img src={Jampot} alt="Jampot" />
             </div>
             <div className="w-[61px] h-auto">
