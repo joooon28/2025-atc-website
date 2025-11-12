@@ -201,7 +201,6 @@ const SecondSection = () => {
 };
 
 const ThirdSection = ({ openModal }) => {
-  const posterUrl = "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png";
   
   return (
     <div
@@ -218,13 +217,12 @@ const ThirdSection = ({ openModal }) => {
       "
       >
         <img
-          src={posterUrl}
+          src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
           alt="포스터"
-          className="absolute bottom-0 right-0 block max-[700px]:static max-[700px]:mx-auto
+          className="absolute bottom-0 right-0 cursor-pointer block max-[700px]:static max-[700px]:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
-          max-[700px]:w-[250px] max-[700px]:h-[354px] 
-          cursor-pointer"
-          onClick={() => openModal(posterUrl)}
+          max-[700px]:w-[250px] max-[700px]:h-[354px]"
+          onClick={() => openModal("https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png")}
         />
       </div>
       <div
