@@ -384,7 +384,7 @@ export default function Work() {
         }
 
         setIsAscending(newAscending);
-        setMakerListKey(Math.random().toString()); // 강제 렌더링
+        setMakerListKey(Math.random().toString());
 
         navigate(`?view=${currentView}`, { replace: true });
     };
@@ -412,10 +412,8 @@ export default function Work() {
             <main className="pt-[120px] min-[701px]:pt-[160px]">
                 <div className="mx-5 lg:mx-10">
 
-                    {/* Work 텍스트 영역 */}
                     <div className="Work-Detail mb-20">
 
-                        {/* Work 제목 */}
                         <p id="Work-Title" className="font-medium text-[40px] leading-[100%] mb-10">Work</p>
 
                         <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
@@ -436,63 +434,60 @@ export default function Work() {
                         </div>
                     </div>
 
-                    {/* 버튼 영역 */}
-                    <div className="WorkList-Button clear-both overflow-hidden mb-10 relative z-50">
+                    <div className="WorkList-Button clear-both overflow-hidden mb-6 relative z-50">
 
-                        <div className="float-left flex gap-10">
+                        <div className="float-left flex gap-8 max-[700px]:gap-[20px]">
                             <button
                                 id="Randomize-btn"
                                 onClick={handleRandomize}
-                                className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                                className="border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                             >
-                                <span className="hidden md:inline">Randomize</span>
+                                <span className="hidden min-[701px]:inline">Randomize</span>
                                 <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
                             </button>
                             <button
                                 id="Sort-btn"
                                 onClick={handleSort}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
                                     ${currentView === 'makers' && makersList.length > 0 ? 'opacity-100' :
                                         currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
                                 }
                                 disabled={currentView === 'makers' && makersList.length === 0}
                             >
-                                <span className="hidden md:inline">{sortButtonText}</span>
+                                <span className="hidden min-[701px]:inline">{sortButtonText}</span>
                                 <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
                             </button>
                         </div>
 
-                        <div className="float-right flex gap-10">
+                        <div className="float-right flex gap-8 max-[700px]:gap-[20px]">
                             <button
                                 id="Gallery-btn"
                                 onClick={() => handleSwitchView('gallery')}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent font-[500] italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                             >
-                                <span className="hidden md:inline">Gallery</span>
+                                <span className="hidden min-[701px]:inline">Gallery</span>
                                 <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
                             </button>
                             <button
                                 id="Makers-btn"
                                 onClick={() => handleSwitchView('makers')}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                             >
-                                <span className="hidden md:inline">Makers</span>
+                                <span className="hidden min-[701px]:inline">Makers</span>
                                 <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
                             </button>
                         </div>
                     </div>
 
-                    {/* Gallery */}
                     <div
                         id="Gallery"
-                        className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-20 pt-6 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
+                        className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-[12px] md:gap-x-6 gap-y-20 pt-0 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
                     >
                         {galleryList.map(art => (
                             <ArtworkCard key={art.id} art={art} />
                         ))}
                     </div>
 
-                    {/* Makers List */}
                     <div
                         id="Makers-List"
                         key={currentView === 'makers' ? makerListKey : 'gallery'}
