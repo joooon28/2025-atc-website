@@ -356,7 +356,7 @@ export default function WorkDetail() {
           onClick={handleGoBack}
           id="goBackTop"
           ref={topBackButtonRef}
-          className={`go_back bg-white border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
         >
           <img
             src={GoBackIcon}
@@ -506,7 +506,7 @@ export default function WorkDetail() {
         <button
           onClick={handleGoBack}
           id="goBackBottom"
-          className={`go_back button_list_go_back float-left bg-white border border-label py-3 px-6 text-center rounded-[60px] cursor-pointer text-base leading-none tracking-normal inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label py-3 px-6 text-center rounded-[60px] cursor-pointer text-base leading-none tracking-normal inline-flex items-center`}
         >
           <img
             src={GoBackIcon}
@@ -518,11 +518,11 @@ export default function WorkDetail() {
         <button
           onClick={handleGoToTop}
           id="Top-Button"
-          className="Top-Button w-12 h-12 rounded-full bg-white border border-label float-right ml-4 flex justify-center items-center cursor-pointer"
+          className="Top-Button w-12 h-12 rounded-full bg-[#F3F3EC] border border-label float-right ml-4 flex justify-center items-center cursor-pointer"
         >
           <img src={TopIcon} alt="위로 가기" className="w-5 h-5" />
         </button>
-        <div className="Lang-Switch float-right flex border border-white rounded-[60px] overflow-hidden h-12 w-[123px]">
+        <div className="Lang-Switch float-right flex rounded-[60px] overflow-hidden h-12 w-[123px]">
           <button
             onClick={() => setCurrentLanguage("kr")}
             id="Lang-Switch-Kr-Btn"
