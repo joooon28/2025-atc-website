@@ -7,7 +7,7 @@ export const allArtworkData = {
         artistEn: "Jeongwoo Son",
         imageMainSrc: "https://placehold.co/200x267",
         imageDetailSrc: "https://placehold.co/800x2000",
-        videoSrc: "https://vimeo.com/9011932?fl=pl&fe=sh",
+        videoSrc: "",
         commentary: {
             kr: {
                 p1: "시 '꽃'을 재해석한 미디어 아트.",
@@ -326,7 +326,7 @@ export const allArtworkData = {
         artistEn: "Tuangz",
         imageMainSrc: "https://placehold.co/200x267",
         imageDetailSrc: "https://placehold.co/800x2000",
-        videoSrc: "",
+        videoSrc: "https://vimeo.com/1135770875?fl=pl&fe=sh",
         commentary: {
             kr: {
                 p1: "한국 전통 정서와 감정을 풀어낸, 기묘하고 아름다운 디저트 브랜드 「심」",
@@ -1160,7 +1160,7 @@ export const allArtworkData = {
         artistEn: "Digital Memory Foundation",
         imageMainSrc: "https://placehold.co/200x267",
         imageDetailSrc: "https://placehold.co/800x2000",
-        videoSrc: "",
+        videoSrc: "https://vimeo.com/1092433449?fl=pl&fe=sh",
         commentary: {
             kr: {
                 p1: "죽음을 디지털로 감각하고, 애도를 다시 질문하는 체험형 전시 프로젝트",
