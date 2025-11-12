@@ -77,7 +77,7 @@ const FirstSection = () => {
           11.20 - 11.23
         </p>
 
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
+        <p className="text-center font-normal text-sm leading-[120%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
           <span className="underline">
             <a
@@ -89,7 +89,7 @@ const FirstSection = () => {
           </span>
         </p>
 
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
+        <p className="text-center font-normal text-sm leading-[140%] tracking-normal text-[#362C11]">
           서울특별시 마포구 백범로 35 서강대학교 하비에르관(X관) 4-5층
         </p>
 
