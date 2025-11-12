@@ -465,14 +465,15 @@ export default function Work() {
 
                         <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
                             <p className="w-full xl:w-[39.5%] font-noraml text-[15px] leading-[180%] tracking-[-10%]">
-                                기술은 과감해졌고, 기술은 정교해졌습니다.
-                                아트&테크놀로지라는 사회 속에서 우리는 항상 그 사이의 미묘한 균형을 찾고 있습니다. 자유로운 표현의 바다와 정밀한 구조의 정글 사이에서, 각자의 길을 개척하며, 걷습니다. &lt;ATC 2024&gt;에서 수많은 작품들은 다양한 색채와 형태로 질문에 대답하며, 저마다 다른 방식으로 이 도전과 마주합니다.
+                                각자의 고유한 감각에서 출발한 말하기는 울퉁불퉁한 궤적을 따라 전시 공간으로 이어집니다. 미디어 아트, 게임, 웹, 애니메이션, 퍼포먼스 등 형식에 제한을 두지 않은 실험적 시도들을 선보입니다. &lt;다시 소개하기&gt; 워크숍을 거치며 함께 만들어진 소개 텍스트와 함께 웹사이트에서도 전시작들을 만나보세요!
                             </p>
                             <p className="w-full xl:w-[39.5%] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
-                                We draw maps both alone and together, then share stories about them. The maps
-                                we create are not merely
-                                about marking roads and places; they become tools that reveal—and even generate—our perspectives on the
-                                world.
+                                Each maker’s unique sensibility unfolds into the exhibition space,
+                                tracing an uneven trajectory of expression.
+                                The exhibition presents experimental works unrestricted by form—ranging
+                                from media art and games to web projects, animation, and performance.
+                                Explore the works on our website, accompanied by the collaboratively written
+                                introductions created through the workshop!
                             </p>
                             <a href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view" target='_blank' className="inline-flex items-center w-auto font-normal text-base leading-[145%] tracking-[-0.5%] underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
                                 전시 배치도 Exhibiton Map
