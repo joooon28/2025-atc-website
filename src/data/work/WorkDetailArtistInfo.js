@@ -7,7 +7,7 @@ export const allArtworkData = {
         artistEn: "Jeongwoo Son",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954496/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952755/_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_unxile.png",
-        videoSrc: "",
+        videoSrc: "https://vimeo.com/1136010116?fl=pl&fe=sh",
         commentary: {
             kr: {
                 p1: "시 '꽃'을 재해석한 미디어 아트.",
@@ -1115,8 +1115,8 @@ export const allArtworkData = {
         location: "4F Shin Youngkyun Studio",
         artistKr: "김민수",
         artistEn: "Min Soo Kim",
-        imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762955526/MusicalDream_%EC%8D%B8%EB%84%A4%EC%9D%BC_jir0wp.png",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762955539/MusicalDream_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vy4irl.png",
         videoSrc: "",
         commentary: {
             kr: {

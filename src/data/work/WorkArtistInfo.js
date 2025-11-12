@@ -479,7 +479,7 @@ export const initialArtworks = [
         title: "Musical Dream",
         artist: "김민수 Min Soo Kim",
         description: "모든 음악인의 꿈 같은 인터랙티브 아트",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762955526/MusicalDream_%EC%8D%B8%EB%84%A4%EC%9D%BC_jir0wp.png",
         makers: [
             { name: "김민수 Min Soo Kim", links: [
                 { url: "mailto:minsoofelixkim@gmail.com", alt: "Email" }
