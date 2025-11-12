@@ -427,7 +427,7 @@ export default function Work() {
                                 about marking roads and places; they become tools that reveal—and even generate—our perspectives on the
                                 world.
                             </p>
-                            <a href="#" className="inline-flex items-center w-auto font-normal text-base leading-[145%] tracking-[-0.5%] underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
+                            <a href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view" target='_blank' className="inline-flex items-center w-auto font-normal text-base leading-[145%] tracking-[-0.5%] underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
                                 전시 배치도 Exhibiton Map
                                 <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle mb-[3px]" />
                             </a>
