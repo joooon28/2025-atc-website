@@ -34,7 +34,7 @@ const getVimeoEmbedUrl = (videoSrc) => {
       return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
     }
   } catch (e) {
-    console.error("Vimeo URL parsing error:", e);
+    
   }
 
   return null;
@@ -148,7 +148,6 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
   );
 };
 
-// 5초마다 새로운 Workdetail로 이동
 const allIds = Object.keys(allArtworkData);
 const pickNextRandomId = (excludeId) => {
   const pool = allIds.filter((x) => x !== excludeId);
@@ -207,8 +206,7 @@ export default function WorkDetail() {
     setCurrentLanguage("kr");
     setIsStickyHeaderActive(false);
     
-    const initialWindowWidth = window.innerWidth;
-    setIsButtonListActive(initialWindowWidth <= 375); 
+    setIsButtonListActive(false); 
     
     if (data) {
         document.title = `${data.titleKr || data.titleEn} | Work-Detail`;
@@ -226,16 +224,11 @@ export default function WorkDetail() {
       const scrollY = window.scrollY;
       const windowWidth = window.innerWidth;
       
-      if (windowWidth > 375) { 
-          if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
-              setIsButtonListActive(true);
-          } else {
-              setIsButtonListActive(false);
-          }
-      } else {
+      if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
           setIsButtonListActive(true);
+      } else {
+          setIsButtonListActive(false);
       }
-
 
       if (windowWidth >= 700) {
         if (scrollY >= TARGET_SCROLL_POINT) {
