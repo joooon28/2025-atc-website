@@ -431,10 +431,10 @@ export default function WorkDetail() {
           <StickyArtist data={artwork} />
         </div>
 
-        <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between gap-10">
+        <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between">
           <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
             {vimeoEmbedUrl ? (
-              <div className="Work-Detail-Video w-full h-auto box-border mb-5 relative aspect-video">
+              <div className="Work-Detail-Video bg-black w-full h-auto box-border relative aspect-video">
                 <iframe
                   src={vimeoEmbedUrl}
                   className="w-full h-full absolute top-0 left-0"
@@ -452,7 +452,6 @@ export default function WorkDetail() {
                 alt={displayTitleKr || displayTitleEn}
                 id="Work-Detail-Img"
                 className="object-contain w-full h-full"
-                style={{ marginTop: vimeoEmbedUrl ? "0" : "0" }}
               />
             </div>
           </div>
