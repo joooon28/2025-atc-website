@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -202,7 +203,9 @@ const SecondSection = () => {
 
 // ThirdSection
 
-const ThirdSection = () => {
+const ThirdSection = ({ openModal }) => {
+  const posterUrl = "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png";
+  
   return (
     <div
       className="w-full box-border flex justify-between gap-[40px] min-h-[1200px] 
@@ -218,11 +221,13 @@ const ThirdSection = () => {
       "
       >
         <img
-          src="https://placehold.co/300x425"
+          src={posterUrl}
           alt="포스터"
           className="absolute bottom-0 right-0 block max-[700px]:static max-[700px]:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
-          max-[700px]:w-[250px] max-[700px]:h-[354px]"
+          max-[700px]:w-[250px] max-[700px]:h-[354px] 
+          cursor-pointer"
+          onClick={() => openModal(posterUrl)}
         />
       </div>
       <div
@@ -614,6 +619,40 @@ const FourthSection = () => {
 };
 
 export default function About() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (url) => {
+    setSelectedImage(url);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = "unset";
+  };
+
+  const FullScreenModal = () => {
+    if (!selectedImage) return null;
+
+    return (
+      <div
+        className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center cursor-zoom-out"
+        onClick={closeModal}
+      >
+        <div 
+          className="relative max-w-full max-h-full"
+          onClick={(e) => e.stopPropagation()} 
+        >
+          <img
+            src={selectedImage}
+            alt="전체 화면 이미지"
+            className="max-w-full max-h-screen object-contain"
+          />
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen text-[#362C11] bg-[#E9F1E9] font-['Monoplex KR']">
       <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-50 pt-10">
@@ -628,10 +667,12 @@ export default function About() {
       <main>
         <FirstSection />
         <SecondSection />
-        <ThirdSection />
+        <ThirdSection openModal={openModal} />
         <FourthSection />
       </main>
       <Footer showSponsorship="true" />
+
+      <FullScreenModal />
     </div>
   );
 }
