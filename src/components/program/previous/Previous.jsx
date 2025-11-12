@@ -138,7 +138,7 @@ export default function Previous({ initialOpenId }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="max-[419px]:flex-col max-[419px]:gap-0 font-heavy text-[24px] flex gap-3">
+      <div className="max-[419px]:flex-col max-[419px]:gap-0 font-strong text-[24px] flex gap-3">
         <p>이전 프로그램</p>
         <p className="italic">Previous Program</p>
       </div>
