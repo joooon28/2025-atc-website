@@ -35,7 +35,7 @@ export default function ListSection({
       }}
     >
       <div className="flex flex-col overflow-hidden gap-3 w-full">
-        <div className="relative group flex items-end overflow-hidden aspect-[2/4]">
+        <div className="relative group flex items-end overflow-hidden aspect-[2/3.5]">
           <input
             type="radio"
             name="gallery-click"
