@@ -15,12 +15,27 @@ export default function PreviousList({
 }) {
   return (
     <div
-      className="
+      className=" cursor-pointer
         flex flex-col gap-5 shrink-0
         w-[min(100%,500px)]
         max-[1000px]:w-[400px]
         max-mobile:w-[250px]
       "
+      onClick={() =>
+        onMoreInfo?.({
+          title,
+          titleeng,
+          date,
+          text,
+          texteng,
+          detailKo1,
+          detailEng1,
+          detailKo2,
+          detailEng2,
+          main,
+          sub1,
+        })
+      }
     >
       <div
         className={`flex w-full aspect-[1.85] overflow-hidden ${
@@ -50,21 +65,6 @@ export default function PreviousList({
         </p>
         <button
           type="button"
-          onClick={() =>
-            onMoreInfo?.({
-              title,
-              titleeng,
-              date,
-              text,
-              texteng,
-              detailKo1,
-              detailEng1,
-              detailKo2,
-              detailEng2,
-              main,
-              sub1,
-            })
-          }
           className="font-regular flex text-[14px] underline cursor-pointer"
         >
           More Info

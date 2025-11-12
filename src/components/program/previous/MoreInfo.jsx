@@ -187,7 +187,7 @@ export default function MoreInfo({
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none",
 
-          "focus:outline-none focus:ring-2 focus:ring-mint-6",
+          "focus:outline-none focus:ring-2 focus:ring-mint-5",
         ].join(" ")}
       >
         <ArrowUpIcon size={24} weight="light" />

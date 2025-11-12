@@ -2,7 +2,7 @@
   "program1": {
     "title": "닻올림 X MoIM X ATC 즉흥 협연",
     "number": "1",
-    "titleeng": "English",
+    "titleeng": "Dotolim X MoIM X ATC: Live Improvisation Session",
     "date1": "11.22. (SAT) 17:30-21:00",
     "date2": "",
     "date3": "",
@@ -18,7 +18,7 @@
   "program2": {
     "title": "…으로 쓰기 (혹은…?)",
     "number": "2",
-    "titleeng": "English",
+    "titleeng": "Writing As… (or …?)",
     "date1": "11.20. (THU) 15:00-17:00 / 18:30-20:30",
     "date2": "11.21. (FRI) 15:00-17:00",
     "date3": "11.22. (SAT) 19:00-21:00",
@@ -33,11 +33,11 @@
     "audience": "누구나 참여 가능"
   },
   "program3": {
-    "title": "산책 프로그램",
+    "title": "산책자 스코어: 2025 ATC",
     "number": "3",
-    "titleeng": "English",
-    "date1": "11.20. (THU) 19:00-20:00",
-    "date2": "11.22. (SAT) 19:00-20:00",
+    "titleeng": "Flâneur Score: 2025 ATC",
+    "date1": "11.20. (THU) 18:00-19:00",
+    "date2": "11.22. (SAT) 14:00-15:00",
     "date3": "",
     "text": "'우리는 코끼리가 될 수도 있고 냉장고를 만들 수도 있다.' 다양한 여러가지 표현방법을 통해 나의 빈칸을 채워본다. 그리는 과정을 통해 우리의 가능성과 꿈, 여백의 아름다움에 대한 이야기를 나눈다.",
     "texteng": "프로그램 설명 영어",
@@ -49,9 +49,9 @@
     "audience": "누구나 참여 가능"
   },
   "program4": {
-    "title": "라운드 테이블",
+    "title": "끝없는말아리속에서",
     "number": "4",
-    "titleeng": "Round Table",
+    "titleeng": "In the Endless Knot of Words",
     "date1": "11.21. (FRI) 18:30-20:30",
     "date2": "",
     "date3": "",
