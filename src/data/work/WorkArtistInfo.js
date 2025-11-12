@@ -1,6 +1,6 @@
 export const InstagramIcon = "/lottie/WorkIcon/instagram.svg";
 export const EmailIcon = "/lottie/WorkIcon/email.svg";
-export const LinkedInIcon = "/lottie/WorkIcon/email.svg";
+export const LinkedInIcon = "/lottie/WorkIcon/linkedin.svg";
 export const DefaultLinkIcon = "/lottie/WorkIcon/linkedin.svg";
 export const MakersLinkIconPlaceholder = "https://placehold.co/16x16";
 
@@ -34,7 +34,8 @@ export const initialArtworks = [
         image: "https://placehold.co/250x340",
         makers: [
             { name: "손정우 Jeongwoo Son", links: [
-                { url: "https://www.instagram.com/sonjwooo/", alt: "Instagram" }
+                { url: "https://www.instagram.com/sonjwooo/", alt: "Instagram" },
+                { url: "mailto:sonjw7193@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -299,8 +300,8 @@ export const initialArtworks = [
                 { url: "https://www.linkedin.com/in/seobin", alt: "LinkedIn" }
             ] },
             { name: "류해성 Haesung Ryu", links: [
-                { url: "https://instagram.com/yschoi0919/", alt: "Instagram" },
-                { url: "mailto:yschoi0919@gmail.com", alt: "Email" }
+                { url: "https://instagram.com/egzg.up/", alt: "Instagram" },
+                { url: "mailto:haesung1997@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -311,9 +312,18 @@ export const initialArtworks = [
         description: "TOAST OUT: 처음 꺼내보는 우리들의 진솔함",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "김수임 Suim Kim", links: [] },
-            { name: "유지오 Jio Yu", links: [] },
-            { name: "이예나 Yena Lee", links: [] }
+            { name: "김수임 Suim Kim", links: [
+                { url: "https://instagram.com/li_ssome._/", alt: "Instagram" },
+                { url: "mailto:softee220@naver.com", alt: "Email" }
+            ] },
+            { name: "유지오 Jio Yu", links: [
+                { url: "https://instagram.com/monjio04/", alt: "Instagram" },
+                { url: "mailto:jioyu14@gmail.com", alt: "Email" }
+            ] },
+            { name: "이예나 Yena Lee", links: [
+                { url: "https://instagram.com/_yena.lee/", alt: "Instagram" },
+                { url: "mailto:cellano100@naver.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -323,11 +333,26 @@ export const initialArtworks = [
         description: "저희 카페는 음료를 팔지 않습니다. 저희 카페에서는 감각을 판매합니다.",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "천성하 Sungha Cheon", links: [] },
-            { name: "허준하 Junha Heo", links: [] },
-            { name: "오현서 Hyeonseo Oh", links: [] },
-            { name: "곽민서 Minseo Kwak", links: [] },
-            { name: "이소윤 Soyoun Lee", links: [] }
+            { name: "천성하 Sungha Cheon", links: [
+                { url: "https://instagram.com/1o0o_sh_/", alt: "Instagram" },
+                { url: "mailto:030314molly1k@naver.com", alt: "Email" }
+            ] },
+            { name: "허준하 Junha Heo", links: [
+                { url: "https://instagram.com/heownsgk/", alt: "Instagram" },
+                { url: "mailto:hjh03070427@gmail.com", alt: "Email" }
+            ] },
+            { name: "오현서 Hyeonseo Oh", links: [
+                { url: "https://instagram.com/peri.h_sso/", alt: "Instagram" },
+                { url: "mailto:hsoh0408@gmail.com", alt: "Email" }
+            ] },
+            { name: "곽민서 Minseo Kwak", links: [
+                { url: "https://instagram.com/fogpoc/", alt: "Instagram" },
+                { url: "mailto:minsi27@icloud.com", alt: "Email" }
+            ] },
+            { name: "이소윤 Soyoun Lee", links: [
+                { url: "https://instagram.com/ima_tortoise/", alt: "Instagram" },
+                { url: "mailto:yoonlee@u.sogang.ac.kr", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -337,7 +362,10 @@ export const initialArtworks = [
         description: "일상의 무뎌진 틈에서 ‘나의 자유’를 찾아가는 우리 모두의 여정",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "파브리카 Fabrika", links: [] }
+            { name: "파브리카 Fabrika", links: [
+                { url: "https://instagram.com/fabrika.cell/", alt: "Instagram" },
+                { url: "mailto:fabrika2024@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -347,10 +375,22 @@ export const initialArtworks = [
         description: "피자 만들기를 테마로 한 아동/청소년 대상 교육용 보드게임",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "박종호 Jongho Park", links: [] },
-            { name: "김지윤 Jiyun Kim", links: [] },
-            { name: "임동준 Dongjun Lim", links: [] },
-            { name: "최윤서 Yunseo Choi", links: [] }
+            { name: "박종호 Jongho Park", links: [
+                { url: "https://instagram.com/jongho0211/", alt: "Instagram" },
+                { url: "mailto:park020211@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "김지윤 Jiyun Kim", links: [
+                { url: "https://instagram.com/cgxyooon/", alt: "Instagram" },
+                { url: "mailto:olgayooon@gmail.com", alt: "Email" }
+            ] },
+            { name: "임동준 Dongjun Lim", links: [
+                { url: "https://instagram.com/n0va_0/", alt: "Instagram" },
+                { url: "mailto:nova903@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "최윤서 Yunseo Choi", links: [
+                { url: "https://instagram.com/yschoi0919/", alt: "Instagram" },
+                { url: "mailto:yschoi0919@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -360,8 +400,14 @@ export const initialArtworks = [
         description: "논리 분석(REBT)과 정서 공감(PCT)을 맞춤 제공하는 대화형 AI",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "노하은 Haeun Rho", links: [] },
-            { name: "길민경 Minkyong Kil", links: [] }
+            { name: "노하은 Haeun Rho", links: [
+                { url: "mailto:haeunrho01@gmail.com", alt: "Email" },
+                { url: "https://www.linkedin.com/in/haeun-rho", alt: "LinkedIn" }
+            ] },
+            { name: "길민경 Minkyong Kil", links: [
+                { url: "mailto:eaim6262@naver.com", alt: "Email" },
+                { url: "https://www.linkedin.com/in/al3yd1s", alt: "LinkedIn" }
+            ] }
         ]
     },
     {
@@ -371,11 +417,21 @@ export const initialArtworks = [
         description: "미디어와 AI 억압 속에서 내 생각을 돌아보게 하는 2D 인터랙티브 게임",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "차세연 Seyeon Cha", links: [] },
-            { name: "오주하 Juha Oh", links: [] },
-            { name: "정태연 Taeyoen Jung", links: [] },
-            { name: "임지은 Jieun Lim", links: [] },
-            { name: "조현지 Hyeonji Cho", links: [] }
+            { name: "차세연 Seyeon Cha", links: [
+                { url: "mailto:chaseyeon02@gmail.com", alt: "Email" }
+            ] },
+            { name: "오주하 Juha Oh", links: [
+                { url: "mailto:sophia2004714@gmail.com", alt: "Email" }
+            ] },
+            { name: "정태연 Taeyoen Jung", links: [
+                { url: "mailto:xopowo2006@gmail.com", alt: "Email" }
+            ] },
+            { name: "임지은 Jieun Lim", links: [
+                { url: "mailto:dlalim112@gmail.com", alt: "Email" }
+            ] },
+            { name: "조현지 Hyeonji Cho", links: [
+                { url: "mailto:ji090633@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -385,10 +441,15 @@ export const initialArtworks = [
         description: "기억을 잃은 소년이 폐허가 된 도시를 탐험하며 기억을 찾는 사이드뷰 게임",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "차세연 Seyeon Cha", links: [] },
-            { name: "심수민 Sumin Shim", links: [] },
-            { name: "김민아 MinA Kim", links: [] },
-            { name: "설혜인", links: [] }
+            { name: "차세연 Seyeon Cha", links: [
+                { url: "mailto:chaseyeon02@gmail.com", alt: "Email" }
+            ] },
+            { name: "심수민 Sumin Shim", links: [
+                { url: "mailto:suminarmy1@gmail.com", alt: "Email" }
+            ] },
+            { name: "김민아 MinA Kim", links: [
+                { url: "mailto:minakim3256@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -398,10 +459,19 @@ export const initialArtworks = [
         description: "아트앤테크놀로지 학과 내 네트워킹 서비스",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "곽윤희 Yoonhee Kwak", links: [] },
-            { name: "설혜인 Hyein Seol", links: [] },
-            { name: "양윤서 Yunseo Yang", links: [] },
-            { name: "차유민 Yumin Cha", links: [] }
+            { name: "곽윤희 Yoonhee Kwak", links: [
+                { url: "mailto:gagyun222@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "설혜인 Hyein Seol", links: [
+                { url: "https://instagram.com/hyein335210/", alt: "Instagram" }
+            ] },
+            { name: "양윤서 Yunseo Yang", links: [
+                { url: "https://instagram.com/y.__.rano/", alt: "Instagram" },
+                { url: "mailto:yunseo7196@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "차유민 Yumin Cha", links: [
+                { url: "mailto:shrimpmini0405@sogang.ac.kr", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -411,7 +481,9 @@ export const initialArtworks = [
         description: "모든 음악인의 꿈 같은 인터랙티브 아트",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "김민수 Min Soo Kim", links: [] }
+            { name: "김민수 Min Soo Kim", links: [
+                { url: "mailto:minsoofelixkim@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -421,7 +493,9 @@ export const initialArtworks = [
         description: "다양한 얼굴들을 만나보세요.",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "이윤선 Yoonseon Lee", links: [] }
+            { name: "이윤선 Yoonseon Lee", links: [
+                { url: "mailto:prinys00@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -431,10 +505,18 @@ export const initialArtworks = [
         description: "죽음을 디지털로 감각하고, 애도를 다시 질문하는 체험형 전시 프로젝트",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "박종호 Jongho Park", links: [] },
-            { name: "윤은솔 Eunsol Yun", links: [] },
-            { name: "김민서 Minseo Kim", links: [] },
-            { name: "이예원 Yewon Lee", links: [] }
+            { name: "박종호 Jongho Park", links: [
+                { url: "mailto:park020211@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "윤은솔 Eunsol Yun", links: [
+                { url: "mailto:yun1104@sogang.ac.kr", alt: "Email" }
+            ] },
+            { name: "김민서 Minseo Kim", links: [
+                { url: "mailto:kimminseo0416@gmail.com", alt: "Email" }
+            ] },
+            { name: "이예원 Yewon Lee", links: [
+                { url: "mailto:jenny6874@sogang.ac.kr", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -444,10 +526,22 @@ export const initialArtworks = [
         description: "체험형 미디어아트 상호작용을 통한 개인의 공동체 기여 인식 증진 프로젝트",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "장채원 Chaewon Jang", links: [] },
-            { name: "설희윤 Heeyun Sul", links: [] },
-            { name: "윤기완 Giwan Yoon", links: [] },
-            { name: "허원준 Wonjoon Huh", links: [] }
+            { name: "장채원 Chaewon Jang", links: [
+                { url: "https://instagram.com/caffaeine/", alt: "Instagram" },
+                { url: "mailto:chewingon@naver.com", alt: "Email" }
+            ] },
+            { name: "설희윤 Heeyun Sul", links: [
+                { url: "https://instagram.com/abm0ww/", alt: "Instagram" },
+                { url: "mailto:heeyun0301@gmail.com", alt: "Email" }
+            ] },
+            { name: "윤기완 Giwan Yoon", links: [
+                { url: "https://instagram.com/gwan_yn/", alt: "Instagram" },
+                { url: "mailto:davidmario519@gmail.com", alt: "Email" }
+            ] },
+            { name: "허원준 Wonjoon Huh", links: [
+                { url: "https://instagram.com/bolt0122/", alt: "Instagram" },
+                { url: "mailto:bolt0122@naver.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -457,11 +551,25 @@ export const initialArtworks = [
         description: "온·오프라인 데이터를 개인화된 우주로 시각화하는 몰입형 XR 서비스",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "이선명 Sunmyeong Lee", links: [] },
-            { name: "고은서 Eunseo Ko", links: [] },
-            { name: "김은홍 Eunhong Kim", links: [] },
-            { name: "송명은 Myeongeun Song", links: [] },
-            { name: "이수연 Soo Yeon Lee", links: [] }
+            { name: "이선명 Sunmyeong Lee", links: [
+                { url: "mailto:03leesun@gmail.com", alt: "Email" },
+                { url: "https://www.linkedin.com/in/sunmyeonglee/", alt: "LinkedIn" }
+            ] },
+            { name: "고은서 Eunseo Ko", links: [
+                { url: "https://instagram.com/k0i.es/", alt: "Instagram" },
+                { url: "mailto:taeyerica2468@gmail.com", alt: "Email" }
+            ] },
+            { name: "김은홍 Eunhong Kim", links: [
+                { url: "https://instagram.com/_hong0l/", alt: "Instagram" },
+                { url: "its4hong@gmail.com", alt: "Email" }
+            ] },
+            { name: "송명은 Myeongeun Song", links: [
+                { url: "https://instagram.com/light_me__01/", alt: "Instagram" },
+                { url: "mailto:songmyeongeun7@gmail.com", alt: "Email" }
+            ] },
+            { name: "이수연 Soo Yeon Lee", links: [
+                { url: "mailto:sooyeon737@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -471,8 +579,12 @@ export const initialArtworks = [
         description: "중심 없이 떠도는 정체성 조각들이 서로 충돌하고 겹치는 순간을 기록한다.",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "김서영 Seoyoung Kim", links: [] },
-            { name: "이서정 Seojung Lee", links: [] }
+            { name: "김서영 Seoyoung Kim", links: [
+                { url: "mailto:seoyoungkimchi@gmail.com", alt: "Email" }
+            ] },
+            { name: "이서정 Seojung Lee", links: [
+                { url: "mailto:leeseojungjina@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -482,7 +594,10 @@ export const initialArtworks = [
         description: "작업자의 취향을 꾹꾹 눌러담은 아기자기 도파민 공간. 우리 같이 놀자!",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "신채원 Chaewon Shin", links: [] }
+            { name: "신채원 Chaewon Shin", links: [
+                { url: "https://instagram.com/60dy_one_/", alt: "Instagram" },
+                { url: "mailto:scw0203@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -493,9 +608,15 @@ export const initialArtworks = [
         image: "https://placehold.co/250x340",
         makers: [
             { name: "손정우 Jeongwoo Son", links: [] },
-            { name: "김가윤 Kayun Kim", links: [] },
-            { name: "김별 Byul Kim", links: [] },
-            { name: "황인성 Inseong Hwang", links: [] }
+            { name: "김가윤 Kayun Kim", links: [
+                { url: "mailto:gykim0129@gmail.com", alt: "Email" }
+            ] },
+            { name: "김별 Byul Kim", links: [
+                { url: "mailto:byul88byul@gmail.com", alt: "Email" }
+            ] },
+            { name: "황인성 Inseong Hwang", links: [
+                { url: "mailto:jacob011011@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -505,7 +626,10 @@ export const initialArtworks = [
         description: "미래 서강대의 모습",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "노진서 Jinseo Noh", links: [] }
+            { name: "노진서 Jinseo Noh", links: [
+                { url: "https://instagram.com/dotoro_o/", alt: "Instagram" },
+                { url: "mailto:jinseojj@naver.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -525,9 +649,18 @@ export const initialArtworks = [
         description: "손기호 인식을 통해 사운드를 생성하고 시각화하는 인터랙티브 웹",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "이연재 Yeonjae Lee", links: [] },
-            { name: "조민경 Mingyeong Cho", links: [] },
-            { name: "현지민 Jimin Hyun", links: [] }
+            { name: "이연재 Yeonjae Lee", links: [
+                { url: "https://instagram.com/leeyeonzh/", alt: "Instagram" },
+                { url: "mailto:yeonzhry@gmail.com", alt: "Email" }
+            ] },
+            { name: "조민경 Mingyeong Cho", links: [
+                { url: "https://instagram.com/firohdkv/", alt: "Instagram" },
+                { url: "mailto:alsrudlovepresent@gmail.com", alt: "Email" }
+            ] },
+            { name: "현지민 Jimin Hyun", links: [
+                { url: "https://instagram.com/hyunzimn/", alt: "Instagram" },
+                { url: "mailto:hyunzimn@gmail.com", alt: "Email" }
+            ] }
         ]
     },
     {
@@ -537,7 +670,10 @@ export const initialArtworks = [
         description: "가상 소녀 'Lily'와의 만남, 없는 존재와의 소통",
         image: "https://placehold.co/250x340",
         makers: [
-            { name: "김태현 Taehyun Kim", links: [] }
+            { name: "김태현 Taehyun Kim", links: [
+                { url: "https://instagram.com/9uququ9u4787/", alt: "Instagram" },
+                { url: "mailto:9uququ9u4787@gmail.com", alt: "Email" }
+            ] }
         ]
     }
 ];
