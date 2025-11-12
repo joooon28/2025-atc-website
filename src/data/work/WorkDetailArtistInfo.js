@@ -5,7 +5,7 @@ export const allArtworkData = {
         location: "5F Art Studio",
         artistKr: "손정우",
         artistEn: "Jeongwoo Son",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954496/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952755/_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_unxile.png",
         videoSrc: "",
         commentary: {
@@ -94,7 +94,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "키스 갈기기",
         artistEn: "Throwing Kith",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954511/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb.jpg",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952768/%EB%A9%B4%ED%92%8D2_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ww3yvm.png",
         videoSrc: "",
         commentary: {
@@ -138,7 +138,7 @@ export const allArtworkData = {
         location: "5F Art Studio",
         artistKr: "자발적 과로단",
         artistEn: "self over workers",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954513/%EB%AC%BC%EC%88%A8_%EC%8D%B8%EB%84%A4%EC%9D%BC_l581j4.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952767/%EB%AC%BC%EC%88%A8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wu4rmd.png",
         videoSrc: "",
         commentary: {
@@ -202,7 +202,7 @@ export const allArtworkData = {
         location: "5F Fabrication Lab",
         artistKr: "로피",
         artistEn: "Roffi",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954514/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952772/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ohyqff.png",
         videoSrc: "",
         commentary: {
@@ -268,7 +268,7 @@ export const allArtworkData = {
         location: "5F Fabrication Lab",
         artistKr: "맷돌 스튜디오",
         artistEn: "Maetdol Studio",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954516/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -329,7 +329,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "뚜앙즈",
         artistEn: "Tuangz",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954517/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952773/%EC%8B%AC_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_njdesc.png",
         videoSrc: "https://vimeo.com/1135770875?fl=pl&fe=sh",
         commentary: {
@@ -382,7 +382,7 @@ export const allArtworkData = {
         location: "5F Art Studio",
         artistKr: "야너이상해",
         artistEn: "Hey, What's wrong with you?",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954519/%EC%95%84%EC%A7%80%ED%8A%B8_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_imnumt.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952775/%EC%95%84%EC%A7%80%ED%8A%B8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ovikzr.png",
         videoSrc: "",
         commentary: {
@@ -430,7 +430,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "와이칼리버",
         artistEn: "Ycalibur",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954527/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952776/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vq8ely.png",
         videoSrc: "",
         commentary: {
@@ -469,7 +469,7 @@ export const allArtworkData = {
         location: "4F Shin Youngkyun Studio",
         artistKr: "아마따",
         artistEn: "Amatuer",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954523/%EC%98%81%EC%B4%88_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_jv1o1y.jpg",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952753/%EC%98%81%EC%9B%90%EC%9D%98%EC%B4%88%EC%83%81_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_twufpe.jpg",
         videoSrc: "",
         commentary: {
@@ -509,7 +509,7 @@ export const allArtworkData = {
         location: "4F Shin Youngkyun Studio",
         artistKr: "투진스",
         artistEn: "2genes",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -549,7 +549,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "더 스님스",
         artistEn: "The Seunims",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952755/%EC%98%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_eh1lzd.jpg",
         videoSrc: "",
         commentary: {
@@ -596,7 +596,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "기록도록",
         artistEn: "GRDR",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954526/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952779/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_pjlfr2.png",
         videoSrc: "",
         commentary: {
@@ -647,7 +647,7 @@ export const allArtworkData = {
         location: "4F Shin Youngkyun Studio",
         artistKr: "비상명(非常名)",
         artistEn: "Project Kṣaṇa",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954528/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i.jpg",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -699,7 +699,7 @@ export const allArtworkData = {
         location: "5F Computer Lab",
         artistKr: "노릇노릇",
         artistEn: "NRNR",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762953843/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952763/ToastOut_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wxp1qs.png",
         videoSrc: "",
         commentary: {
@@ -748,7 +748,7 @@ export const allArtworkData = {
         location: "5F Seminar Room",
         artistKr: "서탭입니다",
         artistEn: "We're steff",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan.jpg",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -811,7 +811,7 @@ export const allArtworkData = {
         location: "4F X431",
         artistKr: "파브리카",
         artistEn: "Fabrika",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952754/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_uszmve.jpg",
         videoSrc: "",
         commentary: {
@@ -851,7 +851,7 @@ export const allArtworkData = {
         location: "4F X431",
         artistKr: "",
         artistEn: "X205",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952780/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_slcnbe.png",
         videoSrc: "",
         commentary: {
@@ -953,7 +953,7 @@ export const allArtworkData = {
         location: "5F Art Studio",
         artistKr: "",
         artistEn: "ACTA",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -1017,7 +1017,7 @@ export const allArtworkData = {
         location: "4F X431",
         artistKr: "",
         artistEn: "CONTINUE?",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954500/E.C.H.O._%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%B0%A8%EC%84%B8%EC%97%B0_ygczd4.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952761/E.C.H.O._%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_zlubc6.png",
         videoSrc: "",
         commentary: {
@@ -1063,7 +1063,7 @@ export const allArtworkData = {
         location: "4F X431",
         artistKr: "이건 네 번째 레슨",
         artistEn: "The fourth lesson",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954507/web-sight_%EC%8D%B8%EB%84%A4%EC%9D%BC_e9hxpo.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952770/web-stie_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_fhhsyh.png",
         videoSrc: "",
         commentary: {
@@ -1145,7 +1145,7 @@ export const allArtworkData = {
         location: "5F Computer Lab",
         artistKr: "이윤선",
         artistEn: "Yoonseon Lee",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/Faces_%EC%8D%B8%EB%84%A4%EC%9D%BC_xqws7o.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952761/Faces_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_z2gzjx.png",
         videoSrc: "",
         commentary: {
@@ -1175,7 +1175,7 @@ export const allArtworkData = {
         location: "5F Computer Lab",
         artistKr: "디지털 기억 재단",
         artistEn: "Digital Memory Foundation",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "https://vimeo.com/1092433449?fl=pl&fe=sh",
         commentary: {
@@ -1287,7 +1287,7 @@ export const allArtworkData = {
         location: "",
         artistKr: "",
         artistEn: "Neuverse Lab",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
@@ -1353,7 +1353,7 @@ export const allArtworkData = {
         location: "5F Seminar Room",
         artistKr: "티씨케이",
         artistEn: "TCK",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954529/%ED%8B%B0%ED%8B%B0%ED%8B%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%B5%9C%EC%A2%85%EB%B3%B8_-_Seoyoung_Kim_ddurni.jpg",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952765/TTT_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ewagbq.png",
         videoSrc: "",
         commentary: {
@@ -1402,7 +1402,7 @@ export const allArtworkData = {
         location: "5F Fabrication Lab",
         artistKr: "신채원",
         artistEn: "Chaewon Shin",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954499/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7.jpg",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952759/e-mo_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vx1d1o.png",
         videoSrc: "",
         commentary: {
@@ -1435,7 +1435,7 @@ export const allArtworkData = {
         location: "5F Fabrication Lab",
         artistKr: "커비",
         artistEn: "KIRBY",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952762/GlassLab_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_tk2cuc.png",
         videoSrc: "",
         commentary: {
@@ -1489,7 +1489,7 @@ export const allArtworkData = {
         location: "4F Shin Youngkyun Studio",
         artistKr: "노진서",
         artistEn: "Noh jinseo",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954497/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb.png",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952758/chroma_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_qu7kiy.png",
         videoSrc: "",
         commentary: {
@@ -1604,7 +1604,7 @@ export const allArtworkData = {
         location: "5F Seminar Room",
         artistKr: "김태현",
         artistEn: "Taehyun Kim",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf.jpg",
         imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952753/WithLily_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s8dpvr.jpg",
         videoSrc: "",
         commentary: {

@@ -31,7 +31,7 @@ export const initialArtworks = [
         title: "[]",
         artist: "손정우 Jeongwoo Son",
         description: "시 '꽃'을 재해석한 미디어 아트.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954496/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk.png",
         makers: [
             { name: "손정우 Jeongwoo Son", links: [
                 { url: "https://www.instagram.com/sonjwooo/", alt: "Instagram" },
@@ -69,7 +69,7 @@ export const initialArtworks = [
         title: "면풍2 Wind2",
         artist: "키스 갈기기 Throwing Kith",
         description: "이제는, 우리 곁에 항상 있던 바람을 마주할 때이다.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954511/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb.jpg",
         makers: [
             { name: "서기수 Kith Suh", links: [
                 { url: "https://instagram.com/rash_pollo/", alt: "Instagram" },
@@ -85,7 +85,7 @@ export const initialArtworks = [
         title: "물숨 Mulsum",
         artist: "자발적 과로단 self over workers",
         description: "번아웃에 빠진 청년이 쓰레기로 가득한 집에서 벗어나 일상을 되찾기까지",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954513/%EB%AC%BC%EC%88%A8_%EC%8D%B8%EB%84%A4%EC%9D%BC_l581j4.png",
         makers: [
             { name: "설혜인 Hyein Seol", links: [
                 { url: "https://instagram.com/hyein335210/", alt: "Instagram" }
@@ -114,7 +114,7 @@ export const initialArtworks = [
         title: "블루 네거티브 Blue Negative",
         artist: "로피 Roffi",
         description: "감정이 없는 로봇들의 도시, 재즈가 울려 퍼진 순간 변화가 시작된다.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954514/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz.png",
         makers: [
             { name: "김인규 Ingyu Kim", links: [
                 { url: "https://instagram.com/slothmind.png/", alt: "Instagram" },
@@ -143,7 +143,7 @@ export const initialArtworks = [
         title: "삶은 설화 SOUL-hwa",
         artist: "맷돌 스튜디오 Maetdol Studio",
         description: "삶 속에서 한국 설화가 우리를 사랑하는 방식을 담은 애니메이션 & 웹게임",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954516/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm.png",
         makers: [
             { name: "문금미 Geummi Moon", links: [
                 { url: "https://instagram.com/forsz0/", alt: "Instagram" },
@@ -168,7 +168,7 @@ export const initialArtworks = [
         title: "심 (心) Sim(心): The Forbidden Bite",
         artist: "뚜앙즈 Tuangz",
         description: "한국 전통 정서와 감정을 풀어낸, 기묘하고 아름다운 디저트 브랜드 「심」",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954517/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua.png",
         makers: [
             { name: "김인규 Ingyu Kim", links: [] },
             { name: "최윤정 Yunjeong Choi", links: [
@@ -186,7 +186,7 @@ export const initialArtworks = [
         title: "아지트 A-ZIT",
         artist: "야너이상해 Hey, What's wrong with you?",
         description: "어린 시절의 추억을 당신만의 소리로 만들어드립니다... *",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954519/%EC%95%84%EC%A7%80%ED%8A%B8_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_imnumt.png",
         makers: [
             { name: "김태희 Taehee Kim", links: [
                 { url: "mailto:thkim4459@gmail.com", alt: "Email" }
@@ -206,7 +206,7 @@ export const initialArtworks = [
         title: "에린의 신들  Gods of Érin",
         artist: "와이칼리버 Ycalibur",
         description: "켈트 신화를 바탕으로 한 전략 보드게임",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954527/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw.png",
         makers: [
             { name: "박선우 Sunwoo Park", links: [
                 { url: "https://instagram.com/lindensun0507/", alt: "Instagram" },
@@ -223,7 +223,7 @@ export const initialArtworks = [
         title: "영원의 초상  Figure of Eternity",
         artist: "아마따 Amatuer",
         description: "거슬러 붙잡고 싶지만 그렇다고 계속하여 마주할 수 없는 마음을 담아.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954523/%EC%98%81%EC%B4%88_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_jv1o1y.jpg",
         makers: [
             { name: "김현지 Hyunji Kim", links: [] },
             { name: "신서윤 Seoyun Shin", links: [] },
@@ -235,7 +235,7 @@ export const initialArtworks = [
         title: "영원한 여름: 노년 여성의 얼굴 Eternal Summer: Faces of elder women",
         artist: "투진스 2genes",
         description: "생산성과 돌봄으로 빚어진 그녀들의 얼굴에 대해",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee.png",
         makers: [
             { name: "김현진 Hyeonjin Kim", links: [
                 { url: "mailto:wlswls0121@gmail.com", alt: "Email" }
@@ -251,7 +251,7 @@ export const initialArtworks = [
         title: "옴 Ohm",
         artist: "더 스님스 The Seunims",
         description: "끝없이 떠오르는 마음의 소란을 조용히 알아차리고 흘려보내는 태도",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr.png",
         makers: [
             { name: "박민지 Minji Park", links: [
                 { url: "https://instagram.com/mmm.mj_/", alt: "Instagram" },
@@ -272,7 +272,7 @@ export const initialArtworks = [
         title: "우리가 잊지 말아야 할 것은 무엇인가요 Things We Must Remember",
         artist: "기록도록 GRDR",
         description: "여러분에게 우리가 잊지 말아야 할 것을 묻고 그 답을 세상과 나눌 수 있도록 돕습니다.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954526/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv.png",
         makers: [
             { name: "최윤서 Yunseo Choi", links: [
                 { url: "https://instagram.com/yschoi0919/", alt: "Instagram" },
@@ -292,7 +292,7 @@ export const initialArtworks = [
         title: "찰나비(刹那비) Rain of Kṣaṇa",
         artist: "비상명(非常名) Project Kṣaṇa",
         description: "억겁의 시간속에서 당신은 무엇인가?",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954528/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i.jpg",
         makers: [
             { name: "최서빈 Seobin Choi", links: [
                 { url: "https://instagram.com/empty_binnn/", alt: "Instagram" },
@@ -310,7 +310,7 @@ export const initialArtworks = [
         title: "토스트 아웃 TOAST OUT",
         artist: "노릇노릇 NRNR",
         description: "TOAST OUT: 처음 꺼내보는 우리들의 진솔함",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762953843/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l.png",
         makers: [
             { name: "김수임 Suim Kim", links: [
                 { url: "https://instagram.com/li_ssome._/", alt: "Instagram" },
@@ -331,7 +331,7 @@ export const initialArtworks = [
         title: "튀어나와요 감각의 숲 Watch Out!",
         artist: "서탭입니다 We're steff",
         description: "저희 카페는 음료를 팔지 않습니다. 저희 카페에서는 감각을 판매합니다.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan.jpg",
         makers: [
             { name: "천성하 Sungha Cheon", links: [
                 { url: "https://instagram.com/1o0o_sh_/", alt: "Instagram" },
@@ -360,7 +360,7 @@ export const initialArtworks = [
         title: "파브리카: 자유가 시작되는 곳 Fabrika: where freedom begins",
         artist: "파브리카 Fabrika",
         description: "일상의 무뎌진 틈에서 ‘나의 자유’를 찾아가는 우리 모두의 여정",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto.png",
         makers: [
             { name: "파브리카 Fabrika", links: [
                 { url: "https://instagram.com/fabrika.cell/", alt: "Instagram" },
@@ -373,7 +373,7 @@ export const initialArtworks = [
         title: "허리피자 HurryPizza",
         artist: "X205",
         description: "피자 만들기를 테마로 한 아동/청소년 대상 교육용 보드게임",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms.png",
         makers: [
             { name: "박종호 Jongho Park", links: [
                 { url: "https://instagram.com/jongho0211/", alt: "Instagram" },
@@ -415,7 +415,7 @@ export const initialArtworks = [
         title: "D-31",
         artist: "ACTA",
         description: "미디어와 AI 억압 속에서 내 생각을 돌아보게 하는 2D 인터랙티브 게임",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt.png",
         makers: [
             { name: "차세연 Seyeon Cha", links: [
                 { url: "mailto:chaseyeon02@gmail.com", alt: "Email" }
@@ -439,7 +439,7 @@ export const initialArtworks = [
         title: "E.C.H.O.",
         artist: "CONTINUE?",
         description: "기억을 잃은 소년이 폐허가 된 도시를 탐험하며 기억을 찾는 사이드뷰 게임",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954500/E.C.H.O._%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%B0%A8%EC%84%B8%EC%97%B0_ygczd4.png",
         makers: [
             { name: "차세연 Seyeon Cha", links: [
                 { url: "mailto:chaseyeon02@gmail.com", alt: "Email" }
@@ -457,7 +457,7 @@ export const initialArtworks = [
         title: "web-sight",
         artist: "이건 네 번째 레슨 The fourth lesson",
         description: "아트앤테크놀로지 학과 내 네트워킹 서비스",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954507/web-sight_%EC%8D%B8%EB%84%A4%EC%9D%BC_e9hxpo.png",
         makers: [
             { name: "곽윤희 Yoonhee Kwak", links: [
                 { url: "mailto:gagyun222@sogang.ac.kr", alt: "Email" }
@@ -491,7 +491,7 @@ export const initialArtworks = [
         title: "Faces face",
         artist: "이윤선 Yoonseon Lee",
         description: "다양한 얼굴들을 만나보세요.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/Faces_%EC%8D%B8%EB%84%A4%EC%9D%BC_xqws7o.png",
         makers: [
             { name: "이윤선 Yoonseon Lee", links: [
                 { url: "mailto:prinys00@gmail.com", alt: "Email" }
@@ -503,7 +503,7 @@ export const initialArtworks = [
         title: "Rest In Pixels",
         artist: "디지털 기억 재단 Digital Memory Foundation",
         description: "죽음을 디지털로 감각하고, 애도를 다시 질문하는 체험형 전시 프로젝트",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj.png",
         makers: [
             { name: "박종호 Jongho Park", links: [
                 { url: "mailto:park020211@sogang.ac.kr", alt: "Email" }
@@ -549,7 +549,7 @@ export const initialArtworks = [
         title: "NEUVERSE",
         artist: "Neuverse Lab",
         description: "온·오프라인 데이터를 개인화된 우주로 시각화하는 몰입형 XR 서비스",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
         makers: [
             { name: "이선명 Sunmyeong Lee", links: [
                 { url: "mailto:03leesun@gmail.com", alt: "Email" },
@@ -577,7 +577,7 @@ export const initialArtworks = [
         title: "Tongue Torn Twice",
         artist: "티씨케이 TCK",
         description: "중심 없이 떠도는 정체성 조각들이 서로 충돌하고 겹치는 순간을 기록한다.",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954529/%ED%8B%B0%ED%8B%B0%ED%8B%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%B5%9C%EC%A2%85%EB%B3%B8_-_Seoyoung_Kim_ddurni.jpg",
         makers: [
             { name: "김서영 Seoyoung Kim", links: [
                 { url: "mailto:seoyoungkimchi@gmail.com", alt: "Email" }
@@ -592,7 +592,7 @@ export const initialArtworks = [
         title: "e-mo",
         artist: "신채원 Chaewon Shin",
         description: "작업자의 취향을 꾹꾹 눌러담은 아기자기 도파민 공간. 우리 같이 놀자!",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954499/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7.jpg",
         makers: [
             { name: "신채원 Chaewon Shin", links: [
                 { url: "https://instagram.com/60dy_one_/", alt: "Instagram" },
@@ -605,7 +605,7 @@ export const initialArtworks = [
         title: "GLASS LAB",
         artist: "커비 KIRBY",
         description: "생성형 인공지능을 활용한 아이웨어 디자인 도구",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
         makers: [
             { name: "손정우 Jeongwoo Son", links: [] },
             { name: "김가윤 Kayun Kim", links: [
@@ -624,7 +624,7 @@ export const initialArtworks = [
         title: "Chroma",
         artist: "노진서 Noh jinseo",
         description: "미래 서강대의 모습",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954497/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb.png",
         makers: [
             { name: "노진서 Jinseo Noh", links: [
                 { url: "https://instagram.com/dotoro_o/", alt: "Instagram" },
@@ -668,7 +668,7 @@ export const initialArtworks = [
         title: "With Lily",
         artist: "김태현 Taehyun Kim",
         description: "가상 소녀 'Lily'와의 만남, 없는 존재와의 소통",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf.jpg",
         makers: [
             { name: "김태현 Taehyun Kim", links: [
                 { url: "https://instagram.com/9uququ9u4787/", alt: "Instagram" },
