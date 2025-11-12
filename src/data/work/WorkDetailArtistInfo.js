@@ -1228,9 +1228,9 @@ export const allArtworkData = {
         location: "5F XR Studio",
         artistKr: "두바구",
         artistEn: "DBG",
-        imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
-        videoSrc: "",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762957086/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s.jpg",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762957056/Snowball_Effect_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_uiahra.jpg",
+        videoSrc: "https://vimeo.com/1135737755?fl=pl&fe=sh",
         commentary: {
             kr: {
                 p1: "체험형 미디어아트 상호작용을 통한 개인의 공동체 기여 인식 증진 프로젝트",

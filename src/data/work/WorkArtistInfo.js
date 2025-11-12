@@ -524,7 +524,7 @@ export const initialArtworks = [
         title: "Snowball Effect",
         artist: "두바구 DBG",
         description: "체험형 미디어아트 상호작용을 통한 개인의 공동체 기여 인식 증진 프로젝트",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762957086/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s.jpg",
         makers: [
             { name: "장채원 Chaewon Jang", links: [
                 { url: "https://instagram.com/caffaeine/", alt: "Instagram" },
