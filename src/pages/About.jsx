@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuToggle from "../components/menu/MenuToggle";
+import StaffSheetContainer from "../components/AboutStaff";
 
 import ScrollDownIcon from "/lottie/AboutIcon/Scroll_down.svg";
 
@@ -102,8 +103,6 @@ const FirstSection = () => {
   );
 };
 
-// SecondSection
-
 const SecondSection = () => {
   return (
     <div
@@ -201,8 +200,6 @@ const SecondSection = () => {
   );
 };
 
-// ThirdSection
-
 const ThirdSection = ({ openModal }) => {
   const posterUrl = "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png";
   
@@ -243,7 +240,6 @@ const ThirdSection = ({ openModal }) => {
           </span>
         </h2>
 
-        {/* 1. 첫 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -290,7 +286,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 2. 두 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -337,7 +332,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 3. 세 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -384,7 +378,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 4. 네 번째 축사 블록 */}
         <div className="text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -460,9 +453,7 @@ const ThirdSection = ({ openModal }) => {
   );
 };
 
-// FourthSection
-
-const FourthSection = () => {
+const FourthSection = ({ openStaffSheet }) => {
   const navigate = useNavigate();
 
   const CreditList = ({ titleKr, titleEn, members }) => (
@@ -493,7 +484,7 @@ const FourthSection = () => {
   );
 
   const handleCreditMoreClick = () => {
-    navigate("/archive");
+    openStaffSheet();
   };
 
   return (
@@ -512,9 +503,9 @@ const FourthSection = () => {
         max-[700px]:order-2
         "
       >
-        <h2 className="font-['Monoplex KR'] font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
+        <h2 className="font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
           크레딧{" "}
-          <span className="font-['Monoplex KR'] font-semibold italic leading-[100%] text-[#362C11]">
+          <span className="font-semibold italic leading-[100%] text-[#362C11]">
             Credits
           </span>
         </h2>
@@ -620,6 +611,7 @@ const FourthSection = () => {
 
 export default function About() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isStaffSheetOpen, setIsStaffSheetOpen] = useState(false);
 
   const openModal = (url) => {
     setSelectedImage(url);
@@ -629,6 +621,14 @@ export default function About() {
   const closeModal = () => {
     setSelectedImage(null);
     document.body.style.overflow = "unset";
+  };
+
+  const openStaffSheet = () => {
+    setIsStaffSheetOpen(true);
+  };
+
+  const closeStaffSheet = () => {
+    setIsStaffSheetOpen(false);
   };
 
   const FullScreenModal = () => {
@@ -668,11 +668,16 @@ export default function About() {
         <FirstSection />
         <SecondSection />
         <ThirdSection openModal={openModal} />
-        <FourthSection />
+        <FourthSection openStaffSheet={openStaffSheet} />
       </main>
       <Footer showSponsorship="true" />
 
       <FullScreenModal />
+      
+      <StaffSheetContainer 
+          isVisible={isStaffSheetOpen} 
+          onClose={closeStaffSheet} 
+      />
     </div>
   );
 }
