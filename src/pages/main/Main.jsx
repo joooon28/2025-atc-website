@@ -214,7 +214,7 @@ export default function Main() {
           울퉁불퉁하게 말아리 <br />
           2025 Art & Technology Conference
         </p>
-        <p>
+        <p className="text-end">
           11.24 - 11.30 <br />
           서강대학교 하비에르관(X관)
         </p>
