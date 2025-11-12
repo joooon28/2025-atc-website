@@ -206,10 +206,12 @@ export default function WorkDetail() {
     setArtwork(data);
     setCurrentLanguage("kr");
     setIsStickyHeaderActive(false);
-    setIsButtonListActive(false);
-
+    
+    const initialWindowWidth = window.innerWidth;
+    setIsButtonListActive(initialWindowWidth <= 375); 
+    
     if (data) {
-      document.title = `${data.titleKr || data.titleEn} | Work-Detail`;
+        document.title = `${data.titleKr || data.titleEn} | Work-Detail`;
     }
   }, [id]);
 
@@ -222,24 +224,26 @@ export default function WorkDetail() {
         stickyElementStartPos - TOTAL_FIXED_HEADER_HEIGHT;
 
       const scrollY = window.scrollY;
-
-      if (window.innerWidth >= 640) {
-        
-        if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
+      const windowWidth = window.innerWidth;
+      
+      if (windowWidth > 375) { 
+          if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
+              setIsButtonListActive(true);
+          } else {
+              setIsButtonListActive(false);
+          }
+      } else {
           setIsButtonListActive(true);
-        } else {
-          setIsButtonListActive(false);
-        }
+      }
 
+
+      if (windowWidth >= 700) {
         if (scrollY >= TARGET_SCROLL_POINT) {
           setIsStickyHeaderActive(true); 
         } else {
           setIsStickyHeaderActive(false);
         }
-
       } else {
-        setIsButtonListActive(false);
-
         if (scrollY >= headerActivationScrollPoint) {
           setIsStickyHeaderActive(true);
         } else {
@@ -249,13 +253,15 @@ export default function WorkDetail() {
     };
 
     window.addEventListener("scroll", checkScrollPosition);
+    window.addEventListener("resize", checkScrollPosition); 
     const timeoutId = setTimeout(checkScrollPosition, 0);
 
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener("scroll", checkScrollPosition);
+      window.removeEventListener("resize", checkScrollPosition);
     };
-  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT, TARGET_SCROLL_POINT, BUTTON_LIST_ACTIVATION_POINT]); // 🌟 의존성 배열에 새 상수 추가
+  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT, TARGET_SCROLL_POINT, BUTTON_LIST_ACTIVATION_POINT]); 
 
   const handleGoBack = useCallback(() => {
     const fromView = getQueryParam("from");
@@ -277,7 +283,7 @@ export default function WorkDetail() {
     return (
       <div className="text-label min-h-screen bg-white">
         <Header />
-        <main className="w-[calc(100%-40px)] sm:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
+        <main className="w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
           <p className="mt-20">작품을 찾을 수 없습니다.</p>
         </main>
         <Footer />
@@ -342,7 +348,7 @@ export default function WorkDetail() {
         <Header />
       </div>
       
-      <div className="p-5 fixed top-0 left-0 right-0 z-[10000] min-[701px]:hidden">
+      <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-[701px]:hidden">
         <div className="relative ">
           <MenuToggle />
         </div>
@@ -350,13 +356,13 @@ export default function WorkDetail() {
 
       <div
         ref={firstSectionRef}
-        className="First-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[137px] z-10"
+        className="First-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[137px] z-10"
       >
         <button
           onClick={handleGoBack}
           id="goBackTop"
           ref={topBackButtonRef}
-          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] sm:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden sm:inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] min-[700px]:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden min-[700px]:inline-flex items-center`}
         >
           <img
             src={GoBackIcon}
@@ -366,7 +372,7 @@ export default function WorkDetail() {
           Back
         </button>
 
-        <div className="Work-Title-Info flex flex-col items-center order-1 sm:order-3">
+        <div className="Work-Title-Info flex flex-col items-center order-1 min-[376px]:order-3">
           <div className="Work-Title flex flex-col items-center gap-1.5 mb-5">
             {displayTitleKr && (
               <p
@@ -399,25 +405,29 @@ export default function WorkDetail() {
         <div
           id="Work-Main-Img-Container"
           ref={mainImgContainerRef}
-          className={`order-2 sm:order-1 max-w-[200px] w-full 
-                        max-[375px]:w-screen max-[375px]:!max-w-none max-[375px]:mx-0 max-[375px]:-ml-5`}
+          className={`order-2 min-[376px]:order-1
+                        w-full max-w-[200px] mx-auto 
+                        max-[376px]:!max-w-none max-[376px]:w-full max-[376px]:mx-0 
+                        min-[376px]:max-w-[200px] min-[376px]:w-full`}
         >
           <img
             src={artwork.imageMainSrc}
             alt={displayTitleKr || displayTitleEn}
             id="Work-Main-Img"
-            className={`mt-0 object-cover 
-                            **max-[375px]:!max-w-none max-[375px]:!max-h-none max-[375px]:w-full max-[375px]:h-auto** w-[200px] h-[267px]`}
+            className={`mt-0 object-cover w-full h-auto 
+                            min-[700px]:w-[200px] min-[700px]:h-[267px]`}
           />
         </div>
       </div>
 
-      <div className="Second-Section w-[calc(100%-40px)] md:w-[calc(100%-80px)] mx-auto">
+      <div 
+        className="Second-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto"
+      >
         <div className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-white min-[701px]:h-0 z-[9980] min-[701px]:hidden"></div>
 
         <div
           ref={stickyInfoRef}
-          className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10010] 
+          className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10030] 
                         max-[701px]:bg-white 
                         min-[701px]:bg-white 
                         flex justify-between items-center border-t border-b border-label mb-10 relative`}
@@ -498,21 +508,23 @@ export default function WorkDetail() {
       </div>
 
       <div
-        className={`button_list w-[calc(100%-80px)] fixed left-10 transition-all duration-300 overflow-hidden z-[9999] hidden sm:block ${
+        className={`button_list w-[calc(100%-40px)] left-5 min-[700px]:w-[calc(100%-80px)] min-[700px]:left-10 fixed transition-all duration-300 overflow-hidden z-[10040] block ${
           isButtonListActive ? "bottom-10" : "bottom-[-50px]"
         }`}
       >
         <button
           onClick={handleGoBack}
           id="goBackBottom"
-          className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label py-3 px-6 text-center rounded-[60px] cursor-pointer text-base leading-none tracking-normal inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label cursor-pointer text-base leading-none tracking-normal 
+                      w-12 h-12 rounded-full flex justify-center items-center 
+                      min-[376px]:w-auto min-[376px]:h-auto min-[376px]:rounded-[60px] min-[376px]:py-3 min-[376px]:px-6 min-[376px]:inline-flex`}
         >
           <img
             src={GoBackIcon}
             alt="뒤로 가기 버튼"
-            className="mr-3 w-4 h-4 transform translate-y-px"
+            className={`w-4 h-4 transform translate-y-px mr-0 min-[376px]:mr-3`}
           />
-          Back
+          <span className="min-[376px]:inline hidden">Back</span>
         </button>
         <button
           onClick={handleGoToTop}
