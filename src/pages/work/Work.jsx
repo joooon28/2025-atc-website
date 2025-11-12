@@ -440,7 +440,7 @@ export default function Work() {
                             <button
                                 id="Randomize-btn"
                                 onClick={handleRandomize}
-                                className="border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                                className="border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                             >
                                 <span className="hidden min-[701px]:inline">Randomize</span>
                                 <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
@@ -448,7 +448,7 @@ export default function Work() {
                             <button
                                 id="Sort-btn"
                                 onClick={handleSort}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
                                     ${currentView === 'makers' && makersList.length > 0 ? 'opacity-100' :
                                         currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
                                 }
@@ -463,7 +463,7 @@ export default function Work() {
                             <button
                                 id="Gallery-btn"
                                 onClick={() => handleSwitchView('gallery')}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent font-[500] italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-[701px]:inline">Gallery</span>
                                 <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
@@ -471,7 +471,7 @@ export default function Work() {
                             <button
                                 id="Makers-btn"
                                 onClick={() => handleSwitchView('makers')}
-                                className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-[701px]:inline">Makers</span>
                                 <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
