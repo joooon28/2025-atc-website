@@ -2,7 +2,7 @@ export const allArtworkData = {
     art001: {
         titleKr: "[]",
         titleEn: "",
-        location: "",
+        location: "5F Art Studio",
         artistKr: "손정우",
         artistEn: "Jeongwoo Son",
         imageMainSrc: "https://placehold.co/200x267",
@@ -32,7 +32,7 @@ export const allArtworkData = {
     art002: {
         titleKr: "닷(Dot)이듣기",
         titleEn: "Listening Dot",
-        location: "",
+        location: "5F Immersive Hall",
         artistKr: "도티즈",
         artistEn: "dotties",
         imageMainSrc: "https://placehold.co/200x267",
@@ -135,7 +135,7 @@ export const allArtworkData = {
     art004: {
         titleKr: "물숨",
         titleEn: "Mulsum",
-        location: "",
+        location: "5F Art Studio",
         artistKr: "자발적 과로단",
         artistEn: "self over workers",
         imageMainSrc: "https://placehold.co/200x267",
@@ -199,7 +199,7 @@ export const allArtworkData = {
     art005: {
         titleKr: "블루 네거티브",
         titleEn: "Blue Negative",
-        location: "",
+        location: "5F Fabrication Lab",
         artistKr: "로피",
         artistEn: "Roffi",
         imageMainSrc: "https://placehold.co/200x267",
@@ -265,7 +265,7 @@ export const allArtworkData = {
     art006: {
         titleKr: "삶은 설화",
         titleEn: "SOUL-hwa",
-        location: "",
+        location: "5F Fabrication Lab",
         artistKr: "맷돌 스튜디오",
         artistEn: "Maetdol Studio",
         imageMainSrc: "https://placehold.co/200x267",
@@ -379,7 +379,7 @@ export const allArtworkData = {
     art008: {
         titleKr: "아지트",
         titleEn: "A-ZIT",
-        location: "",
+        location: "5F Art Studio",
         artistKr: "야너이상해",
         artistEn: "Hey, What's wrong with you?",
         imageMainSrc: "https://placehold.co/200x267",
@@ -466,7 +466,7 @@ export const allArtworkData = {
     art010: {
         titleKr: "영원의 초상",
         titleEn: "Figure of Eternity",
-        location: "",
+        location: "4F Shin Youngkyun Studio",
         artistKr: "아마따",
         artistEn: "Amatuer",
         imageMainSrc: "https://placehold.co/200x267",
@@ -506,7 +506,7 @@ export const allArtworkData = {
     art011: {
         titleKr: "영원한 여름: 노년 여성의 얼굴",
         titleEn: "Eternal Summer: Faces of elder women",
-        location: "",
+        location: "4F Shin Youngkyun Studio",
         artistKr: "투진스",
         artistEn: "2genes",
         imageMainSrc: "https://placehold.co/200x267",
@@ -644,7 +644,7 @@ export const allArtworkData = {
     art014: {
         titleKr: "찰나비(刹那비)",
         titleEn: "Rain of Kṣaṇa",
-        location: "",
+        location: "4F Shin Youngkyun Studio",
         artistKr: "비상명(非常名)",
         artistEn: "Project Kṣaṇa",
         imageMainSrc: "https://placehold.co/200x267",
@@ -696,7 +696,7 @@ export const allArtworkData = {
     art015: {
         titleKr: "토스트 아웃",
         titleEn: "TOAST OUT",
-        location: "",
+        location: "5F Computer Lab",
         artistKr: "노릇노릇",
         artistEn: "NRNR",
         imageMainSrc: "https://placehold.co/200x267",
@@ -745,7 +745,7 @@ export const allArtworkData = {
     art016: {
         titleKr: "튀어나와요 감각의 숲",
         titleEn: "Watch Out!",
-        location: "",
+        location: "5F Seminar Room",
         artistKr: "서탭입니다",
         artistEn: "We're steff",
         imageMainSrc: "https://placehold.co/200x267",
@@ -808,7 +808,7 @@ export const allArtworkData = {
     art017: {
         titleKr: "파브리카: 자유가 시작되는 곳",
         titleEn: "Fabrika: where freedom begins",
-        location: "",
+        location: "4F X431",
         artistKr: "파브리카",
         artistEn: "Fabrika",
         imageMainSrc: "https://placehold.co/200x267",
@@ -847,10 +847,10 @@ export const allArtworkData = {
     },
     art018: {
         titleKr: "허리피자",
-        titleEn: "HurryPizza: Topping Stacker",
-        location: "",
+        titleEn: "HurryPizza",
+        location: "4F X431",
         artistKr: "",
-        artistEn: "",
+        artistEn: "X205",
         imageMainSrc: "https://placehold.co/200x267",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
@@ -911,7 +911,7 @@ export const allArtworkData = {
     art019: {
         titleKr: "Omi: 낯선 말하기",
         titleEn: "Omi: Breathing in the Context",
-        location: "",
+        location: "4F X431",
         artistKr: "라스트 댄스",
         artistEn: "Last Dance",
         imageMainSrc: "https://placehold.co/200x267",
@@ -950,7 +950,7 @@ export const allArtworkData = {
     art020: {
         titleKr: "",
         titleEn: "D-31",
-        location: "",
+        location: "5F Art Studio",
         artistKr: "",
         artistEn: "ACTA",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1014,7 +1014,7 @@ export const allArtworkData = {
     art021: {
         titleKr: "",
         titleEn: "E.C.H.O.",
-        location: "",
+        location: "4F X431",
         artistKr: "",
         artistEn: "CONTINUE?",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1060,7 +1060,7 @@ export const allArtworkData = {
     art022: {
         titleKr: "",
         titleEn: "web-sight",
-        location: "",
+        location: "4F X431",
         artistKr: "이건 네 번째 레슨",
         artistEn: "The fourth lesson",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1112,7 +1112,7 @@ export const allArtworkData = {
     art023: {
         titleKr: "",
         titleEn: "Musical Dream",
-        location: "",
+        location: "4F Shin Youngkyun Studio",
         artistKr: "김민수",
         artistEn: "Min Soo Kim",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1142,7 +1142,7 @@ export const allArtworkData = {
     art024: {
         titleKr: "",
         titleEn: "Faces face",
-        location: "",
+        location: "5F Computer Lab",
         artistKr: "이윤선",
         artistEn: "Yoonseon Lee",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1172,7 +1172,7 @@ export const allArtworkData = {
     art025: {
         titleKr: "",
         titleEn: "Rest In Pixels",
-        location: "",
+        location: "5F Computer Lab",
         artistKr: "디지털 기억 재단",
         artistEn: "Digital Memory Foundation",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1225,7 +1225,7 @@ export const allArtworkData = {
     art026: {
         titleKr: "",
         titleEn: "Snowball Effect",
-        location: "",
+        location: "5F XR Studio",
         artistKr: "두바구",
         artistEn: "DBG",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1350,7 +1350,7 @@ export const allArtworkData = {
     art028: {
         titleKr: "",
         titleEn: "Tongue Torn Twice",
-        location: "",
+        location: "5F Seminar Room",
         artistKr: "티씨케이",
         artistEn: "TCK",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1399,7 +1399,7 @@ export const allArtworkData = {
     art029: {
         titleKr: "",
         titleEn: "e-mo",
-        location: "",
+        location: "5F Fabrication Lab",
         artistKr: "신채원",
         artistEn: "Chaewon Shin",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1432,7 +1432,7 @@ export const allArtworkData = {
     art030: {
         titleKr: "",
         titleEn: "GLASS LAB",
-        location: "",
+        location: "5F Fabrication Lab",
         artistKr: "커비",
         artistEn: "KIRBY",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1486,7 +1486,7 @@ export const allArtworkData = {
     art031: {
         titleKr: "",
         titleEn: "Chroma",
-        location: "",
+        location: "4F Shin Youngkyun Studio",
         artistKr: "노진서",
         artistEn: "Noh jinseo",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1517,7 +1517,7 @@ export const allArtworkData = {
     art032: {
         titleKr: "",
         titleEn: "Fragments of Me",
-        location: "",
+        location: "5F Immersive Hall",
         artistKr: "",
         artistEn: "Sunmyeong Lee",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1552,7 +1552,7 @@ export const allArtworkData = {
     art033: {
         titleKr: "",
         titleEn: "ART( )IST",
-        location: "",
+        location: "5F Art Studio",
         artistKr: "토마토마토",
         artistEn: "tomat()mato",
         imageMainSrc: "https://placehold.co/200x267",
@@ -1601,7 +1601,7 @@ export const allArtworkData = {
     art034: {
         titleKr: "",
         titleEn: "With Lily",
-        location: "",
+        location: "5F Seminar Room",
         artistKr: "김태현",
         artistEn: "Taehyun Kim",
         imageMainSrc: "https://placehold.co/200x267",
