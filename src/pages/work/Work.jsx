@@ -445,7 +445,7 @@ export default function Work() {
 
 
     return (
-        <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
+        <div style={{backgroundColor: '#F8F8F7'}} className="text-label min-h-screen font-['Monoplex KR']">
 
             <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
@@ -541,7 +541,7 @@ export default function Work() {
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label before:rounded-full after:translate-x-1/2`}
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                     >
                         {makersList.map((maker) => (
                             <MakerRow 
