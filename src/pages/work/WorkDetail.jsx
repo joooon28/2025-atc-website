@@ -11,7 +11,7 @@ const LinkPlaceholderIcon = "/lottie/WorkDetailIcon/WorkDetail_link.svg";
 
 const EmailIcon = "/lottie/WorkDetailIcon/email.svg";
 const InstagramIcon = "/lottie/WorkDetailIcon/instagram.svg";
-const LinkedInIcon = "/lottie/WorkDetailIcon/website.svg";
+const LinkedInIcon = "/lottie/WorkDetailIcon/linkedin.svg";
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
