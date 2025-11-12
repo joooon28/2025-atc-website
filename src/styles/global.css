@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  --color-mint-10: hsl(150 25% 67%);
+  --color-mint-10: hsl(130 15% 67%);
   --color-mint-20: hsl(152 17% 78%);
   --color-mint-30: hsl(117 30% 88%);
-  --color-mint-40: hsl(60 23% 94%);
-  --color-mint-50: hsl(60 7% 97%);
-  --color-mint-60: hsl(84 100% 99%);
+  --color-mint-40: hsl(84 16% 87%);
+  --color-mint-50: hsl(60 23% 94%);
+  --color-mint-60: hsl(60 7% 97%);
   --color-brown-10: hsl(44 52% 14%);
-  --color-orange-10: hsl(14 65% 60%);
+  --color-orange-10: hsl(28 41% 72%);
 }
 
 @theme {
