@@ -467,9 +467,9 @@ const FourthSection = () => {
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-['Monoplex KR'] font-semibold text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
+      <div className="font-[500] text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
         {titleKr}{" "}
-        <span className="font-['Monoplex KR'] font-semibold italic">
+        <span className="font-[500] italic">
           {titleEn}
         </span>
       </div>
@@ -483,7 +483,7 @@ const FourthSection = () => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-['Monoplex KR'] font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
+            className="font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
           >
             {member}
           </p>
