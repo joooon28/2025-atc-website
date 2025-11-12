@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo, useLayoutEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -12,6 +12,36 @@ import {
 
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
+
+const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            func.apply(null, args);
+        }, delay);
+    };
+};
+
+const useIsMobileOneLine = (maxWidth = 375) => { 
+    const [isMobileOneLine, setIsMobileOneLine] = useState(false);
+
+    const checkWidth = useCallback(() => {
+        setIsMobileOneLine(window.innerWidth <= maxWidth);
+    }, [maxWidth]);
+
+    useLayoutEffect(() => {
+        checkWidth();
+        const debouncedCheck = debounce(checkWidth, 100);
+        window.addEventListener('resize', debouncedCheck);
+        return () => window.removeEventListener('resize', debouncedCheck);
+    }, [checkWidth]);
+
+    return isMobileOneLine;
+};
+
 
 const shuffle = (array) => {
     let newArray = [...array];
@@ -130,6 +160,7 @@ const formatTitle = (title) => {
     );
 };
 
+
 const formatArtistName = (artistName, isGallery = false) => {
     if (typeof artistName !== 'string' || artistName.trim().length === 0) {
         return <span className="Makers-Artist-Kr font-normal text-[14px]">N/A</span>;
@@ -149,12 +180,13 @@ const formatArtistName = (artistName, isGallery = false) => {
     });
 };
 
-const formatTitleForMakers = (title) => {
+const formatTitleForMakers = (title, isMobileOneLine) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
-        return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">제목 없음</span>;
+        return <span className="Makers-Title-Kr font-[500] text-[14px] leading-none">제목 없음</span>;
     }
 
     const trimmedTitle = title.trim();
+
     let finalKorText = trimmedTitle;
     let finalEngText = '';
 
@@ -187,18 +219,17 @@ const formatTitleForMakers = (title) => {
     }
 
     const korElement = finalKorText ? (
-        <span key="kor" className="Makers-Title-Kr font-normal text-[14px] leading-none">{finalKorText}</span>
+        <span key="kor" className="Makers-Title-Kr font-[500] text-[14px] leading-[20px] mr-[6px]">{finalKorText}</span>
     ) : null;
 
     const engElement = finalEngText ? (
-        <span key="en" className="Makers-Title-En italic font-normal text-[14px] leading-none">{finalEngText}</span>
+        <span key="en" className="Makers-Title-En italic font-normal text-[14px] leading-[24px] whitespace-nowrap">{finalEngText}</span>
     ) : null;
 
     if (korElement && engElement) {
         return (
             <>
                 {korElement}
-                <span key="space">&nbsp;</span>
                 {engElement}
             </>
         );
@@ -207,7 +238,7 @@ const formatTitleForMakers = (title) => {
     } else if (engElement) {
         return engElement;
     } else {
-        return <span className="Makers-Title-Kr font-normal text-[14px] leading-none">{trimmedTitle}</span>;
+        return <span className="Makers-Title-Kr font-[500] text-[14px] leading-none">{trimmedTitle}</span>;
     }
 };
 
@@ -236,14 +267,40 @@ const ArtworkCard = React.memo(({ art }) => {
     );
 });
 
+const MakerWorkItem = ({ art, index }) => {
+
+    return (
+        <div
+            key={art.id}
+            className={`Maker-Work-Info font-['Monoplex KR'] font-normal text-left flex-grow-0 w-full overflow-hidden ${index > 0 ? 'mt-3' : ''} text-[14px] leading-none`}
+        >
+            <Link
+                to={`/work/${art.id}?from=makers`}
+                className={`hover:opacity-30 cursor-pointer`} 
+                style={{
+                    display: 'block', 
+                    whiteSpace: 'normal', 
+                    overflow: 'visible',
+                    textOverflow: 'clip',
+                }}
+            >
+                {formatTitleForMakers(art.title, false)} 
+            </Link>
+        </div>
+    );
+};
+
+
 const MakerRow = React.memo(({ maker }) => {
     if (!maker || typeof maker.name !== 'string' || !Array.isArray(maker.works)) {
         return null;
     }
     
     return (
-        <div className="Maker-Row flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
-            <div className="Maker-Info flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
+        <div className="Maker-Row flex flex-col min-[376px]:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+        after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
+            
+            <div className="Maker-Info flex items-center gap-3 flex-1 w-full min-[376px]:w-1/2 font-[450] text-base leading-none text-left pl-[20px]">
                 <div className="Maker-Name cursor-default">
                     {formatArtistName(maker.name, false)}
                 </div>
@@ -258,19 +315,9 @@ const MakerRow = React.memo(({ maker }) => {
                 ))}
             </div>
 
-            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full sm:w-1/2 mt-10 sm:mt-0 pl-5">
+            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full min-[376px]:w-1/2 mt-10 min-[376px]:mt-0 min-[376px]:pl-5 pl-[20px]">
                 {maker.works.map((art, index) => (
-                    <div
-                        key={art.id}
-                        className={`Maker-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
-                    >
-                        <Link
-                            to={`/work/${art.id}?from=makers`}
-                            className="inline-flex w-max whitespace-normal break-normal hover:opacity-30 cursor-pointer"
-                        >
-                            {formatTitleForMakers(art.title)}
-                        </Link>
-                    </div>
+                    <MakerWorkItem key={art.id} art={art} index={index} />
                 ))}
             </div>
         </div>
@@ -398,12 +445,12 @@ export default function Work() {
 
 
     return (
-        <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
+        <div style={{backgroundColor: '#F8F8F7'}} className="text-label min-h-screen font-['Monoplex KR']">
 
             <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
             </div>
-            <div className="p-5 fixed top-0 left-0 right-0 z-50 min-[701px]:hidden">
+            <div className="p-5 fixed top-0 left-0 right-0 z-[999] min-[701px]:hidden">
                 <div className="relative">
                     <MenuToggle />
                 </div>
