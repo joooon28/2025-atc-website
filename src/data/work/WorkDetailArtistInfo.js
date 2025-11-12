@@ -35,8 +35,8 @@ export const allArtworkData = {
         location: "5F Immersive Hall",
         artistKr: "도티즈",
         artistEn: "dotties",
-        imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960860/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog.jpg",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960881/%EB%8B%B7_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_gcjg0l.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1551,12 +1551,12 @@ export const allArtworkData = {
     },
     art033: {
         titleKr: "",
-        titleEn: "ART( )IST",
+        titleEn: "ART()IST",
         location: "5F Art Studio",
         artistKr: "토마토마토",
         artistEn: "tomat()mato",
-        imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960856/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz.jpg",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960880/ART_IST_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mhcspn.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1570,7 +1570,10 @@ export const allArtworkData = {
                 p3: "We hope this project lets everyone fill their own parentheses — uneven, unique, and filled with their own sound.",
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: "https://www.instagram.com/artdpist/" },
+            { text: "Website", url: "https://www.artdpist.com/" },
+        ],
         artistsDetail: [
             {
                 kr: "이연재",

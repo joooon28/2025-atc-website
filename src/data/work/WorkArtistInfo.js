@@ -44,7 +44,7 @@ export const initialArtworks = [
         title: "닷(Dot)이듣기 Listening Dot",
         artist: "도티즈 dotties",
         description: "작은 부품 소리가 모여 소리로 만든 시계가 되는 라이브 퍼포먼스",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960860/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog.jpg",
         makers: [
             { name: "정다혜 Dahye Jeong", links: [
                 { url: "https://instagram.com/d.hxxye/", alt: "Instagram" },
@@ -644,10 +644,10 @@ export const initialArtworks = [
     },
     {
         id: "art033",
-        title: "ART( )IST",
+        title: "ART()IST",
         artist: "토마토마토 tomat()mato",
         description: "손기호 인식을 통해 사운드를 생성하고 시각화하는 인터랙티브 웹",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960856/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz.jpg",
         makers: [
             { name: "이연재 Yeonjae Lee", links: [
                 { url: "https://instagram.com/leeyeonzh/", alt: "Instagram" },
