@@ -77,9 +77,9 @@ export default function ProgramList({
               <p className="italic ">{titleeng}</p>
             </div>
             <div className="text-[14px] flex flex-col gap-[6px]">
-              <p>{date1}</p>
-              <p>{date2}</p>
-              <p>{date3}</p>
+              {date1 && <p>{date1}</p>}
+              {date2 && <p>{date2}</p>}
+              {date3 && <p>{date3}</p>}
             </div>
           </div>
 

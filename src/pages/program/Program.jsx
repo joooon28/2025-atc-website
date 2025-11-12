@@ -45,7 +45,7 @@ export default function Program() {
 
   const [activeId, setActiveId] = useState(null);
 
-  // 🔗 Calendar ↔ ProgramList 연동 상태
+  // Calendar ↔ ProgramList 연동 상태
   const [hoveredNumber, setHoveredNumber] = useState(null);
 
   // number → id 매핑 (Calendar 클릭 시 ProgramList 토글용)
@@ -207,9 +207,9 @@ export default function Program() {
         </div>
       </div>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
+      <section className="text-label grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
         <div className="max-[768px]:order-2 flex flex-col gap-[8.5px]">
-          <div className="font-heavy text-[24px] flex gap-3">
+          <div className="font-strong text-[24px] flex gap-3">
             <p>프로그램</p>
             <p className="italic">Program</p>
           </div>
@@ -263,7 +263,7 @@ export default function Program() {
         />
       </section>
 
-      <section className="pl-10 py-20" id="previous-section">
+      <section className="text-label pl-10 py-20" id="previous-section">
         <Previous initialOpenId={location.state?.openPreviousId} />
       </section>
 
