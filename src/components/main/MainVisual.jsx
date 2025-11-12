@@ -4,7 +4,6 @@ import Marker from "../../assets/main/Marker";
 import React, { useMemo, memo, useRef, useEffect, useState } from "react";
 
 export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
-  // null → 전체 재생, 특정 key → 그 키만 재생
   const [activeKey, setActiveKey] = useState(null);
 
   const lottieItems = useMemo(
@@ -141,11 +140,9 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
     }),
     []
   );
-
-  // 단순/안정: key 변경으로 DotLottieReact 재마운트 → play/pause 강제
   const LottieBlock = memo(function LottieBlock({
     item,
-    isActive, // true|null=재생, false=정지
+    isActive,
     onOpenAndReset,
     onHoverIn,
     onHoverOut,
@@ -155,7 +152,6 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
 
     return (
       <div
-        // ⛔️ group 제거: Lottie hover가 Marker 색에 영향 못 주게
         className="relative"
         style={{ width }}
         onMouseEnter={onHoverIn}
@@ -195,7 +191,6 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
     return lottieItems.map((it) => {
       const Wrapper = ({ children }) => (
         <div
-          // Wrapper에도 group 없음
           className="absolute -translate-x-1/2 -translate-y-1/2"
           style={{
             top: `${it.top}%`,
@@ -255,7 +250,6 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
                       }`,
                     }
               }
-              // ✅ Marker 고유 hover (Lottie와 독립)
               bgClass="text-label-invert"
               hoverBgClass="hover:text-label"
               textClass="italic text-[14px] text-label"
