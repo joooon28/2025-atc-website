@@ -77,7 +77,14 @@ const FirstSection = () => {
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
-          <span className="underline"><a href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@atc.sogang</a></span>
+          <span className="underline">
+            <a
+              href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+            >
+              @atc.sogang
+            </a>
+          </span>
         </p>
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
@@ -118,27 +125,30 @@ const SecondSection = () => {
             《울퉁불퉁하게 말아리》는 각자가 가진 고유한 말들의 방식에 주목한다.
           </p>
           <p className="mb-3">
-            우리는 종종 말에 앞서 자격을 생각한다.
-            유의미한 말을 하기 위해선 그에 걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다.
-            피드백 역시 어느새 기성의 언어를 재생산하는 일이 되었고, 우리는 ‘내가 뭐라고’,
-            ‘난 저 분야를 잘 모르니까’라며 말을 삼킨다. 말은 어느새 자신의 것이 아닌 외부의 권위를 빌려 기능한다.
-            우리는 얼만큼 스스로의 감각으로 말하고 있는가? 창작에 있어서 스스로의 언어와 체계보다,
-            다른 누군가의 기준과 평가에 먼저 기대고 있지는 않은가?
-            누구나 자유롭게 말하고 피드백할 수 있는 공동의 장은 여전히 이곳에서 가능한가?
-            익숙한 기준과 평가에서 벗어나 서로를 그 자체로 보기 위해 무엇이 필요한가?
+            우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 하기 위해선
+            그에 걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다.
+            피드백 역시 어느새 기성의 언어를 재생산하는 일이 되었고, 우리는
+            ‘내가 뭐라고’, ‘난 저 분야를 잘 모르니까’라며 말을 삼킨다. 말은
+            어느새 자신의 것이 아닌 외부의 권위를 빌려 기능한다. 우리는 얼만큼
+            스스로의 감각으로 말하고 있는가? 창작에 있어서 스스로의 언어와
+            체계보다, 다른 누군가의 기준과 평가에 먼저 기대고 있지는 않은가?
+            누구나 자유롭게 말하고 피드백할 수 있는 공동의 장은 여전히 이곳에서
+            가능한가? 익숙한 기준과 평가에서 벗어나 서로를 그 자체로 보기 위해
+            무엇이 필요한가?
           </p>
           <p className="mb-3">
-            2025 ATC는 이러한 질문에 아마추어적 태도로 답하고자 한다.
-            아마추어는 자주 엉성하고 산만하지만, 그 덕분에 어디에도 완전히 속박되지 않은 채 자신만의 말과 태도를 만들어간다.
-            이곳에서 우리는 기성의 규칙이나 논리에서 벗어나 각자의 고유한 말-하기를 시도해보고자 한다.
+            2025 ATC는 이러한 질문에 아마추어적 태도로 답하고자 한다. 아마추어는
+            자주 엉성하고 산만하지만, 그 덕분에 어디에도 완전히 속박되지 않은 채
+            자신만의 말과 태도를 만들어간다. 이곳에서 우리는 기성의 규칙이나
+            논리에서 벗어나 각자의 고유한 말-하기를 시도해보고자 한다.
           </p>
           <p className="mb-3">
-            그것의 문법이 때론 정확하지 않을지라도,
-            우리가 건네는 말들은 서로의 영역을 자유로이 넘나들며 어긋나고,
-            충돌하고, 되돌아와 낯선 •¨•.¸말-(메)아리¸.o◦｡를 만들어낸다.
-            마치 울퉁불퉁한 지형에 부딪혀 만들어내는 예측 불가능한 파동과 같은 움직임 속에서.
-            이는 각자의 고유한 굴곡을 오롯이 마주하는 일이며, 다름의 불완전함 속에서 의미는 타인에게 닿아 더 멀리,
-            더 크게 증식할 것이다.
+            그것의 문법이 때론 정확하지 않을지라도, 우리가 건네는 말들은 서로의
+            영역을 자유로이 넘나들며 어긋나고, 충돌하고, 되돌아와 낯선
+            •¨•.¸말-(메)아리¸.o◦｡를 만들어낸다. 마치 울퉁불퉁한 지형에 부딪혀
+            만들어내는 예측 불가능한 파동과 같은 움직임 속에서. 이는 각자의
+            고유한 굴곡을 오롯이 마주하는 일이며, 다름의 불완전함 속에서 의미는
+            타인에게 닿아 더 멀리, 더 크게 증식할 것이다.
           </p>
         </div>
       </div>
@@ -459,10 +469,11 @@ const FourthSection = () => {
         </span>
       </div>
       <div
-        className={`${titleKr === "웹 개발팀"
-          ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
-          : ""
-          }`}
+        className={`${
+          titleKr === "웹 개발팀"
+            ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
+            : ""
+        }`}
       >
         {members.map((member, index) => (
           <p
@@ -513,7 +524,7 @@ const FourthSection = () => {
           members={[
             "김현진 Hyeonjin Kim \u00A0\u00A0 신서윤 Seoyun Shin",
             "윤세은 Seeun Yoon \u00A0\u00A0 이윤선 Yoonseon Lee",
-            "황나금 Naguem Hwang"
+            "황나금 Naguem Hwang",
           ]}
         />
         <CreditList
@@ -521,7 +532,7 @@ const FourthSection = () => {
           titleEn="Program Team"
           members={[
             "오제우 Jewoo Oh \u00A0\u00A0 김예찬 Yechan Kim",
-            "우서진 Seojin Woo"
+            "우서진 Seojin Woo",
           ]}
         />
         <CreditList
@@ -529,7 +540,7 @@ const FourthSection = () => {
           titleEn="Public Relations Team"
           members={[
             "김서영 Seoyoung Kim \u00A0\u00A0 문금미 Geummi Moon",
-            "유가형 Kahyung Yoo \u00A0\u00A0 장채원 Chaewon Jang"
+            "유가형 Kahyung Yoo \u00A0\u00A0 장채원 Chaewon Jang",
           ]}
         />
         <CreditList
@@ -538,7 +549,7 @@ const FourthSection = () => {
           members={[
             "심유린 Yurim Sim \u00A0\u00A0 김민서 Minseo Kim",
             "김성은 Seongeun Kim \u00A0\u00A0 김혜림 Hyerim Kim",
-            "이선명 Sunmyeong Lee"
+            "이선명 Sunmyeong Lee",
           ]}
         />
         <CreditList
@@ -547,7 +558,7 @@ const FourthSection = () => {
           members={[
             "김인규 Ingyu Kim \u00A0\u00A0 설희윤 Heeyun Sul",
             "신채원 Chaewon Shin \u00A0\u00A0 윤기완 Giwan Yoon",
-            "이다은 Daeun Lee"
+            "이다은 Daeun Lee",
           ]}
         />
         <CreditList
@@ -555,7 +566,7 @@ const FourthSection = () => {
           titleEn="Archieve Team"
           members={[
             "강정모 Jeongmo Kang \u00A0\u00A0 김태희 Taehee Kim",
-            "문예담 Yedam Moon \u00A0\u00A0 박민준 Minjoon Park"
+            "문예담 Yedam Moon \u00A0\u00A0 박민준 Minjoon Park",
           ]}
         />
         <CreditList
@@ -620,7 +631,7 @@ export default function About() {
         <ThirdSection />
         <FourthSection />
       </main>
-      <Footer />
+      <Footer showSponsorship="true" />
     </div>
   );
 }

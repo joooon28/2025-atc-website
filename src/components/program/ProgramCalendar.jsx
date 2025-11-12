@@ -312,7 +312,7 @@ export default function ProgramCalendar({
         <div className="flex items-center">
           <p>21:00</p>
           <div
-            className="ml-3 flex-1 z-[11]
+            className="ml-3 flex-1 z-[70]
         border-t border-label
         relative [--dot:6px] [--b:1px]
     
