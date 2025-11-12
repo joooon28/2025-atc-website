@@ -398,7 +398,7 @@ export const initialArtworks = [
         title: "Omi: 낯선 말하기 Omi: Breathing in the Context",
         artist: "라스트 댄스 Last Dance",
         description: "논리 분석(REBT)과 정서 공감(PCT)을 맞춤 제공하는 대화형 AI",
-        image: "https://placehold.co/250x340",
+        image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762965841/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy.png",
         makers: [
             { name: "노하은 Haeun Rho", links: [
                 { url: "mailto:haeunrho01@gmail.com", alt: "Email" },

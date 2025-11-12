@@ -914,7 +914,7 @@ export const allArtworkData = {
         location: "4F X431",
         artistKr: "라스트 댄스",
         artistEn: "Last Dance",
-        imageMainSrc: "https://placehold.co/200x267",
+        imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762965841/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy.png",
         imageDetailSrc: "https://placehold.co/800x2000",
         videoSrc: "",
         commentary: {
