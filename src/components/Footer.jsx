@@ -9,7 +9,7 @@ import FutureLab from "../assets/SogangFutureLabLogo.svg";
 // <Footer showSponsorship="true"/> -> sponsorship 섹션 보임
 export default function Footer({ showSponsorship = false }) {
   return (
-    <footer className="flex flex-col gap-10 pt-60 pb-10 px-10">
+    <footer className="flex flex-col gap-10 pt-60 pb-10 px-10 max-tablet:pb-5 max-tablet:px-5">
       <div className="max-tablet:flex-col flex min-tablet:items-end justify-between w-full gap-10">
         <div className="flex gap-5 items-center">
           <img
