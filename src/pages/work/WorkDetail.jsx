@@ -148,6 +148,7 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
   );
 };
 
+// 5초마다 새로운 Workdetail로 이동
 const allIds = Object.keys(allArtworkData);
 const pickNextRandomId = (excludeId) => {
   const pool = allIds.filter((x) => x !== excludeId);
