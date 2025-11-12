@@ -118,13 +118,13 @@ const formatTitle = (title) => {
     return (
         <>
             {finalKorText && (
-                <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{finalKorText}</span>
+                <span className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%]">{finalKorText}</span>
             )}
 
             {finalKorText && finalEngText && <br />}
 
             {finalEngText && (
-                <span className="italic font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{finalEngText}</span>
+                <span className="italic font-[500] text-[15px] leading-[145%] tracking-[-0.5%]">{finalEngText}</span>
             )}
         </>
     );
@@ -132,17 +132,17 @@ const formatTitle = (title) => {
 
 const formatArtistName = (artistName, isGallery = false) => {
     if (typeof artistName !== 'string' || artistName.trim().length === 0) {
-        return <span className="Makers-Artist-Kr font-medium text-[14px]">N/A</span>;
+        return <span className="Makers-Artist-Kr font-normal text-[14px]">N/A</span>;
     }
 
     const parts = artistName.split(/([가-힣]+)/).filter(p => p.length > 0);
-    const baseFontWeight = isGallery ? "font-[450]" : "font-normal";
+    const baseFontWeight = isGallery ? "font-normal" : "font-normal";
 
     return parts.map((part, index) => {
         if (part.trim().length === 0) return <React.Fragment key={index}>{part}</React.Fragment>;
 
         if (/[가-힣]/.test(part)) {
-            return <span key={index} className={`Makers-Artist-Kr ${isGallery ? 'font-[450]' : 'font-medium'} text-[14px]`}>{part}</span>;
+            return <span key={index} className={`Makers-Artist-Kr ${isGallery ? 'font-normal' : 'font-[500]'} text-[14px]`}>{part}</span>;
         } else {
             return <span key={index} className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}>{part}</span>;
         }
@@ -187,7 +187,7 @@ const formatTitleForMakers = (title) => {
     }
 
     const korElement = finalKorText ? (
-        <span key="kor" className="Makers-Title-Kr font-medium text-[14px] leading-none">{finalKorText}</span>
+        <span key="kor" className="Makers-Title-Kr font-normal text-[14px] leading-none">{finalKorText}</span>
     ) : null;
 
     const engElement = finalEngText ? (
@@ -207,7 +207,7 @@ const formatTitleForMakers = (title) => {
     } else if (engElement) {
         return engElement;
     } else {
-        return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">{trimmedTitle}</span>;
+        return <span className="Makers-Title-Kr font-normal text-[14px] leading-none">{trimmedTitle}</span>;
     }
 };
 
@@ -222,13 +222,13 @@ const ArtworkCard = React.memo(({ art }) => {
                         className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
                     />
                 </div>
-                <div className="title font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
+                <div className="title font-normal text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-normal text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-normal text-[14px] leading-[145%] tracking-normal">
+                <div className="description font-[400] text-[14px] leading-[145%] tracking-normal whitespace-normal">
                     {art.description}
                 </div>
             </Link>
@@ -243,7 +243,7 @@ const MakerRow = React.memo(({ maker }) => {
     
     return (
         <div className="Maker-Row flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
-            <div className="Maker-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
+            <div className="Maker-Info flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
                 <div className="Maker-Name cursor-default">
                     {formatArtistName(maker.name, false)}
                 </div>
