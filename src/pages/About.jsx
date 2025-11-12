@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuToggle from "../components/menu/MenuToggle";
+import StaffSheetContainer from "../components/AboutStaff";
 
 import ScrollDownIcon from "/lottie/AboutIcon/Scroll_down.svg";
 
@@ -102,8 +103,6 @@ const FirstSection = () => {
   );
 };
 
-// SecondSection
-
 const SecondSection = () => {
   return (
     <div
@@ -201,10 +200,7 @@ const SecondSection = () => {
   );
 };
 
-// ThirdSection
-
 const ThirdSection = ({ openModal }) => {
-  const posterUrl = "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png";
   
   return (
     <div
@@ -221,13 +217,12 @@ const ThirdSection = ({ openModal }) => {
       "
       >
         <img
-          src={posterUrl}
+          src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
           alt="포스터"
-          className="absolute bottom-0 right-0 block max-[700px]:static max-[700px]:mx-auto
+          className="absolute bottom-0 right-0 cursor-pointer block max-[700px]:static max-[700px]:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
-          max-[700px]:w-[250px] max-[700px]:h-[354px] 
-          cursor-pointer"
-          onClick={() => openModal(posterUrl)}
+          max-[700px]:w-[250px] max-[700px]:h-[354px]"
+          onClick={() => openModal("https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png")}
         />
       </div>
       <div
@@ -243,7 +238,6 @@ const ThirdSection = ({ openModal }) => {
           </span>
         </h2>
 
-        {/* 1. 첫 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -290,7 +284,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 2. 두 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -337,7 +330,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 3. 세 번째 축사 블록 */}
         <div className="mb-[40px] text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -384,7 +376,6 @@ const ThirdSection = ({ openModal }) => {
           </div>
         </div>
 
-        {/* 4. 네 번째 축사 블록 */}
         <div className="text-[#362C11]">
           <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
             <p className="mb-3">
@@ -460,16 +451,14 @@ const ThirdSection = ({ openModal }) => {
   );
 };
 
-// FourthSection
-
-const FourthSection = () => {
+const FourthSection = ({ openStaffSheet }) => {
   const navigate = useNavigate();
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-['Monoplex KR'] font-semibold text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
+      <div className="font-[500] text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
         {titleKr}{" "}
-        <span className="font-['Monoplex KR'] font-semibold italic">
+        <span className="font-[500] italic">
           {titleEn}
         </span>
       </div>
@@ -483,7 +472,7 @@ const FourthSection = () => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-['Monoplex KR'] font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
+            className="font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
           >
             {member}
           </p>
@@ -493,7 +482,7 @@ const FourthSection = () => {
   );
 
   const handleCreditMoreClick = () => {
-    navigate("/archive");
+    openStaffSheet();
   };
 
   return (
@@ -512,9 +501,9 @@ const FourthSection = () => {
         max-[700px]:order-2
         "
       >
-        <h2 className="font-['Monoplex KR'] font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
+        <h2 className="font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
           크레딧{" "}
-          <span className="font-['Monoplex KR'] font-semibold italic leading-[100%] text-[#362C11]">
+          <span className="font-semibold italic leading-[100%] text-[#362C11]">
             Credits
           </span>
         </h2>
@@ -620,6 +609,7 @@ const FourthSection = () => {
 
 export default function About() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isStaffSheetOpen, setIsStaffSheetOpen] = useState(false);
 
   const openModal = (url) => {
     setSelectedImage(url);
@@ -629,6 +619,14 @@ export default function About() {
   const closeModal = () => {
     setSelectedImage(null);
     document.body.style.overflow = "unset";
+  };
+
+  const openStaffSheet = () => {
+    setIsStaffSheetOpen(true);
+  };
+
+  const closeStaffSheet = () => {
+    setIsStaffSheetOpen(false);
   };
 
   const FullScreenModal = () => {
@@ -668,11 +666,16 @@ export default function About() {
         <FirstSection />
         <SecondSection />
         <ThirdSection openModal={openModal} />
-        <FourthSection />
+        <FourthSection openStaffSheet={openStaffSheet} />
       </main>
       <Footer showSponsorship="true" />
 
       <FullScreenModal />
+      
+      <StaffSheetContainer 
+          isVisible={isStaffSheetOpen} 
+          onClose={closeStaffSheet} 
+      />
     </div>
   );
 }
