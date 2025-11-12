@@ -215,7 +215,10 @@ export const allArtworkData = {
                 p2: "Last year, we worked hard to develop a game called **“Blue Negative”** to spread the charm of jazz. However, the completed demo version turned out to be too boring. The minigames failed to blend into the story, and the main gameplay felt overly repetitive. There were so many things to fix that we decided to proceed with a renewal while switching roles among ourselves. Grinding away an entire year was not easy, but after pouring countless nights into it once again, we have returned to ATC like this.",
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: " https://www.instagram.com/bluenegative.game" },
+            { text: "YouTube", url: "https://youtube.com/@zoopraxiscope?si=z-8UyH61jY3iIwnX" }
+        ],
         artistsDetail: [
             {
                 kr: "김인규",
@@ -282,7 +285,9 @@ export const allArtworkData = {
                 p4: "<Recipe> <br> 1. Remove the dragon from the bowl <br> 2. Squeeze the ideas and knead with references <br> 3. Slice each ingredient <br> 4. Stir-fry with Indian sauce over the flame of code <br> 5. Grind pixels with a millstone <br> 6. Put everything on the dough and shape it <br> 7. Add soul to 'seolhwa' overnight <br> 8. Plate it over tears <br> 9. SOUL-hwa is ready!"
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: "https://www.instagram.com/studio.maetdol/" }
+        ],
         artistsDetail: [
             {
                 kr: "문금미",
@@ -341,7 +346,9 @@ export const allArtworkData = {
                 p4: "The road may spin, but that’s fine — we’ll dig deep for those colorful stones. Seeing them, stories spark in our heads. Did Mom tell them? Or you? Who knows. All we know is — the best ingredients met the boldest chefs. Let’s open our dessert shop and serve something forbidden."
             },
         },
-        links: [],
+        links: [
+            { text: "Website", url: "https://sim-the-forbidden-bite.figma.site" }
+        ],
         artistsDetail: [
             {
                 kr: "김인규",
@@ -515,7 +522,9 @@ export const allArtworkData = {
                 p2: "When I was about six, my toenail fell off. It was small, yet my grandmother carried me everywhere, climbing the third-floor stairs as if it were nothing. Just before middle school, the school gave us hamsters. While my friends’ hamsters died within a month, mine lived four full years under her care. She devoted her life to caring for elders, her children, her bedridden husband, me, the hamster, and even the rooftop vegetables. Every grandmother I saw tending the rooftop was caring for something. In the midst of care, I became myself. What expression does the face of care hold?",
             },
         },
-        links: [],
+        links: [
+            { text: "Process Archive", url: "https://oxidized-acorn-2fb.notion.site/Eternal-Summer-1fccae681d9280a889aaea0493670332?source=copy_link" }
+        ],
         artistsDetail: [
             {
                 kr: "김현진",
@@ -600,7 +609,12 @@ export const allArtworkData = {
                 p2: "What is the thing we must remember? And are we making an effort to hold on to it? Are we finding ways to show it to the world?",
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: "https://www.instagram.com/grdr_awi2025/?igsh=MWNvNW14ZXczdjh5#" },
+            { text: "Website (Mobile)", url: "https://things-we-must-rememer-git-main-choiys-projects.vercel.app/" },
+            { text: "Website (PC)", url: "https://grdr2025.vercel.app/" },
+            { text: "Youtube", url: "https://youtu.be/z8_UcH-3Y6Y?si=rQRydu3gY-8GOos-" }
+        ],
         artistsDetail: [
             {
                 kr: "최윤서",
@@ -816,7 +830,10 @@ export const allArtworkData = {
                 p5: "And who are you?"
             },
         },
-        links: [],
+        links: [
+            { text: "Instagram", url: "https://www.instagram.com/fabrika.cell/" },
+            { text: "Website", url: "https://www.fabrika.kr/" }
+        ],
         artistsDetail: [
             {
                 kr: "파브리카",
@@ -830,7 +847,7 @@ export const allArtworkData = {
     },
     art018: {
         titleKr: "허리피자",
-        titleEn: "HurryPizza",
+        titleEn: "HurryPizza: Topping Stacker",
         location: "",
         artistKr: "",
         artistEn: "",
@@ -1171,7 +1188,9 @@ export const allArtworkData = {
                 p2: "Have you experienced the exhibition? Visitors were invited to interact with a service that allows the bereaved to communicate with their loved ones after death. If such a service truly existed, would you use it? Some say it offers comfort—an illusion that eases longing, even briefly. Others believe it hinders moving on, turning memory into an unending presence. To remember or to forget—what does it mean to live with loss?",
             },
         },
-        links: [],
+        links: [
+            { text: "Website", url: "https://park020211.wixstudio.com/restinpixels" }
+        ],
         artistsDetail: [
             {
                 kr: "박종호",
@@ -1430,7 +1449,9 @@ export const allArtworkData = {
                 p2: "How can artificial intelligence support designers? Is it a threat to them? This project begins from the premise of “AI that assists designers.” It generates designs grounded in a designer’s intent and accelerates broad exploration during the ideation stage. When a designer presents a concept to the AI through an image, AI interprets that image and, by mapping it onto eyewear, proposes variations to the designer. We demonstrate the potential for expansive collaboration between AI and designers.",
             },
         },
-        links: [],
+        links: [
+            { text: "Website", url: "https://glass-lab.vercel.app/" }
+        ],
         artistsDetail: [
             {
                 kr: "손정우",
@@ -1602,7 +1623,9 @@ export const allArtworkData = {
                 p5: "She is my reflection—my wish to speak, yet hesitate."
             },
         },
-        links: [],
+        links: [
+            { text: "YouTube", url: "https://youtube.com/channel/UCWPLBcB2sNWelEN4oFkgvTA?si=XwkmrsUOhc-ahcRC" }
+        ],
         artistsDetail: [
             {
                 kr: "김태현",
