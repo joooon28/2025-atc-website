@@ -356,7 +356,7 @@ export default function WorkDetail() {
 
       <div
         ref={firstSectionRef}
-        className="First-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] sm:pt-[137px] z-10"
+        className="First-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] min-[700px]:pt-[137px] z-10"
       >
         <button
           onClick={handleGoBack}
