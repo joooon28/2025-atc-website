@@ -14,12 +14,19 @@ import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
 import Onboarding from "./pages/Onboarding";
+import Splash from "./pages/Splash"; 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Onboarding />,
   },
+  
+  {
+    path: "/splash",
+    element: <Splash />,
+  },
+  
   {
     path: "/main",
     element: <Main />,

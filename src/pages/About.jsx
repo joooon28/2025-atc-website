@@ -23,7 +23,7 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
           
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 
@@ -36,7 +36,7 @@ const FirstSection = () => {
         </h2>
 
         <h2
-          className="font-['Monoplex KR'] font-semibold text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
           min-[701px]:mix-blend-difference 
 
           min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 min-[701px]:text-right
@@ -77,7 +77,7 @@ const FirstSection = () => {
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
-          <span className="underline">@atc.sogang</span>
+          <span className="underline"><a href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@atc.sogang</a></span>
         </p>
 
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11]">
@@ -115,35 +115,30 @@ const SecondSection = () => {
         </h2>
         <div className="font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
           <p className="mb-3">
-            2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
-            방식에 주목한다.
+            《울퉁불퉁하게 말아리》는 각자가 가진 고유한 말들의 방식에 주목한다.
           </p>
           <p className="mb-3">
-            우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 위해선 그에
-            걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다. 피드백
-            역시 어느새 권위자의 언어를 재생산하는 일이 되었고, 우리는 ‘내가
-            뭐라고’, ‘난 저 분야를 잘 모르니까’ 라며 스스로 말을 삼킨다. 우리의
-            말은 어느새 우리의 것이 아닌 다른 누군가의 언어를 빌려 기능하게
-            된다. 우리는 얼만큼 우리 자신의 감각으로 말하고 있는가? 창작에
-            있어서 스스로의 언어와 체계보다, 다른 누군가의 기준과 평가에 먼저
-            기대고 있지는 않은가? 누구나 자유롭게 말하고 피드백할 수 있는 공동의
-            장은 여전히 이곳에서 가능한가?
+            우리는 종종 말에 앞서 자격을 생각한다.
+            유의미한 말을 하기 위해선 그에 걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다.
+            피드백 역시 어느새 기성의 언어를 재생산하는 일이 되었고, 우리는 ‘내가 뭐라고’,
+            ‘난 저 분야를 잘 모르니까’라며 말을 삼킨다. 말은 어느새 자신의 것이 아닌 외부의 권위를 빌려 기능한다.
+            우리는 얼만큼 스스로의 감각으로 말하고 있는가? 창작에 있어서 스스로의 언어와 체계보다,
+            다른 누군가의 기준과 평가에 먼저 기대고 있지는 않은가?
+            누구나 자유롭게 말하고 피드백할 수 있는 공동의 장은 여전히 이곳에서 가능한가?
+            익숙한 기준과 평가에서 벗어나 서로를 그 자체로 보기 위해 무엇이 필요한가?
           </p>
           <p className="mb-3">
-            이번 ATC는 이러한 질문에 아마추어적 태도로 답하고자 한다. 아마추어는
-            때로 엉성하고 산만하지만, 그 덕분에 어디에도 완전히 속박되지 않은 채
-            자신만의 언어와 체계를 만들어간다. 이곳에서 우리는 기성의 규칙이나
-            논리에서 벗어나 각자가 시도한 고유한 말하기의 흔적들을 살펴보고자
-            한다.
+            2025 ATC는 이러한 질문에 아마추어적 태도로 답하고자 한다.
+            아마추어는 자주 엉성하고 산만하지만, 그 덕분에 어디에도 완전히 속박되지 않은 채 자신만의 말과 태도를 만들어간다.
+            이곳에서 우리는 기성의 규칙이나 논리에서 벗어나 각자의 고유한 말-하기를 시도해보고자 한다.
           </p>
           <p className="mb-3">
-            우리가 건네는 말들은 서로의 영역을 자유롭게 넘나들며 충돌하고,
-            어긋나고, 되돌아오며 낯선 메아리를 만들어낸다. 말들이 때론 명확하지
-            않을지라도, 마치 울퉁불퉁한 지형에 부딪혀 만들어내는 예측 불가능한
-            파동처럼 우리는 규정되지 않은 움직임 속에서 새로운 가능성을
-            상상한다. 이는 각자의 고유한 언어가 지닌 굴곡을 오롯이 드러내는
-            일이며 결코 균질하지 않은, 오히려 다르기 때문에 만들어내는 또 다른
-            연결과 소통의 형태를 그려내는 일일 것이다.
+            그것의 문법이 때론 정확하지 않을지라도,
+            우리가 건네는 말들은 서로의 영역을 자유로이 넘나들며 어긋나고,
+            충돌하고, 되돌아와 낯선 •¨•.¸말-(메)아리¸.o◦｡를 만들어낸다.
+            마치 울퉁불퉁한 지형에 부딪혀 만들어내는 예측 불가능한 파동과 같은 움직임 속에서.
+            이는 각자의 고유한 굴곡을 오롯이 마주하는 일이며, 다름의 불완전함 속에서 의미는 타인에게 닿아 더 멀리,
+            더 크게 증식할 것이다.
           </p>
         </div>
       </div>
@@ -464,11 +459,10 @@ const FourthSection = () => {
         </span>
       </div>
       <div
-        className={`${
-          titleKr === "웹 개발팀"
-            ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
-            : ""
-        }`}
+        className={`${titleKr === "웹 개발팀"
+          ? "mb-[85px] min-[1000px]:mb-[85px] max-[999px]:mb-[40px]"
+          : ""
+          }`}
       >
         {members.map((member, index) => (
           <p

@@ -4,47 +4,19 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MenuToggle from "../../components/menu/MenuToggle";
 
+import {
+    initialArtworks,
+    getLinkIcon,
+    MakersLinkIconPlaceholder,
+} from '../../data/work/WorkArtistInfo';
+
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
-const MakersLinkIconPlaceholder = "https://placehold.co/16x16";
-
-const initialArtworks = [
-    {
-        id: "art001", title: "녹색 비둘기 Green Pigeon", artist: "이선명 Sunmyeong Lee", description: "작품 설명", image: "https://placehold.co/250x340",
-        artistLinks: [
-            { url: "#link1_ig", icon: MakersLinkIconPlaceholder, alt: "Instagram" },
-            { url: "#link1_web", icon: MakersLinkIconPlaceholder, alt: "Website" }
-        ]
-    },
-    {
-        id: "art002", title: "Sunny Day", artist: "이사이오 2420", description: "작품 설명", image: "https://placehold.co/250x340",
-        artistLinks: [
-            { url: "#link2_only", icon: MakersLinkIconPlaceholder, alt: "Single Link" }
-        ]
-    },
-    {
-        id: "art003", title: "내 말을 들어줘", artist: "오리너구리", description: "작품 설명", image: "https://placehold.co/250x340",
-        artistLinks: [
-            { url: "#link3_a", icon: MakersLinkIconPlaceholder, alt: "Link A" },
-            { url: "#link3_b", icon: MakersLinkIconPlaceholder, alt: "Link B" },
-            { url: "#link3_c", icon: MakersLinkIconPlaceholder, alt: "Link C" }
-        ]
-    },
-    { id: "art004", title: "심층화", artist: "Compdsst", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art005", title: "천국을 지켜라!", artist: "장효선", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art006", title: "Running Girls", artist: "런닝피플", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art007", title: "Bring to LIGHT", artist: "OWIN", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art008", title: "간판", artist: "Newzing", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art009", title: "For You", artist: "CHOIs", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art010", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art011", title: "썩지않게 아주 오래", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] },
-    { id: "art012", title: "가가가", artist: "DPM GIRLZ", description: "작품 설명", image: "https://placehold.co/250x340", artistLinks: [] }
-];
 
 const shuffle = (array) => {
     let newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(Math.random() * (i + 1)); 
         [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
     return newArray;
@@ -59,34 +31,110 @@ const sortArtworksFn = (list, ascending, sortBy) => {
     });
 };
 
-const formatTitle = (title) => {
-    const parts = title.split(/([A-Za-z0-9 ,.'":;!?&()/-]+)/).filter(Boolean);
-    let kor = "", eng = "";
+const sortMakersFn = (list, ascending) => {
+    return [...list].sort((a, b) => {
+        const valA = a.name;
+        const valB = b.name;
+        const res = valA.localeCompare(valB, 'ko', { sensitivity: 'base' });
+        return ascending ? res : -res;
+    });
+};
 
-    parts.forEach(part => {
-        if (/[A-Za-z0-9]/.test(part)) eng += part + " ";
-        else kor += part;
+const getUniqueMakersMap = (list) => {
+    const grouped = {};
+    list.forEach(work => {
+        if (!Array.isArray(work.makers)) return;
+        const workInfo = { id: work.id, title: work.title, team: work.artist };
+        
+        work.makers.forEach(maker => {
+            if (!maker.name) return;
+            const makerName = maker.name;
+
+            if (!grouped[makerName]) {
+                grouped[makerName] = {
+                    name: makerName,
+                    links: Array.isArray(maker.links) ? maker.links : [],
+                    works: [],
+                };
+            }
+            if (!grouped[makerName].works.some(w => w.id === work.id)) {
+                grouped[makerName].works.push(workInfo);
+            }
+        });
+    });
+    
+    Object.values(grouped).forEach(maker => {
+        maker.works = sortArtworksFn(maker.works, true, 'title'); 
     });
 
-    const korText = kor.trim();
-    const engText = eng.trim();
+    return grouped;
+};
+
+const groupArtworksByMaker = (list, ascending) => {
+    const makersMap = getUniqueMakersMap(list);
+    return sortMakersFn(Object.values(makersMap), ascending);
+};
+
+const shuffleMakers = (makerList) => {
+    return shuffle(makerList);
+};
+
+const formatTitle = (title) => {
+    if (typeof title !== 'string' || title.trim().length === 0) {
+        return <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">제목 없음</span>;
+    }
+
+    const trimmedTitle = title.trim();
+    let finalKorText = trimmedTitle;
+    let finalEngText = '';
+
+    if (/[A-Za-z]/.test(trimmedTitle)) {
+        const matches = trimmedTitle.match(/^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/);
+
+        if (matches && matches.length === 3) {
+            finalKorText = matches[1].trim();
+            finalEngText = matches[2].trim();
+        } else {
+            const firstLatinIndex = trimmedTitle.search(/[A-Za-z]/);
+            if (firstLatinIndex !== -1) {
+                finalKorText = trimmedTitle.substring(0, firstLatinIndex).trim();
+                finalEngText = trimmedTitle.substring(firstLatinIndex).trim();
+            }
+        }
+
+        if (finalKorText.length > 0 && finalEngText.length > 0) {
+            if (!/[가-힣]/.test(finalKorText)) {
+                if (!/[가-힣]/.test(trimmedTitle)) {
+                    finalKorText = '';
+                    finalEngText = trimmedTitle;
+                }
+            }
+        }
+    } else {
+        finalKorText = trimmedTitle;
+        finalEngText = '';
+    }
 
     return (
-        <div className="Artwork-Title">
-            {korText && (
-                <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{korText}</span>
+        <>
+            {finalKorText && (
+                <span className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{finalKorText}</span>
             )}
 
-            {korText && engText && <br />}
+            {finalKorText && finalEngText && <br />}
 
-            {engText && (
-                <span className="italic font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{engText}</span>
+            {finalEngText && (
+                <span className="italic font-semibold text-[15px] leading-[145%] tracking-[-0.5%]">{finalEngText}</span>
             )}
-        </div>
+        </>
     );
 };
 
 const formatArtistName = (artistName, isGallery = false) => {
+    if (typeof artistName !== 'string' || artistName.trim().length === 0) {
+        return <span className="Makers-Artist-Kr font-medium text-[14px]">N/A</span>;
+    }
+
     const parts = artistName.split(/([가-힣]+)/).filter(p => p.length > 0);
     const baseFontWeight = isGallery ? "font-[450]" : "font-normal";
 
@@ -101,56 +149,66 @@ const formatArtistName = (artistName, isGallery = false) => {
     });
 };
 
-
 const formatTitleForMakers = (title) => {
-    let processedTitle = title.replace(/([가-힣])([A-Za-z0-9])/g, '$1 $2');
-    processedTitle = processedTitle.replace(/([A-Za-z0-9])([가-힣])/g, '$1 $2');
-
-    const tokenRegex = /([가-힣\s]+)|([A-Za-z0-9\s.,!?:;]+)|([.,!?:;])/g;
-    const parts = [];
-    let match;
-    while ((match = tokenRegex.exec(processedTitle)) !== null) {
-        if (match[0].trim() !== '') {
-            parts.push(match[0]);
-        }
+    if (typeof title !== 'string' || title.trim().length === 0) {
+        return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">제목 없음</span>;
     }
 
-    const formattedElements = [];
-    let isPreviousKorean = false;
+    const trimmedTitle = title.trim();
+    let finalKorText = trimmedTitle;
+    let finalEngText = '';
 
-    parts.forEach((part, index) => {
-        const key = index;
-        const trimmedPart = part.trim();
+    if (/[A-Za-z]/.test(trimmedTitle)) {
 
-        if (trimmedPart.length === 0) return;
+        const matches = trimmedTitle.match(/^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/);
 
-        const isPunctuation = /[.,!?:;]/.test(trimmedPart) && trimmedPart.length === 1;
-        const isKoreanPart = /[가-힣]/.test(trimmedPart) && !/[A-Za-z0-9]/.test(trimmedPart) && !isPunctuation;
-
-        if (isPreviousKorean && !isPunctuation && !isKoreanPart) {
-            formattedElements.push(
-                <span key={`spacer-${index}`} className="inline-block w-[6px] h-0"></span>
-            );
-        }
-
-        isPreviousKorean = isKoreanPart;
-
-        if (isPunctuation) {
-            formattedElements.push(
-                <React.Fragment key={key}>{trimmedPart}</React.Fragment>
-            );
-        } else if (isKoreanPart) {
-            formattedElements.push(
-                <span key={key} className="Makers-Title-Kr font-medium text-[14px] leading-none">{trimmedPart}</span>
-            );
+        if (matches && matches.length === 3) {
+            finalKorText = matches[1].trim();
+            finalEngText = matches[2].trim();
         } else {
-            formattedElements.push(
-                <span key={key} className="Makers-Title-En italic font-normal text-[14px] leading-none">{trimmedPart}</span>
-            );
+            const firstLatinIndex = trimmedTitle.search(/[A-Za-z]/);
+            if (firstLatinIndex !== -1) {
+                finalKorText = trimmedTitle.substring(0, firstLatinIndex).trim();
+                finalEngText = trimmedTitle.substring(firstLatinIndex).trim();
+            }
         }
-    });
 
-    return formattedElements;
+        if (finalKorText.length > 0 && finalEngText.length > 0) {
+            if (!/[가-힣]/.test(finalKorText)) {
+                if (!/[가-힣]/.test(trimmedTitle)) {
+                    finalKorText = '';
+                    finalEngText = trimmedTitle;
+                }
+            }
+        }
+    } else {
+        finalKorText = trimmedTitle;
+        finalEngText = '';
+    }
+
+    const korElement = finalKorText ? (
+        <span key="kor" className="Makers-Title-Kr font-medium text-[14px] leading-none">{finalKorText}</span>
+    ) : null;
+
+    const engElement = finalEngText ? (
+        <span key="en" className="Makers-Title-En italic font-normal text-[14px] leading-none">{finalEngText}</span>
+    ) : null;
+
+    if (korElement && engElement) {
+        return (
+            <>
+                {korElement}
+                <span key="space">&nbsp;</span>
+                {engElement}
+            </>
+        );
+    } else if (korElement) {
+        return korElement;
+    } else if (engElement) {
+        return engElement;
+    } else {
+        return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">{trimmedTitle}</span>;
+    }
 };
 
 const ArtworkCard = React.memo(({ art }) => {
@@ -164,13 +222,13 @@ const ArtworkCard = React.memo(({ art }) => {
                         className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
                     />
                 </div>
-                <div className="title font-['Monoplex KR']">
+                <div className="title font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-['Monoplex KR'] text-[14px] leading-none tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-['Monoplex KR'] text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-['Monoplex KR'] font-[450] text-[14px] leading-none tracking-normal">
+                <div className="description font-normal text-[14px] leading-[145%] tracking-normal">
                     {art.description}
                 </div>
             </Link>
@@ -178,25 +236,33 @@ const ArtworkCard = React.memo(({ art }) => {
     );
 });
 
-const MakersArtistGroup = React.memo(({ group }) => {
+const MakerRow = React.memo(({ maker }) => {
+    if (!maker || typeof maker.name !== 'string' || !Array.isArray(maker.works)) {
+        return null;
+    }
+    
     return (
-        <div className="Makers-Artist-Group flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
-            <div className="Makers-Artist-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
-                <div className="Makers-Artist-Name cursor-default">
-                    {formatArtistName(group.artist, false)}
+        <div className="Maker-Row flex flex-col sm:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
+            <div className="Maker-Info font-['Monoplex KR'] flex items-center gap-3 pl-5 flex-1 w-full sm:w-1/2 font-[450] text-base leading-none text-left">
+                <div className="Maker-Name cursor-default">
+                    {formatArtistName(maker.name, false)}
                 </div>
-                {group.links.map((link, index) => (
+                {maker.links.map((link, index) => (
                     <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                        <img src={link.icon} alt={link.alt} className="w-4 h-4 align-baseline translate-y-[1px]" />
+                        <img
+                            src={getLinkIcon(link)}
+                            alt={link.alt}
+                            className="w-4 h-4 align-baseline translate-y-[1px]"
+                        />
                     </a>
                 ))}
             </div>
 
-            <div className="Makers-Works-List flex flex-col justify-start flex-1 w-full sm:w-1/2 mt-10 sm:mt-0 pl-5">
-                {group.works.map((art, index) => (
+            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full sm:w-1/2 mt-10 sm:mt-0 pl-5">
+                {maker.works.map((art, index) => (
                     <div
                         key={art.id}
-                        className={`Makers-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
+                        className={`Maker-Work-Info font-['Monoplex KR'] font-normal text-base leading-none text-left flex-grow-0 w-max whitespace-normal break-normal transition-opacity ${index > 0 ? 'mt-3' : ''}`}
                     >
                         <Link
                             to={`/work/${art.id}?from=makers`}
@@ -222,113 +288,114 @@ export default function Work() {
         return urlParams.get(param);
     }, [location.search]);
 
-
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
-    const initialSortParam = getQueryParam('sort');
-
-    const initialAscending = initialSortParam === 'desc' ? false : true;
 
     const [currentView, setCurrentView] = useState(initialView);
-    const [isAscending, setIsAscending] = useState(initialSortParam ? initialAscending : true);
+
+    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false); 
+    const [isAscending, setIsAscending] = useState(true);
+
+    const initialRandomArtworks = shuffle(initialArtworks);
+    const [randomArtworkList, setRandomArtworkList] = useState(initialRandomArtworks);
+    
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks); 
+    
+    const [makerListKey, setMakerListKey] = useState(Math.random().toString());
+
+    const initialRandomMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
+
 
     const [sortedArtworks, setSortedArtworks] = useState(() => {
-
-        if (initialSortParam) {
-            const sortBy = initialView === 'makers' ? 'artist' : 'title';
-            return sortArtworksFn(initialArtworks, initialAscending, sortBy);
+        if (initialView === 'makers') {
+            return initialRandomMakers; 
         }
-
-        return shuffle(initialArtworks);
+        return initialRandomArtworks;
     });
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
     }, []);
 
-    const groupArtworksByArtist = (list, maintainOrder = true) => {
-        const grouped = list.reduce((acc, work) => {
-            if (!acc[work.artist]) {
-                acc[work.artist] = {
-                    artist: work.artist,
-                    works: [],
-                    links: work.artistLinks || []
-                };
-            }
-            acc[work.artist].works.push(work);
-            return acc;
-        }, {});
-
-        Object.values(grouped).forEach(group => {
-            group.works = sortArtworksFn(group.works, true, 'title');
-        });
-
-        if (maintainOrder) {
-            const artistOrder = [];
-            const seenArtists = new Set();
-            list.forEach(work => {
-                if (!seenArtists.has(work.artist)) {
-                    artistOrder.push(work.artist);
-                    seenArtists.add(work.artist);
-                }
-            });
-            return artistOrder
-                .map(artist => grouped[artist])
-                .filter(group => group);
-        }
-        return Object.values(grouped);
-    };
-
-    const saveScrollPosition = () => {
-    };
-
-    useEffect(() => {
-        window.removeEventListener('scroll', saveScrollPosition);
-    }, [location.pathname]);
-
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
-        setIsAscending(true);
 
         let newList;
-        let newSearchParams = `?view=${mode}`;
+        let newSearchParams = `?view=${mode}`; 
 
-        newList = shuffle(initialArtworks);
-
+        if (mode === 'gallery') {
+            if (isCurrentlySorted) {
+                newList = sortArtworks(initialArtworks, isAscending, 'title');
+            } else {
+                newList = randomArtworkList; 
+            }
+        } else {
+            
+            if (isCurrentlySorted) {
+                newList = groupArtworksByMaker(initialArtworks, isAscending);
+            } else {
+                newList = randomMakerList;
+            }
+        }
+        
         setSortedArtworks(newList);
         navigate(newSearchParams, { replace: true });
     };
 
     const handleRandomize = () => {
-        setIsAscending(true);
+        
+        const newRandomList = shuffle(initialArtworks);
+        setRandomArtworkList(newRandomList); 
+
+        const allMakers = Object.values(uniqueMakersMap);
+        const newRandomMakers = shuffleMakers(allMakers);
+        setRandomMakerList(newRandomMakers); 
+
+        setIsAscending(true); 
+        setIsCurrentlySorted(false);
 
         if (currentView === 'makers') {
-            setSortedArtworks(shuffle(sortedArtworks));
+            setMakerListKey(Math.random().toString());
+            setSortedArtworks(newRandomMakers);
         } else {
-            setSortedArtworks(shuffle(initialArtworks));
+            setSortedArtworks(newRandomList);
         }
 
         navigate(`?view=${currentView}`, { replace: true });
     };
 
     const handleSort = () => {
-        const sortBy = currentView === 'makers' ? 'artist' : 'title';
-        const newAscending = !isAscending;
+        let newAscending;
+        
+        if (!isCurrentlySorted) {
+            newAscending = true;
+        } else {
+            newAscending = !isAscending;
+        }
+        
+        setIsCurrentlySorted(true);
+        
+        if (currentView === 'gallery') {
+            const sorted = sortArtworks(initialArtworks, newAscending, 'title');
+            setSortedArtworks(sorted);
+        } else {
+            const sortedMakers = groupArtworksByMaker(initialArtworks, newAscending);
+            setSortedArtworks(sortedMakers);
+        }
 
-        const sorted = sortArtworks(initialArtworks, newAscending, sortBy);
-        setSortedArtworks(sorted);
         setIsAscending(newAscending);
+        setMakerListKey(Math.random().toString()); // 강제 렌더링
 
-        const sortParam = newAscending ? 'asc' : 'desc';
-        navigate(`?view=${currentView}&sort=${sortParam}`, { replace: true });
+        navigate(`?view=${currentView}`, { replace: true });
     };
 
-    const sortButtonText = isAscending
-        ? 'A–Z'
-        : 'Z–A';
+    const sortButtonText = isCurrentlySorted && isAscending
+        ? 'Z–A' 
+        : 'A–Z';
 
-    const makersArtistGroups = currentView === 'makers'
-        ? groupArtworksByArtist(sortedArtworks, true)
-        : [];
+    const makersList = currentView === 'makers' ? sortedArtworks : [];
+    const galleryList = currentView === 'gallery' ? sortedArtworks : [];
+
 
     return (
         <div className="bg-off-white text-label min-h-screen font-['Monoplex KR']">
@@ -385,10 +452,10 @@ export default function Work() {
                                 id="Sort-btn"
                                 onClick={handleSort}
                                 className={`border-none bg-transparent font-['Monoplex KR'] italic font-normal text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
-                                    ${currentView === 'makers' && sortedArtworks.length > 0 ? 'opacity-100' :
+                                    ${currentView === 'makers' && makersList.length > 0 ? 'opacity-100' :
                                         currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
                                 }
-                                disabled={currentView === 'makers' && makersArtistGroups.length === 0}
+                                disabled={currentView === 'makers' && makersList.length === 0}
                             >
                                 <span className="hidden md:inline">{sortButtonText}</span>
                                 <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
@@ -420,7 +487,7 @@ export default function Work() {
                         id="Gallery"
                         className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-20 pt-6 box-border ${currentView === 'makers' ? 'hidden' : ''}`}
                     >
-                        {sortedArtworks.map(art => (
+                        {galleryList.map(art => (
                             <ArtworkCard key={art.id} art={art} />
                         ))}
                     </div>
@@ -428,21 +495,23 @@ export default function Work() {
                     {/* Makers List */}
                     <div
                         id="Makers-List"
+                        key={currentView === 'makers' ? makerListKey : 'gallery'}
                         className={`pt-0 box-border border-t clear-both relative 
                         ${currentView === 'makers' ? 'block active' : 'hidden'}
                         before:content-[""] before:absolute before:top-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
-                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`} 
+                        after:content-[""] after:absolute after:top-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2`}
                     >
-                        {makersArtistGroups.map((group) => (
-                            <MakersArtistGroup key={group.artist} group={group} />
+                        {makersList.map((maker) => (
+                            <MakerRow 
+                                key={maker.name} 
+                                maker={maker} 
+                            />
                         ))}
                     </div>
                 </div>
             </main>
 
-            <footer className="h-[554px]">
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     );
 }
