@@ -6,7 +6,7 @@ export const allArtworkData = {
         artistKr: "손정우",
         artistEn: "Jeongwoo Son",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952755/_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_unxile.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -95,7 +95,7 @@ export const allArtworkData = {
         artistKr: "키스 갈기기",
         artistEn: "Throwing Kith",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952768/%EB%A9%B4%ED%92%8D2_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ww3yvm.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -139,7 +139,7 @@ export const allArtworkData = {
         artistKr: "자발적 과로단",
         artistEn: "self over workers",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952767/%EB%AC%BC%EC%88%A8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wu4rmd.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -203,7 +203,7 @@ export const allArtworkData = {
         artistKr: "로피",
         artistEn: "Roffi",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952772/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ohyqff.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -330,7 +330,7 @@ export const allArtworkData = {
         artistKr: "뚜앙즈",
         artistEn: "Tuangz",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952773/%EC%8B%AC_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_njdesc.png",
         videoSrc: "https://vimeo.com/1135770875?fl=pl&fe=sh",
         commentary: {
             kr: {
@@ -383,7 +383,7 @@ export const allArtworkData = {
         artistKr: "야너이상해",
         artistEn: "Hey, What's wrong with you?",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952775/%EC%95%84%EC%A7%80%ED%8A%B8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ovikzr.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -431,7 +431,7 @@ export const allArtworkData = {
         artistKr: "와이칼리버",
         artistEn: "Ycalibur",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952776/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vq8ely.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -470,7 +470,7 @@ export const allArtworkData = {
         artistKr: "아마따",
         artistEn: "Amatuer",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952753/%EC%98%81%EC%9B%90%EC%9D%98%EC%B4%88%EC%83%81_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_twufpe.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -550,7 +550,7 @@ export const allArtworkData = {
         artistKr: "더 스님스",
         artistEn: "The Seunims",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952755/%EC%98%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_eh1lzd.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -597,7 +597,7 @@ export const allArtworkData = {
         artistKr: "기록도록",
         artistEn: "GRDR",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952779/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_pjlfr2.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -700,7 +700,7 @@ export const allArtworkData = {
         artistKr: "노릇노릇",
         artistEn: "NRNR",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952763/ToastOut_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wxp1qs.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -812,7 +812,7 @@ export const allArtworkData = {
         artistKr: "파브리카",
         artistEn: "Fabrika",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952754/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_uszmve.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -852,7 +852,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "X205",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952780/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_slcnbe.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1018,7 +1018,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "CONTINUE?",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952761/E.C.H.O._%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_zlubc6.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1064,7 +1064,7 @@ export const allArtworkData = {
         artistKr: "이건 네 번째 레슨",
         artistEn: "The fourth lesson",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952770/web-stie_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_fhhsyh.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1146,7 +1146,7 @@ export const allArtworkData = {
         artistKr: "이윤선",
         artistEn: "Yoonseon Lee",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952761/Faces_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_z2gzjx.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1354,7 +1354,7 @@ export const allArtworkData = {
         artistKr: "티씨케이",
         artistEn: "TCK",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952765/TTT_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ewagbq.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1403,7 +1403,7 @@ export const allArtworkData = {
         artistKr: "신채원",
         artistEn: "Chaewon Shin",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952759/e-mo_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vx1d1o.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1436,7 +1436,7 @@ export const allArtworkData = {
         artistKr: "커비",
         artistEn: "KIRBY",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952762/GlassLab_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_tk2cuc.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1490,7 +1490,7 @@ export const allArtworkData = {
         artistKr: "노진서",
         artistEn: "Noh jinseo",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952758/chroma_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_qu7kiy.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1605,7 +1605,7 @@ export const allArtworkData = {
         artistKr: "김태현",
         artistEn: "Taehyun Kim",
         imageMainSrc: "https://placehold.co/200x267",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952753/WithLily_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s8dpvr.jpg",
         videoSrc: "",
         commentary: {
             kr: {
