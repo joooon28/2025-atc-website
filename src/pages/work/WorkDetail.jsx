@@ -294,9 +294,9 @@ export default function WorkDetail() {
 
   const displayLinks = artwork.links;
 
-  const p1Class = `${fontMap.semibold} font-[600] text-[15px] leading-[145%] tracking-[-0.5%]`;
-  const pBodyKrClass = `${fontMap.text} font-[450] text-[15px] leading-[180%] tracking-[-10%]`;
-  const pBodyEnClass = `${fontMap.text} font-[450] text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const p1Class = `${fontMap.semibold} font-[500] text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const pBodyKrClass = `${fontMap.text} font-normal text-[15px] leading-[180%] tracking-[-10%]`;
+  const pBodyEnClass = `${fontMap.text} font-normal text-[15px] leading-[145%] tracking-[-0.5%]`;
 
   const renderCommentaryBody = () => {
     if (!currentCommentary) return null;
