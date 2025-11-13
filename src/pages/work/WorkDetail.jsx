@@ -277,7 +277,7 @@ export default function WorkDetail() {
     return (
       <div className="text-label min-h-screen bg-[#F8F8F7]">
         <Header />
-        <main className="w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
+        <main className="w-[calc(100%-40px)] min-tablet:w-[calc(100%-80px)] mx-auto pt-[137px] text-center">
           <p className="mt-20">작품을 찾을 수 없습니다.</p>
         </main>
         <Footer />
@@ -335,14 +335,14 @@ export default function WorkDetail() {
       <div className="fixed top-0 left-0 right-0 h-[40px] z-[10000] bg-[#F8F8F7]"></div>
 
       <div
-        className={`max-[701px]:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${
+        className={`max-tablet:hidden fixed top-[40px] left-0 right-0 h-[97px] z-[10000] ${
           isStickyHeaderActive ? "bg-[#F8F8F7]" : "bg-transparent"
         }`}
       >
         <Header />
       </div>
       
-      <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-[701px]:hidden">
+      <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-tablet:hidden">
         <div className="relative ">
           <MenuToggle />
         </div>
@@ -350,13 +350,13 @@ export default function WorkDetail() {
 
       <div
         ref={firstSectionRef}
-        className="First-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] min-[700px]:pt-[137px] z-10"
+        className="First-Section w-[calc(100%-40px)] min-tablet:w-[calc(100%-80px)] mx-auto text-center relative flex flex-col items-center justify-between gap-6 pb-10 pt-[117px] min-tablet:pt-[137px] z-10"
       >
         <button
           onClick={handleGoBack}
           id="goBackTop"
           ref={topBackButtonRef}
-          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] min-[700px]:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden min-[700px]:inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] min-tablet:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden min-tablet:inline-flex items-center`}
         >
           <img
             src={GoBackIcon}
@@ -366,7 +366,7 @@ export default function WorkDetail() {
           Back
         </button>
 
-        <div className="Work-Title-Info flex flex-col items-center order-1 min-[376px]:order-3">
+        <div className="Work-Title-Info flex flex-col items-center order-1 min-mobile:order-3">
           <div className="Work-Title flex flex-col items-center gap-1.5 mb-5">
             {displayTitleKr && (
               <p
@@ -399,31 +399,31 @@ export default function WorkDetail() {
         <div
           id="Work-Main-Img-Container"
           ref={mainImgContainerRef}
-          className={`order-2 min-[376px]:order-1
+          className={`order-2 min-mobile:order-1
                         w-full max-w-[200px] mx-auto 
-                        max-[376px]:!max-w-none max-[376px]:w-full max-[376px]:mx-0 
-                        min-[376px]:max-w-[200px] min-[376px]:w-full`}
+                        max-mobile:!max-w-none max-mobile:w-full max-mobile:mx-0 
+                        min-mobile:max-w-[200px] min-mobile:w-full`}
         >
           <img
             src={artwork.imageMainSrc}
             alt={displayTitleKr || displayTitleEn}
             id="Work-Main-Img"
             className={`mt-0 object-cover w-full h-auto 
-                            min-[700px]:w-[200px] min-[700px]:h-[267px]`}
+                            min-tablet:w-[200px] min-tablet:h-[267px]`}
           />
         </div>
       </div>
 
       <div 
-        className="Second-Section w-[calc(100%-40px)] min-[700px]:w-[calc(100%-80px)] mx-auto"
+        className="Second-Section w-[calc(100%-40px)] min-tablet:w-[calc(100%-80px)] mx-auto"
       >
-        <div className="fixed top-0 left-0 right-0 max-[701px]:h-[85px] max-[701px]:bg-[#F8F8F7] min-[701px]:h-0 z-[9980] min-[701px]:hidden"></div>
+        <div className="fixed top-0 left-0 right-0 max-tablet:h-[85px] max-tablet:bg-[#F8F8F7] min-tablet:h-0 z-[9980] min-tablet:hidden"></div>
 
         <div
           ref={stickyInfoRef}
-          className={`Work-Detail-Sticky-Info w-full sticky max-[701px]:top-[85px] min-[701px]:top-[137px] py-2 z-[10030] 
-                        max-[701px]:bg-[#F8F8F7] 
-                        min-[701px]:bg-[#F8F8F7]
+          className={`Work-Detail-Sticky-Info w-full sticky max-tablet:top-[85px] min-tablet:top-[137px] py-2 z-[10030] 
+                        max-tablet:bg-[#F8F8F7] 
+                        min-tablet:bg-[#F8F8F7]
                         flex justify-between items-center border-t border-b border-label mb-10 relative`}
         >
           <div className="absolute top-[-0.5px] left-0 w-[5px] h-[5px] bg-label rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -435,8 +435,8 @@ export default function WorkDetail() {
           <StickyArtist data={artwork} />
         </div>
 
-        <div className="Work-Detail-Info w-full flex flex-col min-[701px]:flex-row justify-between">
-          <div className="Work-Detail-Visual w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-2 min-[701px]:order-none">
+        <div className="Work-Detail-Info w-full flex flex-col min-tablet:flex-row justify-between">
+          <div className="Work-Detail-Visual w-full min-tablet:w-[calc(50%-20px)] min-tablet:flex-shrink-0 order-2 min-tablet:order-none">
             {vimeoEmbedUrl ? (
               <div className="Work-Detail-Video bg-black w-full h-auto box-border relative aspect-video">
                 <iframe
@@ -460,7 +460,7 @@ export default function WorkDetail() {
             </div>
           </div>
 
-          <div className="Work-Detail-Text w-full min-[701px]:w-[calc(50%-20px)] min-[701px]:flex-shrink-0 order-1 min-[701px]:order-none self-start mb-10 min-[701px]:mb-0 z-[990] min-[701px]:sticky min-[701px]:top-[217px]">
+          <div className="Work-Detail-Text w-full min-tablet:w-[calc(50%-20px)] min-tablet:flex-shrink-0 order-1 min-tablet:order-none self-start mb-10 min-tablet:mb-0 z-[990] min-tablet:sticky min-tablet:top-[217px]">
             <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
               <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
                 {currentCommentary.p1 && (
@@ -502,7 +502,7 @@ export default function WorkDetail() {
       </div>
 
       <div
-        className={`button_list w-[calc(100%-40px)] left-5 min-[700px]:w-[calc(100%-80px)] min-[700px]:left-10 fixed transition-all duration-300 overflow-hidden z-[10040] block ${
+        className={`button_list w-[calc(100%-40px)] left-5 min-tablet:w-[calc(100%-80px)] min-tablet:left-10 fixed transition-all duration-300 overflow-hidden z-[10040] block ${
           isButtonListActive ? "bottom-10" : "bottom-[-50px]"
         }`}
       >
@@ -511,14 +511,14 @@ export default function WorkDetail() {
           id="goBackBottom"
           className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label cursor-pointer text-base leading-none tracking-normal 
                       w-12 h-12 rounded-full flex justify-center items-center 
-                      min-[376px]:w-auto min-[376px]:h-auto min-[376px]:rounded-[60px] min-[376px]:py-3 min-[376px]:px-6 min-[376px]:inline-flex`}
+                      min-mobile:w-auto min-mobile:h-auto min-mobile:rounded-[60px] min-mobile:py-3 min-mobile:px-6 min-mobile:inline-flex`}
         >
           <img
             src={GoBackIcon}
             alt="뒤로 가기 버튼"
-            className={`w-4 h-4 transform translate-y-px mr-0 min-[376px]:mr-3`}
+            className={`w-4 h-4 transform translate-y-px mr-0 min-mobile:mr-3`}
           />
-          <span className="min-[376px]:inline hidden">Back</span>
+          <span className="min-mobile:inline hidden">Back</span>
         </button>
         <button
           onClick={handleGoToTop}

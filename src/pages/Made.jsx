@@ -57,7 +57,7 @@ const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn })
 
   return (
     <div
-      className="Made-Detail-Box w-full min-[376px]:w-[calc(50%-10px)] min-[701px]:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border"
+      className="Made-Detail-Box w-full min-mobile:w-[calc(50%-10px)] min-tablet:w-[calc(50%-20px)] flex flex-col gap-[20px] h-full box-border"
     >
       <div 
         className="relative w-full overflow-hidden rounded-sm aspect-video flex justify-center items-center"
@@ -74,13 +74,13 @@ const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn })
       <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
           id="Made-Detail-Title-En"
-          className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal min-[701px]:whitespace-nowrap"
+          className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal min-tablet:whitespace-nowrap"
         >
           <span className="font-[500] not-italic">{title} </span>
           
-          <br className="hidden min-[376px]:inline min-[701px]:hidden" />
+          <br className="hidden min-mobile:inline min-tablet:hidden" />
           
-          <span className="inline-block min-[376px]:ml-0 min-[701px]:ml-[0px] italic">{titleEn}</span> 
+          <span className="inline-block min-mobile:ml-0 min-tablet:ml-[0px] italic">{titleEn}</span> 
         </p>
         
         <p
@@ -122,7 +122,7 @@ const Made = () => {
       className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#E9F1E9]"
     >
       <div
-        className="max-[701px]:hidden fixed left-0 w-full z-[50]"
+        className="max-tablet:hidden fixed left-0 w-full z-[50]"
         style={{
           top: `${HEADER_TOP_OFFSET}px`,
           backgroundColor: "transparent",
@@ -131,7 +131,7 @@ const Made = () => {
         <Header />
       </div>
       <div className="p-5 fixed top-0 left-0 right-0 z-50">
-        <div className="min-[701px]:hidden relative">
+        <div className="min-tablet:hidden relative">
           <MenuToggle />
         </div>
       </div>
@@ -142,10 +142,10 @@ const Made = () => {
         }}
         className="max-[700px]:pt-0"
       >
-        <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[40px] box-border
+        <section className="w-full py-10 px-5 min-tablet:px-10 flex flex-col gap-5 min-tablet:gap-[40px] box-border
             max-[700px]:pt-[10px]
         ">
-          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10 pt-[20px]">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10 pt-[20px]">
             <MadeBox
               images={[
                 "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961700/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20412341234_eq6nlb.png",
@@ -177,7 +177,7 @@ const Made = () => {
             />
           </div>
           
-          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10">
             <MadeBox
               images={[
                 "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961666/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7.png"
@@ -203,7 +203,7 @@ const Made = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10">
             <MadeBox
               images={[
                 "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961770/E1_84_86_E1_85_A7_E1_86_BC_E1_84_92_E1_85_A1_E1_86_B7_E1_84_86_E1_85_A9_E1_86_A8_E1_84_8B_E1_85_A5_E1_86_B8_gw5qyb.png"

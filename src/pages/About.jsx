@@ -11,27 +11,27 @@ const FirstSection = () => {
   return (
     <div
       className="relative w-full min-h-screen box-border flex flex-col 
-      min-[701px]:pb-0 min-[701px]:gap-10
+      min-tablet:pb-0 min-tablet:gap-10
       
-      max-[700px]:justify-evenly max-[700px]:pt-[100px] max-[700px]:pb-[20px] max-[700px]:gap-0 
+      max-tablet:justify-evenly max-tablet:pt-[100px] max-tablet:pb-[20px] max-tablet:gap-0 
     "
     >
       <div
         className="
-        min-[701px]:absolute min-[701px]:top-0 min-[701px]:left-0 min-[701px]:w-full min-[701px]:h-full
+        min-tablet:absolute min-tablet:top-0 min-tablet:left-0 min-tablet:w-full min-tablet:h-full
         
-        max-[700px]:static max-[700px]:w-full max-[700px]:px-4 max-[700px]:z-10
-        max-[700px]:flex max-[700px]:flex-col max-[700px]:items-center max-[700px]:gap-[20px] 
+        max-tablet:static max-tablet:w-full max-tablet:px-4 max-tablet:z-10
+        max-tablet:flex max-tablet:flex-col max-tablet:items-center max-tablet:gap-[20px] 
       "
       >
         <h2
           className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
-          min-[701px]:mix-blend-difference 
+          min-tablet:mix-blend-difference 
           
-          min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 
-          min-[701px]:left-[40px] 
+          min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 
+          min-tablet:left-[40px] 
 
-          max-[700px]:static max-[700px]:text-center max-[700px]:text-[#362C11] max-[700px]:flex-shrink-0 
+          max-tablet:static max-tablet:text-center max-tablet:text-[#362C11] max-tablet:flex-shrink-0 
         "
         >
           울퉁불퉁하게 <br /> 말아리
@@ -39,12 +39,12 @@ const FirstSection = () => {
 
         <h2
           className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
-          min-[701px]:mix-blend-difference 
+          min-tablet:mix-blend-difference 
 
-          min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:-translate-y-1/2 min-[701px]:text-right
-          min-[701px]:right-[40px] 
+          min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 min-tablet:text-right
+          min-tablet:right-[40px] 
 
-          max-[700px]:static max-[700px]:text-center max-[700px]:text-[#362C11] max-[700px]:flex-shrink-0 
+          max-tablet:static max-tablet:text-center max-tablet:text-[#362C11] max-tablet:flex-shrink-0 
         "
         >
           Art & Technology <br /> Conference
@@ -53,12 +53,12 @@ const FirstSection = () => {
 
       <div
         className="z-0 
-        min-[701px]:absolute min-[701px]:top-1/2 min-[701px]:left-1/2 min-[701px]:-translate-x-1/2 min-[701px]:-translate-y-1/2 
-        min-[701px]:w-[90%] 
-        min-[701px]:max-w-[800px] 
+        min-tablet:absolute min-tablet:top-1/2 min-tablet:left-1/2 min-tablet:-translate-x-1/2 min-tablet:-translate-y-1/2 
+        min-tablet:w-[90%] 
+        min-tablet:max-w-[800px] 
         
-        max-[700px]:static max-[700px]:w-full max-[700px]:px-0 
-        max-[700px]:my-0 max-[700px]:box-border
+        max-tablet:static max-tablet:w-full max-tablet:px-0 
+        max-tablet:my-0 max-tablet:box-border
       "
       >
         <div className="relative h-0 pb-[56.25%] overflow-hidden">
@@ -68,12 +68,12 @@ const FirstSection = () => {
 
       <div
         className="z-10 flex flex-col items-center 
-        min-[701px]:absolute min-[701px]:left-1/2 min-[701px]:-translate-x-1/2 min-[701px]:bottom-0 min-[701px]:pb-[40px]
+        min-tablet:absolute min-tablet:left-1/2 min-tablet:-translate-x-1/2 min-tablet:bottom-0 min-tablet:pb-[40px]
         
-        max-[700px]:static max-[700px]:w-full max-[700px]:px-4 max-[700px]:pb-0
+        max-tablet:static max-tablet:w-full max-tablet:px-4 max-tablet:pb-0
       "
       >
-        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px] min-[701px]:mb-[6px]">
+        <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px] min-tablet:mb-[6px]">
           11.20 - 11.23
         </p>
 
@@ -96,7 +96,7 @@ const FirstSection = () => {
         <img
           src={ScrollDownIcon}
           alt="Scroll Down"
-          className="mx-auto mt-3 w-6 h-6 max-[700px]:w-5 max-[700px]:h-5"
+          className="mx-auto mt-3 w-6 h-6 max-tablet:w-5 max-tablet:h-5"
         />
       </div>
     </div>
@@ -107,14 +107,14 @@ const SecondSection = () => {
   return (
     <div
       className="w-full box-border flex justify-between gap-[40px] 
-      max-[700px]:flex-col max-[700px]:gap-0
+      max-tablet:flex-col max-tablet:gap-0
 
       px-[20px] 
-      min-[701px]:px-[40px]"
+      min-tablet:px-[40px]"
     >
       <div
         className="w-[calc(50%-20px)] pt-40
-          max-[700px]:w-full max-[700px]:pb-10 max-[700px]:pt-20
+          max-tablet:w-full max-tablet:pb-10 max-tablet:pt-20
       "
       >
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none text-center mb-10 text-[#362C11]">
@@ -154,7 +154,7 @@ const SecondSection = () => {
       </div>
       <div
         className="w-[calc(50%-20px)] pt-40
-          max-[700px]:w-full max-[700px]:pt-0 max-[700px]:pb-10
+          max-tablet:w-full max-tablet:pt-0 max-tablet:pb-10
       "
       >
         <h2 className="font-['Monoplex KR'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
@@ -205,30 +205,30 @@ const ThirdSection = ({ openModal }) => {
   return (
     <div
       className="w-full box-border flex justify-between gap-[40px] min-h-[1200px] 
-      max-[700px]:flex-col max-[700px]:gap-0 max-[700px]:min-h-0
+      max-tablet:flex-col max-tablet:gap-0 max-tablet:min-h-0
       
       px-[20px] 
-      min-[701px]:px-[40px]"
+      min-tablet:px-[40px]"
     >
       <div
         className="min-[1000px]:[width:calc(50%-20px)] h-[585px] pt-40 box-border flex-shrink-0 
-        min-[701px]:sticky top-0 min-[701px]:[width:calc(50%-20px)]
-        max-[700px]:w-full max-[700px]:h-auto max-[700px]:pt-20 max-[700px]:pb-10 max-[700px]:relative
+        min-tablet:sticky top-0 min-tablet:[width:calc(50%-20px)]
+        max-tablet:w-full max-tablet:h-auto max-tablet:pt-20 max-tablet:pb-10 max-tablet:relative
       "
       >
         <img
           src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
           alt="포스터"
-          className="absolute bottom-0 right-0 cursor-pointer block max-[700px]:static max-[700px]:mx-auto
+          className="absolute bottom-0 right-0 cursor-pointer block max-tablet:static max-tablet:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
-          max-[700px]:w-[250px] max-[700px]:h-[354px]"
+          max-tablet:w-[250px] max-tablet:h-[354px]"
           onClick={() => openModal("https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png")}
         />
       </div>
       <div
         className="min-[1000px]:[width:calc(50%-20px)] pt-40 
-          min-[701px]:[width:calc(50%-20px)]
-          max-[700px]:w-full max-[700px]:pt-10 max-[700px]:pb-20
+          min-tablet:[width:calc(50%-20px)]
+          max-tablet:w-full max-tablet:pt-10 max-tablet:pb-20
       "
       >
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none mb-10 text-[#362C11]">
@@ -488,17 +488,17 @@ const FourthSection = ({ openStaffSheet }) => {
   return (
     <div
       className="w-full box-border flex justify-between gap-[40px] items-start 
-      max-[700px]:flex-col max-[700px]:gap-0 
+      max-tablet:flex-col max-tablet:gap-0 
 
       px-[20px] 
-      min-[701px]:px-[40px]"
+      min-tablet:px-[40px]"
     >
       <div
         className="pt-40 relative flex-shrink-0
         w-[calc(50%-20px)]
-        max-[700px]:w-full
-        max-[700px]:pt-10 max-[700px]:pb-20
-        max-[700px]:order-2
+        max-tablet:w-full
+        max-tablet:pt-10 max-tablet:pb-20
+        max-tablet:order-2
         "
       >
         <h2 className="font-semibold text-[24px] leading-[100%] mb-10 text-[#362C11] text-right">
@@ -588,11 +588,11 @@ const FourthSection = ({ openStaffSheet }) => {
         className="pt-40 box-border flex-shrink-0
         w-[calc(50%-20px)] 
         
-        min-[701px]:sticky min-[701px]:top-0 
+        min-tablet:sticky min-tablet:top-0 
 
-        max-[700px]:w-full
-        max-[700px]:pt-10 max-[700px]:pb-10
-        max-[700px]:order-1
+        max-tablet:w-full
+        max-tablet:pt-10 max-tablet:pb-10
+        max-tablet:order-1
         "
       >
         <div className="w-full mb-3 relative h-0 pb-[56.25%] overflow-hidden">
@@ -653,10 +653,10 @@ export default function About() {
 
   return (
     <div className="min-h-screen text-[#362C11] bg-[#E9F1E9] font-['Monoplex KR']">
-      <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-50 pt-10">
+      <div className="max-tablet:hidden py-[40px] fixed top-0 left-0 right-0 z-50 pt-10">
         <Header />
       </div>
-      <div className="p-5 fixed top-0 left-0 right-0 z-50 min-[701px]:hidden">
+      <div className="p-5 fixed top-0 left-0 right-0 z-50 min-tablet:hidden">
         <div className="relative ">
           <MenuToggle />
         </div>
