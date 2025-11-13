@@ -34,8 +34,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954496/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk.png",
         makers: [
             { name: "손정우 Jeongwoo Son", links: [
-                { url: "https://www.instagram.com/sonjwooo/", alt: "Instagram" },
-                { url: "mailto:sonjw7193@gmail.com", alt: "Email" }
+                { url: "mailto:sonjw7193@gmail.com", alt: "Email" },
+                { url: "https://www.instagram.com/sonjwooo/", alt: "Instagram" }
             ] }
         ]
     },
@@ -47,20 +47,20 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960860/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog.jpg",
         makers: [
             { name: "정다혜 Dahye Jeong", links: [
+                { url: "mailto:wjdekgp000@naver.com", alt: "Email" },
                 { url: "https://instagram.com/d.hxxye/", alt: "Instagram" },
-                { url: "mailto:wjdekgp000@naver.com", alt: "Email" }
             ] },
             { name: "김주성 Joosung Kim", links: [
+                { url: "mailto:tjd629@naver.com", alt: "Email" },
                 { url: "https://instagram.com/blunacy_/", alt: "Instagram" },
-                { url: "mailto:tjd629@naver.com", alt: "Email" }
             ] },
             { name: "김주연 Juyoun Kim", links: [
+                { url: "mailto:reborn2263@naver.com", alt: "Email" },
                 { url: "https://instagram.com/spinacho0/", alt: "Instagram" },
-                { url: "mailto:reborn2263@naver.com", alt: "Email" }
             ] },
             { name: "황도경 Dokyung Hwang", links: [
+                { url: "mailto:ghkdehrud9727@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/wavybleuu/", alt: "Instagram" },
-                { url: "mailto:ghkdehrud9727@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -72,8 +72,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954511/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb.jpg",
         makers: [
             { name: "서기수 Kith Suh", links: [
+                { url: "mailto:oon08044@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/rash_pollo/", alt: "Instagram" },
-                { url: "mailto:oon08044@gmail.com", alt: "Email" }
             ] },
             { name: "고은서 Eunseo Ko", links: [
                 { url: "mailto:taeyerica2468@gmail.com", alt: "Email" }
@@ -91,21 +91,21 @@ export const initialArtworks = [
                 { url: "https://instagram.com/hyein335210/", alt: "Instagram" }
             ] },
             { name: "양윤서 Yunseo Yang", links: [
+                { url: "mailto:yunseo7196@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/y.__.rano/", alt: "Instagram" },
-                { url: "mailto:yunseo7196@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "남현지 Hyunjee Nam", links: [
+                { url: "mailto:jeeee22@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/j22.15/", alt: "Instagram" },
-                { url: "mailto:jeeee22@sogang.ac.kr", alt: "Email" }
                 
             ] },
             { name: "노수현 Suhyeon Roh", links: [
+                { url: "mailto:shnyz28@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/i_shny_i_/", alt: "Instagram" },
-                { url: "mailto:shnyz28@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "김무영 Muyeong Kim", links: [
+                { url: "mailto:moxnoxox@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/moo_bbang/", alt: "Instagram" },
-                { url: "mailto:moxnoxox@sogang.ac.kr", alt: "Email" }
             ] }
         ]
     },
@@ -117,24 +117,24 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954514/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz.png",
         makers: [
             { name: "김인규 Ingyu Kim", links: [
+                { url: "mailto:sloth1819@naver.com", alt: "Email" },
                 { url: "https://instagram.com/slothmind.png/", alt: "Instagram" },
-                { url: "mailto:sloth1819@naver.com", alt: "Email" }
             ] },
             { name: "신채원 Chaewon Shin", links: [
+                { url: "mailto:scw0203@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/60dy_one/", alt: "Instagram" },
-                { url: "mailto:scw0203@gmail.com", alt: "Email" }
             ] },
             { name: "허준하 Junha Heo", links: [
+                { url: "mailto:hjh03070427@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/heownsgk/", alt: "Instagram" },
-                { url: "mailto:hjh03070427@gmail.com", alt: "Email" }
             ] },
             { name: "이소윤 Soyoun Lee", links: [
+                { url: "mailto:yoonlee@u.sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/ima_tortoise/", alt: "Instagram" },
-                { url: "mailto:yoonlee@u.sogang.ac.kr", alt: "Email" }
             ] },
             { name: "천성하 Sungha Cheon", links: [
+                { url: "mailto:030314molly1k@naver.com", alt: "Email" },
                 { url: "https://instagram.com/1o0o_sh_/", alt: "Instagram" },
-                { url: "mailto:030314molly1k@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -146,20 +146,20 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954516/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm.png",
         makers: [
             { name: "문금미 Geummi Moon", links: [
+                { url: "mailto:rmaal520@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/forsz0/", alt: "Instagram" },
-                { url: "mailto:rmaal520@gmail.com", alt: "Email" }
             ] },
             { name: "오현서 Hyeonseo Oh", links: [
+                { url: "mailto:hsoh0408@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/peri.h_sso/", alt: "Instagram" },
-                { url: "mailto:hsoh0408@gmail.com", alt: "Email" }
             ] },
             { name: "곽민서 Minseo Kwak", links: [
+                { url: "mailto:minsi27@icloud.com", alt: "Email" },
                 { url: "https://instagram.com/fogpoc/", alt: "Instagram" },
-                { url: "mailto:minsi27@icloud.com", alt: "Email" }
             ] },
             { name: "이다은 Daeun Lee", links: [
+                { url: "mailto:feel_2015@naver.com", alt: "Email" },
                 { url: "https://instagram.com/roof_an.age/", alt: "Instagram" },
-                { url: "mailto:feel_2015@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -172,12 +172,12 @@ export const initialArtworks = [
         makers: [
             { name: "김인규 Ingyu Kim", links: [] },
             { name: "최윤정 Yunjeong Choi", links: [
+                { url: "mailto:1chig5.obj@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/1chi.g5/", alt: "Instagram" },
-                { url: "mailto:1chig5.obj@gmail.com", alt: "Email" }
             ] },
             { name: "김시리 Siri Kim", links: [
+                { url: "mailto:ksrksr777@naver.com", alt: "Email" },
                 { url: "https://instagram.com/sirilongstocking/", alt: "Instagram" },
-                { url: "mailto:ksrksr777@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -192,12 +192,12 @@ export const initialArtworks = [
                 { url: "mailto:thkim4459@gmail.com", alt: "Email" }
             ] },
             { name: "신서윤 Seoyun Shin", links: [
+                { url: "mailto:shnsn0114@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/seoyunscene/", alt: "Instagram" },
-                { url: "mailto:shnsn0114@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "유지오 Jio Yu", links: [
+                { url: "mailto:jioyu14@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/life_like_monji/", alt: "Instagram" },
-                { url: "mailto:jioyu14@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -209,12 +209,12 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954527/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw.png",
         makers: [
             { name: "박선우 Sunwoo Park", links: [
+                { url: "mailto:lindensun0507@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/lindensun0507/", alt: "Instagram" },
-                { url: "mailto:lindensun0507@gmail.com", alt: "Email" }
             ] },
             { name: "임동준 Dongjun Lim", links: [
+                { url: "mailto:nova903@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/n0va_0/", alt: "Instagram" },
-                { url: "mailto:nova903@sogang.ac.kr", alt: "Email" }
             ] }
         ]
     },
@@ -241,8 +241,8 @@ export const initialArtworks = [
                 { url: "mailto:wlswls0121@gmail.com", alt: "Email" }
             ] },
             { name: "배윤진 Yunjin Bae", links: [
+                { url: "mailto:qodbswls0304@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/ldrlof_ljin/", alt: "Instagram" },
-                { url: "mailto:qodbswls0304@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -254,16 +254,16 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr.png",
         makers: [
             { name: "박민지 Minji Park", links: [
+                { url: "mailto:minjip0810@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/mmm.mj_/", alt: "Instagram" },
-                { url: "mailto:minjip0810@gmail.com", alt: "Email" }
             ] },
             { name: "김서영 Seoyoung Kim", links: [
+                { url: "mailto:seoyoungkimchi@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/maloismycat/", alt: "Instagram" },
-                { url: "mailto:seoyoungkimchi@gmail.com", alt: "Email" }
             ] },
             { name: "김시리 Siri Kim", links: [
+                { url: "mailto:srksr777@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/sirilongstocking/", alt: "Instagram" },
-                { url: "mailto:srksr777@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -275,12 +275,12 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954526/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv.png",
         makers: [
             { name: "최윤서 Yunseo Choi", links: [
+                { url: "mailto:yschoi0919@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/yschoi0919/", alt: "Instagram" },
-                { url: "mailto:yschoi0919@gmail.com", alt: "Email" }
             ] },
             { name: "김시윤 Siyun Kim", links: [
+                { url: "mailto:tldbs37@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/nuy.lv_/", alt: "Instagram" },
-                { url: "mailto:tldbs37@gmail.com", alt: "Email" }
             ] },
             { name: "김대희 Daehee Kim", links: [
                 { url: "mailto:kdaehee1021@gmail.com", alt: "Email" }
@@ -295,13 +295,13 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954528/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i.jpg",
         makers: [
             { name: "최서빈 Seobin Choi", links: [
-                { url: "https://instagram.com/empty_binnn/", alt: "Instagram" },
                 { url: "mailto:bin139271@gmail.com", alt: "Email" },
+                { url: "https://instagram.com/empty_binnn/", alt: "Instagram" },
                 { url: "https://www.linkedin.com/in/seobin", alt: "LinkedIn" }
             ] },
             { name: "류해성 Haesung Ryu", links: [
+                { url: "mailto:haesung1997@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/egzg.up/", alt: "Instagram" },
-                { url: "mailto:haesung1997@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -313,16 +313,16 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762953843/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l.png",
         makers: [
             { name: "김수임 Suim Kim", links: [
+                { url: "mailto:softee220@naver.com", alt: "Email" },
                 { url: "https://instagram.com/li_ssome._/", alt: "Instagram" },
-                { url: "mailto:softee220@naver.com", alt: "Email" }
             ] },
             { name: "유지오 Jio Yu", links: [
+                { url: "mailto:jioyu14@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/monjio04/", alt: "Instagram" },
-                { url: "mailto:jioyu14@gmail.com", alt: "Email" }
             ] },
             { name: "이예나 Yena Lee", links: [
+                { url: "mailto:cellano100@naver.com", alt: "Email" },
                 { url: "https://instagram.com/_yena.lee/", alt: "Instagram" },
-                { url: "mailto:cellano100@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -334,24 +334,24 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan.jpg",
         makers: [
             { name: "천성하 Sungha Cheon", links: [
+                { url: "mailto:030314molly1k@naver.com", alt: "Email" },
                 { url: "https://instagram.com/1o0o_sh_/", alt: "Instagram" },
-                { url: "mailto:030314molly1k@naver.com", alt: "Email" }
             ] },
             { name: "허준하 Junha Heo", links: [
+                { url: "mailto:hjh03070427@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/heownsgk/", alt: "Instagram" },
-                { url: "mailto:hjh03070427@gmail.com", alt: "Email" }
             ] },
             { name: "오현서 Hyeonseo Oh", links: [
+                { url: "mailto:hsoh0408@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/peri.h_sso/", alt: "Instagram" },
-                { url: "mailto:hsoh0408@gmail.com", alt: "Email" }
             ] },
             { name: "곽민서 Minseo Kwak", links: [
+                { url: "mailto:minsi27@icloud.com", alt: "Email" },
                 { url: "https://instagram.com/fogpoc/", alt: "Instagram" },
-                { url: "mailto:minsi27@icloud.com", alt: "Email" }
             ] },
             { name: "이소윤 Soyoun Lee", links: [
+                { url: "mailto:yoonlee@u.sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/ima_tortoise/", alt: "Instagram" },
-                { url: "mailto:yoonlee@u.sogang.ac.kr", alt: "Email" }
             ] }
         ]
     },
@@ -363,8 +363,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto.png",
         makers: [
             { name: "파브리카 Fabrika", links: [
+                { url: "mailto:fabrika2024@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/fabrika.cell/", alt: "Instagram" },
-                { url: "mailto:fabrika2024@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -376,20 +376,20 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms.png",
         makers: [
             { name: "박종호 Jongho Park", links: [
+                { url: "mailto:park020211@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/jongho0211/", alt: "Instagram" },
-                { url: "mailto:park020211@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "김지윤 Jiyun Kim", links: [
+                { url: "mailto:olgayooon@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/cgxyooon/", alt: "Instagram" },
-                { url: "mailto:olgayooon@gmail.com", alt: "Email" }
             ] },
             { name: "임동준 Dongjun Lim", links: [
+                { url: "mailto:nova903@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/n0va_0/", alt: "Instagram" },
-                { url: "mailto:nova903@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "최윤서 Yunseo Choi", links: [
+                { url: "mailto:yschoi0919@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/yschoi0919/", alt: "Instagram" },
-                { url: "mailto:yschoi0919@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -466,8 +466,8 @@ export const initialArtworks = [
                 { url: "https://instagram.com/hyein335210/", alt: "Instagram" }
             ] },
             { name: "양윤서 Yunseo Yang", links: [
+                { url: "mailto:yunseo7196@sogang.ac.kr", alt: "Email" },
                 { url: "https://instagram.com/y.__.rano/", alt: "Instagram" },
-                { url: "mailto:yunseo7196@sogang.ac.kr", alt: "Email" }
             ] },
             { name: "차유민 Yumin Cha", links: [
                 { url: "mailto:shrimpmini0405@sogang.ac.kr", alt: "Email" }
@@ -527,20 +527,20 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762957086/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s.jpg",
         makers: [
             { name: "장채원 Chaewon Jang", links: [
+                { url: "mailto:chewingon@naver.com", alt: "Email" },
                 { url: "https://instagram.com/caffaeine/", alt: "Instagram" },
-                { url: "mailto:chewingon@naver.com", alt: "Email" }
             ] },
             { name: "설희윤 Heeyun Sul", links: [
+                { url: "mailto:heeyun0301@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/abm0ww/", alt: "Instagram" },
-                { url: "mailto:heeyun0301@gmail.com", alt: "Email" }
             ] },
             { name: "윤기완 Giwan Yoon", links: [
+                { url: "mailto:davidmario519@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/gwan_yn/", alt: "Instagram" },
-                { url: "mailto:davidmario519@gmail.com", alt: "Email" }
             ] },
             { name: "허원준 Wonjoon Huh", links: [
+                { url: "mailto:bolt0122@naver.com", alt: "Email" },
                 { url: "https://instagram.com/bolt0122/", alt: "Instagram" },
-                { url: "mailto:bolt0122@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -556,16 +556,16 @@ export const initialArtworks = [
                 { url: "https://www.linkedin.com/in/sunmyeonglee/", alt: "LinkedIn" }
             ] },
             { name: "고은서 Eunseo Ko", links: [
+                { url: "mailto:taeyerica2468@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/k0i.es/", alt: "Instagram" },
-                { url: "mailto:taeyerica2468@gmail.com", alt: "Email" }
             ] },
             { name: "김은홍 Eunhong Kim", links: [
+                { url: "its4hong@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/_hong0l/", alt: "Instagram" },
-                { url: "its4hong@gmail.com", alt: "Email" }
             ] },
             { name: "송명은 Myeongeun Song", links: [
+                { url: "mailto:songmyeongeun7@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/light_me__01/", alt: "Instagram" },
-                { url: "mailto:songmyeongeun7@gmail.com", alt: "Email" }
             ] },
             { name: "이수연 Soo Yeon Lee", links: [
                 { url: "mailto:sooyeon737@gmail.com", alt: "Email" }
@@ -595,8 +595,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954499/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7.jpg",
         makers: [
             { name: "신채원 Chaewon Shin", links: [
+                { url: "mailto:scw0203@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/60dy_one_/", alt: "Instagram" },
-                { url: "mailto:scw0203@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -627,8 +627,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954497/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb.png",
         makers: [
             { name: "노진서 Jinseo Noh", links: [
+                { url: "mailto:jinseojj@naver.com", alt: "Email" },
                 { url: "https://instagram.com/dotoro_o/", alt: "Instagram" },
-                { url: "mailto:jinseojj@naver.com", alt: "Email" }
             ] }
         ]
     },
@@ -650,16 +650,16 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960856/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz.jpg",
         makers: [
             { name: "이연재 Yeonjae Lee", links: [
+                { url: "mailto:yeonzhry@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/leeyeonzh/", alt: "Instagram" },
-                { url: "mailto:yeonzhry@gmail.com", alt: "Email" }
             ] },
             { name: "조민경 Mingyeong Cho", links: [
+                { url: "mailto:alsrudlovepresent@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/firohdkv/", alt: "Instagram" },
-                { url: "mailto:alsrudlovepresent@gmail.com", alt: "Email" }
             ] },
             { name: "현지민 Jimin Hyun", links: [
+                { url: "mailto:hyunzimn@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/hyunzimn/", alt: "Instagram" },
-                { url: "mailto:hyunzimn@gmail.com", alt: "Email" }
             ] }
         ]
     },
@@ -671,8 +671,8 @@ export const initialArtworks = [
         image: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf.jpg",
         makers: [
             { name: "김태현 Taehyun Kim", links: [
+                { url: "mailto:9uququ9u4787@gmail.com", alt: "Email" },
                 { url: "https://instagram.com/9uququ9u4787/", alt: "Instagram" },
-                { url: "mailto:9uququ9u4787@gmail.com", alt: "Email" }
             ] }
         ]
     }

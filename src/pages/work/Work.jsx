@@ -118,6 +118,8 @@ const formatTitle = (title) => {
     let finalKorText = trimmedTitle;
     let finalEngText = '';
 
+    const hasKorean = /[가-힣]/.test(trimmedTitle);
+
     if (/[A-Za-z]/.test(trimmedTitle)) {
         const matches = trimmedTitle.match(/^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/);
 
@@ -139,6 +141,9 @@ const formatTitle = (title) => {
                     finalEngText = trimmedTitle;
                 }
             }
+        } else if (!finalKorText && !finalEngText && !hasKorean) {
+             finalKorText = '';
+             finalEngText = trimmedTitle;
         }
     } else {
         finalKorText = trimmedTitle;
@@ -154,7 +159,7 @@ const formatTitle = (title) => {
             {finalKorText && finalEngText && <br />}
 
             {finalEngText && (
-                <span className="italic font-[500] text-[15px] leading-[145%] tracking-[-0.5%]">{finalEngText}</span>
+                <span className={`italic font-[500] text-[15px] leading-[145%] tracking-[-0.5%]`}>{finalEngText}</span>
             )}
         </>
     );
@@ -166,8 +171,11 @@ const formatArtistName = (artistName, isGallery = false) => {
         return <span className="Makers-Artist-Kr font-normal text-[14px]">N/A</span>;
     }
 
-    const parts = artistName.split(/([가-힣]+)/).filter(p => p.length > 0);
+    const trimmedName = artistName.trim();
+    const parts = trimmedName.split(/([가-힣]+)/).filter(p => p.length > 0);
     const baseFontWeight = isGallery ? "font-normal" : "font-normal";
+
+    const isMakersViewAndOnlyEnglish = !isGallery && !/[가-힣]/.test(trimmedName);
 
     return parts.map((part, index) => {
         if (part.trim().length === 0) return <React.Fragment key={index}>{part}</React.Fragment>;
@@ -175,20 +183,24 @@ const formatArtistName = (artistName, isGallery = false) => {
         if (/[가-힣]/.test(part)) {
             return <span key={index} className={`Makers-Artist-Kr ${isGallery ? 'font-normal' : 'font-[500]'} text-[14px]`}>{part}</span>;
         } else {
-            return <span key={index} className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}>{part}</span>;
+            const englishFontWeight = isMakersViewAndOnlyEnglish ? "font-[500]" : baseFontWeight;
+            return <span key={index} className={`Makers-Artist-En italic ${englishFontWeight} text-[14px] leading-none`}>{part}</span>;
         }
     });
 };
 
 const formatTitleForMakers = (title, isMobileOneLine) => {
     if (typeof title !== 'string' || title.trim().length === 0) {
-        return <span className="Makers-Title-Kr font-[500] text-[14px] leading-none">제목 없음</span>;
+        return <span className="Makers-Title-Kr font-medium text-[14px] leading-none">제목 없음</span>;
     }
 
     const trimmedTitle = title.trim();
 
     let finalKorText = trimmedTitle;
     let finalEngText = '';
+
+    const hasKorean = /[가-힣]/.test(trimmedTitle);
+    const isOnlyEnglish = !hasKorean && (/[A-Za-z0-9]/.test(trimmedTitle));
 
     if (/[A-Za-z]/.test(trimmedTitle)) {
 
@@ -212,18 +224,24 @@ const formatTitleForMakers = (title, isMobileOneLine) => {
                     finalEngText = trimmedTitle;
                 }
             }
+        } else if (!finalKorText && !finalEngText && !hasKorean) {
+             finalKorText = '';
+             finalEngText = trimmedTitle;
         }
     } else {
         finalKorText = trimmedTitle;
         finalEngText = '';
     }
+    
+    const englishFontWeight = isOnlyEnglish ? 'font-[500]' : 'font-normal'
+    const englishItalic = 'italic'; 
 
     const korElement = finalKorText ? (
         <span key="kor" className="Makers-Title-Kr font-[500] text-[14px] leading-[20px] mr-[6px]">{finalKorText}</span>
     ) : null;
 
     const engElement = finalEngText ? (
-        <span key="en" className="Makers-Title-En italic font-normal text-[14px] leading-[24px] whitespace-nowrap">{finalEngText}</span>
+        <span key="en" className={`Makers-Title-En ${englishItalic} ${englishFontWeight} text-[14px] leading-[24px] whitespace-nowrap`}>{finalEngText}</span>
     ) : null;
 
     if (korElement && engElement) {
@@ -253,13 +271,13 @@ const ArtworkCard = React.memo(({ art }) => {
                         className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
                     />
                 </div>
-                <div className="title font-normal text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
+                <div className="title font-regular text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
                     {formatTitle(art.title)}
                 </div>
-                <div className="artist font-normal text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
+                <div className="artist font-regular text-[14px] leading-[145%] tracking-normal underline underline-offset-[4.5px]">
                     {formatArtistName(art.artist, true)}
                 </div>
-                <div className="description font-[400] text-[14px] leading-[145%] tracking-normal whitespace-normal">
+                <div className="description font-regular text-[14px] leading-[145%] tracking-normal whitespace-normal">
                     {art.description}
                 </div>
             </Link>
@@ -272,7 +290,7 @@ const MakerWorkItem = ({ art, index }) => {
     return (
         <div
             key={art.id}
-            className={`Maker-Work-Info font-['Monoplex KR'] font-normal text-left flex-grow-0 w-full overflow-hidden ${index > 0 ? 'mt-3' : ''} text-[14px] leading-none`}
+            className={`Maker-Work-Info font-regular text-left flex-grow-0 w-full overflow-hidden ${index > 0 ? 'mt-[4px]' : ''} text-[14px] leading-none`}
         >
             <Link
                 to={`/work/${art.id}?from=makers`}
@@ -296,15 +314,27 @@ const MakerRow = React.memo(({ maker }) => {
         return null;
     }
     
+    const sortedLinks = useMemo(() => {
+        return [...maker.links].sort((a, b) => {
+            if (a.type === 'email' && b.type !== 'email') {
+                return -1;
+            }
+            if (a.type !== 'email' && b.type === 'email') {
+                return 1;
+            }
+            return 0;
+        });
+    }, [maker.links]);
+
     return (
-        <div className="Maker-Row flex flex-col min-mobile:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+        <div className="Maker-Row flex flex-col min-mobile:flex-row py-[16px] border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
         after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             
-            <div className="Maker-Info flex items-center gap-3 flex-1 w-full min-mobile:w-1/2 font-[450] text-base leading-none text-left pl-[20px]">
+            <div className="Maker-Info flex items-center gap-3 flex-1 w-full min-mobile:w-1/2 font-medium text-base leading-none text-left pl-[20px]">
                 <div className="Maker-Name cursor-default">
                     {formatArtistName(maker.name, false)}
                 </div>
-                {maker.links.map((link, index) => (
+                {sortedLinks.map((link, index) => (
                     <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                         <img
                             src={getLinkIcon(link)}
@@ -315,7 +345,7 @@ const MakerRow = React.memo(({ maker }) => {
                 ))}
             </div>
 
-            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full min-mobile:w-1/2 mt-10 min-mobile:mt-0 min-mobile:pl-5 pl-[20px]">
+            <div className="Maker-Works-List flex flex-col flex-1 w-full min-mobile:w-1/2 mt-10 min-mobile:mt-0 min-mobile:pl-5 pl-[20px]">
                 {maker.works.map((art, index) => (
                     <MakerWorkItem key={art.id} art={art} index={index} />
                 ))}
@@ -338,8 +368,9 @@ export default function Work() {
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
 
     const [currentView, setCurrentView] = useState(initialView);
-
-    const [isCurrentlySorted, setIsCurrentlySorted] = useState(false); 
+    
+    const initialIsCurrentlySorted = initialView === 'makers';
+    const [isCurrentlySorted, setIsCurrentlySorted] = useState(initialIsCurrentlySorted); 
     const [isAscending, setIsAscending] = useState(true);
 
     const initialRandomArtworks = shuffle(initialArtworks);
@@ -352,13 +383,15 @@ export default function Work() {
     const initialRandomMakers = shuffleMakers(Object.values(uniqueMakersMap));
     const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
 
-
-    const [sortedArtworks, setSortedArtworks] = useState(() => {
+    const initialSortedArtworks = useMemo(() => {
         if (initialView === 'makers') {
-            return initialRandomMakers; 
+            return groupArtworksByMaker(initialArtworks, true); 
         }
         return initialRandomArtworks;
-    });
+    }, [initialView, initialRandomArtworks]); 
+    
+    const [sortedArtworks, setSortedArtworks] = useState(initialSortedArtworks);
+
 
     const sortArtworks = useCallback((list, ascending, sortBy) => {
         return sortArtworksFn(list, ascending, sortBy);
@@ -445,7 +478,7 @@ export default function Work() {
 
 
     return (
-        <div style={{backgroundColor: '#F8F8F7'}} className="text-label min-h-screen font-['Monoplex KR']">
+        <div style={{backgroundColor: '#F8F8F7'}} className="text-label min-h-screen">
 
             <div className="max-tablet:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
