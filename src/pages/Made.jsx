@@ -11,7 +11,7 @@ const SLIDE_INTERVAL = 2500;
 const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn }) => { 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const timeoutRef = useRef(null);
-  const startTimeRef = useRef(Date.now());
+  const startTimeRef = useRef(null);
   const remainingTimeRef = useRef(SLIDE_INTERVAL);
 
   const clearTimer = () => {
@@ -74,11 +74,13 @@ const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn })
       <div className="Made-Detail-Text flex flex-col gap-[12px]">
         <p
           id="Made-Detail-Title-En"
-          className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-nowrap"
+          className="font-[500] text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal min-[701px]:whitespace-nowrap"
         >
-          <span className="font-[500] not-italic">{title}</span>
+          <span className="font-[500] not-italic">{title} </span>
           
-          <span className="ml-2 italic">{titleEn}</span> 
+          <br className="hidden min-[376px]:inline min-[701px]:hidden" />
+          
+          <span className="inline-block min-[376px]:ml-0 min-[701px]:ml-[0px] italic">{titleEn}</span> 
         </p>
         
         <p
