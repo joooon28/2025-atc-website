@@ -363,7 +363,7 @@ export default function WorkDetail() {
             {displayTitleKr && (
               <p
                 id="Work-Title-Kr"
-                className={`font-medium text-[24px] leading-none tracking-none`}
+                className={`font-medium text-[24px] leading-[130%] tracking-none`}
               >
                 {displayTitleKr}
               </p>
@@ -371,7 +371,7 @@ export default function WorkDetail() {
             {displayTitleEn && (
               <p
                 id="Work-Title-En"
-                className={`font-medium italic text-[24px] leading-none tracking-none`}
+                className={`font-medium italic text-[24px] leading-[130%] tracking-none`}
               >
                 {displayTitleEn}
               </p>
