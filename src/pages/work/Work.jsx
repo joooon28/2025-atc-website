@@ -503,7 +503,7 @@ export default function Work() {
                                 disabled={currentView === 'makers' && makersList.length === 0}
                             >
                                 <span className="hidden min-tablet:inline">{sortButtonText}</span>
-                                <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
+                                <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[23px] h-[23px]" />
                             </button>
                         </div>
 
@@ -514,7 +514,7 @@ export default function Work() {
                                 className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-tablet:inline">Gallery</span>
-                                <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
+                                <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[24px] h-[24px]" />
                             </button>
                             <button
                                 id="Makers-btn"
@@ -522,7 +522,7 @@ export default function Work() {
                                 className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-tablet:inline">Makers</span>
-                                <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
+                                <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[24px] h-[24px]" />
                             </button>
                         </div>
                     </div>
