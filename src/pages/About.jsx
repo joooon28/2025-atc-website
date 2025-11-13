@@ -120,7 +120,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none text-center mb-10 text-[#362C11]">
           전시 개요
         </h2>
-        <div className="font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-large tracking-tight text-[#362C11]">
           <p className="mb-3">
             《울퉁불퉁하게 말아리》는 각자가 가진 고유한 말들의 방식에 주목한다.
           </p>
@@ -160,7 +160,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
           Overview
         </h2>
-        <div className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-regular tracking-[-0.5%] text-[#362C11]">
           <p className="mb-3">
             2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
             ways in which each of us speaks.
@@ -201,7 +201,6 @@ const SecondSection = () => {
 };
 
 const ThirdSection = ({ openModal }) => {
-  
   return (
     <div
       className="w-full box-border flex justify-between gap-[40px] min-h-[1200px] 
@@ -222,7 +221,11 @@ const ThirdSection = ({ openModal }) => {
           className="absolute bottom-0 right-0 cursor-pointer block max-tablet:static max-tablet:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
           max-tablet:w-[250px] max-tablet:h-[354px]"
-          onClick={() => openModal("https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png")}
+          onClick={() =>
+            openModal(
+              "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+            )
+          }
         />
       </div>
       <div
@@ -239,7 +242,91 @@ const ThirdSection = ({ openModal }) => {
         </h2>
 
         <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
+            <p className="mb-3">
+              서강대학교 Art & Technology 학과에서 《울퉁불퉁하게 말아리》를
+              주제로 제14회 Art & Technology Conference (ATC) 2025를 개최합니다.
+            </p>
+            <p className="mb-3">
+              2012년부터 매해 학생들이 직접 기획·제작·운영해 온 ATC는 차세대
+              크리에이터들이 초학제적 융합과 경계 없는 실험을 통해 서로 자극받고
+              즐기는 놀이이자 축제, 그리고 창의성과 협력의 의미를 되새기는
+              교육의 장입니다.
+            </p>
+            <p className="mb-3">
+              올해 ATC 2025는 30명의 스태프와 76명의 아티스트가 6개월 넘게
+              준비한 결과물로, 11월 20일(목)부터 23일(일)까지 4일간 서강대학교
+              하비에르관 (X관) 1·4·5층 전역에서 전시, 프로그램, 라운드 테이블,
+              콜라보 부스, 인터랙션 작품, 즉흥 협연, 아카이브 섹션 등 다채로운
+              형식으로 펼쳐집니다.
+            </p>
+            <p className="mb-3">
+              우리가 건네는 말들은 서로의 영역을 자유로이 넘나들며 어긋나고,
+              충돌하고, 되돌아와 낯선 말-(메)아리를 만들어냅니다. 마치
+              울퉁불퉁한 지형에 부딪혀 생겨나는 예측 불가능한 파동처럼, 각자의
+              고유한 굴곡을 마주하며 불완전함 속에서 새로운 의미는 더 멀리, 더
+              크게 증식합니다.
+            </p>
+            <p className="mb-3">
+              이번 ATC 2025 《울퉁불퉁하게 말아리》를 통해 정형화되지 않은
+              시도들, 서로 다른 리듬 속에서 피어나는 새로운 언어와 사고의
+              실험들, 미래 크리에이터들의 도발적이고 진솔한 이야기들을
+              만나보시기 바랍니다.
+            </p>
+            <p className="mb-3">여러분을 ATC 2025에 정중히 초대합니다.</p>
+            <p className="font-medium">
+              서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
+            </p>
+          </div>
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
+            <p className="mb-3">
+              Sogang University's Department of Art & Technology is pleased to
+              host the 14th Art & Technology Conference (ATC) 2025, under the
+              theme 《울퉁불퉁하게 말아리》.
+            </p>
+            <p className="mb-3">
+              Since 2012, the ATC—which is entirely planned, produced, and
+              managed by the students each year—has served as a space for
+              education where the next generation of creators can stimulate each
+              other and enjoy a festive play of trans-disciplinary convergence
+              and boundaryless experimentation, while also reflecting on the
+              meaning of creativity and collaboration.
+            </p>
+            <p className="mb-3">
+              This year's ATC 2025 is the result of over six months of
+              preparation by 30 staff members and 76 artists. It will unfold
+              over four days, from Thursday, November 20th to Sunday, November
+              23rd, across the 1st, 4th, and 5th floors of the Sogang University
+              Xavier Hall, featuring diverse formats including exhibitions,
+              programs, roundtables, collaboration booths, interactive works,
+              impromptu collaborations, and an archive section.
+            </p>
+            <p className="mb-3">
+              The words we exchange freely traverse each other’s domains, going
+              astray, colliding, and returning to create unfamiliar
+              words—an (M)echo. Like unpredictable waves generated by crashing
+              into an uneven terrain, new meaning multiplies farther and louder
+              within this imperfection as we confront each one's unique curve
+              and unevenness.
+            </p>
+            <p className="mb-3">
+              Through this ATC 2025, 《울퉁불퉁하게 말아리》, we invite you to
+              encounter unstandardized attempts, experiments with new languages
+              and thoughts blossoming within different rhythms, and the
+              provocative yet sincere stories of our future creators.
+            </p>
+            <p className="mb-3">
+              We cordially invite you to join us at ATC 2025.
+            </p>
+            <p className="font-medium">
+              Sogang Univ. Art&Technology Head of Department <br /> Yongsoon
+              Choi
+            </p>
+          </div>
+        </div>
+
+        {/* <div className="mb-[40px] text-[#362C11]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -259,7 +346,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -282,10 +369,10 @@ const ThirdSection = ({ openModal }) => {
               Choi
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+        {/* <div className="mb-[40px] text-[#362C11]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -305,53 +392,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
-            <p className="mb-3">
-              2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
-              ways in which each of us speaks.
-            </p>
-            <p className="mb-3">
-              We often think of qualifications before words. We assume that to
-              say something meaningful, one must possess the right experiences,
-              knowledge, expertise, or status. Feedback, too, has become the
-              reproduction of an authority’s language, and we swallow our own
-              words with thoughts like, “Who am I to say this?” or “I don’t
-              really know that field.” Our words, then, no longer belong to us
-              but function by borrowing someone else’s language. How much are we
-              truly speaking from our own senses? In creation, do we lean first
-              on the standards and evaluations of others, rather than our own
-              language and system? Is a common space where anyone can speak and
-              give feedback freely still possible here?
-            </p>
-            <p className="font-medium">
-              Sogang Univ. Art&Technology Head of Department <br /> Yongsoon
-              Choi
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
-            <p className="mb-3">
-              2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
-              방식에 주목한다.
-            </p>
-            <p className="mb-3">
-              우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 위해선 그에
-              걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다.
-              피드백 역시 어느새 권위자의 언어를 재생산하는 일이 되었고, 우리는
-              ‘내가 뭐라고’, ‘난 저 분야를 잘 모르니까’ 라며 스스로 말을 삼킨다.
-              우리의 말은 어느새 우리의 것이 아닌 다른 누군가의 언어를 빌려
-              기능하게 된다. 우리는 얼만큼 우리 자신의 감각으로 말하고 있는가?
-              창작에 있어서 스스로의 언어와 체계보다, 다른 누군가의 기준과
-              평가에 먼저 기대고 있지는 않은가? 누구나 자유롭게 말하고 피드백할
-              수 있는 공동의 장은 여전히 이곳에서 가능한가?
-            </p>
-            <p className="font-medium">
-              서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
-            </p>
-          </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -377,7 +418,7 @@ const ThirdSection = ({ openModal }) => {
         </div>
 
         <div className="text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -397,7 +438,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
+          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -420,7 +461,7 @@ const ThirdSection = ({ openModal }) => {
               Choi
             </p>
           </div>
-        </div>
+        </div> */}
 
         <style>{`
           .congratulatory-text-divider::before,
@@ -456,11 +497,8 @@ const FourthSection = ({ openStaffSheet }) => {
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-[500] text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
-        {titleKr}{" "}
-        <span className="font-[500] italic">
-          {titleEn}
-        </span>
+      <div className="font-medium text-[15px] leading-regular mb-3 tracking-regular text-right">
+        {titleKr} <span className="font-medium italic">{titleEn}</span>
       </div>
       <div
         className={`${
@@ -472,7 +510,7 @@ const FourthSection = ({ openStaffSheet }) => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
+            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right"
           >
             {member}
           </p>
@@ -599,7 +637,7 @@ const FourthSection = ({ openStaffSheet }) => {
           <div className="bg-[#362C11] w-full absolute top-0 left-0 h-full"></div>
         </div>
 
-        <p className="font-['Monoplex KR'] italic font-normal min-[1000px]:text-sm text-sm leading-none tracking-normal text-[#362C11]">
+        <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11]">
           Opening Documentary
         </p>
       </div>
@@ -637,9 +675,9 @@ export default function About() {
         className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center cursor-zoom-out"
         onClick={closeModal}
       >
-        <div 
+        <div
           className="relative max-w-full max-h-full"
-          onClick={(e) => e.stopPropagation()} 
+          onClick={(e) => e.stopPropagation()}
         >
           <img
             src={selectedImage}
@@ -671,10 +709,10 @@ export default function About() {
       <Footer showSponsorship="true" />
 
       <FullScreenModal />
-      
-      <StaffSheetContainer 
-          isVisible={isStaffSheetOpen} 
-          onClose={closeStaffSheet} 
+
+      <StaffSheetContainer
+        isVisible={isStaffSheetOpen}
+        onClose={closeStaffSheet}
       />
     </div>
   );

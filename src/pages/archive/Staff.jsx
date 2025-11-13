@@ -8,7 +8,7 @@ export default function Staff({ onClose }) {
     "grid gap-2 grid-cols-5 max-desktop:grid-cols-4 max-tablet:grid-cols-3 max-mobile:grid-cols-2";
 
   return (
-    <div className="flex flex-col min-h-svh bg-mint-6">
+    <div className="flex flex-col min-h-dvh bg-mint-6">
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
@@ -17,9 +17,9 @@ export default function Staff({ onClose }) {
       <div className="py-10 min-desktop:px-[120px] min-tablet:px-10 max-tablet:px-5 flex flex-col gap-[80px]">
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-label text-[22px] font-heavy flex gap-3 max-[510px]:flex-col max-[510px]:gap-0">
             <p>크리에이티브 디렉터</p>
-            <p>Creative Director</p>
+            <p className="italic">Creative Director</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -35,9 +35,9 @@ export default function Staff({ onClose }) {
 
         {/* 전시팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex gap-3">
+          <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>전시팀</p>
-            <p>Exhibiton Team</p>
+            <p className="italic">Exhibiton Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -87,9 +87,9 @@ export default function Staff({ onClose }) {
 
         {/* 프로그램팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex gap-3">
+          <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>프로그램팀</p>
-            <p>Program Team</p>
+            <p className="italic">Program Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -122,9 +122,9 @@ export default function Staff({ onClose }) {
 
         {/* 대외협력팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex gap-3">
+          <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>대외협력팀</p>
-            <p>Business Team</p>
+            <p className="italic">Business Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -167,9 +167,9 @@ export default function Staff({ onClose }) {
 
         {/* 비주얼 디자인팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-0">
             <p>비주얼 디자인팀</p>
-            <p>Visual Design Team</p>
+            <p className="italic">Visual Design Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -219,9 +219,9 @@ export default function Staff({ onClose }) {
 
         {/* 인터렉션팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex gap-3">
+          <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>인터랙션팀</p>
-            <p>Interaction Team</p>
+            <p className="italic">Interaction Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -270,9 +270,9 @@ export default function Staff({ onClose }) {
 
         {/* 아카이브팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex gap-3">
+          <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>아카이브팀</p>
-            <p>Archive Team</p>
+            <p className="italic">Archive Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -313,9 +313,9 @@ export default function Staff({ onClose }) {
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
             <p>사운드 디자이너</p>
-            <p>Sound Designer</p>
+            <p className="italic">Sound Designer</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
@@ -326,14 +326,22 @@ export default function Staff({ onClose }) {
               objectPosClass="object-[50%_0px]"
               scaleClass="scale-110"
             />
+            <StaffProfile
+              name="윤기완"
+              nameEng="Giwan Yoon"
+              mail="davidmario519@gmail.com"
+              imagesrc={images.Giwan}
+              objectPosClass="object-[50%_0px]"
+              scaleClass="scale-110"
+            />
           </div>
         </section>
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
             <p>웹개발</p>
-            <p>Web Developer</p>
+            <p className="italic">Web Developer</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile

@@ -353,7 +353,7 @@ export default function MainVisual({
     return lottieItems.map((it) => {
       const Wrapper = ({ children }) => (
         <div
-          className="absolute -translate-x-1/2 -translate-y-1/2"
+          className="absolute -translate-x-1/2 -translate-y-1/2 group"
           style={{
             top: `${it.top}%`,
             left: `${it.left}%`,
@@ -414,7 +414,7 @@ export default function MainVisual({
                     }
               }
               bgClass="text-label-invert"
-              hoverBgClass="hover:text-label"
+              hoverBgClass="group-hover:text-label"
               textClass="italic text-[14px] text-label"
               hoverTextClass="group-hover:text-label-invert"
               ariaLabel={`${it.ariaLabel} (Marker)`}

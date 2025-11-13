@@ -1,24 +1,23 @@
-import { useEffect, useState } from "react";
-import MenuButton from "./MenuButton";
-import MenuPanel from "./MenuPanel";
-import ButtonLottie from "./ButtonLottie";
+import LogoBrown from "../../assets/LogoBrown.svg";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export default function MenuToggle() {
-  const [open, setOpen] = useState(false);
-  const [animating, setAnimating] = useState(false);
+export default function MenuPanel({ onClose }) {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    if (open) document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [open]);
-
-  const handleToggle = () => {
-    if (animating) return;
-    setAnimating(true);
-    setOpen((v) => !v);
+  const handleMenuClick = (targetPath) => {
+    if (location.pathname === targetPath) {
+      if (onClose) {
+        onClose();
+      }
+      return;
+    }
+    
+    navigate(targetPath);
+    
+    if (onClose) {
+      onClose();
+    }
   };
 
   const handleAnimationDone = () => setAnimating(false);
@@ -54,4 +53,3 @@ export default function MenuToggle() {
     </div>
   );
 }
-ㄴ
