@@ -8,14 +8,21 @@ export default function MoreInfo({
   title,
   titleeng,
   date,
-  text,
-  texteng,
   detailKo1,
   detailEng1,
   detailKo2,
   detailEng2,
+  detailKo3,
+  detailEng3,
+  detailKo4,
+  detailEng4,
   main,
   sub1,
+  sub2,
+  sub3,
+  sub4,
+  sub5,
+  madeby,
 }) {
   const getScrollContainer = (startEl) => {
     let el = startEl;
@@ -81,20 +88,22 @@ export default function MoreInfo({
               <p className="flex text-[15px] font-heavy leading-regular tracking-regular">
                 {date}
               </p>
-              <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
-                {text}
+              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+                {detailKo1}
               </p>
-              <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
-                {texteng}
+              <p className="whitespace-pre-line sflex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+                {detailEng1}
               </p>
             </div>
-            <div className="flex w-full aspect-[1.85] overflow-hidden">
-              {main ? (
-                <img src={main} alt={title} className="w-full object-cover" />
-              ) : (
-                "img"
-              )}
-            </div>
+            {main ? (
+              <div className="flex w-full aspect-[1.85] overflow-hidden">
+                <img
+                  src={main}
+                  alt={title}
+                  className="flex w-full aspect-[1.85] overflow-hidden"
+                />
+              </div>
+            ) : null}
             <div
               className=" 
                     group flex hover:bg-mint-6 
@@ -116,28 +125,72 @@ export default function MoreInfo({
                     after:pointer-events-none 
                 "
             />
-            <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
-              {detailKo1}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {detailKo2}
             </p>
-            <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
-              {detailEng1}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+              {detailEng2}
             </p>
-            <div className="flex w-full aspect-[1.85] overflow-hidden">
-              {sub1 ? (
+            {sub1 ? (
+              <div className="flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]">
                 <img
                   src={sub1}
                   alt={title}
                   className="flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]"
                 />
-              ) : (
-                "img"
-              )}
-            </div>
-            <p className="flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
-              {detailKo2}
+              </div>
+            ) : null}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {detailKo3}
             </p>
-            <p className="flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
-              {detailEng2}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+              {detailEng3}
+            </p>
+            {sub2 ? (
+              <div className="flex w-full aspect-[1.85] overflow-hidden">
+                <img
+                  src={sub2}
+                  alt={title}
+                  className="flex w-full aspect-[1.85] overflow-hidden"
+                />
+              </div>
+            ) : null}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {detailKo4}
+            </p>
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-regular tracking-regular whitespace-normal ">
+              {detailEng4}
+            </p>
+
+            {sub3 ? (
+              <div className="flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]">
+                <img
+                  src={sub3}
+                  alt={title}
+                  className="flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]"
+                />
+              </div>
+            ) : null}
+            {sub4 ? (
+              <div className="flex w-full aspect-[1.85] overflow-hidden">
+                <img
+                  src={sub4}
+                  alt={title}
+                  className="flex w-full aspect-[1.85] overflow-hidden"
+                />
+              </div>
+            ) : null}
+            {sub5 ? (
+              <div className="empty:hidden flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]">
+                <img
+                  src={sub5}
+                  alt={title}
+                  className="empty:hidden flex w-full aspect-[1.85] overflow-hidden rounded-[1000px]"
+                />
+              </div>
+            ) : null}
+            <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight whitespace-normal ">
+              {madeby}
             </p>
           </section>
         </div>

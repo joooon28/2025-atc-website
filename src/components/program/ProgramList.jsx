@@ -84,7 +84,7 @@ export default function ProgramList({
           <div className="font-regular text-label flex flex-col gap-10 cursor-pointer select-none">
             <div
               className={[
-                "flex text-[20px]",
+                "flex text-[20px] max-mobile:text-[16px]",
                 isNumberOne
                   ? "flex-col"
                   : isNumberTwo

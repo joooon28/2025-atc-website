@@ -30,11 +30,14 @@ const items = Object.keys(programs).map((key) => {
     detailEng1: meta.detailEng1,
     detailKo2: meta.detailKo2,
     detailEng2: meta.detailEng2,
+    detailKo3: meta.detailKo3,
+    detailEng3: meta.detailEng3,
     rounded: meta.rounded,
     location: meta.location,
     audience: meta.audience,
     main: img.main,
     sub1: img.sub1,
+    sub2: img.sub2,
   };
 });
 
@@ -250,11 +253,11 @@ export default function Program() {
         </div>
       </div>
 
-      <section className="text-label grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
-        <div className="max-[768px]:order-2 flex flex-col gap-[8.5px]">
+      <section className="text-label grid grid-cols-1 min-tablet:grid-cols-2 gap-10 p-10 max-tablet:p-5">
+        <div className="max-tablet:order-2 flex flex-col gap-[8.5px]">
           <div className="font-strong text-[24px] flex gap-3">
-            <p>프로그램</p>
-            <p className="italic">Program</p>
+            <p className="max-tablet:hidden">프로그램</p>
+            <p className="italic max-tablet:hidden">Program</p>
           </div>
 
           <section>
@@ -277,6 +280,7 @@ export default function Program() {
                 rounded={it.rounded}
                 main={it.main}
                 sub1={it.sub1}
+                sub2={it.sub2}
                 location={it.location}
                 audience={it.audience}
                 onMoreInfo={openSheet}

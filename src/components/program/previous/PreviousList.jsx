@@ -5,14 +5,23 @@ export default function PreviousList({
   date,
   main,
   sub1,
+  sub2,
+  sub3,
+  sub4,
+  sub5,
   text,
   texteng,
   detailKo1,
   detailEng1,
   detailKo2,
   detailEng2,
+  detailKo3,
+  detailEng3,
+  detailKo4,
+  detailEng4,
   onMoreInfo,
   rounded,
+  madeby,
 }) {
   const isNumberTwo = String(number) === "2";
   const isNumberThree = String(number) === "3";
@@ -40,8 +49,17 @@ export default function PreviousList({
           detailEng1,
           detailKo2,
           detailEng2,
+          detailKo3,
+          detailEng3,
+          detailKo4,
+          detailEng4,
           main,
           sub1,
+          sub2,
+          sub3,
+          sub4,
+          sub5,
+          madeby,
         })
       }
     >
@@ -87,7 +105,7 @@ export default function PreviousList({
           </p>
         </div>
         <p className="font-regular flex text-[14px]">{date}</p>
-        <p className="leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">
+        <p className="whitespace-pre-line leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">
           {text}
         </p>
         <button
