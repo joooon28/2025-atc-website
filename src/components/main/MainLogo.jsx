@@ -2,7 +2,7 @@ import Logo from "../../assets/Logo.svg";
 
 export default function MainLogo({ onClick }) {
   return (
-    <div className="flex shrink-0 ustify-center items-center rounded-[60px] bg-brown p-[12px] w-[54.15764px]h-[54px]">
+    <div className="cursor-pointer flex shrink-0 ustify-center items-center rounded-[60px] bg-brown p-[12px] h-[45px]">
       <img
         svg={Logo}
         onClick={onClick}

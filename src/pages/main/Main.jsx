@@ -52,6 +52,10 @@ export default function Main() {
 
   const onPointerDown = useCallback(
     (e) => {
+      const t = e.target;
+      if (t.closest('button, [role="button"], a, input, textarea, select')) {
+        return;
+      }
       // 기본 스크롤/더블탭 확대 방지(모바일)
       e.preventDefault();
       // 왼쪽 버튼(펜/터치 포함)만 시작
