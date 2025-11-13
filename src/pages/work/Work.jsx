@@ -297,10 +297,10 @@ const MakerRow = React.memo(({ maker }) => {
     }
     
     return (
-        <div className="Maker-Row flex flex-col min-[376px]:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
+        <div className="Maker-Row flex flex-col min-mobile:flex-row py-6 border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
         after:content-[''] after:absolute after:bottom-[-3px] after:right-0 after:w-[5px] after:h-[5px] after:bg-label after:rounded-full after:translate-x-1/2">
             
-            <div className="Maker-Info flex items-center gap-3 flex-1 w-full min-[376px]:w-1/2 font-[450] text-base leading-none text-left pl-[20px]">
+            <div className="Maker-Info flex items-center gap-3 flex-1 w-full min-mobile:w-1/2 font-[450] text-base leading-none text-left pl-[20px]">
                 <div className="Maker-Name cursor-default">
                     {formatArtistName(maker.name, false)}
                 </div>
@@ -315,7 +315,7 @@ const MakerRow = React.memo(({ maker }) => {
                 ))}
             </div>
 
-            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full min-[376px]:w-1/2 mt-10 min-[376px]:mt-0 min-[376px]:pl-5 pl-[20px]">
+            <div className="Maker-Works-List flex flex-col justify-start flex-1 w-full min-mobile:w-1/2 mt-10 min-mobile:mt-0 min-mobile:pl-5 pl-[20px]">
                 {maker.works.map((art, index) => (
                     <MakerWorkItem key={art.id} art={art} index={index} />
                 ))}
@@ -447,16 +447,16 @@ export default function Work() {
     return (
         <div style={{backgroundColor: '#F8F8F7'}} className="text-label min-h-screen font-['Monoplex KR']">
 
-            <div className="max-[701px]:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
+            <div className="max-tablet:hidden py-[40px] fixed top-0 left-0 right-0 z-[999] pt-10">
                 <Header />
             </div>
-            <div className="p-5 fixed top-0 left-0 right-0 z-[999] min-[701px]:hidden">
+            <div className="p-5 fixed top-0 left-0 right-0 z-[999] min-tablet:hidden">
                 <div className="relative">
                     <MenuToggle />
                 </div>
             </div>
 
-            <main className="pt-[120px] min-[701px]:pt-[160px]">
+            <main className="pt-[120px] min-tablet:pt-[160px]">
                 <div className="mx-5 lg:mx-10">
 
                     <div className="Work-Detail mb-20">
@@ -484,13 +484,13 @@ export default function Work() {
 
                     <div className="WorkList-Button clear-both overflow-hidden mb-6 relative z-50">
 
-                        <div className="float-left flex gap-8 max-[700px]:gap-[20px]">
+                        <div className="float-left flex gap-8 max-tablet:gap-[20px]">
                             <button
                                 id="Randomize-btn"
                                 onClick={handleRandomize}
                                 className="border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                             >
-                                <span className="hidden min-[701px]:inline">Randomize</span>
+                                <span className="hidden min-tablet:inline">Randomize</span>
                                 <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
                             </button>
                             <button
@@ -502,18 +502,18 @@ export default function Work() {
                                 }
                                 disabled={currentView === 'makers' && makersList.length === 0}
                             >
-                                <span className="hidden min-[701px]:inline">{sortButtonText}</span>
+                                <span className="hidden min-tablet:inline">{sortButtonText}</span>
                                 <img src="/lottie/WorkIcon/A-Z.svg" alt="정렬 버튼" className="w-[27px] h-[27px]" />
                             </button>
                         </div>
 
-                        <div className="float-right flex gap-8 max-[700px]:gap-[20px]">
+                        <div className="float-right flex gap-8 max-tablet:gap-[20px]">
                             <button
                                 id="Gallery-btn"
                                 onClick={() => handleSwitchView('gallery')}
                                 className={`border-none bg-transparent font-[500] italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                             >
-                                <span className="hidden min-[701px]:inline">Gallery</span>
+                                <span className="hidden min-tablet:inline">Gallery</span>
                                 <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
                             </button>
                             <button
@@ -521,7 +521,7 @@ export default function Work() {
                                 onClick={() => handleSwitchView('makers')}
                                 className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                             >
-                                <span className="hidden min-[701px]:inline">Makers</span>
+                                <span className="hidden min-tablet:inline">Makers</span>
                                 <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
                             </button>
                         </div>

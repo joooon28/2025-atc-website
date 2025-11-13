@@ -269,7 +269,7 @@ export const allArtworkData = {
         artistKr: "맷돌 스튜디오",
         artistEn: "Maetdol Studio",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954516/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036726/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ug0knc.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -510,7 +510,7 @@ export const allArtworkData = {
         artistKr: "투진스",
         artistEn: "2genes",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036732/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_jjjxkm.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -648,7 +648,7 @@ export const allArtworkData = {
         artistKr: "비상명(非常名)",
         artistEn: "Project Kṣaṇa",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954528/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i.jpg",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036738/%EC%B0%B0%EB%B0%94%EB%8B%88_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_bs46pa.jpg",
         videoSrc: "",
         commentary: {
             kr: {
@@ -954,7 +954,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "ACTA",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036423/D31_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_dngzxj.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1176,7 +1176,7 @@ export const allArtworkData = {
         artistKr: "디지털 기억 재단",
         artistEn: "Digital Memory Foundation",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036677/RIP_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_nz55ph.png",
         videoSrc: "https://vimeo.com/1092433449?fl=pl&fe=sh",
         commentary: {
             kr: {
@@ -1288,7 +1288,7 @@ export const allArtworkData = {
         artistKr: "",
         artistEn: "Neuverse Lab",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036757/Neuverse_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mpzs1l.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -1436,7 +1436,7 @@ export const allArtworkData = {
         artistKr: "커비",
         artistEn: "KIRBY",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
-        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762952762/GlassLab_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_tk2cuc.png",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036748/GLASSLAB_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s5vbdt.png",
         videoSrc: "",
         commentary: {
             kr: {
