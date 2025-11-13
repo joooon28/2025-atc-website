@@ -541,7 +541,7 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="비주얼 디자인팀"
           titleEn="Visual Design Team"
           members={[
-            "심유린 Yurim Sim \u00A0\u00A0 김민서 Minseo Kim",
+            "심유림 Yurim Sim \u00A0\u00A0 김민서 Minseo Kim",
             "김성은 Seongeun Kim \u00A0\u00A0 김혜림 Hyerim Kim",
             "이선명 Sunmyeong Lee",
           ]}
