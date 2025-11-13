@@ -464,7 +464,7 @@ export default function WorkDetail() {
               </div>
 
               <div
-                className="Go-To-Link flex gap-10 flex-wrap"
+                className="Go-To-Link flex gap-x-[20px] gap-y-3 flex-wrap"
                 id="Go-To-Link-Container"
               >
                 {displayLinks.map((link, index) => (
