@@ -611,8 +611,8 @@ export const allArtworkData = {
         },
         links: [
             { text: "Instagram", url: "https://www.instagram.com/grdr_awi2025/?igsh=MWNvNW14ZXczdjh5#" },
-            { text: "Website (Mobile)", url: "https://things-we-must-rememer-git-main-choiys-projects.vercel.app/" },
-            { text: "Website (PC)", url: "https://grdr2025.vercel.app/" },
+            { text: "Website(Mobile)", url: "https://things-we-must-rememer-git-main-choiys-projects.vercel.app/" },
+            { text: "Website(PC)", url: "https://grdr2025.vercel.app/" },
             { text: "Youtube", url: "https://youtu.be/z8_UcH-3Y6Y?si=rQRydu3gY-8GOos-" }
         ],
         artistsDetail: [

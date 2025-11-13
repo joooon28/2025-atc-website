@@ -120,7 +120,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none text-center mb-10 text-[#362C11]">
           전시 개요
         </h2>
-        <div className="font-normal text-[15px] leading-large tracking-tight text-[#362C11]">
+        <div className="font-regular text-[15px] leading-large tracking-tight text-[#362C11]">
           <p className="mb-3">
             《울퉁불퉁하게 말아리》는 각자가 가진 고유한 말들의 방식에 주목한다.
           </p>
@@ -160,7 +160,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
           Overview
         </h2>
-        <div className="font-normal text-[15px] leading-regular tracking-[-0.5%] text-[#362C11]">
+        <div className="font-regular text-[15px] leading-regular tracking-regular text-[#362C11]">
           <p className="mb-3">
             2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
             ways in which each of us speaks.
@@ -242,7 +242,7 @@ const ThirdSection = ({ openModal }) => {
         </h2>
 
         <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
+          <div className="font-regular text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               서강대학교 Art & Technology 학과에서 《울퉁불퉁하게 말아리》를
               주제로 제14회 Art & Technology Conference (ATC) 2025를 개최합니다.
@@ -278,7 +278,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-regular text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               Sogang University's Department of Art & Technology is pleased to
               host the 14th Art & Technology Conference (ATC) 2025, under the
