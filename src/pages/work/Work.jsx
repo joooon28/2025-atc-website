@@ -587,7 +587,7 @@ export default function Work() {
                       state: { openPreviousId: "program4" },
                     })
                   }
-                  className="underline cursor-pointer"
+                  className="underline cursor-pointer hover:opacity-70"
                 >
                   다시 소개하기 워크숍
                 </span>
@@ -607,7 +607,7 @@ export default function Work() {
                       state: { openPreviousId: "program4" },
                     })
                   }
-                  className="underline cursor-pointer"
+                  className="underline cursor-pointer hover:opacity-70"
                 >
                   the workshop
                 </span>
@@ -616,7 +616,7 @@ export default function Work() {
               <a
                 href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view"
                 target="_blank"
-                className="inline-flex gap-[4px] items-center w-auto font-regular text-base leading-regular tracking-tight underline decoration-solid decoration-1 underline-offset-[1px] relative z-50"
+                className="inline-flex gap-[4px] items-center w-auto font-regular text-base leading-regular tracking-tight underline decoration-solid decoration-1 underline-offset-[1px] relative z-50 hover:opacity-70"
               >
                 전시 배치도 Exhibition Map
                 <img
