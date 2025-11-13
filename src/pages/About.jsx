@@ -53,7 +53,7 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-[500] text-[#E9F1E9] text-[24px] leading-[120%] tracking-normal z-10 
+          className="font-[500] text-[#B3C5D8] text-[24px] leading-[120%] tracking-normal z-10 
           min-tablet:mix-blend-difference 
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 
           min-tablet:left-[40px] 
@@ -63,7 +63,7 @@ const FirstSection = () => {
         </h2>
 
         <h2
-          className="font-[500] text-[24px] leading-[120%] tracking-normal text-[#E9F1E9] z-10 
+          className="font-[500] text-[24px] leading-[120%] tracking-normal text-[#B3C5D8] z-10 
           min-tablet:mix-blend-difference 
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 min-tablet:text-right
           min-tablet:right-[40px] 
