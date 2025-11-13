@@ -9,22 +9,15 @@ import Documentary from "./pages/archive/documentary/Documentary";
 import Gallery from "./pages/archive/galllery/Gallery";
 import Map from "./pages/Map";
 import Made from "./pages/Made"
-import Playground from "./pages/Playground";
 import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
 import Onboarding from "./pages/Onboarding";
-import Splash from "./pages/Splash"; 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Onboarding />,
-  },
-  
-  {
-    path: "/splash",
-    element: <Splash />,
   },
   
   {
@@ -79,10 +72,6 @@ const router = createBrowserRouter([
   {
     path: "/map",
     element: <Map />,
-  },
-  {
-    path: "/playground",
-    element: <Playground />,
   },
   {
     path: "*",
