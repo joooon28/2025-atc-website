@@ -495,7 +495,7 @@ const FourthSection = ({ openStaffSheet }) => {
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-medium text-[15px] max-[350px]:text-[13px] leading-regular mb-3 tracking-regular text-right">
+      <div className="font-medium text-[15px] max-[355px]:text-[13px] leading-regular mb-3 tracking-regular text-right">
         {titleKr} <span className="font-medium italic">{titleEn}</span>
       </div>
       <div
@@ -508,7 +508,7 @@ const FourthSection = ({ openStaffSheet }) => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right max-[350px]:text-[13px]"
+            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right max-[355px]:text-[13px]"
           >
             {member}
           </p>
