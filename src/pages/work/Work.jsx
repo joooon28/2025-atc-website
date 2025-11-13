@@ -633,7 +633,7 @@ export default function Work() {
               <button
                 id="Randomize-btn"
                 onClick={handleRandomize}
-                className="border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                className="border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer"
               >
                 <span className="hidden min-tablet:inline">Randomize</span>
                 <img
@@ -645,7 +645,7 @@ export default function Work() {
               <button
                 id="Sort-btn"
                 onClick={handleSort}
-                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer 
                                     ${
                                       currentView === "makers" &&
                                       makersList.length > 0
@@ -672,7 +672,7 @@ export default function Work() {
               <button
                 id="Gallery-btn"
                 onClick={() => handleSwitchView("gallery")}
-                className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${
+                className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer transition-opacity ${
                   currentView === "gallery" ? "opacity-100" : "opacity-50"
                 }`}
               >
@@ -686,7 +686,7 @@ export default function Work() {
               <button
                 id="Makers-btn"
                 onClick={() => handleSwitchView("makers")}
-                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${
+                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer transition-opacity ${
                   currentView === "makers" ? "opacity-100" : "opacity-50"
                 }`}
               >
