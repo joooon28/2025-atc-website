@@ -587,7 +587,7 @@ export default function Work() {
                       state: { openPreviousId: "program4" },
                     })
                   }
-                  className="underline cursor-pointer"
+                  className="underline cursor-pointer hover:opacity-70"
                 >
                   다시 소개하기 워크숍
                 </span>
@@ -607,7 +607,7 @@ export default function Work() {
                       state: { openPreviousId: "program4" },
                     })
                   }
-                  className="underline cursor-pointer"
+                  className="underline cursor-pointer hover:opacity-70"
                 >
                   the workshop
                 </span>
@@ -616,7 +616,7 @@ export default function Work() {
               <a
                 href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view"
                 target="_blank"
-                className="inline-flex gap-[4px] items-center w-auto font-regular text-base leading-regular tracking-tight underline decoration-solid decoration-1 underline-offset-[1px] relative z-50"
+                className="inline-flex gap-[4px] items-center w-auto font-regular text-base leading-regular tracking-tight underline decoration-solid decoration-1 underline-offset-[1px] relative z-50 hover:opacity-70"
               >
                 전시 배치도 Exhibition Map
                 <img
@@ -633,7 +633,7 @@ export default function Work() {
               <button
                 id="Randomize-btn"
                 onClick={handleRandomize}
-                className="border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                className="border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer"
               >
                 <span className="hidden min-tablet:inline">Randomize</span>
                 <img
@@ -645,7 +645,7 @@ export default function Work() {
               <button
                 id="Sort-btn"
                 onClick={handleSort}
-                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer 
                                     ${
                                       currentView === "makers" &&
                                       makersList.length > 0
@@ -672,7 +672,7 @@ export default function Work() {
               <button
                 id="Gallery-btn"
                 onClick={() => handleSwitchView("gallery")}
-                className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${
+                className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer transition-opacity ${
                   currentView === "gallery" ? "opacity-100" : "opacity-50"
                 }`}
               >
@@ -686,7 +686,7 @@ export default function Work() {
               <button
                 id="Makers-btn"
                 onClick={() => handleSwitchView("makers")}
-                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${
+                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-2.5 cursor-pointer transition-opacity ${
                   currentView === "makers" ? "opacity-100" : "opacity-50"
                 }`}
               >
