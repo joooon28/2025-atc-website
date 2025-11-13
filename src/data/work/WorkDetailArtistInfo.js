@@ -749,7 +749,7 @@ export const allArtworkData = {
         artistKr: "서탭입니다",
         artistEn: "We're steff",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan.jpg",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763077320/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ph7qha.png",
         videoSrc: "",
         commentary: {
             kr: {
@@ -915,7 +915,7 @@ export const allArtworkData = {
         artistKr: "라스트 댄스",
         artistEn: "Last Dance",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762965841/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy.png",
-        imageDetailSrc: "https://placehold.co/800x2000",
+        imageDetailSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763077428/OMI_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_yv9a1v.png",
         videoSrc: "",
         commentary: {
             kr: {

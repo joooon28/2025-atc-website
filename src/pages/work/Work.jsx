@@ -186,15 +186,75 @@ const formatTitle = (title) => {
 const formatArtistName = (artistName, isGallery = false) => {
   if (typeof artistName !== "string" || artistName.trim().length === 0) {
     return (
-      <span className="Makers-Artist-Kr font-normal text-[14px]">N/A</span>
+      <span className="Makers-Artist-Kr font-regular text-[14px]">N/A</span>
     );
   }
 
   const trimmedName = artistName.trim();
-  const parts = trimmedName.split(/([가-힣]+)/).filter((p) => p.length > 0);
-  const baseFontWeight = isGallery ? "font-normal" : "font-normal";
+  const baseFontWeight = isGallery ? "font-regular" : "font-regular";
 
   const isMakersViewAndOnlyEnglish = !isGallery && !/[가-힣]/.test(trimmedName);
+
+  if (isGallery && trimmedName.length >= 25) {
+    let finalKorText = "";
+    let finalEngText = "";
+
+    const hasKorean = /[가-힣]/.test(trimmedName);
+    
+    if (/[A-Za-z]/.test(trimmedName)) {
+      const matches = trimmedName.match(
+        /^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/
+      );
+
+      if (matches && matches.length === 3) {
+        finalKorText = matches[1].trim();
+        finalEngText = matches[2].trim();
+      } else {
+        const firstLatinIndex = trimmedName.search(/[A-Za-z]/);
+        if (firstLatinIndex !== -1) {
+          finalKorText = trimmedName.substring(0, firstLatinIndex).trim();
+          finalEngText = trimmedName.substring(firstLatinIndex).trim();
+        }
+      }
+
+      if (!finalKorText && !finalEngText) {
+          finalKorText = hasKorean ? trimmedName : "";
+          finalEngText = hasKorean ? "" : trimmedName;
+      } else if (!finalKorText && hasKorean && trimmedName.length > 0) {
+          finalKorText = trimmedName;
+          finalEngText = "";
+      } else if (!finalEngText && !hasKorean && trimmedName.length > 0) {
+          finalKorText = "";
+          finalEngText = trimmedName;
+      }
+      
+    } else {
+      finalKorText = trimmedName;
+      finalEngText = "";
+    }
+    
+    return (
+      <>
+        {finalKorText && (
+          <span className={`Makers-Artist-Kr ${baseFontWeight} text-[14px] block mb-[-15px]`}>
+            {finalKorText}
+          </span>
+        )}
+
+        {finalKorText && finalEngText && <br />}
+        
+        {finalEngText && (
+          <span
+            className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}
+          >
+            {finalEngText}
+          </span>
+        )}
+      </>
+    );
+  }
+
+  const parts = trimmedName.split(/([가-힣]+)/).filter((p) => p.length > 0);
 
   return parts.map((part, index) => {
     if (part.trim().length === 0)
@@ -205,7 +265,7 @@ const formatArtistName = (artistName, isGallery = false) => {
         <span
           key={index}
           className={`Makers-Artist-Kr ${
-            isGallery ? "font-normal" : "font-[500]"
+            isGallery ? "font-regular" : "font-[500]"
           } text-[14px]`}
         >
           {part}
