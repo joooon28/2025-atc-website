@@ -12,6 +12,7 @@ export default function TabBar({ active, onChange }) {
         tabId="tab-opening"
         panelId="panel-opening"
         onClick={() => onChange("opening")}
+        className="cursor-pointer"
       />
       <TabButton
         label="Final"
@@ -19,6 +20,7 @@ export default function TabBar({ active, onChange }) {
         tabId="tab-final"
         panelId="panel-final"
         onClick={() => onChange("final")}
+        className="cursor-pointer"
       />
     </div>
   );

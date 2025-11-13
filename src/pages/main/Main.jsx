@@ -310,16 +310,21 @@ export default function Main() {
       </p>
 
       {popupContent && (
-        <div className="z-40 fixed bottom-10 right-10">
-          <Popup
-            animationSrc={popupContent.animationSrc}
-            title={popupContent.title}
-            description={popupContent.description}
-            onClose={onClose}
-            rotate={popupContent.rotate ?? 0}
-            size={popupContent.size ?? 140}
-            onGo={popupContent.onGo}
-          />
+        <div
+          className="z-40 fixed bottom-10 right-10
+                  max-mobile:inset-x-5 max-mobile:bottom-5"
+        >
+          <div className="max-mobile:w-full">
+            <Popup
+              animationSrc={popupContent.animationSrc}
+              title={popupContent.title}
+              description={popupContent.description}
+              onClose={onClose}
+              rotate={popupContent.rotate ?? 0}
+              size={popupContent.size ?? 140}
+              onGo={popupContent.onGo}
+            />
+          </div>
         </div>
       )}
     </main>
