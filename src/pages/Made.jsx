@@ -74,7 +74,7 @@ const MadeBox = ({
         <img
           src={images[currentImageIndex]}
           alt={`${title} 이미지 ${currentImageIndex + 1}`}
-          className="w-full h-full object-contain transition-opacity duration-1000"
+          className="w-full h-full object-contain transition-opacity duration-1000 bg-[#E9F1E9]"
         />
       </div>
 
@@ -106,19 +106,20 @@ const MadeBox = ({
           {en}
         </p>
 
-        <p
-          id="Made-Price-En"
-          className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
-        >
-          {priceEn}
-        </p>
-
-        <p
-          id="Made-Location"
-          className="font-normal text-[15px] leading-[180%] tracking-[-10%] mt-[5px]"
-        >
-          {location}
-        </p>
+        <div className="flex justify-between items-center mt-[5px]">
+          <p
+            id="Made-Location"
+            className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
+          >
+            {location}
+          </p>
+          <p
+            id="Made-Price-En"
+            className="font-normal text-[15px] leading-[145%] tracking-[-0.5%]"
+          >
+            {priceEn}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -126,7 +127,7 @@ const MadeBox = ({
 
 const Made = () => {
   return (
-    <div className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#E9F1E9]">
+    <div className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#F8F8F7]">
       <div
         className="max-tablet:hidden fixed left-0 w-full z-[50]"
         style={{
