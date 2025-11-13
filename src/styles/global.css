@@ -47,7 +47,7 @@
     Consolas, "Liberation Mono", monospace;
 
   --breakpoint-mobile: 440px;
-  --breakpoint-tablet: 701px;
+  --breakpoint-tablet: 1001px;
   --breakpoint-desktop: 1440px;
 
   --font-weight-small: 350;
