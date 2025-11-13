@@ -147,11 +147,11 @@ const Made = () => {
         style={{
           paddingTop: `${HEADER_HEIGHT + HEADER_TOP_OFFSET}px`,
         }}
-        className="max-[700px]:pt-0"
+        className="max-tablet:pt-0"
       >
         <section
           className="w-full py-10 px-5 min-tablet:px-10 flex flex-col gap-5 min-tablet:gap-[40px] box-border
-            max-[700px]:pt-[10px]
+            max-tablet:pt-[10px]
         "
         >
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10 pt-[20px]">
