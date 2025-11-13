@@ -495,7 +495,7 @@ const FourthSection = ({ openStaffSheet }) => {
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-medium text-[15px] leading-regular mb-3 tracking-regular text-right">
+      <div className="font-medium text-[15px] max-mobile:text-[13px] leading-regular mb-3 tracking-regular text-right">
         {titleKr} <span className="font-medium italic">{titleEn}</span>
       </div>
       <div
@@ -508,7 +508,7 @@ const FourthSection = ({ openStaffSheet }) => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right"
+            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right max-mobile:text-[12px]"
           >
             {member}
           </p>
@@ -552,8 +552,8 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="전시팀"
           titleEn="Exhibition Team"
           members={[
-            "김현진 Hyeonjin Kim \u00A0\u00A0 신서윤 Seoyun Shin",
-            "윤세은 Seeun Yoon \u00A0\u00A0 이윤선 Yoonseon Lee",
+            "김현진 Hyeonjin Kim \u00A0 신서윤 Seoyun Shin",
+            "윤세은 Seeun Yoon \u00A0 이윤선 Yoonseon Lee",
             "황나금 Naguem Hwang",
           ]}
         />
@@ -561,7 +561,7 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="프로그램팀"
           titleEn="Program Team"
           members={[
-            "오제우 Jewoo Oh \u00A0\u00A0 김예찬 Yechan Kim",
+            "오제우 Jewoo Oh \u00A0 김예찬 Yechan Kim",
             "우서진 Seojin Woo",
           ]}
         />
@@ -569,16 +569,16 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="대외협력팀"
           titleEn="Public Relations Team"
           members={[
-            "김서영 Seoyoung Kim \u00A0\u00A0 문금미 Geummi Moon",
-            "유가형 Kahyung Yoo \u00A0\u00A0 장채원 Chaewon Jang",
+            "김서영 Seoyoung Kim \u00A0 문금미 Geummi Moon",
+            "유가형 Kahyung Yoo \u00A0 장채원 Chaewon Jang",
           ]}
         />
         <CreditList
           titleKr="비주얼 디자인팀"
           titleEn="Visual Design Team"
           members={[
-            "심유림 Yurim Sim \u00A0\u00A0 김민서 Minseo Kim",
-            "김성은 Seongeun Kim \u00A0\u00A0 김혜림 Hyerim Kim",
+            "심유림 Yurim Sim \u00A0 김민서 Minseo Kim",
+            "김성은 Seongeun Kim \u00A0 김혜림 Hyerim Kim",
             "이선명 Sunmyeong Lee",
           ]}
         />
@@ -586,8 +586,8 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="인터랙션팀"
           titleEn="Interaction Team"
           members={[
-            "김인규 Ingyu Kim \u00A0\u00A0 설희윤 Heeyun Sul",
-            "신채원 Chaewon Shin \u00A0\u00A0 윤기완 Giwan Yoon",
+            "김인규 Ingyu Kim \u00A0 설희윤 Heeyun Sul",
+            "신채원 Chaewon Shin \u00A0 윤기완 Giwan Yoon",
             "이다은 Daeun Lee",
           ]}
         />
@@ -595,8 +595,8 @@ const FourthSection = ({ openStaffSheet }) => {
           titleKr="아카이브팀"
           titleEn="Archieve Team"
           members={[
-            "강정모 Jeongmo Kang \u00A0\u00A0 김태희 Taehee Kim",
-            "문예담 Yedam Moon \u00A0\u00A0 박민준 Minjoon Park",
+            "강정모 Jeongmo Kang \u00A0 김태희 Taehee Kim",
+            "문예담 Yedam Moon \u00A0 박민준 Minjoon Park",
           ]}
         />
         <CreditList
@@ -607,7 +607,7 @@ const FourthSection = ({ openStaffSheet }) => {
         <CreditList
           titleKr="웹 개발팀"
           titleEn="Web Develop Team"
-          members={["김준수 Junsu Kim \u00A0\u00A0 김서영 Seoyoung Kim"]}
+          members={["김준수 Junsu Kim \u00A0 김서영 Seoyoung Kim"]}
         />
 
         <div className="min-[1000px]:absolute min-[1000px]:bottom-0 min-[1000px]:right-0 max-[999px]:static max-[999px]:mt-8 text-right">
