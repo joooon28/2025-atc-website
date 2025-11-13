@@ -463,7 +463,10 @@ export default function WorkDetail() {
                 {renderCommentaryBody()}
               </div>
 
-              <div className="Go-To-Link flex gap-5" id="Go-To-Link-Container">
+              <div
+                className="Go-To-Link flex gap-x-[20px] gap-y-3 flex-wrap"
+                id="Go-To-Link-Container"
+              >
                 {displayLinks.map((link, index) => (
                   <a
                     key={index}
