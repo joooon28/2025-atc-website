@@ -20,36 +20,48 @@ export default function MenuPanel({ onClose }) {
     }
   };
 
-  const handleAnimationDone = () => setAnimating(false);
-
   return (
-    <div className="relative">
-      <div
-        className={[
-          "transition-opacity duration-500 ease-in-out",
-          open ? "opacity-0 pointer-events-none" : "opacity-100",
-        ].join(" ")}
-        aria-hidden={open}
-      >
-        <MenuButton />
-      </div>
-      <div
-        className={[
-          "absolute inset-x-0 top-0 z-[50]",
-          "transition-opacity duration-500 ease-in-out",
-          open ? "opacity-100" : "opacity-0 pointer-events-none",
-        ].join(" ")}
-        aria-hidden={!open}
-      >
-        <MenuPanel />
-      </div>
-      <div className="absolute top-0 right-0 z-[60]">
-        <ButtonLottie
-          open={open}
-          onToggle={handleToggle}
-          onAnimationDone={handleAnimationDone}
-        />
-      </div>
+    <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-5/90 p-[12px]">
+      <img
+        src={LogoBrown}
+        alt="LogoBrown"
+        className="w-[30.158px] h-[21px] cursor-pointer"
+        onClick={() => handleMenuClick("/main")}
+      />
+      <nav>
+        <ul className="italic flex flex-col items-center gap-[16px]">
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/about")}
+          >
+            About
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/work")}
+          >
+            Work
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/program")}
+          >
+            Program
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/made")}
+          >
+            Made
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/archive")}
+          >
+            Archive
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
