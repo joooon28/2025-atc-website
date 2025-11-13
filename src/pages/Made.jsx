@@ -230,10 +230,11 @@ const Made = () => {
 
             <MadeBox
               images={[
-                ""
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763017947/25E1_2584_258C_25E1_2585_25A2_25E1_2586_25B72_fgulo3.png",
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763017948/E1_84_8C_E1_85_A2_E1_86_B71_lbeccd.png"
               ]}
               title="울퉁불퉁한 맛 잼 (35g)"
-              titleEn="lumpy bumpy Jam (35g)"
+              titleEn="LumpyBumpy Jam (35g)"
               kr="2025 ATC의 울퉁불퉁함은 과연 어떤 맛이 날까요? 잼팟과 함께 만든 잼을 통해 직접 맛보고 느껴보세요!"
               en="What flavor would 2025 ATC have? Taste and feel it through the jam crafted with JAMPOT!"
               location="콜라보 부스"
