@@ -464,10 +464,10 @@ export default function Work() {
                         <p id="Work-Title" className="font-medium text-[40px] leading-[100%] mb-10">Work</p>
 
                         <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
-                            <p className="w-full xl:w-[39.5%] font-noraml text-[15px] leading-[180%] tracking-[-10%]">
+                            <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-large tracking-tight">
                                 각자의 고유한 감각에서 출발한 말하기는 울퉁불퉁한 궤적을 따라 전시 공간으로 이어집니다. 미디어 아트, 게임, 웹, 애니메이션, 퍼포먼스 등 형식에 제한을 두지 않은 실험적 시도들을 선보입니다. &lt;다시 소개하기&gt; 워크숍을 거치며 함께 만들어진 소개 텍스트와 함께 웹사이트에서도 전시작들을 만나보세요!
                             </p>
-                            <p className="w-full xl:w-[39.5%] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
+                            <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-regular tracking-regular">
                                 Each maker’s unique sensibility unfolds into the exhibition space,
                                 tracing an uneven trajectory of expression.
                                 The exhibition presents experimental works unrestricted by form—ranging
@@ -475,9 +475,9 @@ export default function Work() {
                                 Explore the works on our website, accompanied by the collaboratively written
                                 introductions created through the workshop!
                             </p>
-                            <a href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view" target='_blank' className="inline-flex items-center w-auto font-normal text-base leading-[145%] tracking-[-0.5%] underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
-                                전시 배치도 Exhibiton Map
-                                <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle mb-[3px]" />
+                            <a href="https://drive.google.com/file/d/1NKNTD1WekwNaXNd5H6l2rRXtcFXj4vyU/view" target='_blank' className="inline-flex gap-[4px] items-center w-auto font-regular text-base leading-regular tracking-tight underline decoration-solid decoration-1 underline-offset-[1px] relative z-50">
+                                전시 배치도 Exhibition Map
+                                <img src="/lottie/WorkIcon/go_to.svg" alt="바로가기 버튼" className="w-[11px] h-[11px] ml-1 align-middle " />
                             </a>
                         </div>
                     </div>
@@ -488,7 +488,7 @@ export default function Work() {
                             <button
                                 id="Randomize-btn"
                                 onClick={handleRandomize}
-                                className="border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
+                                className="border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer"
                             >
                                 <span className="hidden min-tablet:inline">Randomize</span>
                                 <img src="/lottie/WorkIcon/Randomize.svg" alt="랜덤 정렬 버튼" className="w-[27px] h-[27px]" />
@@ -496,7 +496,7 @@ export default function Work() {
                             <button
                                 id="Sort-btn"
                                 onClick={handleSort}
-                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
+                                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer 
                                     ${currentView === 'makers' && makersList.length > 0 ? 'opacity-100' :
                                         currentView === 'gallery' && sortedArtworks.length > 0 ? 'opacity-100' : 'opacity-50 cursor-default'}`
                                 }
@@ -511,7 +511,7 @@ export default function Work() {
                             <button
                                 id="Gallery-btn"
                                 onClick={() => handleSwitchView('gallery')}
-                                className={`border-none bg-transparent font-[500] italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent font-medium italic text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'gallery' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-tablet:inline">Gallery</span>
                                 <img src="/lottie/WorkIcon/Gallery.svg" alt="갤러리 버튼" className="w-[27px] h-[27px]" />
@@ -519,7 +519,7 @@ export default function Work() {
                             <button
                                 id="Makers-btn"
                                 onClick={() => handleSwitchView('makers')}
-                                className={`border-none bg-transparent italic font-[500] text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
+                                className={`border-none bg-transparent italic font-medium text-base leading-none tracking-normal inline-flex items-center gap-1.5 cursor-pointer transition-opacity ${currentView === 'makers' ? 'opacity-100' : 'opacity-50'}`}
                             >
                                 <span className="hidden min-tablet:inline">Makers</span>
                                 <img src="/lottie/WorkIcon/Makers.svg" alt="작가 버튼" className="w-[27px] h-[27px]" />
