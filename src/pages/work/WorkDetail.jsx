@@ -25,9 +25,7 @@ const getVimeoEmbedUrl = (videoSrc) => {
     if (videoId && !isNaN(videoId)) {
       return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
     }
-  } catch (e) {
-    
-  }
+  } catch (e) {}
 
   return null;
 };
@@ -41,9 +39,7 @@ const StickyTitle = React.memo(({ data }) => {
   return (
     <p id="Sticky-Title-Combined">
       {titleKr && (
-        <span
-          className={`font-strong text-[14px] leading-none tracking-none`}
-        >
+        <span className={`font-strong text-[14px] leading-none tracking-none`}>
           {titleKr}
         </span>
       )}
@@ -66,11 +62,9 @@ const StickyArtist = React.memo(({ data }) => {
   if (!artistKr && !artistEn) return null;
 
   return (
-    <p id="Sticky-Artist-Combined">
+    <p id="Sticky-Artist-Combined" className="text-right">
       {artistKr && (
-        <span
-          className={`font-strong text-[14px] leading-none tracking-none`}
-        >
+        <span className={`font-strong text-[14px] leading-none tracking-none`}>
           {artistKr}
         </span>
       )}
@@ -93,7 +87,7 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
     let finalUrl = url;
 
     if (type === "email" || type === "gmail") {
-      if (finalUrl && !finalUrl.startsWith('mailto:')) {
+      if (finalUrl && !finalUrl.startsWith("mailto:")) {
         finalUrl = `mailto:${finalUrl}`;
       }
     }
@@ -116,9 +110,7 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
       {artistsDetail.map((artist, index) => (
         <div key={index} className="Artist-Card w-[calc(50%-20px)]">
           {artist.kr && (
-            <p
-              className={`font-medium bold text-[14px] tracking-none mb-0.5`}
-            >
+            <p className={`font-medium bold text-[14px] tracking-none mb-0.5`}>
               {artist.kr}
             </p>
           )}
@@ -130,7 +122,11 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
             </p>
           )}
           <div className="flex items-center">
-            {renderLinkIcon(artist.links.email || artist.links.gmail, EmailIcon, "email")}
+            {renderLinkIcon(
+              artist.links.email || artist.links.gmail,
+              EmailIcon,
+              "email"
+            )}
             {renderLinkIcon(artist.links.instagram, InstagramIcon, "instagram")}
             {renderLinkIcon(artist.links.linkedin, LinkedInIcon, "linkedin")}
           </div>
@@ -197,11 +193,11 @@ export default function WorkDetail() {
     setArtwork(data);
     setCurrentLanguage("kr");
     setIsStickyHeaderActive(false);
-    
-    setIsButtonListActive(false); 
-    
+
+    setIsButtonListActive(false);
+
     if (data) {
-        document.title = `${data.titleKr || data.titleEn} | Work-Detail`;
+      document.title = `${data.titleKr || data.titleEn} | Work-Detail`;
     }
   }, [id]);
 
@@ -215,16 +211,16 @@ export default function WorkDetail() {
 
       const scrollY = window.scrollY;
       const windowWidth = window.innerWidth;
-      
+
       if (scrollY >= BUTTON_LIST_ACTIVATION_POINT) {
-          setIsButtonListActive(true);
+        setIsButtonListActive(true);
       } else {
-          setIsButtonListActive(false);
+        setIsButtonListActive(false);
       }
 
       if (windowWidth >= 700) {
         if (scrollY >= TARGET_SCROLL_POINT) {
-          setIsStickyHeaderActive(true); 
+          setIsStickyHeaderActive(true);
         } else {
           setIsStickyHeaderActive(false);
         }
@@ -238,7 +234,7 @@ export default function WorkDetail() {
     };
 
     window.addEventListener("scroll", checkScrollPosition);
-    window.addEventListener("resize", checkScrollPosition); 
+    window.addEventListener("resize", checkScrollPosition);
     const timeoutId = setTimeout(checkScrollPosition, 0);
 
     return () => {
@@ -246,7 +242,12 @@ export default function WorkDetail() {
       window.removeEventListener("scroll", checkScrollPosition);
       window.removeEventListener("resize", checkScrollPosition);
     };
-  }, [artwork, TOTAL_FIXED_HEADER_HEIGHT, TARGET_SCROLL_POINT, BUTTON_LIST_ACTIVATION_POINT]); 
+  }, [
+    artwork,
+    TOTAL_FIXED_HEADER_HEIGHT,
+    TARGET_SCROLL_POINT,
+    BUTTON_LIST_ACTIVATION_POINT,
+  ]);
 
   const handleGoBack = useCallback(() => {
     const fromView = getQueryParam("from");
@@ -295,17 +296,17 @@ export default function WorkDetail() {
     const { p1, ...bodyParagraphs } = currentCommentary;
 
     const paragraphKeys = Object.keys(bodyParagraphs)
-      .filter(key => key.startsWith('p') && key !== 'p1')
+      .filter((key) => key.startsWith("p") && key !== "p1")
       .sort((a, b) => parseInt(a.substring(1)) - parseInt(b.substring(1)));
 
-    const bodyClass = currentLanguage === 'kr' ? pBodyKrClass : pBodyEnClass;
+    const bodyClass = currentLanguage === "kr" ? pBodyKrClass : pBodyEnClass;
 
     return (
       <div className="Commentary-Body flex flex-col gap-[20px]">
         {paragraphKeys.map((key) => {
           const text = bodyParagraphs[key];
           if (text) {
-            const htmlContent = text.replace(/\n/g, '<br/>');
+            const htmlContent = text.replace(/\n/g, "<br/>");
 
             return (
               <p
@@ -332,7 +333,7 @@ export default function WorkDetail() {
       >
         <Header />
       </div>
-      
+
       <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-tablet:hidden">
         <div className="relative ">
           <MenuToggle />
@@ -362,7 +363,7 @@ export default function WorkDetail() {
             {displayTitleKr && (
               <p
                 id="Work-Title-Kr"
-                className={`font-medium text-[24px] leading-none tracking-none`}
+                className={`font-medium text-[24px] leading-[130%] tracking-none`}
               >
                 {displayTitleKr}
               </p>
@@ -370,7 +371,7 @@ export default function WorkDetail() {
             {displayTitleEn && (
               <p
                 id="Work-Title-En"
-                className={`font-medium italic text-[24px] leading-none tracking-none`}
+                className={`font-medium italic text-[24px] leading-[130%] tracking-none`}
               >
                 {displayTitleEn}
               </p>
@@ -405,9 +406,7 @@ export default function WorkDetail() {
         </div>
       </div>
 
-      <div 
-        className="Second-Section w-[calc(100%-40px)] min-tablet:w-[calc(100%-80px)] mx-auto"
-      >
+      <div className="Second-Section w-[calc(100%-40px)] min-tablet:w-[calc(100%-80px)] mx-auto">
         <div className="fixed top-0 left-0 right-0 max-tablet:h-[85px] max-tablet:bg-[#F8F8F7] min-tablet:h-0 z-[9980] min-tablet:hidden"></div>
 
         <div
@@ -423,6 +422,7 @@ export default function WorkDetail() {
           <div className="absolute bottom-[-0.5px] right-0 w-[5px] h-[5px] bg-label rounded-full transform translate-x-1/2 translate-y-1/2"></div>
 
           <StickyTitle data={artwork} />
+          <div className="w-8"></div>
           <StickyArtist data={artwork} />
         </div>
 
@@ -455,16 +455,12 @@ export default function WorkDetail() {
             <div className="Work-Detail-Commentary flex flex-col justify-between gap-10">
               <div className="Work-Detail-Commentary-Text flex flex-col justify-between gap-5">
                 {currentCommentary.p1 && (
-                  <p
-                    id="commentary-p1"
-                    className={p1Class}
-                  >
+                  <p id="commentary-p1" className={p1Class}>
                     {currentCommentary.p1}
                   </p>
                 )}
-                
-                {renderCommentaryBody()}
 
+                {renderCommentaryBody()}
               </div>
 
               <div className="Go-To-Link flex gap-5" id="Go-To-Link-Container">
@@ -518,14 +514,14 @@ export default function WorkDetail() {
         >
           <img src={TopIcon} alt="위로 가기" className="w-5 h-5" />
         </button>
-        
-        <KorEnButton 
-            currentLanguage={currentLanguage} 
-            setCurrentLanguage={setCurrentLanguage} 
+
+        <KorEnButton
+          currentLanguage={currentLanguage}
+          setCurrentLanguage={setCurrentLanguage}
         />
       </div>
 
-        <Footer />
+      <Footer />
     </div>
   );
 }
