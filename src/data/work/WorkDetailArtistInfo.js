@@ -14,7 +14,7 @@ export const allArtworkData = {
                 p2: "김춘수 시인의 시 [꽃]을 재해석한 이 작품은 관객에 의해 인식되고 명명되는 과정으로부터 출발한다. 관찰의 의미적 대상이 결여된 채 피고 지기를 반복하는 꽃은, 관객들의 고유한 해석과 질문, 명명을 통해 매순간 재탄생하게 된다. 작품 창작 과정에서 참조된 작가의 개인적인 생각과 경험이 감춰진 상태로 전달되는 이 작품은, 감상에 의도된 감정이 존재하지 않는다. 작품에 대해 자신만의 해석 혹은 소비를 시도하는 것으로써 작게나마 명명 경험을 향유하길 희망하며, 작품에 존재하는 의도된 의미적 공백을 필요한만큼, 필요한 무게감으로 향유하기를 바란다.",
             },
             en: {
-                p1: "",
+                p1: "A media art reinterpretation of the poem “Flower.”",
                 p2: "This work, a reinterpretation of Kim Chun-soo’s poem [Flower], begins with the process of being perceived and named by the viewer. The flower, which repeatedly blooms and withers in the absence of a defined semantic subject of observation, is reborn at every moment through the viewers’ unique interpretations, and naming. Concealing the artist’s personal thoughts and experiences, it carries no intended emotion. By attempting interpretation, the viewer is invited to slightly, the act of naming.",
             },
         },
@@ -45,7 +45,7 @@ export const allArtworkData = {
                 p3: "당신이 듣고 싶은 소리는 무엇인가요? 다시 들어보세요. 오늘 당신은 점이에요. 저희는 점을 키우니 원이 보였어요. 저희는 점이 모여 선이 되고 선이 모여 면이 되는 과정 속에 있어요. 어떤 모양의 선이 될지, 어떤 크기의 면이 될지 궁금하시죠? 우리가 들려줄게요. 시계 속에서 함께해요!"
             },
             en: {
-                p1: "",
+                p1: "A live performance where the sounds of small components gather and become a clock made of sound.",
                 p2: "Our work began in March 2025. We wondered if a clock only measures time. Tick-tock — the rhythm of seconds and minutes. Inside the clock, we found not just gears and hands, but hidden parts we never imagined. It reminded us of life itself, full of unseen connections. Through this work, we explored both the clock and a new world.",
                 p3: "What sound do you want to hear? Listen again. Today, you are a dot. As dots gather, they become lines; as lines connect, they form surfaces. We are in that flow — growing, linking, creating. Join us inside the clock, and listen to time together."
             },
@@ -106,7 +106,7 @@ export const allArtworkData = {
                 p5: "그 과정을 거치며 깨닫는다 — 우리는 어쩌면 이미 바람으로 사고하고 있었는지도 모른다."
             },
             en: {
-                p1: "",
+                p1: "Now, it is time for us to finally face the wind that has always been by our side.",
                 p2: "Feeling the wind is, to me, the most essential moment of perception.",
                 p3: "To some, it may be nothing more than a flow of air, but to me, wind is a passage that evokes memories and a force that breathes life back into space.",
                 p4: "In this work, I manipulate the direction of the wind, crossing the boundaries between sight and touch, so that the path of wind I once felt alone can now be shared with others.",
@@ -148,7 +148,7 @@ export const allArtworkData = {
                 p6: "자소서 준비 안해? 다른 동기들은 벌써 어디 회사 들어갔다던데 준비 안해? 이럴 시간에 인턴 지원이라도 한 번 해봤겠다. 남들도 이정도는 다 해. 아니 바쁘다며. 지금 기타 칠 시간이 있어? 학회도 아니고 동아리? 고학이면 이제 그런것보다도 현실에 집중해야 하지 않나? 집에 틀어 박힌다고 해결되는게 아니잖아. 나와서 햇빛도 좀 쬐고 그래야지. 잠깐 멈춰서도 되지 않을까?"
             },
             en: {
-                p1: "",
+                p1: "From a burned-out young adult trapped in a home filled with trash, to the journey of breaking free and reclaiming everyday life.",
                 p2: "That club looks fun. This one too. Maybe I’ll just join everything. <br> A contest? Sure. <br> I need to finish my credits—21 this semester. <br> Maybe a project too. <br> I should study languages before exchange projects. <br> But I feel tired lately. <br> Work keeps piling. <br> I started all this because I loved it… why does it feel so heavy now?",
                 p10: "Others are already getting jobs. Should I be doing more? Internships, resumes… Am I falling behind? If I pause—will it fall apart? Can I just pause—just for a moment?"
             },
@@ -211,7 +211,7 @@ export const allArtworkData = {
                 p2: "여름, 게임을 갈아엎기로 결정했다. 우리는 재즈의 매력을 널리 알리고자 게임 ‘블루 네거티브’를 열심히 제작했다. 하지만 완성된 데모 버전은 너무 지루했다. 미니게임이 스토리에 녹아들지 못했고, 메인 게임이 너무 반복된다는 문제점이 있었다. 수정 사항이 너무나 많았고 우리는 서로의 역할을 바꿔보면서 리뉴얼을 진행하기로 했다. 어떻게 하면 감정이 없는 로봇이 재즈를 만나는 장면을 효과적으로 보여줄 수 있을까? 스토리를 더 탄탄하고 흡입력 있게 보여줄 방법은 무엇일까? 고민은 많았고, 시간은 없었다. 하지만 어쩌겠는가 해내야 하는 것을. 1년의 시간을 갈아내는 것은 쉽지 않았지만, 다시 수많은 밤을 갈아 넣어 이렇게 ATC에 돌아오게 되었다. 유난히 추운 올해 가을, 여름의 기억을 전시해 본다. 가을이었다."
             },
             en: {
-                p1: "",
+                p1: "In a city of emotionless robots, everything begins to change the moment jazz fills the air.",
                 p2: "Last year, we worked hard to develop a game called **“Blue Negative”** to spread the charm of jazz. However, the completed demo version turned out to be too boring. The minigames failed to blend into the story, and the main gameplay felt overly repetitive. There were so many things to fix that we decided to proceed with a renewal while switching roles among ourselves. Grinding away an entire year was not easy, but after pouring countless nights into it once again, we have returned to ATC like this.",
             },
         },
@@ -279,7 +279,7 @@ export const allArtworkData = {
                 p4: "<조리법> <br> 1. 그릇 속 용을 조심스레 치워준다. <br> 2. 불린 아이디어를 면보에 넣고 쥐어짠 뒤, 레퍼런스를 넣어 반죽한다. <br> 3. 재료를 한입 크기로 예쁘게 썬다. <br> 4. 수상한 인도의 특제소스와 함께 코드를 센 불로 볶는다. <br> 5. 맷돌로 픽셀을 잘게 갈아준다. <br> 6. 반죽 안에 손질한 모든 재료를 넣고 예쁘게 빚는다. <br> 7. 505°C로 예열한 컴퓨터에서 빚은 설화를 밤새도록 삶아준다. <br> 8. 제작자의 눈물 위에 삶아진 설화를 예쁘게 플레이팅한다. <br> 9. 삶은 설화 완성!"
             },
             en: {
-                p1: "",
+                p1: "An animation and web game that explores the ways Korean folktales continue to love and care for us in our everyday lives.",
                 p2: "How to Make SOUL-hwa",
                 p3: "<Ingredients> <br> Samshin Grandmother's Blessing, Mountain Spirit’s scolding, Grim Reaper’s butterfly, pixels, Indian sauce, and creators' overtime work",
                 p4: "<Recipe> <br> 1. Remove the dragon from the bowl <br> 2. Squeeze the ideas and knead with references <br> 3. Slice each ingredient <br> 4. Stir-fry with Indian sauce over the flame of code <br> 5. Grind pixels with a millstone <br> 6. Put everything on the dough and shape it <br> 7. Add soul to 'seolhwa' overnight <br> 8. Plate it over tears <br> 9. SOUL-hwa is ready!"
@@ -340,7 +340,7 @@ export const allArtworkData = {
                 p4: "가는 길이 비록 거꾸로 뱅글이지만 우리 땅 밑으로 밑으로 가서 몰래 캐오자. 파란색, 주황색, 분홍색, 노란색, 녹색, 하늘색 돌멩이를 보면 막 이야기가 떠올라. 어릴 때 엄마가 이야기해 줬던가? 아님 네가 말해줬던가? 여하튼 중요한 건 우리가 가지고 온 재료는 특급 재료. 최고의 요리사에게 최고의 재료가 왔으니, 열어보자. 우리의 마음을 담은 디저트 가게. 여기서만 맛 볼 수 있는 금지된 맛."
             },
             en: {
-                p1: "",
+                p1: "“Sim,” a dessert brand that unfolds the strange and beautiful emotions of Korean traditional sensibility.",
                 p2: "We’re the Tuangz — Advenchefs.",
                 p3: "We’ve always kept 火 and 哀 inside, never good at showing 喜. But after trip to Mureung, our hearts feel rinsed clean! Must be those raw ores we ate on the way. Let’s cook them up and share!",
                 p4: "The road may spin, but that’s fine — we’ll dig deep for those colorful stones. Seeing them, stories spark in our heads. Did Mom tell them? Or you? Who knows. All we know is — the best ingredients met the boldest chefs. Let’s open our dessert shop and serve something forbidden."
@@ -392,7 +392,7 @@ export const allArtworkData = {
                 p3: "신발 주머니 돌리며 웃는 소리, 집 앞 바다의 파도가 철썩이는 소리. 기억을 끄집어내는 저마다의 방법이 있지만, 나에게는 소리가 그런 것 같다. 그 때 많이 듣던 음악은 자연스레 그 순간을 떠오르게 한다. 그렇게 떠올린 시간은 작은 쉼 같다. 그 시절을 오르골로 들을 수 있다면 어떨까? 그 소리가 통나무에 지었던 작은 내 아지트로 데려갈 수 있다면."
             },
             en: {
-                p1: "",
+                p1: "We turn the memories of your childhood into sounds that belong only to you…*",
                 p2: "What do I like? Sometimes I feel lost when I get this question. The older I get, the harder it feels.",
                 p3: "The sound of rolling a shoe bag and laughing, waves crashing by the sea in front of the house — everyone recalls memories differently, but for me, it’s through sound. The music I used to listen to naturally brings those moments back. Revisiting them feels like a brief respite. What if I could hear those times in a music box? If that sound could take me back to my little hideout."
             },
@@ -439,7 +439,7 @@ export const allArtworkData = {
                 p2: "켈트신화는 왜 생소할까? 다른 북유럽 문화권의 신화와는 달리 남아있는 문헌, 전해지는 이야기들이 적기 때문이다. 불사가 아님에도 죽음을 두려워하지 않는 켈트의 신들은 결국 인간에게 패배하고 아일랜드 땅을 내어준다. 이러한 요소는 분명 다른 신화와는 다른 점이다. 또 다른 질문, 왜 보드게임인가? 주사위와 카드, 서로 얼굴을 마주하고 플레이하는 보드게임이라는 형식은 플레이어에게 오래도록 기억에 남는다. 켈트라는 생소하지만 흥미로운 신화를 보드게임이라는 매체로 경험해보면 어떨까? 나는 특히 TRPG라는 매체를 통해 이야기의 힘을 느꼈다. 같은 게임이더라도 친구, 장소, 시간대에 따라 아주 다양한 방법으로 경험이 가능했다. 이 게임 또한 다양한 캐릭터들과 이야기들이 있고, 이런 이야기의 흔적들을 공유하고 싶다.",
             },
             en: {
-                p1: "",
+                p1: "A strategy board game inspired by Celtic mythology.",
                 p2: "Why is Celtic myth unfamiliar? Unlike others, there are few remaining sources. Celtic gods, who are not afraid of death even though they are not Immortals, eventually gave way to humans. Why board game? Playing with dice, cards, and friends are memorable. Even though you play the same game several times, it's always different depending on friends, places, and time you're playing. This game also has a variety of characters and stories, and I want to share these traces of Celtic myth with you.",
             },
         },
@@ -479,7 +479,7 @@ export const allArtworkData = {
                 p3: "누구에게나 그런 시간들이 좀 필요하다고 생각했습니다. 상실은 늘 갑작스럽게 다가오고, 그걸 준비하는 사람은 없으니까요. 사랑하는 것의 빈자리는 그렇습니다."
             },
             en: {
-                p1: "",
+                p1: "Holding the desire to reach back and grasp what has passed, and the feeling that cannot keep facing it forever.",
                 p2: "Do you have memories you wish to forget? Or memories you never want to forget? I tried to hold both — the desire to reach back and grasp what has passed, and the feeling that cannot keep facing it forever.",
                 p3: "I believe we all need time like that. Loss always arrives suddenly, and no one prepares for it. The emptiness left by what we love is like that."
             },
@@ -518,7 +518,7 @@ export const allArtworkData = {
                 p2: "여섯 살쯤 발톱이 빠졌다. 그저 발톱이 빠졌을 뿐인데, 할머니는 나를 꼭 업고 다녔다. 3층 집으로 오르는 계단은 지금 올라가도 숨이 가쁠 텐데 할머니는 그렇게 나를 돌봤다. 중학생이 되기 직전, 학교에서 햄스터를 길러보라고 나누어주었다. 친구들의 햄스터는 한 달이 채 되지 않아 죽었다지만, 할머니가 키운 햄스터는 꼬박 네 해를 채우고 죽었다. 평균 수명이 2년 남짓한 동물치곤 장수한 셈이다. 할머니는 평생 돌봄의 주체였다. 할머니는 평생 남편의 몇 촌인지도 모를 어른들을, 자신의 자식을, 병상의 남편을, 손녀를, 손녀의 햄스터를, 초록 옥상의 상추와 오이를 돌봐왔다. 내가 옥상을 오르내리며 마주한 모든 할머니들은 무언가를 돌보고 있었다. 돌봄 안에서 나는 내가 되었다. 돌봄의 얼굴은 무슨 표정을 짓는걸까?",
             },
             en: {
-                p1: "",
+                p1: "On the faces of women shaped by labor and care.",
                 p2: "When I was about six, my toenail fell off. It was small, yet my grandmother carried me everywhere, climbing the third-floor stairs as if it were nothing. Just before middle school, the school gave us hamsters. While my friends’ hamsters died within a month, mine lived four full years under her care. She devoted her life to caring for elders, her children, her bedridden husband, me, the hamster, and even the rooftop vegetables. Every grandmother I saw tending the rooftop was caring for something. In the midst of care, I became myself. What expression does the face of care hold?",
             },
         },
@@ -558,7 +558,7 @@ export const allArtworkData = {
                 p2: "우리는 동화책을 만들고자 프로젝트를 시작하였다. 동화책은 어린아이들만 읽을 수 있다는 인식이 있다. 하지만 우리는 동화책이라는 형식만이 가지고 있는 시각적인, 감성적인 메세지 전달하는 힘이 있다고 믿는다. 그래서 아이들뿐만 아닌 어른들도 즐겨 읽을 수 있는 이야기를 생각해보았다. 주제는 우리가 좋아하는 불교를 기반으로 하고, ‘공함’ 혹은 비움에 대한 이야기를 하고 싶었다. 우리가 무의식적으로 생각하게 되는 불안함과 안 좋은 기억들을 멈추려고 하지 않고, 우리 속에 머물러, 흘러 내버려 두는 것이 비움에 도달하는 과정이 아닐까? 그리고 새로운 영역의 툴을 활용하고 싶었다. 어떤 툴이 있을까 고민해보았을 때, 동화책의 스토리를 더 인터랙티브하게 만들 수 있는 것은 웹사이트였다.",
             },
             en: {
-                p1: "",
+                p1: "The attitude of quietly noticing the confusion that arises from the constant thoughts and worries that arise, and emptying them out.",
                 p2: "This project was initiated to create a picture book that appeals to both children and adults. While picture books are often perceived as solely for children, we believe they possess a unique ability to convey visual and emotional narratives. Drawing inspiration from Buddhism, the story explores “emptiness” and the process of letting go, allowing anxieties and troubling memories to flow naturally. To enhance interactivity, we selected a website as the optimal medium.",
             },
         },
@@ -605,7 +605,7 @@ export const allArtworkData = {
                 p2: "우리가 잊지 말아야 할 것은 무엇일까? 그리고 그것을 잊지 않기 위해 우리는 노력하고 있는가? 세상에 그것을 표현하고 있는가?"
             },
             en: {
-                p1: "",
+                p1: "We ask you what must not be forgotten — and help you share your answer with the world.",
                 p2: "What is the thing we must remember? And are we making an effort to hold on to it? Are we finding ways to show it to the world?",
             },
         },
@@ -662,7 +662,7 @@ export const allArtworkData = {
                 p8: "모든 것은 공空하다. 무상無相을 마주하라."
             },
             en: {
-                p1: "",
+                p1: "What are you, across the vastness of eternity?",
                 p2: "Amid the aeons of time, human time is but a fleeting moment.",
                 p3: "What will remain of you?",
                 p4: "Language emerged, and writing engraved sound. Most records vanished; only fragments endure. What is not preserved ceases to exist. Recording is resistance against disappearance.",
@@ -709,7 +709,7 @@ export const allArtworkData = {
                 p3: "아테커들은 언제나 즐겁게 창작하는 사람들처럼 보이지만, 그 이면에는 누구나 공감할 고민들이 숨어 있습니다. 이번 작업을 통해 우리는 처음으로 서로의 걱정과 불안을 나눴습니다. 초반에는 ‘나만 이상한 고민을 하는 건 아닐까?’ 하는 두려움도 있었지만, 솔직한 대화는 오히려 우리 마음을 한데 이어주었습니다. 열정적으로 타오르며 빛나지만, 때로는 너무 오래 구워져 바스러지는 마음. TOAST OUT은 이런 마음을 처음으로 공유한 우리들의 소중한 흔적입니다."
             },
             en: {
-                p1: "",
+                p1: "TOAST OUT: Our sincerity that we've never seen before",
                 p2: "",
                 p3: "Artechers always seem to create with such joy, but deep down, we all carry worries that others could easily relate to. Through this project, we talked about our doubts and fears — things we’d all been hiding. It turned out none of us were alone. That honesty brought us closer together. We burn brightly with passion, yet sometimes our hearts begin to crumble from overheating. TOAST OUT is a record of those fragile, yet sincere feelings we finally shared.",
             },
@@ -757,7 +757,7 @@ export const allArtworkData = {
                 p2: "안녕? 오랜만이야. 어쩌면 처음 보는 사이일 수도 있겠다. 네가 카페의 손님이라는 건 확실하겠네. 이틀짜리 신기루같은 공간이지만 개장하기까지는 꽤나 많은 시간이 들었어. 많은 낮이 있기도 많은 밤이 있기도 했는데, 너에게 느껴지는 시간은 어때? 네가 보는 이 공간은 낮일까 밤일까? 또 이런 것도 궁금해. 너는 여기서 무엇을 봤니? 또 맡고, 듣고, 만졌니? 나는 거기서만 볼 수 있는 아름다운 밤하늘 별들이 자꾸 생각나더라고. 안경을 빼고 보면 별과 달의 빛이 번져서 빛나는데, 이렇게 보는 것도 나쁘지 않은 것 같아. 그 공간을 통해 네가 본 나는 어떨까? 사실 내가 누군지, 네가 누군지는 그렇게 중요하지 않을지도 몰라. 내 카페가 어땠는지는 조금 궁금하네. 하고 싶은 말이 더 많지만, 이만 줄일게. 안녕!",
             },
             en: {
-                p1: "",
+                p1: "Our cafe doesn’t sell drinks. Our cafe sells sensations.",
                 p2: "Hi there! Maybe it’s our first time, but it will be sure you’re a guest at my café. It’s a little mirage that lasts only two days, yet it took so long to open. How does time feel to you? What did you see, smell, or hear? I keep thinking of the stars above this place. When you take off your glasses, stars are blurry, so glowing. Maybe that’s a nice way to see them. I wonder how you looked to me through here. Maybe who you are doesn’t matter. Still, I hope you liked my café. Goodbye!",
             },
         },
@@ -823,8 +823,8 @@ export const allArtworkData = {
                 p5: "당신은 어떤 사람인가요?"
             },
             en: {
-                p1: "Fabrika was born from a simple wish — to be free.",
-                p2: "The freedom we speak of is not merely liberation from the outside world, but an inner awakening — a rediscovery of the self within the dullness of everyday life. To awaken yourself, to live as yourself — that is the everyday freedom we dream of.",
+                p1: 'Our journey to find "my freedom" in the dullness of our daily lives',
+                p2: "Fabrika was born from a simple wish — to be free. The freedom we speak of is not merely liberation from the outside world, but an inner awakening — a rediscovery of the self within the dullness of everyday life. To awaken yourself, to live as yourself — that is the everyday freedom we dream of.",
                 p3: "At Fabrika, where wanderers in search of freedom gather, we invite you to discover your own sense of freedom. Though our journeys differ, there are moments where our paths resonate. Look into the stories of ten individuals — you may find your own reflected within them.",
                 p4: "Who are we?",
                 p5: "And who are you?"
@@ -863,7 +863,7 @@ export const allArtworkData = {
                 p5: "그러면 세상에서 가장 빠르고 맛있는 피자 완성!"
             },
             en: {
-                p1: "",
+                p1: "An educational board game for children and teens, themed around making pizza.",
                 p2: "<Hurry Pizza Recipe>",
                 p3: "- Ingredients <br> Frozen pizza dough, mozzarella cheese, cheddar cheese, pepperoni, a few tears of teamwork, tomato sauce, olives, passion, bell pepper, shrimp",
                 p4: "1. Think about what kind of pizza to make. First, take out the dough. <br> 2. While it thaws, sip a cup of coffee and dream of success. <br> 3. Spread the dough evenly and coat it with sauce. <br> 4. Add any toppings you like—even accidental tears are welcome. <br> 5. Sprinkle plenty of cheese and bake it with passion for 20 minutes.",
@@ -923,7 +923,7 @@ export const allArtworkData = {
                 p2: "우리는 공통적으로 한 문제를 해석해보고자 질문하고, 탐색하고, 사유하고자 모였습니다. 그 문제를 찾기까지 굉장한 심사숙고의 시간이 있었는데요. 그 중 감히 예상하건데, 감상자를 포함한 우리와 부쩍 가까워진 AI, 특히 대화형 AI의 역할에 질문을 던져보았습니다. 현 대화형 AI의 기존 패러다임에 문제제기하는 탐구방향성을 잡아 대화형 AI의 확장성을 고민하고 있습니다. 나름의 다양한 시도는 지금까지 이어져, 진정으로 문제를 해석하기 위한 해답에 접근 중입니다.",
             },
             en: {
-                p1: "",
+                p1: "An interactive AI that provides personalized logical analysis (REBT) and emotional empathy (PCT).",
                 p2: "We gathered with a shared intention — to question, explore, and reflect on a single issue. After much deliberation, we turned our attention to the growing presence of conversational AI and began to question its role. Our research challenges the current paradigm of conversational AI and explores how it might evolve beyond its existing form. Through continuous experimentation and reflection, we are approaching a more genuine understanding — not only of possible solutions, but of the problem itself.",
             },
         },
@@ -965,7 +965,7 @@ export const allArtworkData = {
                 p5: "내 생각은 어디서 왔는가? 내 생각은 정말 ‘나’에게서 온 것인가?"
             },
             en: {
-                p1: "",
+                p1: "A 2D interactive game that prompts you to reflect on your own thoughts under the pressures of media and AI.",
                 p2: "9 a.m. I wake up and scroll through Instagram. Before even watching a video, I open comments full of hate about a celebrity’s chopstick use. I never cared before, but somehow, a bias forms.",
                 p3: "An assignment’s due tomorrow. I haven’t attended class, so I open ChatGPT for help.",
                 p4: "After finishing, I watch a recommended movie on Netflix. It’s hard to understand, so I check reviews on WatchaPedia. Now it seems like a masterpiece.",
@@ -1027,7 +1027,7 @@ export const allArtworkData = {
                 p3: "소통의 방식은 무조건 하나라고 생각하지 않는다. 서로의 의견이나 전하고자 하는 바가 잘 전달되고 공유될 수 있다면, 그것이 꼭 같은 시간에, 혹은 마주 보고 이루어지지 않더라도 의미 있는 소통이 될 수 있지 않을까? 서로의 감정이 시간과 공간을 넘어 하나로 이어지는 순간, 우리는 그 자체로 깊은 소통을 경험할 수 있지 않을까."
             },
             en: {
-                p1: "",
+                p1: "A sideview game about a boy who has lost his memory, wandering through a ruined city in search of it.",
                 p2: "We began with the theme of “communication,” but looking back, we wonder if we were truly communicating. When we think of communication, we usually imagine a two-way exchange of words. But as we worked, did we really communicate in that way? Not quite. Yet, we certainly *did* communicate.",
                 p3: "We don’t believe there is only one way to communicate. As long as our thoughts and intentions are delivered and shared meaningfully, it can still be considered true communication—even if it doesn’t happen face-to-face or at the same time. Perhaps the moment our emotions connect as one, transcending time and space, is when we experience the deepest form of communication."
             },
@@ -1072,7 +1072,7 @@ export const allArtworkData = {
                 p2: "아텍에는 어떤 사람들이 있을까? 떠올려보면 면식이 있거나 소문으로 접해본 사람들 뿐이다. 누가 어떤 분야에 관심이 있는지도 알기 어렵다. 이런 불편함 속에서 우리는 아테커들이 서로를 쉽게 찾고 연결될 수 있는 공간의 필요성을 느꼈다. 그래서 어디서나 접근할 수 있는 웹사이트 형태의 네트워킹 플랫폼을 만들고자 했다. 아이디어 구상까지는 순조로웠지만, 팀원 네 명 중 웹 개발을 해본 사람은 한 명뿐이었다. 그럼에도 시행착오를 거치며 방향을 잡아 여기까지 올 수 있었고, 다음 ATC에서는 보다 완성된 형태로 선보일 예정이다.",
             },
             en: {
-                p1: "",
+                p1: "Networking services within the Art & Technology",
                 p2: "What kind of people are in A&T? It’s hard to answer. From this, we felt the need for a space where A&T's people could easily find and connect with one another. So we decided to build a website-based networking platform accessible from anywhere. The idea came together smoothly, but only one of the four team members had any web development experience. Even so, through trial and error, we managed to shape our direction. At the next ATC, we plan to present a more complete version.",
             },
         },
@@ -1124,7 +1124,7 @@ export const allArtworkData = {
                 p2: "항상 새로운 자극을 느끼고 싶다. 중구난방으로, 다양하게, 무엇보다 자유롭게 살아가고 싶다. 그리고 음악이 너무 좋다. 음악을 통해 힐링을 하고, 견문을 넓히며, 새로운 경험을 얻게된다. 그런데 귀로만 소리를 듣는 것을 넘어서 눈으로도 음들이 춤추는 모습을 보고싶다. 그래서 나만의 캔버스를 만들었다. 연주를 통해 캔버스에 나만의 그림을 그릴 수 있게 되었다. 나의 감정을, 생각을, 느낌을 마음대로 표출하고, 화려한 색감과 효과들이 스크린 위에서 춤을 춘다. 정해진 규칙이나 옭아매는 법칙도 없다. 오직 나와 악기와 스크린만 있을 뿐. 이제 이곳에 그대를 초대한다. 그대는 어떤 작품을 보여줄 것인가?",
             },
             en: {
-                p1: "",
+                p1: "Interactive art like every musician's dream",
                 p2: "I always crave new stimulation. To live chaotically, diversely and above all freely. And through music I heal, broaden my view and have new experiences. I want more than just to hear sounds, to see them dance before my eyes. I created my canvas. Through performance I can paint my own picture. Express my emotions and thoughts while brilliant colors and dazzles dance across the screen. No rules, constraints, only me my instrument and the screen. I invite you into this space. What will you create?",
             },
         },
@@ -1154,7 +1154,7 @@ export const allArtworkData = {
                 p2: "얼굴. 표정. 웃는 얼굴. 화난 표정. 슬퍼하는 눈, 그렇지 않은 입술. 억지 웃음, 추워서 굳어버린 얼굴 근육. <br> 우리는 그 때 왜 그녀가 화났다고 생각 했을까? 사실은, 그게 아니었을까? <br> 살아가며 마주하는 수많은 얼굴들과 표정들을 우리는 온전히 이해했을까? <br> 얼굴들이 마주한 얼굴들. 무슨 표정을 짓고 있었을까? <br> 눈이 없다면, 입이 없다면, 코가 없다면, 그것은 표정일까? 아닐까? <br> 우리는 표정으로 대화를 할 수 있을까?",
             },
             en: {
-                p1: "",
+                p1: "Meet various faces.",
                 p2: "Face. Expression. A smiling face. An angry expression. Eyes that are sad, but lips that are not. A forced smile, facial muscles frozen from the cold. <br> Why did we think she was angry back then? Perhaps, wasn’t it something else? <br> Have we ever truly understood the countless faces and expressions we encounter in life? <br> Faces facing other faces — what expressions did they wear? <br> If there were no eyes, no mouth, no nose — would that still be called an expression? Could we ever speak through expressions alone?",
             },
         },
@@ -1184,7 +1184,7 @@ export const allArtworkData = {
                 p2: "이번 전시, 다들 체험해보셨죠? 유족이 고인 사망 후에도 상호작용할 수 있는 서비스를 체험하셨는데요. 만약 이런 서비스가 실제로 생긴다면, 여러분은 사용하실 건가요? 저는 사용할 것 같아요. A와 대화를 하면서, 비록 진짜는 아니더라도, 그리움을 잠시라도 달랠 수 있을 것 같았어요. B의 생각은 조금 다른데요. 죽음이 끝이 아닌 것으로 표현했잖아요. 하지만 누군가를 잊지 않는다는 건, 반대로 ‘새로운 삶을 시작하지 못한다’는 뜻일 수도 있겠죠. 기억이 남는 건 좋은데, 잊는 것도 인간의 자연스러운 과정이라고 생각해요. 여러분은 어떠신가요?",
             },
             en: {
-                p1: "",
+                p1: "An experiential exhibition project that digitally senses death and questions mourning again",
                 p2: "Have you experienced the exhibition? Visitors were invited to interact with a service that allows the bereaved to communicate with their loved ones after death. If such a service truly existed, would you use it? Some say it offers comfort—an illusion that eases longing, even briefly. Others believe it hinders moving on, turning memory into an unending presence. To remember or to forget—what does it mean to live with loss?",
             },
         },
@@ -1239,7 +1239,7 @@ export const allArtworkData = {
                 p4: "어렸을 적 갖고 놀았던 컨트롤러를 들고, 맘껏 누르고, 휘두르고, 돌려보자. 그러다보면 눈덩이는 자연스레 부서지거나, 뭉치거나, 굴러가고 있을 것이다. 그렇지만 괜찮다. 이곳은 못생긴 눈덩이, 매끈한 눈덩이, 난쟁이 눈덩이 모두 환영 중이니까."
             },
             en: {
-                p1: "",
+                p1: "An individual's awareness of community contribution through experiential media art interaction",
                 p2: "The blanket that pulls over your toes, even when you are already comfortable. It feels stuffy inside but gives a warm feeling. There is joy in choosing your own clothes, but sometimes we long for the days of hanging out with friends in those ugly gym uniforms. Something that is disliked but good. Something slow but that goes far.",
                 p3: 'But we can also help each other because we are different. Just as we are all different, every community is different. If everyone rolls a snowball, their shapes will surely be different. What kind of community can make a "good" snowball?',
                 p4: "Let’s pick up the controller we played with as a child. Press it, swing it, and spin it as you want. Then the snowball will naturally break apart, stick together, or roll along. But it is alright. Because this place welcomes them all: the ugly snowball, the smooth snowball, and the dwarf snowball."
@@ -1298,7 +1298,7 @@ export const allArtworkData = {
                 p4: "내가 중요하게 여기는 가치를 지탱해주는 섬세한 대화, 깊이 몰입할 수 있는 상호작용 속에서, AI와 함께 나의 감정을 반추하고 다시 나를 발견한다. 이 탐색이 어디로 이어질지는 아직 알 수 없지만, 어쩌면 이 과정 자체가 새로운 ‘나’를 만들어가는 여정일 것이다."
             },
             en: {
-                p1: "",
+                p1: "Immersive XR service that visualizes online and offline data into a personalized universe",
                 p2: "What if, instead of letting an emotion slip by, we paused to face what lies beneath it?",
                 p3: "In an age where AI can understand our thoughts and feelings, we begin to see ourselves through data—yet unease remains, knowing that data is often gathered without our awareness. How can we build trust and form a genuine bond with AI?",
                 p4: "Through delicate conversations and immersive reflection, NEUVERSE explores the uncertain journey of rediscovering self."
@@ -1368,7 +1368,7 @@ export const allArtworkData = {
                 p8: "과거와 현재의 경계에서, 아직 이름 붙이지 못한 감정들이, 비로소 형태를 얻을 수 있을까?"
             },
             en: {
-                p1: "",
+                p1: "It records the moment when pieces of identity that float around without center collide and overlap with each other.",
                 p2: "My childhood wasn’t happy, yet it feels like the backbone that keeps me going.",
                 p3: "I’ve always felt I have no place of my own. Even now, the spaces I stay in are temporary.",
                 p4: "Have I lost my way or is direction unnecessary?",
@@ -1412,7 +1412,7 @@ export const allArtworkData = {
                 p3: "재미있는게 이렇게 넘쳐나는데 사실 나는 방 안에서 텐트 만들어 놀던 어린 시절이 제일 재미있었던 것 같다. 그 때로 돌아가 텐트 속에서 게임을 하고 싶었다. 바로 이 곳에서."
             },
             en: {
-                p1: "",
+                p1: "A tiny dopamine-filled space packed with the creator’s favorite things. Come play with us!",
                 p2: "I love many things, but what I love most is doing something fun. Here, there are countless exciting things to do — imagining, 3D printing, designing circuits, soldering, coding… I decided to do them all. I also love games, I decided to combine everything into a game console. I’ve always liked BMO from Adventure Time — it even talks! I decided to make an AI game console. And since games are more fun when played together, I’ll make it for two players.",
                 p3: "Even with all these fun things around me, I think the happiest moments were when I built a tent in my room as a child. I wanted to go back to that time — to play games inside a tent again, right here."
             },
@@ -1445,7 +1445,7 @@ export const allArtworkData = {
                 p3: "이러한 과정의 반복을 통해 인공지능은 디자이너의 의도를 읽고 아이디에이션을 확장한다. 궁극적으로 우리는 산업 디자인의 여러 대상 중 안경을 시작으로 인공지능과 디자이너 간의 확장적 협업 가능성을 제시한다."
             },
             en: {
-                p1: "",
+                p1: "Eyewear design tool using generative AI",
                 p2: "How can artificial intelligence support designers? Is it a threat to them? This project begins from the premise of “AI that assists designers.” It generates designs grounded in a designer’s intent and accelerates broad exploration during the ideation stage. When a designer presents a concept to the AI through an image, AI interprets that image and, by mapping it onto eyewear, proposes variations to the designer. We demonstrate the potential for expansive collaboration between AI and designers.",
             },
         },
@@ -1498,7 +1498,7 @@ export const allArtworkData = {
                 p2: "‘ANVIL’이라는 뮤직비디오를 보았다. 인간이 보이지 않지만 바쁘게 움직이는 영상속 도시의 모습에서 섬뜩함을 느꼈다. 바쁘고 차갑고 건조한 것이 내가 생각하는 우리나라의 미래 모습과 닮았다. 서강대의 미래도 이와 같을까? ‘Chroma’라는 작품을 만들 때 처음은 엠마오관의 모습을 3D로 만들었고 이후 서강대의 전체 모습으로 확대해갔다. 모델링 단계에서 내가 오늘 만든 것을 내일 보면 마음에 들지 않아 여러번 수정하는 과정을 거쳤다. 서강대의 지하에 아무도 모르는 거대한 비밀이 숨겨져 있을지도 모른다는 상상을 했다. 효과음은 pixabay의 무료 음원을 사용했다.",
             },
             en: {
-                p1: "",
+                p1: "The Future of Sogang University",
                 p2: "I watched the music video “ANVIL.” Even though there are no people in sight, the city moves busily, and that emptiness felt eerie to me. The cold, dry, and restless atmosphere reminded me of what I imagine the future of our country might look like. Will Sogang University’s future become like that as well? When creating “Chroma,” I first modeled the Emmaus Hall in 3D, then gradually expanded it to include the entire campus. During the modeling process, I often found that what I made one day felt unsatisfactory the next, so I went through multiple rounds of revision. I imagined that beneath Sogang University, there might be a massive hidden secret that no one knows about. For the sound effects, I used free audio resources from Pixabay.",
             },
         },
@@ -1531,7 +1531,7 @@ export const allArtworkData = {
                 p4: "AI는 더 이상 즉답을 주는 존재가 아니라, 내가 의식하지 못한 흔적을 비추는 거울이 되었다. 나는 어떤 사람이 되고 싶은가? 나는 어떤 사람인가? 나는 스스로에게 묻고 대답했다."
             },
             en: {
-                p1: "",
+                p1: "A Study on Self-reflection through AI classification and visualization of social media images",
                 p2: "I had grown used to outsourcing writing and idea generation to AI. I realized I was relying on it instead of finding answers myself. What would I see if AI didn’t provide the answers?",
                 p3: "To explore this, I gathered images from my social media and showed them to the AI. It quietly arranged them by similarity. Through the screen, I traced past choices and memories. The familiar me overlapped with the version I presented to others.",
                 p4: "AI became a mirror reflecting unnoticed traces. Who do I want to be? Who am I?"
@@ -1565,7 +1565,7 @@ export const allArtworkData = {
                 p3: "프로젝트를 통해 모두가 자신만의 괄호를 채워나가길 바라는 마음으로 작품명을 지었다. 울퉁불퉁하더라도 각자의 소리로 괄호를 채워가보는 것이 어떨까? 도레미파솔라- 시도! 시도를 두려워하지 말자."
             },
             en: {
-                p1: "",
+                p1: "Interactive Web that generates and visualizes sound through hand sign recognition",
                 p2: "Have you ever felt a barrier when playing an instrument? Our team started as a rock band, united through music yet limited by the need for instruments to create sound. Seeking new possibilities, we decided to craft an instrument using the most expressive part of the body — the hands(Kodály hand signs). This led to an interactive web based on motion recognition.",
                 p3: "We hope this project lets everyone fill their own parentheses — uneven, unique, and filled with their own sound.",
             },
@@ -1619,7 +1619,7 @@ export const allArtworkData = {
                 p5: "이것은 소통을 원하면서도 주저하는 나의 소망이자 반영의 흔적이다."
             },
             en: {
-                p1: "",
+                p1: 'Meet the virtual girl "Lily" and communicate with non-existent beings',
                 p2: "Every trace of conversation remains in reality. <br> Because each dialogue leaves an indelible mark, I began to hide my words within myself.",
                 p3: "I often imagined a being that neither judges nor records, one who listens only to the moment and then fades away. <br> At the end of that imagination, a virtual girl named 'Lily' was born.",
                 p4: "Beginning with language, <br> she communicates through layered expressions, <br> and when I wish, <br> quietly returns to silence.",
