@@ -11,27 +11,52 @@ const FirstSection = () => {
   return (
     <div
       className="relative w-full min-h-screen box-border flex flex-col 
+      
+      /* Desktop (>= 1000px) */
       min-tablet:pb-0 min-tablet:gap-10
       
-      max-tablet:justify-evenly max-tablet:pt-[100px] max-tablet:pb-[20px] max-tablet:gap-0 
+      /* Intermediate & Mobile (max 999px) - justify-evenly를 통해 제목, 이미지, 하단 정보의 세로 간격을 확보 */
+      max-[999px]:justify-evenly max-[999px]:pt-[100px] max-[999px]:pb-[20px] max-[999px]:gap-0 
     "
     >
       <div
         className="
-        min-tablet:absolute min-tablet:top-0 min-tablet:left-0 min-tablet:w-full min-tablet:h-full
-        
-        max-tablet:static max-tablet:w-full max-tablet:px-4 max-tablet:z-10
-        max-tablet:flex max-tablet:flex-col max-tablet:items-center max-tablet:gap-[20px] 
+          min-tablet:hidden 
+          
+          max-[999px]:static max-[999px]:w-full max-[999px]:px-4 max-[999px]:z-10
+          max-[999px]:flex max-[999px]:flex-col max-[999px]:items-center max-[999px]:gap-[20px] 
       "
       >
         <h2
-          className="font-[500] text-[#362C11] text-[24px] leading-[120%] tracking-normal text-[#E9F1E9] z-10 
+          className="font-[500] text-[24px] leading-[120%] tracking-normal z-10 
+          text-[#362C11] 
+          max-[999px]:text-center max-[999px]:flex-shrink-0 
+        "
+        >
+          울퉁불퉁하게 <br /> 말아리
+        </h2>
+
+        <h2
+          className="font-[500] text-[24px] leading-[120%] tracking-normal z-10 
+          text-[#362C11] 
+          max-[999px]:text-center max-[999px]:flex-shrink-0 
+        "
+        >
+          Art & Technology <br /> Conference
+        </h2>
+      </div>
+
+      <div
+        className="
+        max-[999px]:hidden 
+        min-tablet:absolute min-tablet:top-0 min-tablet:left-0 min-tablet:w-full min-tablet:h-full
+      "
+      >
+        <h2
+          className="font-[500] text-[#E9F1E9] text-[24px] leading-[120%] tracking-normal z-10 
           min-tablet:mix-blend-difference 
-          
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 
           min-tablet:left-[40px] 
-
-          max-tablet:static max-tablet:text-center max-tablet:text-[#362C11] max-tablet:flex-shrink-0 
         "
         >
           울퉁불퉁하게 <br /> 말아리
@@ -40,11 +65,8 @@ const FirstSection = () => {
         <h2
           className="font-[500] text-[24px] leading-[120%] tracking-normal text-[#E9F1E9] z-10 
           min-tablet:mix-blend-difference 
-
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 min-tablet:text-right
           min-tablet:right-[40px] 
-
-          max-tablet:static max-tablet:text-center max-tablet:text-[#362C11] max-tablet:flex-shrink-0 
         "
         >
           Art & Technology <br /> Conference
@@ -57,8 +79,13 @@ const FirstSection = () => {
         min-tablet:w-[90%] 
         min-tablet:max-w-[800px] 
         
-        max-tablet:static max-tablet:w-full max-tablet:px-0 
-        max-tablet:my-0 max-tablet:box-border
+        min-[701px]:max-[999px]:static min-[701px]:max-[999px]:mx-auto
+        min-[701px]:max-[999px]:w-[80vw]
+        min-[701px]:max-[999px]:max-w-[800px]
+        min-[701px]:max-[999px]:min-w-[400px]
+
+        max-[700px]:static max-[700px]:w-[100%] max-[700px]:px-0 
+        max-[700px]:my-0 max-[700px]:box-border max-[700px]:mx-auto
       "
       >
         <div className="relative h-0 pb-[56.25%] overflow-hidden">
@@ -68,9 +95,10 @@ const FirstSection = () => {
 
       <div
         className="z-10 flex flex-col items-center 
+        
         min-tablet:absolute min-tablet:left-1/2 min-tablet:-translate-x-1/2 min-tablet:bottom-0 min-tablet:pb-[40px]
         
-        max-tablet:static max-tablet:w-full max-tablet:px-4 max-tablet:pb-0
+        max-[999px]:static max-[999px]:w-full max-[999px]:px-4 max-[999px]:pb-0 max-[999px]:mt-[20px] 
       "
       >
         <p className="text-center font-['Monoplex KR'] font-normal text-sm leading-[100%] tracking-normal text-[#362C11] mb-[6px] min-tablet:mb-[6px]">
@@ -322,52 +350,6 @@ const ThirdSection = ({ openModal }) => {
             </p>
           </div>
         </div>
-
-        {/* <div className="mb-[40px] text-[#362C11]">
-          <div className="font-regular text-[15px] leading-large tracking-tight mb-[40px]">
-            <p className="mb-3">
-              2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
-              방식에 주목한다.
-            </p>
-            <p className="mb-3">
-              우리는 종종 말에 앞서 자격을 생각한다. 유의미한 말을 위해선 그에
-              걸맞은 경험과 지식, 전문성이나 지위를 갖추어야 한다고 여긴다.
-              피드백 역시 어느새 권위자의 언어를 재생산하는 일이 되었고, 우리는
-              ‘내가 뭐라고’, ‘난 저 분야를 잘 모르니까’ 라며 스스로 말을 삼킨다.
-              우리의 말은 어느새 우리의 것이 아닌 다른 누군가의 언어를 빌려
-              기능하게 된다. 우리는 얼만큼 우리 자신의 감각으로 말하고 있는가?
-              창작에 있어서 스스로의 언어와 체계보다, 다른 누군가의 기준과
-              평가에 먼저 기대고 있지는 않은가? 누구나 자유롭게 말하고 피드백할
-              수 있는 공동의 장은 여전히 이곳에서 가능한가?
-            </p>
-            <p className="font-medium">
-              서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
-            </p>
-          </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-regular text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
-            <p className="mb-3">
-              2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
-              ways in which each of us speaks.
-            </p>
-            <p className="mb-3">
-              We often think of qualifications before words. We assume that to
-              say something meaningful, one must possess the right experiences,
-              knowledge, expertise, or status. Feedback, too, has become the
-              reproduction of an authority’s language, and we swallow our own
-              words with thoughts like, “Who am I to say this?” or “I don’t
-              really know that field.” Our words, then, no longer belong to us
-              but function by borrowing someone else’s language. How much are we
-              truly speaking from our own senses? In creation, do we lean first
-              on the standards and evaluations of others, rather than our own
-              language and system? Is a common space where anyone can speak and
-              give feedback freely still possible here?
-            </p>
-            <p className="font-medium">
-              Sogang Univ. Art&Technology Head of Department <br /> Yongsoon
-              Choi
-            </p>
-          </div>
-        </div> */}
 
         {/* <div className="mb-[40px] text-[#362C11]">
           <div className="font-regular text-[15px] leading-large tracking-tight mb-[40px]">
