@@ -79,7 +79,7 @@ const FirstSection = () => {
 
         <p className="text-center font-normal text-sm leading-[120%] tracking-normal text-[#362C11] mb-[6px]">
           2025 Art & Technology Conference{" "}
-          <span className="underline">
+          <span className="underline hover:opacity-70">
             <a
               href="https://www.instagram.com/atc.sogang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
