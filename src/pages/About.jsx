@@ -164,46 +164,34 @@ const SecondSection = () => {
         </h2>
         <div className="font-normal text-[15px] leading-regular tracking-regular text-[#362C11]">
           <p className="mb-3">
-            2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
-            ways in which each of us speaks.
+            《울퉁불퉁하게 말아리》 focuses on the diverse and uneven ways in which we speak.
           </p>
           <p className="mb-3">
-            We often think of qualifications before words. We assume that to say
-            something meaningful, one must possess the right experiences,
-            knowledge, expertise, or status. Feedback, too, has become the
-            reproduction of an authority’s language, and we swallow our own
-            words with thoughts like, “Who am I to say this?” or “I don’t really
-            know that field.” Our words, then, no longer belong to us but
-            function by borrowing someone else’s language. How much are we truly
-            speaking from our own senses? In creation, do we lean first on the
-            standards and evaluations of others, rather than our own language
-            and system? Is a common space where anyone can speak and give
-            feedback freely still possible here?
+            Too often, before speaking, we question our own qualifications.
+            We assume that to speak meaningfully, one must possess the appropriate experience,
+            knowledge, or authority. In doing so, speaking itself becomes the reproduction of established languages.
+            We silence ourselves—saying, “Who am I to speak?” or “I’m not an expert.”
+            Words begin to function not as our own, but as borrowed expressions of external authorities and power.
+            How much of what we say truly belongs to our own sensibility? In creative practice,
+            do we rely first on others’ standards and evaluations rather than our own structures of meaning?
+            Is it still possible to sustain a shared space where anyone can speak and respond freely?
+            What does it take to see one another beyond familiar criteria and hierarchies?
           </p>
           <p className="mb-3">
-            This year’s ATC seeks to respond to these questions with an
-            amateur’s attitude. The amateur may be clumsy or scattered at times,
-            but precisely because of that, they remain unbound, creating their
-            own language and system. Here, we want to look at the traces of
-            unique speech acts that step outside the established rules or logic.
+            Art Technology Conference 2025 approaches these questions with an amateur’s attitude.
+            The amateur may be awkward or inconsistent,
+            yet remains unbound by institutional logic— free to form their own language, rhythm, and sensibility.
           </p>
           <p className="mb-3">
-            The words we exchange cross into each other’s domains, colliding,
-            missing, and returning, producing unfamiliar echoes. Even when
-            unclear, like unpredictable waves striking against uneven terrain,
-            our words imagine new possibilities within unregulated movement.
-            This is about revealing the contours of each person’s singular
-            language, sketching out forms of connection and communication that
-            are never uniform—born instead from difference itself.
+            Within this space, we seek to practice our own modes of speaking,
+            departing from prescribed rules and systems of judgment.
           </p>
           <p className="mb-3">
-            The words we exchange cross into each other’s domains, colliding,
-            missing, and returning, producing unfamiliar echoes. Even when
-            unclear, like unpredictable waves striking against uneven terrain,
-            our words imagine new possibilities within unregulated movement.
-            This is about revealing the contours of each person’s singular
-            language, sketching out forms of connection and communication that
-            are never uniform—born instead from difference itself.
+            Even when our grammar falters, our words may cross, collide,
+            and return—creating unfamiliar echoes, or 말-(메)아리, that resonate across uneven terrains.
+            Through these unpredictable reverberations, we encounter the distinct contours of each voice.
+            Meaning expands not through perfection, but through the friction and difference that connect
+            us— growing wider, louder, and more intricate in its shared resonance.
           </p>
         </div>
       </div>
