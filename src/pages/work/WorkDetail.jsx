@@ -334,7 +334,7 @@ export default function WorkDetail() {
         <Header />
       </div>
 
-      <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-tablet:hidden">
+      <div className="p-5 fixed top-0 left-0 right-0 z-[10040] min-tablet:hidden">
         <div className="relative ">
           <MenuToggle />
         </div>
