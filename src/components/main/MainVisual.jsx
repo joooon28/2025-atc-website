@@ -79,7 +79,7 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
         width: 475,
         rotate: 0,
         ariaLabel: "Archive 페이지 이동 후 Gallery Sheet 오픈(완료)",
-        z: 200,
+        z: 500,
         hitbox: { width: 100, height: 240, offsetX: 50, offsetY: 120 },
       },
       {
@@ -91,7 +91,7 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
         rotate: 0,
         ariaLabel: "Archive 페이지 이동 후 Documentary Sheet 오픈(완료)",
         z: 600,
-        hitbox: { width: 100, height: 60, offsetX: 60, offsetY: 30 },
+        hitbox: { width: 110, height: 60, offsetX: 60, offsetY: 30 },
       },
       {
         key: "Word_Ri",

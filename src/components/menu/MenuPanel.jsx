@@ -9,33 +9,48 @@ export default function MenuPanel({ onClose }) {
   const handleMenuClick = (targetPath) => {
     navigate(createSplashPath(targetPath));
     if (onClose) {
-        onClose();
+      onClose();
     }
   };
 
   return (
-    <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-4/80 p-[12px]">
+    <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-5/80 p-[12px]">
       <img
         src={LogoBrown}
         alt="LogoBrown"
         className="w-[30.158px] h-[21px] cursor-pointer"
-        onClick={() => handleMenuClick("/main")} 
+        onClick={() => handleMenuClick("/main")}
       />
       <nav>
         <ul className="italic flex flex-col items-center gap-[16px]">
-          <li className="cursor-pointer" onClick={() => handleMenuClick("/about")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/about")}
+          >
             About
           </li>
-          <li className="cursor-pointer" onClick={() => handleMenuClick("/work")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/work")}
+          >
             Work
           </li>
-          <li className="cursor-pointer" onClick={() => handleMenuClick("/program")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/program")}
+          >
             Program
           </li>
-          <li className="cursor-pointer" onClick={() => handleMenuClick("/made")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/made")}
+          >
             Made
           </li>
-          <li className="cursor-pointer" onClick={() => handleMenuClick("/archive")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleMenuClick("/archive")}
+          >
             Archive
           </li>
           <li
