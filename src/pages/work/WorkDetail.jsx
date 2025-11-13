@@ -4,6 +4,7 @@ import { allArtworkData } from "../../data/work/WorkDetailArtistInfo";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
+import KorEnButton from "../../components/KorEnButton";
 
 const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
@@ -148,7 +149,6 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
   );
 };
 
-// 5초마다 새로운 Workdetail로 이동
 const allIds = Object.keys(allArtworkData);
 const pickNextRandomId = (excludeId) => {
   const pool = allIds.filter((x) => x !== excludeId);
@@ -527,34 +527,11 @@ export default function WorkDetail() {
         >
           <img src={TopIcon} alt="위로 가기" className="w-5 h-5" />
         </button>
-        <div className="Lang-Switch float-right flex rounded-[60px] overflow-hidden h-12 w-[123px]">
-          <button
-            onClick={() => setCurrentLanguage("kr")}
-            id="Lang-Switch-Kr-Btn"
-            className={`${
-              fontMap.italic
-            } Lang-Switch-Kr flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${
-              currentLanguage === "kr"
-                ? "underline decoration-1 underline-offset-[5px]"
-                : ""
-            }`}
-          >
-            KR
-          </button>
-          <button
-            onClick={() => setCurrentLanguage("en")}
-            id="Lang-Switch-En-Btn"
-            className={`${
-              fontMap.italic
-            } Lang-Switch-En flex-1 py-3 px-0 border-none bg-label text-fill-invert text-base cursor-pointer transition-colors duration-200 flex justify-center items-center ${
-              currentLanguage === "en"
-                ? "underline decoration-1 underline-offset-[5px]"
-                : ""
-            }`}
-          >
-            EN
-          </button>
-        </div>
+        
+        <KorEnButton 
+            currentLanguage={currentLanguage} 
+            setCurrentLanguage={setCurrentLanguage} 
+        />
       </div>
 
         <Footer />
