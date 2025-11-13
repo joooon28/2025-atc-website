@@ -25,7 +25,7 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-[500] text-[#362C11] text-[24px] leading-[120%] tracking-normal text-[#E9F1E9] z-10 
           min-tablet:mix-blend-difference 
           
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 
@@ -38,7 +38,7 @@ const FirstSection = () => {
         </h2>
 
         <h2
-          className="font-[500] text-[24px] leading-[120%] tracking-normal text-white z-10 
+          className="font-[500] text-[24px] leading-[120%] tracking-normal text-[#E9F1E9] z-10 
           min-tablet:mix-blend-difference 
 
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 min-tablet:text-right
