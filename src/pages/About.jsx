@@ -120,7 +120,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold text-2xl leading-none text-center mb-10 text-[#362C11]">
           전시 개요
         </h2>
-        <div className="font-normal text-[15px] leading-[180%] tracking-[-10%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-large tracking-tight text-[#362C11]">
           <p className="mb-3">
             《울퉁불퉁하게 말아리》는 각자가 가진 고유한 말들의 방식에 주목한다.
           </p>
@@ -160,7 +160,7 @@ const SecondSection = () => {
         <h2 className="font-['Monoplex KR'] font-semibold italic text-2xl leading-none text-center mb-10 text-[#362C11]">
           Overview
         </h2>
-        <div className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] text-[#362C11]">
+        <div className="font-normal text-[15px] leading-regular tracking-[-0.5%] text-[#362C11]">
           <p className="mb-3">
             2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
             ways in which each of us speaks.
@@ -239,7 +239,7 @@ const ThirdSection = ({ openModal }) => {
         </h2>
 
         <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -259,7 +259,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -285,7 +285,7 @@ const ThirdSection = ({ openModal }) => {
         </div>
 
         <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -305,7 +305,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -331,7 +331,7 @@ const ThirdSection = ({ openModal }) => {
         </div>
 
         <div className="mb-[40px] text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -351,7 +351,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%] border-b border-[#362C11] congratulatory-text-divider">
+          <div className="relative [padding-bottom:34px] mb-8 font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular border-b border-[#362C11] congratulatory-text-divider">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -377,7 +377,7 @@ const ThirdSection = ({ openModal }) => {
         </div>
 
         <div className="text-[#362C11]">
-          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-[180%] tracking-[-10%] mb-[40px]">
+          <div className="font-['Monoplex KR'] font-normal text-[15px] leading-large tracking-tight mb-[40px]">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt;는 각자가 가진 고유한 말들의
               방식에 주목한다.
@@ -397,7 +397,7 @@ const ThirdSection = ({ openModal }) => {
               서강대학교 아트&테크놀로지학과 학과장 <br /> 최용순
             </p>
           </div>
-          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-[145%] tracking-[-0.5%]">
+          <div className="relative font-['Monoplex KR'] font-normal text-[15px] leading-regular tracking-regular">
             <p className="mb-3">
               2025 ATC &lt;울퉁불퉁하게 말아리&gt; draws attention to the unique
               ways in which each of us speaks.
@@ -456,9 +456,9 @@ const FourthSection = ({ openStaffSheet }) => {
 
   const CreditList = ({ titleKr, titleEn, members }) => (
     <div className="mb-10 text-[#362C11]">
-      <div className="font-[500] text-[15px] leading-[145%] mb-3 tracking-[-0.5%] text-right">
+      <div className="font-medium text-[15px] leading-regular mb-3 tracking-regular text-right">
         {titleKr}{" "}
-        <span className="font-[500] italic">
+        <span className="font-medium italic">
           {titleEn}
         </span>
       </div>
@@ -472,7 +472,7 @@ const FourthSection = ({ openStaffSheet }) => {
         {members.map((member, index) => (
           <p
             key={index}
-            className="font-normal text-[15px] leading-[145%] mb-3 tracking-[-0.5%] whitespace-nowrap text-right"
+            className="font-regular text-[15px] leading-regular mb-3 tracking-regular whitespace-nowrap text-right"
           >
             {member}
           </p>
@@ -599,7 +599,7 @@ const FourthSection = ({ openStaffSheet }) => {
           <div className="bg-[#362C11] w-full absolute top-0 left-0 h-full"></div>
         </div>
 
-        <p className="font-['Monoplex KR'] italic font-normal min-[1000px]:text-sm text-sm leading-none tracking-normal text-[#362C11]">
+        <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11]">
           Opening Documentary
         </p>
       </div>

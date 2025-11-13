@@ -16,15 +16,6 @@ const LinkedInIcon = "/lottie/WorkDetailIcon/linkedin.svg";
 
 const getDefaultArtwork = () => allArtworkData.art001;
 
-const fontMap = {
-  medium: "font-medium",
-  italic: "italic font-normal",
-  text: "font-[450]",
-  textItalic: "italic font-normal",
-  semibold: "font-semibold",
-  semiboldItalic: "italic font-semibold",
-};
-
 const getVimeoEmbedUrl = (videoSrc) => {
   if (!videoSrc || !videoSrc.includes("vimeo.com")) return null;
 
@@ -51,7 +42,7 @@ const StickyTitle = React.memo(({ data }) => {
     <p id="Sticky-Title-Combined">
       {titleKr && (
         <span
-          className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}
+          className={`font-strong text-[14px] leading-none tracking-none`}
         >
           {titleKr}
         </span>
@@ -59,7 +50,7 @@ const StickyTitle = React.memo(({ data }) => {
       {titleKr && titleEn && " "}
       {titleEn && (
         <span
-          className={`${fontMap.italic} text-[14px] leading-none tracking-normal`}
+          className={`font-regular italic text-[14px] leading-none tracking-none`}
         >
           {titleEn}
         </span>
@@ -78,7 +69,7 @@ const StickyArtist = React.memo(({ data }) => {
     <p id="Sticky-Artist-Combined">
       {artistKr && (
         <span
-          className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}
+          className={`font-strong text-[14px] leading-none tracking-none`}
         >
           {artistKr}
         </span>
@@ -86,7 +77,7 @@ const StickyArtist = React.memo(({ data }) => {
       {artistKr && artistEn && " "}
       {artistEn && (
         <span
-          className={`${fontMap.italic} text-[14px] leading-none tracking-normal`}
+          className={`font-regular italic text-[14px] leading-none tracking-none`}
         >
           {artistEn}
         </span>
@@ -126,14 +117,14 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
         <div key={index} className="Artist-Card w-[calc(50%-20px)]">
           {artist.kr && (
             <p
-              className={`${fontMap.semibold} font-[500] text-[14px] leading-snug tracking-normal mb-0.5`}
+              className={`font-medium bold text-[14px] tracking-none mb-0.5`}
             >
               {artist.kr}
             </p>
           )}
           {artist.en && (
             <p
-              className={`${fontMap.italic} font-[400] text-[14px] leading-snug tracking-normal mb-1.5`}
+              className={`font-regular italic text-[14px] tracking-none mb-1.5`}
             >
               {artist.en}
             </p>
@@ -294,9 +285,9 @@ export default function WorkDetail() {
 
   const displayLinks = artwork.links;
 
-  const p1Class = `${fontMap.semibold} font-[500] text-[15px] leading-[145%] tracking-[-0.5%]`;
-  const pBodyKrClass = `${fontMap.text} font-normal text-[15px] leading-[180%] tracking-[-10%]`;
-  const pBodyEnClass = `${fontMap.text} font-normal text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const p1Class = `font-strong text-[15px] leading-regular tracking-regular`;
+  const pBodyKrClass = `font-regular text-[15px] leading-large tracking-tight`;
+  const pBodyEnClass = `font-regular font-normal text-[15px] leading-regular tracking-regular`;
 
   const renderCommentaryBody = () => {
     if (!currentCommentary) return null;
@@ -356,7 +347,7 @@ export default function WorkDetail() {
           onClick={handleGoBack}
           id="goBackTop"
           ref={topBackButtonRef}
-          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] min-tablet:top-[137px] left-0 cursor-pointer text-base leading-none tracking-normal hidden min-tablet:inline-flex items-center`}
+          className={`go_back bg-[#F3F3EC] border border-label py-3 px-6 text-center rounded-[60px] absolute top-[117px] min-tablet:top-[137px] left-0 cursor-pointer text-base leading-none tracking-regular hidden min-tablet:inline-flex items-center`}
         >
           <img
             src={GoBackIcon}
@@ -371,7 +362,7 @@ export default function WorkDetail() {
             {displayTitleKr && (
               <p
                 id="Work-Title-Kr"
-                className={`${fontMap.medium} text-[24px] leading-none tracking-normal`}
+                className={`font-medium text-[24px] leading-none tracking-none`}
               >
                 {displayTitleKr}
               </p>
@@ -379,7 +370,7 @@ export default function WorkDetail() {
             {displayTitleEn && (
               <p
                 id="Work-Title-En"
-                className={`${fontMap.medium} italic text-[24px] leading-none tracking-normal`}
+                className={`font-medium italic text-[24px] leading-none tracking-none`}
               >
                 {displayTitleEn}
               </p>
@@ -389,7 +380,7 @@ export default function WorkDetail() {
           {displayLocation && (
             <p
               id="Work-Location"
-              className={`${fontMap.text} font-[450] text-sm leading-none tracking-normal`}
+              className={`font-regular text-sm leading-none tracking-none`}
             >
               {displayLocation}
             </p>
@@ -483,7 +474,7 @@ export default function WorkDetail() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${fontMap.italic} text-sm inline-flex items-center w-auto font-normal leading-none tracking-normal underline decoration-solid underline-offset-px decoration-1 decoration-skip-ink-true`}
+                    className={`font-regular italic text-[14px] inline-flex items-center w-auto leading-none tracking-none underline decoration-solid underline-offset-px decoration-1 decoration-skip-ink-true`}
                   >
                     {link.text}
                     <img
@@ -509,7 +500,7 @@ export default function WorkDetail() {
         <button
           onClick={handleGoBack}
           id="goBackBottom"
-          className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label cursor-pointer text-base leading-none tracking-normal 
+          className={`go_back bg-[#F3F3EC] button_list_go_back float-left border border-label cursor-pointer text-base leading-none tracking-none 
                       w-12 h-12 rounded-full flex justify-center items-center 
                       min-mobile:w-auto min-mobile:h-auto min-mobile:rounded-[60px] min-mobile:py-3 min-mobile:px-6 min-mobile:inline-flex`}
         >
