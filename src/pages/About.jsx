@@ -90,8 +90,7 @@ const FirstSection = () => {
         </p>
 
         <p className="text-center font-normal text-sm leading-[140%] tracking-normal text-[#362C11]">
-          서울특별시 마포구 백범로 35 
-          <br className="max-[501px]:block hidden" />
+          서울특별시 마포구 백범로 35 <br className="max-[501px]:block hidden" />
           서강대학교 하비에르관(X관) 4-5층
         </p>
 
