@@ -14,6 +14,8 @@ export default function PreviousList({
   onMoreInfo,
   rounded,
 }) {
+  const isNumberTwo = String(number) === "2";
+  const isNumberThree = String(number) === "3";
   const isNumberFive = String(number) === "5";
   const isNumberSix = String(number) === "6";
   const isNumberSeven = String(number) === "7";
@@ -64,7 +66,11 @@ export default function PreviousList({
         <div
           className={[
             "flex",
-            isNumberFive
+            isNumberTwo
+              ? "max-mobile:flex-col max-mobile:gap-0 font-medium gap-[10px]"
+              : isNumberThree
+              ? "max-mobile:flex-col max-mobile:gap-0 font-medium gap-[10px]"
+              : isNumberFive
               ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
               : isNumberSix
               ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
@@ -76,7 +82,9 @@ export default function PreviousList({
           ].join(" ")}
         >
           <p>{title}</p>
-          <p className="italic">{titleeng}</p>
+          <p className="italic max-mobile:text-[14.3px] flex items-end">
+            {titleeng}
+          </p>
         </div>
         <p className="font-regular flex text-[14px]">{date}</p>
         <p className="leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">

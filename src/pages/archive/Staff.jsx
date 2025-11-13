@@ -8,7 +8,7 @@ export default function Staff({ onClose }) {
     "grid gap-2 grid-cols-5 max-desktop:grid-cols-4 max-tablet:grid-cols-3 max-mobile:grid-cols-2";
 
   return (
-    <div className="flex flex-col min-h-svh bg-mint-6">
+    <div className="flex flex-col min-h-dvh bg-mint-6">
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />

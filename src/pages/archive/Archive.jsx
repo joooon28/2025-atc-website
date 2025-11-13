@@ -60,7 +60,7 @@ export default function Archive() {
   };
 
   return (
-    <div className="flex flex-col min-h-svh bg-mint-6">
+    <div className="flex flex-col min-h-dvh bg-mint-6">
       <div className="max-tablet:hidden pt-[40px]">
         <Header />
       </div>
@@ -185,7 +185,7 @@ export default function Archive() {
             className={`absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
               ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
           >
-            <div className="bg-mint-6 h-svh overflow-y-auto ">
+            <div className="bg-mint-6 h-dvh overflow-y-auto ">
               {renderSheet()}
             </div>
           </div>

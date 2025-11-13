@@ -45,7 +45,7 @@ export default function Popup({
         )}
       </div>
       <p className="text-[20px] font-heavy">{title}</p>
-      <p className="text-[14px] font-regular px-1 whitespace-pre-line max-mobile:px-13">
+      <p className="text-[14px] font-regular px-1 whitespace-pre-line max-mobile:px-[22px]">
         {description}
       </p>
       <button

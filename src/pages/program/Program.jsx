@@ -240,7 +240,7 @@ export default function Program() {
   );
 
   return (
-    <div className="flex flex-col min-h-svh bg-mint-2">
+    <div className="flex flex-col min-h-dvh bg-mint-2">
       <div className="max-tablet:hidden pt-[40px]">
         <Header />
       </div>
@@ -308,7 +308,10 @@ export default function Program() {
         />
       </section>
 
-      <section className="text-label pl-10 py-20" id="previous-section">
+      <section
+        className="text-label pl-10 py-20 max-tablet:pl-5"
+        id="previous-section"
+      >
         <Previous initialOpenId={location.state?.openPreviousId} />
       </section>
 
@@ -336,7 +339,7 @@ export default function Program() {
               sheetOpen ? "translate-y-0" : "translate-y-full"
             }`}
           >
-            <div className="bg-mint-6 h-svh overflow-y-auto ">
+            <div className="bg-mint-6 h-dvh overflow-y-auto ">
               {selected && <MoreInfo onClose={closeSheet} {...selected} />}
             </div>
           </div>

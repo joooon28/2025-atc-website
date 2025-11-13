@@ -240,7 +240,7 @@ export default function Previous({ initialOpenId }) {
               sheetOpen ? "translate-y-0" : "translate-y-full"
             }`}
           >
-            <div className="bg-mint-6 h-svh overflow-y-auto ">
+            <div className="bg-mint-6 h-dvh overflow-y-auto ">
               {selected && <MoreInfo onClose={closeSheet} {...selected} />}
             </div>
           </div>
