@@ -152,35 +152,6 @@ const Made = () => {
         <section className="w-full py-10 px-5 min-[701px]:px-10 flex flex-col gap-5 min-[701px]:gap-[40px] box-border
             max-[700px]:pt-[10px]
         ">
-          
-          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
-            <MadeBox
-              images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961666/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7.png"
-              ]}
-              title="쫑알쫑알스티커"
-              titleEn="BabbleBabble Sticker"
-              kr="당신의 숨겨왔던 쫑알쫑알을 세상에 부착하세요. 왱알왱알손바닥수첩을 구입하면 쫑알쫑알스티커를 함께 선물합니다."
-              en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
-              location="MD존"
-              priceKr="(비매품)"
-              priceEn="(Not for sale)"
-            />
-
-            <MadeBox
-              images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961681/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20312341234_achxh5.png"
-              ]}
-              title="왱알왱알손바닥수첩"
-              titleEn="MumbleMumble Note"
-              kr="우리의 말아리가 가득 담길 A6 크기의 수첩. 머릿속의 작은 생각들로 채워나가 보세요. 왱알왱알손바닥노트를 구입하면 쫑알쫑알스티커를 함께 선물합니다."
-              en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
-              location="MD존"
-              priceKr="(3000)"
-              priceEn="(3000)"
-            />
-          </div>
-
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10 pt-[20px]">
             <MadeBox
               images={[
@@ -214,6 +185,34 @@ const Made = () => {
               priceEn="(Not for sale)"
             />
           </div>
+          
+          <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
+            <MadeBox
+              images={[
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961666/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7.png"
+              ]}
+              title="쫑알쫑알스티커"
+              titleEn="BabbleBabble Sticker"
+              kr="당신의 숨겨왔던 쫑알쫑알을 세상에 부착하세요. 왱알왱알손바닥수첩을 구입하면 쫑알쫑알스티커를 함께 선물합니다."
+              en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
+              location="MD존"
+              priceKr="(비매품)"
+              priceEn="(Not for sale)"
+            />
+
+            <MadeBox
+              images={[
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961681/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20312341234_achxh5.png"
+              ]}
+              title="왱알왱알손바닥수첩"
+              titleEn="MumbleMumble Note"
+              kr="우리의 말아리가 가득 담길 A6 크기의 수첩. 머릿속의 작은 생각들로 채워나가 보세요. 왱알왱알손바닥노트를 구입하면 쫑알쫑알스티커를 함께 선물합니다."
+              en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
+              location="MD존"
+              priceKr="(3000)"
+              priceEn="(3000)"
+            />
+          </div>
 
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-[701px]:gap-10">
             <MadeBox
@@ -227,6 +226,19 @@ const Made = () => {
               location="MD존에서 무료로 체험 가능"
               priceKr="(비매품)"
               priceEn="(Not for sale)"
+            />
+
+            <MadeBox
+              images={[
+                ""
+              ]}
+              title="울퉁불퉁한 맛 잼 (35g)"
+              titleEn="lumpy bumpy Jam (35g)"
+              kr="2025 ATC의 울퉁불퉁함은 과연 어떤 맛이 날까요? 잼팟과 함께 만든 잼을 통해 직접 맛보고 느껴보세요!"
+              en="What flavor would 2025 ATC have? Taste and feel it through the jam crafted with JAMPOT!"
+              location="콜라보 부스"
+              priceKr="(3000)"
+              priceEn="(3000)"
             />
           </div>
         </section>
