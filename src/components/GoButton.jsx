@@ -5,7 +5,7 @@ export default function GoButton({ text, onClick }) {
     <div className="group ...">
       <button
         onClick={onClick}
-        className="group-hover:bg-fill-invert flex gap-3 justify-center items-center px-6 py-3 border border-fill-invert rounded-full"
+        className="cursor-pointer group-hover:bg-fill-invert flex gap-3 justify-center items-center px-6 py-3 border border-fill-invert rounded-full"
       >
         <p className="group-hover:text-label text-[16px] text-label-invert">
           {text}

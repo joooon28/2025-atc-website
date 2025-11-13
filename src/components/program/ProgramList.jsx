@@ -94,10 +94,9 @@ export default function ProgramList({
                   : isNumberFour
                   ? "max-[1284px]:flex-col max-[1284px]:gap-0 gap-3"
                   : // ← 1번만 세로 정렬
-                    "min-[1073px]:gap-3 max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0",
+                    " min-[1073px]:gap-3 max-[847px]:flex-col max-[287px]:gap-[6px] max-[1073px]:flex-col max-[1073px]:gap-0",
               ].join(" ")}
             >
-              {" "}
               <p>{title}</p>
               <p className="italic ">{titleeng}</p>
             </div>
@@ -116,7 +115,7 @@ export default function ProgramList({
             ].join(" ")}
           >
             <div className="flex flex-col gap-4 pt-10">
-              <div className="font-regular text-[15px] leading-regular tracking-regular text-label">
+              <div className="whitespace-pre-line font-regular text-[15px] leading-regular tracking-regular text-label">
                 {text}
               </div>
               <div className="flex font-regular text-[15px] gap-2">
