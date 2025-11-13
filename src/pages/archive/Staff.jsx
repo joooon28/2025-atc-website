@@ -17,9 +17,9 @@ export default function Staff({ onClose }) {
       <div className="py-10 min-desktop:px-[120px] min-tablet:px-10 max-tablet:px-5 flex flex-col gap-[80px]">
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-[24px] font-heavy italic flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
+          <div className="text-[24px] font-heavy flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-[6px]">
             <p>크리에이티브 디렉터</p>
-            <p>Creative Director</p>
+            <p className="italic">Creative Director</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile

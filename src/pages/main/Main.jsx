@@ -294,7 +294,7 @@ export default function Main() {
           2025 Art & Technology Conference
         </p>
         <p className="text-end">
-          11.24 - 11.30 <br />
+          11.20 - 11.23 <br />
           서강대학교 하비에르관(X관)
         </p>
       </div>

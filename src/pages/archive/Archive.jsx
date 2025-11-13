@@ -70,7 +70,7 @@ export default function Archive() {
         </div>
       </div>
 
-      <div className="min-desktop:px-[120px] max-desktop:px-[40px]">
+      <div className="min-desktop:px-[120px] max-desktop:px-[20px]">
         <section
           className="
     grid grid-cols-4 items-stretch
