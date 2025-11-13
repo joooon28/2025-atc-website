@@ -317,14 +317,23 @@ const MakerRow = React.memo(({ maker }) => {
     const sortedLinks = useMemo(() => {
         return [...maker.links].sort((a, b) => {
             if (a.type === 'email' && b.type !== 'email') {
-                return -1;
+                return -1; 
             }
             if (a.type !== 'email' && b.type === 'email') {
                 return 1;
             }
+            
+            if (a.type === 'instagram' && b.type !== 'instagram') {
+                return -1; 
+            }
+            if (a.type !== 'instagram' && b.type === 'instagram') {
+                return 1;
+            }
+            
             return 0;
         });
     }, [maker.links]);
+
 
     return (
         <div className="Maker-Row flex flex-col min-mobile:flex-row py-[16px] border-b border-label relative before:content-[''] before:absolute before:bottom-[-3px] before:left-0 before:w-[5px] before:h-[5px] before:bg-label before:rounded-full before:-translate-x-1/2 
@@ -367,20 +376,20 @@ export default function Work() {
 
     const initialView = getQueryParam('view') === 'makers' ? 'makers' : 'gallery';
 
-    const [currentView, setCurrentView] = useState(initialView);
-    
     const initialIsCurrentlySorted = initialView === 'makers';
     const [isCurrentlySorted, setIsCurrentlySorted] = useState(initialIsCurrentlySorted); 
     const [isAscending, setIsAscending] = useState(true);
 
-    const initialRandomArtworks = shuffle(initialArtworks);
+    const [currentView, setCurrentView] = useState(initialView);
+    
+    const initialRandomArtworks = useMemo(() => shuffle(initialArtworks), []);
     const [randomArtworkList, setRandomArtworkList] = useState(initialRandomArtworks);
     
     const uniqueMakersMap = getUniqueMakersMap(initialArtworks); 
     
     const [makerListKey, setMakerListKey] = useState(Math.random().toString());
 
-    const initialRandomMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    const initialRandomMakers = useMemo(() => shuffleMakers(Object.values(uniqueMakersMap)), [uniqueMakersMap]);
     const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
 
     const initialSortedArtworks = useMemo(() => {
@@ -397,30 +406,30 @@ export default function Work() {
         return sortArtworksFn(list, ascending, sortBy);
     }, []);
 
+
     const handleSwitchView = (mode) => {
         setCurrentView(mode);
 
         let newList;
-        let newSearchParams = `?view=${mode}`; 
+        let newIsSorted;
+        let newIsAscending = true; 
 
         if (mode === 'gallery') {
-            if (isCurrentlySorted) {
-                newList = sortArtworks(initialArtworks, isAscending, 'title');
-            } else {
-                newList = randomArtworkList; 
-            }
+            newList = randomArtworkList;
+            newIsSorted = false;
         } else {
-            
-            if (isCurrentlySorted) {
-                newList = groupArtworksByMaker(initialArtworks, isAscending);
-            } else {
-                newList = randomMakerList;
-            }
+            newList = groupArtworksByMaker(initialArtworks, true);
+            newIsSorted = true;
         }
-        
+
+        setIsCurrentlySorted(newIsSorted);
+        setIsAscending(newIsAscending);
         setSortedArtworks(newList);
-        navigate(newSearchParams, { replace: true });
+        setMakerListKey(Math.random().toString());
+
+        navigate(`?view=${mode}`, { replace: true });
     };
+
 
     const handleRandomize = () => {
         
