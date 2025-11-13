@@ -91,13 +91,6 @@ const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn })
         </p>
         
         <p
-          id="Made-Price-Kr"
-          className="font-semibold text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
-        >
-          <span className="font-normal">{priceKr}</span>
-        </p>
-        
-        <p
           id="Made-Detail-En"
           className="font-normal text-[15px] leading-[145%] tracking-[-0.5%] mt-[5px]"
         >
@@ -163,7 +156,6 @@ const Made = () => {
               kr="2025 ATC에 방문한 모든 이에게 「ATC와춤을」연필을 선물합니다. 우리의 말아리를 기록하고 물음표를 휘날리며 ATC와 춤을!"
               en="Every visitor to 2025 ATC will receive an ATC Dance Pencil. Record your words, let those questions marks flutter, and dance with ATC! Let’s dance!"
               location="MD존"
-              priceKr="(비매품)"
               priceEn="(Not for sale)"
             />
 
@@ -181,7 +173,6 @@ const Made = () => {
               kr="2025 ATC를 준비하며 기획단이 나누었던 말아리가 담긴 말아리조각입니다. 조각내서 박제한 우리의 울퉁불퉁하게말아리를 간직하세요."
               en="These are Pieces of UtterEcho shared by 2025 ATC staffs while preparing. Do keep our UtterEcho, broken into pieces and immortalized."
               location="아카이빙 섹션"
-              priceKr="(비매품)"
               priceEn="(Not for sale)"
             />
           </div>
@@ -196,7 +187,6 @@ const Made = () => {
               kr="당신의 숨겨왔던 쫑알쫑알을 세상에 부착하세요. 왱알왱알손바닥수첩을 구입하면 쫑알쫑알스티커를 함께 선물합니다."
               en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
               location="MD존"
-              priceKr="(비매품)"
               priceEn="(Not for sale)"
             />
 
@@ -209,7 +199,6 @@ const Made = () => {
               kr="우리의 말아리가 가득 담길 A6 크기의 수첩. 머릿속의 작은 생각들로 채워나가 보세요. 왱알왱알손바닥노트를 구입하면 쫑알쫑알스티커를 함께 선물합니다."
               en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
               location="MD존"
-              priceKr="(3000)"
               priceEn="(3000)"
             />
           </div>
@@ -224,7 +213,6 @@ const Made = () => {
               kr="오늘이 남은 날 중 가장 아마추어일 때, 지금의 나를 소개하는 명함을 만들어봅시다."
               en="Today may be the last day we remain amateurs. Let’s create a name card that introduces who we are now."
               location="MD존에서 무료로 체험 가능"
-              priceKr="(비매품)"
               priceEn="(Not for sale)"
             />
 
@@ -238,7 +226,6 @@ const Made = () => {
               kr="2025 ATC의 울퉁불퉁함은 과연 어떤 맛이 날까요? 잼팟과 함께 만든 잼을 통해 직접 맛보고 느껴보세요!"
               en="What flavor would 2025 ATC have? Taste and feel it through the jam crafted with JAMPOT!"
               location="콜라보 부스"
-              priceKr="(3000)"
               priceEn="(3000)"
             />
           </div>
