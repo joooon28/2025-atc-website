@@ -51,7 +51,7 @@ const StickyTitle = React.memo(({ data }) => {
     <p id="Sticky-Title-Combined">
       {titleKr && (
         <span
-          className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}
+          className={`font-medium text-[14px] leading-none tracking-normal`}
         >
           {titleKr}
         </span>
@@ -59,7 +59,7 @@ const StickyTitle = React.memo(({ data }) => {
       {titleKr && titleEn && " "}
       {titleEn && (
         <span
-          className={`${fontMap.italic} text-[14px] leading-none tracking-normal`}
+          className={`font-medium italic text-[14px] leading-none tracking-normal`}
         >
           {titleEn}
         </span>
@@ -75,10 +75,10 @@ const StickyArtist = React.memo(({ data }) => {
   if (!artistKr && !artistEn) return null;
 
   return (
-    <p id="Sticky-Artist-Combined">
+    <p id="Sticky-Artist-Combined" className="text-right">
       {artistKr && (
         <span
-          className={`${fontMap.medium} text-[14px] leading-none tracking-normal`}
+          className={`font-regular text-[14px] leading-none tracking-normal`}
         >
           {artistKr}
         </span>
@@ -86,7 +86,7 @@ const StickyArtist = React.memo(({ data }) => {
       {artistKr && artistEn && " "}
       {artistEn && (
         <span
-          className={`${fontMap.italic} text-[14px] leading-none tracking-normal`}
+          className={`font-regular italic text-[14px] leading-none tracking-normal`}
         >
           {artistEn}
         </span>
@@ -126,14 +126,14 @@ const ArtistDetailInfo = ({ artistsDetail }) => {
         <div key={index} className="Artist-Card w-[calc(50%-20px)]">
           {artist.kr && (
             <p
-              className={`${fontMap.semibold} font-[500] text-[14px] leading-snug tracking-normal mb-0.5`}
+              className={`font-medium text-[14px] leading-snug tracking-normal mb-0.5`}
             >
               {artist.kr}
             </p>
           )}
           {artist.en && (
             <p
-              className={`${fontMap.italic} font-[400] text-[14px] leading-snug tracking-normal mb-1.5`}
+              className={`font-regular italic text-[14px] leading-snug tracking-normal mb-1.5`}
             >
               {artist.en}
             </p>
@@ -294,9 +294,9 @@ export default function WorkDetail() {
 
   const displayLinks = artwork.links;
 
-  const p1Class = `${fontMap.semibold} font-[500] text-[15px] leading-[145%] tracking-[-0.5%]`;
-  const pBodyKrClass = `${fontMap.text} font-normal text-[15px] leading-[180%] tracking-[-10%]`;
-  const pBodyEnClass = `${fontMap.text} font-normal text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const p1Class = `font-medium text-[15px] leading-[145%] tracking-[-0.5%]`;
+  const pBodyKrClass = `font-regular text-[15px] leading-[180%] tracking-[-10%]`;
+  const pBodyEnClass = `font-regular text-[15px] leading-[145%] tracking-[-0.5%]`;
 
   const renderCommentaryBody = () => {
     if (!currentCommentary) return null;
@@ -342,7 +342,7 @@ export default function WorkDetail() {
         <Header />
       </div>
       
-      <div className="p-5 fixed top-0 left-0 right-0 z-[10020] min-tablet:hidden">
+      <div className="p-5 fixed top-0 left-0 right-0 z-[10040] min-tablet:hidden">
         <div className="relative ">
           <MenuToggle />
         </div>
@@ -371,7 +371,7 @@ export default function WorkDetail() {
             {displayTitleKr && (
               <p
                 id="Work-Title-Kr"
-                className={`${fontMap.medium} text-[24px] leading-none tracking-normal`}
+                className={`font-medium text-[24px] leading-none tracking-normal`}
               >
                 {displayTitleKr}
               </p>
@@ -379,7 +379,7 @@ export default function WorkDetail() {
             {displayTitleEn && (
               <p
                 id="Work-Title-En"
-                className={`${fontMap.medium} italic text-[24px] leading-none tracking-normal`}
+                className={`font-medium italic text-[24px] leading-none tracking-normal`}
               >
                 {displayTitleEn}
               </p>
@@ -389,7 +389,7 @@ export default function WorkDetail() {
           {displayLocation && (
             <p
               id="Work-Location"
-              className={`${fontMap.text} font-[450] text-sm leading-none tracking-normal`}
+              className={`font-regular text-sm leading-none tracking-normal`}
             >
               {displayLocation}
             </p>
@@ -483,7 +483,7 @@ export default function WorkDetail() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${fontMap.italic} text-sm inline-flex items-center w-auto font-normal leading-none tracking-normal underline decoration-solid underline-offset-px decoration-1 decoration-skip-ink-true`}
+                    className={`font-regular italic text-sm inline-flex items-center w-auto font-normal leading-none tracking-normal underline decoration-solid underline-offset-px decoration-1 decoration-skip-ink-true`}
                   >
                     {link.text}
                     <img
