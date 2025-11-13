@@ -114,28 +114,28 @@ export default function Archive() {
     [&>*::before]:rounded-full [&>*::before]:bg-fill
     [&>*::before]:left-0 [&>*::before]:top-0
     [&>*::before]:-translate-x-3/8 [&>*::before]:-translate-y-1/2
-    [&>*::before]:z-10 [&>*::before]:pointer-events-none
+    [&>*::before]:z-5 [&>*::before]:pointer-events-none
 
     [&>*::after]:content-[''] [&>*::after]:absolute
     [&>*::after]:w-[var(--dot)] [&>*::after]:h-[var(--dot)]
     [&>*::after]:rounded-full [&>*::after]:bg-fill
     [&>*::after]:right-0 [&>*::after]:bottom-0
     [&>*::after]:translate-x-1/2 [&>*::after]:translate-y-1/2
-    [&>*::after]:z-10 [&>*::after]:pointer-events-none
+    [&>*::after]:z-5 [&>*::after]:pointer-events-none
 
     before:content-[''] before:absolute
     before:w-[var(--dot)] before:h-[var(--dot)]
     before:rounded-full before:bg-fill
     before:right-0 before:top-0
     before:translate-x-1/2 before:-translate-y-1/2
-    before:z-20 before:pointer-events-none
+    before:z-5 before:pointer-events-none
 
     after:content-[''] after:absolute
     after:w-[var(--dot)] after:h-[var(--dot)]
     after:rounded-full after:bg-fill
     after:left-0 after:bottom-0
     after:-translate-x-1/2 after:translate-y-1/2
-    after:z-20 after:pointer-events-none
+    after:z-5 after:pointer-events-none
   "
         >
           <ArchiveSection
@@ -182,7 +182,7 @@ export default function Archive() {
                 setActiveSheet(null);
               }
             }}
-            className={` absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
+            className={`absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
               ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
           >
             <div className="bg-mint-6 h-svh overflow-y-auto ">

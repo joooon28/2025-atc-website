@@ -1,4 +1,5 @@
 export default function PreviousList({
+  number,
   title,
   titleeng,
   date,
@@ -13,6 +14,11 @@ export default function PreviousList({
   onMoreInfo,
   rounded,
 }) {
+  const isNumberFive = String(number) === "5";
+  const isNumberSix = String(number) === "6";
+  const isNumberSeven = String(number) === "7";
+  const isNumberEight = String(number) === "8";
+
   return (
     <div
       className=" cursor-pointer
@@ -55,7 +61,20 @@ export default function PreviousList({
       </div>
 
       <div className="text-label flex flex-col gap-3">
-        <div className="flex gap-[10px] font-medium text-[16px]">
+        <div
+          className={[
+            "flex",
+            isNumberFive
+              ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
+              : isNumberSix
+              ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
+              : isNumberSeven
+              ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
+              : isNumberEight
+              ? "max-[1000px]:flex-col max-[1000px]:gap-0 font-medium gap-[10px]"
+              : "gap-[10px] font-medium text-[16px]",
+          ].join(" ")}
+        >
           <p>{title}</p>
           <p className="italic">{titleeng}</p>
         </div>

@@ -58,7 +58,7 @@ export default function ProgramCalendar({
                 className="absolute left-1/2 w-1/4 top-0 bottom-[-84.3px]
                  bg-[#E9F1E9] flex justify-center items-center
                  text-[20px] font-regular
-                 cursor-pointer pointer-events-auto z-[60]"
+                 cursor-pointer pointer-events-auto z-[1]"
                 onMouseEnter={() => onHoverNumber?.(3, "bg-[#E9F1E9]")}
                 onMouseLeave={() => onLeaveNumber?.()}
                 onClick={() => onClickNumber?.(3, "bg-[#E9F1E9]")}

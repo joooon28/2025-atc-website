@@ -10,6 +10,7 @@ const items = Object.keys(programs).map((key) => {
   const img = images[key];
 
   return {
+    number: meta.number,
     id: key,
     title: meta.title,
     titleeng: meta.titleeng,
@@ -177,6 +178,7 @@ export default function Previous({ initialOpenId }) {
         >
           {items.map((it) => (
             <PreviousList
+              number={it.number}
               key={it.id}
               title={it.title}
               titleeng={it.titleeng}

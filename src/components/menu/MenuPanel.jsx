@@ -14,7 +14,7 @@ export default function MenuPanel({ onClose }) {
   };
 
   return (
-    <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-5/80 p-[12px]">
+    <div className="w-full max-h-[80vh] overflow-y-auto border border-label bg-mint-5/90 p-[12px]">
       <img
         src={LogoBrown}
         alt="LogoBrown"
@@ -52,12 +52,6 @@ export default function MenuPanel({ onClose }) {
             onClick={() => handleMenuClick("/archive")}
           >
             Archive
-          </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => handleMenuClick("/playground")}
-          >
-            Playground
           </li>
         </ul>
       </nav>

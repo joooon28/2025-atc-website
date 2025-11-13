@@ -46,7 +46,7 @@
   --font-mono: "Monoplex KR Wide Nerd", ui-monospace, SFMono-Regular, Menlo,
     Consolas, "Liberation Mono", monospace;
 
-  --breakpoint-mobile: 376px;
+  --breakpoint-mobile: 440px;
   --breakpoint-tablet: 701px;
   --breakpoint-desktop: 1440px;
 

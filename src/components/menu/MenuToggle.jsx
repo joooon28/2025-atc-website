@@ -34,10 +34,10 @@ export default function MenuToggle() {
       >
         <MenuButton />
       </div>
-      
+
       <div
         className={[
-          "absolute inset-x-0 top-0 z-[50]",
+          "absolute inset-x-0 top-0 z-[10]",
           "transition-opacity duration-500 ease-in-out",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
         ].join(" ")}
@@ -45,7 +45,7 @@ export default function MenuToggle() {
       >
         <MenuPanel onClose={handleToggle} />
       </div>
-      
+
       <div className="absolute top-0 right-0 z-[60]">
         <ButtonLottie
           open={open}

@@ -3,8 +3,150 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Marker from "../../assets/main/Marker";
 import React, { useMemo, memo, useRef, useEffect, useState } from "react";
 
-export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
+import Sound_Ul from "../../assets/mainsound/Sound_Ul.mp3";
+import Sound_Toong from "../../assets/mainsound/Sound_Toong.mp3";
+import Sound_Bul from "../../assets/mainsound/Sound_Bul.mp3";
+import Sound_Toong2 from "../../assets/mainsound/Sound_Toong2.mp3";
+import Sound_Ha from "../../assets/mainsound/Sound_Ha.mp3";
+import Sound_Ge from "../../assets/mainsound/Sound_Ge.mp3";
+import Sound_Mal from "../../assets/mainsound/Sound_Mal.mp3";
+import Sound_Ri from "../../assets/mainsound/Sound_Ri.mp3";
+import Sound_A from "../../assets/mainsound/Sound_A.mp3";
+
+const AUDIO_SRC_BY_KEY = {
+  Word_Mal: Sound_Mal,
+  Word_Ri: Sound_Ri,
+  Word_Toong: Sound_Toong,
+  Word_Ge: Sound_Ge,
+  Word_Bul: Sound_Bul,
+  Word_A: Sound_A,
+  Word_Ha: Sound_Ha,
+  Word_Toong2: Sound_Toong2,
+  Word_Ul: Sound_Ul,
+};
+
+export default function MainVisual({
+  onOpen,
+  scale = 1,
+  onWheelZoom,
+  muted = false,
+}) {
   const [activeKey, setActiveKey] = useState(null);
+
+  const audioMapRef = useRef(new Map());
+  const playingKeyRef = useRef(null);
+
+  const isCoarsePointer = React.useCallback(() => {
+    if (typeof window === "undefined") return false;
+    return (
+      window.matchMedia?.("(pointer: coarse)")?.matches ||
+      (navigator && navigator.maxTouchPoints > 0)
+    );
+  }, []);
+
+  useEffect(() => {
+    const mapAtMount = audioMapRef.current;
+    // 프리로드
+    Object.entries(AUDIO_SRC_BY_KEY).forEach(([k, src]) => {
+      if (!audioMapRef.current.has(k)) {
+        const a = new Audio(src);
+        a.preload = "auto";
+        a.crossOrigin = "anonymous";
+        a.muted = muted;
+        audioMapRef.current.set(k, a);
+      }
+    });
+
+    // iOS 사운드 언락 (첫 사용자 제스처에서 1회)
+    const unlock = () => {
+      audioMapRef.current.forEach((a) => {
+        a.play()
+          .then(() => {
+            a.pause();
+            a.currentTime = 0;
+          })
+          .catch(() => {
+            /* ignore autoplay-block errors */
+          });
+      });
+      window.removeEventListener("pointerdown", unlock, { capture: true });
+    };
+    window.addEventListener("pointerdown", unlock, { capture: true });
+
+    return () => {
+      // 정리
+      mapAtMount.forEach((a) => {
+        a.pause();
+      });
+      playingKeyRef.current = null;
+      window.removeEventListener("pointerdown", unlock, { capture: true });
+    };
+  }, [muted]);
+
+  // ★ 유틸들
+  const stopAll = React.useCallback(() => {
+    audioMapRef.current.forEach((a) => {
+      a.pause();
+      a.currentTime = 0;
+      a.loop = false;
+    });
+    playingKeyRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    audioMapRef.current.forEach((a) => {
+      a.muted = muted;
+    });
+    if (muted) {
+      stopAll();
+    }
+  }, [muted, stopAll]);
+
+  const playHover = React.useCallback(
+    (key) => {
+      if (muted) return;
+      const a = audioMapRef.current.get(key);
+      if (!a) return;
+      if (playingKeyRef.current !== key) stopAll();
+      a.loop = true;
+      a.currentTime = 0;
+      a.play().catch(() => {});
+      playingKeyRef.current = key;
+    },
+    [stopAll, muted]
+  );
+
+  const stopHover = React.useCallback((key) => {
+    const a = audioMapRef.current.get(key);
+    if (!a) return;
+    a.pause();
+    a.currentTime = 0;
+    a.loop = false;
+    if (playingKeyRef.current === key) playingKeyRef.current = null;
+  }, []);
+
+  // ★ 클릭 = 1회만 재생
+  const playOnce = React.useCallback(
+    (key) => {
+      if (muted) return;
+      const a = audioMapRef.current.get(key);
+      if (!a) return;
+      stopAll();
+      a.loop = false;
+      a.currentTime = 0;
+      a.play()
+        .then(() => {
+          playingKeyRef.current = key;
+          const onEnded = () => {
+            playingKeyRef.current = null;
+            a.removeEventListener("ended", onEnded);
+          };
+          a.addEventListener("ended", onEnded);
+        })
+        .catch(() => {});
+    },
+    [stopAll, muted]
+  );
 
   const lottieItems = useMemo(
     () => [
@@ -32,7 +174,7 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
       {
         key: "Word_Bul",
         src: "/lottie/MainInteraction/Word_Bul.lottie",
-        top: 96.7,
+        top: 98.3,
         left: 36,
         width: 274,
         rotate: 0,
@@ -140,6 +282,7 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
     }),
     []
   );
+
   const LottieBlock = memo(function LottieBlock({
     item,
     isActive,
@@ -154,8 +297,17 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
       <div
         className="relative"
         style={{ width }}
-        onMouseEnter={onHoverIn}
-        onMouseLeave={onHoverOut}
+        onMouseEnter={(e) => {
+          onHoverIn?.(e);
+          // 데스크톱에서만 호버 사운드
+          if (!isCoarsePointer()) playHover(item.key);
+          playHover(item.key);
+        }}
+        onMouseLeave={(e) => {
+          onHoverOut?.(e);
+          if (!isCoarsePointer()) stopHover(item.key);
+          stopHover(item.key);
+        }}
       >
         <DotLottieReact
           key={`${item.key}-${paused ? "paused" : "playing"}`}
@@ -167,7 +319,17 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
         <button
           type="button"
           aria-label={ariaLabel}
-          onPointerUp={onOpenAndReset}
+          onPointerUp={(e) => {
+            e.preventDefault();
+            // ★ 모바일/터치에서만 탭 시: 1회 재생 + 팝업 열기
+            if (isCoarsePointer()) {
+              playOnce(item.key);
+              onOpenAndReset?.();
+            }
+            // 데스크톱 클릭은 아무 것도 하지 않음(요구사항 4)
+            playOnce(item.key);
+            onOpenAndReset?.();
+          }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[300]
                      bg-transparent cursor-pointer outline-none focus:outline-none focus:ring-0 border-none"
           style={{
@@ -213,6 +375,7 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
             item={it}
             isActive={isActive}
             onOpenAndReset={() => {
+              stopAll();
               onOpenRef.current?.(it.key);
               setActiveKey(null);
             }}
@@ -257,15 +420,37 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
               ariaLabel={`${it.ariaLabel} (Marker)`}
               role="button"
               tabIndex={0}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
+                if (isCoarsePointer()) {
+                  // 모바일 탭: 1회 재생 + 팝업 오픈
+                  playOnce(it.key);
+                  stopAll();
+                  onOpenRef.current?.(it.key); // ★ 팝업 열림 (문제 3 해결)
+                  setActiveKey(null);
+                }
+                // 데스크톱 클릭 무시(요구사항 4)
+                playOnce(it.key);
+                stopAll();
                 onOpenRef.current?.(it.key);
                 setActiveKey(null);
               }}
-              onMouseEnter={() => setActiveKey(it.key)}
-              onMouseLeave={() => setActiveKey(null)}
+              onMouseEnter={() => {
+                setActiveKey(it.key);
+                if (!isCoarsePointer()) playHover(it.key); // 데스크톱 호버 재생
+              }}
+              onMouseLeave={() => {
+                setActiveKey(null);
+                if (!isCoarsePointer()) stopHover(it.key);
+              }}
               onKeyDown={(e) => {
+                // 접근성 고려해 Enter/Space로는 열고 싶다면 아래 유지 (원치 않으면 삭제)
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
+                  if (isCoarsePointer()) {
+                    playOnce(it.key);
+                  }
+                  stopAll();
                   onOpenRef.current?.(it.key);
                   setActiveKey(null);
                 }
@@ -275,25 +460,30 @@ export default function MainVisual({ onOpen, scale = 1, onWheelZoom }) {
         </Wrapper>
       );
     });
-  }, [lottieItems, markerByKey, activeKey]);
+  }, [
+    lottieItems,
+    markerByKey,
+    activeKey,
+    playHover,
+    stopHover,
+    playOnce,
+    stopAll,
+    isCoarsePointer,
+    onOpenRef,
+  ]);
 
   return (
-    <section className="fixed inset-0 z-0 overflow-auto">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div
-          onWheel={onWheelZoom}
-          className="relative w-[1206px]
-                     origin-center transition-transform duration-200 will-change-transform"
-          style={{ transform: `scale(${scale})` }}
-        >
-          <img
-            src={MainFrame}
-            alt="Main frame"
-            className="block w-[1206px] h-auto pointer-events-none z-[1]"
-          />
-          {lottieLayer}
-        </div>
-      </div>
-    </section>
+    <div
+      onWheel={onWheelZoom}
+      className="shrink-0 relative inline-block origin-center transition-transform duration-200 will-change-transform"
+      style={{ transform: `scale(${scale})` }}
+    >
+      <img
+        src={MainFrame}
+        alt="Main frame"
+        className="block w-[1206px] max-w-none h-auto pointer-events-none z-[1]"
+      />
+      {lottieLayer}
+    </div>
   );
 }

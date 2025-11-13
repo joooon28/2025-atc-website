@@ -20,7 +20,7 @@ export default function NotFound() {
         <br />
         서울특별시 마포구 백범로 35 서강대학교 하비에르관(X관){" "}
       </p>
-      <div className="flex-grow cursor-pointer" />
+      <div className="flex-grow" />
       <GoButton text="Explore" onClick={() => navigate("/main")} />
     </div>
   );

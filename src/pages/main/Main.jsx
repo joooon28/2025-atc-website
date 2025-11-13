@@ -5,7 +5,7 @@ import VolumeButton from "../../components/main/VolumeButton";
 import MenuToggle from "../../components/menu/MenuToggle";
 import Popup from "../../components/main/Popup";
 import MainVisual from "../../components/main/MainVisual";
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const routesByKey = {
@@ -42,6 +42,49 @@ const ZOOM_MAX = 5;
 const ZOOM_STEP = 0.2;
 
 export default function Main() {
+  const [muted, setMuted] = useState(false);
+
+  // --- Panning state ---
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const panStartRef = useRef({ x: 0, y: 0 }); // pointerdown 시점의 pan
+  const pointRef = useRef({ x: 0, y: 0 }); // pointerdown 좌표
+  const isPanningRef = useRef(false);
+
+  const onPointerDown = useCallback(
+    (e) => {
+      // 기본 스크롤/더블탭 확대 방지(모바일)
+      e.preventDefault();
+      // 왼쪽 버튼(펜/터치 포함)만 시작
+      if (e.button !== undefined && e.button !== 0) return;
+      isPanningRef.current = true;
+      // 포인터 캡처: 드래그가 영역 밖으로 나가도 계속 추적
+      e.currentTarget.setPointerCapture?.(e.pointerId);
+      panStartRef.current = { ...pan };
+      pointRef.current = { x: e.clientX, y: e.clientY };
+    },
+    [pan]
+  );
+
+  const onPointerMove = useCallback((e) => {
+    if (!isPanningRef.current) return;
+    const dx = e.clientX - pointRef.current.x;
+    const dy = e.clientY - pointRef.current.y;
+    setPan({
+      x: panStartRef.current.x + dx,
+      y: panStartRef.current.y + dy,
+    });
+  }, []);
+
+  const endPan = useCallback((e) => {
+    if (!isPanningRef.current) return;
+    isPanningRef.current = false;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+  }, []);
+
+  const handleToggleMute = useCallback((next) => {
+    setMuted(next);
+  }, []);
+
   const [popup, setPopup] = useState(null);
   const [zoom, setZoom] = useState(1);
 
@@ -187,7 +230,7 @@ export default function Main() {
   }, [popup, navigate]);
 
   return (
-    <main className="min-h-svh bg-mint-3">
+    <main className="min-h-svh bg-mint-3 overflow-hidden">
       <div className="relative z-10 max-tablet:hidden py-[40px]">
         <Header />
       </div>
@@ -196,7 +239,39 @@ export default function Main() {
           <MenuToggle />
         </div>
       </div>
-      <MainVisual onOpen={onOpen} scale={zoom} onWheelZoom={handleWheelZoom} />
+      <div
+        className="
+          fixed inset-0
+          cursor-grab
+          [*:active]:cursor-grabbing
+          overflow-hidden
+          touch-none          
+          select-none
+          overscroll-none
+          grid place-items-center
+        "
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endPan}
+        onPointerCancel={endPan}
+      >
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div
+            className="relative inline-block"
+            style={{
+              transform: `translate3d(${pan.x}px, ${pan.y}px, 0)`,
+              willChange: "transform",
+            }}
+          >
+            <MainVisual
+              onOpen={onOpen}
+              scale={zoom}
+              onWheelZoom={handleWheelZoom}
+              muted={muted}
+            />
+          </div>
+        </div>
+      </div>
       <div className="fixed inset-x-0 bottom-0 flex justify-center gap-3 pb-[40px]">
         <div className="flex justify-center items-center gap-3 ">
           <button onClick={handleZoomIn}>
@@ -206,7 +281,7 @@ export default function Main() {
             <MinusButton />
           </button>
 
-          <VolumeButton />
+          <VolumeButton muted={muted} onToggle={handleToggleMute} />
         </div>
       </div>
       <div className="text-label opacity-30 text-[15px] font-regular leading-[1.45] max-[800px]:hidden fixed inset-x-0 bottom-0 flex justify-between items-end px-10 pb-[40px] pointer-events-none">
