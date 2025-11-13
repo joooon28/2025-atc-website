@@ -6,7 +6,7 @@ import MenuToggle from "../components/menu/MenuToggle";
 
 const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
-const SLIDE_INTERVAL = 2500;
+const SLIDE_INTERVAL = 1000;
 
 const MadeBox = ({ images, title, titleEn, kr, en, location, priceKr, priceEn }) => { 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
