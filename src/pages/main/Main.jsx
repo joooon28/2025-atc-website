@@ -330,7 +330,7 @@ export default function Main() {
       </p>
 
       {popupContent && (
-        <div className="fixed inset-x-10 bottom-10 z-40 pointer-events-none max-mobile:inset-x-5 max-mobile:bottom-5">
+        <div className="fixed inset-x-5 bottom-5 z-40 pointer-events-none max-mobile:inset-x-5 max-mobile:bottom-5">
           <div className="pointer-events-auto flex justify-end max-mobile:justify-stretch ">
             <div
               style={{
