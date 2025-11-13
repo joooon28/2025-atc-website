@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import Staff from "../pages/Archive/Staff"; 
+import Staff from "../pages/archive/Staff"; 
 
 export default function StaffSheetContainer({ isVisible, onClose }) {
   const [sheetOpen, setSheetOpen] = useState(false);
