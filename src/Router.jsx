@@ -3,6 +3,7 @@ import {
   Outlet,
   ScrollRestoration,
 } from "react-router-dom";
+
 import Main from "./pages/main/Main";
 import About from "./pages/About";
 import Work from "./pages/work/Work";
@@ -17,12 +18,11 @@ import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
 import Onboarding from "./pages/Onboarding";
-import RouteFade from "./components/RouterFade";
 
 const RootLayout = () => {
   return (
     <>
-      <RouteFade />
+      <Outlet />
       <ScrollRestoration />
     </>
   );
