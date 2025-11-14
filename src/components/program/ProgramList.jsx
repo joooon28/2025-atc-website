@@ -7,19 +7,19 @@ export default function ProgramList({
   date2,
   date3,
   text,
-  texteng,
-  detailKo1,
-  detailEng1,
-  detailKo2,
-  detailEng2,
-  rounded,
-  main,
-  sub1,
+  // texteng,
+  // detailKo1,
+  // detailEng1,
+  // detailKo2,
+  // detailEng2,
+  // rounded,
+  // main,
+  // sub1,
   location,
   audience,
   activeId,
   onActivate,
-  onMoreInfo,
+  // onMoreInfo,
   hoveredNumber,
   selfHoverClass,
   hoveredColor,
@@ -84,7 +84,7 @@ export default function ProgramList({
           <div className="font-regular text-label flex flex-col gap-10 cursor-pointer select-none">
             <div
               className={[
-                "flex text-[20px]",
+                "flex text-[20px] max-mobile:text-[16px]",
                 isNumberOne
                   ? "flex-col"
                   : isNumberTwo
@@ -115,18 +115,18 @@ export default function ProgramList({
             ].join(" ")}
           >
             <div className="flex flex-col gap-4 pt-10">
-              <div className="whitespace-pre-line font-regular text-[15px] leading-regular tracking-regular text-label">
+              <div className="whitespace-pre-line font-regular text-[15px] leading-regular tracking-tighter text-label">
                 {text}
               </div>
-              <div className="flex font-regular text-[15px] gap-2">
+              <div className="flex font-regular text-[15px] gap-2  tracking-tighter">
                 <p className="shrink-0 font-heavy">장소</p>
                 <p>{location}</p>
               </div>
-              <div className="flex font-regular text-[15px] gap-2">
+              <div className="flex font-regular text-[15px] gap-2  tracking-tighter">
                 <p className="shrink-0 font-heavy">대상</p>
                 <p>{audience}</p>
               </div>
-              <button
+              {/* <button
                 type="button"
                 onClick={() =>
                   onMoreInfo?.({
@@ -149,7 +149,7 @@ export default function ProgramList({
                 className="flex text-[14px] underline cursor-pointer"
               >
                 More Info
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

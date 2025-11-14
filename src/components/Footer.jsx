@@ -25,9 +25,14 @@ export default function Footer({ showSponsorship = false }) {
         </div>
 
         <div className="max-tablet:flex-col flex tems-end gap-10">
-          <p className="max-tablet:order-2 font-regular md:max-w-[570px] text-[16px] text-label">
-            Xavier Hall, Sogang University, 35 Baekbeom-Ro, Mapo-gu,
-            <br /> Seoul
+          <p
+            className="max-tablet:order-2 font-regular w-full
+             max-w-[590px]
+              text-[16px]
+              leading-relaxed text-label
+              [text-wrap:balance] break-words"
+          >
+            Xavier Hall, Sogang University, 35 Baekbeom-Ro, Mapo-gu, Seoul
             <br />
             Tel +82-2-705-8031 | Fax +82-2-3274-4826 <br />
             <a

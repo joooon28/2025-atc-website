@@ -1,45 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import MainLogo from "./main/MainLogo";
 
-const createSplashPath = (targetPath) => `/splash?redirect=${targetPath}`;
-
 export default function Header() {
   const navigate = useNavigate();
 
   return (
     <div className="text-label font-regular flex justify-center items-center gap-[12px]">
-      <MainLogo onClick={() => navigate(createSplashPath("/main"))} />
-      <header className="flex justify-center items-center border border-label bg-mint-5 py-[12px] px-[24px] h-[45px]">
+      <MainLogo onClick={() => navigate("/main")} />
+      <header className="flex items-center border border-label bg-mint-5 py-[12px] px-[24px] h-[45px]">
         <nav>
           <ul className="italic flex gap-[32px]">
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/about"))}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/about")}>
               About
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/work"))}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/work")}>
               Work
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/program"))}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/program")}>
               Program
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/made"))}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/made")}>
               Made
             </li>
-            <li
-              className="cursor-pointer"
-              onClick={() => navigate(createSplashPath("/archive"))}
-            >
+            <li className="cursor-pointer" onClick={() => navigate("/archive")}>
               Archive
             </li>
           </ul>

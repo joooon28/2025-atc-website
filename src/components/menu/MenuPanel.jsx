@@ -1,13 +1,20 @@
 import LogoBrown from "../../assets/LogoBrown.svg";
-import { useNavigate } from "react-router-dom";
-
-const createSplashPath = (targetPath) => `/splash?redirect=${targetPath}`;
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function MenuPanel({ onClose }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleMenuClick = (targetPath) => {
-    navigate(createSplashPath(targetPath));
+    if (location.pathname === targetPath) {
+      if (onClose) {
+        onClose();
+      }
+      return;
+    }
+    
+    navigate(targetPath);
+    
     if (onClose) {
       onClose();
     }

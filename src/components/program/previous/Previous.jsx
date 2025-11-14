@@ -5,10 +5,15 @@ import MoreInfo from "./MoreInfo";
 import images from "../../../data/program/previous.json";
 import programs from "../../../data/program/previous.meta.json";
 
-const items = Object.keys(programs).map((key) => {
-  const meta = programs[key];
-  const img = images[key];
+const entries = Array.isArray(programs)
+  ? programs.map((meta, i) => [`program${i + 1}`, meta])
+  : Object.entries(programs);
 
+const missing = entries.filter(([key]) => !images?.[key]).map(([k]) => k);
+if (missing.length) console.warn("[Previous] missing image keys:", missing);
+
+const items = entries.map(([key, meta]) => {
+  const img = images?.[key] ?? {};
   return {
     number: meta.number,
     id: key,
@@ -21,9 +26,22 @@ const items = Object.keys(programs).map((key) => {
     detailEng1: meta.detailEng1,
     detailKo2: meta.detailKo2,
     detailEng2: meta.detailEng2,
+    detailKo3: meta.detailKo3,
+    detailEng3: meta.detailEng3,
+    detailKo4: meta.detailKo4,
+    detailEng4: meta.detailEng4,
     rounded: meta.rounded,
-    main: img.main,
-    sub1: img.sub1,
+    madeby: meta.madeby,
+    madebyEng: meta.madebyEng,
+    main: img.main ?? null,
+    sub1: img.sub1 ?? null,
+    sub2: img.sub2 ?? null,
+    sub3: img.sub3 ?? null,
+    sub4: img.sub4 ?? null,
+    sub5: img.sub5 ?? null,
+    sub6: img.sub6 ?? null,
+    sub7: img.sub7 ?? null,
+    sub8: img.sub8 ?? null,
   };
 });
 
@@ -189,9 +207,22 @@ export default function Previous({ initialOpenId }) {
               detailEng1={it.detailEng1}
               detailKo2={it.detailKo2}
               detailEng2={it.detailEng2}
+              detailKo3={it.detailKo3}
+              detailEng3={it.detailEng3}
+              detailKo4={it.detailKo4}
+              detailEng4={it.detailEng4}
+              madeby={it.madeby}
+              madebyEng={it.madebyEng}
               rounded={it.rounded}
               main={it.main}
               sub1={it.sub1}
+              sub2={it.sub2}
+              sub3={it.sub3}
+              sub4={it.sub4}
+              sub5={it.sub5}
+              sub6={it.sub6}
+              sub7={it.sub7}
+              sub8={it.sub8}
               onMoreInfo={openSheet}
             />
           ))}
@@ -240,7 +271,7 @@ export default function Previous({ initialOpenId }) {
               sheetOpen ? "translate-y-0" : "translate-y-full"
             }`}
           >
-            <div className="bg-mint-6 h-svh overflow-y-auto ">
+            <div className="bg-mint-6 h-dvh overflow-y-auto ">
               {selected && <MoreInfo onClose={closeSheet} {...selected} />}
             </div>
           </div>

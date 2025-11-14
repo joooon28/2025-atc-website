@@ -1,4 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  ScrollRestoration,
+} from "react-router-dom";
+
 import Main from "./pages/main/Main";
 import About from "./pages/About";
 import Work from "./pages/work/Work";
@@ -8,85 +13,90 @@ import Archive from "./pages/archive/Archive";
 import Documentary from "./pages/archive/documentary/Documentary";
 import Gallery from "./pages/archive/galllery/Gallery";
 import Map from "./pages/Map";
-import Made from "./pages/Made"
-import Playground from "./pages/Playground";
+import Made from "./pages/Made";
 import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
 import Onboarding from "./pages/Onboarding";
-import Splash from "./pages/Splash"; 
+import RouteFadeOverlay from "./components/RouterFade";
+
+const RootLayout = () => {
+  return (
+    <>
+      <Outlet />
+      <RouteFadeOverlay />
+      <ScrollRestoration />
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Onboarding />,
-  },
-  
-  {
-    path: "/splash",
-    element: <Splash />,
-  },
-  
-  {
-    path: "/main",
-    element: <Main />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/work",
-    element: <Work />,
-  },
-  {
-    path: "/work/:id", 
-    element: <WorkDetail />,
-  },
-  {
-    path: "/program",
-    element: <Program />,
-  },
-  {
-    path: "/made",
-    element: <Made />,
-  },
-  {
-    path: "/archive",
+    element: <RootLayout />,
     children: [
       {
-        path: "",
-        element: <Archive />,
+        path: "/",
+        element: <Onboarding />,
       },
       {
-        path: "staff",
-        element: <Staff />,
+        path: "/main",
+        element: <Main />,
       },
       {
-        path: "documentary",
-        element: <Documentary />,
+        path: "/about",
+        element: <About />,
       },
       {
-        path: "memo",
-        element: <Memo />,
+        path: "/work",
+        element: <Work />,
       },
       {
-        path: "gallery",
-        element: <Gallery />,
+        path: "/work/:id",
+        element: <WorkDetail />,
+      },
+      {
+        path: "/program",
+        element: <Program />,
+      },
+      {
+        path: "/made",
+        element: <Made />,
+      },
+      {
+        path: "/archive",
+        children: [
+          {
+            path: "",
+            element: <Archive />,
+          },
+          {
+            path: "staff",
+            element: <Staff />,
+          },
+          {
+            path: "documentary",
+            element: <Documentary />,
+          },
+          {
+            path: "memo",
+            element: <Memo />,
+          },
+          {
+            path: "gallery",
+            element: <Gallery />,
+          },
+        ],
+      },
+      {
+        path: "/map",
+        element: <Map />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
-  },
-  {
-    path: "/map",
-    element: <Map />,
-  },
-  {
-    path: "/playground",
-    element: <Playground />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
   },
 ]);
 

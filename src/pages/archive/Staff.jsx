@@ -8,7 +8,7 @@ export default function Staff({ onClose }) {
     "grid gap-2 grid-cols-5 max-desktop:grid-cols-4 max-tablet:grid-cols-3 max-mobile:grid-cols-2";
 
   return (
-    <div className="flex flex-col min-h-svh bg-mint-6">
+    <div className="flex flex-col min-h-dvh bg-mint-6">
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
@@ -95,9 +95,9 @@ export default function Staff({ onClose }) {
             <StaffProfile
               lead="Team Lead"
               name="오제우"
-              nameEng="Jawoo Oh"
+              nameEng="Jewoo Oh"
               mail="jewoo0515@gmail.com"
-              imagesrc={images.Jawoo}
+              imagesrc={images.Jewoo}
               objectPosClass="object-[50%_0px]"
               scaleClass="scale-110"
             />
@@ -146,7 +146,7 @@ export default function Staff({ onClose }) {
             />
             <StaffProfile
               name="유가형"
-              nameEng="Gahyung Yoo"
+              nameEng="Kahyung Yoo"
               mail="kahyungyoo@gmail.com"
               insta="ooliviayooo"
               imagesrc={images.Gahyung}
@@ -173,6 +173,7 @@ export default function Staff({ onClose }) {
           </div>
           <div className={rowGrid}>
             <StaffProfile
+              lead="Team Lead"
               name="심유림"
               nameEng="Yurim Sim"
               mail="yurim@sogang.ac.kr"

@@ -153,7 +153,7 @@ export default function MainVisual({
       {
         key: "Word_Ul",
         src: "/lottie/MainInteraction/Word_Ul.lottie",
-        top: 98,
+        top: 99,
         left: 20.8,
         width: 330,
         rotate: 0,
@@ -163,7 +163,7 @@ export default function MainVisual({
       {
         key: "Word_Toong",
         src: "/lottie/MainInteraction/Word_Toong.lottie",
-        top: 32.5,
+        top: 34,
         left: 27,
         width: 100,
         rotate: 0,
@@ -174,7 +174,7 @@ export default function MainVisual({
       {
         key: "Word_Bul",
         src: "/lottie/MainInteraction/Word_Bul.lottie",
-        top: 98.3,
+        top: 98.4,
         left: 36,
         width: 274,
         rotate: 0,
@@ -186,9 +186,9 @@ export default function MainVisual({
       {
         key: "Word_Toong2",
         src: "/lottie/MainInteraction/Word_Toong2.lottie",
-        top: 74,
+        top: 76.5,
         left: 46,
-        width: 280,
+        width: 283,
         rotate: 0,
         ariaLabel: "Work 페이지의 5초마다 새로운 프로젝트 페이지 이동(완료)",
         hitbox: { width: 145, height: 140, offsetX: 72, offsetY: 50 },
@@ -196,7 +196,7 @@ export default function MainVisual({
       {
         key: "Word_Ha",
         src: "/lottie/MainInteraction/Word_Ha.lottie",
-        top: 32,
+        top: 33.5,
         left: 54.5,
         width: 228,
         rotate: 0,
@@ -206,7 +206,7 @@ export default function MainVisual({
       {
         key: "Word_Ge",
         src: "/lottie/MainInteraction/Word_Ge.lottie",
-        top: 40,
+        top: 41.5,
         left: 60.3,
         width: 75,
         rotate: 0,
@@ -216,7 +216,7 @@ export default function MainVisual({
       {
         key: "Word_Mal",
         src: "/lottie/MainInteraction/Word_Mal.lottie",
-        top: 99.5,
+        top: 101.5,
         left: 83.3,
         width: 475,
         rotate: 0,
@@ -227,7 +227,7 @@ export default function MainVisual({
       {
         key: "Word_A",
         src: "/lottie/MainInteraction/Word_A.lottie",
-        top: 99.3,
+        top: 101.5,
         left: 79.4,
         width: 180,
         rotate: 0,
@@ -238,7 +238,7 @@ export default function MainVisual({
       {
         key: "Word_Ri",
         src: "/lottie/MainInteraction/Word_Ri.lottie",
-        top: 92.5,
+        top: 93.5,
         left: 89.7,
         width: 250,
         rotate: 0,

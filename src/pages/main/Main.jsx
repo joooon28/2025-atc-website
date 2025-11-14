@@ -42,6 +42,26 @@ const ZOOM_MAX = 5;
 const ZOOM_STEP = 0.2;
 
 export default function Main() {
+  // Main 컴포넌트 상단 state
+  const [popup, setPopup] = useState(null);
+  const [popupEntered, setPopupEntered] = useState(false);
+  const POPUP_DURATION = 1000;
+  const CURVE_IN = "cubic-bezier(0.22,1,0.36,1)"; // 올라올 때 (ease-out 느낌)
+  const CURVE_OUT = "cubic-bezier(0.4,0,1,1)";
+
+  // 열기
+  const onOpen = useCallback((key) => {
+    setPopup(key);
+    // 다음 틱에 enter (레이아웃 커밋 후)
+    setTimeout(() => setPopupEntered(true), 0);
+  }, []);
+
+  // 닫기: 먼저 내려가게 하고, 애니 끝난 뒤 언마운트
+  const onClose = useCallback(() => {
+    setPopupEntered(false);
+    setTimeout(() => setPopup(null), POPUP_DURATION);
+  }, []);
+
   const [muted, setMuted] = useState(false);
 
   // --- Panning state ---
@@ -89,13 +109,13 @@ export default function Main() {
     setMuted(next);
   }, []);
 
-  const [popup, setPopup] = useState(null);
+  // const [popup, setPopup] = useState(null);
   const [zoom, setZoom] = useState(1);
 
   const navigate = useNavigate();
 
-  const onOpen = useCallback((key) => setPopup(key), []);
-  const onClose = useCallback(() => setPopup(null), []);
+  // const onOpen = useCallback((key) => setPopup(key), []);
+  // const onClose = useCallback(() => setPopup(null), []);
 
   const handleZoomIn = useCallback(
     () => setZoom((z) => Math.min(ZOOM_MAX, +(z + ZOOM_STEP).toFixed(2))),
@@ -235,11 +255,11 @@ export default function Main() {
 
   return (
     <main className="min-h-svh bg-mint-3 overflow-hidden">
-      <div className="relative z-10 max-tablet:hidden py-[40px]">
+      <div className="relative z-100 max-tablet:hidden py-[40px]">
         <Header />
       </div>
       <div className="p-5">
-        <div className="min-tablet:hidden relative">
+        <div className="z-100 min-tablet:hidden relative">
           <MenuToggle />
         </div>
       </div>
@@ -298,32 +318,48 @@ export default function Main() {
           서강대학교 하비에르관(X관)
         </p>
       </div>
-      <p className="text-[14px] font-heavy fixed min-[800px]:hidden max-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="pointer-events-none text-[14px] font-heavy fixed min-[800px]:hidden max-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
-      <p className="text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="pointer-events-none text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
 
       {popupContent && (
-        <div
-          className="z-40 fixed bottom-10 right-10
-                  max-mobile:inset-x-5 max-mobile:bottom-5"
-        >
-          <div className="max-mobile:w-full">
-            <Popup
-              animationSrc={popupContent.animationSrc}
-              title={popupContent.title}
-              description={popupContent.description}
-              onClose={onClose}
-              rotate={popupContent.rotate ?? 0}
-              size={popupContent.size ?? 140}
-              onGo={popupContent.onGo}
-            />
+        <div className="fixed inset-x-5 bottom-5 z-40 pointer-events-none max-mobile:inset-x-5 max-mobile:bottom-5">
+          <div className="pointer-events-auto flex justify-end max-mobile:justify-stretch ">
+            <div
+              style={{
+                transitionProperty: "visibility, transform",
+                transitionDuration: `0s, ${POPUP_DURATION}ms`,
+                transitionTimingFunction: `linear, ${
+                  popupEntered ? CURVE_IN : CURVE_OUT
+                }`,
+                transitionDelay: popupEntered
+                  ? "0s, 0s"
+                  : `${POPUP_DURATION}ms, 0s`,
+                visibility: popupEntered ? "visible" : "hidden",
+                transform: popupEntered
+                  ? "translate3d(0,0,0)"
+                  : "translate3d(0,100vh,0)",
+                willChange: "transform, visibility",
+              }}
+              className="max-mobile:w-full"
+            >
+              <Popup
+                animationSrc={popupContent.animationSrc}
+                title={popupContent.title}
+                description={popupContent.description}
+                onClose={onClose}
+                rotate={popupContent.rotate ?? 0}
+                size={popupContent.size ?? 140}
+                onGo={popupContent.onGo}
+              />
+            </div>
           </div>
         </div>
       )}

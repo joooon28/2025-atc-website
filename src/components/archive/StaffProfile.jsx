@@ -11,7 +11,7 @@ export default function StaffProfile({
 
   return (
     <section className="flex flex-col gap-2">
-      <div className="aspect-[3/4] w-full overflow-hidden">
+      <div className="bg-[#E9F1E9] aspect-[3/4] w-full overflow-hidden">
         {isVideo ? (
           <video
             src={imagesrc}
@@ -22,7 +22,7 @@ export default function StaffProfile({
             playsInline
           />
         ) : (
-          <img src={imagesrc} alt={name} className={mediaClass} />
+          <img src={imagesrc} className={mediaClass} />
         )}
       </div>
 
