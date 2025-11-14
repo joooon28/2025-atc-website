@@ -618,7 +618,7 @@ export const initialArtworks = [
         links: [{ url: "mailto:sophia2004714@gmail.com", alt: "Email" }],
       },
       {
-        name: "정태연 Taeyoen Jung",
+        name: "정태연 Taeyeon Jung",
         links: [{ url: "mailto:xopowo2006@gmail.com", alt: "Email" }],
       },
       {
