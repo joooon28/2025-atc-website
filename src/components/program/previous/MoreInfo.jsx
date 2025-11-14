@@ -120,34 +120,24 @@ export default function MoreInfo({
         <div className="text-label p-10 max-tablet:px-5">
           <section className="flex flex-col w-full gap-10">
             <div className="flex flex-col gap-5">
-              <div className="flex gap-[10px] font-heavy text-[24px]">
+              <div className="flex gap-[10px] font-heavy text-[24px] max-tablet:flex-col max-tablet:gap-0">
                 <p>{title}</p>
                 <p className="italic">{titleeng}</p>
               </div>
               <p className="flex text-[15px] font-heavy leading-regular tracking-regular">
                 {date}
               </p>
-              {isKR ? (
-                <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
-                  {detailKo1}
-                </p>
-              ) : (
-                <p className="whitespace-pre-line flex text-[15px] font-regular leading-regular tracking-regular">
-                  {detailEng1}
-                </p>
-              )}
-            </div>
-            {main ? (
-              <div className="flex w-full aspect-[16/9] overflow-hidden">
-                <img
-                  src={main}
-                  alt={title}
-                  className="flex w-full h-full object-cover"
-                />
-              </div>
-            ) : null}
-            <div
-              className=" 
+              {main ? (
+                <div className="flex w-full aspect-[16/9] overflow-hidden">
+                  <img
+                    src={main}
+                    alt={title}
+                    className="flex w-full h-full object-cover"
+                  />
+                </div>
+              ) : null}
+              <div
+                className=" 
                     group flex hover:bg-mint-6 
                     border-t border-label 
                     relative [--dot:6px] [--b:1px] [--expand:250px]
@@ -166,7 +156,18 @@ export default function MoreInfo({
                     after:translate-x-1/2 after:-translate-y-3/4
                     after:pointer-events-none 
                 "
-            />
+              />
+              {isKR ? (
+                <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+                  {detailKo1}
+                </p>
+              ) : (
+                <p className="whitespace-pre-line flex text-[15px] font-regular leading-regular tracking-regular">
+                  {detailEng1}
+                </p>
+              )}
+            </div>
+
             {isKR ? (
               <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
                 {detailKo2}
@@ -177,11 +178,11 @@ export default function MoreInfo({
               </p>
             )}
             {sub1 ? (
-              <div className="flex w-full aspect-[16/9] overflow-hidden rounded-[1000px]">
+              <div className="flex w-full aspect-[16/9] overflow-hidden ">
                 <img
                   src={sub1}
                   alt={title}
-                  className="flex w-full h-full object-cover rounded-[1000px]"
+                  className="flex w-full h-full object-cover "
                 />
               </div>
             ) : null}
