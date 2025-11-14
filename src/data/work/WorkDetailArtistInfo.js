@@ -1051,7 +1051,7 @@ export const allArtworkData = {
       },
       {
         kr: "정태연",
-        en: "Taeyoen Jung",
+        en: "Taeyeon Jung",
         links: {
           email: "xopowo2006@gmail.com",
         },
