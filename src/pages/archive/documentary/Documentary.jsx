@@ -8,7 +8,7 @@ export default function Documentary({ onClose }) {
   const [active, setActive] = useState("opening");
 
   return (
-    <div className="flex flex-col min-h-svh">
+    <div className="flex flex-col min-h-full">
       <div className="fixed inset-x-0 z-[60] flex justify-center">
         <button onClick={onClose}>
           <CloseButton />

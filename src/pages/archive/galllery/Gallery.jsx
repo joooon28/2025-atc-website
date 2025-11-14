@@ -72,7 +72,7 @@ export default function Gallery({ onClose }) {
   };
 
   return (
-    <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-svh"}`}>
+    <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-full"}`}>
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />

@@ -27,6 +27,33 @@ export default function Archive() {
     setSheetOpen(false);
   };
 
+  // Archive 컴포넌트 안
+  useEffect(() => {
+    if (!showSheet) return;
+
+    // 현재 스크롤 위치 고정
+    const y = window.scrollY;
+    const { style } = document.body;
+
+    style.position = "fixed";
+    style.top = `-${y}px`;
+    style.left = "0";
+    style.right = "0";
+    style.width = "100%";
+    style.overflow = "hidden";
+
+    return () => {
+      // 복구
+      style.position = "";
+      style.top = "";
+      style.left = "";
+      style.right = "";
+      style.width = "";
+      style.overflow = "";
+      window.scrollTo(0, y);
+    };
+  }, [showSheet]);
+
   useEffect(() => {
     const target = location.state?.sheet;
     if (target === "gallery") {
@@ -166,7 +193,7 @@ export default function Archive() {
       </div>
 
       {showSheet && (
-        <div className="fixed inset-0 z-50">
+        <div className="fixed inset-0 z-50 overscroll-none">
           <button
             aria-label="close overlay"
             onClick={closeSheet}
@@ -182,10 +209,17 @@ export default function Archive() {
                 setActiveSheet(null);
               }
             }}
-            className={`absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
+            className={`absolute inset-0 transition-transform duration-500 will-change-transform
               ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
           >
-            <div className="bg-mint-6 h-dvh overflow-y-auto ">
+            <div
+              className="
+        bg-mint-6
+        h-[100svh] 
+        overflow-y-auto overscroll-contain
+        
+      "
+            >
               {renderSheet()}
             </div>
           </div>
