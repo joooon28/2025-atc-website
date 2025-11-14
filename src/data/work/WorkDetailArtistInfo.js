@@ -782,7 +782,7 @@ export const allArtworkData = {
       },
       {
         kr: "이예나",
-        en: "Yuna Lee",
+        en: "Yena Lee",
         links: {
           instagram: "https://instagram.com/_yena.lee/",
           email: "cellano100@naver.com",

@@ -234,7 +234,7 @@ const Made = () => {
               titleEn="LumpyBumpy Jam (35g)"
               kr="2025 ATC의 울퉁불퉁함은 과연 어떤 맛이 날까요? 잼팟과 함께 만든 잼을 통해 직접 맛보고 느껴보세요!"
               en="What flavor would 2025 ATC have? Taste and feel it through the jam crafted with JAMPOT!"
-              location="대회협력 부스"
+              location="대외협력 부스"
               priceEn="(3000 won)"
             />
           </div>
