@@ -5,7 +5,7 @@ import 말아리모음집_투명배경_모바일 from "../../assets/memo/말아�
 
 export default function Memo({ onClose }) {
   return (
-    <div className="flex flex-col min-h-dvh">
+    <div className="flex flex-col min-h-full">
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />

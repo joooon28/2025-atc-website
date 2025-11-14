@@ -156,17 +156,8 @@ export default function ProgramCalendar({
         border-t border-label
         relative [--dot:6px] [--b:1px]
     "
-            />
-          </div>
-
-          <div className="flex items-center">
-            <p className="px-[17px] py-[9px]" />
-            <div
-              className="ml-3 flex-1
-            border-t border-label/20 border-dotted
-            relative overflow-visible z-[1] [--dot:6px] [--b:1px]"
             >
-              <div className="absolute left-0 top-0 right-0 h-[298px] pointer-events-none z-[100]">
+              <div className="absolute left-0 top-0 right-0 h-[340.5px] pointer-events-none z-[100]">
                 <div
                   className="absolute left-1/2 w-[12.5%] top-0 h-full
                    bg-mint-5 flex justify-center items-center
@@ -182,6 +173,15 @@ export default function ProgramCalendar({
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="flex items-center">
+            <p className="px-[17px] py-[9px]" />
+            <div
+              className="ml-3 flex-1
+            border-t border-label/20 border-dotted
+            relative overflow-visible z-[1] [--dot:6px] [--b:1px]"
+            ></div>
           </div>
 
           <div className="flex items-center">

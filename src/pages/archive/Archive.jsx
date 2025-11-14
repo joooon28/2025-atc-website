@@ -6,6 +6,7 @@ import Memo from "./Memo";
 import Documentary from "./documentary/Documentary";
 import Gallery from "./galllery/Gallery";
 import MenuToggle from "../../components/menu/MenuToggle";
+import { createPortal } from "react-dom";
 
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -192,39 +193,37 @@ export default function Archive() {
         <Footer />
       </div>
 
-      {showSheet && (
-        <div className="fixed inset-0 z-50 overscroll-none">
-          <button
-            aria-label="close overlay"
-            onClick={closeSheet}
-            className={`absolute inset-0 bg-black/40 transition-opacity duration-500 ${
-              sheetOpen ? "opacity-100" : "opacity-0"
-            }`}
-          />
+      {showSheet &&
+        createPortal(
+          <div className="fixed inset-0 z-50 overscroll-none">
+            {/* 백드롭 */}
+            <button
+              aria-label="close overlay"
+              onClick={closeSheet}
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-500 ${
+                sheetOpen ? "opacity-100" : "opacity-0"
+              }`}
+            />
 
-          <div
-            onTransitionEnd={() => {
-              if (!sheetOpen) {
-                setShowSheet(false);
-                setActiveSheet(null);
-              }
-            }}
-            className={`absolute inset-0 transition-transform duration-500 will-change-transform
-              ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
-          >
+            {/* 시트 패널 */}
             <div
-              className="
-        bg-mint-6
-        h-[100svh] 
-        overflow-y-auto overscroll-contain
-        
-      "
+              onTransitionEnd={() => {
+                if (!sheetOpen) {
+                  setShowSheet(false);
+                  setActiveSheet(null);
+                }
+              }}
+              className={`absolute inset-0 transition-transform duration-500 ${
+                sheetOpen ? "transform-none" : "translate-y-full"
+              }`}
             >
-              {renderSheet()}
+              <div className="bg-mint-6 h-full overflow-y-auto overscroll-contain">
+                {renderSheet()}
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
