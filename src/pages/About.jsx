@@ -53,21 +53,19 @@ const FirstSection = () => {
       "
       >
         <h2
-          className="font-[500] text-[#B3C5D8] text-[24px] leading-[120%] tracking-normal z-10 
-          min-tablet:mix-blend-difference 
+          className="font-[500] text-[#B3C5D8] text-[16px] leading-[120%] tracking-normal z-10 
+          min-tablet:mix-blend-difference min-tablet:text-[24px]
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 
-          min-tablet:left-[40px] 
-        "
+          min-tablet:left-[40px]"
         >
           울퉁불퉁하게 <br /> 말아리
         </h2>
 
         <h2
-          className="font-[500] text-[24px] leading-[120%] tracking-normal text-[#B3C5D8] z-10 
-          min-tablet:mix-blend-difference 
+          className="font-[500] text-[16px] leading-[120%] tracking-normal text-[#B3C5D8] z-10 
+          min-tablet:mix-blend-difference min-tablet:text-[24px]
           min-tablet:absolute min-tablet:top-1/2 min-tablet:-translate-y-1/2 min-tablet:text-right
-          min-tablet:right-[40px] 
-        "
+          min-tablet:right-[40px]"
         >
           Art & Technology <br /> Conference
         </h2>
@@ -85,11 +83,19 @@ const FirstSection = () => {
         min-[701px]:max-[999px]:min-w-[400px]
 
         max-[700px]:static max-[700px]:w-[100%] max-[700px]:px-0 
-        max-[700px]:my-0 max-[700px]:box-border max-[700px]:mx-auto
-      "
+        max-[700px]:mt-8 max-[700px]:mb-0 max-[700px]:box-border max-[700px]:mx-auto      "
       >
-        <div className="relative h-0 pb-[56.25%] overflow-hidden">
-          <div className="bg-[#362C11] absolute top-0 left-0 w-full h-full"></div>
+        <div className="relative w-full">
+          <img
+            src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+            alt="포스터"
+            className="w-full h-auto max-h-[40vh] min-tablet:max-h-[60vh] object-contain mx-auto"
+            onClick={() =>
+              openModal(
+                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+              )
+            }
+          />
         </div>
       </div>
 
@@ -250,14 +256,14 @@ const ThirdSection = ({ openModal }) => {
       "
       >
         <img
-          src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+          src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763109769/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo.png"
           alt="포스터"
           className="absolute bottom-0 right-0 cursor-pointer block max-tablet:static max-tablet:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
           max-tablet:w-[250px] max-tablet:h-[354px]"
           onClick={() =>
             openModal(
-              "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+              "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763109769/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo.png"
             )
           }
         />
@@ -628,7 +634,7 @@ const FourthSection = ({ openStaffSheet }) => {
         </div>
 
         <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11]">
-          Opening Documentary
+          Interaction Teaser Film
         </p>
       </div>
     </div>
