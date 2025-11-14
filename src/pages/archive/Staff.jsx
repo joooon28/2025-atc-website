@@ -146,7 +146,7 @@ export default function Staff({ onClose }) {
             />
             <StaffProfile
               name="유가형"
-              nameEng="Gahyung Yoo"
+              nameEng="Kahyung Yoo"
               mail="kahyungyoo@gmail.com"
               insta="ooliviayooo"
               imagesrc={images.Gahyung}
