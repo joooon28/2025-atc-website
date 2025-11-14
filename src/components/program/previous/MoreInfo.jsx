@@ -158,7 +158,7 @@ export default function MoreInfo({
                 "
               />
               {isKR ? (
-                <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+                <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tighter">
                   {detailKo1}
                 </p>
               ) : (
@@ -169,7 +169,7 @@ export default function MoreInfo({
             </div>
 
             {isKR ? (
-              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tighter">
                 {detailKo2}
               </p>
             ) : (
@@ -187,7 +187,7 @@ export default function MoreInfo({
               </div>
             ) : null}
             {isKR ? (
-              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tighter">
                 {detailKo3}
               </p>
             ) : (
@@ -205,7 +205,7 @@ export default function MoreInfo({
               </div>
             ) : null}
             {isKR ? (
-              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tighter">
                 {detailKo4}
               </p>
             ) : (
@@ -269,7 +269,7 @@ export default function MoreInfo({
               </div>
             ) : null}
             {isKR ? (
-              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tight">
+              <p className="whitespace-pre-line flex text-[15px] font-regular leading-large tracking-tighter">
                 {madeby}
               </p>
             ) : (

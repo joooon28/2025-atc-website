@@ -115,14 +115,14 @@ export default function ProgramList({
             ].join(" ")}
           >
             <div className="flex flex-col gap-4 pt-10">
-              <div className="whitespace-pre-line font-regular text-[15px] leading-regular tracking-regular text-label">
+              <div className="whitespace-pre-line font-regular text-[15px] leading-regular tracking-tighter text-label">
                 {text}
               </div>
-              <div className="flex font-regular text-[15px] gap-2">
+              <div className="flex font-regular text-[15px] gap-2  tracking-tighter">
                 <p className="shrink-0 font-heavy">장소</p>
                 <p>{location}</p>
               </div>
-              <div className="flex font-regular text-[15px] gap-2">
+              <div className="flex font-regular text-[15px] gap-2  tracking-tighter">
                 <p className="shrink-0 font-heavy">대상</p>
                 <p>{audience}</p>
               </div>

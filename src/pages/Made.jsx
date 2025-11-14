@@ -94,7 +94,7 @@ const MadeBox = ({
 
         <p
           id="Made-Detail-Kr"
-          className="font-normal text-[15px] leading-[180%] tracking-[-10%]"
+          className="font-normal text-[15px] leading-[180%]  tracking-tighter"
         >
           {kr}
         </p>

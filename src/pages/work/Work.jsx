@@ -200,7 +200,7 @@ const formatArtistName = (artistName, isGallery = false) => {
     let finalEngText = "";
 
     const hasKorean = /[가-힣]/.test(trimmedName);
-    
+
     if (/[A-Za-z]/.test(trimmedName)) {
       const matches = trimmedName.match(
         /^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/
@@ -218,31 +218,32 @@ const formatArtistName = (artistName, isGallery = false) => {
       }
 
       if (!finalKorText && !finalEngText) {
-          finalKorText = hasKorean ? trimmedName : "";
-          finalEngText = hasKorean ? "" : trimmedName;
+        finalKorText = hasKorean ? trimmedName : "";
+        finalEngText = hasKorean ? "" : trimmedName;
       } else if (!finalKorText && hasKorean && trimmedName.length > 0) {
-          finalKorText = trimmedName;
-          finalEngText = "";
+        finalKorText = trimmedName;
+        finalEngText = "";
       } else if (!finalEngText && !hasKorean && trimmedName.length > 0) {
-          finalKorText = "";
-          finalEngText = trimmedName;
+        finalKorText = "";
+        finalEngText = trimmedName;
       }
-      
     } else {
       finalKorText = trimmedName;
       finalEngText = "";
     }
-    
+
     return (
       <>
         {finalKorText && (
-          <span className={`Makers-Artist-Kr ${baseFontWeight} text-[14px] block mb-[-15px]`}>
+          <span
+            className={`Makers-Artist-Kr ${baseFontWeight} text-[14px] block mb-[-15px]`}
+          >
             {finalKorText}
           </span>
         )}
 
         {finalKorText && finalEngText && <br />}
-        
+
         {finalEngText && (
           <span
             className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}
@@ -637,7 +638,7 @@ export default function Work() {
             </p>
 
             <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
-              <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-large tracking-tight">
+              <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-large tracking-tighter">
                 각자의 고유한 감각에서 출발한 말하기는 울퉁불퉁한 궤적을 따라
                 전시 공간으로 이어집니다. 미디어 아트, 게임, 웹, 애니메이션,
                 퍼포먼스 등 형식에 제한을 두지 않은 실험적 시도들을 선보입니다.{" "}
