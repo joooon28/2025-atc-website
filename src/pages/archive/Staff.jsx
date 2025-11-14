@@ -173,6 +173,7 @@ export default function Staff({ onClose }) {
           </div>
           <div className={rowGrid}>
             <StaffProfile
+              lead="Team Lead"
               name="심유림"
               nameEng="Yurim Sim"
               mail="yurim@sogang.ac.kr"

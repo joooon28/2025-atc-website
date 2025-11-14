@@ -94,7 +94,7 @@ export default function ProgramCalendar({
             >
               <div className="absolute left-0 top-0 right-0 bottom-0 pointer-events-none z-10">
                 <div
-                  className="absolute left-0 w-[25%] top-0 bottom-[-170px]
+                  className="absolute left-0 w-[25%] top-0 bottom-[-169.5px]
                bg-mint-3 flex justify-center items-center
                text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[60]"
@@ -108,7 +108,7 @@ export default function ProgramCalendar({
                 </div>
 
                 <div
-                  className="absolute left-[25%] w-[25%] top-0 bottom-[-170px]
+                  className="absolute left-[25%] w-[25%] top-0 bottom-[-169.5px]
                bg-mint-3 flex justify-center items-center
                text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[60]"
@@ -157,7 +157,7 @@ export default function ProgramCalendar({
         relative [--dot:6px] [--b:1px]
     "
             >
-              <div className="absolute left-0 top-0 right-0 h-[340.5px] pointer-events-none z-[100]">
+              <div className="absolute left-0 top-0 right-0 h-[340px] pointer-events-none z-[100]">
                 <div
                   className="absolute left-1/2 w-[12.5%] top-0 h-full
                    bg-mint-5 flex justify-center items-center
@@ -230,7 +230,7 @@ export default function ProgramCalendar({
         border-t border-label/20 border-dotted
         relative [--dot:6px] [--b:1px]"
             >
-              <div className="absolute left-0 top-0 right-0 h-[170px] pointer-events-none z-[50]">
+              <div className="absolute left-0 top-0 right-0 h-[169.5px] pointer-events-none z-[50]">
                 <div
                   className="absolute left-0 top-0 h-full w-[12.4%]
                bg-mint-3 flex justify-center items-center
@@ -246,7 +246,7 @@ export default function ProgramCalendar({
                 </div>
 
                 <div
-                  className="absolute left-[25%] top-0 h-full w-[25%]
+                  className="absolute left-[25%] top-0 h-[169.5px] w-[25%]
                bg-mint-5 flex justify-center items-center
                text-[20px] font-regular cursor-pointer
                pointer-events-auto z-[2000]"
