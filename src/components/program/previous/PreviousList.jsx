@@ -9,6 +9,9 @@ export default function PreviousList({
   sub3,
   sub4,
   sub5,
+  sub6,
+  sub7,
+  sub8,
   text,
   texteng,
   detailKo1,
@@ -22,6 +25,7 @@ export default function PreviousList({
   onMoreInfo,
   rounded,
   madeby,
+  madebyEng,
 }) {
   const isNumberTwo = String(number) === "2";
   const isNumberThree = String(number) === "3";
@@ -59,7 +63,11 @@ export default function PreviousList({
           sub3,
           sub4,
           sub5,
+          sub6,
+          sub7,
+          sub8,
           madeby,
+          madebyEng,
         })
       }
     >

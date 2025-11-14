@@ -32,12 +32,16 @@ const items = entries.map(([key, meta]) => {
     detailEng4: meta.detailEng4,
     rounded: meta.rounded,
     madeby: meta.madeby,
+    madebyEng: meta.madebyEng,
     main: img.main ?? null,
     sub1: img.sub1 ?? null,
     sub2: img.sub2 ?? null,
     sub3: img.sub3 ?? null,
     sub4: img.sub4 ?? null,
     sub5: img.sub5 ?? null,
+    sub6: img.sub6 ?? null,
+    sub7: img.sub7 ?? null,
+    sub8: img.sub8 ?? null,
   };
 });
 
@@ -208,6 +212,7 @@ export default function Previous({ initialOpenId }) {
               detailKo4={it.detailKo4}
               detailEng4={it.detailEng4}
               madeby={it.madeby}
+              madebyEng={it.madebyEng}
               rounded={it.rounded}
               main={it.main}
               sub1={it.sub1}
@@ -215,6 +220,9 @@ export default function Previous({ initialOpenId }) {
               sub3={it.sub3}
               sub4={it.sub4}
               sub5={it.sub5}
+              sub6={it.sub6}
+              sub7={it.sub7}
+              sub8={it.sub8}
               onMoreInfo={openSheet}
             />
           ))}

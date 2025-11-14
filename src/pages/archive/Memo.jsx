@@ -12,7 +12,7 @@ export default function Memo({ onClose }) {
         </button>
       </div>
 
-      <div className="flex-1 py-[40px] px-[120px] max-tablet:px-[20px]">
+      <div className="flex-1 py-[40px] px-[120px] max-tablet:px-[20px] max-mobile:px-0">
         <div className="bg-[#E9F1E9]">
           <picture>
             <source

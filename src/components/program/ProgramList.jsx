@@ -7,19 +7,19 @@ export default function ProgramList({
   date2,
   date3,
   text,
-  texteng,
-  detailKo1,
-  detailEng1,
-  detailKo2,
-  detailEng2,
-  rounded,
-  main,
-  sub1,
+  // texteng,
+  // detailKo1,
+  // detailEng1,
+  // detailKo2,
+  // detailEng2,
+  // rounded,
+  // main,
+  // sub1,
   location,
   audience,
   activeId,
   onActivate,
-  onMoreInfo,
+  // onMoreInfo,
   hoveredNumber,
   selfHoverClass,
   hoveredColor,
@@ -126,7 +126,7 @@ export default function ProgramList({
                 <p className="shrink-0 font-heavy">대상</p>
                 <p>{audience}</p>
               </div>
-              <button
+              {/* <button
                 type="button"
                 onClick={() =>
                   onMoreInfo?.({
@@ -149,7 +149,7 @@ export default function ProgramList({
                 className="flex text-[14px] underline cursor-pointer"
               >
                 More Info
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
