@@ -37,7 +37,7 @@ export default function Staff({ onClose }) {
         <section className="flex flex-col gap-5 w-full">
           <div className="text-label text-[22px] font-heavy  flex gap-3">
             <p>전시팀</p>
-            <p className="italic">Exhibiton Team</p>
+            <p className="italic">Exhibition Team</p>
           </div>
           <div className={rowGrid}>
             <StaffProfile
