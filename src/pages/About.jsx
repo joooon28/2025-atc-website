@@ -557,7 +557,7 @@ const FourthSection = ({ openStaffSheet }) => {
         />
         <CreditList
           titleKr="대외협력팀"
-          titleEn="Public Relations Team"
+          titleEn="Business Team"
           members={[
             "김서영 Seoyoung Kim \u00A0 문금미 Geummi Moon",
             "유가형 Kahyung Yoo \u00A0 장채원 Chaewon Jang",
