@@ -91,7 +91,7 @@ export const allArtworkData = {
     art003: {
         titleKr: "면풍2",
         titleEn: "Wind2",
-        location: "",
+        location: "5F Stairwell Space",
         artistKr: "키스 갈기기",
         artistEn: "Throwing Kith",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954511/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb.jpg",
@@ -326,7 +326,7 @@ export const allArtworkData = {
     art007: {
         titleKr: "심 (心)",
         titleEn: "Sim(心) : The Forbidden Bite",
-        location: "",
+        location: "4F Stairwell Space",
         artistKr: "뚜앙즈",
         artistEn: "Tuangz",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954517/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua.png",
@@ -427,7 +427,7 @@ export const allArtworkData = {
     art009: {
         titleKr: "에린의 신들",
         titleEn: "Gods of Érin",
-        location: "",
+        location: "5F Stairwell Space",
         artistKr: "와이칼리버",
         artistEn: "Ycalibur",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954527/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw.png",
@@ -546,7 +546,7 @@ export const allArtworkData = {
     art012: {
         titleKr: "옴",
         titleEn: "Ohm",
-        location: "",
+        location: "4F Stairwell Space",
         artistKr: "더 스님스",
         artistEn: "The Seunims",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr.png",
@@ -593,7 +593,7 @@ export const allArtworkData = {
     art013: {
         titleKr: "우리가 잊지 말아야 할 것은 무엇인가요",
         titleEn: "Things We Must Remember",
-        location: "",
+        location: "5F Stairwell Space",
         artistKr: "기록도록",
         artistEn: "GRDR",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954526/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv.png",
@@ -1284,7 +1284,7 @@ export const allArtworkData = {
     art027: {
         titleKr: "",
         titleEn: "NEUVERSE",
-        location: "",
+        location: "5F Stairwell Space",
         artistKr: "",
         artistEn: "Neuverse Lab",
         imageMainSrc: "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
