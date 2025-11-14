@@ -1,4 +1,8 @@
-import { createBrowserRouter, Outlet, ScrollRestoration } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  ScrollRestoration,
+} from "react-router-dom";
 import Main from "./pages/main/Main";
 import About from "./pages/About";
 import Work from "./pages/work/Work";
@@ -8,16 +12,17 @@ import Archive from "./pages/archive/Archive";
 import Documentary from "./pages/archive/documentary/Documentary";
 import Gallery from "./pages/archive/galllery/Gallery";
 import Map from "./pages/Map";
-import Made from "./pages/Made"
+import Made from "./pages/Made";
 import NotFound from "./pages/NotFound";
 import Staff from "./pages/archive/Staff";
 import Memo from "./pages/archive/Memo";
 import Onboarding from "./pages/Onboarding";
+import RouteFade from "./components/RouterFade";
 
 const RootLayout = () => {
   return (
     <>
-      <Outlet />
+      <RouteFade />
       <ScrollRestoration />
     </>
   );
@@ -45,7 +50,7 @@ const router = createBrowserRouter([
         element: <Work />,
       },
       {
-        path: "/work/:id", 
+        path: "/work/:id",
         element: <WorkDetail />,
       },
       {

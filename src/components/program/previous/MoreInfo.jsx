@@ -1,8 +1,11 @@
 import CloseButton from "../../archive/CloseButton";
 import Footer from "../../Footer";
 import { ArrowUpIcon } from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import KorEnButton from "../../KorEnButton";
+
+const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
+const TopIcon = "/lottie/WorkDetailIcon/top.svg";
 
 export default function MoreInfo({
   onClose,
@@ -29,8 +32,13 @@ export default function MoreInfo({
   madeby,
   madebyEng,
 }) {
+  const [isButtonListActive, setIsButtonListActive] = useState(false);
+  const scrollRef = useRef(null);
+
   const [currentLanguage, setCurrentLanguage] = useState("kr");
   const isKR = currentLanguage === "kr";
+
+  const BUTTON_LIST_ACTIVATION_POINT = 0;
 
   const getScrollContainer = (startEl) => {
     let el = startEl;
@@ -46,8 +54,7 @@ export default function MoreInfo({
     return document.scrollingElement || document.documentElement;
   };
 
-  const scrollRef = useRef(null);
-  const [showTop, setShowTop] = useState(false);
+  // const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -59,20 +66,44 @@ export default function MoreInfo({
 
   useEffect(() => {
     const el = scrollRef.current;
-    const computeShow = () => {
-      const inEl = el ? el.scrollTop > 0 : false;
-      const inWin = window.scrollY > 0;
-      setShowTop(inEl || inWin);
+
+    const computeActive = () => {
+      const y = el ? el.scrollTop : window.scrollY;
+      setIsButtonListActive(y >= BUTTON_LIST_ACTIVATION_POINT);
     };
 
-    computeShow();
-    if (el) el.addEventListener("scroll", computeShow, { passive: true });
-    window.addEventListener("scroll", computeShow, { passive: true });
+    computeActive();
+    if (el) el.addEventListener("scroll", computeActive, { passive: true });
+    window.addEventListener("scroll", computeActive, { passive: true });
 
     return () => {
-      if (el) el.removeEventListener("scroll", computeShow);
-      window.removeEventListener("scroll", computeShow);
+      if (el) el.removeEventListener("scroll", computeActive);
+      window.removeEventListener("scroll", computeActive);
     };
+  }, [BUTTON_LIST_ACTIVATION_POINT]);
+
+  const handleGoToTop = useCallback(() => {
+    const reduce = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)"
+    )?.matches;
+    const behavior = reduce ? "auto" : "smooth";
+    const target = getScrollContainer(
+      scrollRef.current || document.activeElement
+    );
+
+    if (
+      target === document.scrollingElement ||
+      target === document.documentElement ||
+      target === document.body
+    ) {
+      window.scrollTo({ top: 0, behavior });
+    } else {
+      if (typeof target.scrollTo === "function") {
+        target.scrollTo({ top: 0, behavior });
+      } else {
+        target.scrollTop = 0;
+      }
+    }
   }, []);
 
   return (
@@ -86,7 +117,7 @@ export default function MoreInfo({
         ref={scrollRef}
         className="flex-1 flex px-[220px] max-[1001px]:px-[0px] justify-center overflow-y-auto"
       >
-        <div className="text-label p-10 max-tablet: px-5">
+        <div className="text-label p-10 max-tablet:px-5">
           <section className="flex flex-col w-full gap-10">
             <div className="flex flex-col gap-5">
               <div className="flex gap-[10px] font-heavy text-[24px]">
@@ -248,10 +279,54 @@ export default function MoreInfo({
           </section>
         </div>
       </div>
+      <div
+        className={[
+          "button_list",
+          "w-[calc(100%-40px)] left-5",
+          "min-tablet:w-[calc(100%-80px)] min-tablet:left-10",
+          "fixed transition-all duration-300 overflow-hidden z-[10040] block",
+          isButtonListActive ? "bottom-10" : "-bottom-[50px]",
+        ].join(" ")}
+      >
+        {/* 뒤로가기 = onClose 과 동일 기능 */}
+        <button
+          onClick={onClose}
+          id="goBackBottom"
+          className={[
+            "go_back bg-[#F3F3EC] button_list_go_back",
+            "float-left border border-label cursor-pointer text-base leading-none tracking-none",
+            "w-12 h-12 rounded-full flex justify-center items-center",
+            "min-mobile:w-auto min-mobile:h-auto min-mobile:rounded-[60px] min-mobile:py-3 min-mobile:px-6 min-mobile:inline-flex",
+          ].join(" ")}
+        >
+          <img
+            src={GoBackIcon}
+            alt="뒤로 가기 버튼"
+            className="w-4 h-4 transform translate-y-px mr-0 min-mobile:mr-3"
+          />
+          <span className="min-mobile:inline hidden">Back</span>
+        </button>
+
+        {/* Top 버튼 */}
+        <button
+          onClick={handleGoToTop}
+          id="Top-Button"
+          className="Top-Button w-12 h-12 rounded-full bg-[#F3F3EC] border border-label float-right ml-4 flex justify-center items-center cursor-pointer"
+        >
+          <img src={TopIcon} alt="위로 가기" className="w-5 h-5" />
+        </button>
+
+        {/* 한/영 전환 버튼 */}
+        <KorEnButton
+          currentLanguage={currentLanguage}
+          setCurrentLanguage={setCurrentLanguage}
+        />
+      </div>
+
       <div className="mt-auto">
         <Footer />
       </div>
-      <div
+      {/* <div
         className={[
           "max-desktop:hidden",
           "fixed z-[60]",
@@ -316,8 +391,8 @@ export default function MoreInfo({
           ].join(" ")}
         >
           <ArrowUpIcon size={24} weight="light" />
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
     </div>
   );
 }
