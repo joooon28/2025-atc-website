@@ -95,9 +95,9 @@ export default function Staff({ onClose }) {
             <StaffProfile
               lead="Team Lead"
               name="오제우"
-              nameEng="Jawoo Oh"
+              nameEng="Jewoo Oh"
               mail="jewoo0515@gmail.com"
-              imagesrc={images.Jawoo}
+              imagesrc={images.Jewoo}
               objectPosClass="object-[50%_0px]"
               scaleClass="scale-110"
             />
