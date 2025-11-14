@@ -118,7 +118,8 @@ const FirstSection = () => {
         </p>
 
         <p className="text-center font-normal text-sm leading-[140%] tracking-normal text-[#362C11]">
-          서울특별시 마포구 백범로 35 <br className="max-[501px]:block hidden" />
+          서울특별시 마포구 백범로 35{" "}
+          <br className="max-[501px]:block hidden" />
           서강대학교 하비에르관(X관) 4-5층
         </p>
 
@@ -191,34 +192,41 @@ const SecondSection = () => {
         </h2>
         <div className="font-normal text-[15px] leading-regular tracking-regular text-[#362C11]">
           <p className="mb-3">
-            《울퉁불퉁하게 말아리》 focuses on the diverse and uneven ways in which we speak.
+            《울퉁불퉁하게 말아리》 focuses on the diverse and uneven ways in
+            which we speak.
           </p>
           <p className="mb-3">
-            Too often, before speaking, we question our own qualifications.
-            We assume that to speak meaningfully, one must possess the appropriate experience,
-            knowledge, or authority. In doing so, speaking itself becomes the reproduction of established languages.
-            We silence ourselves—saying, “Who am I to speak?” or “I’m not an expert.”
-            Words begin to function not as our own, but as borrowed expressions of external authorities and power.
-            How much of what we say truly belongs to our own sensibility? In creative practice,
-            do we rely first on others’ standards and evaluations rather than our own structures of meaning?
-            Is it still possible to sustain a shared space where anyone can speak and respond freely?
-            What does it take to see one another beyond familiar criteria and hierarchies?
+            Too often, before speaking, we question our own qualifications. We
+            assume that to speak meaningfully, one must possess the appropriate
+            experience, knowledge, or authority. In doing so, speaking itself
+            becomes the reproduction of established languages. We silence
+            ourselves—saying, “Who am I to speak?” or “I’m not an expert.” Words
+            begin to function not as our own, but as borrowed expressions of
+            external authorities and power. How much of what we say truly
+            belongs to our own sensibility? In creative practice, do we rely
+            first on others’ standards and evaluations rather than our own
+            structures of meaning? Is it still possible to sustain a shared
+            space where anyone can speak and respond freely? What does it take
+            to see one another beyond familiar criteria and hierarchies?
           </p>
           <p className="mb-3">
-            Art Technology Conference 2025 approaches these questions with an amateur’s attitude.
-            The amateur may be awkward or inconsistent,
-            yet remains unbound by institutional logic— free to form their own language, rhythm, and sensibility.
+            Art Technology Conference 2025 approaches these questions with an
+            amateur’s attitude. The amateur may be awkward or inconsistent, yet
+            remains unbound by institutional logic— free to form their own
+            language, rhythm, and sensibility.
           </p>
           <p className="mb-3">
             Within this space, we seek to practice our own modes of speaking,
             departing from prescribed rules and systems of judgment.
           </p>
           <p className="mb-3">
-            Even when our grammar falters, our words may cross, collide,
-            and return—creating unfamiliar echoes, or 말-(메)아리, that resonate across uneven terrains.
-            Through these unpredictable reverberations, we encounter the distinct contours of each voice.
-            Meaning expands not through perfection, but through the friction and difference that connect
-            us— growing wider, louder, and more intricate in its shared resonance.
+            Even when our grammar falters, our words may cross, collide, and
+            return—creating unfamiliar echoes, or 말-(메)아리, that resonate
+            across uneven terrains. Through these unpredictable reverberations,
+            we encounter the distinct contours of each voice. Meaning expands
+            not through perfection, but through the friction and difference that
+            connect us— growing wider, louder, and more intricate in its shared
+            resonance.
           </p>
         </div>
       </div>
@@ -614,7 +622,9 @@ const FourthSection = ({ openStaffSheet }) => {
         "
       >
         <div className="w-full mb-3 relative h-0 pb-[56.25%] overflow-hidden">
-          <div className="bg-[#362C11] w-full absolute top-0 left-0 h-full"></div>
+          <div className="bg-[#362C11] w-full absolute top-0 left-0 h-full flex items-center justify-center italic text-label-invert">
+            Coming Soon
+          </div>
         </div>
 
         <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11]">
