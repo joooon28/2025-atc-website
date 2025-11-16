@@ -17,7 +17,7 @@ export default function Staff({ onClose }) {
       <div className="py-10 min-desktop:px-[120px] min-tablet:px-10 max-tablet:px-5 flex flex-col gap-[80px]">
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy flex gap-3 max-[510px]:flex-col max-[510px]:gap-0">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy flex gap-3 max-[510px]:flex-col max-[510px]:gap-0">
             <p>크리에이티브 디렉터</p>
             <p className="italic">Creative Director</p>
           </div>
@@ -35,7 +35,7 @@ export default function Staff({ onClose }) {
 
         {/* 전시팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex gap-3">
             <p>전시팀</p>
             <p className="italic">Exhibition Team</p>
           </div>
@@ -87,7 +87,7 @@ export default function Staff({ onClose }) {
 
         {/* 프로그램팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex gap-3">
             <p>프로그램팀</p>
             <p className="italic">Program Team</p>
           </div>
@@ -122,7 +122,7 @@ export default function Staff({ onClose }) {
 
         {/* 대외협력팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex gap-3">
             <p>대외협력팀</p>
             <p className="italic">Business Team</p>
           </div>
@@ -167,7 +167,7 @@ export default function Staff({ onClose }) {
 
         {/* 비주얼 디자인팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-0">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex min-[709px]:gap-3 max-[709px]:flex-col max-[709px]:gap-0">
             <p>비주얼 디자인팀</p>
             <p className="italic">Visual Design Team</p>
           </div>
@@ -220,7 +220,7 @@ export default function Staff({ onClose }) {
 
         {/* 인터렉션팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex gap-3">
             <p>인터랙션팀</p>
             <p className="italic">Interaction Team</p>
           </div>
@@ -271,7 +271,7 @@ export default function Staff({ onClose }) {
 
         {/* 아카이브팀 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex gap-3">
             <p>아카이브팀</p>
             <p className="italic">Archive Team</p>
           </div>
@@ -314,7 +314,7 @@ export default function Staff({ onClose }) {
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
             <p>사운드 디자이너</p>
             <p className="italic">Sound Designer</p>
           </div>
@@ -340,8 +340,8 @@ export default function Staff({ onClose }) {
 
         {/* 크리에이티브 디렉터 */}
         <section className="flex flex-col gap-5 w-full">
-          <div className="text-label text-[22px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
-            <p>웹개발</p>
+          <div className="text-label text-[22px] max-tablet:text-[18px] font-heavy  flex min-[709px]:gap-3 max-[709px]:gap-3">
+            <p>웹 개발</p>
             <p className="italic">Web Developer</p>
           </div>
           <div className={rowGrid}>
