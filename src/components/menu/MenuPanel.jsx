@@ -12,9 +12,9 @@ export default function MenuPanel({ onClose }) {
       }
       return;
     }
-    
+
     navigate(targetPath);
-    
+
     if (onClose) {
       onClose();
     }
@@ -29,7 +29,7 @@ export default function MenuPanel({ onClose }) {
         onClick={() => handleMenuClick("/main")}
       />
       <nav>
-        <ul className="italic flex flex-col items-center gap-[16px]">
+        <ul className="text-label italic flex flex-col items-center gap-[16px]">
           <li
             className="cursor-pointer"
             onClick={() => handleMenuClick("/about")}
