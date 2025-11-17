@@ -324,8 +324,8 @@ export default function Staff({ onClose }) {
               nameEng="Changwhan Song"
               mail="symotalumiere@gmail.com"
               imagesrc={images.Changwhan}
-              objectPosClass="object-[50%_0px]"
-              scaleClass="scale-110"
+              objectPosClass="object-[10%_0px]"
+              scaleClass="scale-100"
             />
             <StaffProfile
               name="윤기완"

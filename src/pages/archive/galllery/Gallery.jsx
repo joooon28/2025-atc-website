@@ -86,7 +86,7 @@ export default function Gallery({ onClose }) {
         aria-label="Gallery navigation region"
         role="application"
       >
-        <div className="basis-0 flex-1 min-h-[50svh] supports-[height:100svh]:min-h-[50svh] md:min-h-[60vh] min-w-0 p-10 flex justify-center items-center overflow-hidden">
+        <div className="basis-0 flex-1 min-h-[50svh] supports-[height:100svh]:min-h-[40svh] md:min-h-[40vh] min-w-0 p-10 flex justify-center items-center overflow-hidden">
           <GalleryMain images={selected} />
         </div>
 

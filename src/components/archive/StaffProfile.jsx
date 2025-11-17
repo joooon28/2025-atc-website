@@ -22,7 +22,7 @@ export default function StaffProfile({
             playsInline
           />
         ) : (
-          <img src={imagesrc} className={mediaClass} />
+          <img src={imagesrc} className="w-full pt-12" />
         )}
       </div>
 
