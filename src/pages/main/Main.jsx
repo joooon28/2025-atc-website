@@ -323,7 +323,7 @@ export default function Main() {
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
-      <p className="pointer-events-none text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="pointer-events-none text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[110px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
