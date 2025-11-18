@@ -331,7 +331,7 @@ export default function Main() {
 
       {popupContent && (
         <div className="fixed inset-x-5 bottom-5 z-40 pointer-events-none max-mobile:inset-x-5 max-mobile:bottom-5">
-          <div className="pointer-events-auto flex justify-end max-mobile:justify-stretch ">
+          <div className="flex justify-end max-mobile:justify-stretch ">
             <div
               style={{
                 transitionProperty: "visibility, transform",
@@ -348,7 +348,7 @@ export default function Main() {
                   : "translate3d(0,100vh,0)",
                 willChange: "transform, visibility",
               }}
-              className="max-mobile:w-full"
+              className="max-mobile:w-full pointer-events-auto"
             >
               <Popup
                 animationSrc={popupContent.animationSrc}
