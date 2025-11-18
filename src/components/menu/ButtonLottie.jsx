@@ -10,9 +10,23 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
 
   const openRef = useRef(open);
   const animatingRef = useRef(animating);
+
   useEffect(() => {
     openRef.current = open;
-  }, [open]);
+
+    const p = playerRef.current;
+    if (!ready || !p) return;
+
+    // 메뉴가 외부에서 닫힌 경우 (패널에서 onClose만 호출한 경우 등)
+    if (!open && !animatingRef.current) {
+      stopWatch(); // 혹시 돌고 있는 requestAnimationFrame 있으면 정지
+      p.stop?.(); // 애니메이션 멈추고
+      p.setDirection?.(1);
+      p.setFrame?.(0); // 첫 프레임으로 초기화
+      setAnimating(false);
+    }
+  }, [open, ready]);
+
   useEffect(() => {
     animatingRef.current = animating;
   }, [animating]);

@@ -21,6 +21,11 @@ export default function MenuToggle() {
     setOpen((v) => !v);
   };
 
+  const handlePanelClose = () => {
+    setOpen(false);
+    setAnimating(false); // 혹시 true라면 바로 풀어줌
+  };
+
   const handleAnimationDone = () => setAnimating(false);
 
   return (
@@ -43,7 +48,7 @@ export default function MenuToggle() {
         ].join(" ")}
         aria-hidden={!open}
       >
-        <MenuPanel onClose={handleToggle} />
+        <MenuPanel onClose={handlePanelClose} />
       </div>
 
       <div className="absolute top-0 right-0 z-[60]">
