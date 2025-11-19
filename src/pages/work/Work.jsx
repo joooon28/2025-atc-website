@@ -17,6 +17,9 @@ import {
   MakersLinkIconPlaceholder,
 } from "../../data/work/WorkArtistInfo";
 
+let cachedInitialArtworks = null;
+let cachedInitialMakers = null;
+
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
 
@@ -500,6 +503,21 @@ export default function Work() {
     },
     [location.search]
   );
+  
+  const getInitialRandomArtworks = () => {
+    if (!cachedInitialArtworks) {
+      cachedInitialArtworks = shuffle(initialArtworks);
+    }
+    return cachedInitialArtworks;
+  };
+
+  const getInitialRandomMakers = () => {
+    if (!cachedInitialMakers) {
+      const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+      cachedInitialMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    }
+    return cachedInitialMakers;
+  };
 
   const initialView = getQueryParam("view") === "makers" ? "makers" : "gallery";
 
@@ -511,27 +529,17 @@ export default function Work() {
 
   const [currentView, setCurrentView] = useState(initialView);
 
-  const initialRandomArtworks = useMemo(() => shuffle(initialArtworks), []);
-  const [randomArtworkList, setRandomArtworkList] = useState(
-    initialRandomArtworks
-  );
-
-  const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+  const [randomArtworkList, setRandomArtworkList] = useState(getInitialRandomArtworks);
+  const [randomMakerList, setRandomMakerList] = useState(getInitialRandomMakers);
 
   const [makerListKey, setMakerListKey] = useState(Math.random().toString());
-
-  const initialRandomMakers = useMemo(
-    () => shuffleMakers(Object.values(uniqueMakersMap)),
-    [uniqueMakersMap]
-  );
-  const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
 
   const initialSortedArtworks = useMemo(() => {
     if (initialView === "makers") {
       return groupArtworksByMaker(initialArtworks, true);
     }
-    return initialRandomArtworks;
-  }, [initialView, initialRandomArtworks]);
+    return randomArtworkList;
+  }, [initialView, randomArtworkList]);
 
   const [sortedArtworks, setSortedArtworks] = useState(initialSortedArtworks);
 
@@ -564,10 +572,13 @@ export default function Work() {
 
   const handleRandomize = () => {
     const newRandomList = shuffle(initialArtworks);
+    cachedInitialArtworks = newRandomList; 
     setRandomArtworkList(newRandomList);
 
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
     const allMakers = Object.values(uniqueMakersMap);
     const newRandomMakers = shuffleMakers(allMakers);
+    cachedInitialMakers = newRandomMakers; 
     setRandomMakerList(newRandomMakers);
 
     setIsAscending(true);
