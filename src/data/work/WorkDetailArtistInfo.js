@@ -1364,7 +1364,7 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036757/Neuverse_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mpzs1l.png",
-    videoSrc: "",
+    videoSrc: "https://vimeo.com/1138429497?fl=pl&fe=sh",
     commentary: {
       kr: {
         p1: "온·오프라인 데이터를 개인화된 우주로 시각화하는 몰입형 XR 서비스",
