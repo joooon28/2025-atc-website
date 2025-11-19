@@ -1530,7 +1530,7 @@ export const allArtworkData = {
         p2: "How can artificial intelligence support designers? Is it a threat to them? This project begins from the premise of “AI that assists designers.” It generates designs grounded in a designer’s intent and accelerates broad exploration during the ideation stage. When a designer presents a concept to the AI through an image, AI interprets that image and, by mapping it onto eyewear, proposes variations to the designer. We demonstrate the potential for expansive collaboration between AI and designers.",
       },
     },
-    links: [{ text: "Website", url: "https://glass-lab.vercel.app/" }],
+    links: [{ text: "Website", url: "www.glass-lab.site" }],
     artistsDetail: [
       {
         kr: "손정우",
