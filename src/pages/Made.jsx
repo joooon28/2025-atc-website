@@ -17,6 +17,7 @@ const MadeBox = ({
   location,
   priceKr,
   priceEn,
+  imageClassName,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const timeoutRef = useRef(null);
@@ -74,7 +75,9 @@ const MadeBox = ({
         <img
           src={images[currentImageIndex]}
           alt={`${title} 이미지 ${currentImageIndex + 1}`}
-          className="w-full h-full object-contain transition-opacity duration-1000 bg-[#E9F1E9]"
+          className={`w-full h-full object-contain transition-opacity duration-1000 bg-[#E9F1E9] ${
+            imageClassName || ""
+          }`}
         />
       </div>
 
@@ -197,6 +200,7 @@ const Made = () => {
               en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
               location="MD 부스"
               priceEn="(free)"
+              imageClassName="transform scale-115"
             />
 
             <MadeBox
@@ -209,6 +213,7 @@ const Made = () => {
               en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
               location="MD 부스"
               priceEn="(3000 won)"
+              imageClassName="transform scale-125"
             />
           </div>
 
@@ -223,6 +228,7 @@ const Made = () => {
               en="Today may be the last day we remain amateurs. Let’s create a name card that introduces who we are now."
               location="MD 부스"
               priceEn="(free)"
+              imageClassName="transform scale-115"
             />
 
             <MadeBox
