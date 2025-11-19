@@ -1515,7 +1515,7 @@ export const allArtworkData = {
     artistKr: "커비",
     artistEn: "KIRBY",
     imageMainSrc:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
+      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763539018/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036748/GLASSLAB_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s5vbdt.png",
     videoSrc: "",
