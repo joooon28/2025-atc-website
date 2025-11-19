@@ -10,6 +10,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import {
   initialArtworks,
@@ -388,11 +390,18 @@ const ArtworkCard = React.memo(({ art }) => {
         to={`/work/${art.id}?from=gallery`}
         className="group flex flex-col w-full gap-4 text-label"
       >
-        <div className="relative w-full pt-[136%]">
-          <img
-            src={art.image}
+        <div
+          className="relative w-full pt-[136%] overflow-hidden 
+                     transition-all duration-600 ease-out transform 
+                     group-hover:rounded-[200px] group-hover:scale-[0.93]"
+        >
+          <LazyLoadImage
             alt={art.title}
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
+            src={art.image}
+            placeholderSrc={art.placeholder}
+            effect="blur"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            wrapperClassName="absolute top-0 left-0 w-full h-full"
           />
         </div>
         <div className="title font-regular text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
@@ -572,13 +581,13 @@ export default function Work() {
 
   const handleRandomize = () => {
     const newRandomList = shuffle(initialArtworks);
-    cachedInitialArtworks = newRandomList; 
+    cachedInitialArtworks = newRandomList;
     setRandomArtworkList(newRandomList);
 
     const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
     const allMakers = Object.values(uniqueMakersMap);
     const newRandomMakers = shuffleMakers(allMakers);
-    cachedInitialMakers = newRandomMakers; 
+    cachedInitialMakers = newRandomMakers;
     setRandomMakerList(newRandomMakers);
 
     setIsAscending(true);

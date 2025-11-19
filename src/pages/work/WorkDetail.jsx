@@ -5,6 +5,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
 import KorEnButton from "../../components/KorEnButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
@@ -187,13 +189,10 @@ export default function WorkDetail() {
   );
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-
     const data = allArtworkData[id] || getDefaultArtwork();
     setArtwork(data);
     setCurrentLanguage("kr");
     setIsStickyHeaderActive(false);
-
     setIsButtonListActive(false);
 
     if (data) {
@@ -396,10 +395,11 @@ export default function WorkDetail() {
                         max-mobile:!max-w-none max-mobile:w-full max-mobile:mx-0 
                         min-mobile:max-w-[200px] min-mobile:w-full`}
         >
-          <img
-            src={artwork.imageMainSrc}
+          <LazyLoadImage
             alt={displayTitleKr || displayTitleEn}
-            id="Work-Main-Img"
+            src={artwork.imageMainSrc}
+            placeholderSrc={artwork.imageMainSrcPlaceholder}
+            effect="blur"
             className={`mt-0 object-cover w-full h-auto 
                             min-tablet:w-[200px] min-tablet:h-[267px]`}
           />
@@ -442,10 +442,11 @@ export default function WorkDetail() {
             ) : null}
 
             <div className="Work-Detail-Img">
-              <img
-                src={artwork.imageDetailSrc}
+              <LazyLoadImage
                 alt={displayTitleKr || displayTitleEn}
-                id="Work-Detail-Img"
+                src={artwork.imageDetailSrc}
+                placeholderSrc={artwork.imageDetailSrcPlaceholder}
+                effect="blur"
                 className="object-contain w-full h-full"
               />
             </div>
