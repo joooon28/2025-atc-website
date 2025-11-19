@@ -23,7 +23,7 @@ const getVimeoEmbedUrl = (videoSrc) => {
     const urlObj = new URL(videoSrc);
     let videoId = urlObj.pathname.split("/").pop();
     if (videoId && !isNaN(videoId)) {
-      return `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0&badge=0`;
+      return `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=0?title=0&byline=0&portrait=0&badge=0`;
     }
   } catch (e) {}
 
