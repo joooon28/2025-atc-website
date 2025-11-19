@@ -12,10 +12,8 @@ const FirstSection = () => {
     <div
       className="relative w-full min-h-screen box-border flex flex-col 
       
-      /* Desktop (>= 1000px) */
       min-tablet:pb-0 min-tablet:gap-10
       
-      /* Intermediate & Mobile (max 999px) - justify-evenly를 통해 제목, 이미지, 하단 정보의 세로 간격을 확보 */
       max-[999px]:justify-evenly max-[999px]:pt-[100px] max-[999px]:pb-[20px] max-[999px]:gap-0 
     "
     >
@@ -603,7 +601,10 @@ const FourthSection = ({ openStaffSheet }) => {
         <CreditList
           titleKr="웹 개발팀"
           titleEn="Web Develop Team"
-          members={["김준수 Junsu Kim \u00A0 김서영 Seoyoung Kim"]}
+          members={[
+            "김준수 Junsu Kim \u00A0 김서영 Seoyoung Kim",
+            "이선명 Sunmyeong Lee",
+          ]}
         />
 
         <div className="min-[1000px]:absolute min-[1000px]:bottom-0 min-[1000px]:right-0 max-[999px]:static max-[999px]:mt-8 text-right">
@@ -622,20 +623,23 @@ const FourthSection = ({ openStaffSheet }) => {
         
         min-tablet:sticky min-tablet:top-0 
 
-        max-tablet:w-full
-        max-tablet:pt-10 max-tablet:pb-10
-        max-tablet:order-1
+        max-tablet:w-full max-tablet:pt-10 max-tablet:pb-10 max-tablet:order-1
         "
       >
-        <div className="w-full mb-3 relative h-0 pb-[56.25%] overflow-hidden">
-          <div className="bg-[#362C11] w-full absolute top-0 left-0 h-full flex items-center justify-center italic text-label-invert">
-            Coming Soon
-          </div>
+        <div className="w-full max-w-[290px] max-tablet:mx-auto">
+          <iframe
+            className="w-full aspect-[9/16]"
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/1138407942?h=bf1665b5a5"
+            frameBorder="0"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowFullScreen
+          ></iframe>
+          <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11] mt-3">
+            Interaction Teaser Film
+          </p>
         </div>
-
-        <p className="italic font-regular min-[1000px]:text-sm text-sm leading-none tracking-none text-[#362C11]">
-          Interaction Teaser Film
-        </p>
       </div>
     </div>
   );
