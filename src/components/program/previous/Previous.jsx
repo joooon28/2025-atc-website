@@ -162,7 +162,7 @@ export default function Previous({ initialOpenId }) {
         <p className="italic">Previous Program</p>
       </div>
       <section className="flex flex-col gap-5">
-        <div className="pr-10">
+        <div className="pr-5">
           <div
             className=" flex
         border-t border-label
@@ -228,7 +228,7 @@ export default function Previous({ initialOpenId }) {
           ))}
         </section>
 
-        <div className="pr-10">
+        <div className="pr-5">
           <div
             className=" flex
         border-t border-label

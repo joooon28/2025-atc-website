@@ -8,7 +8,7 @@ import meta from "../../../data/archive/gallery.meta.json";
 
 export default function Gallery({ onClose }) {
   const [selected, setSelected] = useState(
-    "0710_대외협력팀_킥오프_후_친해진_대협팀"
+    "0704_크디_팀장단 첫 회식!!!"
   );
   const listRef = useRef(null);
   const regionRef = useRef(null);
