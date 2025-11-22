@@ -630,7 +630,7 @@ const FourthSection = ({ openStaffSheet }) => {
           <iframe
             className="w-full aspect-[9/16]"
             title="vimeo-player"
-            src="https://player.vimeo.com/video/1138407942?h=bf1665b5a5"
+            src="https://player.vimeo.com/video/1138407942?autoplay=1&muted=0?title=0&byline=0&portrait=0&badge=0"
             frameBorder="0"
             referrerPolicy="strict-origin-when-cross-origin"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
