@@ -298,13 +298,8 @@ export default function Main() {
       </div>
       <div className="fixed inset-x-0 bottom-0 flex justify-center gap-3 pb-[40px]">
         <div className="flex justify-center items-center gap-3 ">
-          <button onClick={handleZoomIn}>
-            <PlusButton />
-          </button>
-          <button onClick={handleZoomOut}>
-            <MinusButton />
-          </button>
-
+          <PlusButton onClick={handleZoomIn} />
+          <MinusButton onClick={handleZoomOut} />
           <VolumeButton muted={muted} onToggle={handleToggleMute} />
         </div>
       </div>
