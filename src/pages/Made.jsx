@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuToggle from "../components/menu/MenuToggle";
+import PageTransition from "../components/PageTransition";
 
 const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
@@ -130,7 +131,7 @@ const MadeBox = ({
 
 const Made = () => {
   return (
-    <div className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#F8F8F7]">
+    <PageTransition className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#F8F8F7]">
       <div
         className="max-tablet:hidden fixed left-0 w-full z-[50]"
         style={{
@@ -248,7 +249,7 @@ const Made = () => {
       </div>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 
