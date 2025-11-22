@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
   const playerRef = useRef(null);
   const rafIdRef = useRef(0);
+  const timeoutIdRef = useRef(null);
 
   const [ready, setReady] = useState(false);
   const [animating, setAnimating] = useState(false);
@@ -31,7 +32,20 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
     animatingRef.current = animating;
   }, [animating]);
 
-  const stopWatch = () => cancelAnimationFrame(rafIdRef.current);
+  const stopWatch = () => {
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = 0;
+    }
+  };
+
+  const clearSafetyTimeout = () => {
+    if (timeoutIdRef.current) {
+      clearTimeout(timeoutIdRef.current);
+      timeoutIdRef.current = null;
+    }
+  };
+
   const startWatch = (fn) => {
     stopWatch();
     const loop = () => {
@@ -40,7 +54,14 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
     };
     rafIdRef.current = requestAnimationFrame(loop);
   };
-  useEffect(() => () => stopWatch(), []);
+
+  useEffect(
+    () => () => {
+      stopWatch();
+      clearSafetyTimeout();
+    },
+    []
+  );
 
   const handleRef = (instance) => {
     if (!instance) return;
@@ -71,9 +92,14 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
     const total =
       typeof p.getDuration?.(true) === "number" ? p.getDuration(true) : 120;
     let curr = Math.min(p.getCurrentFrame?.() ?? total - 1, total - 1);
+    let frameCount = 0;
+    const maxFrames = 100; // 안전장치: 최대 100프레임
     startWatch(() => {
-      curr -= 2;
-      if (curr <= 0) {
+      curr -= 3; // 속도를 2에서 3으로 증가
+      frameCount++;
+
+      // 안전장치: 너무 오래 실행되면 강제 종료
+      if (frameCount > maxFrames || curr <= 0) {
         p.setFrame?.(0);
         p.pause?.();
         setAnimating(false);
@@ -86,72 +112,49 @@ export default function ButtonLottie({ open, onToggle, onAnimationDone }) {
   };
 
   const handleClick = () => {
-    if (!ready || animatingRef.current) return;
+    if (!ready) return;
+
     const p = playerRef.current;
     if (!p) return;
+
+    // 강제로 이전 애니메이션 정리 (stuck 방지)
+    stopWatch();
+    clearSafetyTimeout();
 
     const wasOpen = openRef.current;
     setAnimating(true);
     onToggle?.();
 
     if (!wasOpen) {
+      // 열 때: 정방향 재생
       const total =
         typeof p.getDuration?.(true) === "number"
           ? p.getDuration(true)
           : undefined;
-      if (typeof total === "number") p.setSegment?.(0, total - 1); // 세그먼트 보장
+      if (typeof total === "number") p.setSegment?.(0, total - 1);
       p.setLoop?.(false);
       p.setDirection?.(1);
       p.setSpeed?.(1);
       p.play?.();
-    } else {
-      const CloseSpeed = 0.1;
 
-      const total =
-        typeof p.getDuration?.(true) === "number"
-          ? p.getDuration(true)
-          : undefined;
-      if (typeof total === "number") {
-        const last = Math.max(0, total - 1);
-        p.setSegment?.(0, last);
-        p.setFrame?.(last);
-      }
-
-      p.setLoop?.(false);
-      if (p.setDirection) {
-        p.setDirection(-1);
-        p.setSpeed?.(CloseSpeed);
-      } else {
-        p.setSpeed?.(-CloseSpeed);
-      }
-      p.play?.();
-
-      let last = p.getCurrentFrame?.() ?? 0;
-      let stagnant = 0;
-      startWatch(() => {
-        const curr = p.getCurrentFrame?.() ?? 0;
-
-        if (curr <= 0) {
+      // 안전장치: 1초 후에도 완료 안 되면 강제 완료
+      timeoutIdRef.current = setTimeout(() => {
+        if (animatingRef.current && openRef.current) {
           p.pause?.();
-          p.setFrame?.(0);
+          const t = p.getDuration?.(true);
+          if (typeof t === "number") p.setFrame?.(Math.max(0, t - 1));
           setAnimating(false);
           onAnimationDone?.();
-          return true;
         }
-
-        if (curr >= last - 0.5) {
-          stagnant++;
-          if (stagnant > 6) {
-            manualReverse(p);
-            return true;
-          }
-        } else {
-          stagnant = 0;
-        }
-
-        last = curr;
-        return false;
-      });
+      }, 1000);
+    } else {
+      // 닫을 때: manualReverse로 역재생
+      p.stop?.();
+      const total =
+        typeof p.getDuration?.(true) === "number" ? p.getDuration(true) : 120;
+      const last = Math.max(0, total - 1);
+      p.setFrame?.(last);
+      manualReverse(p);
     }
   };
 
