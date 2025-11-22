@@ -1,4 +1,6 @@
 import galleryimages from "../../data/archive/gallery.json";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 export default function ListSection({
   images,
@@ -35,7 +37,7 @@ export default function ListSection({
       }}
     >
       <div className="flex flex-col overflow-hidden gap-3 w-full">
-        <div className="relative group flex items-end overflow-hidden aspect-[2/3.5]">
+        <div className="relative group overflow-hidden aspect-[2/3.5]">
           <input
             type="radio"
             name="gallery-click"
@@ -45,11 +47,18 @@ export default function ListSection({
             readOnly
           />
 
-          <img
+          <LazyLoadImage
             src={galleryimages[images]}
+            placeholderSrc={
+              galleryimages[images]?.includes("cloudinary.com")
+                ? galleryimages[images].replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                : undefined
+            }
+            effect="opacity"
             alt={altText}
             draggable={false}
-            className="block w-full h-auto max-h-full object-contain object-bottom"
+            className="absolute bottom-0 left-0 w-full h-auto max-h-full object-contain object-bottom transition-opacity duration-500"
+            wrapperClassName="absolute inset-0 flex items-end justify-center"
           />
 
           <div
