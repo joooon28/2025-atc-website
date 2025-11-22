@@ -5,7 +5,7 @@ import VolumeButton from "../../components/main/VolumeButton";
 import MenuToggle from "../../components/menu/MenuToggle";
 import Popup from "../../components/main/Popup";
 import MainVisual from "../../components/main/MainVisual";
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const routesByKey = {
@@ -45,9 +45,15 @@ export default function Main() {
   // Main 컴포넌트 상단 state
   const [popup, setPopup] = useState(null);
   const [popupEntered, setPopupEntered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const POPUP_DURATION = 1000;
   const CURVE_IN = "cubic-bezier(0.22,1,0.36,1)"; // 올라올 때 (ease-out 느낌)
   const CURVE_OUT = "cubic-bezier(0.4,0,1,1)";
+
+  useEffect(() => {
+    // 페이지 마운트 시 fadein
+    setTimeout(() => setIsVisible(true), 50);
+  }, []);
 
   // 열기
   const onOpen = useCallback((key) => {
@@ -254,7 +260,9 @@ export default function Main() {
   }, [popup, navigate]);
 
   return (
-    <main className="min-h-svh bg-mint-3 overflow-hidden">
+    <main className={`min-h-svh bg-mint-3 overflow-hidden transition-opacity duration-500 ${
+      isVisible ? "opacity-100" : "opacity-0"
+    }`}>
       <div className="relative z-100 max-tablet:hidden py-[40px]">
         <Header />
       </div>

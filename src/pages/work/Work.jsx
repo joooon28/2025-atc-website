@@ -12,6 +12,7 @@ import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import PageTransition from "../../components/PageTransition";
 
 import {
   initialArtworks,
@@ -634,7 +635,7 @@ export default function Work() {
   const galleryList = currentView === "gallery" ? sortedArtworks : [];
 
   return (
-    <div
+    <PageTransition
       style={{ backgroundColor: "#F8F8F7" }}
       className="text-label min-h-screen"
     >
@@ -808,6 +809,6 @@ export default function Work() {
       </main>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 }

@@ -8,6 +8,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import MenuToggle from "../../components/menu/MenuToggle";
+import PageTransition from "../../components/PageTransition";
 
 import images from "../../data/program/program.json";
 import programs from "../../data/program/program.meta.json";
@@ -243,7 +244,7 @@ export default function Program() {
   );
 
   return (
-    <div className="flex flex-col min-h-dvh bg-mint-2">
+    <PageTransition className="flex flex-col min-h-dvh bg-mint-2">
       <div className="max-tablet:hidden pt-[40px]">
         <Header />
       </div>
@@ -349,6 +350,6 @@ export default function Program() {
           </div>
         </div>
       )}
-    </div>
+    </PageTransition>
   );
 }

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuToggle from "../components/menu/MenuToggle";
 import StaffSheetContainer from "../components/AboutStaff";
+import PageTransition from "../components/PageTransition";
 
 import ScrollDownIcon from "/lottie/AboutIcon/Scroll_down.svg";
 
@@ -690,7 +691,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen text-[#362C11] bg-[#E9F1E9] font-['Monoplex KR']">
+    <PageTransition className="min-h-screen text-[#362C11] bg-[#E9F1E9] font-['Monoplex KR']">
       <div className="max-tablet:hidden py-[40px] fixed top-0 left-0 right-0 z-50 pt-10">
         <Header />
       </div>
@@ -714,6 +715,6 @@ export default function About() {
         isVisible={isStaffSheetOpen}
         onClose={closeStaffSheet}
       />
-    </div>
+    </PageTransition>
   );
 }

@@ -10,6 +10,7 @@ import { createPortal } from "react-dom";
 
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import PageTransition from "../../components/PageTransition";
 
 export default function Archive() {
   const [activeSheet, setActiveSheet] = useState(null);
@@ -88,15 +89,16 @@ export default function Archive() {
   };
 
   return (
-    <div className="flex flex-col min-h-dvh bg-mint-6">
-      <div className="max-tablet:hidden pt-[40px]">
-        <Header />
-      </div>
-      <div className="p-5 z-10">
-        <div className="min-tablet:hidden relative">
-          <MenuToggle />
+    <>
+      <PageTransition className="flex flex-col min-h-dvh bg-mint-6">
+        <div className="max-tablet:hidden pt-[40px]">
+          <Header />
         </div>
-      </div>
+        <div className="p-5 z-10">
+          <div className="min-tablet:hidden relative">
+            <MenuToggle />
+          </div>
+        </div>
 
       <div className="min-desktop:px-[120px] max-desktop:px-[20px]">
         <section
@@ -189,9 +191,10 @@ export default function Archive() {
         </section>
       </div>
 
-      <div className="mt-auto">
-        <Footer />
-      </div>
+        <div className="mt-auto">
+          <Footer />
+        </div>
+      </PageTransition>
 
       {showSheet &&
         createPortal(
@@ -224,6 +227,6 @@ export default function Archive() {
           </div>,
           document.body
         )}
-    </div>
+    </>
   );
 }
