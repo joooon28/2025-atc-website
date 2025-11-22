@@ -486,6 +486,37 @@ const ThirdSection = ({ openModal }) => {
 };
 
 const FourthSection = ({ openStaffSheet }) => {
+  const videoRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.contentWindow.postMessage(
+              '{"method":"play"}',
+              "https://player.vimeo.com"
+            );
+          } else {
+            video.contentWindow.postMessage(
+              '{"method":"pause"}',
+              "https://player.vimeo.com"
+            );
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.unobserve(video);
+    };
+  }, []);
   const navigate = useNavigate();
 
   const CreditList = ({ titleKr, titleEn, members }) => (
@@ -629,9 +660,10 @@ const FourthSection = ({ openStaffSheet }) => {
       >
         <div className="w-full max-w-[290px] max-tablet:mx-auto">
           <iframe
+            ref={videoRef}
             className="w-full aspect-[9/16]"
             title="vimeo-player"
-            src="https://player.vimeo.com/video/1138407942?autoplay=1&muted=1?title=0&byline=0&portrait=0&badge=0"
+            src="https://player.vimeo.com/video/1138407942?muted=1&title=0&byline=0&portrait=0&badge=0"
             frameBorder="0"
             referrerPolicy="strict-origin-when-cross-origin"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
