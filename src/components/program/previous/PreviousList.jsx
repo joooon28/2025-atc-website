@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
+
 export default function PreviousList({
   number,
   title,
@@ -77,11 +80,18 @@ export default function PreviousList({
         }`}
       >
         {main ? (
-          <img
-            draggable={false}
+          <LazyLoadImage
             src={main}
+            placeholderSrc={
+              main?.includes("cloudinary.com")
+                ? main.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                : undefined
+            }
+            effect="opacity"
             alt={title}
-            className="w-full h-full object-cover"
+            draggable={false}
+            className="w-full h-full object-cover transition-opacity duration-500"
+            wrapperClassName="w-full h-full flex"
           />
         ) : (
           "img"
