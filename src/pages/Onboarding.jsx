@@ -24,7 +24,7 @@ export default function NotFound() {
         isVisible && !isLeaving ? "opacity-100" : "opacity-0"
       }`}
     >
-      <p className="max-tablet:text-[24px] max-mobile:text-[16px] font-[400] text-[40px] text-label-invert text-center">
+      <p className="text-[24px] max-mobile:text-[16px] font-[400]  text-label-invert text-center">
         2025
         <br />
         Art & Technology Conference
