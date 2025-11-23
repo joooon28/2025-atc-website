@@ -363,6 +363,15 @@ export default function Staff({ onClose }) {
               scaleClass="scale-110"
               insta="wnsuhz"
             />
+            <StaffProfile
+              name="이선명"
+              nameEng="Sunmyeong Lee"
+              mail="sunnie@sogang.ac.kr"
+              linkedin="https://www.linkedin.com/in/sunmyeonglee/"
+              imagesrc={images.Sunmyeong}
+              objectPosClass="object-[50%_0px]"
+              scaleClass="scale-110"
+            />
           </div>
         </section>
       </div>
