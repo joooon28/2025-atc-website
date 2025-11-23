@@ -207,6 +207,7 @@ export default function Staff({ onClose }) {
               scaleClass="scale-110"
             />
             <StaffProfile
+              lead="Web Design"
               name="이선명"
               nameEng="Sunmyeong Lee"
               mail="sunnie@sogang.ac.kr"
