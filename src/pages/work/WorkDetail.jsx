@@ -48,7 +48,7 @@ const StickyTitle = React.memo(({ data }) => {
       {titleKr && titleEn && " "}
       {titleEn && (
         <span
-          className={`font-regular italic text-[14px] leading-none tracking-none`}
+          className={`${titleKr ? 'font-regular' : 'font-strong'} italic text-[14px] leading-none tracking-none`}
         >
           {titleEn}
         </span>
@@ -73,7 +73,7 @@ const StickyArtist = React.memo(({ data }) => {
       {artistKr && artistEn && " "}
       {artistEn && (
         <span
-          className={`font-regular italic text-[14px] leading-none tracking-none`}
+          className={`${artistKr ? 'font-regular' : 'font-strong'} italic text-[14px] leading-none tracking-none`}
         >
           {artistEn}
         </span>

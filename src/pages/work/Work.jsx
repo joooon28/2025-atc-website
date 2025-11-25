@@ -558,6 +558,8 @@ export default function Work() {
   }, []);
 
   const handleSwitchView = (mode) => {
+    const scrollY = window.scrollY;
+
     setCurrentView(mode);
 
     let newList;
@@ -577,10 +579,16 @@ export default function Work() {
     setSortedArtworks(newList);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${mode}`, { replace: true });
+    navigate(`?view=${mode}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleRandomize = () => {
+    const scrollY = window.scrollY;
+
     const newRandomList = shuffle(initialArtworks);
     cachedInitialArtworks = newRandomList;
     setRandomArtworkList(newRandomList);
@@ -601,10 +609,16 @@ export default function Work() {
       setSortedArtworks(newRandomList);
     }
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleSort = () => {
+    const scrollY = window.scrollY;
+
     let newAscending;
 
     if (!isCurrentlySorted) {
@@ -626,7 +640,11 @@ export default function Work() {
     setIsAscending(newAscending);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const sortButtonText = isCurrentlySorted && isAscending ? "Z–A" : "A–Z";
