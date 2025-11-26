@@ -5,6 +5,7 @@ import Smilegate from "../assets/SmilegateLogo.svg";
 import Jampot from "../assets/JampotLogo.svg";
 import Dotollim from "../assets/DotollimLogo.png";
 import FutureLab from "../assets/SogangFutureLabLogo.svg";
+import Moim from "../assets/MoimLogo.svg";
 
 // <Footer showSponsorship="true"/> -> sponsorship 섹션 보임
 export default function Footer({ showSponsorship = false }) {
@@ -46,10 +47,13 @@ export default function Footer({ showSponsorship = false }) {
           </p>
 
           <div className="max-tablet:order-1 flex gap-[6px] items-end text-label">
-            <a href="https://www.instagram.com/artech.sogang/">
+            <a href="https://www.instagram.com/artech.sogang/" target="_blank">
               <InstagramLogoIcon className="w-8 h-8" weight="light" />
             </a>
-            <a href="https://www.youtube.com/@ArtTechnologySogang">
+            <a
+              href="https://www.youtube.com/@ArtTechnologySogang"
+              target="_blank"
+            >
               <YoutubeLogoIcon className="w-8 h-8" weight="light" />
             </a>
           </div>
@@ -71,19 +75,42 @@ export default function Footer({ showSponsorship = false }) {
             Collaboration & Sponsorship
           </p>
 
-          <section className="max-mobile:px-5 flex items-center justify-around self-stretch justify-center gap-10 py-3">
-            <div>
+          <section className="max-mobile:px-5 max-mobile:gap-6 flex items-center justify-around self-stretch gap-10 py-3">
+            <a
+              href="https://www.smilegate.com/"
+              target="_blank"
+              className="max-mobile:w-[80px]"
+            >
               <img src={Smilegate} alt="Smilegate" />
-            </div>
-            <div className="w-[60px] h-auto">
+            </a>
+            <a
+              href="https://www.instagram.com/jampot.store/"
+              target="_blank"
+              className="w-[60px] max-mobile:w-[75px] h-auto"
+            >
               <img src={Jampot} alt="Jampot" />
-            </div>
-            <div className="w-[61px] h-auto">
+            </a>
+            <a
+              href="https://www.dotolim.com/"
+              target="_blank"
+              className="w-[61px] max-mobile:w-[75px] h-auto"
+            >
               <img src={Dotollim} alt="Dotollim" />
-            </div>
-            <div className="w-[105px]">
+            </a>
+            <a
+              href="https://www.instagram.com/moimprov_seoul/"
+              target="_blank"
+              className="w-[60px] max-mobile:w-[75px] h-auto"
+            >
+              <img src={Moim} alt="Moim" />
+            </a>
+            <a
+              href="https://creative.sogang.ac.kr/about/about_sogang-future-lab/"
+              target="_blank"
+              className="w-[105px] max-mobile:w-[120px]"
+            >
               <img src={FutureLab} alt="SogangFutureLab" />
-            </div>
+            </a>
           </section>
 
           <div
