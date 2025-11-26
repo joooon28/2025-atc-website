@@ -10,12 +10,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import PageTransition from "../../components/PageTransition";
 
 import {
   initialArtworks,
   getLinkIcon,
   MakersLinkIconPlaceholder,
 } from "../../data/work/WorkArtistInfo";
+
+let cachedInitialArtworks = null;
+let cachedInitialMakers = null;
 
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
@@ -385,11 +391,18 @@ const ArtworkCard = React.memo(({ art }) => {
         to={`/work/${art.id}?from=gallery`}
         className="group flex flex-col w-full gap-4 text-label"
       >
-        <div className="relative w-full pt-[136%]">
-          <img
-            src={art.image}
+        <div
+          className="relative w-full pt-[136%] overflow-hidden 
+                     transition-all duration-600 ease-out transform 
+                     group-hover:rounded-[200px] group-hover:scale-[0.93]"
+        >
+          <LazyLoadImage
             alt={art.title}
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
+            src={art.image}
+            placeholderSrc={art.placeholder}
+            effect="blur"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            wrapperClassName="absolute top-0 left-0 w-full h-full"
           />
         </div>
         <div className="title font-regular text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
@@ -500,6 +513,21 @@ export default function Work() {
     },
     [location.search]
   );
+  
+  const getInitialRandomArtworks = () => {
+    if (!cachedInitialArtworks) {
+      cachedInitialArtworks = shuffle(initialArtworks);
+    }
+    return cachedInitialArtworks;
+  };
+
+  const getInitialRandomMakers = () => {
+    if (!cachedInitialMakers) {
+      const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+      cachedInitialMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    }
+    return cachedInitialMakers;
+  };
 
   const initialView = getQueryParam("view") === "makers" ? "makers" : "gallery";
 
@@ -511,27 +539,17 @@ export default function Work() {
 
   const [currentView, setCurrentView] = useState(initialView);
 
-  const initialRandomArtworks = useMemo(() => shuffle(initialArtworks), []);
-  const [randomArtworkList, setRandomArtworkList] = useState(
-    initialRandomArtworks
-  );
-
-  const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+  const [randomArtworkList, setRandomArtworkList] = useState(getInitialRandomArtworks);
+  const [randomMakerList, setRandomMakerList] = useState(getInitialRandomMakers);
 
   const [makerListKey, setMakerListKey] = useState(Math.random().toString());
-
-  const initialRandomMakers = useMemo(
-    () => shuffleMakers(Object.values(uniqueMakersMap)),
-    [uniqueMakersMap]
-  );
-  const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
 
   const initialSortedArtworks = useMemo(() => {
     if (initialView === "makers") {
       return groupArtworksByMaker(initialArtworks, true);
     }
-    return initialRandomArtworks;
-  }, [initialView, initialRandomArtworks]);
+    return randomArtworkList;
+  }, [initialView, randomArtworkList]);
 
   const [sortedArtworks, setSortedArtworks] = useState(initialSortedArtworks);
 
@@ -540,6 +558,8 @@ export default function Work() {
   }, []);
 
   const handleSwitchView = (mode) => {
+    const scrollY = window.scrollY;
+
     setCurrentView(mode);
 
     let newList;
@@ -559,15 +579,24 @@ export default function Work() {
     setSortedArtworks(newList);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${mode}`, { replace: true });
+    navigate(`?view=${mode}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleRandomize = () => {
+    const scrollY = window.scrollY;
+
     const newRandomList = shuffle(initialArtworks);
+    cachedInitialArtworks = newRandomList;
     setRandomArtworkList(newRandomList);
 
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
     const allMakers = Object.values(uniqueMakersMap);
     const newRandomMakers = shuffleMakers(allMakers);
+    cachedInitialMakers = newRandomMakers;
     setRandomMakerList(newRandomMakers);
 
     setIsAscending(true);
@@ -580,10 +609,16 @@ export default function Work() {
       setSortedArtworks(newRandomList);
     }
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleSort = () => {
+    const scrollY = window.scrollY;
+
     let newAscending;
 
     if (!isCurrentlySorted) {
@@ -605,7 +640,11 @@ export default function Work() {
     setIsAscending(newAscending);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const sortButtonText = isCurrentlySorted && isAscending ? "Z–A" : "A–Z";
@@ -614,7 +653,7 @@ export default function Work() {
   const galleryList = currentView === "gallery" ? sortedArtworks : [];
 
   return (
-    <div
+    <PageTransition
       style={{ backgroundColor: "#F8F8F7" }}
       className="text-label min-h-screen"
     >
@@ -788,6 +827,6 @@ export default function Work() {
       </main>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 }

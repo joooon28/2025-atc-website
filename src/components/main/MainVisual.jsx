@@ -32,6 +32,20 @@ export default function MainVisual({
   muted = false,
 }) {
   const [activeKey, setActiveKey] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mq = window.matchMedia("(max-width: 800px)"); // 너가 쓰는 mobile 브레이크포인트에 맞게 변경 가능
+    const update = (e) => setIsMobile(e.matches);
+
+    // 최초 한 번 반영
+    update(mq);
+
+    // 리스너 등록
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const audioMapRef = useRef(new Map());
   const playingKeyRef = useRef(null);
@@ -472,11 +486,13 @@ export default function MainVisual({
     onOpenRef,
   ]);
 
+  const mobileFactor = isMobile ? 0.75 : 1; // 모바일일 때 80%로 축소
+
   return (
     <div
       onWheel={onWheelZoom}
       className="shrink-0 relative inline-block origin-center transition-transform duration-200 will-change-transform"
-      style={{ transform: `scale(${scale})` }}
+      style={{ transform: `scale(${scale * mobileFactor})` }}
     >
       <img
         src={MainFrame}

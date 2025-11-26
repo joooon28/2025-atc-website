@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuToggle from "../components/menu/MenuToggle";
+import PageTransition from "../components/PageTransition";
 
 const HEADER_HEIGHT = 85;
 const HEADER_TOP_OFFSET = 40;
@@ -17,6 +18,7 @@ const MadeBox = ({
   location,
   priceKr,
   priceEn,
+  imageClassName,
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const timeoutRef = useRef(null);
@@ -74,7 +76,9 @@ const MadeBox = ({
         <img
           src={images[currentImageIndex]}
           alt={`${title} 이미지 ${currentImageIndex + 1}`}
-          className="w-full h-full object-contain transition-opacity duration-1000 bg-[#E9F1E9]"
+          className={`w-full h-full object-contain transition-opacity duration-1000 bg-[#E9F1E9] ${
+            imageClassName || ""
+          }`}
         />
       </div>
 
@@ -127,7 +131,7 @@ const MadeBox = ({
 
 const Made = () => {
   return (
-    <div className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#F8F8F7]">
+    <PageTransition className="relative min-h-screen font-[var(--font-mono)] text-[#362C11] bg-[#F8F8F7]">
       <div
         className="max-tablet:hidden fixed left-0 w-full z-[50]"
         style={{
@@ -197,6 +201,7 @@ const Made = () => {
               en="Let your secret Babbles out to the world! Get a MumbleMumble Note, then you can get a tiny little BabbleBabble Sticker for free!"
               location="MD 부스"
               priceEn="(free)"
+              imageClassName="transform scale-115"
             />
 
             <MadeBox
@@ -209,6 +214,7 @@ const Made = () => {
               en="An A6-sized notebookーwaiting to be filled with our words and stories. Fill it little by little with the small thoughts in your mind. With every MumbleMumble Note, you’ll receive a BabbleBabble Sticker."
               location="MD 부스"
               priceEn="(3000 won)"
+              imageClassName="transform scale-125"
             />
           </div>
 
@@ -223,6 +229,7 @@ const Made = () => {
               en="Today may be the last day we remain amateurs. Let’s create a name card that introduces who we are now."
               location="MD 부스"
               priceEn="(free)"
+              imageClassName="transform scale-115"
             />
 
             <MadeBox
@@ -234,7 +241,7 @@ const Made = () => {
               titleEn="LumpyBumpy Jam (35g)"
               kr="2025 ATC의 울퉁불퉁함은 과연 어떤 맛이 날까요? 잼팟과 함께 만든 잼을 통해 직접 맛보고 느껴보세요!"
               en="What flavor would 2025 ATC have? Taste and feel it through the jam crafted with JAMPOT!"
-              location="대회협력 부스"
+              location="대외협력 부스"
               priceEn="(3000 won)"
             />
           </div>
@@ -242,7 +249,7 @@ const Made = () => {
       </div>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 };
 

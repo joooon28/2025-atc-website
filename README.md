@@ -1,4 +1,31 @@
-# 2025-atc-website
+# 2025-ATC-Website : 2025 Art&Technology Conference를 위한 공식 웹사이트
+
+## ⭐️ About
+2025 ATC Website는 2025 ATC 프로젝트의 메인 소개 허브 역할을 하는 웹사이트입니다.
+
+사이트는 크게 다음과 같은 섹션으로 구성되어 있습니다.
+- Main: 2025 ATC의 키워드를 시각적으로 풀어낸 메인 비주얼과 사운드, 각 섹션으로 이동할 수 있는 인터랙티브 게이트 역할
+- About: ATC 프로젝트의 전시 개요, 축사, 크레딧
+- Work: 아티스트 작업(프로젝트) 리스트와 상세 페이지. 각 작업의 개요, 이미지, 아티스트 정보를 확인할 수 있음
+- Program: 워크숍, 행사, 프로그램 일정과 설명을 모아 둔 섹션
+- Made: ATC 굿즈 정보를 확인할 수 있음
+- Archive
+  - Gallery: 기획단 준비 과정 아카이브
+  - Documentary: 오프닝/파이널 영상 (준비중)
+  - Memo: 2025 ATC를 기획하며 오고 간 말들을 기록
+  - Staff: ATC 기획단 프로필
+    
+## 🛠️ Tech Stack
+- React
+- Vite
+- React Router
+- Tailwind CSS (@tailwindcss/vite)
+- @lottiefiles/dotlottie-react
+- @phosphor-icons/react
+
+<br /><br /><br /><br /><br /><br />
+
+
 
 ## Git Commit Message Convention
 

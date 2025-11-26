@@ -5,7 +5,7 @@ import VolumeButton from "../../components/main/VolumeButton";
 import MenuToggle from "../../components/menu/MenuToggle";
 import Popup from "../../components/main/Popup";
 import MainVisual from "../../components/main/MainVisual";
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const routesByKey = {
@@ -45,9 +45,15 @@ export default function Main() {
   // Main 컴포넌트 상단 state
   const [popup, setPopup] = useState(null);
   const [popupEntered, setPopupEntered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const POPUP_DURATION = 1000;
   const CURVE_IN = "cubic-bezier(0.22,1,0.36,1)"; // 올라올 때 (ease-out 느낌)
   const CURVE_OUT = "cubic-bezier(0.4,0,1,1)";
+
+  useEffect(() => {
+    // 페이지 마운트 시 fadein
+    setTimeout(() => setIsVisible(true), 50);
+  }, []);
 
   // 열기
   const onOpen = useCallback((key) => {
@@ -254,7 +260,9 @@ export default function Main() {
   }, [popup, navigate]);
 
   return (
-    <main className="min-h-svh bg-mint-3 overflow-hidden">
+    <main className={`min-h-svh bg-mint-3 overflow-hidden transition-opacity duration-500 ${
+      isVisible ? "opacity-100" : "opacity-0"
+    }`}>
       <div className="relative z-100 max-tablet:hidden py-[40px]">
         <Header />
       </div>
@@ -298,13 +306,8 @@ export default function Main() {
       </div>
       <div className="fixed inset-x-0 bottom-0 flex justify-center gap-3 pb-[40px]">
         <div className="flex justify-center items-center gap-3 ">
-          <button onClick={handleZoomIn}>
-            <PlusButton />
-          </button>
-          <button onClick={handleZoomOut}>
-            <MinusButton />
-          </button>
-
+          <PlusButton onClick={handleZoomIn} />
+          <MinusButton onClick={handleZoomOut} />
           <VolumeButton muted={muted} onToggle={handleToggleMute} />
         </div>
       </div>
@@ -323,7 +326,7 @@ export default function Main() {
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
       </p>
-      <p className="pointer-events-none text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[165px] opacity-70 text-center leading-[1.45] text-label/30 ">
+      <p className="pointer-events-none text-[12px] font-heavy fixed min-mobile:hidden left-0 right-0 top-[110px] opacity-70 text-center leading-[1.45] text-label/30 ">
         2025 <br />
         Art & Technology Conference <br />
         울퉁불퉁하게 말아리
@@ -331,7 +334,7 @@ export default function Main() {
 
       {popupContent && (
         <div className="fixed inset-x-5 bottom-5 z-40 pointer-events-none max-mobile:inset-x-5 max-mobile:bottom-5">
-          <div className="pointer-events-auto flex justify-end max-mobile:justify-stretch ">
+          <div className="flex justify-end max-mobile:justify-stretch ">
             <div
               style={{
                 transitionProperty: "visibility, transform",
@@ -348,7 +351,7 @@ export default function Main() {
                   : "translate3d(0,100vh,0)",
                 willChange: "transform, visibility",
               }}
-              className="max-mobile:w-full"
+              className="max-mobile:w-full pointer-events-auto"
             >
               <Popup
                 animationSrc={popupContent.animationSrc}

@@ -8,7 +8,7 @@ import meta from "../../../data/archive/gallery.meta.json";
 
 export default function Gallery({ onClose }) {
   const [selected, setSelected] = useState(
-    "0710_대외협력팀_킥오프_후_친해진_대협팀"
+    "0704_크디_팀장단 첫 회식!!!"
   );
   const listRef = useRef(null);
   const regionRef = useRef(null);
@@ -86,7 +86,7 @@ export default function Gallery({ onClose }) {
         aria-label="Gallery navigation region"
         role="application"
       >
-        <div className="basis-0 flex-1 min-h-[50svh] supports-[height:100svh]:min-h-[50svh] md:min-h-[60vh] min-w-0 p-10 flex justify-center items-center overflow-hidden">
+        <div className="basis-0 flex-1 min-h-[50svh] supports-[height:100svh]:min-h-[40svh] md:min-h-[40vh] min-w-0 p-10 flex justify-center items-center overflow-hidden">
           <GalleryMain images={selected} />
         </div>
 

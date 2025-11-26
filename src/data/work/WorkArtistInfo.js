@@ -865,7 +865,7 @@ export const initialArtworks = [
     artist: "커비 KIRBY",
     description: "생성형 인공지능을 활용한 아이웨어 디자인 도구",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
+      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763539018/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv.png",
     makers: [
       { name: "손정우 Jeongwoo Son", links: [] },
       {

@@ -3,6 +3,8 @@ import Footer from "../../Footer";
 import { ArrowUpIcon } from "@phosphor-icons/react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import KorEnButton from "../../KorEnButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 const GoBackIcon = "/lottie/WorkDetailIcon/go_back.svg";
 const TopIcon = "/lottie/WorkDetailIcon/top.svg";
@@ -129,10 +131,17 @@ export default function MoreInfo({
               </p>
               {main ? (
                 <div className="flex w-full aspect-[16/9] overflow-hidden">
-                  <img
+                  <LazyLoadImage
                     src={main}
+                    placeholderSrc={
+                      main?.includes("cloudinary.com")
+                        ? main.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                        : undefined
+                    }
+                    effect="opacity"
                     alt={title}
-                    className="flex w-full h-full object-cover"
+                    className="flex w-full h-full object-cover transition-opacity duration-500"
+                    wrapperClassName="flex w-full h-full"
                   />
                 </div>
               ) : null}
@@ -179,10 +188,17 @@ export default function MoreInfo({
             )}
             {sub1 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden ">
-                <img
+                <LazyLoadImage
                   src={sub1}
+                  placeholderSrc={
+                    sub1?.includes("cloudinary.com")
+                      ? sub1.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover "
+                  className="flex w-full h-full object-cover transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
@@ -197,10 +213,17 @@ export default function MoreInfo({
             )}
             {sub2 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden">
-                <img
+                <LazyLoadImage
                   src={sub2}
+                  placeholderSrc={
+                    sub2?.includes("cloudinary.com")
+                      ? sub2.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover"
+                  className="flex w-full h-full object-cover transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
@@ -216,55 +239,97 @@ export default function MoreInfo({
 
             {sub3 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden rounded-[1000px]">
-                <img
+                <LazyLoadImage
                   src={sub3}
+                  placeholderSrc={
+                    sub3?.includes("cloudinary.com")
+                      ? sub3.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover rounded-[1000px]"
+                  className="flex w-full h-full object-cover rounded-[1000px] transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
             {sub4 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden">
-                <img
+                <LazyLoadImage
                   src={sub4}
+                  placeholderSrc={
+                    sub4?.includes("cloudinary.com")
+                      ? sub4.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover"
+                  className="flex w-full h-full object-cover transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
             {sub5 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden rounded-[1000px]">
-                <img
+                <LazyLoadImage
                   src={sub5}
+                  placeholderSrc={
+                    sub5?.includes("cloudinary.com")
+                      ? sub5.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover rounded-[1000px]"
+                  className="flex w-full h-full object-cover rounded-[1000px] transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
             {sub6 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden ">
-                <img
+                <LazyLoadImage
                   src={sub6}
+                  placeholderSrc={
+                    sub6?.includes("cloudinary.com")
+                      ? sub6.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover "
+                  className="flex w-full h-full object-cover transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
             {sub7 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden rounded-[1000px]">
-                <img
+                <LazyLoadImage
                   src={sub7}
+                  placeholderSrc={
+                    sub7?.includes("cloudinary.com")
+                      ? sub7.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover rounded-[1000px]"
+                  className="flex w-full h-full object-cover rounded-[1000px] transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}
             {sub8 ? (
               <div className="flex w-full aspect-[16/9] overflow-hidden ">
-                <img
+                <LazyLoadImage
                   src={sub8}
+                  placeholderSrc={
+                    sub8?.includes("cloudinary.com")
+                      ? sub8.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                      : undefined
+                  }
+                  effect="opacity"
                   alt={title}
-                  className="flex w-full h-full object-cover "
+                  className="flex w-full h-full object-cover transition-opacity duration-500"
+                  wrapperClassName="flex w-full h-full"
                 />
               </div>
             ) : null}

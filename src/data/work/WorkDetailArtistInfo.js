@@ -782,7 +782,7 @@ export const allArtworkData = {
       },
       {
         kr: "이예나",
-        en: "Yuna Lee",
+        en: "Yena Lee",
         links: {
           instagram: "https://instagram.com/_yena.lee/",
           email: "cellano100@naver.com",
@@ -1364,7 +1364,7 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036757/Neuverse_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mpzs1l.png",
-    videoSrc: "",
+    videoSrc: "https://vimeo.com/1138429497?fl=pl&fe=sh",
     commentary: {
       kr: {
         p1: "온·오프라인 데이터를 개인화된 우주로 시각화하는 몰입형 XR 서비스",
@@ -1515,7 +1515,7 @@ export const allArtworkData = {
     artistKr: "커비",
     artistEn: "KIRBY",
     imageMainSrc:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954502/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_c2gu5h.png",
+      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763539018/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763036748/GLASSLAB_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s5vbdt.png",
     videoSrc: "",
@@ -1530,7 +1530,7 @@ export const allArtworkData = {
         p2: "How can artificial intelligence support designers? Is it a threat to them? This project begins from the premise of “AI that assists designers.” It generates designs grounded in a designer’s intent and accelerates broad exploration during the ideation stage. When a designer presents a concept to the AI through an image, AI interprets that image and, by mapping it onto eyewear, proposes variations to the designer. We demonstrate the potential for expansive collaboration between AI and designers.",
       },
     },
-    links: [{ text: "Website", url: "https://glass-lab.vercel.app/" }],
+    links: [{ text: "Website", url: "https://www.glass-lab.site" }],
     artistsDetail: [
       {
         kr: "손정우",
