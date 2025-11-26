@@ -75,7 +75,7 @@ export default function Footer({ showSponsorship = false }) {
             Collaboration & Sponsorship
           </p>
 
-          <section className="max-mobile:px-5 max-mobile:gap-6 flex items-center justify-around self-stretch gap-10 py-3">
+          <section className="max-mobile:px-5 max-mobile:gap-6 flex items-center justify-center self-stretch gap-10 py-3">
             <a
               href="https://www.smilegate.com/"
               target="_blank"
