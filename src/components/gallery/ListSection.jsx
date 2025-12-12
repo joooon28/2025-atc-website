@@ -19,7 +19,7 @@ export default function ListSection({
       className={`
         flex flex-col gap-3 justify-end cursor-pointer shrink-0
         snap-start
-        max-desktop:flex-[0_0_calc(100%/8)]     
+        max-[3000px]:flex-[0_0_calc(100%/8)]     
         max-[1100px]:flex-[0_0_calc(100%/7)]    
         max-[1000px]:flex-[0_0_calc(100%/6)]    
         max-[800px]:flex-[0_0_calc(100%/5)]     
@@ -51,7 +51,10 @@ export default function ListSection({
             src={galleryimages[images]}
             placeholderSrc={
               galleryimages[images]?.includes("cloudinary.com")
-                ? galleryimages[images].replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                ? galleryimages[images].replace(
+                    "/upload/",
+                    "/upload/w_50,q_auto,f_auto/"
+                  )
                 : undefined
             }
             effect="opacity"
