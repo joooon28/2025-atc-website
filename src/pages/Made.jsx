@@ -161,8 +161,8 @@ const Made = () => {
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10 pt-[20px]">
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961700/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20412341234_eq6nlb.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961702/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_204_E3_84_B4_E3_84_B9234_nnkdot.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917457/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20412341234_eq6nlb_etxwvb.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917460/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_204_E3_84_B4_E3_84_B9234_nnkdot_rs0fgf.png",
               ]}
               title="「ATC와춤을」연필"
               titleEn="Dancing with ATC Pencil"
@@ -174,12 +174,12 @@ const Made = () => {
 
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961738/E1_84_86_E1_85_A1_E1_86_AF1_mpxv1z.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961740/E1_84_86_E1_85_A1_E1_86_AF2_e3tx5z.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961743/E1_84_86_E1_85_A1_E1_86_AF3_exeqir.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961746/E1_84_86_E1_85_A1_E1_86_AF4_ardjfa.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961749/E1_84_86_E1_85_A1_E1_86_AF5_fbnhiq.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961752/E1_84_86_E1_85_A1_E1_86_AF6_xyepyl.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917453/E1_84_86_E1_85_A1_E1_86_AF1_mpxv1z_zqehk0.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917457/E1_84_86_E1_85_A1_E1_86_AF2_e3tx5z_f2ti1b.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917456/E1_84_86_E1_85_A1_E1_86_AF5_fbnhiq_i7rtr3.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917454/E1_84_86_E1_85_A1_E1_86_AF4_ardjfa_webfiw.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917452/E1_84_86_E1_85_A1_E1_86_AF3_exeqir_njtk1z.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917450/E1_84_86_E1_85_A1_E1_86_AF6_xyepyl_cbu5gt.png",
               ]}
               title="말아리조각"
               titleEn="Piece of UtterEcho"
@@ -193,7 +193,7 @@ const Made = () => {
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10">
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961666/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917451/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20212341234_pjarl7_m4ncrw.png",
               ]}
               title="쫑알쫑알스티커"
               titleEn="BabbleBabble Sticker"
@@ -206,7 +206,7 @@ const Made = () => {
 
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961681/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20312341234_achxh5.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917459/EC_95_84_ED_8A_B8_EB_B3_B4_EB_93_9C_20312341234_achxh5_scxa0j.png",
               ]}
               title="왱알왱알손바닥수첩"
               titleEn="MumbleMumble Note"
@@ -221,7 +221,7 @@ const Made = () => {
           <div className="w-full flex justify-between items-start flex-wrap gap-5 min-tablet:gap-10">
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762961770/E1_84_86_E1_85_A7_E1_86_BC_E1_84_92_E1_85_A1_E1_86_B7_E1_84_86_E1_85_A9_E1_86_A8_E1_84_8B_E1_85_A5_E1_86_B8_gw5qyb.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917454/E1_84_86_E1_85_A7_E1_86_BC_E1_84_92_E1_85_A1_E1_86_B7_E1_84_86_E1_85_A9_E1_86_A8_E1_84_8B_E1_85_A5_E1_86_B8_gw5qyb_q7mrgf.png",
               ]}
               title="아마추어의명함"
               titleEn="Amateur’s Namecard"
@@ -234,8 +234,8 @@ const Made = () => {
 
             <MadeBox
               images={[
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763017947/25E1_2584_258C_25E1_2585_25A2_25E1_2586_25B72_fgulo3.png",
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763017948/E1_84_8C_E1_85_A2_E1_86_B71_lbeccd.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917455/25E1_2584_258C_25E1_2585_25A2_25E1_2586_25B72_fgulo3_pvfjfi.png",
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917458/E1_84_8C_E1_85_A2_E1_86_B71_lbeccd_hn5rvf.png",
               ]}
               title="울퉁불퉁한맛잼 (35g)"
               titleEn="LumpyBumpy Jam (35g)"
