@@ -9,6 +9,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921607/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk_jxggaz.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921630/_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_unxile_r5c6z4.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734006/DSC03072_vixexs.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734005/DSC03071_vtqwzb.jpg",
+    ],
     videoSrc: "https://vimeo.com/1136010116?fl=pl&fe=sh",
     commentary: {
       kr: {
@@ -41,6 +45,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921663/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog_tmtt4u.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921632/%EB%8B%B7_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_gcjg0l_qwstlj.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766228814/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-12-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.06.27_flvzav.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766228813/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-12-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.05.50_g2uyhm.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766228810/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-12-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.06.11_as4vl2.png",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -102,6 +111,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921652/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb_eyljyv.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921635/%EB%A9%B4%ED%92%8D2_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ww3yvm_tmph7m.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734413/DSC03206_k95u9x.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734413/DSC03204_k7kkv4.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734411/DSC03205_gqsvej.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -148,6 +162,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921655/%EB%AC%BC%EC%88%A8_%EC%8D%B8%EB%84%A4%EC%9D%BC_l581j4_fdshb3.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921674/%EB%AC%BC%EC%88%A8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wu4rmd_f8eefc.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734498/DSC03093_esgzbk.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734496/DSC03092_uaskqv.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -214,6 +232,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921670/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz_jta2z6.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921688/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ohyqff_h9x10o.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734618/DSC03139_vsjek5.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734616/DSC03138_fe4io7.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764734613/DSC03136_lhsptn.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -288,6 +311,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921666/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm_zubklw.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921708/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ug0knc_dwz0se.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735832/DSC03128_xywwwm.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735832/DSC03130_ppspz2.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735831/DSC03125_w39tbt.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -351,6 +379,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921600/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua_u4dfem.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921617/%EC%8B%AC_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_njdesc_eipbqf.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764736040/DSC03060_xgvqh3.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764736035/DSC03061_baazji.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764736031/DSC03107_m11cxf.jpg",
+    ],
     videoSrc: "https://vimeo.com/1135770875?fl=pl&fe=sh",
     commentary: {
       kr: {
@@ -406,6 +439,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921614/%EC%95%84%EC%A7%80%ED%8A%B8_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_imnumt_v3m1hj.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921703/%EC%95%84%EC%A7%80%ED%8A%B8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ovikzr_rsjtue.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735903/DSC03074_ep8qch.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735899/DSC03077_xwzzmq.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735897/DSC03169_ogwrlj.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -456,6 +494,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921605/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw_v1rcsy.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921618/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vq8ely_qpmamk.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764736026/DSC03262_rvyxwi.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764736023/DSC03263_ehldeb.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764735910/DSC03220_ltqncz.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -497,6 +540,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921645/%EC%98%81%EC%B4%88_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_jv1o1y_ahlph9.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921626/%EC%98%81%EC%9B%90%EC%9D%98%EC%B4%88%EC%83%81_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_twufpe_hbceoi.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225839/DSC04289_mjfqqn.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225838/DSC04287_qvtcp0.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -539,6 +586,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921710/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee_ljy0fz.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921684/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_jjjxkm_sdhml4.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764942540/20251121_C0643.00_00_49_29.%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%AF_002_ze6g55.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764942540/20251121_C0643.00_00_33_13.%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%AF_001_ywv8ey.png",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -584,6 +635,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921647/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr_hhhh1b.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921640/%EC%98%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_eh1lzd_wj4ywt.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764834450/DSC03106_dty7zv.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764834449/DSC03105_vzu7o1.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764834448/DSC03065_prwhp9.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -633,6 +689,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921690/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv_hlz25n.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921695/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_pjlfr2_ilzbrj.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835629/DSC03174_zdb2og.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835628/DSC03194_e3wzsr.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835626/DSC03196_tvzivn.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -695,6 +756,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921653/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i_iuttnn.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921690/%EC%B0%B0%EB%B0%94%EB%8B%88_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_bs46pa_ebq0yr.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835482/DSC03055_r5dnuv.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835481/DSC03052_celxlz.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -749,6 +814,9 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921604/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l_rxqfvl.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921634/ToastOut_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_wxp1qs_dmkcka.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835734/DSC03147_okmaj8.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -800,6 +868,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921651/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan_x5cghm.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921695/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ph7qha_nr0h8v.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835833/DSC03116_o4htmt.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835829/DSC03095_lpjide.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -865,6 +937,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921664/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto_ewkk80.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921621/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_uszmve_ecfztj.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835931/DSC03025_h9adbp.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835882/DSC03027_a8ljs9.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835878/DSC03026_qbnla4.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -907,6 +984,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921601/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms_ohvyhu.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921682/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_slcnbe_zvkm3d.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835982/DSC03270_qc1ml2.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835979/DSC03036_ql4jja.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835937/DSC03020_ldy2ty.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -975,6 +1057,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921611/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy_hiaaif.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921677/OMI_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_yv9a1v_i4f8bv.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837253/DSC03017_why1yv.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837247/DSC03039_gdhtkk.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1016,6 +1102,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921686/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt_yp4whw.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921680/D31_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_dngzxj_mb9qbf.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835988/DSC03086_klvafz.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835992/DSC03088_ocowhm.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1082,6 +1172,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921616/E.C.H.O._%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%B0%A8%EC%84%B8%EC%97%B0_ygczd4_gsndii.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921699/E.C.H.O._%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_zlubc6_kfp0dw.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837017/DSC03016_kfyfnk.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837010/DSC03029_swpk5v.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837005/DSC03030_a85ypz.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1130,6 +1225,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921602/web-sight_%EC%8D%B8%EB%84%A4%EC%9D%BC_e9hxpo_tp6k9s.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921642/web-stie_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_fhhsyh_dt4bt6.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837501/DSC03014_weawze.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837495/DSC03032_ciwsom.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1184,6 +1283,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921639/MusicalDream_%EC%8D%B8%EB%84%A4%EC%9D%BC_jir0wp_xomw7l.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921672/MusicalDream_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vy4irl_jc2mvp.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766228879/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-12-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.07.43_lrbrdi.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766228877/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-12-20_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.07.18_isvv6t.png",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1216,6 +1319,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921668/Faces_%EC%8D%B8%EB%84%A4%EC%9D%BC_xqws7o_gwrxhh.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921628/Faces_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_z2gzjx_fjhyyg.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764836885/DSC03142_m1kqur.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764836881/DSC03143_ehgsg1.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1248,6 +1355,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921705/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj_nz8iry.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921701/RIP_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_nz55ph_kdzjfx.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837416/DSC03150_mnopba.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837409/DSC03153_lwbq5i.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837403/DSC03152_y9j4ry.jpg",
+    ],
     videoSrc: "https://vimeo.com/1092433449?fl=pl&fe=sh",
     commentary: {
       kr: {
@@ -1303,6 +1415,9 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921660/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s_g0tiij.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921678/Snowball_Effect_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_uiahra_vvjnzm.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837425/DSC03171_mgb8y1.jpg",
+    ],
     videoSrc: "https://vimeo.com/1135737755?fl=pl&fe=sh",
     commentary: {
       kr: {
@@ -1364,6 +1479,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921612/Neuverse_Thumbnail_-_SunMyeong_Lee_budira_ox3dgg.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921702/Neuverse_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mpzs1l_vntfho.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837276/DSC03202_f0gxds.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837268/DSC03209_jbtyiy.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837262/DSC03197_hhwzsg.jpg",
+    ],
     videoSrc: "https://vimeo.com/1138429497?fl=pl&fe=sh",
     commentary: {
       kr: {
@@ -1432,6 +1552,8 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921658/%ED%8B%B0%ED%8B%B0%ED%8B%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%B5%9C%EC%A2%85%EB%B3%B8_-_Seoyoung_Kim_ddurni_sgpdz2.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921624/TTT_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ewagbq_ogkciz.png",
+    siteArchiveImages: [
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1483,6 +1605,9 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921659/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7_l7qonr.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921686/e-mo_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_vx1d1o_tdnayg.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764839540/1000040231_l1hmur.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1518,6 +1643,11 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921706/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv_b6j0wl.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921625/GLASSLAB_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s5vbdt_e3kqvz.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837299/DSC03117_jdaxrm.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837291/DSC03118_optkps.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837286/DSC03119_lyatzy.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1572,6 +1702,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921643/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb_nfejoj.png",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921697/chroma_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_qu7kiy_fzzul9.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225881/DSC04259_xfixeb.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225878/DSC04242_pim9cv.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1602,9 +1736,13 @@ export const allArtworkData = {
     artistKr: "이선명",
     artistEn: "Sunmyeong Lee",
     imageMainSrc:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763084165/Fragments_of_Me_Thumbnail_gfr1xh.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225951/Fragments_of_Me_Thumbnail_ujzqyj.png",
     imageDetailSrc:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763084166/Fragments_of_Me_Detail_gkmj7g.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225945/Fragments_of_Me_Detail_r7gx2r.png",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/video/upload/v1766225597/IMG_1731_zdslmm.mp4",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764837096/DSC03140_kkzb1j.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1642,6 +1780,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921650/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz_zyvzuv.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921637/ART_IST_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_mhcspn_keyjqj.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764835998/DSC03084_u2qp4s.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764836003/DSC03070_bagj6i.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {
@@ -1696,6 +1838,10 @@ export const allArtworkData = {
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921610/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf_clvnyt.jpg",
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921620/WithLily_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_s8dpvr_enbvdq.jpg",
+    siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764838750/DSC03160_lg0hao.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764838756/DSC03163_ku4i4c.jpg",
+    ],
     videoSrc: "",
     commentary: {
       kr: {

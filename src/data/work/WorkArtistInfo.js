@@ -905,7 +905,7 @@ export const initialArtworks = [
     artist: "이선명 Sunmyeong Lee",
     description: "소셜 미디어 이미지 AI 분류·시각화를 통한 자기 성찰 연구",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763084165/Fragments_of_Me_Thumbnail_gfr1xh.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225951/Fragments_of_Me_Thumbnail_ujzqyj.png",
     makers: [{ name: "이선명 Sunmyeong Lee", links: [] }],
   },
   {

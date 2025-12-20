@@ -427,9 +427,9 @@ export default function WorkDetail() {
         </div>
 
         <div className="Work-Detail-Info w-full flex flex-col min-tablet:flex-row justify-between">
-          <div className="Work-Detail-Visual w-full min-tablet:w-[calc(50%-20px)] min-tablet:flex-shrink-0 order-2 min-tablet:order-none">
+          <div className="Work-Detail-Visual w-full min-tablet:w-[calc(50%-20px)] min-tablet:flex-shrink-0 order-2 min-tablet:order-none flex flex-col">
             {vimeoEmbedUrl ? (
-              <div className="Work-Detail-Video bg-black w-full h-auto box-border relative aspect-video">
+              <div className="Work-Detail-Video bg-black w-full h-auto box-border relative aspect-video mb-0">
                 <iframe
                   src={vimeoEmbedUrl}
                   className="w-full h-full absolute top-0 left-0"
@@ -441,14 +441,29 @@ export default function WorkDetail() {
               </div>
             ) : null}
 
-            <div className="Work-Detail-Img">
-              <LazyLoadImage
-                alt={displayTitleKr || displayTitleEn}
-                src={artwork.imageDetailSrc}
-                placeholderSrc={artwork.imageDetailSrcPlaceholder}
-                effect="blur"
-                className="object-contain w-full h-full"
-              />
+            {/* 이미지들이 따닥따닥 붙도록 leading-0와 block 설정 적용 */}
+            <div className="Work-Detail-Images-Container flex flex-col leading-[0]">
+              <div className="Work-Detail-Img">
+                <LazyLoadImage
+                  alt={displayTitleKr || displayTitleEn}
+                  src={artwork.imageDetailSrc}
+                  placeholderSrc={artwork.imageDetailSrcPlaceholder}
+                  effect="blur"
+                  className="object-contain w-full h-auto block"
+                />
+              </div>
+
+              {/* Site-Archive 이미지 맵핑 (간격 없음) */}
+              {artwork.siteArchiveImages && artwork.siteArchiveImages.map((src, index) => (
+                <div key={index} className="Work-Detail-Img">
+                  <LazyLoadImage
+                    alt={`Archive ${index}`}
+                    src={src}
+                    effect="blur"
+                    className="object-contain w-full h-auto block"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
