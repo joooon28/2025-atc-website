@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
+
 export default function PreviousList({
   number,
   title,
@@ -5,14 +8,27 @@ export default function PreviousList({
   date,
   main,
   sub1,
+  sub2,
+  sub3,
+  sub4,
+  sub5,
+  sub6,
+  sub7,
+  sub8,
   text,
   texteng,
   detailKo1,
   detailEng1,
   detailKo2,
   detailEng2,
+  detailKo3,
+  detailEng3,
+  detailKo4,
+  detailEng4,
   onMoreInfo,
   rounded,
+  madeby,
+  madebyEng,
 }) {
   const isNumberTwo = String(number) === "2";
   const isNumberThree = String(number) === "3";
@@ -40,8 +56,21 @@ export default function PreviousList({
           detailEng1,
           detailKo2,
           detailEng2,
+          detailKo3,
+          detailEng3,
+          detailKo4,
+          detailEng4,
           main,
           sub1,
+          sub2,
+          sub3,
+          sub4,
+          sub5,
+          sub6,
+          sub7,
+          sub8,
+          madeby,
+          madebyEng,
         })
       }
     >
@@ -51,11 +80,18 @@ export default function PreviousList({
         }`}
       >
         {main ? (
-          <img
-            draggable={false}
+          <LazyLoadImage
             src={main}
+            placeholderSrc={
+              main?.includes("cloudinary.com")
+                ? main.replace("/upload/", "/upload/w_50,q_auto,f_auto/")
+                : undefined
+            }
+            effect="opacity"
             alt={title}
-            className="w-full h-full object-cover"
+            draggable={false}
+            className="w-full h-full object-cover transition-opacity duration-500"
+            wrapperClassName="w-full h-full flex"
           />
         ) : (
           "img"
@@ -87,7 +123,7 @@ export default function PreviousList({
           </p>
         </div>
         <p className="font-regular flex text-[14px]">{date}</p>
-        <p className="leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">
+        <p className="whitespace-pre-line leading-[1.4] tracking-[-0.7px] font-regular flex text-[14px] whitespace-normal max-tablet:hidden">
           {text}
         </p>
         <button

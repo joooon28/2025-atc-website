@@ -8,7 +8,7 @@ import meta from "../../../data/archive/gallery.meta.json";
 
 export default function Gallery({ onClose }) {
   const [selected, setSelected] = useState(
-    "0710_대외협력팀_킥오프_후_친해진_대협팀"
+    "0704_크디_팀장단 첫 회식!!!"
   );
   const listRef = useRef(null);
   const regionRef = useRef(null);
@@ -72,7 +72,7 @@ export default function Gallery({ onClose }) {
   };
 
   return (
-    <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-svh"}`}>
+    <div className={`flex flex-col ${isShort ? "min-h-auto" : "min-h-dvh"}`}>
       <div className="top-0 inset-x-0 z-10 flex justify-center px-4">
         <button onClick={onClose}>
           <CloseButton />
@@ -82,12 +82,11 @@ export default function Gallery({ onClose }) {
         ref={regionRef}
         tabIndex={0}
         onKeyDown={onKeyDown}
-        className="flex-1 min-h-0 flex flex-col outline-none"
+        className="flex-1 min-h-[40vh] basis-auto min-w-0 flex flex-col outline-none"
         aria-label="Gallery navigation region"
         role="application"
       >
-        <div className="basis-0 flex-1 min-h-[50svh] md:min-h-0 p-4 md:p-10 flex justify-center items-center overflow-hidden">
-          {" "}
+        <div className="basis-0 flex-1 min-h-[50svh] supports-[height:100svh]:min-h-[40svh] md:min-h-[40vh] min-w-0 p-10 flex justify-center items-center overflow-hidden">
           <GalleryMain images={selected} />
         </div>
 
@@ -101,7 +100,7 @@ export default function Gallery({ onClose }) {
             onWheelStep={selectByStep}
           />
         </div>
-        <div className="py-10 font-regular shrink-0 flex justify-center text-center gap-6">
+        <div className="pb-10 font-regular shrink-0 flex justify-center text-center gap-6">
           {["Jul", "Aug", "Sep", "Oct", "Nov"].map((m) => (
             <p
               key={m}

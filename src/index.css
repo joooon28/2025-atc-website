@@ -5,6 +5,9 @@
     --font-sans: "Monoplex KR", system-ui, sans-serif;
     --font-suit: "SUIT Variable", system-ui, sans-serif;
   }
+  body {
+    background-color: var(--color-mint-6);
+  }
 }
 
 @layer utilities {

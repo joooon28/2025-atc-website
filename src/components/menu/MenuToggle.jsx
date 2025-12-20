@@ -5,7 +5,6 @@ import ButtonLottie from "./ButtonLottie";
 
 export default function MenuToggle() {
   const [open, setOpen] = useState(false);
-  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -16,12 +15,14 @@ export default function MenuToggle() {
   }, [open]);
 
   const handleToggle = () => {
-    if (animating) return;
-    setAnimating(true);
     setOpen((v) => !v);
   };
 
-  const handleAnimationDone = () => setAnimating(false);
+  const handlePanelClose = () => {
+    setOpen(false);
+  };
+
+  const handleAnimationDone = () => {};
 
   return (
     <div className="relative">
@@ -43,7 +44,7 @@ export default function MenuToggle() {
         ].join(" ")}
         aria-hidden={!open}
       >
-        <MenuPanel onClose={handleToggle} />
+        <MenuPanel onClose={handlePanelClose} />
       </div>
 
       <div className="absolute top-0 right-0 z-[60]">

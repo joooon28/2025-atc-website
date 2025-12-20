@@ -1,12 +1,30 @@
 import GoButton from "../components/GoButton";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function NotFound() {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLeaving, setIsLeaving] = useState(false);
+
+  useEffect(() => {
+    // 페이지 마운트 시 fadein
+    setTimeout(() => setIsVisible(true), 50);
+  }, []);
+
+  const handleExplore = () => {
+    // fadeout 후 navigate
+    setIsLeaving(true);
+    setTimeout(() => navigate("/main"), 500);
+  };
 
   return (
-    <div className="max-tablet:py-40 max-[450px]:px-10 max-mobile:py-20 flex flex-col items-center bg-brown min-h-svh py-[160px]">
-      <p className="max-tablet:text-[24px] max-mobile:text-[16px] font-[400] text-[40px] text-label-invert text-center">
+    <div
+      className={`max-tablet:py-40 max-[450px]:px-10 max-mobile:py-20 flex flex-col items-center bg-brown min-h-svh py-[160px] transition-opacity duration-500 ${
+        isVisible && !isLeaving ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <p className="text-[24px] max-mobile:text-[16px] font-[400]  text-label-invert text-center">
         2025
         <br />
         Art & Technology Conference
@@ -21,7 +39,15 @@ export default function NotFound() {
         서울특별시 마포구 백범로 35 서강대학교 하비에르관(X관){" "}
       </p>
       <div className="flex-grow" />
-      <GoButton text="Explore" onClick={() => navigate("/main")} />
+      <div
+        className={`transition-all duration-700 delay-300 ${
+          isVisible && !isLeaving
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4"
+        }`}
+      >
+        <GoButton text="Explore" onClick={handleExplore} />
+      </div>
     </div>
   );
 }

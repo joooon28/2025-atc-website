@@ -24,7 +24,12 @@ export default function Popup({
                  max-mobile:w-full"
     >
       <div className="flex justify-end">
-        <button type="button" aria-label="닫기" onClick={onClose}>
+        <button
+          type="button"
+          aria-label="닫기"
+          onClick={onClose}
+          className="cursor-pointer hover:opacity-50"
+        >
           <XIcon className="w-[24px] h-[24px]" weight="thin" />
         </button>
       </div>
@@ -51,7 +56,7 @@ export default function Popup({
       <button
         type="button"
         onClick={onGo}
-        className="hover:bg-fill hover:text-label-invert mt-auto text-[14px] border border-label px-3 py-2"
+        className="cursor-pointer hover:bg-fill hover:text-label-invert mt-auto text-[14px] border border-label px-3 py-2"
       >
         바로가기
       </button>

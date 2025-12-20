@@ -10,12 +10,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import MenuToggle from "../../components/menu/MenuToggle";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import PageTransition from "../../components/PageTransition";
 
 import {
   initialArtworks,
   getLinkIcon,
   MakersLinkIconPlaceholder,
 } from "../../data/work/WorkArtistInfo";
+
+let cachedInitialArtworks = null;
+let cachedInitialMakers = null;
 
 const IconPlaceholder = "img/A-Z.svg";
 const LinkIconPlaceholder = "img/go-to.svg";
@@ -186,15 +192,76 @@ const formatTitle = (title) => {
 const formatArtistName = (artistName, isGallery = false) => {
   if (typeof artistName !== "string" || artistName.trim().length === 0) {
     return (
-      <span className="Makers-Artist-Kr font-normal text-[14px]">N/A</span>
+      <span className="Makers-Artist-Kr font-regular text-[14px]">N/A</span>
     );
   }
 
   const trimmedName = artistName.trim();
-  const parts = trimmedName.split(/([가-힣]+)/).filter((p) => p.length > 0);
-  const baseFontWeight = isGallery ? "font-normal" : "font-normal";
+  const baseFontWeight = isGallery ? "font-regular" : "font-regular";
 
   const isMakersViewAndOnlyEnglish = !isGallery && !/[가-힣]/.test(trimmedName);
+
+  if (isGallery && trimmedName.length >= 25) {
+    let finalKorText = "";
+    let finalEngText = "";
+
+    const hasKorean = /[가-힣]/.test(trimmedName);
+
+    if (/[A-Za-z]/.test(trimmedName)) {
+      const matches = trimmedName.match(
+        /^([\s\S]*?[가-힣]+[\s\S]*?)\s+([A-Za-z].*)$/
+      );
+
+      if (matches && matches.length === 3) {
+        finalKorText = matches[1].trim();
+        finalEngText = matches[2].trim();
+      } else {
+        const firstLatinIndex = trimmedName.search(/[A-Za-z]/);
+        if (firstLatinIndex !== -1) {
+          finalKorText = trimmedName.substring(0, firstLatinIndex).trim();
+          finalEngText = trimmedName.substring(firstLatinIndex).trim();
+        }
+      }
+
+      if (!finalKorText && !finalEngText) {
+        finalKorText = hasKorean ? trimmedName : "";
+        finalEngText = hasKorean ? "" : trimmedName;
+      } else if (!finalKorText && hasKorean && trimmedName.length > 0) {
+        finalKorText = trimmedName;
+        finalEngText = "";
+      } else if (!finalEngText && !hasKorean && trimmedName.length > 0) {
+        finalKorText = "";
+        finalEngText = trimmedName;
+      }
+    } else {
+      finalKorText = trimmedName;
+      finalEngText = "";
+    }
+
+    return (
+      <>
+        {finalKorText && (
+          <span
+            className={`Makers-Artist-Kr ${baseFontWeight} text-[14px] block mb-[-15px]`}
+          >
+            {finalKorText}
+          </span>
+        )}
+
+        {finalKorText && finalEngText && <br />}
+
+        {finalEngText && (
+          <span
+            className={`Makers-Artist-En italic ${baseFontWeight} text-[14px] leading-none`}
+          >
+            {finalEngText}
+          </span>
+        )}
+      </>
+    );
+  }
+
+  const parts = trimmedName.split(/([가-힣]+)/).filter((p) => p.length > 0);
 
   return parts.map((part, index) => {
     if (part.trim().length === 0)
@@ -205,7 +272,7 @@ const formatArtistName = (artistName, isGallery = false) => {
         <span
           key={index}
           className={`Makers-Artist-Kr ${
-            isGallery ? "font-normal" : "font-[500]"
+            isGallery ? "font-regular" : "font-[500]"
           } text-[14px]`}
         >
           {part}
@@ -324,11 +391,18 @@ const ArtworkCard = React.memo(({ art }) => {
         to={`/work/${art.id}?from=gallery`}
         className="group flex flex-col w-full gap-4 text-label"
       >
-        <div className="relative w-full pt-[136%]">
-          <img
-            src={art.image}
+        <div
+          className="relative w-full pt-[136%] overflow-hidden 
+                     transition-all duration-600 ease-out transform 
+                     group-hover:rounded-[200px] group-hover:scale-[0.93]"
+        >
+          <LazyLoadImage
             alt={art.title}
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-none transition-all duration-600 ease-out transform group-hover:rounded-[200px] group-hover:scale-[0.93]"
+            src={art.image}
+            placeholderSrc={art.placeholder}
+            effect="blur"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            wrapperClassName="absolute top-0 left-0 w-full h-full"
           />
         </div>
         <div className="title font-regular text-[15px] leading-[145%] tracking-[-0.5%] whitespace-normal">
@@ -439,6 +513,21 @@ export default function Work() {
     },
     [location.search]
   );
+  
+  const getInitialRandomArtworks = () => {
+    if (!cachedInitialArtworks) {
+      cachedInitialArtworks = shuffle(initialArtworks);
+    }
+    return cachedInitialArtworks;
+  };
+
+  const getInitialRandomMakers = () => {
+    if (!cachedInitialMakers) {
+      const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+      cachedInitialMakers = shuffleMakers(Object.values(uniqueMakersMap));
+    }
+    return cachedInitialMakers;
+  };
 
   const initialView = getQueryParam("view") === "makers" ? "makers" : "gallery";
 
@@ -450,27 +539,17 @@ export default function Work() {
 
   const [currentView, setCurrentView] = useState(initialView);
 
-  const initialRandomArtworks = useMemo(() => shuffle(initialArtworks), []);
-  const [randomArtworkList, setRandomArtworkList] = useState(
-    initialRandomArtworks
-  );
-
-  const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
+  const [randomArtworkList, setRandomArtworkList] = useState(getInitialRandomArtworks);
+  const [randomMakerList, setRandomMakerList] = useState(getInitialRandomMakers);
 
   const [makerListKey, setMakerListKey] = useState(Math.random().toString());
-
-  const initialRandomMakers = useMemo(
-    () => shuffleMakers(Object.values(uniqueMakersMap)),
-    [uniqueMakersMap]
-  );
-  const [randomMakerList, setRandomMakerList] = useState(initialRandomMakers);
 
   const initialSortedArtworks = useMemo(() => {
     if (initialView === "makers") {
       return groupArtworksByMaker(initialArtworks, true);
     }
-    return initialRandomArtworks;
-  }, [initialView, initialRandomArtworks]);
+    return randomArtworkList;
+  }, [initialView, randomArtworkList]);
 
   const [sortedArtworks, setSortedArtworks] = useState(initialSortedArtworks);
 
@@ -479,6 +558,8 @@ export default function Work() {
   }, []);
 
   const handleSwitchView = (mode) => {
+    const scrollY = window.scrollY;
+
     setCurrentView(mode);
 
     let newList;
@@ -498,15 +579,24 @@ export default function Work() {
     setSortedArtworks(newList);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${mode}`, { replace: true });
+    navigate(`?view=${mode}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleRandomize = () => {
+    const scrollY = window.scrollY;
+
     const newRandomList = shuffle(initialArtworks);
+    cachedInitialArtworks = newRandomList;
     setRandomArtworkList(newRandomList);
 
+    const uniqueMakersMap = getUniqueMakersMap(initialArtworks);
     const allMakers = Object.values(uniqueMakersMap);
     const newRandomMakers = shuffleMakers(allMakers);
+    cachedInitialMakers = newRandomMakers;
     setRandomMakerList(newRandomMakers);
 
     setIsAscending(true);
@@ -519,10 +609,16 @@ export default function Work() {
       setSortedArtworks(newRandomList);
     }
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleSort = () => {
+    const scrollY = window.scrollY;
+
     let newAscending;
 
     if (!isCurrentlySorted) {
@@ -544,7 +640,11 @@ export default function Work() {
     setIsAscending(newAscending);
     setMakerListKey(Math.random().toString());
 
-    navigate(`?view=${currentView}`, { replace: true });
+    navigate(`?view=${currentView}`, { replace: true, preventScrollReset: true });
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const sortButtonText = isCurrentlySorted && isAscending ? "Z–A" : "A–Z";
@@ -553,7 +653,7 @@ export default function Work() {
   const galleryList = currentView === "gallery" ? sortedArtworks : [];
 
   return (
-    <div
+    <PageTransition
       style={{ backgroundColor: "#F8F8F7" }}
       className="text-label min-h-screen"
     >
@@ -577,7 +677,7 @@ export default function Work() {
             </p>
 
             <div className="Work-Detail-Text flex flex-col xl:flex-row items-start justify-between gap-y-[20px]">
-              <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-large tracking-tight">
+              <p className="w-full xl:w-[39.5%] font-regular text-[15px] leading-large tracking-tighter">
                 각자의 고유한 감각에서 출발한 말하기는 울퉁불퉁한 궤적을 따라
                 전시 공간으로 이어집니다. 미디어 아트, 게임, 웹, 애니메이션,
                 퍼포먼스 등 형식에 제한을 두지 않은 실험적 시도들을 선보입니다.{" "}
@@ -727,6 +827,6 @@ export default function Work() {
       </main>
 
       <Footer />
-    </div>
+    </PageTransition>
   );
 }

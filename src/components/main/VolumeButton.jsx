@@ -19,7 +19,7 @@ export default function VolumeButton({ muted, onToggle, className = "" }) {
       onClick={handleClick}
       aria-pressed={isMuted}
       aria-label={isMuted ? "Unmute" : "Mute"}
-      className={`hover:bg-fill hover:text-label-invert flex justify-center items-center border border-label w-[69px] rounded-[60px] bg-mint-5 p-3 transition-colors ${className}`}
+      className={`cursor-pointer hover:bg-fill hover:text-label-invert flex justify-center items-center border border-label w-[69px] rounded-[60px] bg-mint-5 p-3 transition-colors ${className}`}
     >
       {isMuted ? (
         <WaveformSlashIcon className="w-[21px] h-[21px]" weight="thin" />

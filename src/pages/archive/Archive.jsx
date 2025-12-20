@@ -6,9 +6,11 @@ import Memo from "./Memo";
 import Documentary from "./documentary/Documentary";
 import Gallery from "./galllery/Gallery";
 import MenuToggle from "../../components/menu/MenuToggle";
+import { createPortal } from "react-dom";
 
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import PageTransition from "../../components/PageTransition";
 
 export default function Archive() {
   const [activeSheet, setActiveSheet] = useState(null);
@@ -26,6 +28,33 @@ export default function Archive() {
   const closeSheet = () => {
     setSheetOpen(false);
   };
+
+  // Archive 컴포넌트 안
+  useEffect(() => {
+    if (!showSheet) return;
+
+    // 현재 스크롤 위치 고정
+    const y = window.scrollY;
+    const { style } = document.body;
+
+    style.position = "fixed";
+    style.top = `-${y}px`;
+    style.left = "0";
+    style.right = "0";
+    style.width = "100%";
+    style.overflow = "hidden";
+
+    return () => {
+      // 복구
+      style.position = "";
+      style.top = "";
+      style.left = "";
+      style.right = "";
+      style.width = "";
+      style.overflow = "";
+      window.scrollTo(0, y);
+    };
+  }, [showSheet]);
 
   useEffect(() => {
     const target = location.state?.sheet;
@@ -60,15 +89,16 @@ export default function Archive() {
   };
 
   return (
-    <div className="flex flex-col min-h-dvh bg-mint-6">
-      <div className="max-tablet:hidden pt-[40px]">
-        <Header />
-      </div>
-      <div className="p-5 z-10">
-        <div className="min-tablet:hidden relative">
-          <MenuToggle />
+    <>
+      <PageTransition className="flex flex-col min-h-dvh bg-mint-6">
+        <div className="max-tablet:hidden pt-[40px]">
+          <Header />
         </div>
-      </div>
+        <div className="p-5 z-10">
+          <div className="min-tablet:hidden relative">
+            <MenuToggle />
+          </div>
+        </div>
 
       <div className="min-desktop:px-[120px] max-desktop:px-[20px]">
         <section
@@ -161,36 +191,42 @@ export default function Archive() {
         </section>
       </div>
 
-      <div className="mt-auto">
-        <Footer />
-      </div>
-
-      {showSheet && (
-        <div className="fixed inset-0 z-50">
-          <button
-            aria-label="close overlay"
-            onClick={closeSheet}
-            className={`absolute inset-0 bg-black/40 transition-opacity duration-500 ${
-              sheetOpen ? "opacity-100" : "opacity-0"
-            }`}
-          />
-
-          <div
-            onTransitionEnd={() => {
-              if (!sheetOpen) {
-                setShowSheet(false);
-                setActiveSheet(null);
-              }
-            }}
-            className={`absolute inset-x-0 bottom-0 transition-transform duration-500 will-change-transform
-              ${sheetOpen ? "translate-y-0" : "translate-y-full"}`}
-          >
-            <div className="bg-mint-6 h-dvh overflow-y-auto ">
-              {renderSheet()}
-            </div>
-          </div>
+        <div className="mt-auto">
+          <Footer />
         </div>
-      )}
-    </div>
+      </PageTransition>
+
+      {showSheet &&
+        createPortal(
+          <div className="fixed inset-0 z-50 overscroll-none">
+            {/* 백드롭 */}
+            <button
+              aria-label="close overlay"
+              onClick={closeSheet}
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-500 ${
+                sheetOpen ? "opacity-100" : "opacity-0"
+              }`}
+            />
+
+            {/* 시트 패널 */}
+            <div
+              onTransitionEnd={() => {
+                if (!sheetOpen) {
+                  setShowSheet(false);
+                  setActiveSheet(null);
+                }
+              }}
+              className={`absolute inset-0 transition-transform duration-500 ${
+                sheetOpen ? "transform-none" : "translate-y-full"
+              }`}
+            >
+              <div className="bg-mint-6 h-full overflow-y-auto overscroll-contain">
+                {renderSheet()}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
+    </>
   );
 }

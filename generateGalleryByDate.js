@@ -3,9 +3,9 @@ import fs from "fs";
 
 // ✅ Cloudinary 설정
 cloudinary.config({
-  cloud_name: "dbw1ckgzr",
-  api_key: "127227736155786",
-  api_secret: "nMU7mXohk9zYXOGpqq4c8CMbX2A",
+  cloud_name: "dzwooybws",
+  api_key: "815358641942731",
+  api_secret: "jmvDFfZ8PHayn5An-dK_eC45RTo",
 });
 
 // ✅ Cloudinary 폴더 경로 (루트)
@@ -20,7 +20,7 @@ function extractDateFromFilename(filename) {
 // 🔧 Cloudinary 자동 붙는 _랜덤코드 제거 함수
 function cleanFilename(filename) {
   // _6자리영문숫자 또는 _와 6자리 이상이 뒤에 붙은 경우 제거
-  return filename.replace(/_[a-z0-9]{6,}$/i, "");
+  return filename.replace(/(_[a-z0-9]{6,})+$/i, "");
 }
 
 async function generateGalleryByDate() {
