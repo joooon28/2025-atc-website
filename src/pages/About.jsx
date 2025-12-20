@@ -86,12 +86,12 @@ const FirstSection = () => {
       >
         <div className="relative w-full">
           <img
-            src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+            src="https://res.cloudinary.com/dzwooybws/image/upload/v1764917272/%EC%95%BC%EC%98%B9_%EC%9C%A0%EB%A6%BC%EB%8F%84%EC%A0%847_uj8vvd_uochca.png"
             alt="포스터"
             className="w-full h-auto max-h-[40vh] min-tablet:max-h-[60vh] object-contain mx-auto"
             onClick={() =>
               openModal(
-                "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762964729/AtcFinalPoster_ntiidz.png"
+                "https://res.cloudinary.com/dzwooybws/image/upload/v1764917272/%EC%95%BC%EC%98%B9_%EC%9C%A0%EB%A6%BC%EB%8F%84%EC%A0%847_uj8vvd_uochca.png"
               )
             }
           />
@@ -255,14 +255,14 @@ const ThirdSection = ({ openModal }) => {
       "
       >
         <img
-          src="https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763109769/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo.png"
+          src="https://res.cloudinary.com/dzwooybws/image/upload/v1764917272/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo_k0l5mk.png"
           alt="포스터"
           className="absolute bottom-0 right-0 cursor-pointer block max-tablet:static max-tablet:mx-auto
           min-[1000px]:w-[300px] min-[1000px]:h-[425px] 
           max-tablet:w-[250px] max-tablet:h-[354px]"
           onClick={() =>
             openModal(
-              "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763109769/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo.png"
+              "https://res.cloudinary.com/dzwooybws/image/upload/v1764917272/%EC%95%BC%EC%98%B9_%EC%97%84%EB%A7%88%EC%9D%B4%EA%B1%B0%EC%95%BC_r8rswo_k0l5mk.png"
             )
           }
         />
