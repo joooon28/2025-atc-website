@@ -441,7 +441,6 @@ export default function WorkDetail() {
               </div>
             ) : null}
 
-            {/* 이미지들이 따닥따닥 붙도록 leading-0와 block 설정 적용 */}
             <div className="Work-Detail-Images-Container flex flex-col leading-[0]">
               <div className="Work-Detail-Img">
                 <LazyLoadImage
@@ -453,7 +452,6 @@ export default function WorkDetail() {
                 />
               </div>
 
-              {/* Site-Archive 이미지 맵핑 (간격 없음) */}
               {artwork.siteArchiveImages && artwork.siteArchiveImages.map((src, index) => (
                 <div key={index} className="Work-Detail-Img">
                   <LazyLoadImage
