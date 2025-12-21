@@ -1553,6 +1553,8 @@ export const allArtworkData = {
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764921624/TTT_%EB%82%B4%EB%B6%80%EC%9D%B4%EB%AF%B8%EC%A7%80_ewagbq_ogkciz.png",
     siteArchiveImages: [
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766257395/KakaoTalk_Photo_2025-12-21-04-02-24_f0xegx.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766257395/KakaoTalk_Photo_2025-12-21-04-02-41_zeb9z4.jpg"
     ],
     videoSrc: "",
     commentary: {
