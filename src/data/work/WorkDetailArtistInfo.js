@@ -1742,10 +1742,10 @@ export const allArtworkData = {
     imageDetailSrc:
       "https://res.cloudinary.com/dzwooybws/image/upload/v1766225945/Fragments_of_Me_Detail_r7gx2r.png",
     siteArchiveImages: [
-      "https://res.cloudinary.com/dzwooybws/video/upload/v1766225597/IMG_1731_zdslmm.mp4",
       "https://res.cloudinary.com/dzwooybws/image/upload/v1764837096/DSC03140_kkzb1j.jpg",
     ],
-    videoSrc: "",
+    videoSrc:
+      "https://res.cloudinary.com/dzwooybws/video/upload/v1766225597/IMG_1731_zdslmm.mp4",
     commentary: {
       kr: {
         p1: "소셜 미디어 이미지 AI 분류·시각화를 통한 자기 성찰 연구",

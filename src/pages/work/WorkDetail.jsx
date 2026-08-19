@@ -286,6 +286,8 @@ export default function WorkDetail() {
   const displayLocation = artwork.location.trim() || null;
 
   const vimeoEmbedUrl = getVimeoEmbedUrl(artwork.videoSrc);
+  const directVideoSrc =
+    !vimeoEmbedUrl && isVideoSrc(artwork.videoSrc) ? artwork.videoSrc : null;
 
   const displayLinks = artwork.links;
 
@@ -442,6 +444,18 @@ export default function WorkDetail() {
                   allowFullScreen
                   title={displayTitleKr || displayTitleEn}
                 ></iframe>
+              </div>
+            ) : directVideoSrc ? (
+              <div className="Work-Detail-Video w-full leading-[0]">
+                <video
+                  src={directVideoSrc}
+                  className="object-contain w-full h-auto block"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
               </div>
             ) : null}
 
