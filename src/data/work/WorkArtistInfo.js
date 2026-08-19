@@ -44,7 +44,7 @@ export const initialArtworks = [
     artist: "손정우 Jeongwoo Son",
     description: "시 '꽃'을 재해석한 미디어 아트.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954496/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921607/-_%EC%86%90%EC%A0%95%EC%9A%B0_qpc0nk_jxggaz.png",
     makers: [
       {
         name: "손정우 Jeongwoo Son",
@@ -62,7 +62,7 @@ export const initialArtworks = [
     description:
       "작은 부품 소리가 모여 소리로 만든 시계가 되는 라이브 퍼포먼스",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960860/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921663/%EB%8B%B7_%EC%8D%B8%EB%84%A4%EC%9D%BC_i5dtog_tmtt4u.jpg",
     makers: [
       {
         name: "정다혜 Dahye Jeong",
@@ -100,7 +100,7 @@ export const initialArtworks = [
     artist: "키스 갈기기 Throwing Kith",
     description: "이제는, 우리 곁에 항상 있던 바람을 마주할 때이다.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954511/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921652/%EB%A9%B4%ED%92%8D2_%EC%8D%B8%EB%84%A4%EC%9D%BC_mnkbnb_eyljyv.jpg",
     makers: [
       {
         name: "서기수 Kith Suh",
@@ -122,7 +122,7 @@ export const initialArtworks = [
     description:
       "번아웃에 빠진 청년이 쓰레기로 가득한 집에서 벗어나 일상을 되찾기까지",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954513/%EB%AC%BC%EC%88%A8_%EC%8D%B8%EB%84%A4%EC%9D%BC_l581j4.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921655/%EB%AC%BC%EC%88%A8_%EC%8D%B8%EB%84%A4%EC%9D%BC_l581j4_fdshb3.png",
     makers: [
       {
         name: "설혜인 Hyein Seol",
@@ -167,7 +167,7 @@ export const initialArtworks = [
     description:
       "감정이 없는 로봇들의 도시, 재즈가 울려 퍼진 순간 변화가 시작된다.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954514/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921670/%EB%B8%94%EB%A3%A8%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C_%EC%8D%B8%EB%84%A4%EC%9D%BC_cdzwzz_jta2z6.png",
     makers: [
       {
         name: "김인규 Ingyu Kim",
@@ -213,7 +213,7 @@ export const initialArtworks = [
     description:
       "삶 속에서 한국 설화가 우리를 사랑하는 방식을 담은 애니메이션 & 웹게임",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954516/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921666/%EC%82%B6%EC%9D%80%EC%84%A4%ED%99%94_%EB%A7%B7%EB%8F%8C%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4__%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%9D%B4%EB%AF%B8%EC%A7%80_-_%EC%9D%B4%EB%8B%A4%EC%9D%80_mej1dm_zubklw.png",
     makers: [
       {
         name: "문금미 Geummi Moon",
@@ -252,7 +252,7 @@ export const initialArtworks = [
     description:
       "한국 전통 정서와 감정을 풀어낸, 기묘하고 아름다운 디저트 브랜드 「심」",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954517/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921600/%EC%8B%AC_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%9C%EB%A6%AC%EB%A1%B1_vyx7ua_u4dfem.png",
     makers: [
       { name: "김인규 Ingyu Kim", links: [] },
       {
@@ -277,7 +277,7 @@ export const initialArtworks = [
     artist: "야너이상해 Hey, What's wrong with you?",
     description: "어린 시절의 추억을 당신만의 소리로 만들어드립니다... *",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954519/%EC%95%84%EC%A7%80%ED%8A%B8_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_imnumt.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921614/%EC%95%84%EC%A7%80%ED%8A%B8_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_imnumt_v3m1hj.png",
     makers: [
       {
         name: "김태희 Taehee Kim",
@@ -305,7 +305,7 @@ export const initialArtworks = [
     artist: "와이칼리버 Ycalibur",
     description: "켈트 신화를 바탕으로 한 전략 보드게임",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954527/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921605/%EC%97%90%EB%A6%B0%EC%9D%98%EC%8B%A0%EB%93%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC_vwuvnw_v1rcsy.png",
     makers: [
       {
         name: "박선우 Sunwoo Park",
@@ -330,7 +330,7 @@ export const initialArtworks = [
     description:
       "거슬러 붙잡고 싶지만 그렇다고 계속하여 마주할 수 없는 마음을 담아.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954523/%EC%98%81%EC%B4%88_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_jv1o1y.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921645/%EC%98%81%EC%B4%88_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%8B%A0%EC%84%9C%EC%9C%A4_jv1o1y_ahlph9.jpg",
     makers: [
       { name: "김현지 Hyunji Kim", links: [] },
       { name: "신서윤 Seoyun Shin", links: [] },
@@ -343,7 +343,7 @@ export const initialArtworks = [
     artist: "투진스 2genes",
     description: "생산성과 돌봄으로 빚어진 그녀들의 얼굴에 대해",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921710/%EC%98%81%EC%9B%90%ED%95%9C%EC%97%AC%EB%A6%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_kj28ee_ljy0fz.png",
     makers: [
       {
         name: "김현진 Hyeonjin Kim",
@@ -365,7 +365,7 @@ export const initialArtworks = [
     description:
       "끝없이 떠오르는 마음의 소란을 조용히 알아차리고 흘려보내는 태도",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954524/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921647/%EC%98%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_khk6hr_hhhh1b.png",
     makers: [
       {
         name: "박민지 Minji Park",
@@ -397,7 +397,7 @@ export const initialArtworks = [
     description:
       "여러분에게 우리가 잊지 말아야 할 것을 묻고 그 답을 세상과 나눌 수 있도록 돕습니다.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954526/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921690/%EC%9A%B0%EC%9E%8A%EB%A7%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_ne9trv_hlz25n.png",
     makers: [
       {
         name: "최윤서 Yunseo Choi",
@@ -425,7 +425,7 @@ export const initialArtworks = [
     artist: "비상명(非常名) Project Kṣaṇa",
     description: "억겁의 시간속에서 당신은 무엇인가?",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954528/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921653/%EC%B0%B0%EB%82%98%EB%B9%84_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EB%A5%98%ED%95%B4%EC%84%B1_h4pm5i_iuttnn.jpg",
     makers: [
       {
         name: "최서빈 Seobin Choi",
@@ -450,7 +450,7 @@ export const initialArtworks = [
     artist: "노릇노릇 NRNR",
     description: "TOAST OUT: 처음 꺼내보는 우리들의 진솔함",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762953843/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921604/ToastOut_%EC%8D%B8%EB%84%A4%EC%9D%BC%EC%9D%B4%EB%AF%B8%EC%A7%80_enjz5l_rxqfvl.png",
     makers: [
       {
         name: "김수임 Suim Kim",
@@ -482,7 +482,7 @@ export const initialArtworks = [
     description:
       "저희 카페는 음료를 팔지 않습니다. 저희 카페에서는 감각을 판매합니다.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921651/%EA%B0%90%EA%B0%81%EC%9D%98%EC%88%B2_%EC%8D%B8%EB%84%A4%EC%9D%BC_i0inan_x5cghm.jpg",
     makers: [
       {
         name: "천성하 Sungha Cheon",
@@ -527,7 +527,7 @@ export const initialArtworks = [
     artist: "파브리카 Fabrika",
     description: "일상의 무뎌진 틈에서 ‘나의 자유’를 찾아가는 우리 모두의 여정",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921664/%ED%8C%8C%EB%B8%8C%EB%A6%AC%EC%B9%B4_%EC%8D%B8%EB%84%A4%EC%9D%BC_jh3yto_ewkk80.png",
     makers: [
       {
         name: "파브리카 Fabrika",
@@ -544,7 +544,7 @@ export const initialArtworks = [
     artist: "X205",
     description: "피자 만들기를 테마로 한 아동/청소년 대상 교육용 보드게임",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954532/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921601/%ED%97%88%EB%A6%AC%ED%94%BC%EC%9E%90_%EC%8D%B8%EB%84%A4%EC%9D%BC_-_Jiyun_Kim_gwowms_ohvyhu.png",
     makers: [
       {
         name: "박종호 Jongho Park",
@@ -582,7 +582,7 @@ export const initialArtworks = [
     artist: "라스트 댄스 Last Dance",
     description: "논리 분석(REBT)과 정서 공감(PCT)을 맞춤 제공하는 대화형 AI",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762965841/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921611/OMI_%EC%8D%B8%EB%84%A4%EC%9D%BC_h2qxyy_hiaaif.png",
     makers: [
       {
         name: "노하은 Haeun Rho",
@@ -607,7 +607,7 @@ export const initialArtworks = [
     description:
       "미디어와 AI 억압 속에서 내 생각을 돌아보게 하는 2D 인터랙티브 게임",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921686/D31_Thumbnail_Image_-_%EC%98%A4%EC%A3%BC%ED%95%98_fq20vt_yp4whw.png",
     makers: [
       {
         name: "차세연 Seyeon Cha",
@@ -638,7 +638,7 @@ export const initialArtworks = [
     description:
       "기억을 잃은 소년이 폐허가 된 도시를 탐험하며 기억을 찾는 사이드뷰 게임",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954500/E.C.H.O._%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%B0%A8%EC%84%B8%EC%97%B0_ygczd4.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921616/E.C.H.O._%EC%8D%B8%EB%84%A4%EC%9D%BC_-_%EC%B0%A8%EC%84%B8%EC%97%B0_ygczd4_gsndii.png",
     makers: [
       {
         name: "차세연 Seyeon Cha",
@@ -660,7 +660,7 @@ export const initialArtworks = [
     artist: "이건 네 번째 레슨 The fourth lesson",
     description: "아트앤테크놀로지 학과 내 네트워킹 서비스",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954507/web-sight_%EC%8D%B8%EB%84%A4%EC%9D%BC_e9hxpo.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921602/web-sight_%EC%8D%B8%EB%84%A4%EC%9D%BC_e9hxpo_tp6k9s.png",
     makers: [
       {
         name: "곽윤희 Yoonhee Kwak",
@@ -691,7 +691,7 @@ export const initialArtworks = [
     artist: "김민수 Min Soo Kim",
     description: "모든 음악인의 꿈 같은 인터랙티브 아트",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762955526/MusicalDream_%EC%8D%B8%EB%84%A4%EC%9D%BC_jir0wp.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921639/MusicalDream_%EC%8D%B8%EB%84%A4%EC%9D%BC_jir0wp_xomw7l.png",
     makers: [
       {
         name: "김민수 Min Soo Kim",
@@ -705,7 +705,7 @@ export const initialArtworks = [
     artist: "이윤선 Yoonseon Lee",
     description: "다양한 얼굴들을 만나보세요.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954501/Faces_%EC%8D%B8%EB%84%A4%EC%9D%BC_xqws7o.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921668/Faces_%EC%8D%B8%EB%84%A4%EC%9D%BC_xqws7o_gwrxhh.png",
     makers: [
       {
         name: "이윤선 Yoonseon Lee",
@@ -720,7 +720,7 @@ export const initialArtworks = [
     description:
       "죽음을 디지털로 감각하고, 애도를 다시 질문하는 체험형 전시 프로젝트",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921705/RIP_%EC%8D%B8%EB%84%A4%EC%9D%BC_a5nosj_nz8iry.png",
     makers: [
       {
         name: "박종호 Jongho Park",
@@ -747,7 +747,7 @@ export const initialArtworks = [
     description:
       "체험형 미디어아트 상호작용을 통한 개인의 공동체 기여 인식 증진 프로젝트",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762957086/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921660/SnowBall_%EC%8D%B8%EB%84%A4%EC%9D%BC_zgeg1s_g0tiij.jpg",
     makers: [
       {
         name: "장채원 Chaewon Jang",
@@ -786,7 +786,7 @@ export const initialArtworks = [
     description:
       "온·오프라인 데이터를 개인화된 우주로 시각화하는 몰입형 XR 서비스",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954504/Neuverse_Thumbnail_-_SunMyeong_Lee_budira.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921612/Neuverse_Thumbnail_-_SunMyeong_Lee_budira_ox3dgg.png",
     makers: [
       {
         name: "이선명 Sunmyeong Lee",
@@ -829,7 +829,7 @@ export const initialArtworks = [
     description:
       "중심 없이 떠도는 정체성 조각들이 서로 충돌하고 겹치는 순간을 기록한다.",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954529/%ED%8B%B0%ED%8B%B0%ED%8B%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%B5%9C%EC%A2%85%EB%B3%B8_-_Seoyoung_Kim_ddurni.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921658/%ED%8B%B0%ED%8B%B0%ED%8B%B0_%EC%8D%B8%EB%84%A4%EC%9D%BC_%EC%B5%9C%EC%A2%85%EB%B3%B8_-_Seoyoung_Kim_ddurni_sgpdz2.jpg",
     makers: [
       {
         name: "김서영 Seoyoung Kim",
@@ -848,7 +848,7 @@ export const initialArtworks = [
     description:
       "작업자의 취향을 꾹꾹 눌러담은 아기자기 도파민 공간. 우리 같이 놀자!",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954499/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921659/e-mo_%EC%8D%B8%EB%84%A4%EC%9D%BC_plxtn7_l7qonr.jpg",
     makers: [
       {
         name: "신채원 Chaewon Shin",
@@ -865,7 +865,7 @@ export const initialArtworks = [
     artist: "커비 KIRBY",
     description: "생성형 인공지능을 활용한 아이웨어 디자인 도구",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763539018/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921706/GlassLab_%EC%8D%B8%EB%84%A4%EC%9D%BC_zkrmuv_b6j0wl.png",
     makers: [
       { name: "손정우 Jeongwoo Son", links: [] },
       {
@@ -888,7 +888,7 @@ export const initialArtworks = [
     artist: "노진서 Noh jinseo",
     description: "미래 서강대의 모습",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954497/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921643/Chroma_%EC%8D%B8%EB%84%A4%EC%9D%BC_v0p9yb_nfejoj.png",
     makers: [
       {
         name: "노진서 Jinseo Noh",
@@ -905,7 +905,7 @@ export const initialArtworks = [
     artist: "이선명 Sunmyeong Lee",
     description: "소셜 미디어 이미지 AI 분류·시각화를 통한 자기 성찰 연구",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1763084165/Fragments_of_Me_Thumbnail_gfr1xh.png",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1766225951/Fragments_of_Me_Thumbnail_ujzqyj.png",
     makers: [{ name: "이선명 Sunmyeong Lee", links: [] }],
   },
   {
@@ -915,7 +915,7 @@ export const initialArtworks = [
     description:
       "손기호 인식을 통해 사운드를 생성하고 시각화하는 인터랙티브 웹",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762960856/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921650/ART_IST_%EC%8D%B8%EB%84%A4%EC%9D%BC_qgbrmz_zyvzuv.jpg",
     makers: [
       {
         name: "이연재 Yeonjae Lee",
@@ -946,7 +946,7 @@ export const initialArtworks = [
     artist: "김태현 Taehyun Kim",
     description: "가상 소녀 'Lily'와의 만남, 없는 존재와의 소통",
     image:
-      "https://res.cloudinary.com/dbw1ckgzr/image/upload/v1762954509/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf.jpg",
+      "https://res.cloudinary.com/dzwooybws/image/upload/v1764921610/WithLily_%EC%8D%B8%EB%84%A4%EC%9D%BC_kie6bf_clvnyt.jpg",
     makers: [
       {
         name: "김태현 Taehyun Kim",
