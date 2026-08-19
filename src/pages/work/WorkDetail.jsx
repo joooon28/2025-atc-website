@@ -32,6 +32,10 @@ const getVimeoEmbedUrl = (videoSrc) => {
   return null;
 };
 
+const isVideoSrc = (src) =>
+  typeof src === "string" &&
+  (/\.(mp4|webm|mov)(\?|$)/i.test(src) || src.includes("/video/upload/"));
+
 const StickyTitle = React.memo(({ data }) => {
   const titleKr = data.titleKr.trim();
   const titleEn = data.titleEn.trim();
@@ -454,12 +458,24 @@ export default function WorkDetail() {
 
               {artwork.siteArchiveImages && artwork.siteArchiveImages.map((src, index) => (
                 <div key={index} className="Work-Detail-Img">
-                  <LazyLoadImage
-                    alt={`Archive ${index}`}
-                    src={src}
-                    effect="blur"
-                    className="object-contain w-full h-auto block"
-                  />
+                  {isVideoSrc(src) ? (
+                    <video
+                      src={src}
+                      className="object-contain w-full h-auto block"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    />
+                  ) : (
+                    <LazyLoadImage
+                      alt={`Archive ${index}`}
+                      src={src}
+                      effect="blur"
+                      className="object-contain w-full h-auto block"
+                    />
+                  )}
                 </div>
               ))}
             </div>
